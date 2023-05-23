@@ -1,0 +1,77 @@
+---
+permalink: commands-a-z/show-syncmirror-candidates.html 
+sidebar: sidebar 
+keywords: show, synchronous, mirror, volume, candidates 
+summary: Il comando show SyncMirror Candidates restituisce informazioni sui volumi candidati su un array di storage remoto che è possibile utilizzare come volumi secondari in una configurazione di mirroring sincrono. 
+---
+= Mostra i volumi di mirroring sincrono candidati
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show syncMirror candidates` Il comando restituisce informazioni sui volumi candidati su un array di storage remoto che è possibile utilizzare come volumi secondari in una configurazione di Synchronous Mirroring.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo array di storage, con alcune limitazioni. Se si esegue il comando sull'array E2700 o E5600, non esistono restrizioni.
+
+[NOTE]
+====
+Se si esegue il comando sull'array E2800 o E5700, il tipo di client deve essere impostato su `symbol`. Questo comando non viene eseguito se il tipo di client è impostato su `https`.
+
+====
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo Storage Admin o Storage Monitor.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Nelle versioni precedenti di questo comando, l'identificatore di funzione era `remoteMirror`. Questo identificatore di funzione non è più valido e viene sostituito da `syncMirror`.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[show syncMirror candidates primary="_volumeName_"
+remoteStorageArrayName="_storageArrayName_"]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`primary`
+ a| 
+Il nome del volume locale che si desidera assegnare al volume primario nella coppia con mirroring remoto. Racchiudere il nome del volume primario tra virgolette doppie (" ").
+
+
+
+ a| 
+`remoteStorageArrayName`
+ a| 
+Array di storage remoto che contiene i volumi possibili per un volume secondario. Se il nome dell'array di storage remoto contiene caratteri speciali, è necessario racchiudere il nome dell'array di storage remoto tra virgolette doppie (" ").
+
+|===
+
+
+== Livello minimo del firmware
+
+5.40

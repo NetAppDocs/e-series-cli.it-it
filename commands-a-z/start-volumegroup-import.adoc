@@ -1,0 +1,74 @@
+---
+permalink: commands-a-z/start-volumegroup-import.html 
+sidebar: sidebar 
+keywords: start, volume, group, import 
+summary: Il comando START VolumeGroup import sposta un gruppo di volumi in uno stato completo per rendere disponibile un nuovo gruppo di volumi al nuovo array di storage. 
+---
+= Avviare l'importazione dei gruppi di volumi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `start volumeGroup import` Il comando sposta un gruppo di volumi in uno stato completo per rendere disponibile un nuovo gruppo di volumi per il nuovo array di storage.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Prima di eseguire questo comando, il gruppo di volumi deve trovarsi in uno stato esportato o forzato. Una volta eseguito correttamente il comando, il gruppo di volumi è operativo.
+
+[NOTE]
+====
+All'interno del gruppo di volumi, non è possibile spostare i volumi associati alle funzionalità da uno storage array a un altro storage array.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[start volumeGroup [_volumeGroupName_]] import
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Il nome del gruppo di volumi che si desidera importare. Racchiudere il nome del gruppo di volumi tra parentesi quadre ([ ]).
+
+|===
+
+
+== Note
+
+I volumi di livello superiore specificamente correlati alle funzionalità (mirroring sincrono, copia del volume, mappatura e prenotazioni persistenti) vengono rimossi durante l'operazione di importazione.
+
+È necessario eseguire `show volumeGroup importDependencies` prima di eseguire il comando `start volumeGroup import` comando.
+
+
+
+== Livello minimo del firmware
+
+7.10

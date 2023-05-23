@@ -1,0 +1,80 @@
+---
+permalink: commands-a-z/download-tray-configurationsettings.html 
+sidebar: sidebar 
+keywords: download, tray, configuration, settings, commands, factory, default, drive, array, specific, storage, roles, support 
+summary: Il comando download tray ConfigurationSettings scarica le impostazioni predefinite in fabbrica su tutti i vassoi delle unità di uno storage array o su uno specifico tray di dischi di uno storage array. 
+---
+= Scaricare le impostazioni di configurazione del vassoio
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `download tray configurationSettings` il comando scarica le impostazioni predefinite in fabbrica su tutti i vassoi delle unità di uno storage array o su uno specifico vassoio delle unità di uno storage array.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[download (allTrays | tray [_trayID_]] configurationSettings
+pass:quotes[file="_filename_"]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`allTrays`
+ a| 
+Questo parametro scarica il nuovo firmware in tutti i vassoi dell'array di storage.
+
+
+
+ a| 
+`tray`
+ a| 
+Il vassoio dell'unità contenente la scheda ESM in cui si desidera caricare il nuovo firmware. I valori dell'ID vassoio sono `0` a. `99`. Racchiudere il valore dell'ID vassoio tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`file`
+ a| 
+Il percorso e il nome del file che contiene l'immagine del firmware. Racchiudere il percorso del file e il nome del file dell'immagine del firmware tra virgolette doppie (" "). Ad esempio:
+
+`file="C:\Program Files\CLI\dnld\trayset.dlp"`
+
+I nomi di file validi hanno un `.dlp` interno.
+
+|===
+
+
+== Note
+
+Il `tray` il parametro scarica le impostazioni di configurazione predefinite di fabbrica su un vassoio dell'unità specifico Se è necessario scaricare le impostazioni di configurazione predefinite in fabbrica su più vassoi dell'unità, ma non su tutti i vassoi dell'unità, immettere questo comando per ciascun vassoio dell'unità
+
+
+
+== Livello minimo del firmware
+
+7.75

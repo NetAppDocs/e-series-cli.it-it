@@ -1,0 +1,68 @@
+---
+permalink: commands-a-z/set-controller-service-action-allowed-indicator.html 
+sidebar: sidebar 
+keywords: set, controller, service, action, allowed, indicator 
+summary: 'Il comando set controller attiva o disattiva la spia Service Action Allowed (azione servizio consentita) su un controller nel vassoio di un controller o di un controller-drive' 
+---
+= Impostare l'indicatore di azione di servizio del controller consentita
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set controller` Command consente di attivare o disattivare la spia Service Action Allowed (azione di servizio consentita) su un controller nel vassoio di un controller o di un controller
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo array di storage, inclusi gli array E2700 e E5600.
+
+
+
+== Contesto
+
+Se lo storage array non supporta la funzione indicatore luminoso azione servizio consentita, questo comando restituisce un errore. Se lo storage array supporta il comando ma non è in grado di accendere o spegnere l'indicatore luminoso, questo comando restituisce un errore. (Per accendere o spegnere la spia Service Action Allowed (azione di servizio consentita) sul contenitore della ventola di alimentazione o sul contenitore della batteria di interconnessione, utilizzare `set tray serviceAllowedIndicator` comando.)
+
+[NOTE]
+====
+Questo comando è valido solo per E2700, E5600 o EF560 (e per altre generazioni precedenti di controller e-Series o EF-Series). Il vassoio del controller E2800 è dotato di un singolo indicatore di attenzione che si illumina solo quando 1) si verifica un guasto e 2) il componente guasto può essere rimosso in modo sicuro.
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+set controller [(a| b)]
+serviceAllowedIndicator=(on | off)
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`controller`
+ a| 
+Il controller con la spia Service Action Allowed (azione servizio consentita) che si desidera attivare o disattivare. Gli identificatori del controller validi sono `a` oppure `b` , dove `a` È il controller nello slot A, e. `b` Il controller si trova nello slot B. Racchiudere l'identificatore del controller tra parentesi quadre ([ ]). Se non si specifica un controller, il firmware del controller restituisce un errore di sintassi.
+
+
+
+ a| 
+`serviceAllowedIndicator`
+ a| 
+L'impostazione per attivare o disattivare la spia dell'azione di servizio consentita. Per attivare l'indicatore luminoso dell'azione di servizio consentita, impostare questo parametro su `on`. Per disattivare la spia dell'indicatore di azione di servizio consentita, impostare questo parametro su `off`.
+
+|===
+
+
+== Livello minimo del firmware
+
+6.14

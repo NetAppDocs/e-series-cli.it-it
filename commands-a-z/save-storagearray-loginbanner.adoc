@@ -1,0 +1,55 @@
+---
+permalink: commands-a-z/save-storagearray-loginbanner.html 
+sidebar: sidebar 
+keywords: save, storage, array, login, banner 
+summary: Il comando Save StorageArray loginBanner consente di salvare un banner di accesso sul computer locale. Il testo del banner può includere un avviso e un messaggio di consenso, che vengono presentati agli utenti prima di stabilire le sessioni. 
+---
+= Banner di login Save storage array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `save storageArray loginBanner` il comando consente di salvare un banner di accesso sul computer locale. Il testo del banner può includere un avviso e un messaggio di consenso, che vengono presentati agli utenti prima di stabilire le sessioni.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Un utente con qualsiasi ruolo può eseguire questo comando.
+
+
+
+== Sintassi
+
+[listing]
+----
+save storageArray loginBanner file="file_name"
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`file`
+ a| 
+Il nome del file banner di accesso.
+
+|===
+
+
+== Livello minimo del firmware
+
+8.41

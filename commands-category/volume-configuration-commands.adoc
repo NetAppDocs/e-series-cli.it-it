@@ -1,0 +1,211 @@
+---
+permalink: commands-category/volume-configuration-commands.html 
+sidebar: sidebar 
+keywords: volume, configuration, commands, diskpool, host topology, internet, storage, service, extension, group 
+summary: Comandi di configurazione del volume 
+---
+= Comandi di configurazione del volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+
+
+== Comandi del pool di dischi
+
+link:../commands-a-z/create-diskpool.html["Creare un pool di dischi"]
+
+link:../commands-a-z/delete-diskpool.html["Eliminare il pool di dischi"]
+
+link:../commands-a-z/enable-diskpool-security.html["Abilitare la sicurezza del pool di dischi"]
+
+link:../commands-a-z/reduce-disk-pool-capacity.html["Ridurre la capacità del pool di dischi"]
+
+link:../commands-a-z/set-disk-pool.html["Impostare il pool di dischi"]
+
+link:../commands-a-z/set-disk-pool-modify-disk-pool.html["Set disk pool (modifica pool di dischi)"]
+
+link:../commands-a-z/show-diskpool.html["Mostra pool di dischi"]
+
+link:../commands-a-z/start-diskpool-fullprovisioning.html["Avviare il provisioning completo del pool di dischi"]
+
+link:../commands-a-z/start-diskpool-locate.html["Avviare disk pool individuare"]
+
+link:../commands-a-z/stop-diskpool-locate.html["Arrestare l'individuazione del pool di dischi"]
+
+
+
+== Comandi della topologia dell'host
+
+link:../commands-a-z/create-host.html["Creare l'host"]
+
+link:../commands-a-z/create-hostgroup.html["Creare un gruppo di host"]
+
+link:../commands-a-z/create-hostport.html["Creare la porta host"]
+
+link:../commands-a-z/delete-host.html["Eliminare l'host"]
+
+link:../commands-a-z/delete-hostgroup.html["Eliminare il gruppo di host"]
+
+link:../commands-a-z/delete-hostport.html["Eliminare la porta host"]
+
+link:../commands-a-z/set-host.html["Impostare l'host"]
+
+link:../commands-a-z/set-hostchannel.html["Impostare il canale host"]
+
+link:../commands-a-z/set-hostgroup.html["Impostare il gruppo di host"]
+
+link:../commands-a-z/set-hostport.html["Impostare la porta host"]
+
+link:../commands-a-z/show-allhostports.html["Mostra porte host"]
+
+link:../commands-a-z/show-storagearray-hosttopology.html["Mostrare la topologia degli host degli array di storage"]
+
+
+
+== Comandi iSNS (Internet Storage Name Service)
+
+link:../commands-a-z/set-storagearray.html["Impostare l'array di storage"]
+
+link:../commands-a-z/set-storagearray-isnsregistration.html["Impostare la registrazione iSNS dello storage array"]
+
+link:../commands-a-z/set-storagearray-isnsipv4configurationmethod.html["Impostare l'indirizzo IPv4 del server iSNS dell'array di storage"]
+
+link:../commands-a-z/set-storagearray-isnsipv6address.html["Impostare l'indirizzo IPv6 del server iSNS dell'array di storage"]
+
+link:../commands-a-z/set-storagearray-isnslisteningport.html["Impostare la porta di ascolto del server iSNS dello storage array"]
+
+link:../commands-a-z/set-storagearray-isnsserverrefresh.html["Impostare il refresh del server iSNS dell'array di storage"]
+
+link:../commands-a-z/start-storagearray-isnsserverrefresh.html["Avviare il refresh del server iSNS dello storage array"]
+
+
+
+== Estensione ISCSI per comandi RDMA (iSER)
+
+link:../commands-a-z/reset-storagearray-iserstatsbaseline.html["Ripristinare la linea di base iSER dell'array di storage"]
+
+link:../commands-a-z/save-storagearray-iserstatistics.html["Salvare le statistiche iSER degli array di storage"]
+
+link:../commands-a-z/set-isertarget.html["Impostare la destinazione iSER"]
+
+
+
+== Comandi ISCSI
+
+link:../commands-a-z/create-iscsiinitiator.html["Creare iSCSI Initiator"]
+
+link:../commands-a-z/delete-iscsiinitiator.html["Eliminare iSCSI Initiator"]
+
+link:../commands-a-z/diagnose-controller-iscsihostport.html["Diagnosticare il cavo host iSCSI del controller"]
+
+link:../commands-a-z/reset-storagearray-iscsistatsbaseline.html["Ripristinare la linea di base iSCSI dell'array di storage"]
+
+link:../commands-a-z/diagnose-controller-iscsihostport.html["Salvare le statistiche iSCSI degli array di storage"]
+
+link:../commands-a-z/set-iscsiinitiator.html["Impostare iSCSI Initiator"]
+
+link:../commands-a-z/set-iscsitarget.html["Impostare le proprietà di destinazione iSCSI"]
+
+link:../commands-a-z/show-iscsisessions.html["Mostra le sessioni iSCSI correnti"]
+
+link:../commands-a-z/show-storagearray-iscsinegotiationdefaults.html["Mostra le impostazioni predefinite di negoziazione degli array di storage"]
+
+link:../commands-a-z/show-storagearray-unconfigurediscsiinitiators.html["Mostrare gli iniziatori iSCSI non configurati degli array di storage"]
+
+link:../commands-a-z/start-controller-iscsihostport-dhcprefresh.html["Avviare l'aggiornamento DHCP iSCSI"]
+
+link:../commands-a-z/stop-storagearray-iscsisession.html["Arrestare la sessione iSCSI dello storage array"]
+
+
+
+== Comandi di volume
+
+link:../commands-a-z/check-volume-parity.html["Controllare la parità del volume"]
+
+link:../commands-a-z/create-mapping-volume.html["Creare la mappatura del volume"]
+
+link:../commands-a-z/clear-volume-reservations.html["Cancellare le prenotazioni di volumi"]
+
+link:../commands-a-z/clear-volume-unreadablesectors.html["Liberare i settori illeggibili del volume"]
+
+link:../commands-a-z/create-raid-volume-automatic-drive-select.html["Creazione di un volume RAID (selezione automatica del disco)"]
+
+link:../commands-a-z/create-raid-volume-free-extent-based-select.html["Creazione di un volume RAID (selezione basata su estensione libera)"]
+
+link:../commands-a-z/create-raid-volume-manual-drive-select.html["Creazione di un volume RAID (selezione manuale del disco)"]
+
+link:../commands-a-z/create-volume-diskpool.html["Creare un volume nel pool di dischi"]
+
+link:../commands-a-z/delete-volume.html["Elimina volume"]
+
+link:../commands-a-z/delete-volume-from-disk-pool.html["Eliminare il volume dal pool di dischi"]
+
+link:../commands-a-z/start-increasevolumecapacity-volume.html["Aumentare la capacità del volume nel pool di dischi o nel gruppo di volumi..."]
+
+link:../commands-a-z/start-volume-initialize.html["Inizializzare il thin volume"]
+
+link:../commands-a-z/recover-volume.html["Ripristinare il volume RAID"]
+
+link:../commands-a-z/remove-lunmapping.html["Rimuovere la mappatura LUN del volume"]
+
+link:../commands-a-z/repair-volume-parity.html["Riparare la parità del volume"]
+
+link:../commands-a-z/repair-data-parity.html["Riparare la parità dei dati"]
+
+link:../commands-a-z/set-thin-volume-attributes.html["Impostare gli attributi dei volumi thin"]
+
+link:../commands-a-z/set-volumes.html["Impostare gli attributi di un volume in un pool di dischi..."]
+
+link:../commands-a-z/set-volume-group-attributes-for-volume-in-a-volume-group.html["Impostare gli attributi di un volume in un gruppo di volumi..."]
+
+link:../commands-a-z/set-volume-logicalunitnumber.html["Consente di impostare la mappatura del volume"]
+
+link:../commands-a-z/show-volume.html["Mostra volume sottile"]
+
+link:../commands-a-z/show-volume-summary.html["Mostra volume"]
+
+link:../commands-a-z/show-volume-actionprogress.html["Mostra l'avanzamento dell'azione del volume"]
+
+link:../commands-a-z/show-volume-performancestats.html["Mostra le statistiche sulle performance dei volumi"]
+
+link:../commands-a-z/show-volume-reservations.html["Mostra prenotazioni di volumi"]
+
+link:../commands-a-z/start-volume-initialization.html["Avviare l'inizializzazione del volume"]
+
+
+
+== Comandi del gruppo di volumi
+
+link:../commands-a-z/create-volumegroup.html["Creare un gruppo di volumi"]
+
+link:../commands-a-z/delete-volumegroup.html["Elimina gruppo di volumi"]
+
+link:../commands-a-z/enable-volumegroup-security.html["Abilitare la protezione del gruppo di volumi"]
+
+link:../commands-a-z/revive-volumegroup.html["Ripristinare il gruppo di volumi"]
+
+link:../commands-a-z/set-volumegroup.html["Impostare il gruppo di volumi"]
+
+link:../commands-a-z/set-volumegroup-forcedstate.html["Impostare lo stato forzato del gruppo di volumi"]
+
+link:../commands-a-z/show-volumegroup.html["Mostra gruppo di volumi"]
+
+link:../commands-a-z/show-volumegroup-exportdependencies.html["Mostra le dipendenze di esportazione dei gruppi di volumi"]
+
+link:../commands-a-z/show-volumegroup-importdependencies.html["Mostra le dipendenze di importazione dei gruppi di volumi"]
+
+link:../commands-a-z/start-volumegroup-defragment.html["Avviare la deframmentazione del gruppo di volumi"]
+
+link:../commands-a-z/start-volumegroup-export.html["Avviare l'esportazione dei gruppi di volumi"]
+
+link:../commands-a-z/start-volumegroup-fullprovisioning.html["Avviare il provisioning completo del gruppo di volumi"]
+
+link:../get-started/learn-about-volume-group-migration.html["Informazioni sulla migrazione dei gruppi di volumi (solo CLI)"]
+
+link:../commands-a-z/start-volumegroup-import.html["Avviare l'importazione dei gruppi di volumi"]
+
+link:../commands-a-z/start-volumegroup-locate.html["Avviare l'individuazione del gruppo di volumi"]
+
+link:../commands-a-z/stop-volumegroup-locate.html["Arrestare l'individuazione del gruppo di volumi"]

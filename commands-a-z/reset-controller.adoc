@@ -1,0 +1,74 @@
+---
+permalink: commands-a-z/reset-controller.html 
+sidebar: sidebar 
+keywords: reset, controller 
+summary: Il comando RESET controller ripristina un controller e interrompe le operazioni di i/O. 
+---
+= Ripristinare il controller
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `reset controller` Il comando ripristina un controller e interrompe le operazioni di i/O.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Quando si ripristina un controller, il controller viene rimosso dal percorso dei dati e non è disponibile per le operazioni di i/o fino al completamento dell'operazione di ripristino. Se un host utilizza volumi di proprietà del controller da ripristinare, l'i/o indirizzato al controller viene rifiutato. Prima di reimpostare il controller, assicurarsi che i volumi di proprietà del controller non siano in uso o che un driver multi-path sia installato su tutti gli host che utilizzano questi volumi.
+
+====
+[CAUTION]
+====
+Se si utilizza la gestione in-band, non è possibile controllare a quale controller viene inviato alcun comando e questo comando può avere risultati imprevisti.
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+reset controller [(a|b)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`controller`
+ a| 
+Il controller che si desidera ripristinare. Gli identificatori del controller validi sono `a` oppure `b`, dove `a` È il controller nello slot A, e. `b` Il controller si trova nello slot B. Racchiudere l'identificatore del controller tra parentesi quadre ([ ]). Se non si specifica un controller, il software di gestione dello storage restituisce un errore di sintassi.
+
+|===
+
+
+== Note
+
+Il controller che riceve il comando RESET controller ripristina il controller specificato. Ad esempio, se il comando RESET controller viene inviato al controller A per richiedere un reset del controller A, il controller A si riavvia eseguendo un soft reboot. Se il comando di ripristino del controller viene inviato al controller A per richiedere un ripristino del controller B, il controller A mantiene il controller B in reset e quindi rilascia il controller B dal reset, che è un riavvio a freddo. Un soft reboot in alcuni prodotti ripristina solo il chip IOC. Un riavvio a freddo ripristina sia il IOC che i chip di espansione nel controller.
+
+
+
+== Livello minimo del firmware
+
+5.20

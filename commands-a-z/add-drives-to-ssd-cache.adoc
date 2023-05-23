@@ -1,0 +1,71 @@
+---
+permalink: commands-a-z/add-drives-to-ssd-cache.html 
+sidebar: sidebar 
+keywords: add drives ssd cache, supported arrays, syntax, parameters, minimum firmware level 
+summary: 'Il comando set ssdCache aumenta la capacità di una cache SSD esistente aggiungendo più dischi a stato solido (SSD).' 
+---
+= Aggiunta di unità alla cache SSD
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set ssdCache` Command aumenta la capacità di una cache SSD esistente aggiungendo più dischi a stato solido (SSD).
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+[NOTE]
+====
+Per eseguire questo comando su un array di storage E2800 o E5700, è necessario disporre del ruolo Support Admin.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[set ssdCache [_ssdCacheName_]]
+pass:quotes[addDrives=(_trayID1_,[_drawerID1_,]]pass:quotes[_slotID1 ... trayIDn_,]pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`ssdCache`
+ a| 
+Il nome della cache SSD a cui si desidera aggiungere gli SSD. Racchiudere il nome tra parentesi quadre ([ ]). Se il nome della cache SSD contiene caratteri speciali o è composto solo da numeri, è necessario racchiudere il nome tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`addDrives`
+ a| 
+Le unità che si desidera aggiungere alla cache SSD.per i vassoi ad alta capacità, specificare il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot per l'unità. Per i vassoi delle unità a bassa capacità, specificare il valore dell'ID del vassoio e il valore dell'ID dello slot per l'unità. I valori dell'ID vassoio sono `0` a. `99`. I valori dell'ID cassetto sono `1` a. `5`.
+
+Tutti i valori massimi di ID slot sono 24. I valori ID slot iniziano con 0 o 1, a seconda del modello di vassoio. I cassetti per dischi compatibili con i controller E2800 e E5700 hanno numeri ID slot a partire da 0. I vassoi per dischi compatibili con i controller E2700 e E5600 hanno numeri ID slot a partire da 1.
+
+Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot tra parentesi quadre ([ ]).
+
+|===
+
+
+== Note
+
+La cache SSD può contenere qualsiasi numero di SSD. La dimensione massima della cache SSD è di 5 TB, ma potrebbe essere inferiore a seconda delle dimensioni della cache principale del controller.
+
+
+
+== Livello minimo del firmware
+
+7.84

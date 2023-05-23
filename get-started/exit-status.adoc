@@ -1,0 +1,639 @@
+---
+permalink: get-started/exit-status.html 
+sidebar: sidebar 
+keywords: exit, status 
+summary: Questa tabella elenca gli stati di uscita che potrebbero essere restituiti e il significato di ciascuno stato. 
+---
+= Stato di uscita
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Questa tabella elenca gli stati di uscita che potrebbero essere restituiti e il significato di ciascuno stato.
+
+[cols="3*"]
+|===
+| Valore di stato | Nome errore | Significato 
+
+
+ a| 
+0
+ a| 
+RIUSCITO
+ a| 
+Il comando è terminato senza errori.
+
+
+
+ a| 
+1
+ a| 
+UTILIZZO_NON_VALIDO
+ a| 
+Il comando è terminato con un errore. Vengono visualizzate anche informazioni sull'errore.
+
+
+
+ a| 
+2
+ a| 
+IL FILE_SCRIPT_NON_ESISTE
+ a| 
+Il file script non esiste.
+
+
+
+ a| 
+3
+ a| 
+ERROR_OPENING_OUTPUT_FILE
+ a| 
+Si è verificato un errore durante l'apertura di un file di output.
+
+
+
+ a| 
+4
+ a| 
+NO_STORAGE_ARRAY_AT_ADDRESS
+ a| 
+Un array di storage non si trovava all'indirizzo specificato.
+
+
+
+ a| 
+5
+ a| 
+ADDRESSES_SPECIFY_DIFFERENT_ARRAY
+ a| 
+Gli indirizzi specificano diversi array di storage.
+
+
+
+ a| 
+6
+ a| 
+NO_SANAME_FOR_HOST_AGENT_CONNECT
+ a| 
+Non esiste un nome di array di storage per l'agente host connesso.
+
+
+
+ a| 
+7
+ a| 
+SANAME_NOT_AT_ADDRESS
+ a| 
+Il nome dell'array di storage non era all'indirizzo specificato.
+
+
+
+ a| 
+8
+ a| 
+SANAME_NOT_UNIQUE
+ a| 
+Il nome dell'array di storage non era univoco.
+
+
+
+ a| 
+9
+ a| 
+SANAME_NOT_IN_CONFIG_FILES
+ a| 
+Il nome dell'array di storage non era nel file di configurazione.
+
+
+
+ a| 
+10
+ a| 
+NO_MANAGEMENT_CLASS_FOR_SA
+ a| 
+Non esiste una classe di gestione per lo storage array.
+
+
+
+ a| 
+11
+ a| 
+NO_SA_IN_CONFIG_FILE_FOUND
+ a| 
+Non è stato trovato un array di storage nel file di configurazione.
+
+
+
+ a| 
+12
+ a| 
+INTERNAL_ERROR
+ a| 
+Si è verificato un errore interno. Questo stato di uscita indica che non si dispone dei privilegi necessari per eseguire un comando CLI dalla riga di comando. Per eseguire tutti i comandi CLI da una riga di comando, è necessario disporre dei privilegi di amministratore.
+
+
+
+ a| 
+13
+ a| 
+SINTASSI_SCRIPT_NON_VALIDA
+ a| 
+È stata trovata una sintassi dello script non valida.
+
+
+
+ a| 
+14
+ a| 
+IMPOSSIBILE_COMUNICARE
+ a| 
+Il controller non è riuscito a comunicare con lo storage array.
+
+
+
+ a| 
+15
+ a| 
+ARGOMENTO_DUPLICATO
+ a| 
+È stato inserito un argomento duplicato.
+
+
+
+ a| 
+16
+ a| 
+EXECUTION_ERROR
+ a| 
+Si è verificato un errore di esecuzione.
+
+
+
+ a| 
+17
+ a| 
+NO_HOST_AT_ADDRESS
+ a| 
+Un host non si trovava all'indirizzo specificato.
+
+
+
+ a| 
+18
+ a| 
+WWNAME_NOT_IN_CONFIG_FILES
+ a| 
+L'ID WWID non era nel file di configurazione.
+
+
+
+ a| 
+19
+ a| 
+WWNAME_NOT_AT_ADDRESS
+ a| 
+L'ID WWID non era all'indirizzo.
+
+
+
+ a| 
+20
+ a| 
+UNKNOWN_IP
+ a| 
+È stato specificato un indirizzo IP sconosciuto.
+
+
+
+ a| 
+21
+ a| 
+PM_CONFIG_FILE_CORROTTO
+ a| 
+Il file di configurazione di Event Monitor è corrotto.
+
+
+
+ a| 
+22
+ a| 
+IMPOSSIBILE_COMUNICARE_CON_PM
+ a| 
+Lo storage array non è riuscito a comunicare con Event Monitor.
+
+
+
+ a| 
+23
+ a| 
+UNEXIST_ALERT
+ a| 
+Il controller non è riuscito a scrivere le impostazioni degli avvisi.
+
+
+
+ a| 
+24
+ a| 
+NODO_ORGANIZZATORE_ERRATO
+ a| 
+È stato specificato un nodo organizzatore errato.
+
+
+
+ a| 
+25
+ a| 
+CMD_NOT_AVAILABLE
+ a| 
+Il comando non era disponibile.
+
+
+
+ a| 
+26
+ a| 
+DEVICE_NOT_IN_CONFIG_FILE
+ a| 
+Il dispositivo non era nel file di configurazione.
+
+
+
+ a| 
+27
+ a| 
+ERROR_UPDATING_CONFIG_FILE
+ a| 
+Si è verificato un errore durante l'aggiornamento del file di configurazione.
+
+
+
+ a| 
+28
+ a| 
+UNKNOWN_HOST_ERROR
+ a| 
+Si è verificato un errore host sconosciuto.
+
+
+
+ a| 
+29
+ a| 
+FILE_CONTATTO_MITTENTE_NON_TROVATO
+ a| 
+Impossibile trovare il file delle informazioni di contatto del mittente.
+
+
+
+ a| 
+30
+ a| 
+READ_SENDER_CONTACT_FILE_FAILED
+ a| 
+Impossibile leggere il file delle informazioni di contatto del mittente.
+
+
+
+ a| 
+31
+ a| 
+USERDATA_FILE_EXISTS
+ a| 
+Il `userdata.txt` il file esiste.
+
+
+
+ a| 
+32
+ a| 
+BAD_EMAIL_INFORMATION_TO_INCLUDE
+ a| 
+Un non valido `-I` è stato specificato il valore nella notifica di avviso via email.
+
+
+
+ a| 
+33
+ a| 
+BAD_EMAIL_FREQUENCY
+ a| 
+Un non valido `-f` è stato specificato il valore nella notifica di avviso via email.
+
+
+
+ a| 
+34
+ a| 
+OPZIONE_RIMOSSA
+ a| 
+Il `-r` l'opzione non è più supportata.
+
+
+
+ a| 
+35
+ a| 
+UNKNOWN_ALERT_PRIORITY
+ a| 
+Severità dell'avviso specificata non valida.
+
+
+
+ a| 
+36
+ a| 
+PASSWORD_OBBLIGATORIA
+ a| 
+L'operazione richiede l'impostazione della password Administrator o Monitor.
+
+
+
+ a| 
+37
+ a| 
+PASSWORD_MONITOR_NON VALIDA
+ a| 
+Impossibile completare l'operazione perché è stata inserita una password Monitor non valida.
+
+
+
+ a| 
+38
+ a| 
+PASSWORD_AMMINISTRATORE_NON VALIDA
+ a| 
+Impossibile completare l'operazione perché è stata inserita una password amministratore non valida.
+
+
+
+ a| 
+39
+ a| 
+EXCEEDED_MAX_CHARS_FOR_PASSWORD
+ a| 
+La password fornita supera il limite di caratteri.
+
+
+
+ a| 
+40
+ a| 
+TOKEN_MONITOR_NON_VALIDO
+ a| 
+Il `-R` monitor non supportato per questo array. Utilizzare un ruolo valido e riprovare l'operazione.
+
+
+
+ a| 
+41
+ a| 
+ASUP_CONFIG_ERROR
+ a| 
+Si è verificato un errore durante la scrittura o la lettura dal file di configurazione AutoSupport. Riprovare a eseguire questa operazione.
+
+
+
+ a| 
+42
+ a| 
+MAIL_SERVER_UNKNOWN
+ a| 
+L'indirizzo host o l'indirizzo del server di posta non è corretto.
+
+
+
+ a| 
+43
+ a| 
+ASUP_SMTP_REPLY_ADDRESS_REQUIRED
+ a| 
+Nessun array abilitato ASUP integro rilevato durante il test di configurazione ASUP.
+
+
+
+ a| 
+44
+ a| 
+NO_ASUP_ARRAYS_DETECTED
+ a| 
+Se il tipo di recapito ASUP è SMTP, è necessario rispondere alla richiesta di posta elettronica.
+
+
+
+ a| 
+45
+ a| 
+ASUP_INVALID_MAIL_RELAY_SERVER
+ a| 
+Impossibile convalidare il server di inoltro della posta ASUP.
+
+
+
+ a| 
+46
+ a| 
+ASUP_INVALID_SENDER_EMAIL
+ a| 
+L'indirizzo e-mail del mittente specificato non è un formato valido.
+
+
+
+ a| 
+47
+ a| 
+ASUP_INVALID_PAC_SCRIPT
+ a| 
+Il file di script PAC (Proxy Auto-Configuration) non è un URL valido.
+
+
+
+ a| 
+48
+ a| 
+ASUP_INVALID_PROXY_SERVER_HOST_ADDRESS
+ a| 
+Impossibile trovare l'indirizzo host specificato o formato non corretto.
+
+
+
+ a| 
+49
+ a| 
+ASUP_INVALID_PROXY_SERVER_NUMERO_PORTA
+ a| 
+Il formato del numero di porta specificato non è valido.
+
+
+
+ a| 
+50
+ a| 
+ASUP_INVALID_AUTHENTICATION_PARAMETER
+ a| 
+Il nome utente o la password specificati non sono validi.
+
+
+
+ a| 
+51
+ a| 
+ASUP_INVALID_DAILY_TIME_PARAMETER
+ a| 
+Il parametro Daily Time specificato non è valido.
+
+
+
+ a| 
+52
+ a| 
+ASUP_INVALID_DAY_OF_WEEK_PARAMETER
+ a| 
+Il `-dayOfWeek` i parametri immessi non sono validi.
+
+
+
+ a| 
+53
+ a| 
+ASUP_INVALID_WEEKLY_TIME_PARAMETER
+ a| 
+Il parametro settimanale non è valido.
+
+
+
+ a| 
+54
+ a| 
+ASUP_INVALID_SCHEDULE_PARSING
+ a| 
+Impossibile analizzare correttamente le informazioni di pianificazione fornite.
+
+
+
+ a| 
+55
+ a| 
+ASUP_INVALID_SA_SPECIFICED
+ a| 
+Specificato array di storage non valido.
+
+
+
+ a| 
+56
+ a| 
+ASUP_INVALID_INPUT_ARCHIVE
+ a| 
+L'archivio di input immesso non è valido. Il parametro di input archive deve essere sotto forma di ``-inputArchive=<n>``dove è un numero intero compreso tra 0 e 5.
+
+
+
+ a| 
+57
+ a| 
+ASUP_INVALID_OUTPUT_LOG
+ a| 
+Non è stato specificato un log di output valido.
+
+
+
+ a| 
+58
+ a| 
+ASUP_TRANSMISSION_FILE_COPY_ERROR
+ a| 
+Si è verificato un errore durante il tentativo di copia del file di log della trasmissione AutoSupport. Il log di trasmissione non esiste o si è verificato un errore io durante il tentativo di copiare i dati.
+
+
+
+ a| 
+59
+ a| 
+ASUP_DUPLICATE_NAMED_ARRAY
+ a| 
+Sono stati trovati più array di storage con lo stesso nome. Riprovare il comando utilizzando il parametro World-wide-name, `-w <WWID>`.
+
+
+
+ a| 
+60
+ a| 
+ASUP_NO_SPECIFIED_ARRAY_FOUND
+ a| 
+Lo storage array specificato con il parametro -n <storage-system-name> non è presente o non è supportato per questo comando.
+
+
+
+ a| 
+61
+ a| 
+ASUP_NO_SPECIFIED_WWID_FOUND
+ a| 
+L'array di storage specificato con `-w <WWID>` parametro non presente o non supportato per questo comando.
+
+
+
+ a| 
+62
+ a| 
+ASUP_FILTERED_TRANSMISSION_LOG_ERROR
+ a| 
+Si è verificato un errore sconosciuto durante il tentativo di ottenere il registro di trasmissione filtrato.
+
+
+
+ a| 
+63
+ a| 
+ASUP_TRANSMISSION_ARCHIVE_DOES_NOT_EXIST
+ a| 
+Il log di trasmissione dell'archivio di input AutoSupport specificato con``-inputArchive=<n>`` il parametro non esiste.
+
+
+
+ a| 
+64
+ a| 
+NO_VALID_REST_CLIENT_DISCOVERED
+ a| 
+Impossibile comunicare con lo storage array tramite https.
+
+
+
+ a| 
+65
+ a| 
+VERSIONE_CLI_NON VALIDA
+ a| 
+La versione CLI del client non è compatibile con la versione CLI in esecuzione sullo storage array.
+
+
+
+ a| 
+66
+ a| 
+NOME_UTENTE_O_PASSWORD_NON_VALIDI
+ a| 
+Il nome utente o la password immessi non sono validi.
+
+
+
+ a| 
+67
+ a| 
+UNTRUSTED_CONNECTION
+ a| 
+Impossibile stabilire una connessione sicura allo storage array.
+
+
+
+ a| 
+68
+ a| 
+FILE_PASSWORD_NON_VALIDO
+ a| 
+Impossibile trovare il file della password o non è leggibile.
+
+|===

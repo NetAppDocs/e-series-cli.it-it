@@ -1,0 +1,47 @@
+---
+permalink: commands-a-z/activate-storagearray-firmware.html 
+sidebar: sidebar 
+keywords: activate, storage array, firmware, syntax, parameter, minimum, level 
+summary: 'Il comando Activate StorageArray firmware attiva il firmware precedentemente scaricato nell"area di configurazione in sospeso dei controller dello storage array.' 
+---
+= Attivare il firmware dello storage array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `activate storageArray firmware` il comando attiva il firmware precedentemente scaricato nell'area di configurazione in sospeso dei controller dell'array di storage.
+
+
+
+== Sintassi
+
+[listing]
+----
+activate storageArray firmware
+[healthCheckMelOverride=(TRUE | FALSE)]
+----
+
+
+== Parametro
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`healthCheckMelOverride`
+ a| 
+L'impostazione che consente di ignorare i risultati della verifica dello stato di salute del registro eventi principale (MEL). La convalida MEL continua a verificarsi; non viene ignorata. Se il controllo MEL non riesce, è possibile ignorare l'errore utilizzando questo parametro quando si esegue il comando.
+
+Prima di qualsiasi attivazione, il controller controlla il registro eventi per determinare se si è verificato un evento che potrebbe impedire l'attivazione del nuovo firmware del controller. In caso di evento di questo tipo, il controller normalmente non attiva il nuovo firmware.
+
+Questo parametro forza il controller ad attivare il nuovo firmware. Il valore predefinito è `FALSE`. Impostare questo valore su `TRUE` se si desidera forzare il controller ad attivare il nuovo firmware del controller.
+
+|===
+
+
+== Livello minimo del firmware
+
+8.10 aggiunge `healthCheckMelOverride` parametro.

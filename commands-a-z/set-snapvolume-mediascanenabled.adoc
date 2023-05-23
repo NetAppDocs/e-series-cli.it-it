@@ -1,0 +1,82 @@
+---
+permalink: commands-a-z/set-snapvolume-mediascanenabled.html 
+sidebar: sidebar 
+keywords: set, snapshot, volume, media, scan 
+summary: Il comando Set SnapVolume mediaScanEnabled esegue una scansione dei supporti sui dischi utilizzati per un volume di snapshot. 
+---
+= Consente di impostare la scansione dei supporti del volume Snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set snapVolume mediaScanEnabled` il comando esegue una scansione dei supporti sui dischi utilizzati per un volume di snapshot.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+In alternativa, è anche possibile eseguire un controllo di ridondanza sui dati.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set snapVolume pass:quotes[["_snapVolumeName_"]]
+mediaScanEnabled=(TRUE | FALSE) [redundancyCheckEnabled=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`snapVolume`
+ a| 
+Il nome del volume di snapshot per il quale si stanno impostando le proprietà. Racchiudere l'identificatore del volume snapshot tra virgolette doppie (" ") all'interno di parentesi quadre ([ ]).
+
+
+
+ a| 
+`mediaScanEnabled`
+ a| 
+L'impostazione per attivare o disattivare la scansione del supporto per il volume snapshot. Per attivare la scansione dei supporti, impostare questo parametro su `TRUE`. Per disattivare la scansione dei supporti, impostare questo parametro su `FALSE`. (Se la scansione dei supporti è disattivata a livello di array di storage, questo parametro non ha alcun effetto).
+
+
+
+ a| 
+`redundancyCheckEnabled`
+ a| 
+L'impostazione per attivare o disattivare il controllo della ridondanza durante una scansione del supporto. Per attivare il controllo della ridondanza, impostare questo parametro su `TRUE` . Per disattivare il controllo della ridondanza, impostare questo parametro su `FALSE`.
+
+|===
+
+
+== Note
+
+È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per i nomi. I nomi possono avere un massimo di 30 caratteri.
+
+
+
+== Livello minimo del firmware
+
+7.83

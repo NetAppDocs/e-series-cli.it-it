@@ -1,0 +1,63 @@
+---
+permalink: commands-a-z/set-storagearray-unnameddiscoverysession.html 
+sidebar: sidebar 
+keywords: set, storage, array, unnamed, discovery, session 
+summary: 'Il comando Set StorageArray unnamedDiscoverySession consente all"array di storage di partecipare a sessioni di rilevamento senza nome.' 
+---
+= Impostare la sessione di rilevamento senza nome dell'array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray unnamedDiscoverySession` il comando consente allo storage array di partecipare a sessioni di rilevamento senza nome.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing]
+----
+set storageArray unnamedDiscoverySession=(TRUE | FALSE)
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`unnamedDiscoverySession`
+ a| 
+Questo parametro attiva o disattiva le sessioni di rilevamento senza nome. Impostare il parametro su `TRUE` per attivare sessioni di rilevamento senza nome. Impostare il parametro su `FALSE` per disattivare le sessioni di rilevamento senza nome.
+
+|===
+
+
+== Note
+
+Discovery è il processo in cui gli iniziatori determinano le destinazioni disponibili. Il rilevamento si verifica all'accensione/inizializzazione e anche se la topologia del bus cambia, ad esempio se viene aggiunto un dispositivo aggiuntivo.
+
+Una sessione di rilevamento senza nome è una sessione di rilevamento stabilita senza specificare un ID di destinazione nella richiesta di accesso. Per le sessioni di rilevamento senza nome, né l'ID di destinazione né l'ID del gruppo di portali di destinazione sono disponibili per le destinazioni.
+
+
+
+== Livello minimo del firmware
+
+7.10

@@ -1,0 +1,75 @@
+---
+permalink: commands-a-z/download-storagearray-drivefirmware-file.html 
+sidebar: sidebar 
+keywords: download, storage, array, drive, firmware, command, images, roles, supported 
+summary: Il comando download StorageArray drivefirmware scarica le immagini del firmware su tutti i dischi dello storage array. 
+---
+= Scaricare il firmware del disco dell'array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `download storageArray driveFirmware file` il comando scarica le immagini del firmware su tutte le unità dell'array di storage.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[download storageArray driveFirmware file="_filename_"]
+pass:quotes[[file="_filename2_"... file="_filenameN_"]]
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`file`
+ a| 
+Il percorso e il nome del file che contiene l'immagine del firmware. Racchiudere il percorso del file e il nome del file dell'immagine del firmware tra virgolette doppie (" "). Ad esempio:
+
+`file="C:\Program Files\CLI\dnld\sadrvfrm.dlp"`
+
+I nomi di file validi hanno un `.dlp` interno.
+
+|===
+
+
+== Note
+
+Quando si esegue questo comando, è possibile scaricare più di un file di immagine del firmware sui dischi di uno storage array. Il numero di file immagine del firmware che è possibile scaricare dipende dall'array di storage. Il software di gestione dello storage restituisce un errore se si tenta di scaricare più file di immagine del firmware di quanti lo storage array possa accettare.
+
+È possibile pianificare i download per più dischi contemporaneamente, inclusi più dischi in un gruppo di volumi ridondante. Ciascun file di immagine del firmware contiene informazioni sui tipi di unità su cui viene eseguita l'immagine del firmware. Le immagini firmware specificate possono essere scaricate solo su un'unità compatibile. Utilizzare `download drive firmware` comando per scaricare un'immagine del firmware su un disco specifico.
+
+Il `download storageArray driveFirmware` Il comando blocca tutte le attività di i/o fino a quando non viene effettuato un tentativo di download per ciascun disco candidato o non viene eseguito il `stop storageArray downloadDriveFirmware` comando. Quando il `download storageArray driveFirmware` il comando termina il download dell'immagine del firmware, ogni disco candidato mostra lo stato del download per ciascun disco. Viene restituito uno di questi stati:
+
+* Riuscito
+* Non riuscito con motivo
+* Mai tentato con ragione
+
+
+
+
+== Livello minimo del firmware
+
+5.20

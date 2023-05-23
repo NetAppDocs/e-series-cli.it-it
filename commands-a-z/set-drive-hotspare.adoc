@@ -1,0 +1,75 @@
+---
+permalink: commands-a-z/set-drive-hotspare.html 
+sidebar: sidebar 
+keywords: set, drive, hot spare 
+summary: Il comando set drive hotspare assegna o disassegna uno o più dischi come hot spare. 
+---
+= Impostare lo spare a caldo del disco
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set drive hotSpare` il comando assegna o disassegna uno o più dischi come hot spare.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set (drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_]] | drivespass:quotes[[_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_]])
+hotSpare=(TRUE | FALSE)
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`drive` oppure `drives`
+ a| 
+Per i vassoi ad alta capacità, specificare il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot per l'unità. Per i vassoi delle unità a bassa capacità, specificare il valore dell'ID del vassoio e il valore dell'ID dello slot per l'unità. I valori dell'ID vassoio sono `0` a. `99`. I valori dell'ID cassetto sono `1` a. `5`.
+
+Tutti i valori massimi di ID slot sono 24. I valori ID slot iniziano con 0 o 1, a seconda del modello di vassoio. I cassetti per dischi compatibili con i controller E2800 e E5700 hanno numeri ID slot a partire da 0. I vassoi per dischi compatibili con i controller E2700 e E5600 hanno numeri ID slot a partire da 1.
+
+Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`hotSpare`
+ a| 
+L'impostazione per assegnare il disco come hot spare. Per assegnare l'unità come hot spare, impostare questo parametro su `TRUE`. Per rimuovere un'assegnazione hot spare da un disco, impostare questo parametro su `FALSE`.
+
+|===
+
+
+== Note
+
+Il `drive` il parametro supporta sia i vassoi per dischi ad alta capacità che quelli a bassa capacità. Un vassoio per dischi ad alta capacità dispone di cassetti che trattengono le unità. I cassetti scorrono fuori dal vassoio dell'unità per consentire l'accesso alle unità. Un vassoio per unità a bassa capacità non dispone di cassetti. Per un vassoio dell'unità ad alta capacità, è necessario specificare l'identificativo (ID) del vassoio dell'unità, l'ID del cassetto e l'ID dello slot in cui si trova l'unità. Per un vassoio dell'unità a bassa capacità, è necessario specificare solo l'ID del vassoio dell'unità e l'ID dello slot in cui si trova un'unità. Per un vassoio dell'unità a bassa capacità, un metodo alternativo per identificare una posizione per un'unità consiste nel specificare l'ID del vassoio dell'unità, impostare l'ID del cassetto su `0`E specificare l'ID dello slot in cui si trova un'unità.
+
+
+
+== Livello minimo del firmware
+
+6.10
+
+7.60 aggiunge `drawerID` input dell'utente.

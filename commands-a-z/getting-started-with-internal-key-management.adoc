@@ -1,0 +1,34 @@
+---
+permalink: commands-a-z/getting-started-with-internal-key-management.html 
+sidebar: sidebar 
+keywords: security key, string, characters, secure enabled, drive, controllers, storage, array, internal, key, management, create, maintain, persistent, memory 
+summary: Una chiave di sicurezza è una stringa di caratteri che viene condivisa tra i dischi abilitati alla protezione e i controller di un array di storage. Quando si utilizza la gestione interna delle chiavi, si creano e si mantengono le chiavi di sicurezza nella memoria persistente del controller. 
+---
+= Introduzione alla gestione interna delle chiavi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Una chiave di sicurezza è una stringa di caratteri che viene condivisa tra i dischi abilitati alla protezione e i controller di un array di storage. Quando si utilizza la gestione interna delle chiavi, si creano e si mantengono le chiavi di sicurezza nella memoria persistente del controller.
+
+Per informazioni sull'utilizzo delle chiavi di sicurezza interne, consultare la guida in linea di Gestore di sistema di SANtricity.
+
+Di seguito viene riportato il flusso di lavoro di base per l'utilizzo delle chiavi di sicurezza interne:
+
+. *Creazione di chiavi di sicurezza*
+. *Impostare le chiavi di sicurezza*
+. *Convalidare la chiave di sicurezza*
+
+
+
+
+== Fasi del flusso di lavoro
+
+I seguenti comandi consentono di iniziare a utilizzare le chiavi di sicurezza interne:
+
+. Creare una chiave di sicurezza dello storage array utilizzando `create storageArray securityKey` comando. Vedere xref:create-storagearray-securitykey.adoc[Creazione di una chiave di sicurezza per array di storage].
+. Impostare la chiave di sicurezza dello storage array utilizzando `set storageArray securityKey` comando. Vedere xref:set-storagearray-securitykey.adoc[Impostazione di una chiave di sicurezza dello storage array].
+. Convalidare la chiave di sicurezza utilizzando `validate storageArray securityKey` comando. Vedere xref:validate-storagearray-securitykey.adoc[Convalida di una chiave di sicurezza dello storage array].
+

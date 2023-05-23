@@ -1,0 +1,101 @@
+---
+permalink: commands-a-z/start-increasevolumecapacity-volume.html 
+sidebar: sidebar 
+keywords: increase, capacity, volume, disk pool, volume, group 
+summary: Il comando start increaseVolumeCapacity volume aumenta la capacità di un volume standard o di un volume di repository in un pool di dischi o un gruppo di volumi. 
+---
+= Aumentare la capacità del volume nel pool di dischi o nel gruppo di volumi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `start increaseVolumeCapacity volume` command aumenta la capacità di un volume standard o di un volume di repository in un pool di dischi o un gruppo di volumi.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+In questo comando, un volume standard viene chiamato anche volume thick.
+
+[NOTE]
+====
+Non è possibile utilizzare questo comando per aumentare la capacità di un volume thin.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[start increaseVolumeCapacity volume="_volumeName_"
+incrementalCapacity=_volumeCapacity_]
+[addDrives=pass:quotes[(_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_)]]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`volume`
+ a| 
+Il nome del volume di un pool di dischi o di un gruppo di volumi per il quale si desidera aumentare la capacità. Racchiudere il nome del volume tra virgolette doppie (" ").
+
+
+
+ a| 
+`incrementalCapacity`
+ a| 
+L'impostazione per aumentare le dimensioni (capacità) dello storage per il volume. Le dimensioni sono definite in unità di `bytes`, `KB`, `MB`, `GB`, o. `TB`. Il valore predefinito è `bytes`.
+
+
+
+ a| 
+`addDrives`
+ a| 
+L'impostazione per aggiungere nuove unità al volume. Per i vassoi ad alta capacità, specificare il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot per l'unità. Per i vassoi delle unità a bassa capacità, specificare il valore dell'ID del vassoio e il valore dell'ID dello slot per l'unità. I valori dell'ID vassoio sono `0` a. `99`. I valori dell'ID cassetto sono `1` a. `5`.
+
+Tutti i valori massimi di ID slot sono 24. I valori ID slot iniziano con 0 o 1, a seconda del modello di vassoio. I cassetti per dischi compatibili con i controller E2800 e E5700 hanno numeri ID slot a partire da 0. I vassoi per dischi compatibili con i controller E2700 e E5600 hanno numeri ID slot a partire da 1.
+
+Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot tra parentesi quadre ([ ]).
+
+[NOTE]
+====
+Il `addDrives` il parametro può essere utilizzato solo per aumentare la capacità di un gruppo di volumi. Il parametro non può essere utilizzato per aumentare la capacità di un pool di dischi.
+
+====
+|===
+
+
+== Note
+
+In alcuni casi un `drive` il parametro potrebbe essere visualizzato come input valido per la sintassi del comando. Tuttavia, non è possibile utilizzare `drive` con questo comando.
+
+Impostazione di `incrementalCapacity` avvia un'operazione a esecuzione prolungata che non è possibile arrestare. Le operazioni a esecuzione prolungata vengono eseguite in background e non impediscono l'esecuzione di altri comandi. Per mostrare l'avanzamento delle operazioni a esecuzione prolungata, utilizzare `show volume actionProgress` comando.
+
+Il `addDrives` il parametro supporta sia i vassoi per dischi ad alta capacità che quelli a bassa capacità. Un vassoio per dischi ad alta capacità dispone di cassetti che trattengono le unità. I cassetti scorrono fuori dal vassoio dell'unità per consentire l'accesso alle unità. Un vassoio per unità a bassa capacità non dispone di cassetti. Per un vassoio dell'unità ad alta capacità, è necessario specificare l'identificativo (ID) del vassoio dell'unità, l'ID del cassetto e l'ID dello slot in cui si trova l'unità. Per un vassoio dell'unità a bassa capacità, è necessario specificare solo l'ID del vassoio dell'unità e l'ID dello slot in cui si trova un'unità. Per un vassoio dell'unità a bassa capacità, un metodo alternativo per identificare una posizione per un'unità consiste nel specificare l'ID del vassoio dell'unità, impostare l'ID del cassetto su `0`E specificare l'ID dello slot in cui si trova un'unità.
+
+
+
+== Livello minimo del firmware
+
+7.83

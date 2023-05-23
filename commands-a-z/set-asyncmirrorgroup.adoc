@@ -1,0 +1,152 @@
+---
+permalink: commands-a-z/set-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: set, asynchronous, mirror, group 
+summary: Il comando set asyncMirrorGroup modifica le impostazioni di sincronizzazione e le soglie di avviso che il proprietario del controller del lato primario del gruppo di mirror asincrono utilizza quando esegue una sincronizzazione iniziale o una risincronizzazione. 
+---
+= Impostare un gruppo di mirror asincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set asyncMirrorGroup` il comando modifica le impostazioni di sincronizzazione e le soglie di avviso che il proprietario del controller del lato primario del gruppo di mirror asincrono utilizza quando esegue una sincronizzazione iniziale o una risincronizzazione.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Contesto
+
+La modifica delle impostazioni di sincronizzazione influisce sulle operazioni di sincronizzazione di tutte le coppie mirrorate all'interno del gruppo di mirror asincrono.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]]
+[volume="repos_xxxx" increaseRepositoryCapacity (repositoryVolume=("repos_xxxx")]
+[syncInterval=pass:quotes[_integer_] (minutes | hours | days)]
+[warningSyncThreshold=pass:quotes[_integer_] (minutes | hours | days)]
+[warningRecoveryThreshold=integer (minutes | hours | days)]
+[userLabel=pass:quotes["_New_asyncMirrorGroupName_"]]
+[warningThresholdPercent=pass:quotes[_percentValue_]]
+[role=(primary | secondary)]
+[autoResync=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Il nome del gruppo di mirror asincrono che si desidera modificare. Racchiudere il nome del gruppo mirror asincrono tra parentesi quadre ([ ]). Se il nome del gruppo mirror asincrono ha caratteri speciali o numeri, è necessario racchiuderlo tra virgolette doppie (" ") all'interno di parentesi quadre.
+
+
+
+ a| 
+`volume`
+ a| 
+Il nome di un volume di repository di gruppi di mirror asincroni per il quale si desidera aumentare la capacità.
+
+Il nome di un volume di repository è composto da due parti:
+
+* Il termine "repos"
+* Identificatore numerico a quattro cifre assegnato dal software di gestione dello storage al nome del volume del repository
+
+
+Racchiudere il nome del volume di repository tra virgolette doppie (" ").
+
+
+
+ a| 
+`syncInterval`
+ a| 
+Specificare il periodo di tempo che intercorre tra l'invio automatico degli aggiornamenti dei dati modificati dall'array di storage locale all'array di storage remoto. È possibile specificare la durata in minuti, ore o giorni.
+
+
+
+ a| 
+`warningSyncThreshold`
+ a| 
+Specificare il tempo di attesa prima che venga attivato un avviso per i casi in cui la sincronizzazione di tutti i volumi all'interno del gruppo di mirror asincrono richiede più tempo del tempo definito. È possibile specificare la durata in minuti, ore o giorni.
+
+
+
+ a| 
+`warningRecoveryThreshold`
+ a| 
+Specificare il tempo di attesa prima che venga attivato un avviso quando l'aggiornamento automatico dei dati per l'immagine point-in-time sull'array di storage remoto è precedente al tempo definito. Definire la soglia dalla fine dell'aggiornamento precedente. È possibile specificare la durata in minuti, ore o giorni.
+
+[NOTE]
+====
+È necessario impostare la soglia del punto di ripristino in modo che sia il doppio della soglia dell'intervallo di sincronizzazione.
+
+====
+
+
+ a| 
+`userLabel`
+ a| 
+Il nuovo nome che si desidera assegnare al gruppo di mirror asincrono. Utilizzare questo parametro quando si desidera rinominare il gruppo di mirror asincrono. Racchiudere il nuovo nome del gruppo mirror asincrono tra virgolette doppie (" ").
+
+
+
+ a| 
+`warningThresholdPercent`
+ a| 
+Specificare il valore percentuale che determina quando viene attivato un avviso quando la capacità di un volume di repository mirror raggiunge la percentuale definita. Definire la soglia in base alla percentuale (%) della capacità rimanente.
+
+
+
+ a| 
+`role`
+ a| 
+Utilizzare questo parametro per promuovere il gruppo di mirror asincrono in un ruolo primario o per declassare il gruppo di mirror asincrono in un ruolo secondario. Per definire il gruppo di mirror asincrono come ruolo primario, impostare questo parametro su `primary`. Per definire il gruppo di mirror asincrono come ruolo secondario, impostare questo parametro su `secondary`.
+
+
+
+ a| 
+`autoResync`
+ a| 
+Le impostazioni per la risincronizzazione automatica tra i volumi primari e i volumi secondari di una coppia di mirroring asincrono all'interno di un gruppo di mirror asincrono. Questo parametro ha i seguenti valori:
+
+* `enabled` -- risincronizzazione automatica attivata. Non è necessario eseguire ulteriori operazioni per risincronizzare il volume primario e il volume secondario.
+* `disabled` -- la risincronizzazione automatica è disattivata. Per risincronizzare il volume primario e il volume secondario, è necessario eseguire `start asyncMirrorGroup` comando.
+
+
+|===
+
+
+== Note
+
+È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per i nomi. I nomi possono avere un massimo di 30 caratteri.
+
+Quando si utilizza questo comando, è possibile specificare uno o più parametri. Tuttavia, non è necessario utilizzare tutti i parametri.
+
+Un volume di repository di gruppi di mirror asincroni è un volume espandibile strutturato come un insieme concatenato di un massimo di 16 entità di volume standard. Inizialmente, un volume di repository espandibile ha un solo volume. La capacità del volume di repository espandibile è esattamente quella del singolo volume. È possibile aumentare la capacità di un volume di repository espandibile allegando altri volumi di repository inutilizzati. La capacità del volume del repository espandibile composito diventa quindi la somma delle capacità di tutti i volumi standard concatenati.
+
+
+
+== Livello minimo del firmware
+
+7.84

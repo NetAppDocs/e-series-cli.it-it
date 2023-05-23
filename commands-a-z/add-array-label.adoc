@@ -1,0 +1,66 @@
+---
+permalink: commands-a-z/add-array-label.html 
+sidebar: sidebar 
+keywords: add array label, supported, syntax, parameters, minimum firmware level 
+summary: 'Il comando Add array label consente di aggiungere un array di storage alla configurazione con un"etichetta definita dall"utente. Ciò consente ai comandi successivi di indirizzare lo storage array in base all"etichetta definita dall"utente piuttosto che in base all"indirizzo IP o al nome host.' 
+---
+= Aggiungere l'etichetta dell'array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `Add array label` il comando consente di aggiungere un array di storage alla configurazione con un'etichetta definita dall'utente. Ciò consente ai comandi successivi di indirizzare lo storage array in base all'etichetta definita dall'utente piuttosto che in base all'indirizzo IP o al nome host.
+
+
+
+== Array supportati
+
+[NOTE]
+====
+L'etichetta definita dall'utente fornita non deve corrispondere al nome dell'array di storage visualizzato in System Manager. Si tratta di un'etichetta locale utilizzata solo per fare riferimento all'array di storage dalla CLI.
+
+====
+Questo comando si applica agli array di storage EF600 ed EF300.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+
+pass:quotes[ _Address1 Address2_ add storageArrayLabel label _userDefinedString_]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`Address`
+ a| 
+Consente di specificare l'indirizzo IP (IPv4 o IPv6) o il nome host completo per lo storage array.
+
+[NOTE]
+====
+Il `Address2` il valore è facoltativo.
+
+====
+
+
+ a| 
+`userDefinedString`
+ a| 
+Consente di specificare un'etichetta per lo storage array.
+
+|===
+
+
+== Livello minimo del firmware
+
+8.60

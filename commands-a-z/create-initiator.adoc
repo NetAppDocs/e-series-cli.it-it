@@ -1,0 +1,98 @@
+---
+permalink: commands-a-z/create-initiator.html 
+sidebar: sidebar 
+keywords: create, initiator 
+summary: 'Il comando create Initiator crea l"oggetto Initiator.' 
+---
+= Crea iniziatore
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `create initiator` il comando crea l'oggetto initiator.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Questo comando sostituisce il deprecato xref:create-iscsiinitiator.adoc[Creare iSCSI Initiator] comando.
+
+====
+[NOTE]
+====
+Questo comando è applicabile solo a iSCSI, iSER, NVMe su RoCE, NVMe su InfiniBand e NVMe su Fibre Channel.
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+
+create initiator identifier="initiatorQualifiedName" userLabel="initiatorName" host="hostName"
+interfaceType=(iscsi | iser | nvmeof) [chapSecret="securityKey"]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`identifier`
+ a| 
+Consente di specificare il nome qualificato dell'identificatore (ad esempio iqn o nqn) per creare un iniziatore . Racchiudere l'identificatore tra virgolette doppie (" ").
+
+
+
+ a| 
+`userLabel`
+ a| 
+Consente di specificare un'etichetta utente per l'iniziatore. Racchiudere il nome tra virgolette doppie (" ").
+
+
+
+ a| 
+`host`
+ a| 
+Consente di specificare il nome host in cui è installato l'iniziatore. Racchiudere il nome tra virgolette doppie (" ").
+
+
+
+ a| 
+`interfaceType`
+ a| 
+Consente di specificare il tipo di interfaccia per cui si desidera utilizzare l'iniziatore. Le opzioni valide sono: iscsi, iser o nvmeof.
+
+
+
+ a| 
+`chapSecret`
+ a| 
+Consente di inserire la chiave di sicurezza che si desidera utilizzare per autenticare una connessione peer. Racchiudere la chiave di sicurezza tra virgolette doppie (" "). Questo parametro è applicabile solo ai tipi di interfaccia host iSER e iSCSI.
+
+|===
+
+
+== Livello minimo del firmware
+
+8.41

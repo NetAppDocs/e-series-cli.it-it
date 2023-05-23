@@ -1,0 +1,67 @@
+---
+permalink: commands-a-z/set-storagearray-hostconnectivityreporting.html 
+sidebar: sidebar 
+keywords: enable, disable, host, connectivity, report 
+summary: Il comando Set StorageArray hostConnectivityReporting attiva o disattiva il reporting della connettività host sul controller. 
+---
+= Attiva o disattiva il reporting della connettività host
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray hostConnectivityReporting` il comando attiva o disattiva il reporting della connettività host sul controller.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing]
+----
+set storageArray hostConnectivityReporting (enable | disable)
+----
+
+
+== Contesto
+
+Quando si attiva la funzione di reporting della connettività host sullo storage array, lo storage array monitora continuamente la connessione tra i controller dello storage array e gli host configurati e avvisa l'utente se la connessione viene interrotta a causa di un cavo allentato, danneggiato o mancante o di altri problemi con l'host. Viene inoltre visualizzato un messaggio di notifica se il tipo di host non è stato specificato correttamente nell'array di storage (che potrebbe causare problemi di failover).
+
+[NOTE]
+====
+Per disattivare il reporting della connettività host, è necessario prima disattivare il bilanciamento automatico del carico.
+
+====
+[NOTE]
+====
+Se il bilanciamento automatico del carico è disattivato, è possibile mantenere attivato il reporting della connettività host.
+
+====
+[NOTE]
+====
+Funzione di reporting della connettività host e bilanciamento automatico del carico solo sui tipi di host Linux DHALUA, Windows/Windows Clustered e VMware.
+
+====
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Livello minimo del firmware
+
+8.42 nuovo parametro di comando.

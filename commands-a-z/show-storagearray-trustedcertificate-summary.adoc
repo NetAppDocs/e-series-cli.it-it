@@ -1,0 +1,100 @@
+---
+permalink: commands-a-z/show-storagearray-trustedcertificate-summary.html 
+sidebar: sidebar 
+keywords: show, installed, trusted, ca, certificates, summary 
+summary: 'Il comando show StorageArray trustedCertificate summary visualizza il riepilogo dei certificati CA attendibili installati dall"array. Questo comando è utile da utilizzare prima di eseguire il comando delete StorageArray trustedCertificate in modo da conoscere i nomi alias dei certificati da eliminare.' 
+---
+= Mostra il riepilogo dei certificati CA attendibili installati
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show storageArray trustedCertificate summary` Il comando visualizza il riepilogo dei certificati CA attendibili installati dall'array. Questo comando è utile prima di eseguire `delete storageArray trustedCertificate` in modo da conoscere i nomi alias dei certificati da eliminare.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+
+show storageArray trustedCertificate [all | allUserInstalled|
+ aliases=pass:quotes[("_alias1_" ... "_aliasN_")]] summary
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`all`
+ a| 
+Consente di specificare il recupero di tutti i certificati, inclusi quelli preinstallati e quelli installati dall'utente.
+
+
+
+ a| 
+`allUserInstalled`
+ a| 
+Consente di specificare il recupero di tutti i certificati installati dall'utente. Questa è l'opzione predefinita.
+
+
+
+ a| 
+`aliases`
+ a| 
+Consente all'utente di specificare il certificato attendibile preinstallato o installato dall'utente da recuperare in base all'alias. Racchiudere tutti gli alias tra parentesi. Se si immettono più alias, separarli con uno spazio.
+
+|===
+
+
+== Esempi
+
+L'output del campione potrebbe essere diverso da quello illustrato di seguito.
+
+[listing, subs="+macros"]
+----
+
+SMcli -n Array1 -c "show storageArray trustedCertificate allUserInstalled summary;"
+============================
+Trusted Certificates
+============================
+Alias:        19527b38-8d26-44e5-8c7f-5bf2ca9db7cf
+Type:         Pre-installed | User installed
+Subject DN:   CN=Corp Issuing CA 1
+Issuer DN:    CN=Corp Root CA
+pass:quotes[Start:        _date_]
+pass:quotes[Expire:       _date_]
+---------------------
+Alias:        myAliasName
+Type:         Pre-installed | User installed
+Subject DN:   CN=Corp Issuing CA 1
+Issuer DN:    CN=Corp Root CA
+pass:quotes[Start:        _date_]
+pass:quotes[Expire:       _date_]
+
+SMcli completed successfully.
+----
+
+
+== Livello minimo del firmware
+
+8.40

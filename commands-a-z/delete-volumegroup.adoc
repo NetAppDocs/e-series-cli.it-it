@@ -1,0 +1,64 @@
+---
+permalink: commands-a-z/delete-volumegroup.html 
+sidebar: sidebar 
+keywords: delete, volume, group, command, entire, associated, support, role 
+summary: Il comando delete VolumeGroup elimina un intero gruppo di volumi e i volumi associati. 
+---
+= Elimina gruppo di volumi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `delete volumeGroup` il comando elimina un intero gruppo di volumi e i volumi associati.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[IMPORTANT]
+====
+*Possibili danni alla configurazione dello storage array* -- tutti i dati nel gruppo di volumi vengono persi non appena si esegue questo comando.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[delete volumeGroup [_volumeGroupName_]]
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Il nome del gruppo di volumi che si desidera eliminare. Racchiudere il nome del gruppo di volumi tra parentesi quadre ([ ]).
+
+|===
+
+
+== Livello minimo del firmware
+
+6.10

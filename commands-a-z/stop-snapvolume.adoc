@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/stop-snapvolume.html 
+sidebar: sidebar 
+keywords: stop, snapshot, volume 
+summary: 'Il comando stop snapVolume interrompe l"operazione di un volume snapshot.' 
+---
+= Arrestare il volume di snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `stop snapVolume` il comando interrompe l'operazione di un volume snapshot.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[stop snapVolume ["_snapVolumeName_"]]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`snapVolume`
+ a| 
+Il nome del volume di snapshot che si desidera interrompere. Racchiudere il nome del volume snapshot tra virgolette doppie (" ") tra parentesi quadre ([ ]).
+
+|===
+
+
+== Note
+
+È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per i nomi. I nomi possono avere un massimo di 30 caratteri.
+
+
+
+== Livello minimo del firmware
+
+7.83

@@ -1,0 +1,102 @@
+---
+permalink: commands-a-z/create-snmpuser-username.html 
+sidebar: sidebar 
+keywords: register, snmpv3 usm, user 
+summary: 'Il comando create snmpUser Username crea un nuovo utente SNMP (Simple Network Management Protocol) e registra il nuovo utente come entità nota per l"agente SNMP. Qualsiasi tentativo di registrare un nuovo utente con lo stesso nome e ID motore di quello di un utente esistente viene rifiutato.' 
+---
+= Registrare l'utente SNMPv3 USM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `create snmpUser userName` Il comando crea un nuovo utente SNMP (Simple Network Management Protocol) e registra il nuovo utente come entità nota nell'agente SNMP. Qualsiasi tentativo di registrare un nuovo utente con lo stesso nome e ID motore di quello di un utente esistente viene rifiutato.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Sintassi
+
+[listing]
+----
+create snmpUser userName="snmpUserName"
+    [engineId=(local | engineId)]
+    [authProtocol=(none | sha | sha256 | sha512) authPassword="authPassword"]
+    [privProtocol=(none | aes128) privPassword="privPassword"]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`userName`
+ a| 
+Il nome dell'utente SNMP USM che si desidera creare. Racchiudere il nome utente SNMP USM tra virgolette doppie (" ")
+
+
+
+ a| 
+`engineId`
+ a| 
+L'identificativo dell'ID del motore SNMP autorevole per l'utente. Il valore può essere "[.code]``local``" Per specificare l'agente SNMP locale come agente autorevole o una stringa di cifre esadecimali per specificare un ID del motore dell'agente SNMP remoto. Il valore predefinito è "[.code]``local``".
+
+
+
+ a| 
+`authProtocol`
+ a| 
+Il protocollo di autenticazione (HMAC) da utilizzare per l'utente. Il valore può essere uno dei seguenti:
+
+* `none` - Nessuna autenticazione dei messaggi SNMP (impostazione predefinita)
+* `sha` - Autenticazione SHA-1
+* `sha256` - Autenticazione SHA-256
+* `sha512` - Autenticazione SHA-512
+
+
+
+
+ a| 
+`authPassword`
+ a| 
+La password da utilizzare per l'autenticazione dell'utente. Deve essere specificato se il protocollo di autenticazione è "[.code]``sha``", "[.code]``sha256``" o "[.code]``sha512``"
+
+
+
+ a| 
+`privProtocol`
+ a| 
+Il protocollo di privacy (crittografia) da utilizzare per l'utente. Il valore può essere uno dei seguenti:
+
+* `none` - Nessuna crittografia dei messaggi SNMP (impostazione predefinita)
+* `aes128` - Crittografia AES-18
+
+
+
+
+ a| 
+`privPassword`
+ a| 
+La password da utilizzare per la privacy/crittografia dell'utente. Deve essere specificato se il protocollo di privacy è "[.code]``aes128``".
+
+|===
+
+
+== Livello minimo del firmware
+
+8.72

@@ -1,0 +1,83 @@
+---
+permalink: commands-a-z/show-storagearray-lunmappings.html 
+sidebar: sidebar 
+keywords: show, storage, array, lun, map 
+summary: 'Il comando show StorageArray lunMappings restituisce informazioni dal profilo dell"array di storage relative alle mappature LUN (Logical Unit Number) o NSID (Namespace ID) nell"array di storage.' 
+---
+= Mostra mappature LUN array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show storageArray lunMappings` Il comando restituisce informazioni dal profilo dello storage array relative alle mappature LUN (Logical Unit Number) o NSID (Namespace ID) nell'array di storage.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Storage Monitor.
+
+
+
+== Contesto
+
+Vengono sempre visualizzate le mappature LUN o NSID del gruppo predefinito. Se si esegue questo comando senza parametri, questo comando restituisce tutte le mappature LUN o NSID.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+show storageArray lunMappings (host pass:quotes[["_hostName_"]] |
+hostgroup pass:quotes[["_hostGroupName_"]])
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`host`
+ a| 
+Il nome di un host specifico per il quale si desidera visualizzare le mappature LUN o NSID. Racchiudere il nome host tra virgolette doppie (" ") tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`hostGroup`
+ a| 
+Il nome di un gruppo host specifico per il quale si desidera visualizzare le mappature LUN o NSID. Racchiudere il nome del gruppo di host tra virgolette doppie (" ") all'interno di parentesi quadre ([ ]).
+
+|===
+
+
+== Note
+
+Questo comando restituisce informazioni sulla topologia dell'host simili a questo esempio.
+
+[listing]
+----
+MAPPINGS (Storage Partitioning - Enabled (0 of 16 used))
+VOLUME NAME  LUN  CONTROLLER  ACCESSIBLE BY  VOLUME STATUS
+Access Volume 7   A,B         Default Group  Optimal
+21           21   B           Default Group  Optimal
+22           22   B           Default Group  Optimal
+----
+
+
+== Livello minimo del firmware
+
+6.10

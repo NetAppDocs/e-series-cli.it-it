@@ -1,0 +1,59 @@
+---
+permalink: commands-a-z/reset-storagearray-ibstatsbaseline.html 
+sidebar: sidebar 
+keywords: reset, storage array, infiniband, statistics, baseline 
+summary: Il comando reset StorageArray ibStatsBaseline reimposta la baseline delle statistiche InfiniBand su 0 per lo storage array. 
+---
+= Ripristinare la baseline delle statistiche InfiniBand dell'array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `reset storageArray ibStatsBaseline` Il comando ripristina la baseline delle statistiche InfiniBand su 0 per l'array di storage.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+[NOTE]
+====
+Questo comando è obsoleto e viene sostituito da xref:reset-storagearray-hostportstatisticsbaseline.adoc[Ripristinare la baseline delle statistiche della porta host dell'array di storage] comando.
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+reset storageArray ibStatsBaseline
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Note
+
+Questo comando non ripristina effettivamente i conteggi raw mantenuti nell'hardware e nel firmware. Al contrario, il firmware crea un'istantanea dei valori correnti del contatore e utilizza questi valori per segnalare le differenze nei conteggi quando le statistiche vengono recuperate. Il nuovo tempo di riferimento viene applicato a entrambi i controller in modo che i conteggi dei controller siano sincronizzati l'uno con l'altro. Se un controller viene reimpostato senza che l'altro controller venga reimpostato, i contatori non vengono più sincronizzati. Il client si rende conto che i controller non sono sincronizzati perché i dati di timestamp riportati insieme alle statistiche non sono gli stessi per entrambi i controller.
+
+
+
+== Livello minimo del firmware
+
+7.10
+
+8.41 questo comando è obsoleto.

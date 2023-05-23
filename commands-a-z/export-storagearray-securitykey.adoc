@@ -1,0 +1,107 @@
+---
+permalink: commands-a-z/export-storagearray-securitykey.html 
+sidebar: sidebar 
+keywords: export, storage, array, security, key, command, save, drive, securitykey, file, context, role 
+summary: Il comando export StorageArray securityKey salva una chiave di sicurezza del disco in un file. 
+---
+= Esportare la chiave di sicurezza dello storage array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `export storageArray securityKey` il comando salva una chiave di sicurezza del disco in un file.
+
+
+
+== Array supportati
+
+Se è attivata la gestione esterna delle chiavi, questo comando si applica solo agli array E2800, E5700, EF600 e EF300. Se è attivata la gestione delle chiavi interne, il comando si applica a qualsiasi singolo array di storage, purché siano installati tutti i pacchetti SMcli.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Contesto
+
+Quando il file delle chiavi viene esportato da un array di storage, tale chiave può essere importata in un altro array di storage. In questo modo è possibile spostare dischi con funzionalità di sicurezza tra array di storage.
+
+[NOTE]
+====
+Questo comando si applica alla gestione delle chiavi sia interna che esterna.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+export storageArray securityKey
+pass:quotes[passPhrase="_passPhraseString_"]
+pass:quotes[file="_fileName_"]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`passPhrase`
+ a| 
+Stringa di caratteri che crittografa la chiave di protezione in modo da potervi memorizzare in un file esterno. Racchiudere la passphrase tra virgolette doppie (" ").
+
+
+
+ a| 
+`file`
+ a| 
+Il percorso del file e il nome del file in cui si desidera salvare la chiave di sicurezza. Ad esempio:
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\drivesecurity.slk"
+----
+[NOTE]
+====
+Il nome del file deve avere un'estensione di `.slk`.
+
+====
+|===
+
+
+== Note
+
+L'array di storage su cui verranno trasferiti i dischi deve avere dischi con una capacità uguale o superiore a quella dei dischi che si stanno importando.
+
+Il firmware del controller crea un blocco che limita l'accesso ai dischi con crittografia completa del disco (FDE). I dischi FDE hanno uno stato chiamato Security Capable. Quando si crea una chiave di sicurezza, lo stato viene impostato su Security Enabled (protezione abilitata), che limita l'accesso a tutti i dischi FDE presenti nell'array di storage.
+
+La password deve soddisfare i seguenti criteri:
+
+* La lunghezza deve essere compresa tra 8 e 32 caratteri.
+* Non deve contenere spazi vuoti.
+* Deve contenere almeno una lettera maiuscola.
+* Deve contenere almeno una lettera minuscola.
+* Deve contenere almeno un numero.
+* Deve contenere almeno un carattere non alfanumerico, ad esempio < > @ +.
+
+
+[NOTE]
+====
+Se la password non soddisfa questi criteri, viene visualizzato un messaggio di errore e viene richiesto di riprovare a eseguire il comando.
+
+====
+
+
+== Livello minimo del firmware
+
+7.40

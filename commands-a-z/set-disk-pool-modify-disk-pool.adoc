@@ -1,0 +1,100 @@
+---
+permalink: commands-a-z/set-disk-pool-modify-disk-pool.html 
+sidebar: sidebar 
+keywords: set, disk pool, modify 
+summary: 'Il comando set diskPool aggiunge capacità a un pool di dischi (Dynamic Capacity Expansion o DCE) o modifica la proprietà del controller per l"intero pool di dischi.' 
+---
+= Set disk pool (modifica pool di dischi)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set diskPool` Il comando aggiunge capacità a un pool di dischi (Dynamic Capacity Expansion o DCE) o modifica la proprietà del controller per l'intero pool di dischi.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Queste due operazioni si escludono a vicenda.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set diskPool pass:quotes[[_diskPoolName_]]
+(addDrives=pass:quotes[[_trayID1_,_drawerID1_,_slotID1_ ... _trayIDn_,_drawerIDn_,_slotIDn_]] |
+addCapacity=pass:quotes[(_diskPoolCapacity_))]
+[owner=(a| b)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`diskPool`
+ a| 
+Il nome del pool di dischi che si desidera modificare. Racchiudere il nome del pool di dischi tra parentesi quadre ([ ]). Se il nome del pool di dischi ha caratteri speciali o è composto solo da numeri, è necessario racchiuderlo tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`addDrives`
+ a| 
+Le unità che si desidera aggiungere al pool di dischi. Per i vassoi ad alta capacità, specificare il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot dell'unità che si desidera aggiungere. Per i vassoi delle unità a bassa capacità, specificare il valore dell'ID vassoio e il valore dell'ID slot dell'unità che si desidera aggiungere. I valori dell'ID vassoio sono `0` a. `99`. I valori dell'ID cassetto sono `1` a. `5`. I valori ID slot sono `1` a. `24`. Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot tra parentesi quadre ([ ]).
+
+[NOTE]
+====
+Questa funzione ha un limite di 12 dischi.
+
+====
+
+
+ a| 
+`addCapacity`
+ a| 
+La quantità di capacità di storage aggiuntiva che si desidera aggiungere al pool di dischi. Questo parametro seleziona automaticamente i dischi per soddisfare la capacità che si desidera aggiungere. La capacità viene definita in unità di `bytes`, `KB`, `MB`, `GB`, o. `TB`.
+
+
+
+ a| 
+`owner`
+ a| 
+Il controller proprietario del pool di dischi. Gli identificatori del controller validi sono `a` oppure `b`, dove `a` È il controller nello slot A, e. `b` Il controller si trova nello slot B. Se non si specifica un proprietario, il firmware del controller determina il proprietario.
+
+|===
+
+
+== Note
+
+I volumi già presenti nel pool di dischi rimangono online e disponibili per le operazioni di i/o mentre si aggiungono nuove unità. Prima di aggiungere capacità, il pool di dischi deve trovarsi nello stato completo. Se il pool di dischi non si trova nello stato completo, eseguire `set diskPool complete` prima di aggiungere nuovi dischi.
+
+Per aggiungere capacità, specificare i singoli dischi con `addDrives` o una quantità di capacità del disco con `addCapacity` parametro. Se si utilizza `addDrives`, l'host deve convalidare il set di dischi prima di consentire l'esecuzione dell'operazione. Se si utilizza `addCapacity` parametro, la capacità specificata viene considerata come capacità minima da aggiungere. I dischi candidati con la migliore corrispondenza per la qualità del servizio e una capacità superiore o uguale a quella specificata vengono utilizzati. Se non è disponibile alcun candidato con una corrispondenza minima, o l'elenco di dischi specificato non è disponibile o vengono rilevate corrispondenze errate degli attributi, l'operazione non riesce.
+
+È inoltre possibile utilizzare questo comando per modificare la proprietà di un pool di dischi da un controller nell'array di storage all'altro. L'utilizzo di questo comando per modificare la proprietà si esclude a vicenda con l'utilizzo del comando per aggiungere dischi o capacità.
+
+
+
+== Livello minimo del firmware
+
+7.83

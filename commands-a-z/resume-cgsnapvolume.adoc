@@ -1,0 +1,91 @@
+---
+permalink: commands-a-z/resume-cgsnapvolume.html 
+sidebar: sidebar 
+keywords: resume, consistency, group, snapshot, volume 
+summary: 'Il comando resume cgSnapVolume riavvia un"operazione copy-on-write per creare un volume snapshot di gruppo di coerenza interrotto mediante il comando stop cgSnapVolume.' 
+---
+= Riprendere il volume snapshot del gruppo di coerenza
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `resume cgSnapVolume` il comando riavvia un'operazione copy-on-write per la creazione di un volume di snapshot di un gruppo di coerenza interrotto dall'utilizzo di `stop cgSnapVolume` comando.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+resume cgSnapVolume pass:quotes[[_"snapVolumeName"_]]
+cgSnapImage=pass:quotes[_"snapImageName"_]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`cgSnapVolume`
+ a| 
+Il nome del volume snapshot del gruppo di coerenza che si desidera riprendere. Racchiudere il nome del volume snapshot del gruppo di coerenza tra virgolette doppie (" ") tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`cgSnapImage`
+ a| 
+Il nome dell'immagine snapshot in un gruppo di coerenza che si sta riavviando. Il nome di un'immagine istantanea è composto da due parti:
+
+* Il nome del gruppo di coerenza
+* Identificatore dell'immagine snapshot nel gruppo di coerenza
+
+
+L'identificatore dell'immagine snapshot può essere uno dei seguenti:
+
+* Un valore intero che rappresenta il numero di sequenza dello snapshot nel gruppo di coerenza.
+* `NEWEST` - Utilizzare questa opzione per visualizzare l'ultima immagine snapshot creata nel gruppo di coerenza.
+* `OLDEST` - Utilizzare questa opzione per visualizzare la prima immagine snapshot creata nel gruppo di coerenza.
+
+
+Racchiudere il nome dell'immagine istantanea tra virgolette doppie (" ").
+
+|===
+
+
+== Note
+
+Il nome di un'immagine istantanea ha due parti separate da due punti (:):
+
+* L'identificatore del gruppo di coerenza
+* L'identificatore dell'immagine istantanea
+
+
+Ad esempio, se si desidera riavviare un'operazione copy-on-write per l'immagine snapshot 12345, che si trova nel gruppo di coerenza snapshot snapgroup1 in un volume di snapshot di un gruppo di coerenza con il nome snapVol1, utilizzare questo comando:
+
+[listing]
+----
+resume cgSnapVolume ["snapVol1"] cgSnapImage=["snapgroup1:12345"]
+----
+
+
+== Livello minimo del firmware
+
+7.83

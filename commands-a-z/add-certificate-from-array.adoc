@@ -1,0 +1,49 @@
+---
+permalink: commands-a-z/add-certificate-from-array.html 
+sidebar: sidebar 
+keywords: add certificate array, supported, syntax, parameters, minimum firmware level 
+summary: 'Il comando Add certificate from array (Aggiungi certificato da array) consente di estrarre un certificato dall"array e aggiungerlo all"archivio di trust del pacchetto CLI. Il certificato aggiunto verrà utilizzato solo dal pacchetto CLI.' 
+---
+= Aggiungere il certificato dall'array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `Add certificate from array` Il comando consente di estrarre un certificato dall'array e aggiungerlo all'archivio di trust del pacchetto CLI. Il certificato aggiunto verrà utilizzato solo dal pacchetto CLI.
+
+
+
+== Array supportati
+
+Questo comando si applica agli array di storage EF600 ed EF300.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+
+pass:quotes[_ipAddress1 ipAddress2_  trust localCertificate]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`IPaddress`
+ a| 
+Consente di specificare l'indirizzo IP per lo storage array.
+
+|===
+
+
+== Livello minimo del firmware
+
+8.60

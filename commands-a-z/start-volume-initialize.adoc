@@ -1,0 +1,175 @@
+---
+permalink: commands-a-z/start-volume-initialize.html 
+sidebar: sidebar 
+keywords: initialize, thin volume 
+summary: Il comando start volume initialize inizializza o reinizializza un volume thin. 
+---
+= Inizializzare il thin volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `start volume initialize` il comando inizializza o reinizializza un volume thin.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+L'azione dipende dai parametri utilizzati:
+
+* Utilizzato senza alcun parametro opzionale, questo comando elimina i dati sul volume thin. La capacità del volume del repository non viene influenzata.
+* Utilizzato con uno qualsiasi dei parametri opzionali, questo comando causa la reinizializzazione e le azioni del volume del repository.
+
+
+[NOTE]
+====
+L'inizializzazione di un volume thin avvia un'operazione a esecuzione prolungata che non è possibile interrompere.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[start volume [_volumeName_]] initialize
+pass:quotes[[existingRepositoryLabel=_existingRepositoryName_]]
+pass:quotes[[diskPool=_diskPoolName_ capacity=_capacityValue_]]
+[retainRepositoryMembers=(TRUE|FALSE)]
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`volume`
+ a| 
+Il nome del volume su cui si sta avviando l'inizializzazione. Racchiudere il nome del volume tra parentesi quadre ([ ]). Se il nome del volume contiene caratteri speciali o numeri, è necessario racchiudere il nome del volume tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`existingRepositoryLabel`
+ a| 
+Questo parametro sostituisce il volume repository con il volume candidato specificato.
+
+* Il valore specificato è un'etichetta utente di un volume repository esistente. Il volume specificato deve essere un volume repository inutilizzato con il nome nel formato appropriato.
+* Se il volume repository appena specificato si trova su un pool di dischi diverso, il thin volume cambierà proprietà in quel pool.
+* Per impostazione predefinita, il vecchio volume di repository viene cancellato.
+
+
+Se il nome del volume del repository esistente contiene caratteri speciali o è composto solo da numeri, è necessario racchiudere il nome del volume tra virgolette doppie (" ").
+
+
+
+ a| 
+`diskPool`
+ a| 
+Il nome del pool di dischi in cui si desidera creare un nuovo volume di repository con la capacità specificata. Se il nome del pool di dischi contiene caratteri speciali o è composto solo da numeri, è necessario racchiudere il nome del pool di dischi tra virgolette doppie (" ").
+
+È necessario utilizzare questo parametro con `capacity` parametro per creare un nuovo volume di repository con la capacità specificata.
+
+
+
+ a| 
+`capacity`
+ a| 
+Le dimensioni che si desidera impostare per il volume di repository che si sta creando. Le dimensioni sono definite in unità di `bytes`, `KB`, `MB`, `GB`, o. `TB`.
+
+La capacità fisica minima è di 4 GB.
+
+La capacità fisica massima è di 257 TB.
+
+È necessario utilizzare questo parametro con `diskPool` parametro per creare un nuovo volume di repository con la capacità specificata.
+
+
+
+ a| 
+`retainRepositoryMembers`
+ a| 
+Se questo parametro è impostato su `TRUE`, viene conservato il vecchio repository. Per impostazione predefinita, il vecchio repository viene cancellato. Questo parametro viene ignorato se il repository esistente viene riutilizzato.
+
+|===
+
+
+== Note
+
+Se non si specifica un volume con `volume` parametro, questo comando ripristina i metadati nel repository e, in effetti, fa sì che il volume thin appaia vuoto nell'host. Se si specifica un volume con `*volume*` il volume viene sostituito da un volume appena creato o da un volume esistente, se specificato con `existingRepositoryLabel` parametro. Se si specifica un volume esistente con `existingRepositoryLabel` parametro che si trova in un pool di dischi diverso, il volume thin cambierà proprietà nel nuovo pool di dischi.
+
+I parametri del volume thin, ad esempio capacità virtuale, quota e soglia di avviso, mantengono i valori precedenti dopo la reinizializzazione del volume thin.
+
+[NOTE]
+====
+Il formato di disponibilità immediata (IAF) non si applica a volumi superiori a 64 TB.
+
+====
+La tabella seguente elenca i limiti di capacità per un volume sottile.
+
+[cols="2*"]
+|===
+| Tipo di capacità | Dimensione 
+
+
+ a| 
+Capacità virtuale minima
+ a| 
+32 MB
+
+
+
+ a| 
+Capacità virtuale massima
+ a| 
+256 TB
+
+
+
+ a| 
+Capacità fisica minima
+ a| 
+4 GB
+
+
+
+ a| 
+Capacità fisica massima
+ a| 
+257 TB
+
+|===
+I thin volumi supportano tutte le operazioni eseguite dai volumi standard con le seguenti eccezioni:
+
+* Non è possibile modificare le dimensioni dei segmenti di un volume sottile.
+* Non è possibile attivare la verifica della ridondanza di pre-lettura per un volume sottile.
+* Non è possibile utilizzare un volume sottile come volume di destinazione in una copia del volume.
+* Non è possibile utilizzare un volume thin in un'operazione di mirroring sincrono.
+
+
+Se si desidera modificare un volume thin in un volume standard, utilizzare l'operazione di copia del volume per creare una copia del volume thin. La destinazione di una copia del volume è sempre un volume standard.
+
+
+
+== Livello minimo del firmware
+
+7.83
+
+8.30 aumenta la capacità massima di un volume sottile fino a 256 TB.

@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/set-storagearray-icmppingresponse.html 
+sidebar: sidebar 
+keywords: set, storage, array, icmp, response 
+summary: Il comando set StorageArray icmpPingResponse restituisce i valori predefiniti per le impostazioni negoziabili per sessioni e connessioni, che rappresentano il punto di partenza per lo storage array per le negoziazioni. 
+---
+= Impostare la risposta ICMP dell'array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray icmpPingResponse` command restituisce i valori predefiniti per le impostazioni negoziabili per sessioni e connessioni, che rappresentano il punto di partenza per l'array di storage per le negoziazioni.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing]
+----
+set storageArray icmpPingResponse=(TRUE | FALSE)
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`icmpPingResponse`
+ a| 
+Questo parametro attiva o disattiva i messaggi Echo Request. Impostare il parametro su `TRUE` Per attivare i messaggi Echo Request. Impostare il parametro su `FALSE` Per disattivare i messaggi Echo Request.
+
+|===
+
+
+== Note
+
+Il protocollo ICMP (Internet Control message Protocol) viene utilizzato dai sistemi operativi di una rete per inviare messaggi di errore, pacchetti di test e messaggi informativi relativi all'IP, ad esempio un servizio richiesto non disponibile o che non è stato possibile raggiungere un host o un router. Il comando di risposta ICMP invia messaggi ICMP Echo Request e riceve messaggi ICMP Echo Response per determinare se un host è raggiungibile e il tempo necessario per i pacchetti da e verso tale host.
+
+
+
+== Livello minimo del firmware
+
+7.10

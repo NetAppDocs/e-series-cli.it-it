@@ -1,0 +1,124 @@
+---
+permalink: commands-a-z/set-host.html 
+sidebar: sidebar 
+keywords: set, host 
+summary: Il comando set host assegna un host a un gruppo di host o lo sposta in un gruppo di host diverso. 
+---
+= Impostare l'host
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set host` il comando assegna un host a un gruppo di host o lo sposta in un gruppo di host diverso.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Con questo comando è possibile creare un nuovo gruppo di host e assegnare l'host al nuovo gruppo di host. Le azioni eseguite da questo comando dipendono dal fatto che l'host disponga di mappature singole o meno.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set host [hostName]
+hostGroup=pass:quotes[("_hostGroupName_"] | none | defaultGroup)
+userLabel=pass:quotes["_newHostName_"]
+hostType=pass:quotes[(_hostTypeIndexLabel_ | _hostTypeIndexNumber_)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`host`
+ a| 
+Il nome dell'host che si desidera assegnare a un gruppo di host. Racchiudere il nome host tra parentesi quadre ([ ]). Se il nome host contiene caratteri speciali o numeri, è necessario racchiudere il nome host tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`hostGroup`
+ a| 
+Il nome del gruppo di host a cui si desidera assegnare l'host. (La tabella seguente definisce il modo in cui viene eseguito il comando se l'host dispone o meno di mappature individuali). Racchiudere il nome del gruppo di host tra virgolette doppie (" "). Il `defaultGroup` opzione è il gruppo di host che contiene l'host a cui è mappato il volume.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Il nuovo nome host. Racchiudere il nome host tra virgolette doppie (" ").
+
+
+
+ a| 
+`hostType`
+ a| 
+L'etichetta di indice o il numero del tipo di host per la porta host. Utilizzare `show storageArray hostTypeTable` per generare un elenco di identificatori dei tipi di host disponibili. Se il tipo di host contiene caratteri speciali, racchiudere il tipo di host tra virgolette doppie (" ").
+
+|===
+[cols="3*"]
+|===
+| Parametro del gruppo di host | L'host dispone di mappature individuali | L'host non dispone di mappature individuali 
+
+
+ a| 
+`_hostGroupName_`
+ a| 
+L'host viene rimosso dal gruppo host corrente e posizionato sotto il nuovo gruppo host definito da `_hostGroupName_`.
+ a| 
+L'host viene rimosso dal gruppo host corrente e posizionato sotto il nuovo gruppo host definito da `_hostGroupName_`.
+
+
+
+ a| 
+`none`
+ a| 
+L'host viene rimosso dal gruppo host come partizione indipendente e posizionato sotto il nodo root.
+ a| 
+L'host viene rimosso dal gruppo host corrente e posizionato sotto il gruppo predefinito.
+
+
+
+ a| 
+`defaultGroup`
+ a| 
+Il comando non riesce.
+ a| 
+L'host viene rimosso dal gruppo host corrente e posizionato sotto il gruppo predefinito.
+
+|===
+
+
+== Note
+
+Quando si utilizza questo comando, è possibile specificare uno o più parametri opzionali.
+
+Per i nomi, è possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, trattini e caratteri di sottolineatura. I nomi possono avere un massimo di 30 caratteri.
+
+
+
+== Livello minimo del firmware
+
+6.10

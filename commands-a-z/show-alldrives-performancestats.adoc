@@ -1,0 +1,100 @@
+---
+permalink: commands-a-z/show-alldrives-performancestats.html 
+sidebar: sidebar 
+keywords: show, drive, performance, statistics 
+summary: Il comando show allDrives performanceStats restituisce informazioni sulle prestazioni del disco. 
+---
+= Mostra le statistiche delle performance del disco
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show allDrives performanceStats` il comando restituisce informazioni sulle prestazioni del disco.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Per ogni disco dell'array di storage, questo comando restituisce le seguenti informazioni:
+
+* L'array di storage contenente il disco o i dischi
+* La latenza i/o corrente
+* Latenza i/o massima
+* Latenza i/o minima
+* Latenza i/o media
+
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+show (allDrives |drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_]] | drives pass:quotes[[_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_]]) performanceStats
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`allDrives`
+ a| 
+L'impostazione per restituire informazioni su tutti i dischi dell'array di storage.
+
+
+
+ a| 
+`drive` oppure `drives`
+ a| 
+Per i vassoi ad alta capacità, specificare il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot per l'unità. Per i vassoi delle unità a bassa capacità, specificare il valore dell'ID del vassoio e il valore dell'ID dello slot per l'unità. I valori dell'ID vassoio sono `0` a. `99`. I valori dell'ID cassetto sono `1` a. `5`.
+
+Tutti i valori massimi di ID slot sono 24. I valori ID slot iniziano con 0 o 1, a seconda del modello di vassoio. I cassetti per dischi compatibili con i controller E2800 e E5700 hanno numeri ID slot a partire da 0. I vassoi per dischi compatibili con i controller E2700 e E5600 hanno numeri ID slot a partire da 1.
+
+Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot tra parentesi quadre ([ ]).
+
+|===
+
+
+== Note
+
+Il `drive` il parametro supporta sia i vassoi per dischi ad alta capacità che quelli a bassa capacità. Un vassoio per dischi ad alta capacità dispone di cassetti che trattengono le unità. I cassetti scorrono fuori dal vassoio dell'unità per consentire l'accesso alle unità. Un vassoio per unità a bassa capacità non dispone di cassetti. Per un vassoio dell'unità ad alta capacità, è necessario specificare l'identificativo (ID) del vassoio dell'unità, l'ID del cassetto e l'ID dello slot in cui si trova l'unità. Per un vassoio dell'unità a bassa capacità, è necessario specificare solo l'ID del vassoio dell'unità e l'ID dello slot in cui si trova un'unità. Per un vassoio dell'unità a bassa capacità, un metodo alternativo per identificare una posizione per un'unità consiste nel specificare l'ID del vassoio dell'unità, impostare l'ID del cassetto su `0`E specificare l'ID dello slot in cui si trova un'unità.
+
+Il `show drive performanceStats` il comando restituisce le statistiche delle performance del disco come mostrato in questo esempio:
+
+[listing]
+----
+"Performance Monitor Statistics for Storage Array: remote_pp -
+Date/Time: 10/23/12 3:47:27 PM -
+Polling interval in seconds: 5"
+
+"Objects","Current IO Latency","Maximum IO Latency","Minimum IO Latency",
+"Average IO Latency"
+
+"Capture Iteration: 1","","","",""
+"Date/Time: 10/23/12 3:47:27 PM","","","",""
+"Drive Tray 0, Slot 1","0.0","0.0","0.0","0.0"
+----
+
+
+== Livello minimo del firmware
+
+7.86

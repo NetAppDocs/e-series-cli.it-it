@@ -1,0 +1,107 @@
+---
+permalink: commands-a-z/create-ssdcache.html 
+sidebar: sidebar 
+keywords: create, ssd, cache 
+summary: 'Il comando create ssdCache crea una cache di lettura per un array di storage che utilizza dischi a stato solido (SSD).' 
+---
+= Creare cache SSD
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `create ssdCache` Command crea una cache di lettura per un array di storage utilizzando dischi a stato solido (SSD).
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800 o E5700, è necessario disporre del ruolo Support Admin.
+
+
+
+== Contesto
+
+L'utilizzo di SSD dalle performance elevate per memorizzare nella cache i dati di lettura migliora le performance di i/o e i tempi di risposta delle applicazioni e offre un miglioramento delle performance sostenuto per carichi di lavoro diversi, in particolare per carichi di lavoro con IOP elevati. La cache SSD massimizza l'utilizzo di costosi SSD veloci. La cache SSD funziona in aggiunta alla cache primaria nella DRAM del controller. Con la cache del controller, i dati vengono memorizzati nella DRAM dopo la lettura dell'host. Con la cache SSD, i dati vengono copiati dai volumi di base specificati dall'utente e quindi memorizzati nella cache degli SSD.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+create ssdCache userLabel=pass:quotes[_"ssdCacheName"_]
+drives=pass:quotes[_(trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1 ... trayIDn,[drawerIDn,_]]pass:quotes[_slotIDn_)]
+[updateExistingVolumes=(TRUE|FALSE)]
+[securityType=(none|capable|enabled)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`userLabel`
+ a| 
+Il nome che si desidera assegnare alla nuova cache SSD. Racchiudere il nome della cache SSD tra virgolette doppie (" ").
+
+
+
+ a| 
+`drives`
+ a| 
+I dischi che si desidera utilizzare per creare la cache SSD. Per i vassoi ad alta capacità, specificare il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot per l'unità. Per i vassoi delle unità a bassa capacità, specificare il valore dell'ID del vassoio e il valore dell'ID dello slot per l'unità. I valori dell'ID vassoio sono `0` a. `99`. I valori dell'ID cassetto sono `1` a. `5`.
+
+Tutti i valori massimi di ID slot sono 24. I valori ID slot iniziano con 0 o 1, a seconda del modello di vassoio. I cassetti per dischi compatibili con i controller E2800 e E5700 hanno numeri ID slot a partire da 0. I vassoi per dischi compatibili con i controller E2700 e E5600 hanno numeri ID slot a partire da 1.
+
+Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`updateExistingVolumes`
+ a| 
+Questo parametro opzionale specifica se attivare la cache SSD per tutti i volumi esistenti nell'array di storage. Per attivare la cache SSD per tutti i volumi esistenti, impostare questo parametro su `TRUE`. Se si desidera attivare la cache SSD per i singoli volumi in un secondo momento, impostare questo parametro su `FALSE`. Il valore predefinito è `TRUE`.
+
+
+
+ a| 
+`securityType`
+ a| 
+Questo parametro opzionale specifica il livello di sicurezza durante la creazione di una cache SSD. Queste impostazioni sono valide:
+
+* `none` - La cache SSD non è sicura.
+* `capable` - La cache SSD è in grado di impostare la sicurezza, ma la sicurezza non è stata attivata.
+* `enabled` - La sicurezza della cache SSD è attivata.
+
+
+|===
+
+
+== Note
+
+È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per il nome. I nomi possono avere un massimo di 30 caratteri.
+
+Uno storage array può avere una sola cache SSD.
+
+Solo i volumi creati utilizzando dischi rigidi possono utilizzare la cache SSD. Non è possibile attivare la cache SSD sulle immagini Snapshot.
+
+Se tutti gli SSD nella cache SSD sono compatibili con Data Assurance (da) e la funzione da è attivata, il da viene automaticamente attivato per la cache SSD e non può essere disattivato. Inoltre, non è possibile aggiungere SSD non compatibili con da a una cache SSD abilitata per da.
+
+
+
+== Livello minimo del firmware
+
+7.84
+
+8.20 _M3 - sono ora supportati i dischi FDE. Aggiunto il `securityType` parametro.

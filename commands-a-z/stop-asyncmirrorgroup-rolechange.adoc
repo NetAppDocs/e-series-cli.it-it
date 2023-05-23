@@ -1,0 +1,55 @@
+---
+permalink: commands-a-z/stop-asyncmirrorgroup-rolechange.html 
+sidebar: sidebar 
+keywords: cancel, asynchronous, mirror, group, role, reversal 
+summary: 'Il comando stop asyncMirrorGroup rolechange annulla un"operazione di inversione del ruolo in sospeso tra gruppi di mirror asincroni.' 
+---
+= Annulla l'inversione del ruolo del gruppo mirror asincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `stop asyncMirrorGroup rolechange` il comando annulla un'operazione di inversione del ruolo in sospeso tra gruppi di mirror asincroni.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[stop asyncMirrorGroup [_asyncMirrorGroupName_]] rolechange
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Il nome del gruppo di mirror asincrono per il quale si desidera annullare l'operazione di inversione del ruolo in sospeso. Racchiudere il nome del gruppo mirror asincrono tra parentesi quadre ([ ]). Se il nome del gruppo mirror asincrono contiene caratteri speciali o è composto solo da numeri, è necessario racchiudere il nome tra virgolette doppie (" ") tra parentesi quadre.
+
+|===
+
+
+== Livello minimo del firmware
+
+7.84

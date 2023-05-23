@@ -1,0 +1,48 @@
+---
+permalink: commands-a-z/delete-certificates.html 
+sidebar: sidebar 
+keywords: delete, certificates 
+summary: 'Il comando Elimina certificati consente di eliminare un certificato dall"archivio di attendibilità del pacchetto CLI.' 
+---
+= Eliminare i certificati
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `Delete certificates` Il comando consente di eliminare un certificato dall'archivio di attendibilità del pacchetto CLI.
+
+
+
+== Array supportati
+
+Questo comando si applica agli array di storage EF600 ed EF300.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+delete localCertificate all | alias pass:quotes[_alias_]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`alias`
+ a| 
+Consente di specificare un certificato tramite l'alias definito dall'utente.
+
+|===
+
+
+== Livello minimo del firmware
+
+8.60

@@ -1,0 +1,77 @@
+---
+permalink: commands-a-z/start-diskpool-fullprovisioning.html 
+sidebar: sidebar 
+keywords: start, disk pool, full, provision 
+summary: 'Il comando start diskPool fullProvisioning avvia un"operazione di provisioning completo su tutti i volumi nel pool di dischi e, facoltativamente, disattiva il provisioning delle risorse nel pool di dischi.' 
+---
+= Avviare il provisioning completo del pool di dischi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `start diskPool fullProvisioning` il comando avvia un'operazione di provisioning completo su tutti i volumi nel pool di dischi e, facoltativamente, disattiva il provisioning delle risorse nel pool di dischi.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo array di storage, inclusi gli array EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array EF600 ed EF300, è necessario disporre del ruolo Storage Admin.
+
+
+
+== Contesto
+
+La funzione Resource Provisioning migliora la durata degli SSD e aumenta le performance di scrittura lasciando una porzione maggiore dei blocchi di dischi in uno stato non allocato rispetto a un volume standard. Un volume con provisioning di risorse è un volume denso in un gruppo di volumi o pool SSD, in cui la capacità del disco viene allocata (assegnata al volume), ma i blocchi disco vengono deallocati (non mappati) durante la creazione del volume. I blocchi di dischi vengono allocati in base alle necessità per completare l'host Write iOS. Le operazioni di annullamento della mappatura dell'host possono riportare i blocchi di dischi allo stato non allocato . Il provisioning delle risorse elimina inoltre l'inizializzazione in background con vincoli di tempo, consentendo l'inizializzazione rapida di grandi volumi.
+
+I volumi con provisioning delle risorse sono supportati solo su gruppi di volumi e pool SSD, in cui tutti i dischi del gruppo o del pool supportano la funzionalità di ripristino degli errori NVMe Deallocated o Unwritten Logical Block Error Enable (DULBE). Il miglioramento delle performance varia in base al modello e alla capacità di ciascun disco.
+
+Il formato di provisioning completo garantisce che tutti i blocchi necessari per i volumi nel pool di storage siano mappati completamente sui dischi. Questo comando è applicabile solo ai pool di storage con provisioning delle risorse. Se l'opzione è a. `disableResourceProvisioning` non è impostato su `FALSE`, i volumi saranno comunque dotati di provisioning delle risorse e i nuovi volumi creati nel pool di storage saranno dotati di provisioning delle risorse. Se l'opzione per disattivare il provisioning delle risorse è impostata su `TRUE`, quindi, i volumi non verranno più sottoposti a provisioning delle risorse e i nuovi volumi creati nel pool di storage non verranno sottoposti a provisioning delle risorse.
+
+
+
+== Sintassi
+
+[listing]
+----
+start diskPool[diskPoolName] fullProvisioning [disableResourceProvisioning=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`diskPool`
+ a| 
+Il pool di dischi che si desidera avviare l'operazione di provisioning completo. Racchiudere il nome del pool di dischi tra parentesi quadre ([ ])
+
+
+
+ a| 
+`disableResourceProvisioning`
+ a| 
+L'impostazione per specificare se il provisioning delle risorse deve essere disattivato al termine dell'operazione di provisioning completo. Per ignorare la disattivazione del provisioning delle risorse, impostare questa opzione su `FALSE`. Il valore predefinito è `TRUE`.
+
+[NOTE]
+====
+Per riattivare il provisioning delle risorse in un pool di storage e in tutti i volumi associati, utilizzare `Start Disk Pool Resource Provisioning` comando.
+
+====
+|===
+
+
+== Livello minimo del firmware
+
+11.72

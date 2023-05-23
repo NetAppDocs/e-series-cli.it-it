@@ -1,0 +1,94 @@
+---
+permalink: commands-a-z/reset-storagearray-arvmstats-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: reset, asynchronous, mirror group, statistics 
+summary: Il comando reset StorageArray arvmStats asyncMirrorGroup reimposta le statistiche di sincronizzazione per uno o più volumi membri in un gruppo di mirror asincrono a uno 0 relativo. 
+---
+= Ripristinare le statistiche del gruppo mirror asincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `reset storageArray arvmStats asyncMirrorGroup` il comando ripristina le statistiche di sincronizzazione per uno o più volumi membro in un gruppo di mirror asincrono a uno 0 relativo.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+reset storageArray arvmStats asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]]
+volume=pass:quotes[_"volumeName"_] sampleType=(all | mostRecent | longestSyncTime | errors)
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Il nome del gruppo di mirror asincrono per il quale si reimpostano le statistiche di sincronizzazione. Racchiudere il nome del gruppo mirror asincrono tra parentesi quadre ([ ]). Se il nome del gruppo mirror asincrono ha caratteri speciali o numeri, è necessario racchiudere il nome del gruppo mirror asincrono tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`volume`
+ a| 
+Questo parametro è facoltativo. Il nome del volume membro specifico nel gruppo di mirror asincrono per il quale si reimpostano le statistiche di sincronizzazione. Se non viene specificato alcun volume, le statistiche per ogni volume membro nel gruppo di mirror asincrono vengono reimpostate.
+
+Racchiudere il nome del volume tra virgolette doppie (" ").
+
+
+
+ a| 
+`sampleType`
+ a| 
+Questo parametro è facoltativo. Il valore predefinito per `sampleType` è `all`.
+
+* `all`-- i dati di tutti e tre i tipi di campione vengono ripristinati.
+* `mostRecent` -- le statistiche vengono reimpostate per i 50 campioni di risincronizzazione più recenti.
+* `longestSyncTime` -- le statistiche vengono reimpostate per i 20 campioni di risincronizzazione più recenti.
+* `errors`-- le statistiche vengono reimpostate per i 20 campioni di risincronizzazione non riusciti più recenti.
+
+
+|===
+
+
+== Note
+
+Le statistiche vengono reimpostate per i volumi mirrorati nel ruolo primario. Le statistiche reimpostate includono i seguenti dati:
+
+* Ora di inizio della sincronizzazione
+* Tipo di sincronizzazione (manuale o periodica)
+* Durata della sincronizzazione
+* Numero di byte inviati
+* Tempo massimo e minimo di scrittura (per una singola scrittura)
+* Velocità massima e minima dei dati di sincronizzazione
+* Tempo totale di scrittura
+* Utilizzo del repository (%)
+* Età del punto di ripristino
+
+
+
+
+== Livello minimo del firmware
+
+7.84

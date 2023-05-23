@@ -1,0 +1,57 @@
+---
+permalink: commands-a-z/reset-storagearray-diagnosticdata.html 
+sidebar: sidebar 
+keywords: reset ,storage, array, diagnostic, data 
+summary: 'Il comando reset StorageArray diagnosticData ripristina L"NVSRAM che contiene i dati diagnostici per lo storage array.' 
+---
+= Ripristinare i dati diagnostici dell'array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `reset storageArray diagnosticData` Il comando ripristina L'NVSRAM che contiene i dati diagnostici per l'array di storage.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Questo comando non cancella i dati di diagnosi. Questo comando sostituisce lo stato richiede attenzione con lo stato dati diagnostici disponibili. I vecchi dati diagnostici vengono sovrascritti automaticamente quando vengono acquisiti nuovi dati. La memoria contenente i dati diagnostici viene cancellata anche al riavvio dei controller. Prima di ripristinare i dati diagnostici, utilizzare `save storageArray diagnosticData` comando per salvare i dati diagnostici in un file.
+
+[NOTE]
+====
+Eseguire questo comando solo con l'assistenza del supporto tecnico.
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+reset storageArray diagnosticData
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Livello minimo del firmware
+
+6.16

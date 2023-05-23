@@ -1,0 +1,76 @@
+---
+permalink: commands-a-z/remove-member-volume-from-consistency-group.html 
+sidebar: sidebar 
+keywords: remove, member, volume, consistency group 
+summary: Il comando set consistencyGroup rimuove un volume membro da un gruppo di coerenza snapshot esistente. 
+---
+= Rimuovere il volume membro dal gruppo di coerenza
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set consistencyGroup` il comando rimuove un volume membro da un gruppo di coerenza snapshot esistente.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+In alternativa, è possibile eliminare i membri del volume del repository dal gruppo di coerenza.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set consistencyGroup pass:quotes[[_"consistencyGroupName"_]]
+removeCGMemberVolume=pass:quotes["_memberVolumeName_"]
+[deleteRepositoryMembers=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`consistencyGroupName`
+ a| 
+Il nome del gruppo di coerenza dal quale si desidera rimuovere un membro. Racchiudere il nome del gruppo di coerenza tra virgolette doppie (" ") tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`removeCGMemberVolume`
+ a| 
+Il nome del volume membro che si desidera rimuovere. Racchiudere il nome del gruppo di membri tra virgolette doppie (" ").
+
+
+
+ a| 
+`deleteRepositoryMembers`
+ a| 
+Determina se rimuovere tutti i membri del repository dal gruppo di coerenza.
+
+|===
+
+
+== Livello minimo del firmware
+
+7.83

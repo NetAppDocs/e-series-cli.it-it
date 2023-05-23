@@ -1,0 +1,83 @@
+---
+permalink: commands-a-z/show-controller-nvsram.html 
+sidebar: sidebar 
+keywords: show, controller, nvsram 
+summary: Il comando show controller NVSRAM restituisce informazioni sui valori di byte DI NVSRAM. 
+---
+= Mostra NVSRAM del controller
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show controller NVSRAM` Il comando restituisce informazioni sui valori di byte DI NVSRAM.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Questo comando restituisce un elenco dei valori di byte NVSRAM per il tipo di host specificato. Se non si inseriscono i parametri opzionali, questo comando restituisce un elenco di tutti i valori di byte DI NVSRAM.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+show (allControllers | controller [(a|b)])
+NVSRAM pass:quotes[[hostType=_hostTypeIndexLabel_ | host="_hostName_"]]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`allControllers`
+ a| 
+L'impostazione per restituire informazioni su entrambi i controller nell'array di storage.
+
+
+
+ a| 
+`controller`
+ a| 
+L'impostazione per restituire informazioni su un controller specifico nell'array di storage. Gli identificatori del controller validi sono `a` oppure `b`, dove `a` È il controller nello slot A, e. `b` Il controller si trova nello slot B. Racchiudere l'identificatore del controller tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`hostType`
+ a| 
+L'etichetta di indice o il numero del tipo di host. Utilizzare `show storageArray hostTypeTable` per generare un elenco di identificatori dei tipi di host disponibili.
+
+
+
+ a| 
+`host`
+ a| 
+Il nome dell'host connesso ai controller. Racchiudere il nome host tra virgolette doppie (" ").
+
+|===
+
+
+== Note
+
+Utilizzare `show controller NVSRAM` Per visualizzare parti o tutto IL FILE NVSRAM prima di utilizzare `set controller` Per modificare i valori DI NVSRAM. Prima di apportare modifiche A NVSRAM, contatta il supporto tecnico per scoprire quali regioni DI NVSRAM è possibile modificare.

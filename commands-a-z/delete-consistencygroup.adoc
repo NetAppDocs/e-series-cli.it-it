@@ -1,0 +1,72 @@
+---
+permalink: commands-a-z/delete-consistencygroup.html 
+sidebar: sidebar 
+keywords: delete, consistency, group 
+summary: Il comando delete consistencyGroup elimina un gruppo di coerenza snapshot. 
+---
+= Elimina gruppo di coerenza
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `delete consistencyGroup` il comando elimina un gruppo di coerenza snapshot.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Questo comando funziona in due modi:
+
+* È possibile eliminare sia il gruppo di coerenza che i volumi di repository contenuti nel gruppo di coerenza.
+* È possibile eliminare solo il gruppo di coerenza e lasciare intatti i volumi del repository contenuti nel gruppo di coerenza.
+
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+delete consistencyGroup pass:quotes[[_"consistencyGroupName"_]]
+[deleteRepositoryMembers=(TRUE | FALSE)]
+----
+
+
+== Parametro
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`consistencyGroup`
+ a| 
+Il nome del gruppo di coerenza snapshot che si desidera eliminare. Racchiudere il nome del gruppo di coerenza snapshot tra virgolette doppie (" ") tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`deleteRepositoryMembers`
+ a| 
+L'impostazione per eliminare o conservare i volumi del repository. Per eliminare i volumi del repository, impostare questo parametro su `TRUE`. Per conservare i volumi del repository, impostare questo parametro su `FALSE`. L'impostazione predefinita è `FALSE`.
+
+|===
+
+
+== Livello minimo del firmware
+
+7.83

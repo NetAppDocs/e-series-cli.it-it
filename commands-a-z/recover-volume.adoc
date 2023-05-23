@@ -1,0 +1,239 @@
+---
+permalink: commands-a-z/recover-volume.html 
+sidebar: sidebar 
+keywords: recover, raid, volume 
+summary: Il comando Recover volume crea un volume RAID con le proprietà specificate senza inizializzare alcuna area dati utente sui dischi. 
+---
+= Ripristinare il volume RAID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `recover volume` Il comando crea un volume RAID con le proprietà specificate senza inizializzare alcuna area dati utente sui dischi.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+I valori dei parametri derivano dal file di dati del profilo di ripristino (`recovery-profile.csv`) per lo storage array. Questo comando consente di creare il volume di ripristino in un gruppo di volumi esistente o un nuovo gruppo di volumi.
+
+[NOTE]
+====
+È possibile eseguire questo comando solo da una riga di comando. Non è possibile eseguire questo comando dall'editor di script GUI. Non è possibile utilizzare la GUI di gestione dello storage per ripristinare un volume.
+
+====
+[NOTE]
+====
+Non è possibile utilizzare questo comando per i volumi DDP (Dynamic Disk Pool).
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+recover volume (drive=pass:quotes[(_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_])) |
+(drives=pass:quotes[_trayID1_,pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1 ... trayIDn,_]pass:quotes[[_drawerIDn,_]]pass:quotes[_slotIDn_])) |
+volumeGroup=pass:quotes[_volumeGroupName_]))
+[newVolumeGroup=pass:quotes[_volumeGroupName_]]
+userLabel=pass:quotes["_volumeName_" volumeWWN="_volumeWWN_"
+capacity=_volumeCapacity_
+offset=_offsetValue_
+raidLevel=(0 | 1 | 3 | 5 | 6)
+segmentSize=_segmentSizeValue_
+dssPreAllocate=(TRUE | FALSE)
+SSID=_subsystemVolumeID_]
+[owner=(a|b)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+[dataAssurance=(none | enabled)]
+[hostUnmapEnabled=(TRUE | FALSE)]
+[blockSize=blockSizeValue]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`drive` oppure `drives`
+ a| 
+Le unità che si desidera assegnare al gruppo di volumi che conterrà il volume che si desidera ripristinare. Per i vassoi ad alta capacità, specificare il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot per l'unità. Per i vassoi delle unità a bassa capacità, specificare il valore dell'ID del vassoio e il valore dell'ID dello slot per l'unità. I valori dell'ID vassoio sono `0` a. `99`. I valori dell'ID cassetto sono `1` a. `5`.
+
+Tutti i valori massimi di ID slot sono 24. I valori ID slot iniziano con 0 o 1, a seconda del modello di vassoio. I cassetti per dischi compatibili con i controller E2800 e E5700 hanno numeri ID slot a partire da 0. I vassoi per dischi compatibili con i controller E2700 e E5600 hanno numeri ID slot a partire da 1.
+
+Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`volumeGroup`
+ a| 
+Il nome di un gruppo di volumi esistente in cui si desidera creare il volume. Per determinare i nomi dei gruppi di volumi nell'array di storage, eseguire `show storageArray profile` comando.)
+
+
+
+ a| 
+`newVolumeGroup`
+ a| 
+Il nome che si desidera assegnare a un nuovo gruppo di volumi. Racchiudere il nome del nuovo gruppo di volumi tra virgolette doppie (" ").
+
+
+
+ a| 
+`userLabel`
+ a| 
+Il nome del volume che si desidera ripristinare. L'etichetta utente è composta da due parti:
+
+* Il nome del volume. Racchiudere il nome del volume tra virgolette doppie (" ").
+* Il nome del volume in tutto il mondo, `volumeWWN`, Sotto forma di un identificatore di 16 byte, per esempio, 60080E500017B4320000000049887D77. Racchiudere l'identificatore tra virgolette doppie (" ").
+
+
+Immettere sia il nome del volume che il nome del volume. Immettere prima il nome del volume. Ad esempio:
+
+[listing]
+----
+userLabel="engdata"
+volumeWWN=60080E500017B4320000000049887D77
+----
+
+
+ a| 
+`capacity`
+ a| 
+La dimensione del volume che si sta aggiungendo all'array di storage. Le dimensioni sono definite in unità di `bytes`, `KB`, `MB`, `GB`, o. `TB`.
+
+
+
+ a| 
+`offset`
+ a| 
+Il numero di blocchi dall'inizio del gruppo di volumi all'inizio del volume di riferimento.
+
+
+
+ a| 
+`raidLevel`
+ a| 
+Il livello RAID del gruppo di volumi che contiene i dischi. I valori validi sono `0`, `1`, `3`, `5`, o. `6`.
+
+
+
+ a| 
+`segmentSize`
+ a| 
+La quantità di dati (in KB) che il controller scrive su un singolo disco di un gruppo di volumi prima di scrivere i dati sul disco successivo. I valori validi sono `8`, `16`, `32`, `64`, `128`, `256`, o. `512`.
+
+
+
+ a| 
+`dssPreAllocate`
+ a| 
+L'impostazione per attivare o disattivare l'allocazione della capacità di storage del volume per future modifiche delle dimensioni dei segmenti. Per attivare l'allocazione, impostare questo parametro su `TRUE`. Per disattivare l'allocazione, impostare questo parametro su `FALSE`.
+
+
+
+ a| 
+`SSID`
+ a| 
+L'identificatore del sottosistema dell'array di storage di un volume. Utilizzare `show volume` per determinare l'identificatore del sottosistema dell'array di storage.
+
+
+
+ a| 
+`owner`
+ a| 
+Il controller proprietario del volume. Gli identificatori del controller validi sono `a` oppure `b`, dove `a` È il controller nello slot A, e. `b` Il controller si trova nello slot B. Se non si specifica un proprietario, il firmware del controller determina il proprietario.
+
+
+
+ a| 
+`cacheReadPrefetch`
+ a| 
+L'impostazione per attivare o disattivare il prefetch di lettura della cache. Per disattivare il prefetch di lettura della cache, impostare questo parametro su `FALSE`. Per attivare il prefetch di lettura della cache, impostare questo parametro su `TRUE`.
+
+
+
+ a| 
+`hostUnmapEnabled`
+ a| 
+Quando questo parametro è impostato su `True`, un host può emettere comandi di annullamento della mappatura al volume. I comandi di annullamento della mappatura sono consentiti solo sui volumi con provisioning delle risorse.
+
+
+
+ a| 
+`blockSize`
+ a| 
+Questa impostazione indica la dimensione del blocco del volume in byte.
+
+|===
+
+
+== Note
+
+Il software di gestione dello storage raccoglie i profili di ripristino degli array di storage monitorati e li salva su una stazione di gestione dello storage.
+
+Il `drive` il parametro supporta sia i vassoi per dischi ad alta capacità che quelli a bassa capacità. Un vassoio per dischi ad alta capacità dispone di cassetti che trattengono le unità. I cassetti scorrono fuori dal vassoio dell'unità per consentire l'accesso alle unità. Un vassoio per unità a bassa capacità non dispone di cassetti. Per un vassoio dell'unità ad alta capacità, è necessario specificare l'identificativo (ID) del vassoio dell'unità, l'ID del cassetto e l'ID dello slot in cui si trova l'unità. Per un vassoio dell'unità a bassa capacità, è necessario specificare solo l'ID del vassoio dell'unità e l'ID dello slot in cui si trova un'unità. Per un vassoio dell'unità a bassa capacità, un metodo alternativo per identificare una posizione per un'unità consiste nel specificare l'ID del vassoio dell'unità, impostare l'ID del cassetto su `0`E specificare l'ID dello slot in cui si trova un'unità.
+
+Se si tenta di ripristinare un volume utilizzando `drive` o il `drives` e i dischi sono in uno stato non assegnato, il controller crea automaticamente un nuovo gruppo di volumi. Utilizzare `newVolumeGroup` parametro per specificare un nome per il nuovo gruppo di volumi.
+
+È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per i nomi. I nomi possono avere un massimo di 30 caratteri.
+
+Il `owner` parameter (parametro): definisce il controller proprietario del volume. La proprietà preferita del controller di un volume è il controller che attualmente possiede il gruppo di volumi.
+
+
+
+== Preallocazione della capacità di storage
+
+Il `dssPreAllocate` il parametro consente di assegnare capacità in un volume per la memorizzazione delle informazioni utilizzate per ricostruire un volume. Quando si imposta `dssPreallocate` parametro a. `TRUE`, la logica di allocazione dello spazio di storage nel firmware del controller alloca preventivamente lo spazio in un volume per future modifiche delle dimensioni dei segmenti. Lo spazio pre-allocato è la dimensione massima consentita del segmento. Il `dssPreAllocate` il parametro è necessario per ripristinare correttamente le configurazioni di volume che non sono recuperabili dal database del controller. Per disattivare la funzione di preallocazione, impostare `dssPreAllocate` a. `FALSE`.
+
+
+
+== Dimensione del segmento
+
+Le dimensioni di un segmento determinano il numero di blocchi di dati che il controller scrive su un singolo disco di un volume prima di scrivere i dati sul disco successivo. Ogni blocco di dati memorizza 512 byte di dati. Un blocco di dati è l'unità di storage più piccola. La dimensione di un segmento determina il numero di blocchi di dati che contiene. Ad esempio, un segmento da 8 KB contiene 16 blocchi di dati. Un segmento da 64 KB contiene 128 blocchi di dati.
+
+Quando si inserisce un valore per la dimensione del segmento, il valore viene controllato rispetto ai valori supportati forniti dal controller in fase di esecuzione. Se il valore immesso non è valido, il controller restituisce un elenco di valori validi. L'utilizzo di un singolo disco per una singola richiesta lascia disponibili altri dischi per supportare contemporaneamente altre richieste.
+
+Se il volume si trova in un ambiente in cui un singolo utente sta trasferendo grandi unità di dati (ad esempio, contenuti multimediali), le prestazioni vengono massimizzate quando una singola richiesta di trasferimento dati viene servita con una singola stripe di dati. (Una stripe di dati è la dimensione del segmento moltiplicata per il numero di dischi nel gruppo di volumi utilizzati per i trasferimenti di dati). In questo caso, vengono utilizzati più dischi per la stessa richiesta, ma a ciascun disco viene effettuato l'accesso una sola volta.
+
+Per ottenere performance ottimali in un ambiente di storage di file system o database multiutente, impostare le dimensioni del segmento in modo da ridurre al minimo il numero di dischi necessari per soddisfare una richiesta di trasferimento dei dati.
+
+
+
+== Prefetch di lettura della cache
+
+Il prefetch di lettura della cache consente al controller di copiare ulteriori blocchi di dati nella cache, mentre il controller legge e copia i blocchi di dati richiesti dall'host dal disco nella cache. Questa azione aumenta la possibilità che una richiesta futura di dati possa essere soddisfatta dalla cache. Il prefetch di lettura della cache è importante per le applicazioni multimediali che utilizzano trasferimenti di dati sequenziali. Le impostazioni di configurazione per lo storage array utilizzato determinano il numero di blocchi di dati aggiuntivi letti dal controller nella cache. Valori validi per `cacheReadPrefetch` i parametri sono `TRUE` oppure `FALSE`.
+
+
+
+== Livello minimo del firmware
+
+5.43
+
+7.10 aggiunge la funzionalità RAID 6 Level e il `newVolumeGroup` parametro.
+
+7.60 aggiunge `drawerID` input dell'utente.
+
+7.75 aggiunge `dataAssurance` parametro.
+
+8.78 aggiunge `hostUnmapEnabled` parametro.
+
+11.70.1 aggiunge `blockSize` parametro.

@@ -1,0 +1,638 @@
+---
+permalink: get-started/recurring-syntax-elements.html 
+sidebar: sidebar 
+keywords: recur, syntax, elements 
+summary: Gli elementi di sintassi ricorrenti sono una categoria generale di parametri e opzioni che è possibile utilizzare nei comandi di script. 
+---
+= Elementi di sintassi ricorrenti
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Gli elementi di sintassi ricorrenti sono una categoria generale di parametri e opzioni che è possibile utilizzare nei comandi di script. La tabella seguente elenca le convenzioni utilizzate negli elementi di sintassi ricorrenti.
+
+[cols="2*"]
+|===
+| Convenzione | Definizione 
+
+
+ a| 
+`*a | b*`
+ a| 
+Alternativa ("a" o "b")
+
+
+
+ a| 
+`italicized-words`
+ a| 
+Richiede l'input dell'utente per soddisfare un parametro (una risposta a una variabile)
+
+
+
+ a| 
+`+[ ... ]+` (staffe quadrate)
+ a| 
+Zero o una ricorrenza (le parentesi quadre vengono utilizzate anche come delimitatore per alcuni parametri di comando)
+
+
+
+ a| 
+`+{ ... }+` (parentesi graffe)
+ a| 
+Zero o più occorrenze
+
+
+
+ a| 
+`(*a | b | c*)`
+ a| 
+Scegliere solo una delle alternative
+
+|===
+La tabella seguente elenca i parametri di sintassi ricorrenti e i valori che è possibile utilizzare con i parametri di sintassi ricorrenti.
+
+[cols="2*"]
+|===
+| Sintassi ricorrente | Valore della sintassi 
+
+
+ a| 
+`_autoconfigure-vols-attr- value-list_`
+ a| 
+{`_autoconfigure-vols-attr-value-pair_` {`_autoconfigure-vols-attr-value-pair_`}
+
+
+
+ a| 
+`_autoconfigure-vols-attr- value-pair_`
+ a| 
+[listing]
+----
+driveType=drive-type | driveMediaType=drive-media-type |
+raidLevel=raid-level | volumeGroupWidth=integer-literal |
+volumeGroupCount=integer-literal | volumesPerGroupCount=integer-literal6|
+hotSpareCount=integer-literal | segmentSize=segment-size-spec | cacheReadPrefetch=(TRUE | FALSE)
+securityType=(none | capable | enabled)7| dataAssurance=(none | enabled)5
+----
+
+
+ a| 
+`_boolean_`
+ a| 
+[listing]
+----
+(TRUE | FALSE)
+----
+
+
+ a| 
+`_cache-flush-modifier- setting_`
+ a| 
+[listing]
+----
+immediate, 0, .25, .5, .75, 1, 1.5, 2, 5, 10, 20, 60, 120, 300, 1200, 3600, infinite
+----
+
+
+ a| 
+`_capacity-spec_`
+ a| 
+`_integer-literal_` `[KB | MB | GB | TB | Bytes]`
+
+
+
+ a| 
+`_count-based-repository- spec_`
+ a| 
+[listing]
+----
+repositoryRAIDLevel =repository-raid-level repositoryDriveCount=integer-literal
+[repositoryVolumeGroupUserLabel =user-label] [driveType=drive-type4
+] [trayLossProtect=(TRUE | FALSE)1] | [drawerLossProtect=(TRUE | FALSE)2] |
+[dataAssurance=(none | enabled)5] |
+----
+
+
+ a| 
+`_create-raid-vol-attr- value-list_`
+ a| 
+{`_create-raid-volume-attribute-value-pair_` {`_create-raid-volume-attribute-value-pair_`}
+
+
+
+ a| 
+`_create-raid-volume- attribute-value-pair_`
+ a| 
+[listing]
+----
+capacity=capacity-spec | owner=(a | b) |
+cacheReadPrefetch=(TRUE | FALSE) | segmentSize=integer-literal |
+usageHint=usage-hint-spec
+----
+
+
+ a| 
+`_create-volume-copy-attr- value-list_`
+ a| 
+{`_create-volume-copy-attr-value-pair_` {`_create-volume-copy-attr-value-pair_`}
+
+
+
+ a| 
+`_create-volume-copy-attr- value-pair_`
+ a| 
+[listing]
+----
+copyPriority=(highest | high | medium | low | lowest) |
+targetReadOnlyEnabled=(TRUE | FALSE) | copyType=(offline | online) |
+repositoryPercentOfBase=(20 | 40 | 60 | 120 | default) |
+repositoryGroupPreference=(sameAsSource | otherThanSource | default)
+----
+
+
+ a| 
+`_drive-media-type_`
+ a| 
+`(HDD | SSD | unknown | allMedia)` _HDD_ significa disco rigido. _SSD_ significa disco a stato solido.
+
+
+
+ a| 
+`_drive-spec_`
+ a| 
+`_trayID,slotID` oppure `trayID,drawerID,slotID_` Un disco è definito come due o tre valori letterali interi separati da una virgola. I vassoi a bassa densità richiedono due valori. I vassoi ad alta densità, quelli dotati di cassetti, richiedono tre valori.
+
+
+
+ a| 
+`_drive-spec-list_`
+ a| 
+ `_drive-spec_` `_drive-spec_`
+
+
+
+ a| 
+`drive-type`
+ a| 
+`(fibre | SATA | SAS)`
+
+[NOTE]
+====
+Solo le unità SAS sono supportate per le versioni firmware 7.86 e successive.
+
+====
+
+
+ a| 
+`_error-action_`
+ a| 
+`(stop | continue)`
+
+
+
+ a| 
+`_ethernet-port-options_`
+ a| 
+[listing]
+----
+enableIPv4=(TRUE | FALSE) | enableIPv6=(TRUE | FALSE) |
+IPv6LocalAddress=ipv6-address | IPv6RoutableAddress=ipv6-address |
+IPv6RouterAddress=ipv6-address | IPv4Address=ip-address |
+IPv4ConfigurationMethod= (static | dhcp) | IPv4GatewayIP=ip-address |
+IPv4SubnetMask=ip-address | duplexMode=(TRUE | FALSE) | portSpeed=(autoNegotiate | 10 | 100 |
+1000)
+----
+
+
+ a| 
+`_feature-identifier_`
+ a| 
+[NOTE]
+====
+Tutte le funzioni di SANtricity 11.40 sono attivate per impostazione predefinita.
+
+====
+
+
+ a| 
+`_filename_`
+ a| 
+`_string-literal_`
+
+
+
+ a| 
+`_gid_`
+ a| 
+`_string-literal_`
+
+
+
+ a| 
+`_hex-literal_`
+ a| 
+Un valore letterale compreso tra 0x00 e 0xFF.
+
+
+
+ a| 
+`_host-card-identifier_`
+ a| 
+`(1 | 2 | 3 | 4)`
+
+
+
+ a| 
+`_host-type_`
+ a| 
+`string-literal`| `integer-literal`
+
+
+
+ a| 
+`_instance-based- repository-spec_`
+ a| 
+[listing]
+----
+(repositoryRAIDLevel =repository-raid-level repositoryDrives= (drive-spec-list)
+[repositoryVolumeGroupUserLabel =user-label] [trayLossProtect=(TRUE | FALSE)1]) |
+[drawerLossProtect=(TRUE | FALSE)2]) | (repositoryVolumeGroup=user-label
+[freeCapacityArea=integer-literal3])
+----
+Specificare `*repositoryRAIDLevel*` con il `*repositoryDrives*` parametro. Non specificare il livello RAID o i dischi con il gruppo di volumi. Non impostare un valore per `*trayLossProtect*` quando si specifica un gruppo di volumi.
+
+
+
+ a| 
+`_ip-address_`
+ a| 
+`*(0-255).(0-255).(0-255).(0-255)*`
+
+
+
+ a| 
+`_ipv6-address_`
+ a| 
+`*(0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF): (0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF)*`
+
+Immettere tutti i 32 caratteri esadecimali.
+
+
+
+ a| 
+`_iscsi-host-port_`
+ a| 
+[listing]
+----
+(1 | 2 | 3 | 4)
+----
+Il numero della porta host potrebbe essere 2, 3 o 4, a seconda del tipo di controller utilizzato.
+
+
+
+ a| 
+`_iscsi-host-port-options_`
+ a| 
+[listing]
+----
+IPv4Address=ip-address | IPv6LocalAddress=ipv6-address |
+IPv6RoutableAddress=ipv6-address | IPv6RouterAddress=ipv6-address |
+enableIPv4=(TRUE | FALSE) | enableIPv6=(TRUE | FALSE) | enableIPv4Priority=(TRUE | FALSE) |
+enableIPv6Priority=(TRUE | FALSE) | IPv4ConfigurationMethod=(static | dhcp) |
+IPv6ConfigurationMethod= (static | auto) | IPv4GatewayIP=ip-address |
+IPv6HopLimit=integer | IPv6NdDetectDuplicateAddress=integer |
+IPv6NdReachableTime=time-interval | IPv6NdRetransmitTime=time-interval |
+IPv6NdTimeOut=time-interval | IPv4Priority=integer |
+IPv6Priority=integer | IPv4SubnetMask=ip-address |
+IPv4VlanId=integer | IPv6VlanId=integer |
+maxFramePayload=integer | tcpListeningPort=tcp-port-id |
+portSpeed=(autoNegotiate | 1 | 10)
+----
+
+
+ a| 
+`_iscsiSession_`
+ a| 
+[listing]
+----
+[session-identifier]
+----
+
+
+ a| 
+`_nvsram-offset_`
+ a| 
+`_hex-literal_`
+
+
+
+ a| 
+`_nvsramBitSetting_`
+ a| 
+`_nvsram-mask, nvsram-value_` = `_0xhexadecimal, 0xhexadecimal_` | `_integer-literal_`
+
+Il `_0xhexadecimal_` Il valore è in genere un valore compreso tra 0x00 e 0xFF.
+
+
+
+ a| 
+`_nvsramByteSetting_`
+ a| 
+`_nvsram-value_` = `_0xhexadecimal_` | `_integer-literal_`
+
+Il `0xhexadecimal` Il valore è in genere un valore compreso tra 0x00 e 0xFF.
+
+
+
+ a| 
+`_portID_`
+ a| 
+[listing]
+----
+(0-127)
+----
+
+
+ a| 
+`_raid-level_`
+ a| 
+[listing]
+----
+(0 | 1 | 3 | 5 | 6)
+----
+
+
+ a| 
+`_recover-raid-volume-attr- value-list_`
+ a| 
+{`_recover-raid-volume-attr-value-pair_` {`_recover-raid-volume-attr-value-pair_`}
+
+
+
+ a| 
+`_recover-raid-volume-attr- value-pair_`
+ a| 
+[listing]
+----
+owner=(a|b) |cacheReadPrefetch=(TRUE | FALSE) | dataAssurance=(none | enabled)
+----
+
+
+ a| 
+`_repository-raid-level_`
+ a| 
+[listing]
+----
+(1 | 3 | 5 | 6)
+----
+
+
+ a| 
+`_repository-spec_`
+ a| 
+`instance-based-repository-spec` | `count-based-repository-spec`
+
+
+
+ a| 
+`_segment-size-spec_`
+ a| 
+`_integer-literal_` - tutte le capacità sono in base 2.
+
+
+
+ a| 
+`_serial-number_`
+ a| 
+[listing]
+----
+string-literal
+----
+
+
+ a| 
+`_slotID_`
+ a| 
+Per i vassoi ad alta capacità, specificare il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot per l'unità. Per i vassoi delle unità a bassa capacità, specificare il valore dell'ID del vassoio e il valore dell'ID dello slot per l'unità. I valori dell'ID vassoio sono `0` a. `99`. I valori dell'ID cassetto sono `1` a. `5`.
+
+Tutti i valori massimi di ID slot sono 24. I valori ID slot iniziano con 0 o 1, a seconda del modello di vassoio.
+
+Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot tra parentesi quadre ([ ]).
+
+[listing]
+----
+(drive=\(trayID,[drawerID,]slotID\)|
+drives=\(trayID1,[drawerID1,]slotID1 ... trayIDn,[drawerIDn,]slotIDn\) )
+----
+
+
+ a| 
+`_test-devices_`
+ a| 
+[listing]
+----
+controller=(a|b)
+esms=(esm-spec-list)drives=(drive-spec-list)
+----
+
+
+ a| 
+`_test-devices-list_`
+ a| 
+{`_test-devices_` {`_test-devices_`}
+
+
+
+ a| 
+`_time-zone-spec_`
+ a| 
+[listing]
+----
+(GMT+HH:MM | GMT-HH:MM) [dayLightSaving=HH:MM]
+----
+
+
+ a| 
+`_trayID-list_`
+ a| 
+{`_trayID_` {`_trayID_`}
+
+
+
+ a| 
+`_usage-hint-spec_`
+ a| 
+[listing]
+----
+usageHint=(multiMedia | database | fileSystem)
+----
+Il suggerimento di utilizzo, o le caratteristiche i/o previste, del volume vengono utilizzati dal controller per indicare una dimensione del segmento di volume predefinita appropriata e un prefetch di lettura della cache dinamica. Per il file system e il database, viene utilizzata una dimensione di segmento di 128 KB. Per le applicazioni multimediali, viene utilizzata una dimensione di segmento di 256 KB. Tutti e tre gli hint di utilizzo abilitano il prefetch dinamico della lettura della cache.
+
+
+
+ a| 
+`_user-label_`
+ a| 
+`_string-literal_`
+
+I caratteri validi sono alfanumerici, il trattino e il carattere di sottolineatura.
+
+
+
+ a| 
+`_user-label-list_`
+ a| 
+{`_user-label_` {`_user-label_`}
+
+
+
+ a| 
+`_volumeGroup-number_`
+ a| 
+`_integer-literal_`
+
+
+
+ a| 
+`_wwID_`
+ a| 
+`_string-literal_`
+
+|===
+1affinché la protezione contro la perdita di vassoio funzioni, la configurazione deve rispettare le seguenti linee guida:
+
+[cols="3*"]
+|===
+| Livello | Criteri per la protezione dalla perdita dei vassoi | Numero minimo di vassoi richiesti 
+
+
+ a| 
+Pool di dischi
+ a| 
+Il pool di dischi non contiene più di due dischi in un singolo vassoio
+ a| 
+6
+
+
+
+ a| 
+RAID 6
+ a| 
+Il gruppo di volumi non contiene più di due unità in un singolo vassoio
+ a| 
+3
+
+
+
+ a| 
+RAID 3 o RAID 5
+ a| 
+Ciascuna unità del gruppo di volumi si trova in un vassoio separato
+ a| 
+3
+
+
+
+ a| 
+RAID 1
+ a| 
+Ogni disco di una coppia RAID 1 deve essere collocato in un vassoio separato
+ a| 
+2
+
+
+
+ a| 
+RAID 0
+ a| 
+Impossibile ottenere la protezione dalla perdita dei vassoi.
+ a| 
+Non applicabile
+
+|===
+2affinché la protezione in caso di perdita dei cassetti funzioni, la configurazione deve rispettare le seguenti linee guida:
+
+[cols="3*"]
+|===
+| Livello | Criteri per la protezione contro le perdite di cassetto | Numero minimo di cassetti richiesti 
+
+
+ a| 
+Pool di dischi
+ a| 
+Il pool include dischi di tutti e cinque i cassetti e un numero uguale di dischi in ciascun cassetto. Un vassoio da 60 dischi può ottenere la protezione contro la perdita di cassetto quando il pool di dischi contiene 15, 20, 25, 30, 35, 40, 45, 50, 55 o 60 dischi.
+ a| 
+5
+
+
+
+ a| 
+RAID 6
+ a| 
+Il gruppo di volumi non contiene più di due dischi in un singolo cassetto.
+ a| 
+3
+
+
+
+ a| 
+RAID 3 o RAID 5
+ a| 
+Ciascuna unità del gruppo di volumi si trova in un cassetto separato.
+ a| 
+3
+
+
+
+ a| 
+RAID 1
+ a| 
+Ogni disco di una coppia mirrorata deve essere collocato in un cassetto separato.
+ a| 
+2
+
+
+
+ a| 
+RAID 0
+ a| 
+Impossibile ottenere la protezione perdita cassetto.
+ a| 
+Non applicabile
+
+|===
+Se si dispone di una configurazione di array di storage in cui un gruppo di volumi si estende su diversi vassoi, è necessario assicurarsi che l'impostazione relativa alla protezione dalle perdite dei cassetti funzioni con l'impostazione relativa alla protezione dalle perdite dei vassoi. È possibile utilizzare la protezione contro le perdite di cassetto senza protezione contro le perdite di vassoio. Non è possibile utilizzare la protezione in caso di perdita dei vassoi senza la protezione in caso di perdita dei cassetti. Se il `*trayLossProtect*` e il `*drawerLossProtect*` i parametri non sono impostati sullo stesso valore, l'array di storage restituisce un messaggio di errore e non viene creata una configurazione dell'array di storage.
+
+3 per determinare se esiste un'area di capacità libera, eseguire `show volumeGroup` comando.
+
+4 il disco predefinito (tipo di disco) è `SAS`.
+
+Il `*driveType*` il parametro non è necessario se nell'array di storage è presente un solo tipo di disco. Se si utilizza `*driveType*` è inoltre necessario utilizzare il `*hotSpareCount*` e il `*volumeGroupWidth*` parametro.
+
+5 il `*dataAssurance*` Il parametro si riferisce alla funzione Data Assurance (da).
+
+La funzione Data Assurance (da) aumenta l'integrità dei dati nell'intero sistema storage. DA consente all'array di storage di verificare la presenza di errori che potrebbero verificarsi quando i dati vengono spostati tra gli host e i dischi. Quando questa funzione è attivata, l'array di storage aggiunge i codici di controllo degli errori (noti anche come CRC (Cyclic Redundancy Checks) a ciascun blocco di dati del volume. Dopo lo spostamento di un blocco di dati, l'array di storage utilizza questi codici CRC per determinare se si sono verificati errori durante la trasmissione. I dati potenzialmente corrotti non vengono scritti su disco né restituiti all'host.
+
+Se si desidera utilizzare la funzione da, iniziare con un pool o un gruppo di volumi che include solo dischi che supportano da. Quindi, creare volumi compatibili con da. Infine, mappare questi volumi con funzionalità da all'host utilizzando un'interfaccia i/o in grado di eseguire il da. Le interfacce i/o che supportano il da includono Fibre Channel, SAS e iSER su InfiniBand (iSCSI Extensions per RDMA/IB). DA non è supportato da iSCSI su Ethernet o da SRP su InfiniBand.
+
+[NOTE]
+====
+Quando tutto l'hardware richiesto e l'interfaccia i/o sono compatibili con da, è possibile impostare `*dataAssurance*` parametro a. `enabled` E quindi utilizzare da con determinate operazioni. Ad esempio, è possibile creare un gruppo di volumi che includa dischi compatibili con da e quindi creare un volume all'interno di tale gruppo di volumi abilitato per da. Altre operazioni che utilizzano un volume abilitato da dispongono di opzioni per supportare la funzione da.
+
+====
+6 il `*volumesPerGroupCount*` il parametro è il numero di volumi a capacità uguale per gruppo di volumi.
+
+7 il `*securityType*` parametro consente di specificare l'impostazione di protezione per un gruppo di volumi che si sta creando. Tutti i volumi sono impostati anche sull'impostazione di sicurezza scelta. Le opzioni disponibili per l'impostazione della protezione includono:
+
+* `none` -- il gruppo di volumi non è sicuro.
+* `capable` -- il gruppo di volumi supporta la protezione, ma la protezione non è stata attivata.
+* `enabled` -- il gruppo di volumi è abilitato per la protezione.
+
+
+[NOTE]
+====
+Se si desidera impostare una chiave di sicurezza per lo storage array, è necessario creare una chiave di sicurezza per lo storage array `*securityType=enabled*`. (Per creare una chiave di sicurezza dello storage array, utilizzare `create storageArray securityKey` comando.)
+
+====

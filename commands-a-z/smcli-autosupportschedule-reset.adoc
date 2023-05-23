@@ -1,0 +1,104 @@
+---
+permalink: commands-a-z/smcli-autosupportschedule-reset.html 
+sidebar: sidebar 
+keywords: reset, autosupport, message, collection, schedule 
+summary: Il comando di ripristino SMcli autoSupportSchedule ripristina gli orari e i giorni giornalieri e settimanali della settimana in cui vengono inviati i messaggi AutoSupport. È possibile accettare i valori casuali predefiniti generati dal software di gestione oppure specificare i valori con questo comando. 
+---
+= Ripristinare la pianificazione della raccolta dei messaggi AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `SMcli autoSupportSchedule reset` Il comando ripristina gli orari e i giorni giornalieri e settimanali della settimana in cui vengono inviati i messaggi AutoSupport. È possibile accettare i valori casuali predefiniti generati dal software di gestione oppure specificare i valori con questo comando.
+
+
+
+== Array supportati
+
+Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E2800 o E5700.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Questo comando è un comando SMcli, non un comando script. Eseguire questo comando da una riga di comando. Non è possibile eseguire questo comando dall'editor di script nel software di gestione dello storage.
+
+====
+* Se AutoSupport è attivato, il software di gestione invia sia messaggi AutoSupport giornalieri che messaggi AutoSupport settimanali.
+* Il software di gestione seleziona in modo casuale un'ora del giorno per i messaggi giornalieri e settimanali e un giorno della settimana per i messaggi settimanali. Il software di gestione esegue tutti i tentativi per garantire che nessun array di storage all'interno di un dominio di gestione invii contemporaneamente messaggi AutoSupport pianificati.
+* È possibile specificare un intervallo (granularità a livello di ora) di quando inviare quotidianamente e quando inviare messaggi settimanali per gli array di storage nel dominio di gestione.
+* Per la pianificazione settimanale, selezionare i giorni preferiti della settimana per la raccolta e la trasmissione AutoSupport.
+
+
+
+
+== Sintassi
+
+[listing]
+----
+SMcli -autoSupportSchedule reset | (dailyTime=<startTime>-<endTime>
+   dayOfWeek=[Sunday Monday Tuesday Wednesday Thursday Friday Saturday]
+   weeklyTime=<startTime>-<endTime>)
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`reset`
+ a| 
+Ripristina e genera nuove pianificazioni utilizzando un intervallo di tempo di 24 ore al giorno e di 7 giorni (da domenica a sabato).
+
+
+
+ a| 
+`dailyTime`
+ a| 
+``startTime`` - ``endTime`` Specifica l'ora in cui si desidera avviare e terminare la raccolta di dati AutoSupport per tutti gli array di storage. StartTime e endTime devono essere nel formato HH:MM[am|pm}.
+
+
+
+ a| 
+`dayOfWeek`
+ a| 
+[Domenica|lunedì|martedì|mercoledì|giovedì|venerdì|sabato] specifica i giorni preferiti della settimana (da domenica a sabato) in cui si desidera raccogliere i dati di raccolta bundle AutoSupport per tutti gli storage array. Il `_dayOfWeek_` il parametro deve essere circondato da parentesi quadre e separato da uno spazio.
+
+
+
+ a| 
+`weeklyTime`
+ a| 
+``startTime`` - ``endTime`` Specifica l'ora del giorno in cui si desidera iniziare e terminare la raccolta dei dati della raccolta bundle AutoSupport per ogni giorno della settimana selezionato. Il `_startTime_` e. `_endTime_` Deve essere nel formato HH:MM[am|pm].
+
+|===
+
+
+== Livello minimo del firmware
+
+8.25
+
+
+
+== Esempio
+
+[listing]
+----
+ SMcli -autoSupportSchedule dailyTime=10:00am-11:00am
+dayOfWeek=[Monday Thursday Friday] weeklyTime=2:00am-3:00am
+----
+`SMcli -autoSupportSchedule dailyTime=10:00am-11:00am dayOfWeek=[Monday Thursday Friday] weeklyTime=2:00am-3:00am`
+
+
+
+== Verifica
+
+Utilizzare `SMcli -autoSupportSchedule show` per visualizzare la modifica risultante alla pianificazione nel dominio di gestione.

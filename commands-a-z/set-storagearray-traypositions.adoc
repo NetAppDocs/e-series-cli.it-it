@@ -1,0 +1,73 @@
+---
+permalink: commands-a-z/set-storagearray-traypositions.html 
+sidebar: sidebar 
+keywords: set, storage, array, tray, positions 
+summary: 'Il comando Set StorageArray tryPositions definisce la posizione dei vassoi in un array di storage. Quando si immette questo comando, è necessario includere tutti i vassoi nell"array di storage.' 
+---
+= Impostare le posizioni dei vassoi degli array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray trayPositions` il comando definisce la posizione dei vassoi in un array di storage. Quando si immette questo comando, è necessario includere tutti i vassoi nell'array di storage.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set storageArray trayPositions=pass:quotes[(controller | _trayID_ ... _trayIDn_)]
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`trayPositions`
+ a| 
+Un elenco di tutti gli ID dei vassoi. La sequenza degli ID dei vassoi nell'elenco definisce le posizioni per il vassoio del controller e i vassoi delle unità in un array di storage. I valori validi sono `0` a. `99`. Inserire i valori dell'ID vassoio separati da uno spazio. Racchiudere l'elenco dei valori ID vassoio tra parentesi. Per gli array di storage in cui il vassoio del controller dispone di un identificatore predefinito che non rientra nell'intervallo di valori validi per la posizione del vassoio, utilizzare `controller` valore.
+
+|===
+
+
+== Note
+
+Questo comando definisce la posizione di un vassoio in un array di storage in base alla posizione dell'ID vassoio in `trayPositions` elenco. Ad esempio, se si dispone di un vassoio del controller con un ID impostato su 84 e di vassoi dell'unità con ID impostati su 1, 12 e 50, il `trayPositions` sequenza (`84 1 12 50`) posiziona il vassoio del controller nella prima posizione, il vassoio dell'unità 1 nella seconda posizione, il vassoio dell'unità 12 nella terza posizione e il vassoio dell'unità 50 nella quarta posizione. Il `trayPositions` sequenza (`1 84 50 12`) posiziona il vassoio del controller nella seconda posizione, il vassoio dell'unità 1 nella prima posizione, il vassoio dell'unità 50 nella terza posizione e il vassoio dell'unità 12 nella quarta posizione.
+
+[NOTE]
+====
+È necessario includere tutti i vassoi nell'array di storage nell'elenco definito da `trayPositions` parametro. Se il numero di vassoi nell'elenco non corrisponde al numero totale di vassoi nell'array di storage, viene visualizzato un messaggio di errore.
+
+====
+[NOTE]
+====
+Il software di gestione mostra visivamente la prima posizione in alto e le altre posizioni in ordine relativo in basso con l'ultima posizione in basso.
+
+====
+
+
+== Livello minimo del firmware
+
+6.10
+
+Per 6.14 e 6.16, `controller` non è un valore valido.

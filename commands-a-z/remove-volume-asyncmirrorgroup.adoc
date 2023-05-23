@@ -1,0 +1,77 @@
+---
+permalink: commands-a-z/remove-volume-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: remove, volume, asynchronous, mirror, group 
+summary: Il comando remove volume asyncMirrorGroup rimuove un volume membro da un gruppo di mirror asincrono esistente. 
+---
+= Rimuovere il volume dal gruppo di mirror asincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `remove volume asyncMirrorGroup` il comando rimuove un volume membro da un gruppo mirror asincrono esistente.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Facoltativamente, è possibile eliminare i membri del volume del repository dal gruppo di mirror asincrono.
+
+Questo comando è valido solo sull'array di storage locale che contiene il gruppo mirror asincrono di cui si desidera rimuovere il volume membro.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+remove volume pass:quotes[[_"volumeName"_]] asyncMirrorGroup=pass:quotes[_"asyncMirrorGroupName"_]
+[deleteRepositoryMembers=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`volume`
+ a| 
+Il nome del volume specifico che si desidera rimuovere dal gruppo di mirror asincrono. Racchiudere il nome del volume tra virgolette doppie (" ") tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Il nome del gruppo di mirror asincrono che contiene il volume membro che si desidera rimuovere. Racchiudere il nome del gruppo mirror asincrono tra virgolette doppie (" ").
+
+
+
+ a| 
+`deleteRepositoryMembers`
+ a| 
+Determina se rimuovere tutti i membri del repository dal gruppo di mirror asincrono.
+
+|===
+
+
+== Livello minimo del firmware
+
+7.84

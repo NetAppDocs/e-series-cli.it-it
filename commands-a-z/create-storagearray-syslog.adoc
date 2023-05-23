@@ -1,0 +1,100 @@
+---
+permalink: commands-a-z/create-storagearray-syslog.html 
+sidebar: sidebar 
+keywords: create, storage, array, syslog, configuration 
+summary: Il comando create StorageArray syslog consente di archiviare i registri di controllo su un server syslog esterno. Dopo aver stabilito una connessione tra lo storage array e il server syslog, i registri di controllo vengono salvati automaticamente nel server syslog. 
+---
+= Creare la configurazione syslog dell'array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `create storageArray syslog` il comando consente di archiviare i registri di controllo su un server syslog esterno. Dopo aver stabilito una connessione tra lo storage array e il server syslog, i registri di controllo vengono salvati automaticamente nel server syslog.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Sintassi
+
+[listing]
+----
+
+create storageArray syslog serverAddress="<address>" port=<port> protocol=("udp" | "tcp" | "tls") components=(componentName=("auditLog") ...)
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`serverAddress`
+ a| 
+Nome host o indirizzo IP del ricevitore syslog.
+
+
+
+ a| 
+`port`
+ a| 
+Numero di porta del ricevitore syslog.
+
+
+
+ a| 
+`protocol`
+ a| 
+Protocollo di trasmissione syslog. I valori accettabili includono udp, tcp o tls.
+
+
+
+ a| 
+`components`
+ a| 
+Elenco delle voci dei componenti che verranno registrate nel server syslog. Attualmente, sono supportati solo i registri di controllo.
+
+
+
+ a| 
+`componentName`
+ a| 
+Nome del componente; attualmente è supportato solo "AuditLog".
+
+|===
+
+
+=== Esempio
+
+[listing]
+----
+SMcli -n Array1 -c "create storageArray syslog
+serverAddress=\"192.168.2.1\" port=514 protocol=\"udp\"
+components=(componentName=\"auditLog\");"
+ID: 331998fe-3154-4489-b773-b0bb60c6b48e
+Server Address: 192.168.2.1.com
+Port: 514
+Protocol: udp
+Components
+1. Component Name: auditLog
+SMcli completed successfully.
+----
+
+
+== Livello minimo del firmware
+
+8.42

@@ -1,0 +1,61 @@
+---
+permalink: get-started/formatting-cli-commands.html 
+sidebar: sidebar 
+keywords: format, rules, cli, commands 
+summary: 'Le virgolette doppie utilizzate come parte di un nome o di un"etichetta richiedono una particolare considerazione quando si eseguono i comandi CLI e i comandi script su un sistema operativo Windows, Linux o Solaris.' 
+---
+= Regole di formattazione per i comandi CLI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Le virgolette doppie (" ") utilizzate come parte di un nome o di un'etichetta richiedono una particolare considerazione quando si eseguono i comandi CLI e i comandi script su un sistema operativo Windows, Linux o Solaris.
+
+Quando le virgolette doppie (" ") fanno parte di un nome o di un valore, è necessario inserire una barra rovesciata (") prima di ogni virgoletta doppia.
+
+Ad esempio:
+
+[listing]
+----
+-c "set storageArray userLabel=\"Engineering\";"
+----
+In questo esempio, "Engineering" è il nome dell'array di storage.
+
+Un secondo esempio è:
+
+[listing]
+----
+-n \"My\"_Array
+----
+In questo esempio, "My"_Array è il nome dell'array di storage.
+
+Non è possibile utilizzare virgolette doppie (" ") come parte di una stringa di caratteri (chiamata anche stringa letterale) all'interno di un comando script. Ad esempio, non è possibile inserire la seguente stringa per impostare il nome dell'array di storage su Array "Finanza":
+
+[listing]
+----
+-c "set storageArray userLabel=\"\"Finance\"Array\";"
+----
+In un sistema operativo Windows, se non si utilizzano virgolette doppie (" ") intorno a un nome, è necessario inserire un accento circonflesso ( {caret} ) prima di ogni carattere speciale dello script. I caratteri speciali sono {caret}, | , < e >.
+
+Inserire un accento circonflesso prima di ogni carattere di script speciale quando viene utilizzato con i terminali `-n`, `-o`, `-f`, e. `-p`. Ad esempio, per specificare l'array di storage CLI>CLIENT, immettere la seguente stringa:
+
+[listing]
+----
+-n CLI^>CLIENT
+----
+Inserire un caret ({caret}) prima di ogni carattere speciale dello script quando viene utilizzato all'interno di una stringa letterale in un comando script. Ad esempio, per modificare il nome di un array di storage in FINANCE_|_PAYROLL, immettere la seguente stringa:
+
+[listing]
+----
+-c "set storageArray userLabel=\"FINANCE_^|_PAYROLL\";"
+----
+[NOTE]
+====
+Quando si emettono comandi SMcli al prompt dei comandi, viene visualizzata una barra rovesciata aggiuntiva (`\`) È un carattere di escape nel nome del percorso di un file di input o output quando si utilizza il sistema operativo Windows. La barra rovesciata aggiuntiva (`\`) Deve essere incluso quando si utilizza SMcli in modalità https sicura, fornendo l'opzione -u per specificare un utente di gestione degli accessi basato sui ruoli. *Esempio:*
+
+[listing]
+----
+C:\\dir\\subdir\\filename
+----
+====

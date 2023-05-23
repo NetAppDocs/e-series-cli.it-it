@@ -1,0 +1,96 @@
+---
+permalink: commands-a-z/enable-storagearray-feature-file.html 
+sidebar: sidebar 
+keywords: enable, storage, array, feature, file, command, permanent, upgrade, trial period 
+summary: Il comando enable StorageArray feature file consente di eseguire un aggiornamento permanente dello storage array o un periodo di prova. 
+---
+= Abilitare la funzione di array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `enable storageArray feature file` il comando consente di attivare una funzionalità per un aggiornamento permanente dello storage array o per un periodo di prova.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Contesto
+
+Questo comando esegue una delle seguenti azioni:
+
+* Attiva una chiave funzione per un aggiornamento permanente di una funzione
+* Attiva una chiave funzione per un aggiornamento permanente di un Feature Pack
+* Attiva una funzione per un periodo di prova
+
+
+Un Feature Pack è un set predefinito di diverse funzionalità, come partizione dello storage e mirroring sincrono. Queste funzioni sono combinate per la comodità degli utenti. Quando gli utenti installano un Feature Pack, tutte le funzionalità del Feature Pack vengono installate contemporaneamente.
+
+Ogni funzionalità è gestita da una chiave di licenza generata per una funzionalità o un Feature Pack specifico e per uno storage array specifico. La chiave di licenza viene fornita come file eseguito per applicare la licenza per la funzione.
+
+Per determinare le funzionalità caricate nell'array di storage, eseguire `show storageArray features` comando. Il `show storageArray features` command elenca tutte le funzionalità installate sullo storage array, le quali possono essere valutate per un periodo di prova, le funzionalità attivate e le funzionalità disattivate.
+
+
+
+== Per attivare una chiave funzione
+
+[listing, subs="+macros"]
+----
+pass:quotes[enable storageArray feature file="_filename_"]
+----
+Il `file` il parametro identifica il percorso del file e il nome di un file feature key valido. Racchiudere il percorso del file e il nome del file tra virgolette doppie (" "). Ad esempio:
+
+[listing]
+----
+file="C:\Program Files\CLI\dnld\ftrkey.key"
+----
+I nomi di file validi per i file delle chiavi di funzione terminano con a. `.key` interno.
+
+Per ciascuna funzione che si desidera attivare, è necessario un file delle chiavi di funzione.
+
+
+
+== Per abilitare un Feature Pack
+
+[listing, subs="+macros"]
+----
+pass:quotes[enable storageArray featurePack file="_filename_"]
+----
+Il `file` il parametro identifica il percorso del file e il nome del file di un file feature pack valido. Racchiudere il percorso del file e il nome del file tra virgolette doppie (" "). Ad esempio:
+
+[listing]
+----
+file="C:\Program Files\CLI\dnld\ftrpk.key"
+----
+I nomi di file validi per i file delle chiavi di funzione terminano con a. `.key` interno.
+
+
+
+== Per abilitare una funzione per un periodo di prova
+
+[listing, subs="+macros"]
+----
+pass:quotes[enable storageArray feature=_featureAttributeList_]
+----
+Per valutare una funzione per un periodo di prova, è possibile immettere uno o più dei seguenti valori di attributo per `featureAttributeList`. Se si inseriscono più valori di attributo, separare i valori con uno spazio.
+
+* `driveSecurity`
+
+
+
+
+== Livello minimo del firmware
+
+8.25 rimuove tutti gli attributi che non sono più validi.

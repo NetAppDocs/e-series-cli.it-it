@@ -1,0 +1,229 @@
+---
+permalink: commands-a-z/create-cgsnapvolume.html 
+sidebar: sidebar 
+keywords: create, consistency group, snapshot, volume 
+summary: Il comando create cgSnapVolume crea un volume di snapshot di immagini specifiche nei volumi di base in un gruppo di coerenza. 
+---
+= Creare un volume snapshot di gruppo di coerenza
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `create cgSnapVolume` il comando crea un volume di snapshot di immagini specifiche nei volumi di base in un gruppo di coerenza.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+È possibile selezionare un volume di base o più volumi di base dal gruppo di coerenza da includere nel volume di snapshot. Quando si crea un volume snapshot di un gruppo di coerenza, si crea un volume con contenuti visualizzabili.
+
+
+
+== Sintassi con volumi di base specificati dall'utente
+
+[listing, subs="+macros"]
+----
+create cgSnapVolume userLabel=pass:quotes[_"cgVolumeName"_]
+cgSnapImageID=pass:quotes[_"snapCGID:imageID"_]
+members=pass:quotes[_(baseVolume1:repos_XXXX ... baseVolumen:repos_YYYY)_]
+----
+
+
+== Sintassi quando si imposta il volume snapshot del gruppo di coerenza su sola lettura
+
+[listing, subs="+macros"]
+----
+create cgSnapVolume userLabel=pass:quotes[_"cgVolumeName"_]
+cgSnapImageID=pass:quotes[_"snapCGID:imageID"_]
+readOnly
+----
+
+
+== Sintassi durante l'impostazione del limite completo del repository
+
+[listing, subs="+macros"]
+----
+create cgSnapVolume userLabel=pass:quotes[_"cgVolumeName"_]
+cgSnapImageID=pass:quotes[_"snapCGID:imageID"_]
+members=pass:quotes[_(baseVolume1:repos_XXXX_] |
+baseVolume1: (pass:quotes[_volumeGroupName_] pass:quotes[[_capacity=capacityValue_])] |
+(baseVolume1:pass:quotes[_diskPoolName_] [capacity=pass:quotes[_capacityValue_]])
+... baseVolumen:repos_YYYY |
+baseVolumen: (pass:quotes[_volumeGroupName_] [capacity=pass:quotes[_capacityValue_]]) |
+baseVolumen: (pass:quotes[_diskPoolName_] [capacity=pass:quotes{_capacityValue_]]))
+repositoryFullLimit=pass:quotes[_percentValue_]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`userLabel`
+ a| 
+Il nome che si desidera assegnare al volume snapshot del gruppo di coerenza che si sta creando. Racchiudere il nome del volume snapshot del gruppo di coerenza tra virgolette doppie (" ").
+
+
+
+ a| 
+`cgSnapImageID`
+ a| 
+Il nome dell'immagine snapshot in un gruppo di coerenza. Il nome di un'immagine istantanea è composto da due parti:
+
+* Il nome del gruppo di coerenza
+* Identificatore dell'immagine snapshot nel gruppo di coerenza
+
+
+L'identificatore dell'immagine snapshot può essere uno dei seguenti:
+
+* `newest` - Utilizzare questa opzione per visualizzare l'ultima immagine snapshot creata nel gruppo di coerenza.
+* `oldest` - Utilizzare questa opzione per visualizzare la prima immagine snapshot creata nel gruppo di coerenza.
+
+
+Racchiudere il nome dell'immagine istantanea tra virgolette doppie (" ").
+
+È possibile inserire più nomi di immagini snapshot o numeri di sequenza. Racchiudere tra parentesi tutti i nomi delle immagini istantanee. Separare il nome di ogni immagine snapshot con uno spazio.
+
+
+
+ a| 
+`members`
+ a| 
+L'identificativo di uno o più volumi di base che si desidera aggiungere. L'identificatore dei membri è composto dal nome del volume di base concatenato con il nome del volume del repository. È necessario utilizzare i due punti (:) tra i due nomi. Racchiudere tutti gli identificatori dei membri tra parentesi. Se si immette più di un membro, separare i membri con uno spazio.
+
+Quando non si utilizza il parametro members, tutti i membri vengono aggiunti automaticamente al nuovo volume snapshot del gruppo di coerenza.
+
+
+
+ a| 
+`repositoryVolume`
+ a| 
+Il nome del volume di repository che conterrà i volumi membri del gruppo di coerenza.
+
+Sono disponibili due opzioni per definire il nome di un volume di repository:
+
+* Utilizzare un volume repository esistente: Nome
+* Creare un nuovo volume di repository quando si esegue questo comando
+
+
+Il nome di un volume di repository esistente è composto da due parti:
+
+* Il termine "repos"
+* Identificatore numerico a quattro cifre assegnato dal software di gestione dello storage al nome del volume del repository
+
+
+Racchiudere il nome del volume di repository esistente tra virgolette doppie (" ").
+
+Se si desidera creare un nuovo volume di repository quando si esegue questo comando, è necessario immettere il nome di un gruppo di volumi o di un pool di dischi in cui si desidera creare il volume di repository. In alternativa, è anche possibile definire la capacità del volume di repository. Se si desidera definire la capacità, è possibile utilizzare i seguenti valori:
+
+* Un valore intero che rappresenta una percentuale della capacità del volume di base
+* Un valore di frazione decimale che rappresenta una percentuale della capacità del volume di base
+* Una dimensione specifica per il volume di repository. Le dimensioni sono definite in unità di `bytes`, `KB`, `MB`, `GB`, o. `TB`.
+
+
+Se non si utilizza l'opzione di capacità, il software di gestione dello storage imposta la capacità sul 20% della capacità del volume di base.
+
+Quando si esegue questo comando, il software di gestione dello storage crea il volume di repository per il volume di snapshot.
+
+
+
+ a| 
+`repositoryFullLimit`
+ a| 
+La percentuale di capacità del repository in corrispondenza della quale il volume del repository snapshot del gruppo di coerenza si sta avvicinando al pieno. USA valori interi. Ad esempio, un valore di 70 significa 70%.
+
+
+
+ a| 
+`readOnly`
+ a| 
+L'impostazione per determinare se è possibile scrivere nel volume di snapshot o solo leggere dal volume di snapshot. Per scrivere nel volume di snapshot, non includere questo parametro. Per impedire la scrittura nel volume di snapshot, includere questo parametro.
+
+|===
+
+
+== Note
+
+È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per i nomi. I nomi possono avere un massimo di 30 caratteri.
+
+Il nome di un'immagine istantanea ha due parti separate da due punti (:):
+
+* L'identificatore del gruppo di snapshot
+* L'identificatore dell'immagine istantanea
+
+
+Se non si specifica `repositoryVolumeType` oppure `readOnly` il software di gestione dello storage seleziona i repository per il volume snapshot del gruppo di coerenza. Se il gruppo di volumi o il pool di dischi in cui risiede il volume di base non dispone di spazio sufficiente, questo comando non riesce.
+
+Il `create cgSnapVolume` il comando ha moduli univoci che sono spiegati da questi esempi:
+
+* Creazione di un volume di snapshot di un gruppo di coerenza di lettura/scrittura su un gruppo di coerenza di snapshot denominato "SnapCG1" con tre membri: Cgm1, cgm2 e cgm3. I volumi di repository esistono già e vengono selezionati dall'utente in questo comando.
++
+[listing]
+----
+create cgSnapVolume userLabel="cgSnapVolume1"
+cgSnapImageID="snapCG1:oldest"
+members=(cgm1:repos_0010 cgm2:repos_0011 cgm3:repos_0007);
+----
++
+Prendere nota dell'utilizzo dei due punti (:) nel nome dell'immagine snapshot da includere nel volume snapshot del gruppo di coerenza. I due punti sono un delimitatore che separa il nome del volume di snapshot da una particolare immagine di snapshot che si desidera utilizzare. È possibile utilizzare una di queste opzioni seguendo i due punti:
+
++
+** Un valore intero che rappresenta il numero di sequenza effettivo dell'immagine snapshot.
+** `newest` - Utilizzare questa opzione per visualizzare l'immagine snapshot del gruppo di coerenza più recente.
+** `oldest` - Utilizzare questa opzione per visualizzare la prima immagine istantanea creata. L'utilizzo dei due punti che seguono i nomi dei membri del gruppo di coerenza snapshot definisce il mapping tra il membro e un volume di repository. Ad esempio, in `cgm1:repos_10`, il membro cgm1 esegue la mappatura al volume repository repos_0010.
+
+
+* Creazione di un volume snapshot di un gruppo di coerenza di lettura/scrittura su un gruppo di coerenza di snapshot denominato "SnapCG1" di soli membri cgm1 e cgm2:
++
+[listing]
+----
+create cgSnapVolume userLabel="cgSnapVolume2"
+cgSnapImageID="snapCG1:14214"
+members=(cgm1:repos_1000 cgm2:repos_1001);
+----
+* Creazione di un volume snapshot di gruppo di coerenza di sola lettura su un gruppo di coerenza snapshot denominato SnapCG1 che ha tre membri: Cgm1, cgm2 e cgm3:
++
+[listing]
+----
+create cgSnapVolume userLabel="cgSnapVolume3"
+cgSnapImageID="snapCG1:oldest" readOnly;
+----
+* Creazione di un volume snapshot di un gruppo di coerenza con un limite completo di repository impostato al 60% su un gruppo di coerenza di snapshot denominato SnapCG1 che ha tre membri: Cgm1, cgm2 e cgm3:
++
+[listing]
+----
+create cgSnapVolume userLabel="cgSnapVolume3"
+cgSnapImageID="snapCG1:oldest"
+repositoryFullLimit=60;
+----
+* Creazione di un volume snapshot di un gruppo di coerenza di lettura/scrittura con selezione automatica del repository su un gruppo di coerenza di snapshot denominato SnapCG1 che ha tre membri: Cgm1, cgm2 e cgm3:
++
+[listing]
+----
+create cgSnapVolume userLabel="cgSnapVolume4"
+cgSnapImageID="snapCG1:oldest";
+----
+
+
+
+
+== Livello minimo del firmware
+
+7.83

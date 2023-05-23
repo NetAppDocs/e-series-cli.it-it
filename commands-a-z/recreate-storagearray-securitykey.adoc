@@ -1,0 +1,109 @@
+---
+permalink: commands-a-z/recreate-storagearray-securitykey.html 
+sidebar: sidebar 
+keywords: recreate, external, security key 
+summary: Il comando Recreate StorageArray securityKey rigenera una chiave di sicurezza dello storage array da utilizzare con la funzione di gestione esterna delle chiavi di sicurezza. 
+---
+= Ricreare la chiave di sicurezza esterna
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `recreate storageArray securityKey` command rigenera una chiave di sicurezza dello storage array da utilizzare con la funzione di gestione esterna della chiave di sicurezza.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Questo comando si applica solo alla gestione esterna delle chiavi.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+recreate storageArray securityKey
+passPhrase=pass:quotes[_"passPhraseString"_
+file="_fileName"_]
+[deleteOldKey=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`passPhrase`
+ a| 
+Stringa di caratteri che crittografa la chiave di protezione in modo da potervi memorizzare in un file esterno. Racchiudere la passphrase tra virgolette doppie (" ").
+
+
+
+ a| 
+`file`
+ a| 
+Il percorso del file e il nome del file che ha la chiave di sicurezza. Ad esempio:
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\drivesecurity.slk"
+----
+[NOTE]
+====
+Il nome del file deve avere un'estensione di `.slk`.
+
+====
+
+
+ a| 
+`deleteOldKey`
+ a| 
+Impostare questo parametro su `TRUE` per eliminare la vecchia chiave di sicurezza dal server di gestione delle chiavi esterno dopo la creazione della nuova chiave di sicurezza. L'impostazione predefinita è `FALSE`.
+
+|===
+
+
+== Note
+
+La password deve soddisfare i seguenti criteri:
+
+* La password deve contenere da otto a 32 caratteri.
+* La password deve contenere almeno una lettera maiuscola.
+* La password deve contenere almeno una lettera minuscola.
+* La password deve contenere almeno un numero.
+* La password deve contenere almeno un carattere non alfanumerico, ad esempio @ +.
+
+
+[NOTE]
+====
+Se la password non soddisfa questi criteri, viene visualizzato un messaggio di errore.
+
+====
+
+
+== Livello minimo del firmware
+
+7.70
+
+11.73 aggiunge `deleteOldKey` parametro.

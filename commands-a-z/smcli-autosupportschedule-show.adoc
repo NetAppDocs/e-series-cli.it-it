@@ -1,0 +1,81 @@
+---
+permalink: commands-a-z/smcli-autosupportschedule-show.html 
+sidebar: sidebar 
+keywords: display, autosupport, message, collection, schedule 
+summary: 'Il comando SMcli -autoSupportSchedule show mostra la pianificazione per la raccolta e l"elaborazione dei messaggi AutoSupport giornalieri e settimanali.' 
+---
+= Visualizza il programma di raccolta dei messaggi AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `SMcli -autoSupportSchedule show` Il comando mostra la pianificazione per la raccolta e l'elaborazione dei messaggi AutoSupport giornalieri e settimanali.
+
+
+
+== Array supportati
+
+Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E2800 o E5700.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Questo comando è un comando SMcli, non un comando script. Eseguire questo comando da una riga di comando. Non è possibile eseguire questo comando dall'editor di script nel software di gestione dello storage.
+
+====
+Tenere presente quanto segue per quanto riguarda la pianificazione della raccolta automatica del bundle di supporto:
+
+* Se AutoSupport è attivato, il software di gestione invia sia messaggi AutoSupport giornalieri che messaggi AutoSupport settimanali.
+* Il software di gestione seleziona in modo casuale un'ora del giorno per i messaggi giornalieri e settimanali e un giorno della settimana per i messaggi settimanali.
+* Il software di gestione esegue tutti i tentativi per garantire che due array di storage all'interno di un dominio di gestione non inviino contemporaneamente messaggi AutoSupport pianificati.
+* Utilizzando il `SMcli -autoSupportSchedule reset` è possibile specificare un intervallo (granularità a livello di ora) di orari preferiti per inviare messaggi giornalieri e settimanali per gli array di storage nel dominio di gestione. Per la pianificazione settimanale dei messaggi, utilizzare il comando per selezionare i giorni preferiti della settimana.
+
+
+
+
+== Sintassi
+
+[listing]
+----
+SMcli -autoSupportSchedule show
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Livello minimo del firmware
+
+8.25
+
+
+
+== Esempio
+
+L'output mostra entrambi gli intervalli di tempo preferiti, seguiti dalla pianificazione giornaliera e settimanale.
+
+[NOTE]
+====
+Se non si selezionano intervalli di tempo preferiti per entrambe le pianificazioni e i giorni preferiti della settimana, questo comando mostra la pianificazione giornaliera e settimanale che il software di gestione dello storage ha scelto a caso.
+
+====
+[listing]
+----
+SMcli -autoSupportSchedule show
+The AutoSupport daily schedule preferred time range is from 12:00 AM to 01:00 AM.
+The AutoSupport weekly schedule preferred time range is from 10:00 PM to 11:00 PM on Thursday, Saturday.
+
+Name           Daily Schedule         Weekly Schedule
+Accounting     12:55 AM               10:08 PM on Thursdays
+Finance        12:02 AM               10:30 PM on Saturdays
+
+SMcli completed successfully.
+----

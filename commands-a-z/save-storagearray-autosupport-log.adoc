@@ -1,0 +1,94 @@
+---
+permalink: commands-a-z/save-storagearray-autosupport-log.html 
+sidebar: sidebar 
+keywords: retrieve, autosupport, log, individual, E2800, E5700, arrays 
+summary: 'Il comando Save StorageArray AutoSupport log consente di visualizzare un file di log AutoSupport. Questo file fornisce informazioni sullo stato, la cronologia delle attività di trasmissione e gli eventuali errori riscontrati durante l"invio dei messaggi AutoSupport. Il log è disponibile per tutti gli array di storage compatibili con AutoSupport e abilitati per AutoSupport.' 
+---
+= Recuperare un registro AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `save storageArray autoSupport log` Il comando consente di visualizzare un file di log di AutoSupport. Questo file fornisce informazioni sullo stato, la cronologia delle attività di trasmissione e gli eventuali errori riscontrati durante l'invio dei messaggi AutoSupport. Il log è disponibile per tutti gli array di storage compatibili con AutoSupport e abilitati per AutoSupport.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Contesto
+
+Questo comando consente di visualizzare due tipi di log:
+
+* Current log (Registro corrente) -- consente di visualizzare il registro acquisito in questo momento.
+* Log di archiviazione -- Visualizza il log da un file archiviato.
+
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+save storageArray autoSupport log [inputArchive=n]
+file=pass:quotes["_filename_"]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`inputArchive`
+ a| 
+Consente di specificare il registro AutoSupport archiviato, dove si trova il file di archivio `n`, un numero intero che inizia a 0.
+
+[NOTE]
+====
+Se si omette questo parametro, si seleziona il registro AutoSupport corrente (acquisito in questo momento).
+
+====
+
+
+ a| 
+`file`
+ a| 
+Consente di specificare il nome del file di log di trasmissione ASUP di output.
+
+[NOTE]
+====
+Questo parametro è obbligatorio.
+
+====
+|===
+
+
+=== Esempi
+
+[listing]
+----
+
+SMcli -n Array1 -c "save storageArray autoSupport log inputArchive=0 file=\"ASUPTransmissionLog\";"
+
+SMcli completed successfully.
+----
+
+
+== Livello minimo del firmware
+
+8.40

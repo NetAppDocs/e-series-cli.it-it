@@ -1,0 +1,76 @@
+---
+permalink: commands-a-z/delete-syslog.html 
+sidebar: sidebar 
+keywords: delete, syslog, command, servers, configuration, alerts, array, support, role 
+summary: Il comando delete syslog elimina uno o più server dalla configurazione syslog in modo che non riceva più avvisi. 
+---
+= Eliminare il server syslog
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `delete syslog` il comando elimina uno o più server dalla configurazione syslog in modo che non riceva più avvisi.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+
+delete syslog (allServers | serverAddresses pass:quotes[[_serverAddress1_ ... _serverAddressN_]])
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`allServers`
+ a| 
+Consente all'utente di eliminare tutti i server syslog.
+
+
+
+ a| 
+`serverAddresses`
+ a| 
+Consente all'utente di eliminare i server syslog. Racchiudere i server tra parentesi quadre ([ ]).
+
+|===
+
+
+== Esempi
+
+[listing]
+----
+
+SMcli -n Array1 -c "delete syslog allServers;
+
+SMcli -n Array1 -c "delete syslog serverAddresses ["serverName1.company.com"]";
+
+SMcli completed successfully.
+----
+
+
+== Livello minimo del firmware
+
+8.40

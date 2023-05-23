@@ -1,0 +1,166 @@
+---
+permalink: commands-a-z/create-syncmirror.html 
+sidebar: sidebar 
+keywords: create, synchronous, mirroring 
+summary: 'Il comando create SyncMirror crea sia il volume primario che il volume secondario per una coppia di mirror remoti sincroni. Questo comando imposta anche la modalità di scrittura (modalità di scrittura sincrona o modalità di scrittura asincrona) e la priorità di sincronizzazione.' 
+---
+= Creare il mirroring sincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `create syncMirror` il comando crea sia il volume primario che il volume secondario per una coppia di mirror remoti sincroni. Questo comando imposta anche la modalità di scrittura (modalità di scrittura sincrona o modalità di scrittura asincrona) e la priorità di sincronizzazione.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo array di storage, con alcune limitazioni. Se si esegue il comando sull'array E2700 o E5600, non esistono restrizioni.
+
+[NOTE]
+====
+Se si esegue il comando sull'array E2800 o E5700, il tipo di client deve essere impostato su `symbol`. Questo comando non viene eseguito se il tipo di client è impostato su `https`.
+
+====
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Nelle versioni precedenti di questo comando, l'identificatore di funzione era `remoteMirror`. Questo identificatore di funzione non è più valido e viene sostituito da `syncMirror`.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+create syncMirror primary=pass:quotes[_"primaryVolumeName_"
+secondary="_secondaryVolumeName_"
+(remoteStorageArrayName="_storageArrayName_" |
+remoteStorageArrayWwn="_wwID_")]
+[remotePassword="password"]
+[syncPriority=(highest | high | medium | low | lowest)]
+[autoResync=(enabled | disabled)]
+[writeOrder=(preserved | notPreserved)]
+[writeMode=(synchronous | asynchronous)]
+[role=(primary | secondary)]
+[force=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`primary`
+ a| 
+Il nome di un volume esistente nell'array di storage locale che si desidera utilizzare per il volume primario. Racchiudere il nome del volume primario tra virgolette doppie (" ").
+
+
+
+ a| 
+`secondary`
+ a| 
+Il nome di un volume esistente nell'array di storage remoto che si desidera utilizzare per il volume secondario. Racchiudere il nome del volume secondario tra virgolette doppie (" ").
+
+
+
+ a| 
+`remoteStorageArrayName`
+ a| 
+Il nome dell'array di storage remoto. Racchiudere il nome dell'array di storage remoto tra virgolette doppie (" ").
+
+
+
+ a| 
+`remoteStorageArrayWwn`
+ a| 
+Il WWID (World Wide Identifier) dell'array di storage remoto. Racchiudere il WWID tra virgolette doppie (" ").
+
+
+
+ a| 
+`remotePassword`
+ a| 
+La password per lo storage array remoto. Utilizzare questo parametro quando l'array di storage remoto è protetto da password. Racchiudere la password tra virgolette doppie (" ").
+
+
+
+ a| 
+`syncPriority`
+ a| 
+La priorità della sincronizzazione completa rispetto all'attività di i/o dell'host. I valori validi sono `highest`, `high`, `medium`, `low`, o. `lowest`.
+
+
+
+ a| 
+`autoResync`
+ a| 
+Le impostazioni per la risincronizzazione automatica tra i volumi primari e i volumi secondari di una coppia di mirror remoti. Questo parametro ha i seguenti valori:
+
+* `enabled` -- risincronizzazione automatica attivata. Non è necessario eseguire ulteriori operazioni per risincronizzare il volume primario e il volume secondario.
+* `disabled` -- la risincronizzazione automatica è disattivata. Per risincronizzare il volume primario e il volume secondario, è necessario eseguire `resume syncMirror` comando.
+
+
+
+
+ a| 
+`writeOrder`
+ a| 
+Ordine di scrittura per la trasmissione dei dati tra il volume primario e il volume secondario. I valori validi sono `preserved` oppure `notPreserved`.
+
+
+
+ a| 
+`writeMode`
+ a| 
+Modalità di scrittura del volume primario nel volume secondario. I valori validi sono `synchronous` oppure `asynchronous`.
+
+
+
+ a| 
+`role`
+ a| 
+Utilizzare questo parametro per promuovere il gruppo di mirror asincrono in un ruolo primario o per declassare il gruppo di mirror asincrono in un ruolo secondario. Per definire il gruppo di mirror asincrono come ruolo primario, impostare questo parametro su `primary`. Per definire il gruppo di mirror asincrono come ruolo secondario, impostare questo parametro su `secondary`.
+
+
+
+ a| 
+`force`
+ a| 
+L'inversione del ruolo viene forzata se il collegamento di comunicazione tra gli array di storage è inattivo e la promozione o la riduzione sul lato locale determina una condizione di doppio primario o doppio secondario. Per forzare l'inversione di un ruolo, impostare questo parametro su `TRUE`. Il valore predefinito è `FALSE`.
+
+|===
+
+
+== Note
+
+È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, trattini e caratteri di sottolineatura per i nomi. I nomi possono avere un massimo di 30 caratteri.
+
+Quando si scelgono il volume primario e il volume secondario, il volume secondario deve avere dimensioni uguali o superiori a quelle del volume primario. Il livello RAID del volume secondario non deve essere lo stesso del volume primario.
+
+Le password vengono memorizzate in ciascun array di storage in un dominio di gestione. Se la password non è stata impostata in precedenza, non è necessaria alcuna password. La password può essere costituita da una qualsiasi combinazione di caratteri alfanumerici con un massimo di 30 caratteri. È possibile definire una password per lo storage array utilizzando `set storageArray` comando.)
+
+La priorità di sincronizzazione definisce la quantità di risorse di sistema utilizzate per sincronizzare i dati tra il volume primario e il volume secondario di una relazione di mirroring. Se si seleziona il livello di priorità più alto, la sincronizzazione dei dati utilizza la maggior parte delle risorse di sistema per eseguire la sincronizzazione completa, riducendo le prestazioni per i trasferimenti di dati dell'host.
+
+Il `writeOrder` il parametro si applica solo alle modalità di scrittura asincrone e fa della coppia mirrorata parte di un gruppo di coerenza. Impostazione di `writeOrder` parametro a. `preserved` fa sì che la coppia di mirroring remoto trasmetta i dati dal volume primario al volume secondario nello stesso ordine in cui l'host scrive nel volume primario. In caso di errore di un collegamento di trasmissione, i dati vengono memorizzati nel buffer fino a quando non viene eseguita una sincronizzazione completa. Questa azione può richiedere un overhead di sistema aggiuntivo per mantenere i dati memorizzati nel buffer, rallentando le operazioni. Impostazione di `writeOrder` parametro a. `notPreserved` libera il sistema dalla necessità di mantenere i dati in un buffer, ma richiede una sincronizzazione completa per assicurarsi che il volume secondario abbia gli stessi dati del volume primario.
+
+
+
+== Livello minimo del firmware
+
+6.10

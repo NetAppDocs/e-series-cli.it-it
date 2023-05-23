@@ -1,0 +1,32 @@
+---
+permalink: get-started/detailed-error-reporting.html 
+sidebar: sidebar 
+keywords: detailed, error, report 
+summary: I dati raccolti in seguito a un errore rilevato dalla CLI vengono scritti in un file. 
+---
+= Segnalazione dettagliata degli errori
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+I dati raccolti in seguito a un errore rilevato dalla CLI vengono scritti in un file. La segnalazione dettagliata degli errori nell'ambito della CLI funziona come segue:
+
+* Se la CLI deve terminare in modo anomalo l'esecuzione dei comandi CLI e dei comandi script, i dati degli errori vengono raccolti e salvati prima del completamento della CLI.
+* La CLI salva i dati di errore scrivendo i dati in un nome di file standard.
+* La CLI salva automaticamente i dati in un file. Per salvare i dati di errore non sono necessarie opzioni speciali della riga di comando.
+* Non è necessario eseguire alcuna azione per salvare i dati degli errori in un file.
+* La CLI non dispone di alcuna disposizione per evitare di sovrascrivere una versione esistente del file che contiene dati di errore.
+
+
+Per l'elaborazione degli errori, gli errori vengono visualizzati come due tipi:
+
+* Errori di terminale o errori di sintassi che potrebbero essere immessi.
+* Eccezioni che si verificano in seguito a un errore di funzionamento.
+
+
+Quando l'interfaccia CLI rileva un tipo di errore, scrive le informazioni che descrivono l'errore direttamente nella riga di comando e imposta un codice di ritorno. A seconda del codice di ritorno, la CLI potrebbe anche scrivere informazioni aggiuntive su quale terminale ha causato l'errore. L'interfaccia CLI scrive inoltre informazioni su ciò che si aspettava dalla sintassi del comando per identificare eventuali errori di sintassi immessi.
+
+Quando si verifica un'eccezione durante l'esecuzione di un comando, la CLI acquisisce l'errore. Al termine dell'elaborazione del comando (dopo che le informazioni di elaborazione del comando sono state scritte nella riga di comando), l'interfaccia CLI salva automaticamente le informazioni di errore in un file.
+
+Il nome del file in cui vengono salvate le informazioni sull'errore `excprpt.txt`. L'interfaccia CLI tenta di posizionare `excprpt.txt` nella directory specificata dalla proprietà di sistema `devmgr.datadir`. Se per qualsiasi motivo l'interfaccia CLI non riesce a inserire il file nella directory specificata da `devmgr.datadir`, L'interfaccia CLI salva `excprpt.txt` Nella stessa directory da cui viene eseguita la CLI. Non è possibile modificare il nome del file o la posizione. Il `excprpt.txt` il file viene sovrascritto ogni volta che si verifica un'eccezione. Se si desidera salvare le informazioni in `excprpt.txt` file, è necessario copiare le informazioni in un nuovo file o in una nuova directory.

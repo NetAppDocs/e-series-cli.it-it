@@ -1,0 +1,64 @@
+---
+permalink: commands-a-z/start-asyncmirrorgroup-synchronize.html 
+sidebar: sidebar 
+keywords: start, asynchronous, mirror, synchronization 
+summary: Il comando start asyncMirrorGroup synchronous Mirroring viene avviato. 
+---
+= Avviare la sincronizzazione del mirroring asincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `start asyncMirrorGroup synchronize` Il comando avvia la sincronizzazione del mirroring asincrono.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+start asyncMirrorGroup pass:quotes[["_asyncMirrorGroupName_"]] synchronize [deleteRecoveryPointIfNecessary]
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Il nome del gruppo di mirror asincrono per il quale si desidera avviare la sincronizzazione. Racchiudere il nome del gruppo mirror asincrono tra virgolette doppie (" ") tra parentesi quadre ([" "]).
+
+
+
+ a| 
+`deleteRecoveryPointIfNecessary`
+ a| 
+Il parametro per eliminare il punto di ripristino se i dati di sincronizzazione ripristinabili hanno superato la soglia di tempo per il ripristino. L'età dei punti di ripristino viene misurata a partire dal momento in cui i dati sono stati congelati sull'array di storage primario.
+
+|===
+
+
+== Livello minimo del firmware
+
+7.84
+
+8.10 aggiunge `deleteRecoveryPointIfNecessary` parametro.

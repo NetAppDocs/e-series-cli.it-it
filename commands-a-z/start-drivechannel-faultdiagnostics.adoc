@@ -1,0 +1,145 @@
+---
+permalink: commands-a-z/start-drivechannel-faultdiagnostics.html 
+sidebar: sidebar 
+keywords: start, drive channel, fault, isolation, diagnostics 
+summary: Il comando START DriveChannel faultDiagnostics esegue la diagnostica di isolamento degli errori del canale del disco e memorizza i risultati. 
+---
+= Avviare la diagnostica di isolamento degli errori del canale del disco
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `start driveChannel faultDiagnostics` il comando esegue la diagnostica di isolamento degli errori del canale del disco e memorizza i risultati.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Con la versione del firmware 8.10, il `start driveChannel faultDiagnostics` comando obsoleto.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+start driveChannel [(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)]
+controller [(a|b)] faultDiagnostics
+testDevices=[all |
+controller=(a|b) |
+esms=pass:quotes[[_trayID1_ (left | right), ... , _trayIDN_] (left | right)] |
+drivespass:quotes[[_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_]]
+|[dataPattern=(fixed | pseudoRandom) |
+patternNumber=[pass:quotes[(_0xhexadecimal_ | _number_)]] |
+pass:quotes[maxErrorCount=_integer_] |
+pass:quotes[testIterations=_integer_] |
+pass:quotes[timeout=_timeInterval_]]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`driveChannel`
+ a| 
+Il numero identificativo del canale del disco che si desidera individuare. I valori validi per il numero identificativo del canale del disco sono `1`, `2`, `3`, `4`, `5`, `6`, `7`, o. `8`. Racchiudere il numero identificativo del canale dell'unità tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`controller`
+ a| 
+La lettera di identificazione del controller che si desidera sottoporre a test. I valori validi per l'identificatore del controller sono `a` oppure `b`, dove `a` È il controller nello slot A, e. `b` Il controller si trova nello slot B. Racchiudere l'identificatore del controller tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`testDevices`
+ a| 
+Gli identificatori dei dispositivi (controller, ESM (Environmental Services Module) o dischi) che si desidera testare. È possibile specificare `all` In alternativa, immettere gli identificatori specifici per i dispositivi che si desidera diagnosticare.il `controller` gli identificatori sono `a` oppure `b`, dove `a` È il modulo controller RAID nello slot A, e. `b` Il modulo controller RAID è nello slot B.
+
+Il `esms` Gli identificatori sono ID vassoio e sinistro o destro, dove ID vassoio è un valore compreso tra 0 e 99, e sinistro o destro vengono determinati quando si visualizza il vassoio dell'unità dal retro.
+
+Il `drive` gli identificatori includono un identificatore del vassoio, un identificatore del cassetto quando il vassoio è dotato di cassetti e un identificatore dello slot.
+
+Per i vassoi ad alta capacità, specificare il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot per l'unità. Per i vassoi delle unità a bassa capacità, specificare il valore dell'ID del vassoio e il valore dell'ID dello slot per l'unità. I valori dell'ID vassoio sono `0` a. `99`. I valori dell'ID cassetto sono `1` a. `5`.
+
+Tutti i valori massimi di ID slot sono 24. I valori ID slot iniziano con 0 o 1, a seconda del modello di vassoio. I cassetti per dischi compatibili con i controller E2800 e E5700 hanno numeri ID slot a partire da 0. I vassoi per dischi compatibili con i controller E2700 e E5600 hanno numeri ID slot a partire da 1.
+
+Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`dataPattern`
+ a| 
+Il metodo di ripetibilità che si desidera testare.
+
+
+
+ a| 
+`patternNumber`
+ a| 
+Modello di dati esadecimali che si desidera utilizzare per eseguire il test. Questo numero può essere qualsiasi numero esadecimale compreso tra `0000` a. `FFFF`. È necessario posizionare `0x` davanti per indicare un numero esadecimale.
+
+
+
+ a| 
+`maxErrorCount`
+ a| 
+Il numero di errori che si desidera accettare prima di terminare il test.
+
+
+
+ a| 
+`testIterations`
+ a| 
+Il numero di volte in cui si desidera ripetere il test.
+
+
+
+ a| 
+`timeout`
+ a| 
+Il periodo di tempo in minuti in cui si desidera eseguire il test.
+
+|===
+
+
+== Note
+
+È possibile immettere più di un tipo di dispositivo da sottoporre a test ed è possibile immettere più di un tipo di test da eseguire.
+
+Utilizzare `save driveChannel faultDiagnostics` e il `stop driveChannel faultDiagnostics` con il `start driveChannel faultDiagnostics` comando. Questi comandi sono necessari per salvare i risultati dei test diagnostici in un file e per interrompere il test diagnostico.
+
+Esempi di valido `patternNumber` le voci sono `0xA5A5`, `0x3C3C`, `8787`, e. `1234`.
+
+È inoltre possibile interrompere questo comando in qualsiasi momento premendo `Ctrl+C`.
+
+
+
+== Livello minimo del firmware
+
+7.15

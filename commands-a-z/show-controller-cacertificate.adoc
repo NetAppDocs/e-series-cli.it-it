@@ -1,0 +1,96 @@
+---
+permalink: commands-a-z/show-controller-cacertificate.html 
+sidebar: sidebar 
+keywords: show, installed, root, intermediate, ca, certificates, summary 
+summary: Il comando show controller caCertificate visualizza il riepilogo dei certificati CA installati dal controller specificato. Questo comando è utile da utilizzare prima di eseguire il comando delete controller caCertificate in modo da conoscere i nomi alias dei certificati da eliminare. 
+---
+= Mostra il riepilogo dei certificati CA root/intermedi installati
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show controller caCertificate` Visualizza il riepilogo dei certificati CA installati dal controller specificato. Questo comando è utile prima di eseguire `delete controller caCertificate` in modo da conoscere i nomi alias dei certificati da eliminare.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+show controller [(a|b)] caCertificate [all | aliases=pass:quotes[("_alias1_" ... "_aliasN_")]] summary
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`controller`
+ a| 
+Consente all'utente di specificare il controller su cui si desidera recuperare i certificati root/intermedi. Gli identificatori di controller validi sono a o b, dove a è il controller nello slot A e b è il controller nello slot B. Racchiudere l'identificatore del controller tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`all`
+ a| 
+Consente all'utente di specificare il recupero di tutti i certificati root/intermedi.
+
+
+
+ a| 
+`aliases`
+ a| 
+Consente all'utente di specificare quale certificato root/intermedio recuperare in base all'alias. Racchiudere tutti gli alias tra parentesi. Se si immettono più alias, separarli con uno spazio.
+
+|===
+
+
+== Esempi
+
+[listing, subs="+macros"]
+----
+
+SMcli -n Array1 -c "show controller[a] caCertificate all summary;"
+
+SMcli -n Array1 -c "show controller[b] caCertificate alias=("myAlias" "anotherAlias") summary;"
+============================
+Controller A Authority Certificates
+============================
+Alias:        19527b38-8d26-44e5-8c7f-5bf2ca9db7cf
+Subject DN:   CN=My Corp Issuing CA 1
+Issuer DN:    CN=My Corp Root CA
+pass:quotes[Start:        _date_]
+pass:quotes[Expire:       _date_]
+---------------------
+Alias:        myAliasName
+Subject DN:   CN=My Corp Issuing CA 1
+Issuer DN:    CN=My Corp Root CA
+pass:quotes[Start:        _date_]
+pass:quotes[Expire:       _date_]
+
+SMcli completed successfully.
+----
+
+
+== Livello minimo del firmware
+
+8.40

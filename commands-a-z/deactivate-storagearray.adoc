@@ -1,0 +1,52 @@
+---
+permalink: commands-a-z/deactivate-storagearray.html 
+sidebar: sidebar 
+keywords: deactivate, asynchronous, mirroring 
+summary: La funzione Disattiva StorageArray disattiva la funzione di mirroring asincrono. 
+---
+= Disattivare il mirroring asincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `deactivate storageArray feature` Disattiva la funzione di mirroring asincrono.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Tutti i gruppi di mirror asincroni o le coppie di mirroring asincroni esistenti devono essere cancellati dall'array di storage locale e dall'array di storage remoto prima che la funzione di mirroring asincrono possa essere disattivata.
+
+
+
+== Sintassi
+
+[listing]
+----
+deactivate storageArray feature=asyncRemoteMirror
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Livello minimo del firmware
+
+7.84

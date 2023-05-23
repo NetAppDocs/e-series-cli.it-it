@@ -1,0 +1,154 @@
+---
+permalink: get-started/new-https-mode.html 
+sidebar: sidebar 
+keywords: new, smcli, https mode 
+summary: Il nuovo SMcli può funzionare in una modalità https che offre funzionalità di sicurezza aggiuntive. 
+---
+= Modalità SMcli https
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+SMcli può operare in un `*https*` che offre funzionalità di sicurezza aggiuntive.
+
+[NOTE]
+====
+Se si utilizza SANtricity 11.52 o una versione precedente, non è possibile eseguire l'aggiornamento alla versione più recente di SANtricity tramite la CLI legacy. Gli aggiornamenti da SANtricity 11.52 alle versioni successive possono essere eseguiti solo tramite SMcli.
+
+====
+Quando si utilizza la versione 11.42 della CLI, il motore di script viene creato in una delle seguenti modalità:
+
+* `*https*` -- viene creato un motore di script basato SU REST, con funzionalità di sicurezza aggiuntive.
+* `*symbol*` -- viene creato un motore di script basato su simboli.
+
+
+Nuove funzioni di sicurezza disponibili in `*https*` client:
+
+* Per una protezione avanzata, è richiesta l'autenticazione del certificato mediante certificati attendibili. È possibile utilizzare `-k` opzione per utilizzare un certificato autofirmato ed eseguire i comandi in modalità non sicura.
+* È possibile utilizzare la gestione degli accessi basata sui ruoli, con diverse autorizzazioni di sicurezza assegnate a ruoli diversi. Utilizzare `-u` opzione per eseguire i comandi con un argomento nome utente.
+* Argomenti relativi alle password precedentemente disponibili in `*symbol*` la modalità può essere utilizzata anche in `*https*` per specificare una password per un ruolo utente specifico. Il `-p` viene utilizzata per specificare la password sulla riga di comando o su `-P` è possibile leggere una password da un file o da `stdin`.
+
+
+In questo argomento sono disponibili diversi esempi che illustrano i nuovi parametri della riga di comando:
+
+
+
+== Operazioni che richiedono una password, `https` client mode (modalità client), il certificato attendibile viene installato sull'array
+
+Nell'esempio seguente, vengono fornite le opzioni nome utente e password e viene installato un certificato attendibile sull'array.
+
+[listing]
+----
+C:\Program Files\StorageManager\client>SMcli -n Array1 -u admin@local -p adminPassword -c "set storageArray cacheBlockSize=4;"
+
+Syntax check complete.
+
+Executing script...
+
+Script execution complete.
+
+SMcli completed successfully.
+----
+
+
+== Operazioni che richiedono una password, `https` client mode (modalità client), non viene installato alcun certificato attendibile sull'array
+
+Nell'esempio seguente, vengono fornite le opzioni nome utente e password, ma non viene installato alcun certificato attendibile sull'array e su `-k` opzione non utilizzata. L'esempio mostra l'output restituito.
+
+[listing]
+----
+C:\Program Files\StorageManager\client>SMcli -n Array1 -u admin@local -p adminPassword -c "set storageArray cacheBlockSize=4;"
+
+Unable to establish a secure connection to the storage array as we were unable to confirm the connection is secure.
+Please configure the storage array to use a trusted security certificate. If the problem persists, contact Technical Support.
+
+SMcli failed.
+----
+
+
+== Operazioni che richiedono una password, `https` client mode, nessun certificato attendibile installato, ma utilizzando -k per il certificato autofirmato
+
+Nell'esempio seguente, come nell'esempio precedente, vengono fornite le opzioni nome utente e password, ma non viene installato alcun certificato attendibile sull'array. Tuttavia, in questo caso il `-k` è stata utilizzata per utilizzare un certificato autofirmato.
+
+[listing]
+----
+C:\Program Files\StorageManager\client>SMcli -n Array1 -u admin@local -p adminPassword -c "set storageArray cacheBlockSize=4;" -k
+Performing syntax check...
+
+Syntax check complete.
+
+Executing script...
+
+Script execution complete.
+----
+In questo esempio utilizzando `*symbol*` client mode (modalità client), solo l'opzione password è necessaria per completare correttamente il comando.
+
+[listing]
+----
+C:\Program Files\StorageManager\client>SMcli -n Array1 -p adminPassword -c "set storageArray cacheBlockSize=4;"
+Performing syntax check...
+
+Syntax check complete.
+
+Executing script...
+
+Script execution complete.
+
+SMcli completed successfully.
+----
+
+
+== Operazioni di sola lettura, `symbol` client mode (modalità client)
+
+In questo esempio nella `*symbol*` client mode, non vengono forniti nome utente o password. Questa operazione viene completata correttamente solo per le operazioni di sola lettura.
+
+[listing]
+----
+C:\Program Files\StorageManager\client>SMcli -n Array1  -c "show allVolumes;"
+Performing syntax check...
+
+Syntax check complete.
+
+Executing script...
+
+STANDARD/THIN VOLUMES------------------------------
+
+   Number of volumes: 0
+Missing Volumes
+
+   Number of missing volumes: 0
+
+
+Script execution complete.
+
+SMcli completed successfully.
+----
+
+
+== Operazioni di sola lettura, modalità client http
+
+Nell'esempio seguente, anche utilizzando un'operazione di sola lettura ma in `*https*` client mode (modalità client), nome utente e password sono richiesti e forniti insieme a. `-k` per accettare un certificato autofirmato. Il `*https*` la modalità client richiede una password anche per le operazioni di sola lettura.
+
+[listing]
+----
+C:\Program Files\StorageManager\client>SMcli -n Array1 -u admin@local -p adminPassword -c "show allVolumes;" -k
+Performing syntax check...
+
+Syntax check complete.
+
+Executing script...
+
+THICK/THIN VOLUMES------------------------------
+
+   Number of volumes: 0
+Missing Volumes
+
+   Number of missing volumes: 0
+
+
+Script execution complete.
+
+SMcli completed successfully.
+----

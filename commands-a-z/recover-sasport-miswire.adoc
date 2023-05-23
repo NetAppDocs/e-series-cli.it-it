@@ -1,0 +1,87 @@
+---
+permalink: commands-a-z/recover-sasport-miswire.html 
+sidebar: sidebar 
+keywords: recover, sas, port, mis-wire 
+summary: 'Il comando recover sasPort miswire indica a un controller che è stata intrapresa un"azione correttiva per il ripristino da una condizione di errato cablaggio.' 
+---
+= Ripristinare la porta SAS in modo errato
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `recover sasPort miswire` il comando indica a un controller che è stata intrapresa un'azione correttiva per il ripristino da una condizione di errato cablaggio.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Contesto
+
+Il controller può quindi riattivare le porte SAS disabilitate a causa di un errore di cablaggio. Eseguire questo comando dopo aver corretto le condizioni di errore del cavo SAS.
+
+Le condizioni di errato collegamento dei cavi SAS possono essere una delle seguenti:
+
+* Topologie SAS non valide
+* Connessione della porta host del controller al vassoio di espansione
+* Iniziatore per la connessione alla topologia del disco
+* Errore di cablaggio ESM
+
+
+
+
+== Sintassi
+
+[listing]
+----
+recover sasPort miswire
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Note
+
+Quando viene rilevata una condizione di errato cablaggio, il firmware del controller segnala quanto segue:
+
+* Un evento MEL critico che indica la presenza di una condizione di errato cablaggio
+* Una condizione "`richiede attenzione`"
+* Un'azione di ripristino che indica un errore di cablaggio
+
+
+Inoltre, il controller riporta le informazioni "`Redundancy Loss`" (perdita di ridondanza) per i dischi, gli ESM e i vassoi per i quali ha un solo percorso di accesso a causa di un errore di cablaggio (ad esempio i due vassoi inferiori di un array di storage). Le informazioni sulla perdita di ridondanza non sono esclusive delle topologie SAS.
+
+Di seguito sono riportate le notifiche degli eventi relative a errori di connessione della porta SAS:
+
+* Rilevato errore di cablaggio SAS
+* HBA collegato al canale del disco
+* I canali del disco sono cablati
+
+
+In caso di errori di cablaggio in cui il controller disattiva una o più porte SAS per proteggere l'integrità del dominio SAS, attenersi alla seguente procedura per ripristinare la condizione:
+
+. Individuare il cavo nella posizione errata e rimuoverlo. Se l'ultima azione intrapresa è stata quella di installare un nuovo cavo, questa è la soluzione più probabile. In caso contrario, cercare i cavi collegati ai dispositivi che non fanno parte dello storage array o i cavi collegati tra i canali. L'evento di recovery dovrebbe indicare il canale su cui è stato rilevato il cavo errato e, eventualmente, il vassoio
+. Dopo aver rimosso un cavo o spostato il cavo nella posizione corretta, eseguire `recover sasPort miswire` comando. Il controller tenterà di riattivare le porte SAS disabilitate quando viene rilevato un errore di cablaggio.
+. Se il cavo rimosso o spostato per correggere l'errore di cablaggio ha fornito al controller solo l'accesso alla porta disattivata, il controller non sarà in grado di riattivare la porta SAS disattivata. Per completare il ripristino, è necessario spegnere e riaccendere i vassoi dell'array di storage.
+
+
+
+
+== Livello minimo del firmware
+
+8.10

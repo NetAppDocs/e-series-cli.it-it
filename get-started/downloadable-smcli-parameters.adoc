@@ -1,0 +1,279 @@
+---
+permalink: get-started/downloadable-smcli-parameters.html 
+sidebar: sidebar 
+keywords: downloadable, smcli, command line, parameters 
+summary: 'La release SANtricity OS 11.60 includeva la possibilità di scaricare e installare la versione basata su http di CLI (nota anche come CLI sicuro o SMcli) direttamente tramite Gestore di sistema di SANtricity.' 
+---
+= Parametri della riga di comando SMcli scaricabili
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+
+
+== 11.60 e parametri della riga di comando SMcli scaricabili più recenti
+
+SANtricity OS 11.60 include la possibilità di scaricare e installare la versione di CLI basata su http (nota anche come "CLI sicura" o SMcli) direttamente tramite Gestore di sistema di SANtricity. Questa versione scaricabile di SMcli è disponibile su EF600, EF300, E5700, EF570, E2800, E EF280. Per scaricare SMcli in Gestione sistema di SANtricity, selezionare *Impostazioni* > *sistema* e *componenti aggiuntivi* > *interfaccia riga di comando* .
+
+
+NOTE: Sul sistema di gestione in cui si intende eseguire i comandi CLI deve essere disponibile Java Runtime Environment (JRE), versione 8 e successive.
+
+Come per le versioni precedenti di SMcli, l'SMcli scaricabile tramite Gestore di sistema di SANtricity dispone di un insieme unico di parametri. Per informazioni sull'utilizzo dei parametri della riga di comando per SANtricity OS 11.53 e versioni precedenti, vedere xref:./get-started/command-line-parameters.adoc[Parametri della riga di comando legacy]
+
+
+
+=== Autenticazione a più fattori
+
+Se SAML (Security Assertion Markup Language) è attivato, solo i token di accesso possono essere utilizzati con la CLI. Se SAML non è attivato, è possibile utilizzare il nome utente/password o i token di accesso. I token di accesso possono essere generati tramite Gestore di sistema di SANtricity.
+
+[cols="2*"]
+|===
+| Parametro | Definizione 
+
+
+ a| 
+`-t`
+ a| 
+Definisce il token di accesso da utilizzare per l'autenticazione con un array di storage. Un token di accesso sostituisce il nome utente e la password.
+
+
+
+ a| 
+`-T` (maiuscolo)
+ a| 
+Questo argomento richiede uno dei due argomenti seguenti:
+
+* `access_token-file` - Contiene il token di accesso da utilizzare per l'autenticazione
+* `-(dash)` - Leggi il token di accesso da stdin
+
+
+
+
+ a| 
+`-u`
+ a| 
+Seguire questo parametro con `_username_` variabile. Questo parametro è obbligatorio quando non viene utilizzato un token di accesso.
+
+
+
+ a| 
+`-p`
+ a| 
+Definisce la password per lo storage array su cui si desidera eseguire i comandi. La password non è necessaria in presenza delle seguenti condizioni:
+
+* Non è stata impostata una password sullo storage array.
+* La password viene specificata in un file di script in esecuzione.
+
+
+
+
+ a| 
+`-P` (maiuscolo)
+ a| 
+Questo argomento richiede uno dei due argomenti seguenti:
+
+* `_password_file_` - Contiene la password da utilizzare per l'autenticazione.
+* `-` (Un trattino) - Leggi la password da `stdin`.
+
+
+|===
+
+
+=== Parametri generali della riga di comando della modalità https
+
+L'SMcli scaricabile supporta solo la modalità https. Di seguito sono riportati i parametri della riga di comando comunemente utilizzati per la modalità https.
+
+[cols="2*"]
+|===
+| Parametro | Definizione 
+
+
+ a| 
+`_host-name-or-IP-address_`
+ a| 
+Specifica il nome host o l'indirizzo IP (Internet Protocol) (`_xxx.xxx.xxx.xxx_`) di un array storage gestito fuori banda.
+
+Quando si gestisce la gestione dello storage out-of-band tramite la connessione Ethernet su ciascun controller, è necessario specificare `_host-name-or-IP-address_` dei controller.
+
+
+
+ a| 
+`-k`
+ a| 
+Questo argomento opzionale consente di eseguire un `*https*` client per operare in modalità non sicura. Ciò significa che il certificato dello storage array non verrà validato. Per impostazione predefinita, se omesso, viene eseguita la convalida corretta.
+
+
+NOTE: Per ulteriori informazioni sulla gestione dei certificati degli array di storage, vedere <<storedcertificates,Gestione dei parametri della riga di comando dei certificati memorizzati>>.
+
+
+
+ a| 
+`-e`
+ a| 
+Esegue i comandi senza eseguire prima un controllo della sintassi.
+
+
+
+ a| 
+`-L` (maiuscolo)
+ a| 
+Visualizza le note legali per SMcli scaricabili.
+
+
+
+ a| 
+`-n`
+ a| 
+Specifica l'etichetta memorizzata localmente sulla quale si desidera eseguire i comandi di script. Questa opzione è opzionale quando si utilizza `_host-name-or-IP-address_`. L'etichetta memorizzata localmente è necessaria quando `_host-name-or-IP-address_` non viene utilizzato.
+
+
+NOTE: Per ulteriori informazioni sull'utilizzo di etichette memorizzate localmente per la gestione degli array di storage, vedere <<managearrays,Gestione dei parametri della riga di comando degli array memorizzati>>.
+
+
+
+ a| 
+`-o`
+ a| 
+Specifica un nome di file per tutto il testo di output che è il risultato dell'esecuzione dei comandi di script. Utilizzare `-o` parametro con questi parametri:
+
+* `-c`
+* `-f`
+
+
+Se non si specifica un file di output, il testo di output passa all'output standard  `stdout`). Viene inviato tutto l'output dei comandi che non sono comandi di script a. `stdout`, indipendentemente dal fatto che questo parametro sia impostato o meno.
+
+
+
+ a| 
+`-S` (maiuscolo)
+ a| 
+Elimina i messaggi informativi che descrivono l'avanzamento del comando visualizzato quando si eseguono i comandi script. (La soppressione dei messaggi informativi viene anche chiamata modalità silenziosa). Questo parametro elimina i seguenti messaggi:
+
+* `Performing syntax check`
+* `Syntax check complete`
+* `Executing script`
+* `Script execution complete`
+* `SMcli completed successfully`
+
+
+
+
+ a| 
+`-version`
+ a| 
+Visualizza la versione scaricabile di SMcli
+
+
+
+ a| 
+`-?`
+ a| 
+Mostra le informazioni sull'utilizzo dei comandi CLI.
+
+|===
+
+
+=== Gestione degli storage array
+
+I seguenti parametri della riga di comando consentono di gestire gli array memorizzati tramite l'etichetta memorizzata localmente.
+
+
+NOTE: L'etichetta memorizzata localmente potrebbe non corrispondere al nome effettivo dell'array di storage visualizzato sotto Gestione di sistema di SANtricity.
+
+[cols="2*"]
+|===
+| Parametro | Definizione 
+
+
+ a| 
+`SMcli storageArrayLabel show all`
+ a| 
+Visualizza tutte le etichette memorizzate localmente e i relativi indirizzi
+
+
+
+ a| 
+`SMcli storageArrayLabel show label <LABEL>`
+ a| 
+Visualizza gli indirizzi associati all'etichetta memorizzata localmente denominata `<LABEL>`
+
+
+
+ a| 
+`SMcli storageArrayLabel delete all`
+ a| 
+Elimina tutte le etichette memorizzate localmente
+
+
+
+ a| 
+`SMcli storageArrayLabel delete label <LABEL>`
+ a| 
+Elimina l'etichetta memorizzata localmente denominata `<LABEL>`
+
+
+
+ a| 
+`SMcli <host-name-or-IP-address> [host-name-or-IP-address] storageArrayLabel add label <LABEL>`
+ a| 
+* Aggiunge un'etichetta memorizzata localmente con il nome `<LABEL>` contenente gli indirizzi forniti
+* Gli aggiornamenti non sono direttamente supportati. Per eseguire l'aggiornamento, eliminare l'etichetta e aggiungerla nuovamente.
+
+
+
+NOTE: SMcli non contatta lo storage array quando si aggiunge un'etichetta memorizzata localmente.
+
+|===
+[cols="2*"]
+|===
+| Parametro | Definizione 
+
+
+ a| 
+`SMcli localCertificate show all`
+ a| 
+Visualizza tutti i certificati attendibili memorizzati localmente
+
+
+
+ a| 
+`SMcli localCertificate show alias <ALIAS>`
+ a| 
+Visualizza un certificato attendibile memorizzato localmente con l'alias `<ALIAS>`
+
+
+
+ a| 
+`SMcli localCertificate delete all`
+ a| 
+Elimina tutti i certificati attendibili memorizzati localmente
+
+
+
+ a| 
+`SMcli localCertificate delete alias <ALIAS>`
+ a| 
+Elimina un certificato attendibile memorizzato localmente con l'alias `<ALIAS>`
+
+
+
+ a| 
+`SMcli localCertificate trust file <CERT_FILE> alias <ALIAS>`
+ a| 
+* Salva un certificato per essere attendibile con l'alias `<ALIAS>`
+* Il certificato da trusted viene scaricato dal controller in un'operazione separata, ad esempio utilizzando un browser Web
+
+
+
+
+ a| 
+`SMcli <host-name-or-IP-address> [host-name-or-IP-address] localCertificate trust`
+ a| 
+* Si connette a ciascun indirizzo e salva il certificato restituito nell'archivio di certificati attendibili
+* Il nome host o l'indirizzo IP specificato viene utilizzato come alias per ciascun certificato salvato in questo modo
+* L'utente deve verificare che il certificato sui controller sia attendibile prima di eseguire questo comando
+* Per la massima sicurezza, il comando trust che utilizza un file deve essere utilizzato per garantire che il certificato non sia cambiato tra la convalida dell'utente e l'esecuzione di questo comando
+
+
+|===

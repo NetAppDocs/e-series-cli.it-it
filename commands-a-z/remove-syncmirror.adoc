@@ -1,0 +1,82 @@
+---
+permalink: commands-a-z/remove-syncmirror.html 
+sidebar: sidebar 
+keywords: remove, synchronous, mirror 
+summary: Il comando remove SyncMirror rimuove la relazione di mirroring tra il volume primario e il volume secondario in una coppia con mirroring remoto. 
+---
+= Rimuovere il mirroring sincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `remove syncMirror` il comando rimuove la relazione di mirroring tra il volume primario e il volume secondario in una coppia con mirroring remoto.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Nelle versioni precedenti di questo comando, l'identificatore di funzione era `remoteMirror`. Questo identificatore di funzione non è più valido e viene sostituito da `syncMirror`.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+remove syncMirror (localVolume pass:quotes[[_volumeName_]] |
+localVolumes pass:quotes[[_volumeName1 ... volumeNameN_]])
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`localVolume`
+ a| 
+Il nome del volume primario (il volume sull'array di storage locale) che si desidera rimuovere. Racchiudere il nome del volume tra parentesi quadre ([ ]). Se il nome del volume contiene caratteri speciali o è composto solo da numeri, è necessario racchiudere il nome del volume tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`localVolumes`
+ a| 
+I nomi di diversi volumi primari (i volumi sull'array di storage locale) che si desidera rimuovere. Immettere i nomi dei volumi primari utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Separare ciascuno dei nomi con uno spazio.
+
+
+Se i nomi dei volumi primari hanno caratteri speciali o sono costituiti solo da numeri, immettere i nomi utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Racchiudere ciascuno dei nomi tra virgolette doppie (" ").
+* Separare ciascuno dei nomi con uno spazio.
+
+
+|===
+
+
+== Livello minimo del firmware
+
+6.10

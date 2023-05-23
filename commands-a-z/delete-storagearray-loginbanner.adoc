@@ -1,0 +1,46 @@
+---
+permalink: commands-a-z/delete-storagearray-loginbanner.html 
+sidebar: sidebar 
+keywords: delete, storage, array, loginbanner, command, allow, login, banner, text, file, upload, save, role 
+summary: Il comando delete StorageArray loginBanner consente di eliminare il file di testo del banner di accesso precedentemente caricato e salvato. 
+---
+= Eliminare il banner di accesso allo storage array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `delete storageArray loginBanner` il comando consente di eliminare il file di testo del banner di accesso precedentemente caricato e salvato.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Sintassi
+
+[listing]
+----
+delete storageArray loginBanner
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Livello minimo del firmware
+
+8.41

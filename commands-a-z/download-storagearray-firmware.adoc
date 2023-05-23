@@ -1,0 +1,143 @@
+---
+permalink: commands-a-z/download-storagearray-firmware.html 
+sidebar: sidebar 
+keywords: download, storage, array, firmware, command, downloads, optionally, values, controllers, role, context, parameter 
+summary: 'Il comando download del firmware StorageArray scarica il firmware e, facoltativamente, i valori NVSRAM per il controller dell"array di storage.' 
+---
+= Scaricare il firmware/NVSRAM dell'array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `download storageArray firmware` Command scarica il firmware e, facoltativamente, i valori NVSRAM per il controller dell'array di storage.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Contesto
+
+Se si desidera scaricare solo i valori NVSRAM, utilizzare `downLoad storageArray NVSRAM` comando.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+download storageArray firmware [, NVSRAM ]
+pass:quotes[file="_filename_" [, "_NVSRAM-filename_"]]
+[downgrade=(TRUE | FALSE)
+activateNow=(TRUE | FALSE)
+healthCheckMelOverride=(TRUE | FALSE)
+healthCheckNeedsAttnOverride=(TRUE | FALSE)
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`NVSRAM`
+ a| 
+Questo parametro scarica un file con VALORI NVSRAM quando si scarica un file del firmware. Non includere parentesi quadre con questo parametro. Inserire una virgola dopo `firmware` parametro.
+
+
+
+ a| 
+`file`
+ a| 
+Questo parametro specifica il percorso del file e il nome del file che contiene il firmware. Racchiudere il percorso del file e il nome del file tra virgolette doppie (" "). Ad esempio:
+
+`file="C:\Program Files\CLI\dnld\safrm.dlp"`
+
+I nomi di file validi hanno un `.dlp` interno.
+
+
+
+ a| 
+`NVSRAM-filename`
+ a| 
+Questo parametro specifica il percorso del file e il nome del file che contiene i valori NVSRAM. Racchiudere il nome del file NVSRAM tra virgolette doppie (" "). Ad esempio:
+
+`file="C:\Program Files\CLI\dnld\safrm.dlp"` I nomi di file validi hanno un `.dlp` interno.
+
+Quando si scarica il firmware e NVSRAM, inserire una virgola prima del nome del file.
+
+
+
+ a| 
+`downgrade`
+ a| 
+[CAUTION]
+====
+*Possibili danni alla configurazione dello storage array* -- il download di una versione precedente del firmware del controller o DI NVSRAM in modo errato può causare danni ai controller o la perdita dell'accesso ai dati. Prima di utilizzare questo parametro, contattare il supporto tecnico.
+
+====
+Questa impostazione consente di caricare una versione precedente del firmware. Il valore predefinito è `FALSE`. Impostare `downgrade` parametro a. `TRUE` se si desidera scaricare una versione precedente del firmware.
+
+[NOTE]
+====
+Questo parametro non è valido quando si scarica SOLO NVSRAM.
+
+====
+
+
+ a| 
+`activateNow`
+ a| 
+Questa impostazione attiva l'immagine del firmware e L'immagine NVSRAM. Il valore predefinito è `TRUE`. Se si imposta `activateNow` parametro a. `FALSE`, è necessario eseguire `activate storageArray firmware` Comando per attivare il firmware e NVSRAM in un secondo momento.
+
+[NOTE]
+====
+Questo parametro non è valido quando si scarica SOLO NVSRAM.
+
+====
+
+
+ a| 
+`healthCheckMelOverride`
+ a| 
+Questa impostazione sovrascrive i risultati della verifica dello stato di salute del registro eventi principale (MEL). La convalida MEL continua a verificarsi; non viene ignorata. Se il controllo MEL non riesce, è possibile ignorare l'errore utilizzando questo parametro quando si esegue il comando.
+
+Prima di eseguire qualsiasi download, il controller controlla il registro eventi per determinare se si è verificato un evento che potrebbe impedire il corretto download del nuovo firmware del controller. In caso di evento di questo tipo, il controller normalmente non scarica il nuovo firmware.
+
+Questo parametro forza il controller a scaricare il nuovo firmware. Il valore predefinito è `FALSE`. Impostare questo valore su `TRUE` se si desidera forzare il controller a scaricare il nuovo firmware del controller.
+
+
+
+ a| 
+`healthCheckNeedsAttnOverride`
+ a| 
+Questa impostazione sovrascrive i risultati del controllo dello stato di salute di una serie specifica di condizioni di attenzione. Richiede la convalida dell'attenzione per un set specifico di condizioni, ma non viene ignorata. Se il controllo richiede attenzione non riesce, è possibile ignorare l'errore utilizzando questo parametro quando si esegue il comando.
+
+Prima di eseguire qualsiasi download, il controller verifica una serie specifica di condizioni di intervento richiesto per determinare se si è verificato un errore che potrebbe impedire il corretto download del nuovo firmware del controller. In caso di evento di questo tipo, il controller normalmente non scarica il nuovo firmware.
+
+Questo parametro forza il controller a scaricare il nuovo firmware. Il valore predefinito è `FALSE`. Impostare questo valore su `TRUE` se si desidera forzare il controller a scaricare il nuovo firmware del controller.
+
+|===
+
+
+== Livello minimo del firmware
+
+5.00
+
+8.10 aggiunge `*healthCheckMelOverride*` parametro.
+
+8.70 aggiunge `*healthCheckNeedsAttnOverride*` parametro.

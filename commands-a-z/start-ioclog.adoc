@@ -1,0 +1,84 @@
+---
+permalink: commands-a-z/start-ioclog.html 
+sidebar: sidebar 
+keywords: start, input, output, controller, ioc, dump 
+summary: Il comando start IOCLog produce un dump del log IOC delle trasmissioni di dati tra un host e un controller. 
+---
+= Avviare il dump del controller di input output (IOC)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `start IOCLog` Il comando produce un dump del log IOC delle trasmissioni di dati tra un host e un controller.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+I controller sono identificati come "a " o "b". Ciascun controller può avere fino a quattro canali host; ciascun canale è identificato in modo univoco da un numero compreso tra 1 e 4.
+
+
+
+== Sintassi
+
+[listing]
+----
+start IOCLog [(a1 | a2 | a3 | a4 | b1 | b2 | b3 | b4)]
+[overwrite=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`controller-channel identifiers`
+ a| 
+Questo parametro specifica il controller e il canale host da cui produrre il dump IOC. Gli identificatori del controller validi sono `a` oppure `b`, dove `a` È il controller nello slot A, e. `b` Il controller si trova nello slot B. I canali host dispongono di identificatori numerici. Racchiudere l'identificatore del controller e l'identificatore del canale host tra parentesi quadre ([ ]).
+
+I valori validi per l'identificatore del controller e il canale host sono `a1`, `a2`, `a3`, `a4`, `b1`, `b2`, `b3`, `b4`.
+
+Se non si specifica un controller, il software di gestione dello storage restituisce un errore di sintassi.
+
+
+
+ a| 
+`overwrite`
+ a| 
+Questo parametro fa sì che il nuovo dump del log IOC sovrascriva un dump esistente. Per sovrascrivere il dump esistente, impostare questo parametro su `TRUE`. Il valore predefinito è `FALSE`.
+
+|===
+
+
+== Note
+
+Questo comando genera un log di debug dal IOC del controller selezionato e memorizza i dati in un formato compresso in un buffer di memoria persistente sul controller. È possibile recuperare i dati dal registro di debug utilizzando `save IOCLog` comando. Il controller restituisce un errore per queste condizioni:
+
+* La piattaforma del controller e HIC non supportano un dump IOC.
+* Il controller specificato dispone di un dump IOC in sospeso e il parametro di sovrascrittura è false.
+* L'identificatore del controller o l'identificatore del canale specificato non rientrano nell'intervallo valido.
+
+
+
+
+== Livello minimo del firmware
+
+8.20

@@ -1,0 +1,67 @@
+---
+permalink: commands-a-z/set-storagearray-odxenabled.html 
+sidebar: sidebar 
+keywords: enable, disable, odx 
+summary: 'Il comando Set StorageArray odxEnabled attiva o disattiva Offloaded Data Transfer (ODX) per uno storage array.' 
+---
+= Attivare o disattivare ODX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray odxEnabled` Il comando attiva o disattiva il trasferimento dati offloaded (ODX) per un array di storage.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Contesto
+
+Lo storage array viene fornito con ODX attivato. Utilizzare questo comando per disattivare ODX se non si desidera eseguire ODX o se ODX sta causando problemi con lo storage array. L'unico array di storage interessato è l'array di storage su cui viene eseguito il comando.
+
+
+
+== Sintassi
+
+[listing]
+----
+set storageArray odxEnabled=(TRUE | FALSE)
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`odxEnabled`
+ a| 
+L'impostazione per attivare o disattivare ODX. Per attivare ODX, impostare questo parametro su `TRUE`. Per disattivare ODX, impostare questo parametro su `FALSE`. Per impostazione predefinita, ODX è attivato.
+
+|===
+
+
+== Note
+
+ODX offre un modo per trasferire i dati senza utilizzare operazioni di lettura e scrittura bufferizzate e non richiede il coinvolgimento diretto dell'host con l'operazione di trasferimento dei dati. Quando ODX non è attivato, i dati vengono letti dallo storage di origine all'host e quindi scritti nello storage di destinazione dall'host. Con ODX abilitato, le operazioni di trasferimento dei dati vengono gestite direttamente dall'infrastruttura di storage. I dati vengono spostati direttamente dallo storage di origine allo storage di destinazione senza passare attraverso l'host.
+
+
+
+== Livello minimo del firmware
+
+8.20

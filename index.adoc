@@ -1,0 +1,16 @@
+---
+layout: astra 
+sidebar: sidebar 
+permalink: index.html 
+lead: 'Welcome to the SANtricity System Manager Embedded CLI User Assistance, where you can find out how to configure, monitor, and tune your storage array using the Command Line Interface (CLI).' 
+summary: 'Descrive la sintassi e l"utilizzo dei comandi SANtricity.' 
+---
+= Comandi di Gestore di sistema di SANtricity
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+

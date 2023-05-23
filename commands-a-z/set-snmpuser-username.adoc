@@ -1,0 +1,121 @@
+---
+permalink: commands-a-z/set-snmpuser-username.html 
+sidebar: sidebar 
+keywords: update, snmpv3, usm, user 
+summary: 'Il comando set snmpUser Username aggiorna un utente USM SNMP (Simple Network Management Protocol) esistente. L"utente USM da modificare viene identificato utilizzando il nome utente se esiste un solo utente con il nome utente. L"utente viene identificato utilizzando il nome utente e l"ID motore se sono presenti più utenti con lo stesso nome utente e ID motore diverso.' 
+---
+= Aggiornare l'utente SNMPv3 USM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set snmpUser userName` Il comando aggiorna un utente USM SNMP (Simple Network Management Protocol) esistente. L'utente USM da modificare viene identificato utilizzando il nome utente se esiste un solo utente con il nome utente. L'utente viene identificato utilizzando il nome utente e l'ID motore se sono presenti più utenti con lo stesso nome utente e ID motore diverso.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Sintassi
+
+[listing]
+----
+set snmpUser userName="snmpUserName" [engineId=(local | engineId)]
+[newUserName="newSnmpUserName"] [newEngineId=(local | engineId)]
+[authProtocol=(none | sha | sha256 | sha512) authPassword="authPassword"]
+[privProtocol=(none | aes128) privPassword="privPassword"]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`userName`
+ a| 
+Il nome dell'utente SNMP USM che si desidera aggiornare. Racchiudere il nome utente SNMP USM tra virgolette doppie (" ")
+
+
+
+ a| 
+`engineId`
+ a| 
+L'ID motore dell'utente SNMP USM che si desidera aggiornare. L'ID motore è obbligatorio se sono presenti più utenti USM con lo stesso nome utente. Il valore potrebbe essere `local` Specificare l'agente SNMP locale è l'agente autorevole o una stringa di cifre esadecimali per specificare un ID del motore dell'agente SNMP remoto.
+
+
+
+ a| 
+`newSnmpUserName`
+ a| 
+Il nuovo nome che si desidera assegnare all'utente SNMP. Racchiudere il nome utente SNMP tra virgolette doppie (" "). Il valore predefinito è il nome utente precedentemente definito per l'utente.
+
+
+
+ a| 
+`newEngineId`
+ a| 
+Il nuovo ID motore da utilizzare come identificativo dell'ID motore SNMP autorevole per l'utente. Il valore può essere "[.code]local" per specificare l'agente SNMP locale come agente autorevole o una stringa di cifre esadecimali per specificare un ID del motore dell'agente SNMP remoto. Il valore predefinito è l'ID motore precedentemente definito per l'utente.
+
+
+
+ a| 
+`authProtocol`
+ a| 
+Il protocollo di autenticazione (HMAC) da utilizzare per l'utente. Il valore può essere uno dei seguenti:
+
+* `none` - Nessuna autenticazione dei messaggi SNMP (impostazione predefinita)
+* `sha` - Autenticazione SHA-1
+* `sha256` - Autenticazione SHA-256
+* `sha512` - Autenticazione SHA-512
+
+
+Il valore predefinito è il protocollo di autenticazione definito in precedenza per l'utente.
+
+
+
+ a| 
+`authPassword`
+ a| 
+La password da utilizzare per l'autenticazione dell'utente. Deve essere specificato se il protocollo di autenticazione è `sha`, `sha256` oppure `sha512`
+
+
+
+ a| 
+`privProtocol`
+ a| 
+Il protocollo di privacy (crittografia) da utilizzare per l'utente. Il valore può essere uno dei seguenti:
+
+* `none` - Nessuna crittografia dei messaggi SNMP (impostazione predefinita)
+* `aes128` - Crittografia AES-18
+
+
+Il valore predefinito è il protocollo di privacy precedentemente definito per l'utente.
+
+
+
+ a| 
+`privPassword`
+ a| 
+La password da utilizzare per la privacy/crittografia dell'utente. Deve essere specificato se il protocollo di privacy è "[.code]`aes128`".
+
+|===
+
+
+== Livello minimo del firmware
+
+8.72

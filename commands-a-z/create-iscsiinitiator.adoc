@@ -1,0 +1,93 @@
+---
+permalink: commands-a-z/create-iscsiinitiator.html 
+sidebar: sidebar 
+keywords: create, iscsi, initiator 
+summary: Il comando create iscsiInitialator crea un nuovo oggetto iSCSI Initiator. 
+---
+= Creare iSCSI Initiator
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `create iscsiInitiator` Il comando crea un nuovo oggetto iSCSI Initiator.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+[NOTE]
+====
+Questo comando è obsoleto e viene sostituito da xref:create-initiator.adoc[Crea iniziatore] comando.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+create iscsiInitiator iscsiName=pass:quotes[_"iscsiID"_
+userLabel="_name_"
+host="_hostName"_]
+[chapSecret=pass:quotes[_"securityKey"_]]
+----
+
+
+== Parametri
+
+|===
+| Parametri | Descrizione 
+
+
+ a| 
+`iscsiName`
+ a| 
+L'identificatore predefinito dell'iniziatore iSCSI. Racchiudere l'identificatore tra virgolette doppie (" ").
+
+
+
+ a| 
+`userLabel`
+ a| 
+Il nome che si desidera utilizzare per iSCSI Initiator. Racchiudere il nome tra virgolette doppie (" ").
+
+
+
+ a| 
+`host`
+ a| 
+Il nome dell'host in cui è installato iSCSI Initiator. Racchiudere il nome tra virgolette doppie (" ").
+
+
+
+ a| 
+`chapSecret`
+ a| 
+La chiave di sicurezza che si desidera utilizzare per autenticare una connessione peer. Racchiudere la chiave di sicurezza tra virgolette doppie (" ").
+
+|===
+
+
+== Note
+
+Challenge Handshake Authentication Protocol (CHAP) è un protocollo che autentica il peer di una connessione. Il CHAP si basa sui peer che condividono un _segreto_. Un segreto è una chiave di sicurezza simile a una password.
+
+Utilizzare `chapSecret` parametro per impostare le chiavi di sicurezza per gli iniziatori che richiedono un'autenticazione reciproca.
+
+
+
+== Livello minimo del firmware
+
+7.10
+
+8.41 questo comando è obsoleto.

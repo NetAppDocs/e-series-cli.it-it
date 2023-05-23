@@ -1,0 +1,150 @@
+---
+permalink: commands-a-z/set-tray-serviceallowedindicator.html 
+sidebar: sidebar 
+keywords: set, tray, service, action, allowed, indicator 
+summary: 'Il comando set tray serviceAllowedIndicator attiva o disattiva la spia Service Action Allowed (azione di servizio consentita) su un contenitore della ventola di alimentazione, un contenitore della batteria di interconnessione o un contenitore del modulo per servizi ambientali (ESM).' 
+---
+= Imposta indicatore azione servizio vassoio consentita
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set tray serviceAllowedIndicator` Il comando accende o spegne la spia Service Action Allowed (azione di servizio consentita) su un contenitore della ventola di alimentazione, un contenitore della batteria di interconnessione o un contenitore del modulo di servizi ambientali (ESM).
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Contesto
+
+Se lo storage array non supporta la funzione indicatore luminoso azione servizio consentita, questo comando restituisce un errore. Se lo storage array supporta il comando ma non è in grado di accendere o spegnere l'indicatore luminoso, questo comando restituisce un errore.
+
+Per accendere o spegnere la spia Service Action Allowed (azione di servizio consentita) sul contenitore del controller, utilizzare `set controller serviceAllowedIndicator` comando.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set tray pass:quotes[[_trayID_]]
+(powerFan [(left | right | top | bottom)] |
+interconnect |
+esm [(left | right | top | bottom)]) |
+battery [(left | right)] |
+fanCanister [(left | right)]  |
+powerCanister [(top | bottom)] |
+serviceAllowedIndicator=(on | off)
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`tray`
+ a| 
+Il vassoio in cui si trova il contenitore della ventola di alimentazione, il contenitore di interconnessione, il contenitore ESM o il contenitore della batteria. I valori dell'ID vassoio sono `0` a. `99`. Racchiudere il valore dell'ID vassoio tra parentesi quadre ([ ]). Se non si immette un valore di ID vassoio, l'ID vassoio del vassoio del controller è il valore predefinito.
+
+
+
+ a| 
+`powerFan`
+ a| 
+La spia Service Action Allowed (azione di servizio consentita) sul contenitore della ventola di alimentazione che si desidera attivare o disattivare. Gli identificatori validi del filtro a carboni attivi della ventola di alimentazione sono `left`, `right`, `top`, o. `bottom`. Racchiudere l'identificatore del filtro a carboni attivi della ventola di alimentazione tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`interconnect`
+ a| 
+La spia Service Action Allowed (azione di servizio consentita) per il contenitore della batteria di interconnessione.
+
+
+
+ a| 
+`esm`
+ a| 
+La spia Service Action Allowed (azione di servizio consentita) di un filtro ESM. Gli identificatori validi dell'elemento filtrante ESM sono `left`, `right`, `top`, o. `bottom`.
+
+
+
+ a| 
+`battery`
+ a| 
+La spia Service Action Allowed (azione di servizio consentita) di una batteria. Gli identificatori della batteria validi sono `left` oppure `right`.
+
+
+
+ a| 
+`fanCanister`
+ a| 
+La spia Service Action Allowed (azione di servizio consentita) di un filtro a carboni attivi della ventola. Gli identificatori validi del filtro a carboni attivi della ventola sono `left` oppure `right`.
+
+
+
+ a| 
+`powerCanister`
+ a| 
+La spia Service Action Allowed (azione di servizio consentita) di un filtro a carboni attivi. Gli identificatori validi del filtro a carboni attivi sono `top` oppure `bottom`.
+
+
+
+ a| 
+`serviceAllowedIndicator`
+ a| 
+L'impostazione per attivare o disattivare la spia dell'azione di servizio consentita. Per attivare l'indicatore luminoso dell'azione di servizio consentita, impostare questo parametro su `on`. Per disattivare la spia dell'indicatore di azione di servizio consentita, impostare questo parametro su `off`.
+
+|===
+
+
+== Note
+
+Questo comando è stato originariamente definito per l'utilizzo con il vassoio del controller CE6998 Questo comando non è supportato dai vassoi del controller spediti prima dell'introduzione del vassoio del controller CE6998
+
+
+
+== Esempio
+
+Questo comando accende la spia Service Action Allowed (azione servizio consentita) per l'ESM sinistro nel vassoio 5 con l'indirizzo IP 155.155.155.155.
+
+[listing]
+----
+SMcli 123.145.167.214 123.145.167.215 -c "set tray [5]
+ESM [left] serviceAllowedIndicator=on;"
+----
+
+
+== Livello minimo del firmware
+
+6.14 aggiunge questi parametri:
+
+* `powerFan`
+* `interconnect`
+
+
+6.16 aggiunge questi parametri:
+
+* `tray`
+* `esm`
+
+
+7.60 aggiunge gli identificatori `top` e. `bottom`.
+
+7.60 aggiunge `powerCanister` e. `fanCanister` parametri.

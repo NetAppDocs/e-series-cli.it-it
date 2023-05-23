@@ -1,0 +1,54 @@
+---
+permalink: commands-a-z/reset-storagearray-volumedistribution.html 
+sidebar: sidebar 
+keywords: reset, storage array, volume, distribution 
+summary: 'Il comando RESET StorageArray volumeDistribution riassegna (sposta) tutti i volumi nel controller preferito.' 
+---
+= Ripristinare la distribuzione del volume dello storage array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `reset storageArray volumeDistribution` il comando riassegna (sposta) tutti i volumi nel controller preferito.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing]
+----
+reset storageArray volumeDistribution
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Note
+
+Se si utilizza questo comando su un host senza un driver multi-path, è necessario interrompere le operazioni di i/o sui volumi fino al completamento di questo comando per evitare errori dell'applicazione.
+
+In alcuni ambienti del sistema operativo host, potrebbe essere necessario riconfigurare il driver host multi-path. Potrebbe essere necessario apportare modifiche al sistema operativo per riconoscere il nuovo percorso i/o ai volumi.
+
+
+
+== Livello minimo del firmware
+
+5.20

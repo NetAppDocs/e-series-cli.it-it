@@ -1,0 +1,97 @@
+---
+permalink: commands-a-z/set-email-smtp-delivery-method-e2800-e5700.html 
+sidebar: sidebar 
+keywords: specify, email, smtp, delivery method, individual, E2800, E5700, arrays 
+summary: 'Il comando set StorageArray AutoSupport deliveryMethod imposta il metodo di invio dei messaggi AutoSupport alla posta elettronica (SMTP).' 
+---
+= Specificare il metodo di recapito e-mail (SMTP)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray autoSupport deliveryMethod` Il comando imposta il metodo di recapito per l'invio dei messaggi AutoSupport alla posta elettronica (SMTP).
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set storageArray autoSupport deliveryMethod=email
+mailRelayServer=pass:quotes["_serverAddress_" senderEmail="_emailAddress_"]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`deliveryMethod`
+ a| 
+Consente all'utente di specificare il metodo di consegna per la raccolta AutoSupport. Le scelte valide sono:
+
+* e-mail
+* HTTP
+* HTTPS
+
+
+[NOTE]
+====
+Se il metodo e-mail è configurato, la diagnostica AutoSupport su richiesta e la diagnostica remota verranno disattivate.
+
+====
+
+
+ a| 
+`mailRelayServer`
+ a| 
+Consente all'utente di specificare il server di inoltro della posta per la raccolta AutoSupport.
+
+
+
+ a| 
+`senderEmail`
+ a| 
+Consente all'utente di specificare l'indirizzo e-mail di invio per la raccolta AutoSupport.
+
+|===
+
+
+=== Esempi
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray autoSupportConfig deliveryMethod=email mailRelayServer=\"mailserver.company.com\" senderEmail=\"user@company.com\";"
+
+SMcli completed successfully.
+----
+
+
+=== Verifica
+
+Inviare un messaggio di prova utilizzando `_start storageArray autoSupport deliveryTest_` per verificare che i metodi di consegna siano impostati correttamente.
+
+
+
+== Livello minimo del firmware
+
+8.40

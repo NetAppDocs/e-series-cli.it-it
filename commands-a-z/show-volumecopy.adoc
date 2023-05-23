@@ -1,0 +1,81 @@
+---
+permalink: commands-a-z/show-volumecopy.html 
+sidebar: sidebar 
+keywords: show, volume, copy 
+summary: Il comando show VolumeCopy restituisce informazioni sulle operazioni di copia del volume. 
+---
+= Mostra copia del volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show volumeCopy` il comando restituisce informazioni sulle operazioni di copia del volume.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Storage Monitor.
+
+
+
+== Contesto
+
+Questo comando restituisce queste informazioni sulle operazioni di copia del volume:
+
+* Lo stato della copia
+* L'indicazione dell'ora di inizio
+* L'indicazione dell'ora di completamento
+* La priorità delle copie
+* Il World Wide Identifier (WWID) del volume di origine o il WWID del volume di destinazione
+* L'impostazione dell'attributo di sola lettura del volume di destinazione
+
+
+È possibile recuperare informazioni su una coppia di copie di un volume specifica o su tutte le coppie di copie di un volume nell'array di storage. Questo comando è valido per le coppie di copie di volumi snapshot.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+show volumeCopy (allVolumes | source pass:quotes[["_sourceName_"]] |
+target pass:quotes[["_targetName_"]])
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`allVolumes`
+ a| 
+L'impostazione per restituire informazioni sulle operazioni di copia del volume per tutte le coppie di copie del volume.
+
+
+
+ a| 
+`source`
+ a| 
+Il nome del volume di origine sul quale si desidera recuperare le informazioni. Racchiudere il nome del volume di origine tra virgolette doppie (" ") all'interno di parentesi quadre ([ ]).
+
+
+
+ a| 
+`target`
+ a| 
+Il nome del volume di destinazione sul quale si desidera recuperare le informazioni. Racchiudere il nome del volume di destinazione tra virgolette doppie (" ") all'interno di parentesi quadre ([ ]).
+
+|===

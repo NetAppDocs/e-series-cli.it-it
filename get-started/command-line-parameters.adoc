@@ -1,0 +1,374 @@
+---
+permalink: get-started/command-line-parameters.html 
+sidebar: sidebar 
+keywords: legacy, command line, parameters 
+summary: La release SANtricity OS 11.40 ha introdotto, per i controller E2800 e E5700 con servizi Web integrati, la possibilità di interagire sulla riga di comando utilizzando un protocollo HTTPS sicuro. Questi controller possono invece utilizzare il protocollo Symbol per le interazioni della riga di comando. 
+---
+= Parametri della riga di comando legacy
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+
+
+== 11.53 e parametri della riga di comando precedenti
+
+La release SANtricity OS 11.40 ha introdotto, per i controller E2800 e E5700 con servizi Web integrati, la possibilità di interagire sulla riga di comando utilizzando un protocollo HTTPS sicuro. Questi controller possono invece utilizzare il protocollo Symbol per le interazioni della riga di comando. Il protocollo Symbol è l'unico protocollo supportato per i controller E2700 ed E5600. Per preservare gli script esistenti e ridurre al minimo i tempi di transizione, le opzioni CLI e la grammatica vengono mantenute il più possibile. Tuttavia, esistono alcune differenze nelle funzionalità dei controller E2800 e E5700 in termini di sicurezza, autenticazione, AutoSupport e messaggi di avviso che rendono obsoleta una parte della grammatica CLI per tali controller. Tuttavia, in alcuni casi la grammatica è obsoleta solo su E2800 o E5700 quando viene utilizzato il nuovo protocollo https.
+
+Per i nuovi parametri che si applicano solo a `*https*` Tipo di client, ne consegue che si applicano anche solo ai controller E2800 o E5700.
+
+[cols="2*"]
+|===
+| Parametro | Definizione 
+
+
+ a| 
+`-clientType`
+ a| 
+Questo argomento forza la creazione di un motore di script appropriato. Utilizzare questo parametro opzionale con uno dei seguenti valori:
+
+* `*auto*` Il rilevamento dei dispositivi viene eseguito automaticamente per rilevare il tipo di motore di script appropriato.
+* `*https*` - Viene creato Un motore di script basato SU REST.
+* `*symbol*` - Viene creato Un motore di script basato su simboli.
+
+
+
+
+ a| 
+`-u`
+ a| 
+Seguire questo parametro con `_username_` variabile. Il nome utente è richiesto solo per `*https*` tipo di client. Questo argomento non è applicabile a. `*symbol*` tipo di client e verranno ignorati in modo invisibile.
+
+Se viene specificato l'argomento Username, viene eseguito il rilevamento dei dispositivi per determinare il tipo di client corretto (`*https*` rispetto a. `*symbol*`).
+
+
+
+ a| 
+`-P`
+ a| 
+Questo argomento richiede uno dei due argomenti seguenti:
+
+* `_password_file_` - Contiene la password da utilizzare per l'autenticazione.
+* `-` (Un trattino) - Leggi la password da `stdin`.
+
+
+Si noti che l'aggiunta di questo argomento è applicabile a tutti i controller, indipendentemente dal fatto che il `*https*` tipo di client o. `*symbol*` viene utilizzato il tipo di client.
+
+
+
+ a| 
+`-k`
+ a| 
+Questo argomento opzionale consente di eseguire un `*https*` client per operare in modalità non sicura. Ciò significa che il certificato dello storage array non verrà validato. Per impostazione predefinita, se omesso, viene eseguita l'autenticazione corretta. Questo argomento non è applicabile a. `*symbol*` tipo di client e verranno ignorati in modo invisibile.
+
+|===
+
+
+== Parametri della riga di comando applicabili solo ai controller E2700 o E5600
+
+Poiché i controller E2700 e E5600 non dispongono di funzionalità integrate di gestione degli avvisi, questi parametri della riga di comando sono applicabili. Questi parametri non sono applicabili ai controller E2800 o E5700.
+
+[cols="2*"]
+|===
+| Parametro | Definizione 
+
+
+ a| 
+`-a`
+ a| 
+Consente di aggiungere una destinazione trap SNMP (Simple Network Management Protocol) o una destinazione di notifica dell'indirizzo e-mail.
+
+* Quando si aggiunge una destinazione trap SNMP, la community SNMP viene automaticamente definita come il nome di comunità per la trap e l' `*host*` Indica l'indirizzo IP o il nome host DNS (Domain Name Server) del sistema a cui inviare il trap.
+* Quando si aggiunge un indirizzo e-mail per una destinazione di avviso, il `*email-address*` è l'indirizzo e-mail a cui si desidera inviare il messaggio di avviso.
+
+
+[NOTE]
+====
+Questa opzione della riga di comando è obsoleta per gli storage array E2800 e E5700. Utilizzare i comandi RESTful API, Gestore di sistema di SANtricity o curl.
+
+====
+
+
+ a| 
+`-m`
+ a| 
+Specifica il nome host o l'indirizzo IP del server e-mail da cui vengono inviate le notifiche di avviso e-mail.
+
+[NOTE]
+====
+Questa opzione della riga di comando è obsoleta per gli storage array E2800 e E5700. Utilizzare i comandi RESTful API, Gestore di sistema di SANtricity o curl.
+
+====
+
+
+ a| 
+`-s` (minuscolo)
+ a| 
+Mostra le impostazioni degli avvisi nel file di configurazione quando viene utilizzato con `-d` parametro.
+
+[NOTE]
+====
+Questa opzione della riga di comando è obsoleta per gli storage array E2800 e E5700. Utilizzare i comandi RESTful API, Gestore di sistema di SANtricity o curl.
+
+====
+
+
+ a| 
+`-x` (minuscolo)
+ a| 
+Consente di rimuovere una destinazione trap SNMP o una destinazione di avviso indirizzo e-mail. Il `_community_` È il nome di comunità SNMP per la trap e il `_host_` È l'indirizzo IP o il nome host DNS del sistema a cui si desidera inviare il trap.
+
+[NOTE]
+====
+Questa opzione della riga di comando è obsoleta per gli storage array E2800 e E5700. Utilizzare i comandi RESTful API, Gestore di sistema di SANtricity o curl.
+
+====
+|===
+
+
+== Parametri della riga di comando applicabili a tutti i controller in esecuzione con un tipo di client Symbol
+
+[cols="2*"]
+|===
+| Parametro | Definizione 
+
+
+ a| 
+`-R` (maiuscolo)
+ a| 
+Definisce il ruolo utente per la password. I ruoli possono essere:
+
+* `*admin*` -- l'utente ha il privilegio di modificare la configurazione dello storage array.
+* `*monitor*` -- l'utente ha il privilegio di visualizzare la configurazione dello storage array, ma non può apportare modifiche.
+
+
+Il `*-R*` il parametro è valido solo se utilizzato con `*–p*` parametro, che specifica la definizione di una password per un array di storage.
+
+Il `*-R*` il parametro è obbligatorio solo se la funzione di doppia password è attivata sull'array di storage. Il `*-R*` il parametro non è necessario in queste condizioni:
+
+* La funzione di doppia password non è attivata sullo storage array.
+* Viene impostato un solo ruolo di amministratore e il ruolo di monitor non viene impostato per lo storage array.
+
+
+|===
+
+
+== Parametri della riga di comando applicabili a tutti i controller e a tutti i tipi di client
+
+[cols="2*"]
+|===
+| Parametro | Definizione 
+
+
+ a| 
+`_host-name-or-IP-address_`
+ a| 
+Specifica il nome host o l'indirizzo IP (Internet Protocol) (`_xxx.xxx.xxx.xxx_`) di uno storage array gestito in-band o di uno storage array gestito out-of-band.
+
+* Se si gestisce un array di storage utilizzando un host attraverso la gestione dello storage in-band, è necessario utilizzare `-n` o il `-w` parametro se all'host sono collegati più array di storage.
+* Se si gestisce uno storage array utilizzando la gestione dello storage out-of-band tramite la connessione Ethernet su ciascun controller, è necessario specificare `_host-name-or-IP-address_` dei controller.
+* Se in precedenza è stato configurato un array di storage nella finestra di gestione aziendale, è possibile specificare l'array di storage in base al nome fornito dall'utente utilizzando `-n` parametro.
+* Se in precedenza è stato configurato un array di storage nella finestra di gestione aziendale, è possibile specificare l'array di storage in base al relativo WWID (World Wide Identifier) utilizzando `-w` parametro.
+
+
+
+
+ a| 
+`-A`
+ a| 
+Aggiunge un array di storage al file di configurazione. Se non si segue `-A` parametro con a. `_host-name-or-IP-address_`, il rilevamento automatico esegue la scansione della subnet locale per individuare gli array di storage.
+
+
+
+ a| 
+`-c`
+ a| 
+Indica che si stanno inserendo uno o più comandi di script da eseguire sull'array di storage specificato. Terminare ciascun comando con un punto e virgola (`;`). Non è possibile posizionarne più di uno `-c` parametro sulla stessa riga di comando. È possibile includere più comandi di script dopo `-c` parametro.
+
+
+
+ a| 
+`-d`
+ a| 
+Mostra il contenuto del file di configurazione dello script. Il contenuto del file ha questo formato: `_storage-system-name host-name1 host-name2_`
+
+
+
+ a| 
+`-e`
+ a| 
+Esegue i comandi senza eseguire prima un controllo della sintassi.
+
+
+
+ a| 
+`-F` (maiuscolo)
+ a| 
+Specifica l'indirizzo e-mail da cui verranno inviati tutti gli avvisi.
+
+
+
+ a| 
+`-f` (minuscolo)
+ a| 
+Specifica un nome di file che contiene comandi di script che si desidera eseguire sull'array di storage specificato. Il `-f` il parametro è simile a. `-c` in quanto entrambi i parametri sono destinati all'esecuzione di comandi di script. Il `-c` il parametro esegue singoli comandi di script. Il `-f` parameter esegue un file di comandi di script. Per impostazione predefinita, gli errori riscontrati durante l'esecuzione dei comandi di script in un file vengono ignorati e il file continua a essere eseguito. Per eseguire l'override di questo comportamento, utilizzare `set session errorAction=stop` nel file script.
+
+
+
+ a| 
+`-g`
+ a| 
+Specifica un file ASCII che contiene le informazioni di contatto del mittente del messaggio e-mail che verranno incluse in tutte le notifiche di avviso e-mail. La CLI presuppone che il file ASCII sia di solo testo, senza delimitatori o qualsiasi formato previsto. Non utilizzare `-g` parametro se a. `userdata.txt` il file esiste.
+
+
+
+ a| 
+`-h`
+ a| 
+Specifica il nome host che esegue l'agente SNMP a cui è connesso lo storage array. Utilizzare `-h` parametro con questi parametri:
+
+* `-a`
+* `-x`
+
+
+
+
+ a| 
+`-I` (maiuscolo)
+ a| 
+Specifica il tipo di informazioni da includere nelle notifiche degli avvisi e-mail. È possibile selezionare i seguenti valori:
+
+* `eventOnly` -- solo le informazioni sull'evento sono incluse nell'email.
+* `profile` -- le informazioni relative all'evento e al profilo dell'array sono incluse nell'e-mail.
+
+
+È possibile specificare la frequenza per i recapiti e-mail utilizzando `-q` parametro.
+
+
+
+ a| 
+`-i` (minuscolo)
+ a| 
+Mostra l'indirizzo IP degli array di storage noti. Utilizzare `-i` con il `-d` parametro. Il contenuto del file ha questo formato: `_storage-system-name IP-address1 IPaddress2_`
+
+
+
+ a| 
+`-n`
+ a| 
+Specifica il nome dell'array di storage su cui si desidera eseguire i comandi script. Questo nome è facoltativo quando si utilizza un `_host-name-or-IP-address_`. Se si utilizza il metodo in-band per la gestione dello storage array, è necessario utilizzare `-n` parametro se più di un array di storage è connesso all'host all'indirizzo specificato. Il nome dell'array di storage è richiesto quando `_host-name-or-IP-address_` non viene utilizzato. Il nome dell'array di storage configurato per l'utilizzo nella finestra di gestione aziendale (ovvero, il nome è elencato nel file di configurazione) non deve essere un nome duplicato di qualsiasi altro array di storage configurato.
+
+
+
+ a| 
+`-o`
+ a| 
+Specifica un nome di file per tutto il testo di output che è il risultato dell'esecuzione dei comandi di script. Utilizzare `-o` parametro con questi parametri:
+
+* `-c`
+* `-f`
+
+
+Se non si specifica un file di output, il testo di output passa all'output standard (stdout). Tutti gli output dei comandi che non sono comandi di script vengono inviati a stdout, indipendentemente dal fatto che questo parametro sia impostato o meno.
+
+
+
+ a| 
+`-p`
+ a| 
+Definisce la password per lo storage array su cui si desidera eseguire i comandi. La password non è necessaria in presenza delle seguenti condizioni:
+
+* Non è stata impostata una password sullo storage array.
+* La password viene specificata in un file di script in esecuzione.
+* Specificare la password utilizzando `-c` parametro e questo comando:
+
+
+[listing]
+----
+set session password=password
+----
+
+
+ a| 
+`-P`
+ a| 
+Questo argomento richiede uno dei due argomenti seguenti:
+
+* `_password_file_` - contiene la password da utilizzare per l'autenticazione.
+* `-`(dash) - leggere la password da `stdin`.
+
+
+Si noti che l'aggiunta di questo argomento è applicabile a tutti i controller, indipendentemente dal fatto che il `*https*` tipo di client o. `*symbol*` viene utilizzato il tipo di client.
+
+
+
+ a| 
+`-q`
+ a| 
+Specifica la frequenza con cui si desidera ricevere le notifiche degli eventi e il tipo di informazioni restituite nelle notifiche degli eventi. Per ogni evento critico viene sempre generata una notifica di avviso via email contenente almeno le informazioni di base sugli eventi. Questi valori sono validi per `-q` parametro:
+
+* `everyEvent` -- le informazioni vengono restituite con ogni notifica di avviso e-mail.
+* `2` -- le informazioni vengono restituite non più di una volta ogni due ore.
+* `4` -- le informazioni vengono restituite non più di una volta ogni quattro ore.
+* `8` -- le informazioni vengono restituite non più di una volta ogni otto ore.
+* `12` -- le informazioni vengono restituite non più di una volta ogni 12 ore.
+* `24` -- le informazioni vengono restituite non più di una volta ogni 24 ore.
+
+
+Utilizzando il `-I` parametro è possibile specificare il tipo di informazioni nelle notifiche degli avvisi e-mail.
+
+* Se si imposta `-I` parametro a. `eventOnly` , l'unico valore valido per `-q` il parametro è `everyEvent`.
+* Se si imposta `-I` a uno dei due parametri `profile` o il `supportBundle` valore, queste informazioni vengono incluse nei messaggi e-mail con la frequenza specificata da `-q` parametro.
+
+
+
+
+ a| 
+`-quick`
+ a| 
+Riduce il tempo necessario per eseguire un'operazione su linea singola. Un esempio di operazione a linea singola è rappresentato da `recreate snapshot volume` comando. Questo parametro riduce il tempo non eseguendo processi in background per la durata del comando. Non utilizzare questo parametro per operazioni che comportano più operazioni su una riga. L'uso esteso di questo comando può sovraccaricarsi del controller con più comandi di quanti il controller possa elaborare, causando guasti operativi. Inoltre, gli aggiornamenti dello stato e della configurazione che vengono generalmente raccolti dai processi in background non saranno disponibili per la CLI. Questo parametro causa il fallimento delle operazioni che dipendono dalle informazioni di background.
+
+
+
+ a| 
+`-S` (maiuscolo)
+ a| 
+Elimina i messaggi informativi che descrivono l'avanzamento del comando visualizzato quando si eseguono i comandi script. (La soppressione dei messaggi informativi viene anche chiamata modalità silenziosa). Questo parametro elimina i seguenti messaggi:
+
+* `Performing syntax check`
+* `Syntax check complete`
+* `Executing script`
+* `Script execution complete`
+* `SMcli completed successfully`
+
+
+
+
+ a| 
+`-v`
+ a| 
+Mostra lo stato globale corrente dei dispositivi noti in un file di configurazione se utilizzato con `-d` parametro.
+
+
+
+ a| 
+`-w`
+ a| 
+Specifica l'ID WWID dell'array di storage. Questo parametro è un'alternativa a `-n` parametro. Utilizzare `-w` con il `-d` Parametro per visualizzare gli ID WWID degli array di storage noti. Il contenuto del file ha questo formato: `_storage-system-name world-wide-ID IP-address1 IP-address2_`
+
+
+
+ a| 
+`-X` (maiuscolo)
+ a| 
+Elimina un array di storage da una configurazione.
+
+
+
+ a| 
+`-?`
+ a| 
+Mostra le informazioni sull'utilizzo dei comandi CLI.
+
+|===

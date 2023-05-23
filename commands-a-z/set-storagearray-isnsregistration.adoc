@@ -1,0 +1,127 @@
+---
+permalink: commands-a-z/set-storagearray-isnsregistration.html 
+sidebar: sidebar 
+keywords: set, storage, array, isns, registration 
+summary: 'Il comando Set StorageArray isnsRegistration consente di elencare uno storage array su un server IPv4 o IPv6 Internet Storage Name Service (iSNS).' 
+---
+= Impostare la registrazione iSNS dello storage array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray isnsRegistration` Il comando consente di elencare un array di storage su un server IPv4 o iSNS (Internet Storage Name Service) IPv6.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi per IPv4
+
+[listing, subs="+macros"]
+----
+set storageArray isnsRegistration=(TRUE | FALSE)
+isnsIPv4ConfigurationMethod=[static | dhcp]
+isnsIPv4Address=pass:quotes[_ipAddress_]
+[isnsListeningPort]
+----
+
+
+== Sintassi per IPv6
+
+[listing, subs="+macros"]
+----
+set storageArray isnsRegistration=(TRUE | FALSE)
+isnsIPv6Address=pass:quotes[_ipAddress_]
+[isnsListeningPort]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametri | Descrizione 
+
+
+ a| 
+`isnsRegistration`
+ a| 
+Il mezzo per registrare la destinazione iSCSI sul server iSNS. Impostare il parametro su `TRUE` Per elencare una destinazione iSCSI.
+
+Quando si imposta questo parametro su `TRUE` È inoltre necessario utilizzare questi parametri per le configurazioni IPV4:
+
+* `isnsIPV4ConfigurationMethod`
+* `isnsIPV4Address`
+
+
+Quando si imposta questo parametro su `TRUE` È inoltre necessario utilizzare questi parametri per le configurazioni IPV6:
+
+* `isnsIPV6Address`
+
+
+In alternativa, è possibile utilizzare anche `isnsListeningPort` parametro per definire il monitoraggio delle porte e gestire il traffico verso il server.
+
+Per rimuovere la registrazione per lo storage array dal server iSNS, impostare questo parametro su `FALSE`.
+
+
+
+ a| 
+`isnsIPv4ConfigurationMethod`
+ a| 
+Il metodo che si desidera utilizzare per definire la configurazione del server iSNS. È possibile inserire l'indirizzo IP dei server IPv4 iSNS selezionando `static`. Per IPv4, è possibile scegliere di fare in modo che un server DHCP (Dynamic host Configuration Protocol) selezioni l'indirizzo IP del server iSNS immettendo `dhcp`. Per attivare DHCP, è necessario impostare `isnsIPv4Address` parametro a. `0.0.0.0`.
+
+
+
+ a| 
+`isnsIPv4Address`
+ a| 
+Indirizzo IPv4 utilizzato per la connessione al server iSNS. Utilizzare questo parametro con `static` Valore per le configurazioni IPv4. Se si sceglie di impostare un server DHCP come indirizzo IP per un server Internet iSNS IPv4, è necessario impostare `isnsIPv4Address` parametro a. `0.0.0.0`.
+
+
+
+ a| 
+`isnsIPv6Address`
+ a| 
+L'indirizzo IPv6 utilizzato per la connessione al server iSNS.
+
+
+
+ a| 
+`isnsListeningPort`
+ a| 
+Il numero di porta che si desidera utilizzare per la porta di ascolto del server iSNS. L'intervallo di valori per la porta di ascolto è `49152` a. `65535`. Il valore predefinito è `3205`.
+
+La porta di ascolto risiede sul server ed esegue le seguenti attività:
+
+* Monitora le richieste di connessione del client in entrata
+* Gestisce il traffico verso il server
+
+
+Quando un client richiede una sessione di rete con un server, il listener riceve la richiesta effettiva. Se le informazioni del client corrispondono alle informazioni del listener, il listener concede una connessione al server di database.
+
+|===
+
+
+== Note
+
+Il protocollo iSNS facilita il rilevamento, la gestione e la configurazione automatizzate dei dispositivi iSCSI e Fibre Channel su una rete TCP/IP. ISNS offre servizi intelligenti di rilevamento e gestione dello storage paragonabili a quelli delle reti Fibre Channel, che consentono a una rete IP commodity di funzionare in una capacità simile a quella di una storage area network. ISNS semplifica inoltre l'integrazione perfetta delle reti IP e Fibre Channel, grazie alla sua capacità di emulare i servizi Fibre Channel Fabric e gestire sia i dispositivi iSCSI che i dispositivi Fibre Channel.
+
+Il server DHCP trasmette i parametri di configurazione, ad esempio gli indirizzi di rete, ai nodi IP. DHCP consente a un client di acquisire tutti i parametri di configurazione IP necessari per il funzionamento. DHCP consente di allocare automaticamente indirizzi di rete riutilizzabili.
+
+
+
+== Livello minimo del firmware
+
+7.10

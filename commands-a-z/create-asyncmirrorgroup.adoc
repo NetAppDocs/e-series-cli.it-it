@@ -1,0 +1,189 @@
+---
+permalink: commands-a-z/create-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: create, asynchronous, mirror, group 
+summary: 'Il comando create asyncMirrorGroup crea un nuovo gruppo di mirror asincroni vuoto sia sull"array di storage locale che sull"array di storage remoto.' 
+---
+= Creare un gruppo di mirror asincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `create asyncMirrorGroup` il comando crea un nuovo gruppo di mirror asincroni vuoto sia sull'array di storage locale che sull'array di storage remoto.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo array di storage, con alcune limitazioni. Se si esegue il comando sull'array E2700 o E5600, non esistono restrizioni.
+
+[NOTE]
+====
+Se si esegue il comando sull'array E2800 o E5700, il tipo di client deve essere impostato su `symbol`. Questo comando non viene eseguito se il tipo di client è impostato su `https`.
+
+====
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Un gruppo di mirror asincrono è un container che può ospitare diverse coppie mirrorate in modo che possano essere gestite come un'unica entità. Si crea un gruppo di mirror asincroni per definire le impostazioni di sincronizzazione per tutte le coppie mirrorate all'interno del gruppo. Ogni coppia mirrorata in un gruppo di mirror asincrono condivide le stesse impostazioni di sincronizzazione, ruolo primario e secondario e modalità di scrittura.
+
+Il gruppo di mirror asincrono è associato all'array di storage locale e all'array di storage remoto utilizzati per il mirroring. L'array di storage locale è il lato primario del gruppo di mirror asincrono, mentre l'array di storage remoto è il lato secondario del gruppo di mirror asincrono. Tutti i volumi aggiunti al gruppo di mirror asincrono sull'array di storage locale ricoprono il ruolo principale nella relazione di mirroring. Successivamente, tutti i volumi aggiunti al gruppo di mirror asincrono sull'array di storage remoto mantengono il ruolo secondario nella relazione di mirroring.
+
+Assicurarsi di eseguire `Create Asynchronous Mirror Group` sull'array di storage locale. La creazione asincrona di gruppi mirror viene avviata dall'array di storage che contiene i volumi che ricoprono il ruolo primario nella relazione mirror. Si utilizza `Create Asynchronous Mirror Group` per specificare l'identità dell'array di storage remoto che contiene i volumi che ricoprono il ruolo secondario nella relazione mirror.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+create asyncMirrorGroup userLabel=pass:quotes[_"asyncMirrorGroupName"_]
+(remoteStorageArrayName=pass:quotes[_"storageArrayName"_] | remoteStorageArrayWWN=pass:quotes[_"wwID"_])
+[remotePassword=pass:quotes[_"password"_]
+interfaceType=(FC | iSCSI)
+[syncInterval=pass:quotes[_integer_](minutes | hours | days)]
+[warningSyncThreshold=pass:quotes[_integer_](minutes | hours | days)]
+[warningRecoveryThreshold=pass:quotes[_integer_](minutes | hours | days)]
+[warningThresholdPercent=pass:quotes[_percentValue_]]
+[autoResync=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`userLabel`
+ a| 
+Il nome del nuovo gruppo di mirror asincrono che si desidera creare. Racchiudere il nuovo nome del gruppo mirror asincrono tra virgolette doppie (" ").
+
+Il nome deve essere univoco negli array di storage locali e remoti.
+
+
+
+ a| 
+`remoteStorageArrayName`
+ a| 
+Il nome dell'array di storage remoto su cui si esegue il mirroring del gruppo di mirror asincrono. Racchiudere il nome dello storage array tra virgolette doppie (" ").
+
+L'array di storage remoto deve avere lo stesso tipo di connessione dell'array di storage locale.
+
+
+
+ a| 
+`remoteStorageArrayWWN`
+ a| 
+WWID (World Wide Identifier) dell'array di storage remoto su cui si esegue il mirroring del gruppo di mirror asincrono. Per identificare lo storage array, è possibile utilizzare il WWID invece del nome dello storage array. Racchiudere il WWID tra parentesi angolari ( ).
+
+L'array di storage remoto deve avere lo stesso tipo di connessione dell'array di storage locale.
+
+
+
+ a| 
+`remotePassword`
+ a| 
+La password per lo storage array remoto. Utilizzare questo parametro quando l'array di storage remoto è protetto da password. Racchiudere la password tra virgolette doppie (" ").
+
+
+
+ a| 
+`interfaceType`
+ a| 
+Specificare il tipo di connessione da utilizzare: Fabric Fibre Channel o interfaccia iSCSI. (L'impostazione predefinita è Fibre Channel). L'array di storage locale e l'array di storage remoto devono essere collegati tramite un fabric Fibre Channel o un'interfaccia iSCSI adeguata.
+
+
+
+ a| 
+`syncInterval`
+ a| 
+Specificare il periodo di tempo che intercorre tra l'invio automatico degli aggiornamenti dei dati modificati dall'array di storage locale all'array di storage remoto. È possibile specificare la durata in minuti, ore o giorni.
+
+[NOTE]
+====
+Non aggiungere uno spazio tra il numero intero e la lunghezza del tempo.
+
+====
+Esempio: `10minutes`
+
+
+
+ a| 
+`warningSyncThreshold`
+ a| 
+Specificare il tempo di attesa prima che venga attivato un avviso per i casi in cui la sincronizzazione di tutti i volumi all'interno del gruppo di mirror asincrono richiede più tempo del tempo definito. È possibile specificare la durata in minuti, ore o giorni.
+
+[NOTE]
+====
+Non aggiungere uno spazio tra il numero intero e la lunghezza del tempo.
+
+====
+Esempio: `30minutes`
+
+
+
+ a| 
+`warningRecoveryThreshold`
+ a| 
+Specificare il tempo di attesa prima che venga attivato un avviso quando l'aggiornamento automatico dei dati per l'immagine point-in-time sull'array di storage remoto è precedente al tempo definito. Definire la soglia dalla fine dell'aggiornamento precedente. È possibile specificare la durata in minuti, ore o giorni.
+
+[NOTE]
+====
+È necessario impostare la soglia del punto di ripristino in modo che sia il doppio della soglia dell'intervallo di sincronizzazione.
+
+====
+[NOTE]
+====
+Non aggiungere uno spazio tra il numero intero e la lunghezza del tempo.
+
+====
+Esempio: `60minutes`
+
+
+
+ a| 
+`warningThresholdPercent`
+ a| 
+Specificare il tempo di attesa prima che venga attivato un avviso quando la capacità di un volume di repository mirror raggiunge la percentuale definita. Definire la soglia in base alla percentuale (%) della capacità rimanente.
+
+
+
+ a| 
+`autoResync`
+ a| 
+Le impostazioni per la risincronizzazione automatica tra i volumi primari e i volumi secondari di una coppia di mirroring asincrono all'interno di un gruppo di mirror asincrono. Questo parametro ha i seguenti valori:
+
+* `enabled` -- risincronizzazione automatica attivata. Non è necessario eseguire ulteriori operazioni per risincronizzare il volume primario e il volume secondario.
+* `disabled` -- la risincronizzazione automatica è disattivata. Per risincronizzare il volume primario e il volume secondario, è necessario eseguire `resume asyncMirrorGroup` comando.
+
+
+|===
+
+
+== Note
+
+* La funzione di mirroring asincrono deve essere attivata e attivata sugli array di storage locali e remoti che verranno utilizzati per le attività di mirroring.
+* È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, trattini e caratteri di sottolineatura per i nomi. I nomi possono avere un massimo di 30 caratteri.
+* Gli array di storage locali e remoti devono essere collegati tramite un fabric Fibre Channel o un'interfaccia iSCSI.
+* Le password vengono memorizzate in ciascun array di storage in un dominio di gestione. Se la password non è stata impostata in precedenza, non è necessaria alcuna password. La password può essere costituita da una qualsiasi combinazione di caratteri alfanumerici con un massimo di 30 caratteri. È possibile definire una password per lo storage array utilizzando `set storageArray` comando.)
+* A seconda della configurazione, è possibile creare un numero massimo di gruppi di mirror asincroni su un array di storage.
+* I gruppi di mirror asincroni vengono creati vuoti e le coppie mirrorate vengono aggiunte successivamente. È possibile aggiungere solo coppie mirrorate a un gruppo di mirror asincrono. Ogni coppia mirrorata è associata esattamente a un gruppo di mirror asincrono.
+* Il processo di mirroring asincrono viene avviato a un intervallo di sincronizzazione definito. Le immagini point-in-time periodiche vengono replicate in quanto vengono copiati solo i dati modificati e non l'intero volume.
+
+
+
+
+== Livello minimo del firmware
+
+7.84

@@ -1,0 +1,146 @@
+---
+permalink: commands-a-z/show-volume.html 
+sidebar: sidebar 
+keywords: show, thin, volume 
+summary: Il comando show volume restituisce la cronologia di espansione o la capacità consumata per il volume o i volumi thin specificati. 
+---
+= Mostra volume sottile
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show volume` il comando restituisce la cronologia di espansione o la capacità consumata per il volume o i volumi thin specificati.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Storage Monitor.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+show (allVolumes | volume pass:quotes[[_volumeName_]] |
+volumes pass:quotes[[_volumeName1_ ... _volumeNameN_]])
+(consumedCapacity |
+(expansionHistory pass:quotes[[file=_fileName_]]))
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`allVolumes`
+ a| 
+Questo parametro restituisce informazioni su tutti i thin volumi nell'array di storage.
+
+
+
+ a| 
+`volume`
+ a| 
+Il nome di un volume thin per il quale si stanno recuperando informazioni. Racchiudere il nome del volume sottile tra parentesi quadre ([ ]). Se il nome del volume sottile contiene caratteri speciali o numeri, è necessario racchiudere il nome del volume sottile tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`volumes`
+ a| 
+I nomi di diversi thin volumi per i quali si desidera recuperare le informazioni. Inserire i nomi dei volumi utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Separare ciascuno dei nomi con uno spazio.
+
+
+Se i nomi dei volumi contengono caratteri o numeri speciali, immettere i nomi utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Racchiudere ciascuno dei nomi tra virgolette doppie (" ").
+* Separare ciascuno dei nomi con uno spazio.
+
+
+
+
+ a| 
+`consumedCapacity`
+ a| 
+L'impostazione per restituire un elenco conciso di informazioni sulla capacità consumata dei volumi thin.
+
+
+
+ a| 
+`expansionHistory`
+ a| 
+L'impostazione per restituire un elenco conciso di informazioni sulla cronologia di espansione dei thin volumi.
+
+
+
+ a| 
+`file`
+ a| 
+Il `file` parametro specifica un file per registrare l'output di `expansionHistory` parametro. Il `file` è valido solo se utilizzato con `expansionHistory` parametro. Un nome di file non valido causa l'errore del comando.
+
+|===
+
+
+== Note
+
+Con `expansionHistory` il comando restituisce informazioni simili all'esempio mostrato di seguito.
+
+`Thin volume name: volume-nameRepository volume Name: REPOS_NNNN`
+
+[cols="4*"]
+|===
+| Ora di registrazione | Tipo di espansione | Capacità iniziale | Capacità finale 
+
+
+ a| 
+MM/GG/AAAA HH:MM:SS
+ a| 
+Manuale|automatico
+ a| 
+NNNNNNNN byte
+ a| 
+NNNNNNNN byte
+
+|===
+Con `consumedCapacity` il comando restituisce informazioni simili all'esempio mostrato di seguito.
+
+[cols="5*"]
+|===
+| Volume | Capacità fornita | Capacità consumata | Quota | % Pro.consumo 
+
+
+ a| 
+`volumeName`
+ a| 
+500.000 GB
+ a| 
+230.000 GB
+ a| 
+700.000 GB
+ a| 
+46%
+
+|===
+
+
+== Livello minimo del firmware
+
+7.83

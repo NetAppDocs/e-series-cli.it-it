@@ -1,0 +1,91 @@
+---
+permalink: commands-a-z/set-storagearray-autosupportremotediag.html 
+sidebar: sidebar 
+keywords: enable, disable, autosupport, remote, diagnostics, feature, individual, E2800, E5700, arrays 
+summary: Il comando Set StorageArray autoSupportRemoteDiag attiva o disattiva la funzione di diagnostica remota AutoSupport OnDemand. Questa funzione consente al supporto tecnico di richiedere i dati di supporto per diagnosticare i problemi in remoto. 
+---
+= Attivare o disattivare la funzione di diagnostica remota AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray autoSupportRemoteDiag` Il comando attiva o disattiva la funzione di diagnostica remota AutoSupport OnDemand. Questa funzione consente al supporto tecnico di richiedere i dati di supporto per diagnosticare i problemi in remoto.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Contesto
+
+Prima di attivare questa funzione, attivare la funzione AutoSupport, quindi la funzione AutoSupport OnDemand sull'array di storage.
+
+È necessario attivare le tre funzioni nel seguente ordine:
+
+. Abilitare AutoSupport
+. Attiva AutoSupport on Demand
+. Attivare la diagnostica remota AutoSupport
+
+
+
+
+== Sintassi
+
+[listing]
+----
+set storageArray autoSupportRemoteDiag (enable | disable)
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`enable | disable`
+ a| 
+Consente all'utente di attivare o disattivare la funzione di diagnostica remota AutoSupport. Se AutoSupport e AutoSupport OnDemand sono disattivati, l'azione di abilitazione non verrà eseguita e verrà chiesto all'utente di abilitarli prima.
+
+|===
+
+
+== Esempi
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray autoSupportRemoteDiag enable;"
+
+SMcli completed successfully.
+----
+
+
+== Verifica
+
+Utilizzare `show storageArray autoSupport` per verificare se la funzione è stata attivata. Le tre righe iniziali dell'output visualizzato mostrano lo stato di abilitazione della funzione AutoSupport, quindi la funzione AutoSupport on Demand e la funzione di diagnostica remota AutoSupport:
+
+[listing]
+----
+The AutoSupport feature is enabled on this storage array.
+The AutoSupport OnDemand feature is enabled on this storage array.
+The AutoSupport Remote Diagnostics feature is enabled on this storage array.
+----
+
+
+== Livello minimo del firmware
+
+8.40

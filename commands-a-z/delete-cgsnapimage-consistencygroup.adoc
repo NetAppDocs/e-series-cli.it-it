@@ -1,0 +1,90 @@
+---
+permalink: commands-a-z/delete-cgsnapimage-consistencygroup.html 
+sidebar: sidebar 
+keywords: delete, consistency, group, snapshot, image 
+summary: Il comando delete cgSnapImage consistencyGroup elimina le immagini snapshot in un gruppo di coerenza. 
+---
+= Eliminare l'immagine snapshot del gruppo di coerenza
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `delete cgSnapImage consistencyGroup` il comando elimina le immagini snapshot in un gruppo di coerenza.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+delete cgSnapImage consistencyGroup=pass:quotes[_"consistencyGroupName"_]
+pass:quotes[[deleteCount=_numberOfSnapImages_]
+[retainCount=pass:quotes[_numberOfSnapImages_]
+[ignoreSnapVolume=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`consistencyGroup`
+ a| 
+Il nome del gruppo di coerenza dal quale si desidera eliminare le immagini snapshot. Racchiudere il nome del gruppo di coerenza tra virgolette doppie (" ").
+
+
+
+ a| 
+`deleteCount`
+ a| 
+Il numero di immagini snapshot che si desidera eliminare dal gruppo di coerenza. USA valori interi.
+
+Questo parametro elimina prima l'immagine snapshot meno recente e continua a eliminare le immagini snapshot meno recenti fino a raggiungere il numero immesso.
+
+
+
+ a| 
+`retainCount`
+ a| 
+Il numero di immagini snapshot che si desidera conservare nel gruppo di coerenza. USA valori interi.
+
+Questo parametro mantiene le immagini snapshot più recenti nel gruppo di coerenza.
+
+
+
+ a| 
+`ignoreSnapVolume`
+ a| 
+Determina se il volume snapshot del gruppo di coerenza associato viene conservato o eliminato. Questo parametro si applica solo se l'immagine snapshot del gruppo di coerenza è associata a un volume snapshot del gruppo di coerenza. Per mantenere il volume di snapshot, impostare questo parametro su `TRUE`. Per eliminare il volume snapshot, impostare questo parametro su `FALSE`. Il valore predefinito è `FALSE`.
+
+|===
+
+
+== Note
+
+Se non è possibile eliminare le immagini snapshot per tutti i volumi membri pertinenti del gruppo di coerenza, l'operazione non riesce e nessuna delle immagini snapshot viene eliminata.
+
+Quando si elimina un'immagine snapshot di un gruppo di coerenza associata a un volume snapshot di un gruppo di coerenza, il membro del volume snapshot corrispondente nel volume snapshot del gruppo di coerenza passa allo stato interrotto. Un membro del volume snapshot in stato interrotto non ha più una relazione con il gruppo di snapshot dell'immagine snapshot eliminata. Tuttavia, un membro del volume snapshot in stato interrotto mantiene la relazione con il volume snapshot del gruppo di coerenza.
+
+
+
+== Livello minimo del firmware
+
+7.83

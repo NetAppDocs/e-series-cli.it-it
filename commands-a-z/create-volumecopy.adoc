@@ -1,0 +1,141 @@
+---
+permalink: commands-a-z/create-volumecopy.html 
+sidebar: sidebar 
+keywords: create, volume, copy 
+summary: 'Il comando create VolumeCopy crea una copia del volume e avvia l"operazione di copia del volume. Questo comando è valido per le coppie di copia del volume dell"immagine snapshot.' 
+---
+= Creare una copia del volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `create volumeCopy` il comando crea una copia del volume e avvia l'operazione di copia del volume. Questo comando è valido per le coppie di copia del volume dell'immagine snapshot.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+L'avvio di un'operazione di copia del volume sovrascrive tutti i dati esistenti sul volume di destinazione, rende il volume di destinazione di sola lettura negli host e non esegue il failover di tutti i volumi di immagini snapshot associati al volume di destinazione, se presenti. Se il volume di destinazione è già stato utilizzato come copia, assicurarsi di non avere più bisogno dei dati o di eseguirne il backup.
+
+====
+Questo comando crea le copie dei volumi in due modi:
+
+* Copia del volume senza immagine snapshot, detta anche copia del volume _offline_
+* Copia del volume con immagine snapshot, detta anche copia del volume _online_
+
+
+Se si utilizza la copia del volume senza immagine snapshot, non è possibile scrivere sul volume di origine fino al completamento dell'operazione di copia. Se si desidera essere in grado di scrivere sul volume di origine prima del completamento dell'operazione di copia, utilizzare la copia del volume con l'immagine snapshot. È possibile selezionare la copia del volume con l'immagine snapshot attraverso i parametri opzionali nella sintassi del comando.
+
+Al termine della copia del volume con l'operazione di immagine snapshot, l'immagine snapshot viene eliminata e il volume snapshot viene disattivato.
+
+[NOTE]
+====
+È possibile disporre di un massimo di otto copie di volumi contemporaneamente. Se si tenta di creare più di otto copie di volumi alla volta, i controller restituiscono lo stato Pending (in sospeso) fino al termine di una delle copie di volume in corso e lo stato viene visualizzato come complete (completo).
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+create volumeCopy source=pass:quotes[_"sourceName"_
+target="_targetName_"]
+[copyPriority=(highest | high | medium | low | lowest)]
+[targetReadOnlyEnabled=(TRUE | FALSE)]
+[copyType=(offline | online)]
+[repositoryPercentOfBase=(20 | 40 | 60 | 120 | default)]
+[repositoryGroupPreference=(sameAsSource | otherThanSource | default)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`source`
+ a| 
+Il nome di un volume esistente che si desidera utilizzare come volume di origine. Racchiudere il nome del volume di origine tra virgolette doppie (" ").
+
+
+
+ a| 
+`target`
+ a| 
+Il nome di un volume esistente che si desidera utilizzare come volume di destinazione. Racchiudere il nome del volume di destinazione tra virgolette doppie (" ").
+
+
+
+ a| 
+`copyPriority`
+ a| 
+La priorità della copia del volume rispetto all'attività di i/o dell'host. I valori validi sono `highest`, `high`, `medium`, `low`, o. `lowest`.
+
+
+
+ a| 
+`targetReadOnlyEnabled`
+ a| 
+L'impostazione che consente di scrivere nel volume di destinazione o di leggere solo dal volume di destinazione. Per scrivere nel volume di destinazione, impostare questo parametro su `FALSE`. Per impedire la scrittura nel volume di destinazione, impostare questo parametro su `TRUE`.
+
+
+
+ a| 
+`copyType`
+ a| 
+Utilizzare questo parametro per creare una copia del volume con un'immagine snapshot. La creazione di una copia del volume con un'immagine snapshot consente di continuare a scrivere sul volume di origine durante la creazione della copia del volume. Per creare una copia del volume con un'immagine snapshot, impostare questo parametro su `online`. Per creare una copia del volume senza un'immagine snapshot, impostare questo parametro su `offline`.
+
+Se non si utilizza questo parametro, la copia del volume viene creata senza un'immagine snapshot.
+
+
+
+ a| 
+`repositoryPercentOfBase`
+ a| 
+Questo parametro determina le dimensioni del volume di repository per l'immagine snapshot quando si crea una copia del volume con un'immagine snapshot. La dimensione del volume di repository viene espressa come percentuale del volume di origine, che viene anche chiamato volume di base. I valori validi per questo parametro sono `20`, `40`, `60`, `120`, e. `default`. Il valore predefinito è 20. Se non si utilizza questo parametro, il firmware utilizza un valore pari al 20%.
+
+È necessario utilizzare `copyType` con il `repositoryPercentOfBase` parametro.
+
+
+
+ a| 
+`repositoryGroupPreference`
+ a| 
+Questo parametro determina in quale gruppo di volumi viene scritto il volume del repository di immagini snapshot. Sono disponibili le seguenti opzioni:
+
+* `sameAsSource` -- il volume dell'immagine snapshot viene scritto nello stesso gruppo di volumi del volume di origine, se lo spazio è disponibile.
+* `otherThanSource` -- parametro estratto. Non utilizzare
+* `default` -- il volume del repository di immagini snapshot viene scritto in qualsiasi gruppo di volumi che dispone di spazio.
+
+
+Per ottenere le migliori prestazioni, utilizzare `sameAsSource` opzione.
+
+È necessario utilizzare `copyType` con il `repositoryGroupPreference` parametro.
+
+|===
+
+
+== Note
+
+È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, accada e sottolineatura per i nomi. I nomi possono avere un massimo di 30 caratteri.
+
+La priorità di copia definisce la quantità di risorse di sistema utilizzate per copiare i dati tra il volume di origine e il volume di destinazione di una coppia di copie del volume. Se si seleziona il livello di priorità più alto, la copia del volume utilizza la maggior parte delle risorse di sistema per eseguire la copia del volume, riducendo le prestazioni per i trasferimenti di dati dell'host.

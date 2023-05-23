@@ -1,0 +1,163 @@
+---
+permalink: commands-a-z/diagnose-controller-iscsihostport.html 
+sidebar: sidebar 
+keywords: diagnose, controller, hostport, command, diagnostic, tests, copper, cable, host, interface, cards, support, roles 
+summary: Il comando Diagnose controller iscsiHostPort esegue test diagnostici sui cavi di rame tra le schede di interfaccia host iSCSI e un controller. 
+---
+= Diagnosticare il cavo host iSCSI del controller
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `diagnose controller iscsiHostPort` Command esegue test diagnostici sui cavi di rame tra le schede di interfaccia host iSCSI e un controller.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+È possibile eseguire la diagnostica su una porta selezionata o su tutte le porte. Le porte devono essere in grado di supportare la diagnostica dei cavi. Se le porte non supportano la diagnostica dei cavi, viene restituito un errore.
+
+
+
+== Sintassi
+
+[listing]
+----
+diagnose controller [(a|b)]
+iscsiHostPort ([all] | [portLabel])
+testID=cableDiagnostics
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`controller`
+ a| 
+Il controller su cui si desidera eseguire il test di diagnostica del cavo. Gli identificatori del controller validi sono `a` oppure `b`, dove `a` È il controller nello slot A, e. `b` Il controller si trova nello slot B. Racchiudere l'identificatore del controller tra parentesi quadre ([ ]). Se non si specifica un controller, il software di gestione dello storage restituisce un errore di sintassi.
+
+
+
+ a| 
+`iscsiHostPort`
+ a| 
+La porta host iSCSI su cui si desidera eseguire i test di diagnostica. È possibile eseguire la diagnostica su tutte le porte host iSCSI oppure eseguire la diagnostica su una porta host iSCSI specifica.
+
+Per ulteriori informazioni, vedere quanto segue:
+
+<<Identificazione di un'etichetta della porta host iSCSI,"Identificazione di un'etichetta della porta host iSCSI">>
+
+
+
+ a| 
+`testID`
+ a| 
+L'identificativo del test di diagnostica che si desidera eseguire. Per questo test diagnostico, l'unica scelta è `cableDiagnostics`.
+
+|===
+
+
+== Identificazione di un'etichetta della porta host iSCSI
+
+Specificare un'etichetta per la porta host. Per specificare l'etichetta della porta host, procedere come segue:
+
+. Se non si conosce l'etichetta della porta host iSCSI, eseguire `show controller` comando.
+. Nella sezione host interface (interfaccia host) dei risultati, individuare la porta host che si desidera selezionare.
++
+[NOTE]
+====
+L'etichetta della porta è il valore completo restituito per `Port` campo.
+
+====
+. Racchiudere l'intero valore dell'etichetta della porta tra virgolette e parentesi quadre: ["portLabel"]. Ad esempio, se l'etichetta della porta è `Ch 2`, Specificare la porta host iSCSI come segue:
++
+[listing]
+----
+iscsiHostPort[\"ch 2\"]
+----
++
+[NOTE]
+====
+Se si utilizza una riga di comando di Windows e l'etichetta contiene una pipe (|), il carattere dovrebbe essere escape (usando {caret}); in caso contrario, verrà interpretato come un comando. Ad esempio, se l'etichetta della porta è `e0b|0b`, Specificare la porta host iSCSI come segue:
+
+====
++
+[listing]
+----
+iscsiHostPort[\"e0b^|0b\"]
+----
+
+
+[NOTE]
+====
+Per la compatibilità con le versioni precedenti, il numero iscsiPort, racchiuso da parentesi graffe [ ] invece che da virgolette e parentesi graffe [" "], può ancora essere utilizzato per i controller E2700, E5600 o EF560 (e altre generazioni precedenti di controller e-Series o EF-Series). Per questi controller, i valori validi per iscsiPortNumber sono i seguenti:
+
+* Per i controller con porte host integrate, la numerazione è 3, 4, 5 o 6.
+* Solo per i controller con porte host su una scheda di interfaccia host, la numerazione è 1, 2, 3 o 4.
+
+
+Un esempio della sintassi precedente è il seguente:
+
+[listing]
+----
+iscsiHostPort[3]
+----
+====
+
+
+== Note
+
+Quando si esegue il test di diagnostica del cavo, il firmware restituisce le seguenti informazioni:
+
+* *Host Port* (porta host): La porta su cui è stato eseguito il test di diagnostica.
+* *HIC*: La scheda di interfaccia host associata a questa porta.
+* La data e l'ora in cui è stato eseguito il test.
+* *Stato*:
++
+** *OK*: Tutte le coppie di cavi sono buone e non presentano guasti.
+** *Aperto*: Una o più delle quattro coppie di cavi sono aperte.
+** *Corto*: Una o più delle quattro coppie di cavi sono in corto circuito.
+** *Incompleto*: Una o più delle quattro coppie ha restituito risultati di test incompleti o non validi.
+
+
+* *Lunghezza*: La lunghezza dei cavi è indicata in metri e vengono restituite le seguenti informazioni relative ai cavi:
++
+** Quando lo stato del cavo è OK, vengono restituite le lunghezze approssimative delle coppie di cavi. Le lunghezze delle coppie di cavi sono indicate come un intervallo (L1-L2), che è la lunghezza più breve e lunga delle coppie di cavi.
+** Se lo stato del cavo è Open (aperto) o Short (corto), la distanza approssimativa dal guasto nelle coppie di cavi. Se si verifica un guasto, viene indicata la lunghezza per quella coppia di cavi. Se si verifica più di un guasto, le informazioni restituite sono la lunghezza più breve e più lunga dei guasti. Le lunghezze sono elencate come un intervallo (L1-L2) dove L1L2.
+** Se lo stato del cavo è incompleto, le informazioni restituite corrispondono alle lunghezze delle coppie di cavi più brevi e più lunghe che il firmware può verificare. Le lunghezze sono elencate per le coppie di cavi valide come intervallo (L1-L2) dove L1L2.
+
+
+* Registrare i valori per i registri di diagnostica dei cavi. I valori sono in formato esadecimale:
++
+** Due byte mostrano lo stato combinato del cavo (quattro bit per porta).
+** Quattro numeri a due byte indicano la lunghezza di ciascun canale.
+
+
+
+
+
+
+== Livello minimo del firmware
+
+7.77
+
+8.10 revisiona il sistema di numerazione delle porte host iSCSI.

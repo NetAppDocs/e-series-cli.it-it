@@ -1,0 +1,73 @@
+---
+permalink: commands-a-z/save-storagearray-keymanagementcertificate.html 
+sidebar: sidebar 
+keywords: retrieve, installed, external, key management, certificate 
+summary: Il comando Save StorageArray keyManagementCertificate recupera il certificato installato. 
+---
+= Recuperare il certificato di gestione delle chiavi esterne installato
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `save storageArray keyManagementCertificate` il comando recupera il certificato installato.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Questo comando si applica solo alla gestione esterna delle chiavi.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+
+save storageArray keyManagementCertificate certificateType=pass:quotes["_certificateType_"]
+file=pass:quotes["_filename_"]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`certificateType`
+ a| 
+Consente di specificare il tipo di certificato da installare. Le scelte valide sono: `client` oppure `server`.
+
+
+
+ a| 
+`file`
+ a| 
+Consente di specificare il nome del file per il certificato firmato o per il certificato CA del server.
+
+|===
+
+
+== Livello minimo del firmware
+
+8.40

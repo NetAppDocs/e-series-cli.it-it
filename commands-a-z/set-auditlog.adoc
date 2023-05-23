@@ -1,0 +1,90 @@
+---
+permalink: commands-a-z/set-auditlog.html 
+sidebar: sidebar 
+keywords: set, audit log 
+summary: Il comando Set AuditLog configura le impostazioni del registro di controllo. 
+---
+= Impostare le impostazioni del registro di controllo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set auditLog` il comando configura le impostazioni del registro di controllo.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+
+set auditLog (logLevel={all | writeOnly} |
+    fullPolicy={overwrite | preventSystemAccess} |
+    pass:quotes[maxRecords=_n_] | pass:quotes[warningThreshold=_n_)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`logLevel`
+ a| 
+Consente di specificare il livello di registrazione. Le scelte valide sono: `all` e. `writeOnly`. Il valore predefinito è `writeOnly`.
+
+
+
+ a| 
+`fullPolicy`
+ a| 
+Consente di specificare il criterio quando il registro è pieno. Le scelte valide sono: `overwrite` e. `preventSystemAccess`.
+
+
+
+ a| 
+`maxRecords`
+ a| 
+Consente all'utente di specificare il numero massimo di record da memorizzare `n` è un numero intero che inizia a 30000 e termina a 50000.
+
+
+
+ a| 
+`warningThreshold`
+ a| 
+Consente di specificare la percentuale di invio di un avviso per indicare che il registro di controllo si sta avvicinando al pieno quando la policy completa è impostata su `preventSystemAccess`. Utilizzare valori interi compresi tra 0 e 100. L'impostazione di questo parametro su 0 (zero) disattiva gli avvisi di avviso.
+
+|===
+
+
+== Esempi
+
+[listing]
+----
+
+SMcli -n Array1 -c "set auditLog logLevel=writeOnly fullPolicy=preventSystemAccess maxRecords=40000 warningThreshold=90;"
+
+SMcli completed successfully.
+----
+
+
+== Livello minimo del firmware
+
+8.40

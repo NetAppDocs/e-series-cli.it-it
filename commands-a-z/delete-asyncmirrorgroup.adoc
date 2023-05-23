@@ -1,0 +1,80 @@
+---
+permalink: commands-a-z/delete-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: delete, asynchronous, mirror group 
+summary: 'Il comando delete asyncMirrorGroup elimina uno o più gruppi di mirror asincroni dall"array di storage locale e dall"array di storage remoto.' 
+---
+= Eliminare il gruppo di mirror asincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `delete asyncMirrorGroup` il comando elimina uno o più gruppi di mirror asincroni dall'array di storage locale e dall'array di storage remoto.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Il gruppo di mirror asincrono deve essere vuoto prima di poter essere eliminato correttamente. Prima di utilizzare questo comando, è necessario rimuovere tutte le coppie asincrone mirrorate dal gruppo di mirror asincrono.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+delete (allAsyncMirrorGroups | asyncMirrorGrouppass:quotes[[_"asyncMirrorGroupName"_] |
+asyncMirrorGroups pass:quotes[[_"asyncMirrorGroupName_1" ... "asyncMirrorGroupName_n"_]])
+----
+
+
+== Parametro
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`allAsyncMirrorGroups`
+ a| 
+Utilizzare questo parametro se si desidera rimuovere tutti i gruppi di mirror asincroni dall'array di storage locale e dall'array di storage remoto.
+
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Il nome del gruppo di mirror asincrono che si desidera eliminare. Racchiudere il nome del gruppo mirror asincrono tra virgolette doppie (" ") tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`asyncMirrorGroups`
+ a| 
+I nomi di diversi gruppi di mirror asincroni che si desidera eliminare. Immettere i nomi dei gruppi di mirror asincroni utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Racchiudere ciascuno dei nomi tra virgolette doppie (" ").
+* Separare ciascuno dei nomi con uno spazio.
+
+
+|===
+
+
+== Livello minimo del firmware
+
+7.84

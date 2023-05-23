@@ -1,0 +1,83 @@
+---
+permalink: commands-a-z/set-tray-identification.html 
+sidebar: sidebar 
+keywords: set, tray, identification 
+summary: 'Il comando set tray imposta l"ID del vassoio di un controller tray, di un controller-drive tray o di un drive tray di uno storage array.' 
+---
+= Impostare l'identificazione del vassoio
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set tray` Command imposta l'ID del vassoio di un controller tray, di un controller-drive tray o di un drive tray di uno storage array.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Questo comando è valido solo per i vassoi del controller, dei controller-drive o dei dischi con ID vassoio che è possibile impostare attraverso il firmware del controller. Non è possibile utilizzare questo comando per i vassoi del controller, dei controller o dei dischi con un ID vassoio impostato con uno switch.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set tray pass:quotes[["_serialNumber_"]] pass:quotes[id=_trayID_]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`tray`
+ a| 
+Il numero di serie del vassoio del controller, del vassoio del disco del controller o del vassoio dell'unità per cui si sta impostando l'ID del vassoio. I numeri di serie possono essere qualsiasi combinazione di caratteri alfanumerici e di qualsiasi lunghezza. Racchiudere il numero di serie tra virgolette doppie (" ").
+
+
+
+ a| 
+`id`
+ a| 
+Il valore per l'ID del vassoio del controller, l'ID del vassoio del disco del controller o l'ID del vassoio del disco. I valori dell'ID vassoio sono `0` attraverso `9` oppure `10` attraverso `99`.
+
+[NOTE]
+====
+Per gli enclosure DE5600, DE1600 e DE6600, anteporre il numero di serie alla stringa di testo "SN" e a uno spazio. Ad esempio, `SN SV23802522`.
+
+====
+[NOTE]
+====
+Non è necessario racchiudere il valore dell'ID vassoio tra parentesi.
+
+====
+[NOTE]
+====
+Valori dei vassoi di `00` attraverso `09` vengono rifiutati dal controller. Utilizzare `0` attraverso `9` per specificare questi valori.
+
+====
+|===
+
+
+== Note
+
+Questo comando originariamente supportava il tray di controller CE6998 I tray controller della serie CE6998 possono essere collegati a diversi vassoi di dischi, inclusi quelli i cui ID vassoio sono impostati dagli switch. Quando si collega un vassoio del controller della serie CE6998 ai vassoi delle unità i cui ID vassoio sono impostati dagli switch, i valori validi per gli ID vassoio per il vassoio del controller sono `80` attraverso `99`. Questo intervallo consente di evitare conflitti con gli ID dei vassoi utilizzati per i vassoi delle unità collegati.

@@ -1,0 +1,135 @@
+---
+permalink: commands-a-z/save-storagearray-arvmstats-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: save, asynchronous, mirror, group, statistics 
+summary: Il comando Save StorageArray arvmStats asyncMirrorGroup salva le statistiche di sincronizzazione in un file per uno o più volumi membri in un gruppo di mirror asincrono. 
+---
+= Salva le statistiche del gruppo mirror asincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `save storageArray arvmStats asyncMirrorGroup` il comando salva le statistiche di sincronizzazione in un file per uno o più volumi membri in un gruppo di mirror asincrono.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Le statistiche raccolte sono disponibili solo per i volumi membro del gruppo mirror asincrono in un ruolo primario nell'array di storage locale.
+
+Durante il processo di sincronizzazione viene raccolta una serie di dati che possono essere utilizzati per valutare il funzionamento della configurazione mirror. I dati vengono raccolti come un insieme di _campioni_. Un esempio viene creato all'inizio di un processo di sincronizzazione e aggiornato regolarmente durante il processo di sincronizzazione.
+
+Un esempio raccoglie i dati fino al completamento del processo di sincronizzazione o fino a quando non si verifica un'interruzione del processo di sincronizzazione, ad esempio un trasferimento di proprietà di un volume o un `read-write` errore. Quando si risolve un'interruzione del processo di sincronizzazione (ad esempio, il volume viene trasferito al controller alternativo), viene creato un nuovo campione e aggiornato man mano che il processo di sincronizzazione continua.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+save storageArray arvmStats asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]]
+arvmStats file=pass:quotes["_filename_"]
+"
+[volume=pass:quotes["_volumeName_"]]
+[sampleType=(all | mostRecent | longestSyncTime | errors)]
+[recordLimit=(1-90)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Il nome del gruppo di mirror asincrono per il quale si stanno salvando le statistiche di sincronizzazione. Racchiudere il nome del gruppo mirror asincrono tra parentesi quadre ([ ]). Se il nome del gruppo mirror asincrono ha caratteri speciali o numeri, è necessario racchiudere il nome del gruppo mirror asincrono tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`file`
+ a| 
+Il percorso del file e il nome del file in cui si desidera salvare le statistiche di sincronizzazione. Racchiudere il nome del file tra virgolette doppie (" "). Ad esempio:
+
+`file="C:\Program Files\CLI\logs\asynchdata.csv"`
+
+Questo comando non aggiunge automaticamente un'estensione al file salvato. È possibile utilizzare qualsiasi nome di file, ma è necessario utilizzare `.csv` interno.
+
+
+
+ a| 
+`volume`
+ a| 
+Questo parametro è facoltativo. Il nome del volume membro specifico nel gruppo di mirror asincrono per il quale si stanno recuperando le statistiche di sincronizzazione. Se non viene specificato alcun volume, vengono salvate le statistiche per ogni volume membro nel gruppo di mirror asincrono.
+
+Se le statistiche vengono raccolte per più di un volume in un gruppo di mirror asincrono, tutti i dati verranno scritti nello stesso file.
+
+Racchiudere il nome del volume tra virgolette doppie (" ").
+
+
+
+ a| 
+`sampleType`
+ a| 
+Questo parametro è facoltativo. Il valore predefinito per `sampleType` è `all`.
+
+* `all` -- i dati di tutti e tre i tipi di campione vengono raccolti e scritti nello stesso file.
+* `mostRecent` -- le statistiche vengono registrate per i 50 campioni di risincronizzazione più recenti.
+* `longestSyncTime` -- le statistiche vengono raccolte per i 20 campioni di risincronizzazione più recenti.
+* `errors` -- le statistiche vengono registrate per gli ultimi 20 campioni di risincronizzazione non riusciti. Questi esempi includono un codice di errore.
+
+
+
+
+ a| 
+`recordLimit`
+ a| 
+Questo parametro è facoltativo. Il valore predefinito per il limite di record è `no limit`. Il `recordLimit` deve essere maggiore di 0 e minore o uguale a 90.
+
+|===
+
+
+== Note
+
+Le statistiche vengono acquisite per i volumi mirrorati nel ruolo primario. Le statistiche raccolte includono i seguenti dati:
+
+* Ora di inizio della sincronizzazione
+* Tipo di sincronizzazione (manuale o periodica)
+* Durata della sincronizzazione
+* Numero di byte inviati
+* Tempo massimo di scrittura (per una singola scrittura)
+* Tempo minimo di scrittura (per una singola scrittura)
+* Velocità minima dei dati di sincronizzazione
+* Massima velocità di sincronizzazione dei dati
+* Tempo totale di scrittura
+* Utilizzo del repository (%)
+* Età del punto di ripristino
+
+
+Durante la sincronizzazione iniziale, i campioni di statistiche vengono acquisiti ogni 15 minuti circa.
+
+Le statistiche di sincronizzazione sono incluse nel pacchetto di supporto.
+
+
+
+== Livello minimo del firmware
+
+7.84

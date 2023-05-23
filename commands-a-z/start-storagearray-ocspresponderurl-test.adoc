@@ -1,0 +1,60 @@
+---
+permalink: commands-a-z/start-storagearray-ocspresponderurl-test.html 
+sidebar: sidebar 
+keywords: start, ocsp, server, url, test 
+summary: 'Il comando start StorageArray ocspResponderUrl test verifica la presenza di una connessione aperta all"URL specificato del server OCSP (Online Certificate Status Protocol).' 
+---
+= Avviare il test URL del server OCSP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `start storageArray ocspResponderUrl test` Il comando verifica la presenza di una connessione aperta all'URL specificato del server OCSP (Online Certificate Status Protocol).
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`url`
+ a| 
+Stringa letterale dell'URL del server OCSP.
+
+[NOTE]
+====
+Se non si specifica un URL, il comando utilizza l'URL del responder OCSP trovato nelle impostazioni di revoca del certificato.
+
+====
+|===
+
+
+== Sintassi
+
+[listing]
+----
+start storageArray ocspResponderUrl test (url=stringLiteral)
+----
+
+
+== Livello minimo del firmware
+
+8.42

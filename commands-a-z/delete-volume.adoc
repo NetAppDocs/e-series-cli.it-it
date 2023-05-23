@@ -1,0 +1,122 @@
+---
+permalink: commands-a-z/delete-volume.html 
+sidebar: sidebar 
+keywords: delete, volume, command, one, standard, volume, supported, array, role 
+summary: Il comando delete volume elimina uno o più volumi standard. 
+---
+= Elimina volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `delete volume` il comando elimina uno o più volumi standard.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+*Possibili danni alla configurazione dello storage array* -- tutti i dati nel volume vengono persi non appena si esegue questo comando.
+
+====
+[NOTE]
+====
+Quando un volume supera una determinata dimensione (attualmente 128 TB), l'eliminazione viene eseguita in background e lo spazio liberato potrebbe non essere immediatamente disponibile.
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+delete (allVolumes) |
+volume [volumeName] |
+volumes [volumeName1 ... volumeNameN]
+[removeVolumeGroup=(TRUE | FALSE)]
+[force=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`allVolumes`
+ a| 
+Questo parametro elimina tutti i volumi in un array di storage.
+
+
+
+ a| 
+`volume`
+ a| 
+Il nome di un volume che si desidera eliminare. Racchiudere il nome del volume tra parentesi quadre ([ ]). Se il nome del volume contiene caratteri speciali o è composto solo da numeri, è necessario racchiudere il nome del volume tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`volumes`
+ a| 
+I nomi di diversi volumi che si desidera eliminare. Inserire i nomi dei volumi utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Separare ciascuno dei nomi con uno spazio.
+
+
+Se i nomi dei volumi hanno caratteri speciali o sono costituiti solo da numeri, immettere i nomi utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Racchiudere ciascuno dei nomi tra virgolette doppie (" ").
+* Separare ciascuno dei nomi con uno spazio.
+
+
+
+
+ a| 
+`removeVolumeGroup`
+ a| 
+L'eliminazione dell'ultimo volume in un gruppo di volumi non comporta l'eliminazione del gruppo di volumi. È possibile disporre di un gruppo di volumi standalone (meno eventuali volumi). Per rimuovere il gruppo di volumi standalone, impostare questo parametro su `TRUE`. Per mantenere intatti i gruppi di volumi standalone, impostare questo parametro su `FALSE`.
+
+
+
+ a| 
+`force`
+ a| 
+Utilizzare questo parametro per forzare l'eliminazione immediata di un volume anche se i controller eseguono altre operazioni. Per forzare immediatamente l'eliminazione di un volume, impostare questo parametro su `TRUE`. Per attendere che i controller abbiano terminato di eseguire altre operazioni, non utilizzare questo parametro o impostare questo parametro su `FALSE`.
+
+|===
+
+
+== Note
+
+Quando si utilizza `allVolumes` parametro, questo comando elimina i volumi fino a quando tutti i volumi non vengono rimossi o fino a quando non viene rilevato un errore. Se si verifica un errore, questo comando non tenta di eliminare i volumi rimanenti. È possibile eliminare volumi da diversi gruppi di volumi. Se si imposta, tutti i gruppi di volumi vuoti vengono eliminati `removeVolumeGroup` parametro a. `TRUE`.
+
+Se si desidera eliminare un intero gruppo di volumi, è possibile utilizzare anche `delete volumeGroup` comando.
+
+
+
+== Livello minimo del firmware
+
+6.10
+
+7.10 aggiunge `removeVolumeGroup` parametro.

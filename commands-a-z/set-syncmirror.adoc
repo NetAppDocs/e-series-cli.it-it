@@ -1,0 +1,150 @@
+---
+permalink: commands-a-z/set-syncmirror.html 
+sidebar: sidebar 
+keywords: set, synchronous, mirror 
+summary: Il comando Set SyncMirror definisce le proprietà di una coppia con mirroring remoto. 
+---
+= Impostare il mirroring sincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set syncMirror` command definisce le proprietà di una coppia con mirroring remoto.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Nelle versioni precedenti di questo comando, l'identificatore di funzione era `remoteMirror`. Questo identificatore di funzione non è più valido e viene sostituito da `syncMirror`.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set syncMirror (localVolume pass:quotes[[_volumeName_]] |
+localVolumes pass:quotes[[_volumeName1 ... volumeNameN_]])
+[role=(primary | secondary)]
+[syncPriority=(highest | high | medium | low | lowest)]
+[autoResync=(enabled | disabled)]
+[writeOrder=(preserved | notPreserved)]
+[writeMode=(synchronous | asynchronous)]
+[force=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`localVolume`
+ a| 
+Il nome del volume locale per il quale si desidera definire le proprietà. Racchiudere il nome del volume primario tra parentesi quadre ([ ]). Se il nome del volume principale contiene caratteri speciali o numeri, è necessario racchiudere il nome del volume principale tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`localVolumes`
+ a| 
+I nomi di diversi volumi locali per i quali si desidera definire le proprietà. Inserire i nomi dei volumi utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Separare ciascuno dei nomi con uno spazio.
+
+
+Se i nomi dei volumi hanno caratteri speciali o sono costituiti solo da numeri, immettere i nomi utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Racchiudere ciascuno dei nomi tra virgolette doppie (" ").
+* Separare ciascuno dei nomi con uno spazio.
+
+
+
+
+ a| 
+`role`
+ a| 
+L'impostazione del volume locale per fungere da volume primario o secondario. Per definire il volume come volume primario, impostare questo parametro su `primary`. Per definire il volume come volume secondario, impostare questo parametro su `secondary`. Questo parametro si applica solo quando il volume fa parte di una relazione di mirroring.
+
+
+
+ a| 
+`syncPriority`
+ a| 
+La priorità della sincronizzazione completa rispetto all'attività di i/o dell'host. I valori validi sono `highest`, `high`, `medium`, `low`, o. `lowest`.
+
+
+
+ a| 
+`autoResync`
+ a| 
+Le impostazioni per la risincronizzazione automatica tra i volumi primari e i volumi secondari di una coppia con mirroring remoto. Questo parametro ha i seguenti valori:
+
+* `enabled` -- risincronizzazione automatica attivata. Non è necessario eseguire ulteriori operazioni per risincronizzare il volume primario e il volume secondario.
+* `disabled` -- la risincronizzazione automatica è disattivata. Per risincronizzare i volumi primari e secondari, è necessario eseguire `resume syncMirror` comando.
+
+
+
+
+ a| 
+`writeOrder`
+ a| 
+Questo parametro definisce l'ordine di scrittura per la trasmissione dei dati tra il volume primario e il volume secondario. I valori validi sono `preserved` oppure `notPreserved`.
+
+
+
+ a| 
+`writeMode`
+ a| 
+Questo parametro definisce il modo in cui il volume primario scrive nel volume secondario. I valori validi sono `synchronous` oppure `asynchronous`.
+
+
+
+ a| 
+`force`
+ a| 
+L'inversione del ruolo viene forzata se il collegamento di comunicazione tra gli array di storage è inattivo e la promozione o la riduzione sul lato locale determina una condizione di doppio primario o doppio secondario. Per forzare l'inversione di un ruolo, impostare questo parametro su `TRUE`. Il valore predefinito è `FALSE`.
+
+[NOTE]
+====
+Utilizzare `force` solo quando si utilizza `role` parametro.
+
+====
+|===
+
+
+== Note
+
+Quando si utilizza questo comando, è possibile specificare uno o più parametri opzionali.
+
+La priorità di sincronizzazione definisce la quantità di risorse di sistema utilizzate per sincronizzare i dati tra i volumi primari e i volumi secondari di una relazione mirror. Se si seleziona il livello di priorità più alto, la sincronizzazione dei dati utilizza la maggior parte delle risorse di sistema per eseguire la sincronizzazione completa, riducendo le prestazioni per i trasferimenti di dati dell'host.
+
+Il `writeOrder` il parametro si applica solo alle modalità di scrittura asincrone e le rende parte di un gruppo di coerenza. Impostazione di `writeOrder` parametro a. `preserved` fa sì che la coppia con mirroring remoto trasmetta i dati dal volume primario al volume secondario nello stesso ordine in cui l'host scrive nel volume primario. In caso di errore di un collegamento di trasmissione, i dati vengono memorizzati nel buffer fino a quando non viene eseguita una sincronizzazione completa. Questa azione può richiedere un overhead di sistema aggiuntivo per mantenere i dati memorizzati nel buffer, rallentando le operazioni. Impostazione di `writeOrder` parametro a. `notPreserved` libera il sistema dalla necessità di mantenere i dati in un buffer, ma richiede una sincronizzazione completa per assicurarsi che il volume secondario abbia gli stessi dati del volume primario.
+
+
+
+== Livello minimo del firmware
+
+6.10

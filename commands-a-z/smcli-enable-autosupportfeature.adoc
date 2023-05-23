@@ -1,0 +1,80 @@
+---
+permalink: commands-a-z/smcli-enable-autosupportfeature.html 
+sidebar: sidebar 
+keywords: enable, disable, autosupport, emw, management, domain, level, smcli 
+summary: 'Il comando SMcli enable autoSupportFeature attiva la funzione ASUP (AutoSupport) per tutti gli array di storage gestiti e consente di trasmettere messaggi al sito del supporto tecnico. Dopo aver attivato la funzione ASUP, qualsiasi array di storage compatibile con ASUP viene automaticamente preparato per raccogliere e inviare i dati relativi al supporto al supporto tecnico. I dati possono quindi essere utilizzati per la risoluzione dei problemi e l"analisi dei problemi in remoto.' 
+---
+= Abilitare o disabilitare AutoSupport a livello di dominio di gestione EMW (solo SMcli)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `SMcli enable autoSupportFeature` Command attiva la funzione ASUP (AutoSupport) per tutti gli storage array gestiti e consente di trasmettere messaggi al sito di supporto tecnico. Dopo aver attivato la funzione ASUP, qualsiasi array di storage compatibile con ASUP viene automaticamente preparato per raccogliere e inviare i dati relativi al supporto al supporto tecnico. I dati possono quindi essere utilizzati per la risoluzione dei problemi e l'analisi dei problemi in remoto.
+
+
+
+== Array supportati
+
+Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E2800 o E5700.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Questo comando è un comando SMcli, non un comando script. Eseguire questo comando da una riga di comando. Non è possibile eseguire questo comando dall'editor di script nel software di gestione dello storage.
+
+====
+[NOTE]
+====
+Affinché la funzione AutoSupport funzioni, è necessario attivare il monitor persistente.
+
+====
+[NOTE]
+====
+Nessun dato del cliente viene mai trasmesso al sito del supporto tecnico.
+
+====
+Questo comando influisce su tutti gli storage array compatibili con ASUP nel dominio di gestione. Dopo aver attivato questa funzionalità per il dominio di gestione, è possibile controllare l'abilitazione delle funzionalità per ciascun array di storage.
+
+Dopo aver attivato questa funzione, è possibile attivare la funzione AutoSupport on Demand (se si desidera), quindi attivare la funzione di diagnostica remota AutoSupport (se si desidera).
+
+È necessario attivare le tre funzioni nel seguente ordine:
+
+. *Attiva AutoSupport*
+. *Attiva AutoSupport OnDemand*
+. *Attiva diagnostica remota AutoSupport*
+
+
+
+
+== Sintassi
+
+[listing]
+----
+SMcli enable|disable autoSupportFeature
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Verifica
+
+Utilizzare `SMcli -autoSupportConfig show` per verificare se la funzione è stata attivata. La riga iniziale dell'output visualizzato mostra lo stato di abilitazione:
+
+[listing]
+----
+The AutoSupport feature is activated on this storage management station.
+----
+
+
+== Livello minimo del firmware
+
+7.86

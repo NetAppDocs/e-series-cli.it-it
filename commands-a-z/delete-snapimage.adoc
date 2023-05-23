@@ -1,0 +1,127 @@
+---
+permalink: commands-a-z/delete-snapimage.html 
+sidebar: sidebar 
+keywords: delete, snapimage, command, snapshot, images, group, support, array, roles 
+summary: Il comando delete SnapImage elimina una o più immagini snapshot da un gruppo di snapshot. 
+---
+= Eliminare l'immagine istantanea
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `delete snapImage` il comando elimina una o più immagini snapshot da un gruppo di snapshot.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[delete snapImage (snapGroup="snapGroupName" |
+snapGroups=("_snapGroupName1"
+... "snapGroupNamen_"))]
+[deleteCount=numberOfSnapImages]
+[retainCount=numberOfSnapImages]
+[ignoreSnapVolume=(TRUE | FALSE)]
+[snapImageID=OLDEST]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`snapGroup`
+ a| 
+Il nome del gruppo di snapshot con l'immagine snapshot che si desidera eliminare. Racchiudere il nome del gruppo di snapshot tra virgolette doppie (" ").
+
+
+
+ a| 
+`snapGroups`
+ a| 
+I nomi di diversi gruppi di snapshot con l'immagine snapshot che si desidera eliminare. Immettere i nomi dei gruppi di snapshot utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi.
+* Racchiudere ciascuno dei nomi tra virgolette doppie (" ").
+* Separare ciascuno dei nomi con uno spazio.
+
+
+
+
+ a| 
+`deleteCount`
+ a| 
+Il numero di immagini snapshot che si desidera eliminare dal gruppo di snapshot. USA valori interi.
+
+Questo parametro elimina prima l'immagine snapshot meno recente e continua a eliminare le immagini snapshot meno recenti fino a raggiungere il numero immesso.
+
+Se il numero inserito è maggiore del numero effettivo di tutte le immagini snapshot nel gruppo, tutte le immagini snapshot verranno eliminate. Il gruppo di snapshot viene lasciato vuoto.
+
+
+
+ a| 
+`retainCount`
+ a| 
+Il numero di immagini snapshot che si desidera conservare nel gruppo di snapshot. USA valori interi.
+
+Questo parametro mantiene le immagini snapshot più recenti nel gruppo di snapshot ed elimina le immagini snapshot meno recenti.
+
+Se il numero di immagini snapshot esistenti nel gruppo di snapshot è inferiore al numero inserito, nessuna delle immagini snapshot viene eliminata.
+
+
+
+ a| 
+`ignoreSnapVolume`
+ a| 
+Utilizzare questo parametro per assicurarsi di non eliminare un'immagine snapshot con un volume snapshot associato all'immagine snapshot. È possibile utilizzare uno dei seguenti valori:
+
+* `TRUE` - Utilizzare questo valore per eliminare l'immagine snapshot anche se l'immagine snapshot dispone di un volume snapshot associato.
+* `FALSE` - Utilizzare questo valore per conservare l'immagine snapshot quando l'immagine snapshot ha un volume snapshot associato.
+
+
+Il valore predefinito è `TRUE`.
+
+
+
+ a| 
+`snapImageID`
+ a| 
+Il `snapImageID` il parametro accetta solo il `OLDEST` opzione. Questo parametro elimina la prima immagine snapshot creata.
+
+|===
+
+
+== Note
+
+È possibile eliminare l'immagine snapshot meno recente da un volume di repository di gruppi di snapshot. La definizione di un'immagine istantanea eliminata viene rimossa dal sistema. Lo spazio occupato dall'immagine snapshot eliminata dal volume del repository del gruppo di snapshot viene rilasciato e reso disponibile per il riutilizzo all'interno del gruppo di snapshot.
+
+Se non si utilizzano altri parametri con `snapGroup` parametro o. `snapGroups` per impostazione predefinita, l'immagine snapshot meno recente viene eliminata.
+
+Tutti i volumi di snapshot esistenti per un'immagine snapshot passano allo stato interrotto quando l'immagine snapshot viene eliminata.
+
+Questo comando non viene eseguito quando il controller è in modalità Lock-down.
+
+
+
+== Livello minimo del firmware
+
+7.83

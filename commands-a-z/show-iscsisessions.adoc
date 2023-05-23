@@ -1,0 +1,92 @@
+---
+permalink: commands-a-z/show-iscsisessions.html 
+sidebar: sidebar 
+keywords: show, current, iscsi, sessions 
+summary: Il comando show iscsiSessions restituisce informazioni su una sessione iSCSI per un iSCSI Initiator o una destinazione iSCSI. 
+---
+= Mostra le sessioni iSCSI correnti
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show iscsiSessions` Il comando restituisce informazioni su una sessione iSCSI per un iSCSI Initiator o una destinazione iSCSI.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+show iscsiInitiator pass:quotes[["_initiatorName_"] | <"iqn">] iscsiSessions
+----
+[listing, subs="+macros"]
+----
+show iscsiTarget pass:quotes[["_targetName_"] | <"iqn">] iscsiSessions
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`iscsiInitiator`
+ a| 
+Il nome dell'iSCSI Initiator per il quale si desidera ottenere le informazioni sulla sessione.
+
+Se iSCSI Initiator utilizza un'etichetta o un alias, racchiudere l'etichetta o l'alias iSCSI Initiator tra virgolette doppie (" ") tra parentesi quadre ([ ]).
+
+Se iSCSI Initiator utilizza un nome iSCSI qualificato (IQN), racchiudere l'IQN tra virgolette doppie (" ") all'interno di parentesi angolari (< >).
+
+
+
+ a| 
+`iscsiTarget`
+ a| 
+Il nome della destinazione iSCSI per la quale si desidera ottenere informazioni sulla sessione.
+
+Se la destinazione iSCSI utilizza un'etichetta o un alias, racchiudere l'etichetta o l'alias della destinazione iSCSI tra virgolette doppie (" ") tra parentesi quadre ([ ]).
+
+Se la destinazione iSCSI utilizza un nome iSCSI qualificato (IQN), racchiudere l'IQN tra virgolette doppie (" ") all'interno di parentesi angolari (< >).
+
+|===
+
+
+== Note
+
+Se si immette questo comando senza definire alcun argomento, questo comando restituisce informazioni su tutte le sessioni iSCSI attualmente in esecuzione. Il seguente comando restituisce informazioni su tutte le sessioni iSCSI correnti:
+
+[listing]
+----
+show iscsiSessions
+----
+Per limitare le informazioni restituite, inserire un iSCSI Initiator specifico o una destinazione iSCSI specifica. Questo comando restituisce quindi informazioni sulla sessione solo per l'iniziatore iSCSI o la destinazione iSCSI indicata.
+
+Il nome di un iniziatore può essere una combinazione di caratteri alfanumerici di lunghezza compresa tra 1 e 30 caratteri. Un IQN può contenere fino a 255 caratteri e dispone di questo formato:
+
+[listing]
+----
+iqn.yyyy-mm.naming-authority:unique name
+----
+
+
+== Livello minimo del firmware
+
+7.10

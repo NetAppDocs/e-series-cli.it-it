@@ -1,0 +1,116 @@
+---
+permalink: commands-a-z/delete-volume-from-disk-pool.html 
+sidebar: sidebar 
+keywords: delete, volume, command, normal, thin, disk pool, roles, support 
+summary: Il comando delete volume elimina volumi normali o thin da un pool di dischi. 
+---
+= Eliminare il volume dal pool di dischi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `delete volume` il comando elimina volumi normali o thin da un pool di dischi.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+È inoltre possibile utilizzare questo comando per eliminare eventuali pianificazioni correlate al volume. Quando si elimina la pianificazione, il volume non viene cancellato.
+
+[]
+====
+*Possibili danni alla configurazione dello storage array* -- tutti i dati nel volume vengono persi non appena si esegue questo comando.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+delete (allVolumes |
+volume [volumeName] |
+pass:quotes[volumes ["_volumeName1_" ... "_volumeNameN_"]]
+[force=(TRUE | FALSE)]
+[schedule]
+[retainRepositoryMembers=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`allVolumes`
+ a| 
+Questo parametro elimina tutti i volumi di un pool di dischi.
+
+
+
+ a| 
+`volume`
+ a| 
+Il nome di un volume specifico che si desidera eliminare. Racchiudere il nome del volume tra parentesi quadre ([ ]). Se il nome del volume contiene caratteri speciali o è composto solo da numeri, è necessario racchiudere il nome del volume tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`volumes`
+ a| 
+I nomi di diversi volumi che si desidera eliminare. Inserire i nomi dei volumi utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Separare ciascuno dei nomi con uno spazio.
+
+
+
+
+ a| 
+`force`
+ a| 
+Utilizzare questo parametro per forzare l'eliminazione immediata di un volume anche se i controller eseguono altre operazioni. Per forzare immediatamente l'eliminazione di un volume, impostare questo parametro su `TRUE`. Per attendere che i controller abbiano terminato di eseguire altre operazioni, non utilizzare questo parametro o impostare questo parametro su `FALSE`.
+
+
+
+ a| 
+`schedule`
+ a| 
+Questo parametro elimina qualsiasi pianificazione relativa a un volume del pool di dischi specifico. Viene eliminata solo la pianificazione, il volume del pool di dischi rimane.
+
+
+
+ a| 
+`retainRepositoryMembers`
+ a| 
+Quando si elimina un volume thin, il volume repository associato viene cancellato per impostazione predefinita. Tuttavia, quando il `retainRepositoryMembers` è impostato su `TRUE`, il volume di repository viene conservato. Per i volumi normali, questo parametro non ha alcun effetto.
+
+|===
+
+
+== Note
+
+Quando si utilizza `allVolumes` parametro, questo comando elimina i volumi fino a quando tutti i volumi non vengono rimossi o fino a quando non viene rilevato un errore. Se si verifica un errore, questo comando non tenta di eliminare i volumi rimanenti. È possibile eliminare volumi da diversi gruppi di volumi. Se si imposta, tutti i gruppi di volumi vuoti vengono eliminati `removeVolumeGroup` parametro a. `TRUE`.
+
+
+
+== Livello minimo del firmware
+
+7.83

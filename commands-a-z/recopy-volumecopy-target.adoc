@@ -1,0 +1,104 @@
+---
+permalink: commands-a-z/recopy-volumecopy-target.html 
+sidebar: sidebar 
+keywords: volumecopy, target, command, operation, volume, copy, pair, reinitiate, array, role, context 
+summary: 'Il comando di destinazione Recopy VolumeCopy consente di avviare nuovamente un"operazione di copia del volume utilizzando una coppia di copie del volume esistente.' 
+---
+= Copia di un volume di ricopia
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `recopy volumeCopy target` il comando consente di avviare nuovamente un'operazione di copia del volume utilizzando una coppia di copie del volume esistente.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Con la versione del firmware 7.83 di `copyType=(online | offline)` il parametro non viene più utilizzato.
+
+====
+Questo comando è valido per le coppie di copia del volume dell'immagine snapshot.
+
+Questo comando funziona con le coppie di copie del volume create con un volume di immagine snapshot.
+
+[NOTE]
+====
+L'avvio di un'operazione di copia del volume sovrascrive tutti i dati esistenti sul volume di destinazione, rende il volume di destinazione di sola lettura negli host e non esegue il failover di tutti i volumi di immagini snapshot associati al volume di destinazione, se presenti. Se il volume di destinazione è già stato utilizzato come copia, assicurarsi di non avere più bisogno dei dati o di eseguirne il backup.
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+recopy volumeCopy target [targetName]
+[source [sourceName]]
+[copyPriority=(highest | high | medium | low | lowest)]
+[targetReadOnlyEnabled=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`target`
+ a| 
+Il nome del volume di destinazione per il quale si desidera riavviare un'operazione di copia del volume. Racchiudere il nome del volume di destinazione tra parentesi quadre ([ ]). Se il nome del volume di destinazione contiene caratteri speciali, racchiudere il nome del volume di destinazione tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`source`
+ a| 
+Il nome del volume di origine per il quale si desidera riavviare un'operazione di copia del volume. Racchiudere il nome del volume di origine tra parentesi quadre ([ ]). Se il nome del volume di origine contiene caratteri speciali, racchiudere il nome del volume di origine tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`copyPriority`
+ a| 
+La priorità della copia del volume rispetto all'attività di i/o dell'host. I valori validi sono `highest`, `high`, `medium`, `low`, o. `lowest`.
+
+
+
+ a| 
+`targetReadOnlyEnabled`
+ a| 
+L'impostazione che consente di scrivere nel volume di destinazione o di leggere solo dal volume di destinazione. Per scrivere nel volume di destinazione, impostare questo parametro su `FALSE`. Per impedire la scrittura nel volume di destinazione, impostare questo parametro su `TRUE`.
+
+|===
+
+
+== Note
+
+La priorità di copia definisce la quantità di risorse di sistema utilizzate per copiare i dati tra il volume di origine e il volume di destinazione di una coppia di copie del volume. Se si seleziona il livello di priorità più alto, la copia del volume utilizza la maggior parte delle risorse di sistema per eseguire la copia del volume, riducendo le prestazioni per i trasferimenti di dati dell'host.
+
+
+
+== Livello minimo del firmware
+
+6.10
+
+7.83 rimuove `copyType=(online | offline)` parametro.

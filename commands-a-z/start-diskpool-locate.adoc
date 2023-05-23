@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/start-diskpool-locate.html 
+sidebar: sidebar 
+keywords: start, disk pool, locate 
+summary: Il comando start diskPool Locate identifica i dischi raggruppati in modo logico per formare il pool di dischi specificato facendo lampeggiare gli indicatori luminosi dei dischi. 
+---
+= Avviare disk pool individuare
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `start diskPool locate` il comando identifica le unità raggruppate in modo logico per formare il pool di dischi specificato facendo lampeggiare le spie delle unità.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+(Utilizzare il `stop diskPool locate` comando per spegnere gli indicatori luminosi dei dischi).
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+start diskPool pass:quotes[[_diskPoolName_]] locate
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`diskPool`
+ a| 
+Il nome del pool di dischi per il quale si desidera individuare. Racchiudere il nome del pool di dischi tra parentesi quadre ([ ]). Se il nome del pool di dischi contiene caratteri o numeri speciali, è necessario racchiudere il nome del pool di dischi tra virgolette doppie (" ") tra parentesi quadre.
+
+|===
+
+
+== Livello minimo del firmware
+
+7.83

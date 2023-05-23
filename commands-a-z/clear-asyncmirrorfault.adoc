@@ -1,0 +1,105 @@
+---
+permalink: commands-a-z/clear-asyncmirrorfault.html 
+sidebar: sidebar 
+keywords: clear, asynchronous mirroring, fault 
+summary: 'Il comando clear asyncMirrorFault elimina un errore "ticky" di mirroring asincrono da uno o più gruppi di mirror asincroni e da uno o più volumi membri del gruppo di mirror asincroni.' 
+---
+= Eliminare gli errori di mirroring asincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `clear asyncMirrorFault` il comando elimina un errore "sticky" di mirroring asincrono da uno o più gruppi di mirror asincroni e da uno o più volumi membro del gruppo di mirror asincroni.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Un gruppo di mirror asincrono e i relativi volumi membri possono riscontrare errori "sticky" di mirroring asincrono, che si verificano in un singolo punto in tempo ma non influiscono sulla funzionalità dei mirror. Questi tipi di guasti devono essere rivisti, ma potrebbero non richiedere modifiche alla configurazione.
+
+Un gruppo di mirror asincrono e i relativi volumi membri potrebbero avere o possono avere più di un errore sticky associato. Questo comando cancella tutti gli errori associati al gruppo di mirror asincrono e al relativo volume membro. Tuttavia, se un gruppo di mirror asincrono presenta un errore e uno dei suoi volumi membri presenta un errore, la cancellazione del guasto sul gruppo di mirror asincrono non cancella il guasto sul proprio volume membro.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+clear asyncMirrorFault(all |
+asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]] |
+asyncMirrorGroups pass:quotes[[_"asyncMirrorGroupName1"
+... "asyncMirrorGroupNameN"_]] |
+volume pass:quotes[[_volumeName_]] |
+volumes pass:quotes[[_"volumeName1" ... "volumeNameN"_]])
+----
+
+
+== Parametro
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`all`
+ a| 
+Utilizzare questo parametro se si desidera eliminare tutti gli errori di mirroring asincrono da tutti i gruppi di mirror asincroni e su tutti i volumi membri del gruppo di mirror asincroni.
+
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Il nome del gruppo di mirror asincrono da cui si desidera eliminare l'errore di mirroring asincrono. Racchiudere il nome del gruppo mirror asincrono tra parentesi quadre ([ ]). Se il nome del gruppo mirror asincrono contiene caratteri speciali o è composto solo da numeri, è necessario racchiudere il nome tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`asyncMirrorGroups`
+ a| 
+I nomi di diversi gruppi di mirror asincroni da cui si desidera eliminare l'errore di mirroring asincrono. Immettere i nomi dei gruppi di mirror asincroni utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Racchiudere ciascuno dei nomi tra virgolette doppie (" ").
+* Separare ciascuno dei nomi con uno spazio.
+
+
+
+
+ a| 
+`volume`
+ a| 
+Il nome del volume membro specifico (in un gruppo di mirror asincrono) da cui si desidera eliminare l'errore di mirroring asincrono. Racchiudere il nome del volume membro tra parentesi quadre ([ ]). Se il nome del volume contiene caratteri speciali o è composto solo da numeri, è necessario racchiuderlo tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`volumes`
+ a| 
+I nomi di diversi volumi membri (in un gruppo di mirror asincrono) da cui si desidera eliminare l'errore di mirroring asincrono. Immettere i nomi dei volumi membri utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Racchiudere ciascuno dei nomi tra virgolette doppie (" ").
+* Separare ciascuno dei nomi con uno spazio.
+
+
+|===
+
+
+== Livello minimo del firmware
+
+7.84

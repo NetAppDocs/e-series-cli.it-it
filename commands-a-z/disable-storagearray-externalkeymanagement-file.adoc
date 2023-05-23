@@ -1,0 +1,116 @@
+---
+permalink: commands-a-z/disable-storagearray-externalkeymanagement-file.html 
+sidebar: sidebar 
+keywords: disable, storage, array, external, management, file, command, disable, security, key, full, disk, encryption, drives 
+summary: Il comando disable StorageArray externalKeyManagement file disattiva la gestione esterna delle chiavi di sicurezza per uno storage array che dispone di dischi con crittografia completa del disco. 
+---
+= Disattivare la gestione esterna delle chiavi di sicurezza
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `disable storageArray externalKeyManagement file` Il comando disattiva la gestione esterna delle chiavi di sicurezza per un array di storage che dispone di dischi con crittografia completa del disco.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+disable storageArray externalKeyManagement
+pass:quotes[file="_fileName_"]
+pass:quotes[passPhrase="_passPhraseString_"]
+pass:quotes[saveFile=(_TRUE_ | _FALSE_)]
+----
+
+
+== Contesto
+
+[NOTE]
+====
+Questo comando abilita la gestione interna delle chiavi come forma alternativa di Drive Security.
+
+====
+[NOTE]
+====
+Questo comando si applica solo alla gestione esterna delle chiavi.
+
+====
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`file`
+ a| 
+Il percorso del file e il nome del file in cui è memorizzato il file della chiave di sicurezza interna. Ad esempio:
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\drivesecurity.slk"
+----
+[IMPORTANT]
+====
+Il nome del file deve avere un'estensione di `.slk`.
+
+====
+
+
+ a| 
+`passPhrase`
+ a| 
+Stringa di caratteri che crittografa la chiave di protezione in modo da potervi memorizzare in un file esterno.
+
+
+
+ a| 
+`saveFile`
+ a| 
+Verifica e salva la chiave di sicurezza in un file. Impostare su `FALSE` per non salvare e verificare la chiave di sicurezza in un file. Il valore predefinito è `TRUE`.
+
+|===
+
+
+== Note
+
+La password deve soddisfare i seguenti criteri:
+
+* La lunghezza deve essere compresa tra 8 e 32 caratteri.
+* Nessuno spazio.
+* Deve contenere almeno una lettera maiuscola.
+* Deve contenere almeno una lettera minuscola.
+* Deve contenere almeno un numero.
+* Deve contenere almeno un carattere non alfanumerico, ad esempio < > @ +.
+
+
+[NOTE]
+====
+Se la password non soddisfa questi criteri, viene visualizzato un messaggio di errore.
+
+====
+
+
+== Livello minimo del firmware
+
+8.40
+
+8.70 aggiunge `saveFile` parametro.

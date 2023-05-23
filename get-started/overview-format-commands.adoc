@@ -1,0 +1,21 @@
+---
+permalink: get-started/overview-format-commands.html 
+sidebar: sidebar 
+keywords: overview, cli 
+summary: 'L"interfaccia a riga di comando (CLI) è un"applicazione software che consente di configurare e monitorare gli array di storage.' 
+---
+= Panoramica di CLI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+L'interfaccia a riga di comando (CLI) è un'applicazione software che consente di configurare e monitorare gli array di storage. Utilizzando l'interfaccia CLI, è possibile eseguire i comandi da un prompt del sistema operativo, ad esempio DOS `C:` Prompt, percorso del sistema operativo Linux o percorso del sistema operativo Solaris.
+
+L'interfaccia CLI consente di accedere direttamente a un motore di script che è un'utility del software di gestione dello storage. Il motore di script esegue comandi che configurano e gestiscono gli array di storage. Il motore di script legge i comandi, attraverso un file di script o direttamente dalla riga di comando, ed esegue le operazioni indicate dai comandi.
+
+I comandi di script configurano e gestiscono un array di storage. I comandi script sono distinti dai comandi CLI. È possibile immettere singoli comandi di script oppure eseguire un file di comandi di script. Quando si immette un singolo comando script, il comando script viene incorporato in un comando CLI. Quando si esegue un file di comandi di script, il nome del file viene incorporato nel comando CLI.
+
+Alcune funzionalità software descritte in questo documento potrebbero non essere disponibili per il sistema storage e-Series in uso. Per domande sulle funzioni disponibili, contattare il rappresentante commerciale.
+
+La CLI è una funzione del software di gestione dello storage SANtricity.

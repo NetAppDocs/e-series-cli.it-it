@@ -1,0 +1,77 @@
+---
+permalink: commands-a-z/revive-snapvolume.html 
+sidebar: sidebar 
+keywords: revive, snapshot, volume 
+summary: 'Il comando rivive snapVolume (rivivi snapVolume) forza uno specifico volume di snapshot allo stato ottimale.' 
+---
+= Ripristinare il volume di snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `revive snapVolume` Il comando forza uno specifico volume di snapshot allo stato ottimale.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Contesto
+
+Il volume Snapshot può essere uno dei seguenti:
+
+* Un volume snapshot standalone
+* Volume di snapshot membro di un gruppo di coerenza
+
+
+Se il volume snapshot non si trova in uno stato di errore, il firmware visualizza un messaggio di errore e non esegue questo comando.
+
+[NOTE]
+====
+Non è possibile utilizzare questo comando per un volume di snapshot utilizzato nella copia del volume online.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+revive snapVolume pass:quotes[[_snapVolumeName_]]
+----
+
+
+== Parametro
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`snapVolume`
+ a| 
+Il nome del volume di snapshot che si desidera impostare sullo stato ottimale. Racchiudere il nome del volume snapshot tra parentesi quadre ([ ]). Se il nome del volume di snapshot ha caratteri speciali o è composto solo da numeri, è necessario racchiudere il nome del volume di snapshot tra virgolette doppie (" ") tra parentesi quadre.
+
+|===
+
+
+== Note
+
+È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per i nomi. I nomi possono avere un massimo di 30 caratteri.
+
+
+
+== Livello minimo del firmware
+
+7.83

@@ -1,0 +1,65 @@
+---
+permalink: commands-a-z/save-storagearray-sasphycounts.html 
+sidebar: sidebar 
+keywords: save, storage, array, sas, phy, counts 
+summary: 'Il comando Save StorageArray SASPHYCounts salva i contatori SAS Physical Layer (SAS PHY) in un file.' 
+---
+= Risparmio del numero di PHY SAS dell'array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `save storageArray SASPHYCounts` Il comando salva i contatori SAS Physical Layer (SAS PHY) in un file.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Per reimpostare i contatori SAS PHY, eseguire `reset storageArray SASPHYBaseline` comando.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+save storageArray SASPHYCounts file=pass:quotes["_filename_"]
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`file`
+ a| 
+Il percorso del file e il nome del file in cui si desidera salvare i contatori SAS PHY. Racchiudere il percorso del file e il nome del file tra virgolette doppie (" "). Ad esempio:
+
+`file="C:\Program Files\CLI\logs\sasphy.csv"`
+
+Il nome predefinito del file che contiene le statistiche degli errori SAS PHY è `sas-phy-error-log.csv`. È possibile utilizzare qualsiasi nome di file, ma è necessario utilizzare `.csv` interno.
+
+|===
+
+
+== Livello minimo del firmware
+
+6.10

@@ -1,0 +1,138 @@
+---
+permalink: commands-a-z/create-storagearray-securitykey.html 
+sidebar: sidebar 
+keywords: create, storage, array, security, key 
+summary: 'Il comando create StorageArray securityKey crea o modifica una nuova chiave di sicurezza per uno storage array che dispone di dischi con crittografia completa dei dischi (FDE).' 
+---
+= Creare la chiave di sicurezza dello storage array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `create storageArray securityKey` Il comando crea o modifica una nuova chiave di sicurezza per un array di storage dotato di dischi con crittografia completa dei dischi (FDE).
+
+
+
+== Array supportati
+
+Se è attivata la gestione esterna delle chiavi, questo comando si applica solo agli array E2800, E5700, EF600 e EF300. Se è attivata la gestione delle chiavi interne, il comando si applica a qualsiasi singolo array di storage, purché siano installati tutti i pacchetti SMcli.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Contesto
+
+Per la gestione interna delle chiavi, questo comando attiva la funzione di gestione interna delle chiavi e crea la chiave di sicurezza. Dopo aver creato la chiave, utilizzare `set storageArray securityKey` per utilizzare la chiave. Questo comando può essere utilizzato anche per modificare la chiave di sicurezza.
+
+Per la gestione delle chiavi esterne, questo comando crea una chiave diversa per sostituire la chiave creata inizialmente quando è stata attivata la funzione. Utilizzare `enable storageArray externalKeyManagement` Per attivare la funzione External Key Management e creare la chiave di sicurezza iniziale. Questo comando può essere utilizzato anche per modificare la chiave di sicurezza.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+create storageArray securityKey
+[keyIdentifier=pass:quotes[_"keyIdentifierString"_]]
+passPhrase=pass:quotes[_"passPhraseString"_
+file=_"fileName"_]
+[commitSecurityKey=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`keyIdentifier` - applicabile solo per la gestione interna delle chiavi
+ a| 
+Stringa di caratteri che è possibile leggere e che rappresenta un wrapper intorno a una chiave di sicurezza. Racchiudere l'identificatore della chiave tra virgolette doppie (" ").
+
+È possibile inserire caratteri per l'identificativo della chiave per le chiavi di sicurezza interne per identificare la chiave in un secondo momento. Di seguito sono riportate le regole di formattazione:
+
+* È possibile immettere fino a 189 caratteri alfanumerici per l'identificativo della chiave. L'identificatore della chiave non può contenere questi caratteri:
++
+** Spazi
+** Punteggiatura
+** Simboli
+
+
+* Se non si immette `keyIdentifer` parametro per le chiavi interne, il controller genera automaticamente `keyIdentifer` parametro.
+
+
+I caratteri aggiuntivi vengono generati automaticamente e aggiunti alla fine della stringa immessa per l'identificatore della chiave. Se non si inserisce alcuna stringa per `keyIdentifier` l'identificatore della chiave è costituito solo dai caratteri generati automaticamente.
+
+[NOTE]
+====
+Questo parametro viene ignorato per la gestione delle chiavi esterne, in quanto l'identificatore della chiave viene generato automaticamente. Se l'array di storage dispone di un'etichetta utente, questa stringa generata automaticamente è composta dai caratteri `sa.`, seguito dall'etichetta utente della matrice di storage, dall'identificatore della matrice di storage e da una stringa generata casualmente. Tutti i caratteri dell'etichetta utente non alfanumerici vengono convertiti in caratteri di sottolineatura (`_`). Ad esempio, un'etichetta utente con numero abc 8 verrà convertita in `sa.abc_8` prima di essere anteposto al resto dell'identificatore della chiave. Per gli array di storage senza etichetta utente, l'identificatore della chiave è composto dall'identificatore dell'array di storage e da una stringa generata in modo casuale.
+
+====
+
+
+ a| 
+`passPhrase`
+ a| 
+Stringa di caratteri che crittografa la chiave di protezione in modo da potervi memorizzare in un file esterno. Racchiudere la passphrase tra virgolette doppie (" ").
+
+Per informazioni sul modulo corretto per la creazione di una passphrase valida, fare riferimento alle note in questa descrizione del comando.
+
+La password deve soddisfare i seguenti criteri:
+
+* La lunghezza deve essere compresa tra 8 e 32 caratteri.
+* Non deve contenere spazi vuoti.
+* Deve contenere almeno una lettera maiuscola.
+* Deve contenere almeno una lettera minuscola.
+* Deve contenere almeno un numero.
+* Deve contenere almeno un carattere non alfanumerico, ad esempio < > @ +.
+
+
+[NOTE]
+====
+Se la password non soddisfa questi criteri, viene visualizzato un messaggio di errore e viene richiesto di riprovare a eseguire il comando.
+
+====
+
+
+ a| 
+`file`
+ a| 
+Il percorso del file e il nome del file in cui si desidera salvare la chiave di sicurezza. Ad esempio:
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\drivesecurity.slk"
+----
+[NOTE]
+====
+Il nome del file deve avere un'estensione di `.slk` .
+
+====
+Racchiudere il percorso e il nome del file tra virgolette doppie (" ").
+
+
+
+ a| 
+`commitSecurityKey` - applicabile solo per la gestione interna delle chiavi
+ a| 
+Questo parametro impegna la chiave di sicurezza nell'array di storage per tutti i dischi FDE e i controller. Una volta che la chiave di sicurezza è stata confermata, è necessaria una chiave per accedere ai dati sulle unità abilitate per la sicurezza nell'array di storage. I dati possono essere letti o modificati solo utilizzando una chiave e il disco non può mai essere utilizzato in una modalità non sicura senza rendere i dati inutili o cancellare completamente il disco.
+
+Il valore predefinito è FALSE. Se questo parametro è impostato su FALSE, inviare un messaggio separato `set storageArray securityKey` per assegnare la chiave di sicurezza all'array di storage.
+
+|===
+
+
+== Livello minimo del firmware
+
+7.40, introdotto per la gestione interna delle chiavi
+
+8.40, introdotto per la gestione esterna delle chiavi

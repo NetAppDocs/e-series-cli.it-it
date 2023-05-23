@@ -1,0 +1,140 @@
+---
+permalink: commands-a-z/save-storagearray-warningevents.html 
+sidebar: sidebar 
+keywords: save, storage, array, events 
+summary: Il comando Save StorageArray warningEvents salva gli eventi dal registro eventi principale in un file. 
+---
+= Salvare gli eventi degli array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `save storageArray warningEvents` Il comando salva gli eventi dal registro eventi principale in un file.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Questo comando salva gli eventi dal Registro eventi principale in un file. È possibile salvare questi eventi:
+
+* *Eventi critici* -- si è verificato un errore nell'array di storage che deve essere risolto immediatamente. Se non si corregge immediatamente l'errore, potrebbe verificarsi la perdita dell'accesso ai dati.
+* *Warning events* -- si è verificato un errore sull'array di storage che ha come risultato una riduzione delle performance o della capacità di ripristino da un altro errore. L'accesso ai dati non è stato perso, ma è necessario correggere l'errore per evitare la possibile perdita di accesso ai dati in caso di un altro errore.
+* *Eventi informativi* -- si è verificato un evento sullo storage array che non ha alcun impatto sulle normali operazioni. L'evento sta riportando una modifica nella configurazione o altre informazioni che potrebbero essere utili per valutare le prestazioni dell'array di storage.
+* *Debug events* -- si è verificato un evento sull'array di storage che fornisce informazioni utili per determinare le fasi o gli stati che hanno causato un errore. È possibile inviare un file con queste informazioni al supporto tecnico per determinare la causa di un errore.
+
+
+[NOTE]
+====
+Alcuni storage array potrebbero non essere in grado di supportare tutti e quattro i tipi di eventi.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+save storageArray (allEvents | criticalEvents |
+warningEvents | infoEvents | debugEvents)
+file=pass:quotes["_filename_"]
+[count=pass:quotes[_numberOfEvents_]]
+[forceSave=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`allEvents`
+ a| 
+Il parametro per salvare tutti gli eventi in un file.
+
+
+
+ a| 
+`criticalEvents`
+ a| 
+Il parametro per salvare solo gli eventi critici in un file.
+
+
+
+ a| 
+`warningEvents`
+ a| 
+Il parametro per salvare solo gli eventi di avviso in un file.
+
+
+
+ a| 
+`infoEvents`
+ a| 
+Il parametro per salvare solo gli eventi informativi in un file.
+
+
+
+ a| 
+`debugEvents`
+ a| 
+Il parametro per salvare solo gli eventi di debug in un file.
+
+
+
+ a| 
+`file`
+ a| 
+Il percorso del file e il nome del file in cui si desidera salvare gli eventi. Racchiudere il nome del file tra virgolette doppie (" "). Ad esempio:
+
+`file="C:\Program Files\CLI\logs\events.txt"`
+
+Il nome predefinito del file che contiene il contenuto del Registro eventi principale è `major-event-log.txt`. Questo comando non aggiunge automaticamente un'estensione al file salvato. Specificare un'estensione del file quando si inserisce il nome del file.
+
+
+
+ a| 
+`count`
+ a| 
+Il numero di eventi che si desidera salvare in un file. Se non si immette un valore per il conteggio, tutti gli eventi corrispondenti al tipo di evento specificato vengono salvati nel file. Se si immette un valore per il conteggio, solo il numero di eventi (a partire dall'ultimo evento inserito) viene salvato nel file. USA valori interi.
+
+
+
+ a| 
+`forceSave`
+ a| 
+Parametro per forzare il salvataggio degli eventi di debug filtrati dalla vista a un file. Per forzare il salvataggio degli eventi, impostare questo parametro su `TRUE`. Il valore predefinito è `FALSE`.
+
+[NOTE]
+====
+L'utilizzo di questo parametro consente di salvare gli eventi di debug filtrati dal Visualizzatore eventi di SANtricity.
+
+====
+|===
+
+
+== Livello minimo del firmware
+
+7.77 aggiungere questi parametri:
+
+* `warningEvents`
+* `infoEvents`
+* `debugEvents`
+* `forceSave`
+

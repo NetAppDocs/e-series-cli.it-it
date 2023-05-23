@@ -1,0 +1,324 @@
+---
+permalink: commands-a-z/create-diskpool.html 
+sidebar: sidebar 
+keywords: create, disk pool 
+summary: Il comando create diskPool crea un nuovo pool di dischi in base ai parametri specificati. 
+---
+= Creare un pool di dischi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `create diskPool` il comando crea un nuovo pool di dischi in base ai parametri specificati.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+È possibile creare il pool di dischi immettendo un elenco di dischi o un tipo di disco che si desidera utilizzare per il pool di dischi.
+
+[NOTE]
+====
+Se si immette un elenco di dischi, assicurarsi che tutti i dischi abbiano la stessa capacità. Se i dischi non hanno la stessa capacità, ogni disco nel pool di dischi riporta una capacità uguale a quella del disco più piccolo.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+create diskPool
+(drives=pass:quotes[_(trayID1_],pass:quotes[[_drawerID1,_]]pass:quotes[_slotID1 ... trayIDN_],pass:quotes[[_drawerIDN,_]]pass:quotes[_slotIDN)_]|
+driveType=(fibre | SATA | SAS | NVMe4K))
+ userLabel=pass:quotes[_"diskPoolName"_]
+[driveCount=pass:quotes[_driveCountValue_]]
+[trayLossProtect=(TRUE | FALSE)]
+[drawerLossProtect=(TRUE | FALSE)]
+[warningThreshold=(pass:quotes[_warningThresholdValue_] | default)]
+[criticalThreshold=(pass:quotes[_criticalThresholdValue_] | default)]
+[criticalPriority=(highest|high|medium|low|lowest)]
+[backgroundPriority=(highest|high|medium|low|lowest)]
+[degradedPriority=(highest|high|medium|low|lowest)]
+[securityType=(none | capable | enabled )]
+[secureDrives=(fips | fde )]
+[driveMediaType=(hdd | ssd | allMedia | unknown)]
+[dataAssurance=(none|enabled)]
+[resourceProvisioningCapable=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`drives`
+ a| 
+Le unità che si desidera assegnare al pool di dischi che si desidera creare. Per i vassoi ad alta capacità, specificare il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot per l'unità. Per i vassoi delle unità a bassa capacità, specificare il valore dell'ID del vassoio e il valore dell'ID dello slot per l'unità. I valori dell'ID vassoio sono `0` a. `99`. I valori dell'ID cassetto sono `1` a. `5`.
+
+Tutti i valori massimi di ID slot sono 24. I valori ID slot iniziano con 0 o 1, a seconda del modello di vassoio. I cassetti per dischi compatibili con i controller E2800 e E5700 hanno numeri ID slot a partire da 0. I vassoi per dischi compatibili con i controller E2700 e E5600 hanno numeri ID slot a partire da 1.
+
+Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`userLabel`
+ a| 
+Il nome che si desidera assegnare al nuovo pool di dischi. Racchiudere il nome del pool di dischi tra virgolette doppie (" ").
+
+
+
+ a| 
+`driveCount`
+ a| 
+Il `driveCount` parametro limita i candidati del pool di dischi al numero specificato. Quando si utilizza questo parametro, il valore minimo che è possibile inserire per i dischi HDD è 11. Per i dischi SSD, il valore minimo che è possibile inserire è 8.
+
+[NOTE]
+====
+Pool di SSD con un `driveCount` Meno di 11 sono limitati ai volumi RAID 1.
+
+====
+
+
+ a| 
+`warningThreshold`
+ a| 
+La percentuale di capacità dello storage alla quale viene visualizzato un avviso che indica che il pool di dischi è quasi pieno. USA valori interi. Ad esempio, un valore di 60 significa 60%. Per un funzionamento ottimale, il valore di questo parametro deve essere inferiore al valore di `criticalThreshold` parametro.
+
+I valori validi vanno da 0 a 100.
+
+Il valore predefinito è 50.
+
+L'impostazione di questo parametro su 0 (zero) disattiva gli avvisi di avviso.
+
+Se si imposta questa opzione su `default`, il valore della soglia di avviso viene determinato dal firmware del controller.
+
+
+
+ a| 
+`criticalThreshold`
+ a| 
+La percentuale di capacità dello storage alla quale si riceve un avviso critico che indica che il pool di dischi è quasi pieno. USA valori interi. Ad esempio, un valore di 70 significa 70%. Per un funzionamento ottimale, il valore di questo parametro deve essere maggiore del valore di `warningThreshold` parametro.
+
+I valori validi vanno da 0 a 100.
+
+Il valore predefinito è 85 percento.
+
+L'impostazione di questo parametro su 0 (zero) disattiva sia gli avvisi di avviso che gli avvisi critici.
+
+Se si imposta questa opzione su `default`, il valore della soglia di allarme critico è determinato dal firmware del controller.
+
+
+
+ a| 
+`criticalPriority`
+ a| 
+La priorità delle operazioni di ricostruzione per gli eventi critici nel pool di dischi. Ad esempio, la ricostruzione del pool di dischi dopo almeno due guasti del disco.
+
+I valori validi sono `highest`, `high`, `medium`, `low`, e. `lowest`. Il valore predefinito è `highest`.
+
+
+
+ a| 
+`backgroundPriority`
+ a| 
+La priorità per le operazioni in background sul pool di dischi.
+
+I valori validi sono `highest`, `high`, `medium`, `low`, e. `lowest`. Il valore predefinito è `low`.
+
+
+
+ a| 
+`degradedPriority`
+ a| 
+La priorità per le attività degradate sul pool di dischi. Ad esempio, ricostruzione del pool di dischi dopo guasti a un disco.
+
+I valori validi sono `highest`, `high`, `medium`, `low`, e. `lowest`. Il valore predefinito è `high`.
+
+
+
+ a| 
+`securityType`
+ a| 
+L'impostazione per specificare il livello di protezione durante la creazione del pool di dischi. Tutti i volumi candidati per il pool di dischi avranno il tipo di protezione specificato.
+
+Queste impostazioni sono valide:
+
+* `none` -- i candidati al volume non sono sicuri.
+* `capable` -- i volumi candidati sono in grado di impostare la protezione, ma la protezione non è stata attivata.
+* `enabled` -- la sicurezza è abilitata per i volumi candidati.
+
+
+Il valore predefinito è `none`.
+
+
+
+ a| 
+`secureDrives`
+ a| 
+Il tipo di dischi sicuri da utilizzare nel gruppo di volumi. Queste impostazioni sono valide:
+
+* `fips` -- per utilizzare solo dischi conformi a FIPS.
+* `fde` -- per utilizzare dischi compatibili con FDE.
+
+
+[NOTE]
+====
+Utilizzare questo parametro insieme a `securityType` parametro. Se si specifica `none` per `securityType` il valore di `secureDrives` il parametro viene ignorato, perché non è necessario che i pool di dischi non sicuri abbiano specificato tipi di dischi sicuri.
+
+====
+[NOTE]
+====
+Questo parametro viene ignorato, a meno che non si utilizzi anche l' `driveCount` parametro. Se si specificano le unità da utilizzare per il pool di dischi invece di fornire un conteggio, specificare il tipo di unità appropriato nell'elenco di selezione in base al tipo di protezione desiderato.
+
+====
+
+
+ a| 
+`driveMediaType`
+ a| 
+Il tipo di disco che si desidera utilizzare per il pool di dischi.
+
+È necessario utilizzare questo parametro quando si dispone di più tipi di dischi nell'array di storage.
+
+Questi supporti sono validi:
+
+* `hdd` -- utilizzare questa opzione se si dispone di dischi rigidi.
+* `ssd` -- utilizzare questa opzione se si dispone di dischi a stato solido.
+* `unknown` -- utilizzare questa opzione se non si è sicuri dei tipi di supporti presenti nel vassoio dell'unità
+* `allMedia` -- utilizzare questa opzione se si desidera utilizzare tutti i tipi di supporti presenti nel vassoio dell'unità
+
+
+Il valore predefinito è `hdd`.
+
+[NOTE]
+====
+Il firmware del controller non si mescola `hdd` e. `ssd` dischi nello stesso pool di dischi, indipendentemente dall'impostazione selezionata.
+
+====
+
+
+ a| 
+`resourceProvisioningCapable`
+ a| 
+L'impostazione per specificare se le funzionalità di provisioning delle risorse sono attivate. Per disattivare il provisioning delle risorse, impostare questo parametro su `FALSE`. Il valore predefinito è `TRUE`.
+
+|===
+
+
+== Note
+
+Ciascun nome del pool di dischi deve essere univoco. È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per l'etichetta utente. Le etichette dell'utente possono contenere un massimo di 30 caratteri.
+
+Se i parametri specificati non possono essere soddisfatti da nessuna delle unità candidate disponibili, il comando non riesce. In genere, tutti i dischi che corrispondono agli attributi della qualità del servizio vengono restituiti come candidati principali. Tuttavia, se si specifica un elenco di unità, alcune delle unità disponibili restituite come candidate potrebbero non corrispondere alla qualità degli attributi del servizio.
+
+Se non si specifica un valore per un parametro opzionale, viene assegnato un valore predefinito.
+
+
+
+== Dischi
+
+Quando si utilizza `driveType` parametro, tutti i dischi non assegnati di quel tipo vengono utilizzati per creare il pool di dischi. Se si desidera limitare il numero di dischi trovati da `driveType` nel pool di dischi, è possibile specificare il numero di dischi che utilizzano `driveCount` parametro. È possibile utilizzare `driveCount` solo quando si utilizza `driveType` parametro.
+
+Il `drives` il parametro supporta sia i vassoi per dischi ad alta capacità che quelli a bassa capacità. Un vassoio per dischi ad alta capacità dispone di cassetti che trattengono le unità. I cassetti scorrono fuori dal vassoio dell'unità per consentire l'accesso alle unità. Un vassoio per unità a bassa capacità non dispone di cassetti. Per un vassoio dell'unità ad alta capacità, è necessario specificare l'identificativo (ID) del vassoio dell'unità, l'ID del cassetto e l'ID dello slot in cui si trova l'unità. Per un vassoio dell'unità a bassa capacità, è necessario specificare solo l'ID del vassoio dell'unità e l'ID dello slot in cui si trova un'unità. Per un vassoio dell'unità a bassa capacità, un metodo alternativo per identificare una posizione per un'unità consiste nel specificare l'ID del vassoio dell'unità, impostare l'ID del cassetto su `0`E specificare l'ID dello slot in cui si trova un'unità.
+
+Se si immettono le specifiche per un vassoio dell'unità ad alta capacità, ma non è disponibile, il software di gestione dello storage restituisce un messaggio di errore.
+
+
+
+== Soglie di avviso del pool di dischi
+
+Ogni pool di dischi dispone di due livelli di avvisi progressivamente gravi per informare gli utenti quando la capacità di storage del pool di dischi si sta avvicinando al pieno. La soglia per un avviso è la percentuale della capacità utilizzata rispetto alla capacità totale utilizzabile nel pool di dischi. Gli avvisi sono i seguenti:
+
+* Attenzione -- questo è il primo livello di avviso. Questo livello indica che la capacità utilizzata in un pool di dischi si sta quasi esaurendo. Quando viene raggiunta la soglia per l'avviso di avviso, viene generata una condizione di intervento richiesto e un evento viene inviato al software di gestione dello storage. La soglia di avviso viene superata dalla soglia critica. La soglia di avviso predefinita è 50%.
+* Critico -- questo è il livello di allarme più grave. Questo livello indica che la capacità utilizzata in un pool di dischi si sta quasi esaurendo. Quando viene raggiunta la soglia per l'avviso critico, viene generata una condizione di attenzione necessaria e un evento viene inviato al software di gestione dello storage. La soglia di avviso viene superata dalla soglia critica. La soglia predefinita per l'avviso critico è 85%.
+
+
+Per essere efficace, il valore di un avviso di avviso deve essere sempre inferiore al valore di un avviso critico. Se il valore per l'avviso di avviso è uguale al valore per un avviso critico, viene inviato solo l'avviso critico.
+
+
+
+== Operazioni in background del pool di dischi
+
+I pool di dischi supportano queste operazioni in background:
+
+* Ricostruzione
+* IAF (Instant Availability Format)
+* Formato
+* Espansione dinamica della capacità (DCE)
+* Dynamic Volume Expansion (DVE) (per i pool di dischi, il DVE non è un'operazione in background, ma il DVE è supportato come operazione sincrona).
+
+
+I pool di dischi non accodano i comandi in background. È possibile avviare diversi comandi in background in sequenza, ma avviando più operazioni in background alla volta si ritarda il completamento dei comandi avviati in precedenza. Le operazioni in background supportate hanno i seguenti livelli di priorità relativa:
+
+. Ricostruzione
+. Formato
+. IAF
+. DCE
+
+
+
+
+== Tipo di sicurezza
+
+Utilizzare `securityType` parametro per specificare le impostazioni di sicurezza per lo storage array.
+
+Prima di poter impostare `securityType` parametro a. `enabled`, è necessario creare una chiave di sicurezza dello storage array. Utilizzare `create storageArray securityKey` comando per creare una chiave di sicurezza dello storage array. Questi comandi sono correlati alla chiave di sicurezza:
+
+* `create storageArray securityKey`
+* `export storageArray securityKey`
+* `import storageArray securityKey`
+* `set storageArray securityKey`
+* `enable volumeGroup [volumeGroupName] security`
+* `enable diskPool [diskPoolName] security`
+
+
+
+
+== Dischi sicuri
+
+Le unità compatibili con la protezione possono essere dischi con crittografia completa del disco (FDE) o dischi FIPS (Federal Information Processing Standard). Utilizzare `secureDrives` parametro per specificare il tipo di dischi protetti da utilizzare. I valori che è possibile utilizzare sono `fips` e. `fde`.
+
+
+
+== Esempio di comando
+
+[listing]
+----
+create diskPool driveType=SAS userLabel="FIPS_Pool" driveCount=11 securityType=capable secureDrives=fips;
+----
+
+
+== Livello minimo del firmware
+
+7.83
+
+8.20 aggiunge questi parametri:
+
+* `trayLossProtect`
+* `drawerLossProtect`
+
+
+8.25 aggiunge `secureDrives` parametro.
+
+8.63 aggiunge `resourceProvisioningCapable` parametro.
+
+11.73 aggiorna `driveCount` parametro.

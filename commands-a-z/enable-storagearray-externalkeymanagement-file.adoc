@@ -1,0 +1,110 @@
+---
+permalink: commands-a-z/enable-storagearray-externalkeymanagement-file.html 
+sidebar: sidebar 
+keywords: enable, storage, array, external, key, management, file, command, security, disk, encryption, initial, roles, context, support 
+summary: Il comando enable StorageArray externalKeyManagement file consente la gestione esterna delle chiavi di sicurezza per uno storage array che dispone di dischi con crittografia completa del disco e crea la chiave di sicurezza iniziale del disco. 
+---
+= Abilitare la gestione esterna delle chiavi di sicurezza
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `enable storageArray externalKeyManagement file` Command consente la gestione esterna delle chiavi di sicurezza per un array di storage dotato di dischi con crittografia completa del disco e crea la chiave di sicurezza iniziale del disco.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Questo comando si applica solo alla gestione esterna delle chiavi.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+enable storageArray externalKeyManagement
+pass:quotes[file="_fileName_"]
+pass:quotes[passPhrase="_passPhraseString_"]
+pass:quotes[saveFile=_(TRUE | FALSE)_]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`file`
+ a| 
+Il percorso del file e il nome del file in cui verrà memorizzata la nuova chiave di sicurezza. Racchiudere il percorso del file e il nome del file tra virgolette doppie (" "). Ad esempio:
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\drivesecurity.slk"
+----
+[NOTE]
+====
+Il nome del file deve avere un'estensione di `.slk`.
+
+====
+
+
+ a| 
+`passPhrase`
+ a| 
+Stringa di caratteri che crittografa la chiave di protezione in modo da potervi memorizzare in un file esterno. Racchiudere la stringa di caratteri della password tra virgolette doppie (" ").
+
+
+
+ a| 
+`saveFile`
+ a| 
+Verifica e salva la chiave di sicurezza in un file. Impostare su `FALSE` per non salvare e verificare la chiave di sicurezza in un file. Il valore predefinito è `TRUE`.
+
+|===
+
+
+== Note
+
+La password deve soddisfare i seguenti criteri:
+
+* La lunghezza deve essere compresa tra 8 e 32 caratteri.
+* Deve contenere almeno una lettera maiuscola.
+* Deve contenere almeno una lettera minuscola.
+* Deve contenere almeno un numero.
+* Deve contenere almeno un carattere non alfanumerico, ad esempio < > @ +.
+
+
+[NOTE]
+====
+Se la password non soddisfa questi criteri, viene visualizzato un messaggio di errore.
+
+====
+
+
+== Livello minimo del firmware
+
+8.40
+
+8.70 aggiunge `_saveFile_` parametro.

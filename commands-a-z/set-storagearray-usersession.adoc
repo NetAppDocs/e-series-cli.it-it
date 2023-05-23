@@ -1,0 +1,56 @@
+---
+permalink: commands-a-z/set-storagearray-usersession.html 
+sidebar: sidebar 
+keywords: set, storage, array, user, session 
+summary: Il comando Set StorageArray userSession consente di impostare un timeout in System Manager, in modo che le sessioni inattive degli utenti vengano disconnesse dopo un determinato periodo di tempo. 
+---
+= Impostare la sessione utente dello storage array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray userSession` Il comando consente di impostare un timeout in System Manager, in modo che le sessioni inattive degli utenti vengano disconnesse dopo un determinato periodo di tempo.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Contesto
+
+Utilizzare questo comando per eseguire una delle seguenti operazioni:
+
+* Impostare un timeout in secondi per le sessioni utente. Il valore di timeout minimo è 900 secondi (15 minuti).
+* Disattivare i timeout della sessione impostando il valore su 0.
+
+
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Sintassi
+
+[listing]
+----
+set storageArray userSession sessionTimeout=n
+----
+
+
+== Livello minimo del firmware
+
+8.41

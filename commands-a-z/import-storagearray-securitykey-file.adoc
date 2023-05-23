@@ -1,0 +1,115 @@
+---
+permalink: commands-a-z/import-storagearray-securitykey-file.html 
+sidebar: sidebar 
+keywords: import, storage, array, security, file, command, unlock, disk, encryption, context, syntax, firmware level, role, context 
+summary: 'Il comando import StorageArray securityKey file sblocca uno o più dischi con crittografia completa dei dischi (FDE) spostati da uno storage array a un altro storage array.' 
+---
+= Importare la chiave di sicurezza dello storage array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `import storageArray securityKey file` Il comando sblocca una o più unità con crittografia completa dei dischi (FDE) spostate da uno storage array a un altro storage array.
+
+
+
+== Array supportati
+
+Se è attivata la gestione esterna delle chiavi, questo comando si applica solo agli array E2800, E5700, EF600 o EF300. Se è attivata la gestione delle chiavi interne, il comando si applica a qualsiasi singolo array di storage, purché siano installati tutti i pacchetti SMcli.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Contesto
+
+Vengono sbloccati solo i dischi con la chiave di sicurezza corrispondente. Una volta sbloccati, viene applicata la chiave di sicurezza per il nuovo array di storage.
+
+[NOTE]
+====
+Questo comando si applica alla gestione delle chiavi sia interna che esterna.
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+import storageArray securityKey file="fileName"
+passPhrase="passPhraseString"
+[forceOverwrite=(TRUE|FALSE)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`file`
+ a| 
+Il percorso del file e il nome del file con la chiave di sicurezza originale dei dischi FDE importati. Ad esempio:
+
+[listing]
+----
+file="C:\Program Files\CLI\sup\drivesecurity.slk"
+----
+[NOTE]
+====
+Il nome del file deve avere un'estensione di `.slk`.
+
+====
+
+
+ a| 
+`passPhrase`
+ a| 
+Stringa di caratteri che fornisce l'autenticazione per la chiave di sicurezza.
+
+
+
+ a| 
+`forceOverwrite`
+ a| 
+Se questo parametro è impostato su `TRUE`, L'importazione forzerà la sovrascrittura della chiave FDE quando l'importazione normalmente non è consentita, come quando un controller è assente o non è riuscito. Per impostazione predefinita, il parametro force overwrite è impostato su FALSE.
+
+|===
+
+
+== Note
+
+Il firmware del controller crea un blocco che limita l'accesso ai dischi FDE. I dischi FDE hanno uno stato chiamato Security Capable. Quando si crea una chiave di sicurezza, lo stato viene impostato su Security Enabled (protezione abilitata), che limita l'accesso a tutti i dischi FDE presenti nell'array di storage.
+
+La password deve soddisfare i seguenti criteri:
+
+* La lunghezza deve essere compresa tra 8 e 32 caratteri.
+* Deve contenere almeno una lettera maiuscola.
+* Deve contenere almeno una lettera minuscola.
+* Deve contenere almeno un numero.
+* Deve contenere almeno un carattere non alfanumerico, ad esempio < > @ +.
+
+
+[NOTE]
+====
+Se la password non soddisfa questi criteri, viene visualizzato un messaggio di errore e viene richiesto di riprovare a eseguire il comando.
+
+====
+
+
+== Livello minimo del firmware
+
+7.40
+
+8.40 aggiunta la possibilità di importare una chiave di sicurezza esterna per lo storage array
+
+11.70.1 aggiunto il `forceOverwrite` parametro.

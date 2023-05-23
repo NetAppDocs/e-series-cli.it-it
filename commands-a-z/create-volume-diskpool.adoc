@@ -1,0 +1,260 @@
+---
+permalink: commands-a-z/create-volume-diskpool.html 
+sidebar: sidebar 
+keywords: create, volume, disk pool 
+summary: Il comando create volume diskPool crea un nuovo volume RAID standard o un volume thin in un pool di dischi esistente. 
+---
+= Creare un volume nel pool di dischi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `create volume diskPool` Il comando crea un nuovo volume RAID standard o un volume thin in un pool di dischi esistente.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Alcuni parametri per la creazione di un volume RAID standard in un gruppo di volumi non sono compatibili per la creazione di volumi di qualsiasi tipo in un pool di dischi. Quando si utilizzano script meno recenti per creare volumi nei pool di dischi, assicurarsi che tutti i parametri siano validi per i pool di dischi. I parametri non validi impediscono il corretto funzionamento degli script e causano l'invio di un errore.
+
+====
+
+
+== Sintassi per la creazione di un volume standard
+
+[listing, subs="+macros"]
+----
+create volume diskPool=pass:quotes[_"diskPoolName"_
+userLabel="_volumeName_"
+capacity=_volumeCapacity_]
+[thinProvisioned=(TRUE | FALSE)]
+[owner=(a|b)]
+[mapping=(none|default)]
+[dataAssurance=(none|enabled)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+[raidLevel=(1 | 6)]
+[blockSize=requestedBlockSizeValue]
+----
+
+
+== Sintassi per la creazione di un volume con thin provisioning
+
+[listing, subs="+macros"]
+----
+create volume diskPool=pass:quotes[_"diskPoolName"_
+userLabel="_volumeName_"
+capacity=_volumeCapacity_]
+[thinProvisioned=(TRUE | FALSE)]
+[owner=(a|b)]
+[mapping=(none|default)]
+[dataAssurance=(none|enabled)]
+[(existingRepositoryLabel=pass:quotes[_existingRepositoryName_] |
+[newRepositoryCapacity=pass:quotes[_newRepositoryCapacityValue_] (KB | MB | GB | TB | Bytes)]
+[repositoryMaxCapacity=pass:quotes[_repositoryMaxCapacityValue_](KB|MB|GB|TB|Bytes)]
+[warningThresholdPercent=pass:quotes[_warningThresholdPercentValue_]
+[repositoryExpansionPolicy=(automatic|manual)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+----
+[listing, subs="+macros"]
+----
+create volume diskPool=pass:quotes[_"diskPoolName"_
+userLabel="_volumeName_"
+capacity=_volumeCapacity_]
+[thinProvisioned=(TRUE | FALSE)]
+[owner=(a|b)]
+[mapping=(none|default)]
+[(existingRepositoryLabel=pass:quotes[_existingRepositoryName_] |
+[newRepositoryCapacity=pass:quotes[_newRepositoryCapacityValue_] (KB | MB | GB | TB | Bytes)]
+[repositoryMaxCapacity=pass:quotes[_repositoryMaxCapacityValue_](KB|MB|GB|TB|Bytes)]
+[warningThresholdPercent=pass:quotes[_warningThresholdPercentValue_]]
+[repositoryExpansionPolicy=(automatic|manual)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`diskPool`
+ a| 
+Il nome del pool di dischi in cui creare il nuovo volume. Racchiudere il nome del pool di dischi tra virgolette doppie (" ").
+
+
+
+ a| 
+`userLabel`
+ a| 
+Il nome che si desidera assegnare al nuovo volume. Racchiudere il nome del volume tra virgolette doppie (" ").
+
+
+
+ a| 
+`capacity`
+ a| 
+Le dimensioni del volume che si sta creando.
+
+Per un volume RAID standard, la capacità che verrà allocata per il volume.
+
+Per un volume thin, il valore della capacità virtuale che verrà esposto dal volume thin.
+
+Le dimensioni sono definite in unità di `bytes`, `KB`, `MB`, `GB`, o. `TB`. Di seguito sono riportati alcuni esempi di sintassi:
+
+* `capacity=500MB`
+* `capacity=2GB`
+
+
+
+
+ a| 
+`thinProvisioned`
+ a| 
+Questo parametro abilita il thin provisioning per il nuovo volume. Per utilizzare il thin provisioning, impostare questo parametro su `TRUE`. Se non si desidera il thin provisioning, impostare questo parametro su `FALSE`.
+
+
+NOTE: Il thin provisioning non è disponibile per i volumi di livello RAID1.
+
+
+
+ a| 
+`owner`
+ a| 
+Il controller proprietario del volume. Gli identificatori del controller validi sono `a` oppure `b`, dove `a` È il controller nello slot A, e. `b` Il controller si trova nello slot B. Se non si specifica un proprietario, il firmware del controller determina il proprietario.
+
+
+
+ a| 
+`mapping`
+ a| 
+Questo parametro consente di mappare il volume a un host. Se si desidera eseguire la mappatura in un secondo momento, impostare questo parametro su `none`. Se si desidera eseguire la mappatura ora, impostare questo parametro su `default`. Il volume viene mappato a tutti gli host che hanno accesso al pool di storage.
+
+Il valore predefinito è `none`.
+
+
+
+ a| 
+`existingRepositoryLabel`
+ a| 
+Questo parametro identifica un repository esistente per un volume thin. Un volume di repository ha la capacità fisica per un volume sottile. Questo parametro si applica solo al thin provisioning. Se si utilizza `existingRepositoryLabel` non utilizzare `newRepositoryCapacity` parametro.
+
+
+
+ a| 
+`newRepositoryCapacity`
+ a| 
+Questo parametro crea un nuovo repository per un volume thin. Un volume di repository ha la capacità fisica per un volume sottile. Utilizzare questo parametro solo se si imposta il valore di `thinProvisioned` parametro a. `TRUE`.
+
+Le dimensioni sono definite in unità di `MB`, `GB`, o. `TB`. Di seguito sono riportati alcuni esempi di sintassi:
+
+* `capacity=500MB`
+* `capacity=2GB`
+
+
+Il valore predefinito è il 50% della capacità virtuale.
+
+
+
+ a| 
+`repositoryMaxCapacity`
+ a| 
+Questo parametro definisce la capacità massima di un repository per un volume thin. Utilizzare questo parametro solo se si imposta il valore di `thinProvisioned` parametro a. `TRUE`.
+
+Le dimensioni sono definite in unità di `MB`, `GB`, o. `TB`. Di seguito sono riportati alcuni esempi di sintassi:
+
+* `capacity=500MB`
+* `capacity=2GB`
+
+
+
+
+ a| 
+`warningThresholdPercent`
+ a| 
+La percentuale di capacità del volume sottile alla quale viene visualizzato un avviso che indica che il volume sottile è quasi pieno. USA valori interi. Ad esempio, un valore di 70 significa 70%.
+
+I valori validi vanno da 1 a 100.
+
+L'impostazione di questo parametro su 100 disattiva gli avvisi di avviso.
+
+
+
+ a| 
+`repositoryExpansionPolicy`
+ a| 
+Questo parametro imposta il criterio di espansione su `automatic` oppure `manual`. Quando si modifica la policy da `automatic` a. `manual`, il valore di capacità massima (quota) cambia in capacità fisica del volume di repository.
+
+
+
+ a| 
+`cacheReadPrefetch`
+ a| 
+L'impostazione per attivare o disattivare il prefetch di lettura della cache. Per disattivare il prefetch di lettura della cache, impostare questo parametro su `FALSE`. Per attivare il prefetch di lettura della cache, impostare questo parametro su `TRUE`.
+
+
+
+ a| 
+`raidLevel`
+ a| 
+Imposta il livello raid per il volume creato nel pool di dischi. Per specificare RAID1, impostare su `1`. Per specificare RAID6, impostare su `6`. Se il livello raid non è impostato, RAID6 viene utilizzato per impostazione predefinita per il pool di dischi.
+
+
+
+ a| 
+`blockSize`
+ a| 
+Questo parametro imposta la dimensione del blocco del volume da creare. Un valore di `0` in alternativa, il parametro not set (non impostato) utilizza la dimensione predefinita del blocco.
+
+|===
+
+
+== Note
+
+Ciascun nome di volume deve essere univoco. È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per l'etichetta utente. Le etichette dell'utente possono contenere un massimo di 30 caratteri.
+
+Per i volumi sottili, il `capacity` il parametro specifica la capacità virtuale del volume e il `repositoryCapacity` parametro specifica la capacità del volume creato come volume di repository. Utilizzare `existingRepositoryLabel` parametro per specificare un volume repository inutilizzato esistente invece di creare un nuovo volume.
+
+Per ottenere risultati ottimali durante la creazione di un volume thin, il volume repository deve già esistere o essere creato in un pool di dischi già esistente. Se non si specificano alcuni dei parametri opzionali durante la creazione di thin volumi, il software di gestione dello storage tenterà di creare il volume del repository. Il volume candidato più desiderabile è un volume di repository già esistente e che rientra nei requisiti di dimensione. Il successivo volume candidato più desiderabile è un nuovo volume di repository creato nell'estensione libera del pool di dischi.
+
+Non è possibile creare volumi di repository per volumi thin in gruppi di volumi.
+
+
+
+== Gestione della data assurance
+
+La funzione Data Assurance (da) aumenta l'integrità dei dati nell'intero sistema storage. DA consente all'array di storage di verificare la presenza di errori che potrebbero verificarsi quando i dati vengono spostati tra gli host e i dischi. Quando questa funzione è attivata, l'array di storage aggiunge i codici di controllo degli errori (noti anche come CRC (Cyclic Redundancy Checks) a ciascun blocco di dati del volume. Dopo lo spostamento di un blocco di dati, l'array di storage utilizza questi codici CRC per determinare se si sono verificati errori durante la trasmissione. I dati potenzialmente corrotti non vengono scritti su disco né restituiti all'host.
+
+Se si desidera utilizzare la funzione da, iniziare con un pool o un gruppo di volumi che include solo dischi che supportano da. Quindi, creare volumi compatibili con da. Infine, mappare questi volumi con funzionalità da all'host utilizzando un'interfaccia i/o in grado di eseguire il da. Le interfacce i/o che supportano il da includono Fibre Channel, SAS e iSER su InfiniBand (iSCSI Extensions per RDMA/IB). DA non è supportato da iSCSI su Ethernet o da SRP su InfiniBand.
+
+[NOTE]
+====
+Quando tutti i dischi sono compatibili con da, è possibile impostare `dataAssurance` parametro a. `enabled` E quindi utilizzare da con determinate operazioni. Ad esempio, è possibile creare un gruppo di volumi che includa dischi compatibili con da e quindi creare un volume all'interno di tale gruppo di volumi abilitato per da. Altre operazioni che utilizzano un volume abilitato da dispongono di opzioni per supportare la funzione da.
+
+====
+Se `dataAssurance` il parametro è impostato su `enabled`, per i candidati ai volumi verranno considerati solo i dischi con data assurance, altrimenti verranno presi in considerazione sia i dischi con data assurance che quelli non compatibili con data assurance. Se sono disponibili solo dischi Data Assurance, il nuovo volume verrà creato utilizzando i dischi Data Assurance abilitati.
+
+
+
+== Livello minimo del firmware
+
+7.83
+
+8.70 aggiunge `_raidLevel_` e. `_blockSize` parametri.

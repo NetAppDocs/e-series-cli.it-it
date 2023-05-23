@@ -1,0 +1,66 @@
+---
+permalink: commands-a-z/revive-snapgroup.html 
+sidebar: sidebar 
+keywords: revive, snapshot, group 
+summary: Il comando rivive snapGroup forza il gruppo di snapshot specificato allo stato ottimale. 
+---
+= Ripristinare il gruppo di snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `revive snapGroup` Il comando forza lo stato ottimale del gruppo di snapshot specificato.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Contesto
+
+Se il gruppo di snapshot non si trova in uno stato di errore, il firmware visualizza un messaggio di errore e non esegue questo comando.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+revive snapGroup pass:quotes[[_snapGroupName_]]
+----
+
+
+== Parametro
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`snapGroup`
+ a| 
+Il nome del gruppo di snapshot che si desidera impostare sullo stato ottimale. Racchiudere il nome del gruppo di snapshot tra parentesi quadre ([ ]). Se il nome del gruppo di snapshot ha caratteri speciali o è composto solo da numeri, è necessario racchiudere il nome del gruppo di snapshot tra virgolette doppie (" ") tra parentesi quadre.
+
+|===
+
+
+== Note
+
+È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per i nomi. I nomi possono avere un massimo di 30 caratteri.
+
+
+
+== Livello minimo del firmware
+
+7.83

@@ -1,0 +1,87 @@
+---
+permalink: commands-category/mirroring-commands.html 
+sidebar: sidebar 
+keywords: commands, mirroring, asynchronous, synchronous, command 
+summary: Comandi di mirroring 
+---
+= Comandi di mirroring
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+
+
+== Comandi di mirroring asincrono
+
+link:../commands-a-z/activate-asynchronous-mirroring.html["Attivare il mirroring asincrono"]
+
+link:../commands-a-z/add-volume-asyncmirrorgroup.html["Aggiungere il volume al gruppo di mirror asincrono"]
+
+link:../commands-a-z/stop-asyncmirrorgroup-rolechange.html["Annulla l'inversione del ruolo del gruppo mirror asincrono"]
+
+link:../commands-a-z/check-asyncmirrorgroup-repositoryconsistency.html["Verificare la coerenza del gruppo mirror asincrono"]
+
+link:../commands-a-z/clear-asyncmirrorfault.html["Eliminare gli errori di mirroring asincrono"]
+
+link:../commands-a-z/create-asyncmirrorgroup.html["Creare un gruppo di mirror asincrono"]
+
+link:../commands-a-z/deactivate-storagearray.html["Disattivare il mirroring asincrono"]
+
+link:../commands-a-z/delete-asyncmirrorgroup.html["Eliminare il gruppo di mirror asincrono"]
+
+link:../commands-a-z/establish-asyncmirror-volume.html["Stabilire una coppia asincrona con mirroring"]
+
+link:../commands-a-z/remove-asyncmirrorgroup.html["Rimuovere la coppia di mirroring asincrono incompleta dal gruppo di mirror asincrono"]
+
+link:../commands-a-z/remove-volume-asyncmirrorgroup.html["Rimuovere il volume dal gruppo di mirror asincrono"]
+
+link:../commands-a-z/reset-storagearray-arvmstats-asyncmirrorgroup.html["Ripristinare le statistiche del gruppo mirror asincrono"]
+
+link:../commands-a-z/reset-iscsiipaddress.html["Ripristinare l'indirizzo IP iSCSI"]
+
+link:../commands-a-z/resume-asyncmirrorgroup.html["Riprendere il gruppo di mirror asincrono"]
+
+link:../commands-a-z/save-storagearray-arvmstats-asyncmirrorgroup.html["Salva le statistiche del gruppo mirror asincrono"]
+
+link:../commands-a-z/set-asyncmirrorgroup.html["Impostare un gruppo di mirror asincrono"]
+
+link:../commands-a-z/show-asyncmirrorgroup-summary.html["Mostra gruppi di mirror asincroni"]
+
+link:../commands-a-z/show-asyncmirrorgroup-synchronizationprogress.html["Mostra l'avanzamento della sincronizzazione asincrona del gruppo mirror"]
+
+link:../commands-a-z/start-asyncmirrorgroup-synchronize.html["Avviare la sincronizzazione del mirroring asincrono"]
+
+link:../commands-a-z/suspend-asyncmirrorgroup.html["Sospendere il gruppo di mirror asincrono"]
+
+link:../commands-a-z/diagnose-asyncmirrorgroup.html["Verificare la connettività del gruppo mirror asincrono"]
+
+
+
+== Comandi di mirroring sincrono
+
+link:../commands-a-z/activate-synchronous-mirroring.html["Attivare il mirroring sincrono"]
+
+link:../commands-a-z/check-syncmirror.html["Controllare lo stato del mirroring sincrono"]
+
+link:../commands-a-z/create-syncmirror.html["Creare il mirroring sincrono"]
+
+link:../commands-a-z/deactivate-storagearray-feature.html["Disattivare il mirroring sincrono"]
+
+link:../commands-a-z/diagnose-syncmirror.html["Diagnosticare il mirroring sincrono"]
+
+link:../commands-a-z/recreate-storagearray-mirrorrepository.html["Ricreare il volume del repository di mirroring sincrono"]
+
+link:../commands-a-z/remove-syncmirror.html["Rimuovere il mirroring sincrono"]
+
+link:../commands-a-z/resume-syncmirror.html["Riprendere il mirroring sincrono"]
+
+link:../commands-a-z/set-syncmirror.html["Impostare il mirroring sincrono"]
+
+link:../commands-a-z/show-syncmirror-candidates.html["Mostra i volumi di mirroring sincrono candidati"]
+
+link:../commands-a-z/show-syncmirror-synchronizationprogress.html["Mostra l'avanzamento della sincronizzazione del volume di mirroring sincrono"]
+
+link:../commands-a-z/start-syncmirror-primary-synchronize.html["Avviare la sincronizzazione del mirroring sincrono"]
+
+link:../commands-a-z/suspend-syncmirror-primaries.html["Sospendere il mirroring sincrono"]

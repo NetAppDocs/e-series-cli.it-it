@@ -1,0 +1,78 @@
+---
+permalink: commands-a-z/start-ssdcache-performancemodeling.html 
+sidebar: sidebar 
+keywords: start, ssd, cache, performance, model 
+summary: Il comando start ssdCache PerformanceModeling avvia la modellazione delle performance per la cache SSD. 
+---
+= Avviare la modellazione delle performance della cache SSD
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `start ssdCache performanceModeling` Il comando avvia la modellazione delle performance per la cache SSD.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800 o E5700, è necessario disporre del ruolo Support Admin.
+
+
+
+== Contesto
+
+La modellazione delle performance monitora e misura l'attività di i/o per un periodo di tempo e stima le performance per diverse dimensioni della cache SSD. Le performance sono stimate utilizzando due metriche: Percentuale di hit della cache e tempo di risposta medio. I dati di modellazione delle performance non sono disponibili fino a quando non si interrompe l'operazione con `stop ssdCache performanceModeling` comando.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+start ssdCache pass:quotes[[_ssdCacheName_]] performanceModeling
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`ssdCache`
+ a| 
+Il nome della cache SSD per cui si desidera modellare le performance. Racchiudere il nome della cache SSD tra parentesi quadre ([ ]). Se il nome della cache SSD contiene caratteri speciali o è composto solo da numeri, è necessario racchiudere il nome della cache SSD tra virgolette doppie (" ") tra parentesi quadre.
+
+|===
+
+
+== Note
+
+La modellazione delle performance termina e i dati di modellazione delle performance sono disponibili quando si verifica una delle seguenti condizioni:
+
+* Eseguire `stop ssdCache performanceModeling` comando.
+* Recuperare i dati di modellazione delle performance utilizzando il software di gestione dello storage.
+
+
+La modellazione delle performance termina, ma non sono disponibili dati quando si verifica una delle seguenti condizioni:
+
+* Riavviare il controller.
+* Apportare eventuali modifiche alla configurazione della cache SSD.
+* Lo stato della cache SSD cambia.
+
+
+
+
+== Livello minimo del firmware
+
+7.84

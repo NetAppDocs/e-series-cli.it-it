@@ -1,0 +1,79 @@
+---
+permalink: commands-a-z/save-controller-arraymanagementsignedcertificate.html 
+sidebar: sidebar 
+keywords: retrieve, installed, server, certificate 
+summary: Il comando Save controller arrayManagementSignedCertificate recupera il certificato del server installato per il controller in modo da poter visualizzare i dettagli del certificato. 
+---
+= Recuperare il certificato del server installato
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `save controller arrayManagementSignedCertificate` il comando recupera il certificato del server installato per il controller in modo da visualizzare i dettagli del certificato.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+
+save controller [(a|b)] arrayManagementSignedCertificate
+     file=pass:quotes["_filename_"]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`controller`
+ a| 
+Consente di specificare il controller da cui si desidera scaricare il certificato firmato. Gli identificatori di controller validi sono a o b, dove a è il controller nello slot A e b è il controller nello slot B. Racchiudere l'identificatore del controller tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`file`
+ a| 
+Consente di specificare il file per il quale salvare il file di certificato firmato del controller.
+
+|===
+
+
+== Esempi
+
+[listing]
+----
+
+SMcli -n Array1 -c "save controller [a] arrayManagementSignedCertificate
+   file="C:\controllerAcertificate.cer";"
+
+SMcli -n Array1 -c "save controller [b] arrayManagementSignedCertificate
+   file="C:\controllerBcertificate.cer";"
+
+SMcli completed successfully.
+----
+
+
+== Livello minimo del firmware
+
+8.40

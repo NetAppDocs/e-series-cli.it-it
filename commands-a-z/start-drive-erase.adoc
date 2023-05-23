@@ -1,0 +1,75 @@
+---
+permalink: commands-a-z/start-drive-erase.html 
+sidebar: sidebar 
+keywords: start, drive, erase 
+summary: Il comando start drive erase cancella tutti i dati da uno o più dischi. 
+---
+= Avviare la cancellazione del disco
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `start drive erase` il comando cancella tutti i dati da uno o più dischi.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array E2800, E5700, EF600 o EF300. Funziona sugli storage array E2700 e E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Contesto
+
+Eseguire questo comando solo se si desidera rimuovere in modo permanente tutti i dati presenti su un disco. Se il disco è abilitato per la protezione, il `start drive erase` command option esegue una cancellazione crittografica e ripristina gli attributi di sicurezza del disco su secure-capable.
+
+[NOTE]
+====
+L'operazione di cancellazione non può essere annullata. Assicurarsi di selezionare il disco corretto quando si utilizza questo comando.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+start drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_]] | drivespass:quotes[[_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_]] erase
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`drive` oppure `drives`
+ a| 
+Per i vassoi ad alta capacità, specificare il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot per l'unità. Per i vassoi delle unità a bassa capacità, specificare il valore dell'ID del vassoio e il valore dell'ID dello slot per l'unità. I valori dell'ID vassoio sono `0` a. `99`. I valori dell'ID cassetto sono `1` a. `5`.
+
+Tutti i valori massimi di ID slot sono 24. I valori ID slot iniziano con 0 o 1, a seconda del modello di vassoio. I cassetti per dischi compatibili con i controller E2800 e E5700 hanno numeri ID slot a partire da 0. I vassoi per dischi compatibili con i controller E2700 e E5600 hanno numeri ID slot a partire da 1.
+
+Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot tra parentesi quadre ([ ]).
+
+[NOTE]
+====
+L'elenco delle unità non può contenere tutte le unità dell'array di storage, altrimenti il comando verrà rifiutato.
+
+====
+|===
+
+
+== Livello minimo del firmware
+
+11.70.1

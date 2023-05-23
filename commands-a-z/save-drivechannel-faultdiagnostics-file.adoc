@@ -1,0 +1,76 @@
+---
+permalink: commands-a-z/save-drivechannel-faultdiagnostics-file.html 
+sidebar: sidebar 
+keywords: save, drive, channel, fault, isolation, diagnostic, status 
+summary: Il comando SAVE DriveChannel faultDiagnostics file salva i dati diagnostici di isolamento degli errori del canale del disco che vengono restituiti dal comando START DriveChannel faultDiagnostics. 
+---
+= Salvataggio dello stato di diagnostica dell'isolamento degli errori del canale del disco
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `save driveChannel faultDiagnostics file` il comando salva i dati diagnostici di isolamento degli errori del canale del disco restituiti da `start driveChannel faultDiagnostics` comando.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Con la versione del firmware 8.10, il `save driveChannel faultDiagnostics` comando obsoleto.
+
+====
+È possibile salvare i dati diagnostici in un file come testo standard o come XML.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+save driveChannel faultDiagnostics file=pass:quotes["_filename_"]
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`file`
+ a| 
+Il percorso del file e il nome del file in cui si desidera salvare i risultati del test di diagnostica di isolamento degli errori sul canale dell'unità. Racchiudere il nome del file tra virgolette doppie (" "). Ad esempio:
+
+`file="C:\Program Files\CLI\sup\fltdiag.txt"`
+
+Questo comando non aggiunge automaticamente un'estensione al file salvato. Specificare un'estensione del file quando si inserisce il nome del file.
+
+|===
+
+
+== Note
+
+L'estensione del file non viene aggiunta automaticamente al file salvato. Specificare l'estensione del file di formato applicabile per il file. Se si specifica un'estensione del file di `.txt`, l'output sarà in formato di file di testo. Se si specifica un'estensione del file di `.xml` , L'output sarà in un formato di file XML.
+
+
+
+== Livello minimo del firmware
+
+7.15 introduce questa nuova funzionalità per i tray di controller legacy.

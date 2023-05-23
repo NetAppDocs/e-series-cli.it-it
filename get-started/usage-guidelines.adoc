@@ -1,0 +1,26 @@
+---
+permalink: get-started/usage-guidelines.html 
+sidebar: sidebar 
+keywords: script command, guidelines 
+summary: Questo elenco fornisce le linee guida per la scrittura dei comandi di script sulla riga di comando. 
+---
+= Linee guida per i comandi degli script
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Questo elenco fornisce le linee guida per la scrittura dei comandi di script sulla riga di comando:
+
+* È necessario terminare tutti i comandi con un punto e virgola (`;`).
+* È possibile immettere più di un comando su una riga, ma è necessario separare ciascun comando con un punto e virgola (`;`).
+* È necessario separare ogni comando di base con i relativi parametri primari e secondari associati con uno spazio.
+* Il motore di script non distingue tra maiuscole e minuscole. È possibile immettere i comandi utilizzando lettere maiuscole, minuscole o maiuscole.
+* Aggiungere commenti agli script per facilitare la comprensione dello scopo dei comandi degli script da parte di utenti futuri. Per informazioni su come aggiungere commenti, vedere link:adding-comments-to-a-script-file.html["Aggiunta di commenti a un file di script"].)
+
+
+[NOTE]
+====
+Sebbene i comandi CLI e i comandi script non siano sensibili al maiuscolo/minuscolo, le etichette utente (ad esempio per volumi, host o porte host) distinguono tra maiuscole e minuscole. Se si tenta di eseguire il mapping a un oggetto identificato da un'etichetta utente, è necessario immettere l'etichetta utente esattamente come definita, altrimenti i comandi CLI e i comandi di script non avranno esito positivo.
+
+====

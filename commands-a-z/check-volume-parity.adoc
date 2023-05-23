@@ -1,0 +1,110 @@
+---
+permalink: commands-a-z/check-volume-parity.html 
+sidebar: sidebar 
+keywords: check, volume, parity 
+summary: Il comando check volume parity verifica la presenza di errori di parità e di supporti in un volume, quindi scrive i risultati del controllo in un file. 
+---
+= Controllare la parità del volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `check volume parity` command verifica la presenza di errori di parità e di supporti in un volume, quindi scrive i risultati del controllo in un file.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+check volume pass:quotes[[_volumeName_]] parity
+[parityErrorFile=pass:quotes[_filename_]]
+[mediaErrorFile=pass:quotes[_filename_]]
+[priority=(highest | high | medium | low | lowest)]
+[startingLBA=pass:quotes[_LBAvalue_]]
+[endingLBA=pass:quotes[_LBAvalue_]]
+[verbose=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`volume`
+ a| 
+Il nome del volume specifico per il quale si desidera controllare la parità. Racchiudere il nome del volume tra parentesi quadre ([ ]). Se il nome del volume contiene caratteri speciali o è composto solo da numeri, è necessario racchiudere l'identificatore tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`parityErrorFile`
+ a| 
+Il percorso del file e il nome del file in cui si desidera salvare le informazioni sull'errore di parità. Racchiudere il nome del file tra virgolette doppie (" "). Ad esempio:
+
+`file="C:\Program Files\CLI\logs\parerr.txt"`
+
+Questo comando non aggiunge automaticamente un'estensione al file salvato. Specificare un'estensione del file quando si inserisce il nome del file.
+
+
+
+ a| 
+`mediaErrorFile`
+ a| 
+Il percorso del file e il nome del file in cui si desidera salvare le informazioni di errore del supporto. Racchiudere il nome del file tra virgolette doppie (" "). Ad esempio:
+
+`file="C:\Program Files\CLI\logs\mederr.txt"`
+
+Questo comando non aggiunge automaticamente un'estensione al file salvato. Specificare un'estensione del file quando si inserisce il nome del file.
+
+
+
+ a| 
+`priority`
+ a| 
+La priorità del controllo di parità rispetto all'attività di i/o dell'host. I valori validi sono `highest`, `high`, `medium`, `low`, o. `lowest`.Il tasso di priorità più basso offre benefici alle prestazioni del sistema, ma il controllo della parità richiede più tempo. Il tasso di priorità più elevato è utile per il controllo di parità, ma le prestazioni del sistema potrebbero essere compromesse.
+
+
+
+ a| 
+`startingLBA`
+ a| 
+L'indirizzo del blocco logico iniziale.
+
+
+
+ a| 
+`endingLBA`
+ a| 
+L'indirizzo del blocco logico finale.
+
+
+
+ a| 
+`verbose`
+ a| 
+L'impostazione per acquisire i dettagli di avanzamento, ad esempio la percentuale di completamento, e visualizzare le informazioni durante la scansione della parità del volume. Per acquisire i dettagli di avanzamento, impostare questo parametro su `TRUE`. Per impedire l'acquisizione dei dettagli di avanzamento, impostare questo parametro su `FALSE`.
+
+|===
+
+
+== Note
+
+L'indirizzo del blocco logico iniziale e l'indirizzo del blocco logico finale sono utili per LUN o spazi dei nomi di volumi singoli molto grandi. L'esecuzione di un controllo di parità del volume su un LUN o uno spazio dei nomi di un singolo volume molto grande può richiedere molto tempo. Definendo l'indirizzo iniziale e l'indirizzo finale dei blocchi di dati, è possibile ridurre il tempo necessario per il completamento di un controllo di parità del volume.

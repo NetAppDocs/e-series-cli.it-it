@@ -1,0 +1,227 @@
+---
+permalink: commands-a-z/recreate-storagearray-mirrorrepository.html 
+sidebar: sidebar 
+keywords: recreate, synchronous, mirror, repository, volume 
+summary: 'Il comando Recreate StorageArray mirrorRepository crea un nuovo volume di repository Synchronous Mirroring (chiamato anche volume di repository mirror) utilizzando i parametri definiti per un volume di repository mirror precedente.' 
+---
+= Ricreare il volume del repository di mirroring sincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `recreate storageArray mirrorRepository` Il comando crea un nuovo volume di repository di mirroring sincrono (chiamato anche volume di repository mirror) utilizzando i parametri definiti per un volume di repository mirror precedente.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Con la versione del firmware 7.80, il `recreate storageArray mirrorRepository` comando obsoleto. Questo comando non è più supportato nella GUI o nella CLI. Se si tenta di eseguire questo comando, viene visualizzato un messaggio di errore che indica che questa funzionalità non è più supportata e che non verranno apportate modifiche ai repository mirror remoti specificati.
+
+====
+Il requisito sottostante è che in precedenza è stato creato un volume di repository mirror. Quando si utilizza questo comando, è possibile definire il volume del repository mirror in uno dei tre modi seguenti: Dischi definiti dall'utente, gruppo di volumi definito dall'utente o numero di dischi definito dall'utente per il volume del repository mirror. Se si sceglie di definire un numero di dischi, il firmware del controller sceglie quali dischi utilizzare per il volume repository mirror.
+
+
+
+== Sintassi (dischi definiti dall'utente)
+
+[listing, subs="+macros"]
+----
+recreate storageArray mirrorRepository
+repositoryRAIDLevel=(1 | 3 | 5 | 6)
+repositoryDrives=pass:quotes[(_trayID1_,pass:quotes[[_drawerID1,_]]pass:quotes[_slotID1
+... trayIDN_],pass:quotes[[_drawerIDN,_]]pass:quotes[_slotIDN_])
+[trayLossProtect=(TRUE | FALSE)]
+[dataAssurance=(none | enabled)]
+----
+
+
+== Sintassi (gruppo di volumi definito dall'utente)
+
+[listing, subs="+macros"]
+----
+recreate storageArray mirrorRepository
+repositoryVolumeGroup=pass:quotes[_volumeGroupName_
+[freeCapacityArea=pass:quotes[_freeCapacityIndexNumber_]]
+----
+
+
+== Sintassi (numero di dischi definito dall'utente)
+
+[listing, subs="+macros"]
+----
+recreate storageArray mirrorRepository
+repositoryRAIDLevel=(1 | 3 | 5 | 6)
+repositoryDriveCount=pass:quotes[_numberOfDrives_]
+(
+  [driveMediaType=(HDD | SSD | unknown | allMedia)] |
+  [driveType=(SAS | NVMe4K)]
+)
+[repositoryVolumeGroupUserLabel="userLabel"] |
+[trayLossProtect=(TRUE | FALSE)] |
+[drawerLossProtect=(true|false)] |
+[dataAssurance=(none | enabled)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`repositoryRAIDLevel`
+ a| 
+Il livello RAID per il volume repository mirror. I valori validi sono `1`, `3`, `5`, o. `6`.
+
+
+
+ a| 
+`repositoryDrives`
+ a| 
+I dischi che si desidera utilizzare per il volume di repository mirror. I valori dell'ID cassetto sono `1` a. `5`. I valori ID slot sono `1` a. `24`. Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot tra parentesi quadre ([ ]). Immettere i nomi dei volumi di repository utilizzando le seguenti regole:
+
+Per i vassoi ad alta capacità, specificare il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot per l'unità. Per i vassoi delle unità a bassa capacità, specificare il valore dell'ID del vassoio e il valore dell'ID dello slot per l'unità. I valori dell'ID vassoio sono `0` a. `99`. I valori dell'ID cassetto sono `1` a. `5`.
+
+Tutti i valori massimi di ID slot sono 24. I valori ID slot iniziano con 0 o 1, a seconda del modello di vassoio. I cassetti per dischi compatibili con i controller E2800 e E5700 hanno numeri ID slot a partire da 0. I vassoi per dischi compatibili con i controller E2700 e E5600 hanno numeri ID slot a partire da 1.
+
+Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot tra parentesi quadre ([ ]).
+
+* Racchiudere tutti i valori dell'ID vassoio, i valori dell'ID cassetto e il valore dell'ID slot tra parentesi quadre ([ ]).
+* Separare il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot con le virgole.
+* Separare ciascuna posizione del disco con uno spazio.
+
+
+
+
+ a| 
+`repositoryVolumeGroup`
+ a| 
+Il nome del gruppo di volumi in cui si trova il volume del repository mirror.
+
+
+
+ a| 
+`repositoryVolumeGroupUserLabel`
+ a| 
+Il nome che si desidera assegnare al nuovo gruppo di volumi in cui si trova il volume del repository mirror. Racchiudere il nome del gruppo di volumi tra virgolette doppie (" ").
+
+
+
+ a| 
+`freeCapacityArea`
+ a| 
+Il numero di indice dello spazio libero in un gruppo di volumi esistente che si desidera utilizzare per ricreare il volume del repository mirror. La capacità libera è definita come la capacità libera tra i volumi esistenti in un gruppo di volumi. Ad esempio, un gruppo di volumi potrebbe avere le seguenti aree: Volume 1, capacità libera, volume 2, capacità libera, volume 3, capacità libera. Per utilizzare la capacità libera seguente volume 2, specificare:
+
+[listing]
+----
+freeCapacityArea=2
+----
+Eseguire `show volumeGroup` comando per determinare se esiste un'area di capacità libera.
+
+
+
+ a| 
+`repositoryDriveCount`
+ a| 
+Il numero di dischi non assegnati che si desidera utilizzare per il volume di repository mirror.
+
+
+
+ a| 
+`driveMediaType`
+ a| 
+Il tipo di disco per il quale si desidera recuperare le informazioni. I seguenti valori sono tipi validi di supporti su disco:
+
+* `HDD` indica che sono presenti dischi rigidi nel vassoio dell'unità
+* `SSD` indica la presenza di dischi a stato solido nel vassoio dell'unità
+* `unknown` indica che si è certi del tipo di supporto del disco nel vassoio dell'unità
+* `allMedia` indica che nel vassoio dell'unità sono presenti tutti i tipi di supporto
+
+
+
+
+ a| 
+`driveType`
+ a| 
+Il tipo di disco che si desidera utilizzare per il volume di repository mirror. Non è possibile combinare tipi di unità.
+
+È necessario utilizzare questo parametro quando si dispone di più di un tipo di disco nell'array di storage.
+
+I tipi di dischi validi sono:
+
+* `SAS`
+* `NVMe4K`
+
+
+Se non si specifica un tipo di disco, il comando passa automaticamente a qualsiasi tipo.
+
+
+
+ a| 
+`trayLossProtect`
+ a| 
+L'impostazione per applicare la protezione dalle perdite dei vassoi quando si crea il volume del repository mirror. Per applicare la protezione dalle perdite dei vassoi, impostare questo parametro su `TRUE`. Il valore predefinito è `FALSE`.
+
+
+
+ a| 
+`drawerLossProtect`
+ a| 
+L'impostazione per applicare la protezione dalle perdite dei cassetti quando si crea il volume di repository mirror. Per applicare la protezione dalle perdite dei cassetti, impostare questo parametro su `TRUE`. Il valore predefinito è `FALSE`.
+
+|===
+
+
+== Note
+
+Se si immette un valore troppo piccolo per lo spazio di storage del volume del repository mirror, il firmware del controller restituisce un messaggio di errore che indica la quantità di spazio necessaria per il volume del repository mirror. Il comando non tenta di modificare il volume del repository mirror. È possibile immettere di nuovo il comando utilizzando il valore del messaggio di errore relativo al valore dello spazio di storage del volume del repository mirror.
+
+Il `repositoryDrives` il parametro supporta sia i vassoi per dischi ad alta capacità che quelli a bassa capacità. Un vassoio per dischi ad alta capacità dispone di cassetti che trattengono le unità. I cassetti scorrono fuori dal vassoio dell'unità per consentire l'accesso alle unità. Un vassoio per unità a bassa capacità non dispone di cassetti. Per un vassoio dell'unità ad alta capacità, è necessario specificare l'identificativo (ID) del vassoio dell'unità, l'ID del cassetto e l'ID dello slot in cui si trova l'unità. Per un vassoio dell'unità a bassa capacità, è necessario specificare solo l'ID del vassoio dell'unità e l'ID dello slot in cui si trova un'unità. Per un vassoio dell'unità a bassa capacità, un metodo alternativo per identificare una posizione per un'unità consiste nel specificare l'ID del vassoio dell'unità, impostare l'ID del cassetto su `0`E specificare l'ID dello slot in cui si trova un'unità.
+
+Quando si assegnano i dischi, se si imposta `trayLossProtect` parametro a. `TRUE` se sono stati selezionati più dischi da un vassoio, l'array di storage restituisce un errore. Se si imposta `trayLossProtect` parametro a. `FALSE`, lo storage array esegue le operazioni, ma il volume di repository mirror creato potrebbe non disporre della protezione contro la perdita di vassoio.
+
+Quando il firmware del controller assegna i dischi, se si imposta `trayLossProtect` parametro a. `TRUE`, lo storage array restituisce un errore se il firmware del controller non è in grado di fornire dischi che comportano la protezione della perdita dei vassoi del nuovo volume del repository mirror. Se si imposta `trayLossProtect` parametro a. `FALSE`, lo storage array esegue l'operazione anche se significa che il volume del repository mirror potrebbe non disporre della protezione contro la perdita di vassoio.
+
+
+
+== Gestione della data assurance
+
+La funzione Data Assurance (da) aumenta l'integrità dei dati nell'intero sistema storage. DA consente all'array di storage di verificare la presenza di errori che potrebbero verificarsi quando i dati vengono spostati tra gli host e i dischi. Quando questa funzione è attivata, l'array di storage aggiunge i codici di controllo degli errori (noti anche come CRC (Cyclic Redundancy Checks) a ciascun blocco di dati del volume. Dopo lo spostamento di un blocco di dati, l'array di storage utilizza questi codici CRC per determinare se si sono verificati errori durante la trasmissione. I dati potenzialmente corrotti non vengono scritti su disco né restituiti all'host.
+
+Se si desidera utilizzare la funzione da, iniziare con un pool o un gruppo di volumi che include solo dischi che supportano da. Quindi, creare volumi compatibili con da. Infine, mappare questi volumi con funzionalità da all'host utilizzando un'interfaccia i/o in grado di eseguire il da. Le interfacce i/o che supportano il da includono Fibre Channel, SAS e iSER su InfiniBand (iSCSI Extensions per RDMA/IB). DA non è supportato da iSCSI su Ethernet o da SRP su InfiniBand.
+
+[NOTE]
+====
+Quando tutti i dischi sono compatibili con da, è possibile impostare `dataAssurance` parametro a. `enabled` E quindi utilizzare da con determinate operazioni. Ad esempio, è possibile creare un gruppo di volumi che includa dischi compatibili con da e quindi creare un volume all'interno di tale gruppo di volumi abilitato per da. Altre operazioni che utilizzano un volume abilitato da dispongono di opzioni per supportare la funzione da.
+
+====
+Se il `dataAssurance` il parametro è impostato su `enabled`, per i candidati ai volumi verranno considerati solo i dischi con data assurance; in caso contrario, verranno presi in considerazione sia i dischi con data assurance che quelli non con data assurance. Se sono disponibili solo dischi Data Assurance, il nuovo gruppo di volumi verrà creato utilizzando i dischi Data Assurance abilitati.
+
+
+
+== Livello minimo del firmware
+
+6.10
+
+7.10 aggiunge funzionalità RAID livello 6
+
+7.75 aggiunge `dataAssurance` parametro.
+
+8.60 aggiunge `driveMediaType`, `repositoryVolumeGroupUserLabel`, e. `drawerLossProtect` parametri.

@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/start-diskpool-resourceprovisioning.html 
+sidebar: sidebar 
+keywords: start, disk pool, resource, provision 
+summary: 'Il comando start diskPool resourceProvisioning abilita il provisioning delle risorse su un determinato pool di dischi e avvia un"operazione asincrona di abilitazione del provisioning delle risorse su ciascun volume del pool di dischi. Il provisioning delle risorse richiede che tutte le unità del pool di dischi supportino la funzionalità DULBE di NVMe.' 
+---
+= Avviare Disk Pool Resource Provisioning
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `start diskPool resourceProvisioning` il comando abilita il provisioning delle risorse su un determinato pool di dischi e avvia un'operazione asincrona di abilitazione del provisioning delle risorse su ciascun volume del pool di dischi. Il provisioning delle risorse richiede che tutte le unità del pool di dischi supportino la funzionalità DULBE di NVMe.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo array di storage, inclusi gli array EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array EF600 ed EF300, è necessario disporre del ruolo Storage Admin.
+
+
+
+== Contesto
+
+Per disattivare il provisioning delle risorse su un pool di dischi, utilizzare il comando di provisioning completo con l'opzione per disattivare il provisioning delle risorse. Un pool di dischi viene fornito in base alle risorse quando viene creato se tutti i dischi sono compatibili con DULBE e gli array di storage `resourceProvisionedVolumes` l'impostazione è `true`.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+start diskPoolpass:quotes[[_diskPoolName_]] resourceProvisioning
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`diskPoolName`
+ a| 
+Il pool di dischi che si desidera attivare la funzione di provisioning delle risorse. Racchiudere il nome del pool di dischi tra parentesi quadre ([ ]).
+
+|===
+
+
+== Livello minimo del firmware
+
+11.73

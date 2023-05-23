@@ -1,0 +1,77 @@
+---
+permalink: commands-a-z/start-snmptrapdestination.html 
+sidebar: sidebar 
+keywords: test, snmp, trap, destination 
+summary: 'Il comando start snmpTrapDestination verifica la connessione e l"identificazione del ricevitore trap per una specifica community o utente SNMP (Simple Network Management Protocol). Questo comando verifica la destinazione del trap inviando un messaggio trap al ricevitore del trap.' 
+---
+= Verificare la destinazione della trap SNMP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `start snmpTrapDestination` Il comando verifica la connessione e l'identificazione del ricevitore trap per una specifica community o utente SNMP (Simple Network Management Protocol). Questo comando verifica la destinazione del trap inviando un messaggio trap al ricevitore del trap.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+start snmpTrapDestination trapReceiverIP=ipAddress
+    pass:quotes[(communityName="_communityName_" | (userName="_userName_"] [engineId=(local | engineId)]))
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`trapReceiverIP`
+ a| 
+L'indirizzo IP del gestore SNMP a cui si desidera inviare i messaggi trap.
+
+
+
+ a| 
+`communityName`
+ a| 
+Il nome della community SNMP per la quale si desidera inviare messaggi trap.
+
+
+
+ a| 
+`userName`
+ a| 
+Il nome dell'utente SNMP per cui si desidera inviare messaggi trap.
+
+
+
+ a| 
+`engineId`
+ a| 
+L'ID motore dell'utente SNMP per cui si desidera inviare messaggi trap. L'ID motore è obbligatorio se sono presenti più utenti USM con lo stesso nome utente. Il valore può essere "[.code]``local``" Per specificare l'agente SNMP locale si intende l'agente autorevole o una stringa di cifre esadecimali per specificare un ID del motore dell'agente SNMP remoto.
+
+|===
+
+
+== Livello minimo del firmware
+
+8.30

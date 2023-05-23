@@ -1,0 +1,545 @@
+---
+permalink: commands-a-z/set-storagearray.html 
+sidebar: sidebar 
+keywords: set, storage, array 
+summary: Il comando Set StorageArray definisce le proprietà dello storage array. 
+---
+= Impostare l'array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray` command definisce le proprietà dell'array di storage.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Con la versione del firmware 8.10 di `cacheFlushStop` il parametro è obsoleto e verrà rimosso in una release futura del software di gestione dello storage.
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+set storageArray
+([autoLoadBalancingEnable=(TRUE | FALSE)]|
+[autoSupportMaintenanceWindow AutoSupport Maintenance Window parameters]
+[autoSupport schedule AutoSupport Schedule Parameters]|
+[autoSupportConfig (enable | disable)]|
+[autoSupportOnDemand (enable | disable)]|
+[autoSupportRemoteDiag (enable |disable)]|
+[cacheBlockSize=cacheBlockSizeValue]|
+[cacheFlushStart=cacheFlushStartSize]|
+[cacheFlushStop=cacheFlushStopSize]|
+[cacheMirrorDataAssuranceCheckEnable=(TRUE | FALSE)]|
+[controllerHealthImageAllowOverWrite]|
+[defaultHostType=("hostTypeName" |"hostTypeIdentifier")] |
+[directoryServer directory server parameters]|
+[externalKeyManagement external key management parameters]|
+[failoverAlertDelay=delayValue]|
+[hostConnectivityReporting (enable | disable)]|
+[icmpPingResponse=(TRUE | FALSE)]|
+[isnsIPV4ConfigurationMethod isns IPv4 Config Method Parameters]|
+[isnsIPv6Address=ipAddress]|
+[isnsListeningPort=listeningPortIPAddress]]|
+[isnsRegistration=(TRUE | FALSE)]|
+[learnCycleDate learn cycle parameters]|
+[localUsername=local user name parameters]|
+[loginBanner file="path_to_login_banner"]|
+[managementInterface restOnly={true | false}]|
+[mediaScanRate=(disabled | 1-30)]|
+[odxEnabled=(TRUE | FALSE)]|
+[password="password"]|
+[passwordLength=<INTEGER>]|
+[pqValidateOnReconstruct P/Q Validate on Reconstruct parameters]|
+[redundancyMode=(simplex | duplex)]|
+[revocationCheckSettings revocation check settings parameters]|
+[securityKey]|
+[symbol SYMbol user name and password parameters]|
+[syslog syslog parameters]|
+[time]|
+[trayPositions=(controller | trayID ... trayIDn)]|
+[unnamedDiscoverySession=(TRUE | FALSE)]|
+[userLabel="storageArrayName"]|
+[userSession sessionTimeout=n]|
+[vaaiEnabled=(TRUE | FALSE)])
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`autoLoadBalancingEnable`
+ a| 
+Questo parametro attiva il bilanciamento automatico del carico sul controller. Per attivare l'opzione, impostare questo parametro su `TRUE`. Per disattivare l'opzione, impostare questo parametro su `FALSE`.
+
+[NOTE]
+====
+Quando la funzione di bilanciamento automatico del carico è attivata, viene attivata anche la funzione di reporting della connettività host.
+
+====
+
+
+ a| 
+`autoSupport schedule`
+ a| 
+Consente di impostare gli orari e i giorni giornalieri e settimanali della settimana in cui vengono inviati i messaggi AutoSupport.
+
+
+
+ a| 
+`autoSupportConfig`
+ a| 
+L'impostazione per la raccolta automatica dei dati di supporto ogni volta che il firmware rileva un evento MEL critico. Questo parametro ha i seguenti valori:
+
+* `enable` -- attiva la raccolta dei dati di supporto
+* `disable` -- Disattiva la raccolta dei dati di supporto
+
+
+Utilizzare questo parametro solo nelle seguenti condizioni:
+
+* La funzione ASUP (AutoSupport) non è disponibile sullo storage array
+* Per supportare le configurazioni sugli storage array che in precedenza utilizzavano questo parametro
+
+
+[NOTE]
+====
+Non è possibile utilizzare questo parametro con i comandi ASUP.
+
+====
+
+
+ a| 
+`autoSupportMaintenanceWindow`
+ a| 
+Attiva o disattiva la finestra di manutenzione di AutoSupport e configura la funzione.
+
+
+
+ a| 
+`cacheBlockSize`
+ a| 
+La dimensione del blocco della cache utilizzata dal controller per la gestione della cache. I valori validi sono `4` (4 KB), `8` (8 KB), `16` (16 KB), o. `32` (32 KB).
+
+
+
+ a| 
+`cacheMirrorDataAssuranceCheckEnable`
+ a| 
+Questo parametro attiva il controllo di sicurezza dei dati del mirror della cache sul controller. Per attivare l'opzione, impostare questo parametro su `TRUE`. Per disattivare l'opzione, impostare questo parametro su `FALSE`.
+
+
+
+ a| 
+`cacheFlushStart`
+ a| 
+La percentuale di dati non scritti nella cache che causa l'annullamento della cache. USA valori interi da `0` a. `100` per definire la percentuale. Il valore predefinito è `80`.
+
+
+
+ a| 
+`cacheFlushStop`
+ a| 
+[NOTE]
+====
+Questo parametro è obsoleto e verrà rimosso in una release futura.
+
+====
+La percentuale di dati non scritti nella cache che interrompe l'scaricamento della cache. USA valori interi da `0` a. `100` per definire la percentuale. Questo valore deve essere inferiore al valore di `cacheFlushStart` parametro.
+
+
+
+ a| 
+`controllerHealthImageAllowOverWrite`
+ a| 
+Imposta un flag su un controller per consentire a una nuova immagine dello stato di salute del controller di sovrascrivere un'immagine dello stato di salute del controller esistente sugli array di storage che supportano la funzionalità dell'immagine dello stato di salute del controller.
+
+
+
+ a| 
+`defaultHostType`
+ a| 
+Il tipo di host predefinito di qualsiasi porta host non configurata a cui sono connessi i controller. Per generare un elenco di tipi di host validi per l'array di storage, eseguire `show storageArray hostTypeTable` comando. I tipi di host sono identificati da un nome o da un indice numerico. Racchiudere il nome del tipo di host tra virgolette doppie (" "). Non racchiudere l'identificatore numerico del tipo di host tra virgolette doppie.
+
+
+
+ a| 
+`directoryServer`
+ a| 
+Aggiorna la configurazione del server di directory, incluse le mappature dei ruoli.
+
+
+
+ a| 
+`externalKeyManagement`
+ a| 
+Configura l'indirizzo e il numero di porta del server di gestione delle chiavi esterno
+
+
+
+ a| 
+`failoverAlertDelay`
+ a| 
+Il ritardo degli avvisi di failover in pochi minuti. I valori validi per il tempo di ritardo sono `0` a. `60` minuti. Il valore predefinito è `5`.
+
+
+
+ a| 
+`hostConnectivityReporting`
+ a| 
+Questo parametro attiva il reporting della connettività host sul controller. Per attivare l'opzione, impostare questo parametro su `enable`. Per disattivare l'opzione, impostare questo parametro su `disable`.
+
+[NOTE]
+====
+Se si tenta di disattivare la funzione di reporting della connettività host quando è attivato il bilanciamento automatico del carico, viene visualizzato un errore. Disattivare prima la funzione di bilanciamento automatico del carico, quindi la funzione di reporting della connettività host.
+
+====
+[NOTE]
+====
+È possibile mantenere attivato il report di connettività host quando il bilanciamento automatico del carico è disattivato.
+
+====
+
+
+ a| 
+`icmpPingResponse`
+ a| 
+Questo parametro attiva o disattiva i messaggi Echo Request. Impostare il parametro su `TRUE` Per attivare i messaggi Echo Request. Impostare il parametro su `FALSE` Per disattivare i messaggi Echo Request.
+
+
+
+ a| 
+`isnsIPv4ConfigurationMethod`
+ a| 
+Il metodo che si desidera utilizzare per definire la configurazione del server iSNS. È possibile inserire l'indirizzo IP dei server IPv4 iSNS selezionando `static`. Per IPv4, è possibile scegliere di fare in modo che un server DHCP (Dynamic host Configuration Protocol) selezioni l'indirizzo IP del server iSNS immettendo `dhcp`. Per attivare DHCP, è necessario impostare `isnsIPv4Address` parametro a. `0.0.0.0`.
+
+
+
+ a| 
+`isnsIPv6Address`
+ a| 
+L'indirizzo IPv6 che si desidera utilizzare per il server iSNS.
+
+
+
+ a| 
+`isnsListeningPort`
+ a| 
+L'indirizzo IP che si desidera utilizzare per la porta di ascolto del server iSNS. L'intervallo di valori per la porta di ascolto è `49152` a. `65535`. Il valore predefinito è `53205`.
+
+La porta di ascolto risiede sul server ed esegue le seguenti attività:
+
+* Monitora le richieste di connessione del client in entrata
+* Gestisce il traffico verso il server
+
+
+Quando un client richiede una sessione di rete con un server, il listener riceve la richiesta effettiva. Se le informazioni del client corrispondono alle informazioni del listener, il listener concede una connessione al server di database.
+
+
+
+ a| 
+`isnsRegistration`
+ a| 
+Questo parametro elenca lo storage array come destinazione iSCSI sul server iSNS. Per registrare lo storage array sul server iSNS, impostare questo parametro su `TRUE`. Per rimuovere lo storage array dal server iSNS, impostare questo parametro su `FALSE`.
+
+[NOTE]
+====
+Non è possibile utilizzare `isnsRegistration` con qualsiasi altro parametro durante l'esecuzione di `set storageArray` comando.
+
+====
+Per ulteriori informazioni sulla registrazione iSNS, fare riferimento a. `set storageArray isnsRegistration` comando.
+
+
+
+ a| 
+`learnCycleDate`
+ a| 
+Imposta i cicli di apprendimento della batteria del controller.
+
+
+
+ a| 
+`localUsername`
+ a| 
+Consente di impostare un nome utente locale, una password o una password di simbolo per un ruolo specifico.
+
+
+
+ a| 
+`loginBanner`
+ a| 
+Consente di caricare un file di testo da utilizzare come banner di accesso. Il testo del banner può includere un avviso e un messaggio di consenso, che viene presentato agli utenti prima di stabilire sessioni in Gestione sistema SANtricity o prima di eseguire i comandi
+
+
+
+ a| 
+`managementInterface`
+ a| 
+Modifica l'interfaccia di gestione del controller. Modificare il tipo di interfaccia di gestione per imporre la riservatezza tra lo storage array e il relativo software di gestione o per accedere a tool esterni.
+
+
+
+ a| 
+`mediaScanRate`
+ a| 
+Il numero di giorni in cui viene eseguita la scansione del supporto. I valori validi sono `disabled` , che disattiva la scansione del supporto, o. `1` giorno a. `30` giorni, dove `1` il giorno è la velocità di scansione più elevata, e. `30` giorni è la velocità di scansione più lenta. Un valore diverso da `disabled` oppure `1` a. `30` non consente il funzionamento della scansione del supporto.
+
+
+
+ a| 
+`odxEnabled`
+ a| 
+Attiva o disattiva il trasferimento dati offloaded (ODX) per un array di storage.
+
+
+
+ a| 
+`password`
+ a| 
+La password per lo storage array. Racchiudere la password tra virgolette doppie (" ").
+
+[NOTE]
+====
+Con la versione 8.40, questo parametro è obsoleto. Utilizzare `localUsername` o il simbolo `symbol` insieme a `password` oppure `adminPassword` parametri, invece.
+
+====
+
+
+ a| 
+`passwordLength`
+ a| 
+Consente di impostare la lunghezza minima richiesta per tutte le password nuove o aggiornate. Utilizzare un valore compreso tra 0 e 30.
+
+
+
+ a| 
+`pqValidateOnReconstruct`
+ a| 
+Modifica la convalida P/Q sulla funzione di ricostruzione.
+
+
+
+ a| 
+`redundancyMode`
+ a| 
+Utilizzare `simplex` quando si dispone di un singolo controller. Utilizzare `duplex` quando si dispone di due controller.
+
+
+
+ a| 
+`revocationCheckSettings`
+ a| 
+Consente di attivare o disattivare il controllo delle revoche e di configurare un server OCSP (Online Certificate Status Protocol).
+
+
+
+ a| 
+`securityKey`
+ a| 
+Imposta la chiave di sicurezza interna utilizzata nell'array di storage per implementare la funzione Drive Security.
+
+[NOTE]
+====
+Utilizzato per una chiave di sicurezza interna. Quando si utilizza un server di gestione delle chiavi esterno, utilizzare `create storageArray securityKey` comando.
+
+====
+
+
+ a| 
+`symbol`
+ a| 
+Consente di impostare una password di simbolo per un ruolo specifico.
+
+
+
+ a| 
+`syslog`
+ a| 
+Consente di modificare l'indirizzo del server syslog, il protocollo o il numero di porta.
+
+
+
+ a| 
+`time`
+ a| 
+Imposta i clock su entrambi i controller di uno storage array sincronizzando i clock del controller con l'orologio dell'host da cui si esegue questo comando.
+
+
+
+ a| 
+`trayPositions`
+ a| 
+Un elenco di tutti gli ID dei vassoi. La sequenza degli ID dei vassoi nell'elenco definisce le posizioni per il vassoio del controller e i vassoi delle unità in un array di storage. I valori validi sono `0` a. `99`. Inserire i valori dell'ID vassoio separati da uno spazio. Racchiudere l'elenco dei valori ID vassoio tra parentesi. Per gli array di storage in cui il vassoio del controller dispone di un identificatore predefinito che non rientra nell'intervallo di valori validi per la posizione del vassoio, utilizzare `controller` valore.
+
+[NOTE]
+====
+Il `controller` l'opzione non è valida dopo la versione del firmware 6.14.
+
+====
+
+
+ a| 
+`unnamedDiscoverySession`
+ a| 
+Consente allo storage array di partecipare a sessioni di rilevamento senza nome.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Il nome dell'array di storage. Racchiudere il nome dello storage array tra virgolette doppie (" ").
+
+
+
+ a| 
+`userSession`
+ a| 
+Consente di impostare un timeout in System Manager, in modo che le sessioni inattive degli utenti vengano disconnesse dopo un determinato periodo di tempo.
+
+
+
+ a| 
+`vaaiEnabled`
+ a| 
+Attiva o disattiva VMware vStorage API Array Architecture (VAAI) per uno storage array
+
+|===
+
+
+== Note
+
+Ad eccezione di `isnsRegistration`, quando si utilizza questo comando è possibile specificare uno o più parametri opzionali.
+
+
+
+== Dati del supporto automatico
+
+[NOTE]
+====
+Non è possibile utilizzare questo parametro con i comandi ASUP.
+
+====
+Quando questa opzione è attivata, il `set storageArray autoSupportConfig` Il comando provoca la restituzione di tutte le informazioni di configurazione e stato dell'array di storage ogni volta che viene rilevato un evento MEL (Critical Major Event Log). Le informazioni di configurazione e stato vengono restituite sotto forma di grafico a oggetti. Il grafico a oggetti contiene tutti gli oggetti logici e fisici rilevanti e le relative informazioni di stato associate per l'array di storage.
+
+Il `set storageArray autoSupportConfig` command raccoglie le informazioni di configurazione e stato in questo modo:
+
+* La raccolta automatica delle informazioni di configurazione e stato avviene ogni 72 ore. Le informazioni di configurazione e stato vengono salvate nel file di archivio zip dell'array di storage. Il file di archivio ha un indicatore orario che viene utilizzato per gestire i file di archivio.
+* Per ogni array di storage vengono mantenuti due file di archivio zip. I file di archivio zip vengono conservati su un disco. Una volta superato il periodo di 72 ore, il file di archivio meno recente viene sempre sovrascritto durante il nuovo ciclo.
+* Dopo aver attivato la raccolta automatica delle informazioni di configurazione e stato utilizzando questo comando, viene avviata una raccolta iniziale di informazioni. La raccolta di informazioni dopo l'emissione del comando garantisce che un file di archivio sia disponibile e avvia il ciclo di timestamp.
+
+
+È possibile eseguire `set storageArray autoSupportConfig` comando su più array di storage.
+
+
+
+== Dimensione del blocco della cache
+
+Quando si definiscono le dimensioni dei blocchi della cache, utilizzare le dimensioni dei blocchi della cache da 4 KB per gli array di storage che richiedono flussi di i/o generalmente piccoli e casuali. Utilizzare le dimensioni del blocco della cache da 8 KB quando la maggior parte dei flussi di i/o è superiore a 4 KB ma inferiore a 8 KB. Utilizzare le dimensioni dei blocchi della cache da 16 KB o le dimensioni dei blocchi della cache da 32 KB per gli array di storage che richiedono un grande trasferimento di dati, applicazioni sequenziali o a elevata larghezza di banda.
+
+Il `cacheBlockSize` il parametro definisce le dimensioni del blocco cache supportato per tutti i volumi nell'array di storage. Non tutti i tipi di controller supportano tutte le dimensioni dei blocchi della cache. Per le configurazioni ridondanti, questo parametro include tutti i volumi di proprietà di entrambi i controller all'interno dell'array di storage.
+
+
+
+== Inizio del vampare della cache
+
+Quando si definiscono i valori per avviare un'operazione di scaricamento della cache, un valore troppo basso aumenta la probabilità che i dati necessari per una lettura host non siano nella cache. Un valore basso aumenta anche il numero di scritture del disco necessarie per mantenere il livello di cache, aumentando l'overhead del sistema e diminuendo le performance.
+
+
+
+== Tipo di host predefinito
+
+Quando si definiscono i tipi di host, se la partizione dello storage è attivata, il tipo di host predefinito influisce solo sui volumi mappati nel gruppo predefinito. Se la partizione dello storage non è attivata, tutti gli host collegati allo storage array devono eseguire lo stesso sistema operativo ed essere compatibili con il tipo di host predefinito.
+
+
+
+== Velocità di scansione dei supporti
+
+La scansione dei supporti viene eseguita su tutti i volumi dell'array di storage con stato ottimale, senza operazioni di modifica in corso e con `mediaScanRate` parametro attivato. Utilizzare `set volume` per attivare o disattivare `mediaScanRate` parametro.
+
+
+
+== Password
+
+Le password vengono memorizzate in ciascun array di storage. Per una protezione ottimale, la password deve soddisfare i seguenti criteri:
+
+* La password deve contenere da 8 a 30 caratteri.
+* La password deve contenere almeno una lettera maiuscola.
+* La password deve contenere almeno una lettera minuscola.
+* La password deve contenere almeno un numero.
+* La password deve contenere almeno un carattere non alfanumerico, ad esempio @ +.
+
+
+[NOTE]
+====
+Se si utilizzano dischi con crittografia completa nell'array di storage, è necessario utilizzare questi criteri per la password dell'array di storage.
+
+====
+[NOTE]
+====
+È necessario impostare una password per lo storage array prima di poter creare una chiave di sicurezza per le unità crittografate con crittografia completa del disco.
+
+====
+
+
+== Livello minimo del firmware
+
+5.00 aggiunge `defaultHostType` parametro.
+
+5.40 aggiunge `failoverAlertDelay` parametro.
+
+6.10 aggiunge `redundancyMode`, `trayPositions`, e. `time` parametri.
+
+6.14 aggiunge `alarm` parametro.
+
+7.10 aggiunge `icmpPingResponse`, `unnamedDiscoverySession`, `isnsIPv6Address`, e. `isnsIPv4ConfigurationMethod` parametri.
+
+7.15 aggiunge ulteriori dimensioni dei blocchi della cache e il `learnCycleDate` parametro.
+
+7.86 rimuove `alarm` poiché non è più utilizzato e aggiunge `coreDumpAllowOverWrite` parametro.
+
+8.10 depreca `cacheFlushStop` parametro.
+
+8.20 aggiunge `odxEnabled` e. `vaaiEnabled` parametri.
+
+8.20 aggiorna `cacheBlockSize` per aggiungere `cacheBlockSizeValue` Di 4 (4 KB).
+
+8.20 sostituisce `coreDumpAllowOverWrite` con il `controllerHealthImageAllowOverWrite` parametro.
+
+8.30 aggiunge `autoLoadBalancingEnable` parametro.
+
+8.40 aggiunge `localUsername` parametro (utilizzato con una variabile nome utente e con `password` oppure `adminPassword` parametro. Aggiunge anche il `symbol` parametro (utilizzato con una variabile nome utente e con `password` oppure `adminPassword` parametro.
+
+8.40 depreca `password` e. `userRole` parametri standalone.
+
+8.40 aggiunge `managementInterface` parametro.
+
+8.40 aggiunge `externalKeyManagement` parametro.
+
+8.41 aggiunge `cacheMirrorDataAssuranceCheckEnable`, `directoryServer`, `userSession`, `passwordLength`, e. `loginBanner` parametri.
+
+8.42 aggiunge `pqValidateOnReconstruct`, `syslog`, `hostConnectivityReporting`, e. `revocationCheckSettings` parametri.

@@ -1,0 +1,63 @@
+---
+permalink: commands-a-z/show-auditlog-configuration.html 
+sidebar: sidebar 
+keywords: show, audit log, configuration 
+summary: Il comando show AuditLog Configuration mostra le impostazioni di configurazione del registro di controllo per lo storage array. 
+---
+= Mostra la configurazione del registro di controllo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show auditLog configuration` il comando mostra le impostazioni di configurazione del registro di controllo per lo storage array.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Sintassi
+
+[listing]
+----
+
+show auditLog configuration
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Esempi
+
+[listing]
+----
+
+SMcli -n Array1 -c "show auditLog configuration;"
+
+Logging level: All
+Full policy: Overwrite
+Maximum records: 30,000 count
+Warning threshold: 90 percent
+
+SMcli completed successfully.
+----
+
+
+== Livello minimo del firmware
+
+8.40

@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/check-syncmirror.html 
+sidebar: sidebar 
+keywords: check, synchronous, mirroring status 
+summary: Il comando check SyncMirror restituisce lo stato di un volume mirror remoto. Utilizzare questo comando per determinare quando lo stato del volume mirror remoto diventa ottimale. 
+---
+= Controllare lo stato del mirroring sincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `check syncMirror` il comando restituisce lo stato di un volume mirror remoto. Utilizzare questo comando per determinare quando lo stato del volume mirror remoto diventa ottimale.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Nelle versioni precedenti di questo comando, l'identificatore di funzione era `remoteMirror`. Questo identificatore di funzione non è più valido e viene sostituito da `syncMirror`.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+check syncMirror localVolume pass:quotes[[_volumeName_]] optimalStatus timeout=pass:quotes[_timeoutValue_]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`localVolume`
+ a| 
+Il nome di qualsiasi volume mirror remoto. Il volume di mirroring remoto può essere il volume primario o il volume secondario di una coppia di mirroring remoto. Racchiudere il nome del volume tra parentesi quadre ([ ]). Se il nome del volume contiene caratteri speciali, è necessario racchiudere il nome del volume tra virgolette doppie (" ").
+
+
+
+ a| 
+`timeout`
+ a| 
+L'intervallo di tempo entro il quale il software può restituire lo stato del volume mirror remoto. Il valore di timeout è espresso in minuti.
+
+|===
+
+
+== Note
+
+Questo comando attende fino a quando lo stato diventa ottimale o l'intervallo di timeout scade. Utilizzare questo comando quando si esegue l'utilità Asynchronous Synchronous Mirroring.

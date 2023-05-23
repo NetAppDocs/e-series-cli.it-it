@@ -1,0 +1,58 @@
+---
+permalink: commands-a-z/stop-storagearray-configdbdiagnostic.html 
+sidebar: sidebar 
+keywords: stop, storage, array, configuration, database, diagnostic 
+summary: Il comando STOP StorageArray configDbDiagnostic interrompe il test diagnostico per convalidare il database di configurazione nel firmware del controller avviato dal comando start StorageArray configDbDiagnostic. 
+---
+= Arrestare la diagnostica del database di configurazione degli array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `stop storageArray configDbDiagnostic` il comando interrompe il test diagnostico per convalidare il database di configurazione nel firmware del controller avviato da `start storageArray configDbDiagnostic` comando.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing]
+----
+stop storageArray configDbDiagnostic
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Note
+
+Il firmware del controller restituisce una conferma dell'annullamento del test diagnostico.
+
+Inoltre, è possibile avviare il test di diagnostica della configurazione del database attraverso la GUI del software di gestione dello storage; tuttavia, non è possibile interrompere il test di diagnostica della configurazione del database attraverso la GUI del software di gestione dello storage. Se si desidera interrompere un test di diagnostica in esecuzione, è necessario utilizzare `stop storageArray configDbDiagnostic` comando.
+
+Se si tenta di utilizzare `stop storageArray configDbDiagnostic` al termine della convalida della configurazione dello storage array, non viene visualizzato alcun messaggio che indica che la convalida è terminata. Questo comportamento è previsto.
+
+
+
+== Livello minimo del firmware
+
+7.75
+
+7.77 rifinisce l'utilizzo.

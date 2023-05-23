@@ -1,0 +1,62 @@
+---
+permalink: commands-a-z/delete-snmpuser-username.html 
+sidebar: sidebar 
+keywords: delete, user, name, command, simple, network, management, protocol, create, register, effective, unregister, trap, destination, associate, remove 
+summary: 'Il comando delete snmpUser username elimina un utente USM SNMP (Simple Network Management Protocol) già creato e registrato utilizzando il comando "create snmpUser". L"eliminazione di un utente SNMP annulla la registrazione dell"utente. Vengono rimosse anche le destinazioni trap associate a tale utente.' 
+---
+= Annullare la registrazione dell'utente SNMPv3 USM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `delete snmpUser userName` Il comando elimina un utente USM SNMP (Simple Network Management Protocol) già creato e registrato utilizzando il comando "[.code]``create snmpUser``". L'eliminazione di un utente SNMP annulla la registrazione dell'utente. Vengono rimosse anche le destinazioni trap associate a tale utente.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[delete snmpUser userName="_snmpUserName_" [engineId=(local | engineId)]]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`userName`
+ a| 
+Il nome dell'utente SNMP USM che si desidera eliminare. Racchiudere il nome utente SNMP USM tra virgolette doppie (" ")
+
+
+
+ a| 
+`engineId`
+ a| 
+L'ID motore dell'utente SNMP USM che si desidera aggiornare. L'ID motore è obbligatorio se sono presenti più utenti USM con lo stesso nome utente. Il valore può essere "[.code]``_local_``" Per specificare l'agente SNMP locale si intende l'agente autorevole o una stringa di cifre esadecimali per specificare un ID del motore dell'agente SNMP remoto.
+
+|===
+
+
+== Livello minimo del firmware
+
+8.72

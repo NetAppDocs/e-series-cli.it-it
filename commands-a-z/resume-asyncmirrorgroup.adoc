@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/resume-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: resume, asynchronous, mirror, group 
+summary: Il comando resume asyncMirrorGroup ripristina il trasferimento dei dati tra tutte le coppie mirrorate in un gruppo di mirror asincrono. 
+---
+= Riprendere il gruppo di mirror asincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `resume asyncMirrorGroup` il comando riprende il trasferimento dei dati tra tutte le coppie mirrorate in un gruppo di mirror asincrono.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+I dati scritti nei volumi primari mentre il gruppo di mirror asincrono è stato sospeso vengono scritti immediatamente nei volumi secondari. La sincronizzazione periodica riprende se è stato impostato un intervallo di sincronizzazione automatico.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+resume asyncMirrorGroup pass:quotes[[_"asyncMirrorGroupName"_]]
+[deleteRecoveryPointIfNecessary]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Il nome del gruppo di mirror asincrono per il quale si desidera avviare la sincronizzazione. Racchiudere il nome del gruppo mirror asincrono tra virgolette doppie (" ") tra parentesi quadre ([ ]").
+
+
+
+ a| 
+`deleteRecoveryPointIfNecessary`
+ a| 
+Il parametro per eliminare il punto di ripristino se i dati di sincronizzazione ripristinabili hanno superato la soglia di tempo per il ripristino. L'età dei punti di ripristino viene misurata a partire dal momento in cui i dati sono stati congelati sull'array di storage primario.
+
+|===
+
+
+== Livello minimo del firmware
+
+7.84
+
+8.10 aggiunge `deleteRecoveryPointIfNecessary` parametro.

@@ -1,0 +1,17 @@
+---
+permalink: get-started/interactive-mode.html 
+sidebar: sidebar 
+keywords: interactive mode 
+summary: 'Se si accede `SMcli` E un nome di array di storage, senza specificare parametri CLI, comandi di script o un file di script, l"interfaccia della riga di comando viene eseguita in modalità interattiva.' 
+---
+= Modalità interattiva
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Se si accede `SMcli` E un nome di array di storage, senza specificare parametri CLI, comandi di script o un file di script, l'interfaccia della riga di comando viene eseguita in modalità interattiva. La modalità interattiva consente di eseguire singoli comandi senza preimpostare i comandi `SMcli`.
+
+In modalità interattiva, è possibile immettere un singolo comando, visualizzare i risultati e immettere il comando successivo senza digitare il comando complete `SMcli` stringa. La modalità interattiva è utile per determinare gli errori di configurazione e verificare rapidamente le modifiche alla configurazione.
+
+Per terminare una sessione in modalità interattiva, digitare il comando specifico del sistema operativo. Per Linux, questa combinazione di tasti è *Control-D*. Per Windows, questa combinazione di tasti è *Ctrl-Z + INVIO*.

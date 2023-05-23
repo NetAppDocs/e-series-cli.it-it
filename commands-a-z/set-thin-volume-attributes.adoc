@@ -1,0 +1,202 @@
+---
+permalink: commands-a-z/set-thin-volume-attributes.html 
+sidebar: sidebar 
+keywords: set, thin, volume, attributes 
+summary: Il comando set volume definisce le proprietà di un volume sottile. 
+---
+= Impostare gli attributi dei volumi thin
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set volume` command definisce le proprietà di un volume thin.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+È possibile utilizzare i parametri per definire le proprietà di uno o più volumi thin.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set (volume pass:quotes[[_volumeName_]] |
+volumes pass:quotes[[_volumeName1_ ... _volumeNameN_]] | volume <"wwID">)
+[newCapacity=pass:quotes[_capacityValue_]]
+[repositoryMaxCapacity=pass:quotes[_capacityValue_]]
+[repositoryExpansionPolicy=(automatic|manual)]
+[warningThresholdPercent=pass:quotes[_warningThresholdPercentValue_]]
+[addRepositoryCapacity=capacity-spec][hostReportingPolicy=(standard | thin)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`volume`
+ a| 
+Il nome del volume per il quale si desidera definire le proprietà. Racchiudere il nome del volume tra parentesi quadre ([ ]). Se il nome del volume contiene caratteri speciali o numeri, è necessario racchiudere il nome del volume tra virgolette doppie (" ") all'interno di parentesi quadre.
+
+
+
+ a| 
+`volume`
+ a| 
+WWID (World Wide Identifier) del volume per il quale si desidera definire le proprietà. Racchiudere il WWID tra virgolette doppie (" ") all'interno di parentesi angolari ( ).
+
+
+
+ a| 
+`volumes`
+ a| 
+I nomi di diversi volumi per i quali si desidera definire le proprietà. Tutti i volumi avranno le stesse proprietà. Inserire i nomi dei volumi utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Separare ciascuno dei nomi con uno spazio.
+
+
+Se i nomi dei volumi hanno caratteri speciali o sono costituiti solo da numeri, immettere i nomi utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Racchiudere ciascuno dei nomi tra virgolette doppie (" ").
+* Separare ciascuno dei nomi con uno spazio.
+
+
+
+
+ a| 
+`newCapacity`
+ a| 
+Questo parametro aumenta la capacità virtuale del volume thin. La capacità virtuale è il valore che il volume riporta a un host mappato al volume. Valori inferiori o uguali alla capacità esistente causeranno un errore. Le dimensioni sono definite in unità di `bytes`, `KB`, `MB`, `GB`, o. `TB`.
+
+La capacità virtuale minima è di 32 MB.
+
+La capacità virtuale massima è di 63 TB.
+
+
+
+ a| 
+`repositoryMaxCapacity*`
+ a| 
+Questo parametro imposta la capacità massima del volume di repository. Il valore non deve essere inferiore alla capacità fisica del volume di repository. Se il nuovo valore comporta una riduzione della capacità fino a un livello inferiore alla soglia di avviso, il comando genera un errore.
+
+[NOTE]
+====
+Il comando `repositoryMaxCapacity` compatibile con `repositoryExpansionPolicy=automatic`.
+
+====
+
+
+ a| 
+`repositoryExpansionPolic*`
+ a| 
+Questo parametro imposta il criterio di espansione su `automatic` oppure `manual`Quando si modifica il criterio da `automatic` a. `manual`, il valore di capacità massima (quota) cambia in capacità fisica del volume di repository.
+
+
+
+ a| 
+`warningThresholdPercent`
+ a| 
+La percentuale di capacità del volume sottile alla quale viene visualizzato un avviso che indica che il volume sottile è quasi pieno. USA valori interi. Ad esempio, un valore di 70 significa 70%.
+
+I valori validi vanno da 1 a 100.
+
+L'impostazione di questo parametro su 100 disattiva gli avvisi di avviso.
+
+
+
+ a| 
+`addRepositoryCapacity`
+ a| 
+Questo parametro alloca la capacità dall'estensione libera del pool di dischi. Se lo spazio disponibile è insufficiente, il comando non riesce.
+
+[NOTE]
+====
+Il comando `addRepositoryCapacity` compatibile con `repositoryExpansionPolicy=manual`.
+
+====
+
+
+ a| 
+`*hostReportingPolicy*`
+ a| 
+Questo parametro modifica il modo in cui il volume thin viene riportato all'host. I valori validi sono `standard` oppure `thin`.
+
+|===
+
+
+== Note
+
+Quando si utilizza questo comando, è possibile specificare uno o più parametri opzionali.
+
+La tabella seguente elenca i limiti di capacità per un volume sottile.
+
+[cols="2*"]
+|===
+| Tipo di capacità | Dimensione 
+
+
+ a| 
+Capacità virtuale minima
+ a| 
+32 MB
+
+
+
+ a| 
+Capacità virtuale massima
+ a| 
+63 TB
+
+
+
+ a| 
+Capacità fisica minima
+ a| 
+4 GB
+
+
+
+ a| 
+Capacità fisica massima
+ a| 
+64 TB
+
+|===
+I thin volumi supportano tutte le operazioni eseguite dai volumi standard con le seguenti eccezioni:
+
+* Non è possibile modificare le dimensioni dei segmenti di un volume sottile.
+* Non è possibile attivare la verifica della ridondanza di pre-lettura per un volume sottile.
+* Non è possibile utilizzare un volume sottile come volume di destinazione in una copia del volume.
+* Non è possibile utilizzare un volume thin in un'operazione di mirroring sincrono.
+
+
+Se si desidera modificare un volume thin in un volume standard, utilizzare l'operazione di copia del volume per creare una copia del volume thin. La destinazione di una copia del volume è sempre un volume standard.
+
+
+
+== Livello minimo del firmware
+
+7.83

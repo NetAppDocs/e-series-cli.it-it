@@ -1,0 +1,151 @@
+---
+permalink: commands-a-z/show-snapgroup.html 
+sidebar: sidebar 
+keywords: show, snapshot, group 
+summary: Il comando show snapGroup restituisce informazioni su uno o più gruppi di immagini snapshot. 
+---
+= Mostra gruppo di snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show snapGroup` il comando restituisce informazioni su uno o più gruppi di immagini snapshot.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+show (allSnapGroups | snapGroup pass:quotes[[_snapGroupName_]] |
+snapGroups pass:quotes[["_snapGroupName1_" ... "_snapGroupNamen_"]])
+[summary | schedule]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`allSnapGroups`
+ a| 
+Il parametro per restituire informazioni su tutti i gruppi di snapshot nell'array di storage.
+
+
+
+ a| 
+`snapGroup`
+ a| 
+Il nome del gruppo di snapshot per cui si desidera recuperare le informazioni. Racchiudere il nome del gruppo di snapshot tra parentesi quadre ([ ]). Se il nome del gruppo di snapshot ha caratteri speciali o numeri, è necessario racchiudere il nome del gruppo di snapshot tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`snapGroups`
+ a| 
+I nomi di diversi gruppi di snapshot per i quali si desidera recuperare le informazioni. Immettere i nomi dei gruppi di snapshot utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Separare ciascuno dei nomi con uno spazio.
+
+
+Se i nomi dei gruppi di snapshot hanno caratteri speciali o sono costituiti solo da numeri, immettere i nomi utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Racchiudere ciascuno dei nomi tra virgolette doppie (" ").
+* Separare ciascuno dei nomi con uno spazio.
+
+
+
+
+ a| 
+`summary`
+ a| 
+Il parametro per restituire un elenco conciso di informazioni sui gruppi di snapshot.
+
+
+
+ a| 
+`schedule`
+ a| 
+Il parametro per restituire un breve elenco di informazioni sulle pianificazioni per le operazioni di copia del gruppo di snapshot.
+
+|===
+
+
+== Note
+
+È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per i nomi. I nomi possono avere un massimo di 30 caratteri.
+
+Questo comando restituisce le informazioni del gruppo di snapshot come mostrato in questo esempio:
+
+[listing]
+----
+SNAPSHOT GROUP DETAILS
+
+SNAPSHOT GROUPS-----------------------------
+
+SUMMARY
+----
+[listing]
+----
+  Total Snapshot Groups: 1
+  Total Snapshot Images: 0
+  Enabled Snapshot Image Schedules: 0
+  Status: 1 Optimal, 0 Non Optimal
+
+  Name      Type       Status    Associated Base Volume
+  2_SG_01   Standard   Optimal   2
+  Total Repository Capacity  Available Repository Capacity  Snapshot Image Limit
+  10.318 GB                  10.318 GB (100%)               0
+
+  Snapshot Images   Scheduled
+  0                 No
+DETAILS
+
+  Snapshot Group "2_SG_01"
+
+   Status:  Optimal
+   Type:    Standard
+   Associated base volume: 2
+   Cluster size: 65,536 bytes
+
+   Repository
+
+    Total repository volumes: 3
+    Aggregate repository status: Optimal
+    Total repository capacity:   10.318 GB
+    Used capacity:           0.000 MB (0%)
+    Available repository capacity: 10.318 GB (100%)
+    Repository full policy:    Auto-purge Snapshot Images
+    Utilization alert threshold: 75%
+
+   Snapshot images
+
+    Total Snapshot images: 0
+    Auto-delete Snapshot images: Disabled
+    Snapshot image schedule:   Not Applicable
+----
+
+
+== Livello minimo del firmware
+
+7.83

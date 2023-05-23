@@ -1,0 +1,96 @@
+---
+permalink: commands-a-z/resume-syncmirror.html 
+sidebar: sidebar 
+keywords: resume, synchronous, mirroring 
+summary: 'Il comando resume SyncMirror riprende un"operazione di mirroring sincrono sospesa.' 
+---
+= Riprendere il mirroring sincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `resume syncMirror` il comando riprende un'operazione di mirroring sincrono sospesa.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Nelle versioni precedenti di questo comando, l'identificatore di funzione era `remoteMirror`. Questo identificatore di funzione non è più valido e viene sostituito da `syncMirror`.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+resume syncMirror (primary pass:quotes[[_volumeName_]] |
+primaries pass:quotes[[_volumeName1 ... volumeNameN_]])
+[writeConsistency=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`primary`
+ a| 
+Il nome del volume primario per il quale si desidera riprendere un'operazione di mirroring sincrono. Racchiudere il nome del volume primario tra parentesi quadre ([ ]). Se il nome del volume principale contiene caratteri speciali o numeri, è necessario racchiudere il nome del volume principale tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`primaries`
+ a| 
+I nomi di diversi volumi primari per i quali si desidera riprendere un'operazione di mirroring sincrono. Immettere i nomi dei volumi primari utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Separare ciascuno dei nomi con uno spazio.
+
+
+Se i nomi dei volumi primari hanno caratteri speciali o sono costituiti solo da numeri, immettere i nomi utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Racchiudere ciascuno dei nomi tra virgolette doppie (" ").
+* Separare ciascuno dei nomi con uno spazio.
+
+
+
+
+ a| 
+`writeConsistency`
+ a| 
+L'impostazione per identificare i volumi di questo comando che si trovano in un gruppo di coerenza di scrittura o che sono separati. Impostare questo parametro su per i volumi nello stesso gruppo di coerenza di scrittura `TRUE`. Per separare i volumi, impostare questo parametro su `FALSE`.
+
+|===
+
+
+== Note
+
+Se si imposta `writeConsistency` parametro a. `TRUE`, i volumi devono trovarsi in uno o più gruppi di coerenza di scrittura. Questo comando ripristina tutti i gruppi di coerenza di scrittura che contengono i volumi. Ad esempio, se i volumi A, B e C si trovano in un gruppo di coerenza di scrittura e dispongono di controparti remote A`', B`' e C`', il `resume syncMirror volume ["A"] writeConsistency=TRUE` Il comando riprende A-A`', B-B`' e C-C`'.
+
+
+
+== Livello minimo del firmware
+
+6.10

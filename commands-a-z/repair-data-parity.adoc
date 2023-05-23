@@ -1,0 +1,117 @@
+---
+permalink: commands-a-z/repair-data-parity.html 
+sidebar: sidebar 
+keywords: repair, data, parity 
+summary: Il comando Repair Data Parity corregge gli errori di parità dei dati. 
+---
+= Riparare la parità dei dati
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `Repair Data Parity` il comando corregge gli errori di parità dei dati.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Prima di utilizzare questo comando, consultare il supporto NetApp per informazioni su firmware, dischi e stripe RAID interessati.
+
+
+
+== Sintassi
+
+[listing]
+----
+repair volume[volumeName] parity
+   [startingLBA=LBAvalue]
+   [endingLBA=LBAvalue]
+   [repairMethods=(repairMethod . . . repairMethod)]
+           Space delimited list where possible repair methods are: reconstruct, unmap, updateP, updateQ, updateData, and writeZeros
+   [repairPI=(TRUE|FALSE)]
+   [suspectDrives=(trayID1,[drawerID1,]slotID1 . . . trayIDn,[drawerIDn,]slotIDn)]
+   [timeout=(0-65535)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`volume`
+ a| 
+Il nome del volume per il quale si sta riparando la parità. Racchiudere il nome del volume tra parentesi quadre ([ ])
+
+
+
+ a| 
+`startingLBA`
+ a| 
+L'indirizzo del blocco logico iniziale.
+
+
+
+ a| 
+`endingLBA`
+ a| 
+L'indirizzo del blocco logico finale.
+
+
+
+ a| 
+`repairMethods`
+ a| 
+Metodo utilizzato per correggere l'errore di parità. I metodi disponibili includono:
+
+* Reconstruct (Ricostruisci): Ricostruisce i dischi specificati in `suspectDrives` parametro.
+* Unmap (Annulla mappatura): Per i volumi dulbe R5/R6, utilizzati per rendere una stripe RAID R5/R6 non mappata
+* UpdateP: Utilizzato per correggere il tipo di mancata corrispondenza di parità dei dati.
+* UpdateQ: Utilizzato per correggere il tipo di mancata corrispondenza di parità dei dati.
+* UpdateData: Utilizzato per correggere il tipo di mancata corrispondenza di parità dei dati.
+* WriteZeros: Per volumi dulbe R5/R6, utilizzato quando viene trovata una stripe RAID5/6 imprevista contenente una combinazione di dati mappati e non mappati. Prende i blocchi non mappati nello stripe e scrive degli zeri su di esso, quindi aggiorna la parità
+
+
+
+
+ a| 
+`repairPI`
+ a| 
+Impostare su TRUE per riparare il PI nella misura che inizia da startingLBA.
+
+
+
+ a| 
+`suspectDrives`
+ a| 
+Utilizzato per specificare i dischi per la ricostruzione.
+
+
+
+ a| 
+`timeout`
+ a| 
+Il periodo di tempo, in minuti, in cui si desidera eseguire l'operazione.
+
+|===
+
+
+== Livello minimo del firmware
+
+8.63

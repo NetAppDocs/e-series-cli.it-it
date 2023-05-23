@@ -1,0 +1,89 @@
+---
+permalink: commands-a-z/establish-asyncmirror-volume.html 
+sidebar: sidebar 
+keywords: establish, asynmirror, volume, asynchronous, mirrored, remote, storage, array, secondary, existing 
+summary: 'Il comando del volume stabilisci asyncMirror completa una coppia di mirroring asincrono sull"array di storage remoto aggiungendo un volume secondario a un gruppo di mirror asincrono esistente.' 
+---
+= Stabilire una coppia asincrona con mirroring
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `establish asyncMirror volume` il comando completa una coppia di mirroring asincrono sull'array di storage remoto aggiungendo un volume secondario a un gruppo di mirror asincrono esistente.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Prima di eseguire questo comando, il gruppo di mirror asincrono deve esistere e il volume primario deve esistere nel gruppo di mirror asincrono. Una volta completato correttamente questo comando, viene avviato il mirroring asincrono tra il volume primario e il volume secondario.
+
+I due volumi che comprendono una coppia di mirroring asincrono funzionano come una singola entità. La creazione di una coppia asincrona con mirroring consente di eseguire azioni sull'intera coppia con mirroring rispetto ai due singoli volumi.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[establish asyncMirror volume="_secondaryVolumeName_"]
+pass:quotes[asyncMirrorGroup="_asyncMirrorGroupName_"]
+pass:quotes[primaryVolume="_primaryVolumeName_"]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`volume`
+ a| 
+Il nome di un volume esistente nell'array di storage remoto che si desidera utilizzare per il volume secondario. Racchiudere il nome del volume tra virgolette doppie (" ").
+
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Il nome di un gruppo di mirror asincrono esistente che si desidera utilizzare per contenere la coppia di mirroring asincrono. Racchiudere il nome del gruppo mirror asincrono tra virgolette doppie (" ").
+
+
+
+ a| 
+`primaryVolume`
+ a| 
+Il nome di un volume esistente nell'array di storage locale che si desidera utilizzare per il volume primario. Racchiudere il nome del volume tra virgolette doppie (" ").
+
+|===
+
+
+== Note
+
+Una coppia di mirroring asincrono è composta da due volumi, un volume primario e un volume secondario, che contengono copie identiche degli stessi dati. La coppia mirrorata fa parte di un gruppo di mirror asincrono, che consente alla coppia mirrorata di sincronizzarsi contemporaneamente a qualsiasi altra coppia mirrorata all'interno del gruppo di mirror asincrono.
+
+È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, trattini e caratteri di sottolineatura per i nomi. I nomi possono avere un massimo di 30 caratteri.
+
+Quando si scelgono il volume primario e il volume secondario, il volume secondario deve avere dimensioni uguali o superiori a quelle del volume primario. Il livello RAID del volume secondario non deve essere lo stesso del volume primario.
+
+
+
+== Livello minimo del firmware
+
+7.84

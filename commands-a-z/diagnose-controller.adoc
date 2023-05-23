@@ -1,0 +1,121 @@
+---
+permalink: commands-a-z/diagnose-controller.html 
+sidebar: sidebar 
+keywords: diagnose, controller, command, run, diagnostic, tests, arrays, roles, context 
+summary: Il comando DIAGNOSTIC controller esegue test diagnostici sul controller. 
+---
+= Eseguire la diagnosi del controller
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `diagnose controller` command esegue test diagnostici sul controller.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+I test diagnostici consistono in test di loopback in cui i dati vengono scritti sui dischi e letti dai dischi.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+diagnose controller [(a| b)]
+loopbackDriveChannel=(allchannels | (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8))
+testID=(1 | 2 | 3 | discreteLines)
+pass:quotes[[patternFile="_filename_"]]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`controller`
+ a| 
+Il controller su cui si desidera eseguire i test diagnostici. Gli identificatori del controller validi sono `a` oppure `b`, dove `a` È il controller nello slot A, e. `b` Il controller si trova nello slot B. Racchiudere l'identificatore del controller tra parentesi quadre ([ ]). Se non si specifica un controller, il software di gestione dello storage restituisce un errore di sintassi.
+
+
+
+ a| 
+`loopbackDriveChannel`
+ a| 
+I canali del disco su cui si desidera eseguire i test di diagnostica. È possibile scegliere di eseguire la diagnostica su tutti i canali o selezionare un canale specifico su cui eseguire la diagnostica. Se si seleziona un canale specifico, i valori validi sono `1`, `2`, `3`, `4`, `5`, `6`, `7`, o. `8`.
+
+
+
+ a| 
+`testID`
+ a| 
+L'identificativo del test di diagnostica che si desidera eseguire. L'identificatore e i test corrispondenti sono i seguenti:
+
+* `1` -- Test di lettura
+* `2` -- Test di scrittura
+* `3` -- Test loop-back dei dati
+* `discreteLines` -- Test diagnostico delle linee discrete
+
+
+
+
+ a| 
+`patternFile`
+ a| 
+Il percorso del file e il nome del file che contiene un modello di dati che si desidera utilizzare come dati di test. Racchiudere il nome del file del modello di dati tra virgolette doppie (" "). Ad esempio:
+
+`file="C:\Program Files\CLI\sup\patfile.txt"`
+
+|===
+
+
+== Note
+
+Quando si esegue un test di loop-back dei dati, è possibile specificare un file che contiene un modello di dati. Se non si specifica un file, il firmware del controller fornisce un modello predefinito.
+
+Le linee discrete sono linee di controllo e di stato collegate tra due controller in un vassoio del controller Il test diagnostico delle linee discrete consente a ciascun controller di controllare che le transizioni del segnale di controllo possano essere osservate agli ingressi di controllo del controller alternativo. Il test diagnostico delle linee dedicate viene eseguito automaticamente dopo ogni ciclo di alimentazione o ogni ripristino del controller. È possibile eseguire il test di diagnostica delle linee discrete dopo aver sostituito un componente che non ha superato il test di diagnostica iniziale delle linee discrete. Il test diagnostico delle linee discrete restituisce uno dei seguenti messaggi:
+
+* Quando il test di diagnostica delle linee discrete viene eseguito correttamente, viene visualizzato il seguente messaggio:
++
+[listing]
+----
+The controller discrete lines successfully passed the diagnostic
+test. No failures were detected.
+----
+* Se il test diagnostico delle linee discrete non riesce, viene visualizzato il seguente messaggio:
++
+[listing]
+----
+One or more controller discrete lines failed the diagnostic test.
+----
+* Se l'interfaccia CLI non è in grado di eseguire il test diagnostico delle linee discrete, l'interfaccia CLI restituisce l'errore 270, il che significa che il test diagnostico delle linee discrete non può essere avviato né completato.
+
+
+
+
+== Livello minimo del firmware
+
+6.10 aggiunge il test di lettura, il test di scrittura e il test di loopback dei dati.
+
+6.14 aggiunge il test di diagnostica delle linee discrete.
+
+7.30 aggiunge l'identificatore aggiornato del canale del disco.

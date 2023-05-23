@@ -1,0 +1,59 @@
+---
+permalink: get-started/naming-conventions.html 
+sidebar: sidebar 
+keywords: name, conventions 
+summary: I nomi possono avere un massimo di 30 caratteri. 
+---
+= Convenzioni di naming
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+* I nomi possono avere un massimo di 30 caratteri.
+* È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, trattini e caratteri di sottolineatura per i nomi dei seguenti componenti:
++
+** Storage array
+** Gruppi di host
+** Host
+** Gruppi di volumi
+** Pool di dischi dinamici
+** Volumi
+** Porte host HBA
+
+
+* È necessario utilizzare nomi univoci. Se non si utilizzano nomi univoci, il firmware del controller restituisce un errore.
+* Se il nome contiene più parole, trattini o caratteri di sottolineatura, racchiuderlo tra virgolette doppie ("` `"). In alcuni utilizzi, devi anche racchiuderlo tra parentesi quadre ([ ]). La descrizione di ciascun parametro indica se è necessario racchiudere un parametro tra virgolette doppie, parentesi quadre o entrambe.
+* La stringa di caratteri del nome non può contenere una nuova riga.
+* Nei sistemi operativi Windows, oltre ad altri delimitatori, è necessario racchiudere il nome tra due barre rovesciate. Ad esempio, il seguente nome viene utilizzato in un comando eseguito su un sistema operativo Windows:
++
+[listing]
+----
+[\“Engineering\”]
+----
+* Per un sistema operativo UNIX e, se utilizzato in un file di script, il nome viene visualizzato come nell'esempio seguente:
++
+[listing]
+----
+[“Engineering”]
+----
+* Quando si inserisce un WWID (World Wide Identifier) di una porta host HBA, alcuni utilizzi richiedono di racchiudere il WWID con virgolette doppie. Negli altri utilizzi, è necessario circondare il WWID con parentesi angolari (<>). La descrizione del parametro WWID indica se è necessario racchiudere il WWID tra virgolette doppie o parentesi angolari.
+
+
+
+
+== Immissione di nomi numerici
+
+Quando il software di gestione dello storage configura automaticamente un array di storage, il software di gestione dello storage assegna nomi composti da caratteri numerici. I nomi composti solo da caratteri numerici sono nomi validi. I nomi di caratteri numerici, tuttavia, devono essere trattati in modo diverso dai nomi che iniziano con caratteri alfabetici.
+
+* Nomi che sono solo numeri, ad esempio 1 o 2
+* Nomi che iniziano con un numero, ad esempio 1Disk o 32Volume
+* `[\“1\”]`
+* `[\“1Disk\”]`
+
+
+[NOTE]
+====
+In caso di dubbi sulla validità di un nome, utilizzare le virgolette doppie e le parentesi quadre. L'utilizzo di entrambe le opzioni garantisce che il nome funzioni e non causi problemi di elaborazione.
+
+====

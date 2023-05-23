@@ -1,0 +1,79 @@
+---
+permalink: commands-a-z/diagnose-syncmirror.html 
+sidebar: sidebar 
+keywords: diagnose, syncmirror, command, test, connection, specified, primary, volumes, mirror, storage, array, synchronous, feature, enabled 
+summary: Il comando Diagnose SyncMirror verifica la connessione tra i volumi primari specificati e i volumi mirror su un array di storage con la funzione di mirroring sincrono attivata. 
+---
+= Diagnosticare il mirroring sincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `diagnose syncMirror` il comando verifica la connessione tra i volumi primari specificati e i volumi mirror su un array di storage con la funzione di mirroring sincrono attivata.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Nelle versioni precedenti di questo comando, l'identificatore di funzione era `remoteMirror`. Questo identificatore di funzione non è più valido e viene sostituito da `syncMirror`.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[diagnose syncMirror (_primary [primaryVolumeName_]] |pass:quotes[primaries ["_primaryVolumeName1_]" ... pass:quotes[_"primaryVolumeNameN"_]])
+testID=connectivity
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`primary`
+ a| 
+Il nome del volume primario della coppia di mirror remoti che si desidera sottoporre a test. Racchiudere il nome del volume primario tra parentesi quadre ([ ]). Se il nome del volume principale contiene caratteri speciali o è composto solo da numeri, è necessario racchiudere il nome del volume principale tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`primaries`
+ a| 
+È possibile immettere più nomi di volume. Racchiudere tutti i nomi dei volumi in una serie di parentesi quadre ([ ]). Racchiudere il nome di ciascun volume tra virgolette doppie (" "). Separare il nome di ciascun volume con uno spazio.
+
+I nomi di diversi volumi che si desidera utilizzare come volumi primari. Immettere i nomi dei volumi primari utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Racchiudere ciascuno dei nomi tra virgolette doppie (" ").
+* Separare ciascuno dei nomi con uno spazio.
+
+
+|===
+
+
+== Livello minimo del firmware
+
+6.10

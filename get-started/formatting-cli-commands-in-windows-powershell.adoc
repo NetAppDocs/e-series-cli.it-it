@@ -1,0 +1,35 @@
+---
+permalink: get-started/formatting-cli-commands-in-windows-powershell.html 
+sidebar: sidebar 
+keywords: format, rules, cli, commands, windows, powershell 
+summary: 'Windows PowerShell è una shell interattiva e di scripting che fornisce l"accesso agli strumenti della riga di comando.' 
+---
+= Regole di formattazione per i comandi CLI in Windows PowerShell
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Windows PowerShell è una shell interattiva e di scripting che fornisce l'accesso agli strumenti della riga di comando. Windows PowerShell migliora il prompt dei comandi di Windows con una serie più solida di comandi e funzionalità di scripting. È possibile eseguire tutti i comandi CLI e script in Windows PowerShell; tuttavia, Windows PowerShell ha alcuni requisiti di formattazione univoci. I requisiti sono i seguenti:
+
+* Iniziare tutti i comandi SMcli con un punto e una barra (./)
+* Il wrapper SMcli deve essere identificato come un comando eseguibile con estensione .exe (SMcli.exe)
+* Racchiudere il comando script tra virgolette singole (' ')
+* Le virgolette doppie che fanno parte di un nome, di un percorso di file o di un valore devono avere una barra rovesciata prima di ogni virgoletta doppia (")
+
+
+Di seguito viene riportato un esempio di comando CLI per creare un nome di array di storage in Windows PowerShell. Si noti l'utilizzo delle virgolette singole come delimitatori per il comando script e le virgolette doppie della barra rovesciata intorno al nome dell'array di storage, identificato come `userLabel` nella sintassi del comando.
+
+[listing]
+----
+PS C:\...\StorageManager\client> ./SMcli.exe 123.45.67.88 123.45.67.89
+-c ’set storageArray userLabel=\"Engineering\";’
+----
+Di seguito viene riportato un esempio di comando CLI per abilitare una funzionalità premium in Windows PowerShell. Notare l'utilizzo delle virgolette doppie della barra rovesciata prima del percorso del file alla chiave di funzionalità premium.
+
+[listing]
+----
+PS C:\...\StorageManager\client> ./SMcli.exe 123.45.67.88 123.45.67.89
+-c ’enable storageArray feature file=\"C:\licenseKey.bin\";’
+----
+Negli esempi precedenti vengono utilizzate sia lettere maiuscole che lettere minuscole. Questo serve a chiarire come sono formattati i comandi. Windows PowerShell, tuttavia, non distingue tra maiuscole e minuscole e non richiede casi specifici di utilizzo.

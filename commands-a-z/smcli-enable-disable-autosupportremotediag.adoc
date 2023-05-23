@@ -1,0 +1,78 @@
+---
+permalink: commands-a-z/smcli-enable-disable-autosupportremotediag.html 
+sidebar: sidebar 
+keywords: enable, disable, autosupport, remote, diagnostics, feature, emw, management, domain, level, smcli 
+summary: Il comando SMcli enable|disable autoportRemoteDiag attiva o disattiva la funzione di diagnostica remota AutoSupport. Questa funzione consente al supporto tecnico di richiedere i dati di supporto per diagnosticare i problemi in remoto. 
+---
+= Attivare o disattivare la funzione di diagnostica remota AutoSupport a livello di dominio di gestione EMW (solo SMcli)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `SMcli enable|disable autoSupportRemoteDiag` Command consente di attivare o disattivare la funzione di diagnostica remota AutoSupport. Questa funzione consente al supporto tecnico di richiedere i dati di supporto per diagnosticare i problemi in remoto.
+
+
+
+== Array supportati
+
+Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E2800 o E5700.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Questo comando è un comando SMcli, non un comando script. Eseguire questo comando da una riga di comando. Non è possibile eseguire questo comando dall'editor di script nel software di gestione dello storage.
+
+====
+[NOTE]
+====
+Questo comando influisce su tutti gli storage array compatibili con ASUP nel dominio di gestione.
+
+====
+Prima di attivare questa funzione, attivare la funzione AutoSupport e quindi la funzione AutoSupport su richiesta nel dominio di gestione.
+
+È necessario attivare le tre funzioni in questo ordine.
+
+. *Attiva AutoSupport*
+. *Attiva AutoSupport OnDemand*
+. *Attiva diagnostica remota AutoSupport*
+
+
+
+
+== Sintassi
+
+[listing]
+----
+SMcli enable|disable autoSupportRemoteDiag
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Verifica
+
+Utilizzare `SMcli -autoSupportConfig show` per verificare se la funzione è stata attivata. Le prime tre righe dell'output visualizzato mostrano lo stato di abilitazione della funzione AutoSupport, seguito dalla funzione AutoSupport on Demand, seguito dallo stato della funzione di diagnostica remota AutoSupport:
+
+[listing]
+----
+The AutoSupport feature is activated on this storage management
+station.
+The AutoSupport OnDemand feature is activated on this storage management
+station.
+The AutoSupport Remote Diagnostics feature is activated on this storage
+management station.
+----
+
+
+== Livello minimo del firmware
+
+8.25

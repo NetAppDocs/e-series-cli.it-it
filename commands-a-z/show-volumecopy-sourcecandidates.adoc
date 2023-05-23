@@ -1,0 +1,56 @@
+---
+permalink: commands-a-z/show-volumecopy-sourcecandidates.html 
+sidebar: sidebar 
+keywords: show, volume, copy, source, candidates 
+summary: 'Il comando show VolumeCopy sourceCandidate restituisce informazioni sui volumi candidati che è possibile utilizzare come origine per un"operazione di copia del volume. Questo comando è valido per le coppie di copie di volumi snapshot.' 
+---
+= Mostra i candidati di origine della copia del volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show volumeCopy sourceCandidates` il comando restituisce informazioni sui volumi candidati che è possibile utilizzare come origine per un'operazione di copia del volume. Questo comando è valido per le coppie di copie di volumi snapshot.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Storage Monitor.
+
+
+
+== Sintassi
+
+[listing]
+----
+show volumeCopy sourceCandidates
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Note
+
+Questo comando restituisce le informazioni di origine della copia del volume come illustrato in questo esempio.
+
+[listing]
+----
+Volume Name: finance
+   Capacity: 4.0 GB
+   Volume Group: 1
+Volume Name: engineering
+   Capacity: 4.0 GB
+   Volume Group: 2
+----

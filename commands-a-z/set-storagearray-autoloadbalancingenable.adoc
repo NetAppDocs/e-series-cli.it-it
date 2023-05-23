@@ -1,0 +1,107 @@
+---
+permalink: commands-a-z/set-storagearray-autoloadbalancingenable.html 
+sidebar: sidebar 
+keywords: set, storage, array, enable, disable, automatic, load, balance 
+summary: Il comando Set StorageArray autoLoadBalancingEnable attiva o disattiva la funzione di bilanciamento automatico del carico. 
+---
+= Impostare lo storage array per abilitare o disabilitare il bilanciamento automatico del carico
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray autoLoadBalancingEnable` Il comando attiva o disattiva la funzione di bilanciamento automatico del carico.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing]
+----
+set storageArray autoLoadBalancingEnable=(TRUE | FALSE)
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`storageArray`
+ a| 
+Indica che questo parametro funziona su un array di storage.
+
+
+
+ a| 
+`autoLoadBalancingEnable`
+ a| 
+Questo parametro attiva o disattiva il bilanciamento automatico del carico sul controller. Impostare il parametro su `TRUE` Per attivare il bilanciamento automatico del carico. Impostare il parametro su `FALSE` Per disattivare il bilanciamento automatico del carico.
+
+|===
+
+
+== Che cos'è il bilanciamento automatico del carico?
+
+La funzione di bilanciamento automatico del carico offre una migliore gestione delle risorse i/o, reagendo in modo dinamico alle variazioni di carico nel tempo e regolando automaticamente la proprietà dei controller di volume per correggere eventuali problemi di squilibrio del carico quando i carichi di lavoro si spostano tra i controller.
+
+Il carico di lavoro di ciascun controller viene costantemente monitorato e, grazie alla collaborazione dei driver multipath installati sugli host, può essere automaticamente bilanciato quando necessario. Quando il carico di lavoro viene riregolato automaticamente tra i controller, l'amministratore dello storage viene alleggerito dall'onere di regolare manualmente la proprietà del controller di volume per adattarsi alle modifiche di carico sull'array di storage.
+
+Quando il bilanciamento automatico del carico è attivato, esegue le seguenti funzioni:
+
+* Monitora e bilancia automaticamente l'utilizzo delle risorse dei controller.
+* Regola automaticamente la proprietà del controller del volume quando necessario, ottimizzando in tal modo la larghezza di banda i/o tra gli host e lo storage array.
+
+
+
+
+== Attivazione e disattivazione del bilanciamento automatico del carico
+
+Il bilanciamento automatico del carico è attivato per impostazione predefinita su tutti gli array di storage forniti con SANtricity OS (controller software) 8.30 o versioni successive. I driver multipath Linux, Windows e VMware possono utilizzare la funzione di bilanciamento automatico del carico. Se si aggiorna il controller da SANtricity OS (software del controller) 8.25 o versioni precedenti a 8.30 o versioni successive, il bilanciamento automatico del carico viene disattivato per impostazione predefinita sull'array di storage.
+
+È possibile disattivare il bilanciamento automatico del carico sull'array di storage per i seguenti motivi:
+
+* Non si desidera modificare automaticamente la proprietà del controller di un determinato volume per bilanciare il carico di lavoro.
+* Si opera in un ambiente altamente ottimizzato in cui la distribuzione del carico è appositamente configurata per ottenere una distribuzione specifica tra i controller.
+
+
+In Gestione storage SANtricity, selezionare l'opzione di menu *array storage* > *Configurazione* > *bilanciamento automatico del carico* per attivare o disattivare la funzione di bilanciamento automatico del carico per un singolo array storage.
+
+In Gestore di sistema di SANtricity, selezionare *Impostazioni* > *sistema*, scorrere verso il basso fino alla sezione *Impostazioni aggiuntive*, fare clic sul collegamento e**nable/Disable Automatic Load Balancing** (bilanciamento automatico del carico) e selezionare la casella di controllo**Enable/Disable automatic load balancing** (attiva/Disattiva bilanciamento automatico del carico) per attivare o disattivare la funzionalità per un singolo array di storage.
+
+
+
+== Esempi
+
+[listing]
+----
+SMcli -n Array1 -c "set storageArray autoLoadBalancingEnable=true;"
+
+SMcli completed successfully.
+----
+[NOTE]
+====
+Una condizione attiva di "Drive Lost Primary Path" (percorso principale disco perso) comporterà l'incapacità del bilanciamento automatico del carico di bilanciare i carichi di lavoro. Questa condizione deve essere inattiva per garantire il bilanciamento dei carichi di lavoro tramite la funzione di bilanciamento automatico del carico.
+
+====
+
+
+== Livello minimo del firmware
+
+8.30

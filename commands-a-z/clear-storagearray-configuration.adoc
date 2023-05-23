@@ -1,0 +1,143 @@
+---
+permalink: commands-a-z/clear-storagearray-configuration.html 
+sidebar: sidebar 
+keywords: clear, storage array, configuration 
+summary: 'Il comando Clear StorageArray Configuration (Cancella configurazione StorageArray) cancella un"intera configurazione dello storage array o parte di una configurazione dello storage array oppure cancella solo la configurazione del volume e del gruppo di volumi.' 
+---
+= Configurazione chiara degli array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `clear storageArray configuration` il comando cancella l'intera configurazione di un array di storage o parte di una configurazione di array di storage oppure cancella solo la configurazione di gruppi di volumi e volumi.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Utilizzare questo comando per eseguire una delle seguenti operazioni:
+
+* Cancellare l'intera configurazione dello storage array e riportarla allo stato di installazione iniziale.
+* Cancellare la configurazione ad eccezione delle informazioni di sicurezza e di identificazione.
+* Cancellare solo le informazioni di configurazione dei gruppi di volumi e le informazioni di configurazione dei volumi.
+
+
+[NOTE]
+====
+*Possibili danni alla configurazione dello storage array* -- non appena si esegue questo comando, la configurazione dello storage array esistente viene eliminata.
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+clear storageArray configuration (all | volumeGroups)
+----
+[listing]
+----
+clear storageArray configuration factoryReset
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+*Nessuno*
+ a| 
+Se non si inserisce un parametro, questo comando rimuove tutte le informazioni di configurazione per lo storage array, ad eccezione delle informazioni relative alla sicurezza e all'identificazione.
+
+
+
+ a| 
+`all`
+ a| 
+L'impostazione per rimuovere l'intera configurazione dello storage array, incluse le informazioni di sicurezza e di identificazione. La rimozione di tutte le informazioni di configurazione riporta lo storage array al suo stato iniziale.
+
+
+
+ a| 
+`volumeGroups`
+ a| 
+L'impostazione per rimuovere la configurazione del volume e la configurazione del gruppo di volumi. Il resto della configurazione rimane intatto.
+
+
+
+ a| 
+`factoryReset`
+ a| 
+Questa impostazione rimuove l'intera configurazione dello storage array (la stessa funzione di `all` parametro), ma ripristina anche la configurazione di rete e le informazioni sulle password memorizzate nel controller.
+
+
+
+ a| 
+`supportReset`
+ a| 
+[NOTE]
+====
+Questo comando è solo per l'utilizzo da parte del supporto tecnico.
+
+====
+Questa impostazione si comporta come l' `factoryReset` ma cancella anche tutte le chiavi bundle.
+
+|===
+
+
+== Note
+
+Questo comando consente di cancellare la configurazione dello storage array in diversi modi. Quando si deseleziona l'array di storage per i gruppi di volumi, viene avviata automaticamente la modalità di ripristino. In modalità di recovery, i backup integrati (cache) (se presenti sulla piattaforma) vengono conservati. Quando lo storage array è in modalità di recovery, è possibile, facoltativamente, ripristinare la configurazione dello storage array da un file di backup basato su host o da uno dei backup integrati (cache).
+
+Questo comando ripristina anche l'identificatore dell'array di storage. Tutte le funzioni premium abilitate con un file di chiavi sono invalidate e devono essere create e applicate nuove chiavi di funzionalità premium. Contattare il supporto tecnico.
+
+Quando si esegue questo comando, lo storage array non risponde e tutta l'elaborazione dello script viene annullata. È necessario rimuovere e aggiungere nuovamente lo storage array per riprendere la comunicazione con l'host. Per rimuovere un array di storage che non risponde, utilizzare questo comando SMcli wrapper:
+
+[listing, subs="+macros"]
+----
+SMcli -X -n pass:quotes[_storageArrayName_]
+----
+Il `X` È un terminale SMcli univoco e deve essere maiuscolo.
+
+Per aggiungere nuovamente lo storage array, utilizzare il comando SMcli wrapper:
+
+[listing, subs="+macros"]
+----
+SMcli -A -n pass:quotes[_storageArrayName_]
+----
+Il `A` È un terminale SMcli univoco e deve essere maiuscolo.
+
+
+
+== Livello minimo del firmware
+
+7.10 aggiunge questi parametri:
+
+* `all`
+* `volumeGroups`
+
+
+7.83 aggiunge la funzionalità della modalità di ripristino.
+
+11.41 aggiunge questi parametri:
+
+* `factoryReset`
+* `supportReset`
+

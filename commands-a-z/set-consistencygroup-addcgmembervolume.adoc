@@ -1,0 +1,160 @@
+---
+permalink: commands-a-z/set-consistencygroup-addcgmembervolume.html 
+sidebar: sidebar 
+keywords: add, member, consistency, group 
+summary: Il comando set consistencyGroup addCGMemberVolume aggiunge un nuovo volume di base come membro a un gruppo di coerenza esistente. 
+---
+= Aggiungi membro al gruppo di coerenza
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set consistencyGroup addCGMemberVolume` il comando aggiunge un nuovo volume di base come membro a un gruppo di coerenza esistente.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+È possibile specificare un volume di repository esistente per il nuovo membro del gruppo di coerenza o creare un nuovo volume di repository. Quando si crea un nuovo volume di repository, si identifica un gruppo di volumi esistente o un pool di dischi esistente in cui si desidera il volume di repository.
+
+
+
+== Sintassi da utilizzare con un volume di repository esistente
+
+[listing, subs="+macros"]
+----
+
+set consistencyGroup ["consistencyGroupName"]
+addCGMemberVolume=pass:quotes["_baseVolumeName_"]
+repositoryVolume=pass:quotes["_volumeGroupName_"]
+----
+
+
+== Sintassi da utilizzare quando si crea un nuovo volume di repository in un gruppo di volumi
+
+[listing, subs="+macros"]
+----
+
+set consistencyGroup pass:quotes[["_consistencyGroupName_"]]
+addCGMemberVolume=pass:quotes["_baseVolumeName_"]
+repositoryVolume=pass:quotes[("_volumeGroupName_"] capacity=pass:quotes[_capacityValue_](KB|MB|GB|TB|bytes))
+----
+
+
+== Sintassi da utilizzare quando si crea un nuovo volume di repository in un pool di dischi
+
+[listing, subs="+macros"]
+----
+
+set consistencyGroup pass:quotes[["_consistencyGroupName_"]]
+addCGMemberVolume=pass:quotes["_baseVolumeName_"]
+repositoryVolume=pass:quotes[("_diskPoolName_"] capacity=pass:quotes[_capacityValue_](KB|MB|GB|TB|bytes))
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`consistencyGroup`
+ a| 
+Il nome del gruppo di coerenza a cui si desidera aggiungere un nuovo volume membro. Il nuovo volume membro è il volume di base per le operazioni di snapshot. Racchiudere il nome del gruppo di coerenza tra virgolette doppie (" ") tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`addCGMemberVolume`
+ a| 
+Il nome di un volume di base che si desidera aggiungere. Racchiudere il nome del volume tra virgolette doppie (" ").
+
+Se il volume specificato è un volume di repository esistente o un volume di snapshot esistente, il comando non riesce.
+
+
+
+ a| 
+`repositoryVolume`
+ a| 
+Questo parametro esegue due funzioni:
+
+* In un gruppo di coerenza esistente che dispone di un volume di repository, questo parametro identifica il volume di repository.
+* Quando si crea un nuovo volume di repository, questo parametro identifica un gruppo di volumi o un pool di dischi in cui creare il nuovo volume di repository.
+
+
+Racchiudere il nome del volume tra virgolette doppie (" ").
+
+
+
+ a| 
+`capacity`
+ a| 
+Le dimensioni di un nuovo volume di repository in un gruppo di volumi o in un pool di dischi. Le dimensioni sono definite in unità di byte, KB, MB, GB o TB.
+
+|===
+
+
+== Note
+
+È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per i nomi. I nomi possono avere un massimo di 30 caratteri.
+
+Un gruppo di coerenza è un insieme di volumi di base che sono i volumi di origine per gli snapshot. I volumi di base vengono raccolti in un gruppo di coerenza in modo da poter eseguire le stesse operazioni di snapshot su ciascuno dei volumi di base. Nel contesto di questo comando, il termine _member_ indica un volume di base per le operazioni di snapshot. È possibile manipolare le immagini Snapshot associate ai membri di un gruppo di coerenza attraverso operazioni di tipo batch, mantenendo la coerenza tra le immagini Snapshot.
+
+Ogni volume membro deve avere un volume repository corrispondente. È possibile definire la relazione tra il volume membro e il volume repository utilizzando `repositoryVolume` parametro. Il `repositoryVolume` il parametro può eseguire una delle seguenti azioni:
+
+* Identificare un volume di repository esistente connesso al gruppo di coerenza.
+* Identificare un gruppo di volumi o un pool di dischi in cui si desidera creare un nuovo volume di repository.
+
+
+L'aggiunta di un membro a un gruppo di coerenza con un repository esistente ha due scopi:
+
+* È possibile creare un volume di repository completamente nuovo eseguendo il comando senza `repositoryVolume` parametro. Quando si esegue il comando senza `repositoryVolume` il comando crea un nuovo volume di repository nel gruppo di volumi o nel pool di dischi in cui sono memorizzati tutti gli altri volumi di repository. Un esempio di utilizzo di questo comando è:
++
+[listing]
+----
+
+set consistencyGroup ["First_Images"] addCGMemberVolume="Data_020212"
+----
+* È possibile riutilizzare un volume di repository esistente se tale volume di repository è vuoto e non è correlato a un altro volume membro. Questa operazione può essere utile se si desidera mantenere una particolare sequenza o relazione per i volumi del repository. Per riutilizzare un volume di repository vuoto esistente, è necessario conoscere il nome del volume di repository. Per determinare il nome del volume di repository, utilizzare `show allVolumes summary` comando. Tutti i nomi dei volumi di repository hanno il modulo `repos_XXXX` dove `XXXX` è un identificatore univoco generato dal software di gestione dello storage. Un esempio di utilizzo di questo comando è:
++
+[listing]
+----
+
+set consistencyGroup ["First_Images"] addCGMemberVolume="Data_020212"
+repositoryVolume="repos_0011"
+----
+
+
+È possibile posizionare il volume del repository in un gruppo di volumi o in un pool di dischi di propria scelta. Non è necessario che il volume di repository si trovi nella stessa posizione degli altri volumi di repository. Per posizionare il volume del repository in un gruppo di volumi o in un pool di dischi a scelta, utilizzare `repositoryVolume` e identificare il gruppo di volumi o il pool di dischi e le dimensioni del volume di repository. Un esempio di utilizzo di questo comando è:
+
+[listing]
+----
+
+set consistencyGroup ["First_Images"] addCGMemberVolume="Data_020212"
+repositoryVolume=("12" capacity=2 GB)
+----
+In questo esempio, "[.code]``12``" è il nome di un gruppo di volumi esistente o di un pool di dischi esistente. Il parametro Capacity definisce le dimensioni desiderate per il gruppo di volumi del repository.
+
+Quando si crea un nuovo volume di repository in un gruppo di volumi o in un pool di dischi, è necessario includere tra parentesi il nome e la capacità del gruppo di volumi o il nome e la capacità del pool di dischi.
+
+
+
+== Livello minimo del firmware
+
+7.83

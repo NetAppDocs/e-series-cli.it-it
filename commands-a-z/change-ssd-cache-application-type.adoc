@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/change-ssd-cache-application-type.html 
+sidebar: sidebar 
+keywords: ssd cache application type 
+summary: Il comando set ssdCache modifica il tipo di applicazione associato alla cache SSD. Il tipo di applicazione può essere server Web, database o multimedia. La modifica del tipo di applicazione modifica la dimensione del blocco, la dimensione del sottoblocco, il popolamento alla soglia di lettura e il popolamento alla soglia di scrittura per i volumi sottostanti la cache SSD. 
+---
+= Modificare il tipo di applicazione della cache SSD
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set ssdCache` Il comando modifica il tipo di applicazione associato alla cache SSD. Il tipo di applicazione può essere server Web, database o multimedia. La modifica del tipo di applicazione modifica la dimensione del blocco, la dimensione del sottoblocco, il popolamento alla soglia di lettura e il popolamento alla soglia di scrittura per i volumi sottostanti la cache SSD.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800 o E5700, è necessario disporre del ruolo Support Admin.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set ssdCache pass:quotes[[_ssdCacheName_]]usageHint=(webServer|dataBase|fileSystem)
+----
+
+
+== Parametro
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`ssdCache`
+ a| 
+Il nome della cache SSD per cui si desidera modificare il tipo di applicazione. Racchiudere il nome della cache SSD tra parentesi quadre ([ ]). Se il nome della cache SSD contiene caratteri speciali o è composto solo da numeri, è necessario racchiudere il nome della cache SSD tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`usageHint`
+ a| 
+I valori si basano sul tipico schema di utilizzo i/o dell'applicazione che utilizza la cache SSD. I valori validi sono `webServer`, `dataBase`, o. `fileSystem`.
+
+|===
+
+
+== Livello minimo del firmware
+
+7.84

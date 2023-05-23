@@ -1,0 +1,46 @@
+---
+permalink: commands-a-z/show-storagearray-usersession.html 
+sidebar: sidebar 
+keywords: display, storage, array, user, session 
+summary: Il comando show StorageArray userSession consente di visualizzare il periodo di timeout della sessione per System Manager. 
+---
+= Visualizzare la sessione utente dello storage array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show storageArray userSession` Il comando consente di visualizzare il periodo di timeout della sessione per System Manager.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin (Amministratore dello storage), Support Admin (Amministratore del supporto) o Storage Monitor (Monitor dello storage).
+
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Sintassi
+
+[listing]
+----
+show storageArray userSession
+----
+
+
+== Livello minimo del firmware
+
+8.41

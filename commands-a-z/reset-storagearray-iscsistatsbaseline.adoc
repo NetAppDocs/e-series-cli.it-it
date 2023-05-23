@@ -1,0 +1,59 @@
+---
+permalink: commands-a-z/reset-storagearray-iscsistatsbaseline.html 
+sidebar: sidebar 
+keywords: reset, storage array, iscsi, baseline 
+summary: Il comando reset StorageArray iscsiStatsBaseline reimposta la linea di base iSCSI su 0 per lo storage array. 
+---
+= Ripristinare la linea di base iSCSI dell'array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `reset storageArray iscsiStatsBaseline` Il comando ripristina la linea di base iSCSI su 0 per lo storage array.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+[NOTE]
+====
+Questo comando è obsoleto e viene sostituito da xref:reset-storagearray-hostportstatisticsbaseline.adoc[Ripristinare la baseline delle statistiche della porta host dell'array di storage] comando.
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+reset storageArray iscsiStatsBaseline
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Note
+
+Questo comando ripristina la linea di base su 0 per entrambi i controller nell'array di storage. Lo scopo del ripristino di entrambe le linee di base dei controller è quello di garantire che i conteggi dei controller siano sincronizzati tra i controller. Se un controller viene reimpostato ma il secondo controller non viene reimpostato, l'host viene informato che i controller non sono sincronizzati. L'host viene informato dai timestamp riportati con le statistiche.
+
+
+
+== Livello minimo del firmware
+
+7.10
+
+8.41 questo comando è obsoleto.

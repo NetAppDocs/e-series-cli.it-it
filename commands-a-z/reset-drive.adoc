@@ -1,0 +1,88 @@
+---
+permalink: commands-a-z/reset-drive.html 
+sidebar: sidebar 
+keywords: reset, drive 
+summary: Il comando di ripristino del disco consente di spegnere e riaccendere un disco di un gruppo di volumi o di un pool di dischi per agevolare il ripristino di un disco che presenta un comportamento incoerente o non ottimale. 
+---
+= Ripristinare il disco
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `reset drive` il comando consente di spegnere e riaccendere un disco di un gruppo di volumi o di un pool di dischi per agevolare il ripristino di un disco che presenta un comportamento incoerente o non ottimale.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Spegnendo e riaccendendo un disco, è possibile eliminare alcuni errori che causano un comportamento incoerente o non ottimale. In questo modo si evita di sostituire un disco quando si verifica solo un errore transitorio e non fatale e il disco può rimanere operativo. Il ripristino di un disco in questo modo riduce le interruzioni ed evita la sostituzione di un disco.
+
+Se non è possibile risolvere il problema spegnendo e riaccendendo l'unità, i dati vengono copiati dall'unità e l'unità viene spenta per la sostituzione.
+
+[NOTE]
+====
+Questo comando non può essere utilizzato per i dischi SSD prodotti da pliant. Utilizzare `show storageArray profile` o il `show drive` per visualizzare il produttore delle unità.
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+reset drive([trayID,[drawerID,]slotID] | <"wwID">)
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`drive`
+ a| 
+Per i vassoi ad alta capacità, specificare il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot per l'unità. Per i vassoi delle unità a bassa capacità, specificare il valore dell'ID del vassoio e il valore dell'ID dello slot per l'unità. I valori dell'ID vassoio sono `0` a. `99`. I valori dell'ID cassetto sono `1` a. `5`.
+
+Tutti i valori massimi di ID slot sono 24. I valori ID slot iniziano con 0 o 1, a seconda del modello di vassoio. I cassetti per dischi compatibili con i controller E2800 e E5700 hanno numeri ID slot a partire da 0. I vassoi per dischi compatibili con i controller E2700 e E5600 hanno numeri ID slot a partire da 1.
+
+Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`drive`
+ a| 
+Il WWID (World Wide Identifier) dell'unità che si desidera sostituire. Racchiudere il WWID tra virgolette doppie (" ") all'interno di parentesi angolari (< >).
+
+|===
+
+
+== Note
+
+Il `drive` il parametro supporta sia i vassoi per dischi ad alta capacità che quelli a bassa capacità. Un vassoio per dischi ad alta capacità dispone di cassetti che trattengono le unità. I cassetti scorrono fuori dal vassoio dell'unità per consentire l'accesso alle unità. Un vassoio per unità a bassa capacità non dispone di cassetti. Per un vassoio dell'unità ad alta capacità, è necessario specificare l'identificativo (ID) del vassoio dell'unità, l'ID del cassetto e l'ID dello slot in cui si trova l'unità. Per un vassoio dell'unità a bassa capacità, è necessario specificare solo l'ID del vassoio dell'unità e l'ID dello slot in cui si trova un'unità. Per un vassoio dell'unità a bassa capacità, un metodo alternativo per identificare una posizione per un'unità consiste nel specificare l'ID del vassoio dell'unità, impostare l'ID del cassetto su `0` E specificare l'ID dello slot in cui si trova un'unità.
+
+Dopo aver riacceso e riacceso l'unità, il controller deve verificare che funzioni correttamente prima di riutilizzarla. Se l'unità non può essere verificata, viene contrassegnata come un disco guasto. Il ciclo di alimentazione di un disco guasto richiede dischi hot spare globali e copia completa su un disco sostitutivo dopo che è stato messo in servizio.
+
+I dischi guasti non possono essere ripristinati con un ciclo di alimentazione più di una volta in un periodo di 24 ore e, in alcuni casi, non possono essere ripristinati più di una volta. Le soglie e i contatori per i cicli di alimentazione dei dischi vengono mantenuti nello storage persistente e sono inclusi nei dati di cattura dello stato. Gli eventi informativi vengono registrati quando un disco viene spento e riacceso.
+
+
+
+== Livello minimo del firmware
+
+8.20

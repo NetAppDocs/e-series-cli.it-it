@@ -1,0 +1,46 @@
+---
+permalink: commands-a-z/stop-drive-locate.html 
+sidebar: sidebar 
+keywords: stop, drive, locate 
+summary: 'Il comando STOP Drive Locate spegne la spia dell"unità accesa dal comando START Drive Locate.' 
+---
+= Arrestare il disco individuare
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `stop drive locate` il comando spegne la spia dell'unità accesa da `start drive locate` comando.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing]
+----
+stop drive locate
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Livello minimo del firmware
+
+6.10

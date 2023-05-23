@@ -1,0 +1,107 @@
+---
+permalink: commands-a-z/create-hostport.html 
+sidebar: sidebar 
+keywords: create, host, port 
+summary: 'Il comando create hostPort crea una nuova identificazione della porta host su un HBA (host bus adapter) o su un HCA (host Channel adapter).' 
+---
+= Creare la porta host
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `create hostPort` Il comando crea una nuova identificazione della porta host su un HBA (host Bus Adapter) o su un HCA (host Channel Adapter).
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+L'identificazione della porta host è un valore software che rappresenta la porta host HBA o HCA fisica al controller. Senza l'identificazione corretta della porta host, il controller non può ricevere istruzioni o dati dalla porta host.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+create hostPort identifier=pass:quotes[_("wwID"_ | "_gid"_)
+userLabel="_portLabel"_]
+[host=pass:quotes[_"hostName"_]]
+[interfaceType=(FC | SAS | IB)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`identifier`
+ a| 
+WWID (World Wide Identifier) a 8 byte o GID (Group Identifier) a 16 byte della porta host HBA o HCA. Racchiudere il WWID o il GID tra virgolette doppie (" ").
+
+
+
+ a| 
+`userLabel`
+ a| 
+Il nome che si desidera assegnare alla nuova porta host HBA o HCA. Racchiudere l'etichetta della porta host tra virgolette doppie (" ").
+
+
+
+ a| 
+`host`
+ a| 
+Il nome dell'host per cui si sta definendo una porta host HBA o HCA. Racchiudere il nome host tra virgolette doppie (" ").
+
+
+
+ a| 
+`interfaceType`
+ a| 
+L'identificativo del tipo di interfaccia per la porta host.
+
+Le opzioni per i tipi di interfacce delle porte host sono:
+
+* `FC` -- Fibre Channel
+* `SAS` -- SCSI con collegamento seriale
+* `IB` -- InfiniBand
+
+
+Una selezione FC o SAS richiede un WWID da 8 byte. Una selezione IB richiede un GID (Group Identifier) a 16 byte.
+
+Se non si specifica il tipo di interfaccia, `FC` viene utilizzata come interfaccia predefinita per la porta host.
+
+|===
+
+
+== Note
+
+Una porta host HBA o una porta host HCA è una connessione fisica su un host bus adapter o su un host channel adapter che risiede in un computer host. Una porta host HBA o una porta host HCA fornisce l'accesso host ai volumi in un array di storage. Se l'HBA o l'HCA dispone di una sola connessione fisica (una porta host), i termini porta host e adattatore bus host o adattatore canale host sono sinonimi.
+
+È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, trattini e caratteri di sottolineatura per i nomi. I nomi possono avere un massimo di 30 caratteri.
+
+
+
+== Livello minimo del firmware
+
+5.20
+
+7.10 depreca `hostType` parametro. Il `hostType` il parametro è stato aggiunto a. `create host` comando.
+
+7.32 aggiunge `interfaceType` parametro.

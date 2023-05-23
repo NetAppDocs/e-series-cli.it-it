@@ -1,0 +1,104 @@
+---
+permalink: commands-a-z/set-storagearray-pqvalidateonreconstruct.html 
+sidebar: sidebar 
+keywords: set, storage, array, pq validation, reconstruct 
+summary: 'Il comando Set StorageArray pqValidateOnReconstruct imposta lo stato di convalida P/Q dell"array di storage durante la ricostruzione. Quando questa funzionalità è attivata, i dati vengono ricostruiti utilizzando sia data+P che data+Q e i risultati vengono controllati per verificarne la coerenza prima di determinare come procedere.' 
+---
+= Impostare la convalida della qualità di stampa dell'array di storage alla ricostruzione
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray pqValidateOnReconstruct` Il comando imposta lo stato di convalida P/Q dell'array di storage durante la ricostruzione. Quando questa funzionalità è attivata, i dati vengono ricostruiti utilizzando sia data+P che data+Q e i risultati vengono controllati per verificarne la coerenza prima di determinare come procedere.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Questa funzione si applica ai pool di dischi e ai gruppi di volumi RAID 6, che hanno parità doppia. In questo caso, il gruppo di volumi o il pool di dischi continuano a essere ridondanti in caso di guasto di un disco, pertanto è possibile controllare la coerenza dei dati e della parità durante la ricostruzione. Se durante la ricostruzione viene rilevata un'incoerenza e Data Assurance è abilitato per il volume, potrebbe essere possibile identificare l'origine dell'incoerenza in modo che i dati possano essere ricostruiti utilizzando i dischi rimanenti. Se questa funzione è attivata e Data Assurance non è abilitata per il volume, o se l'incoerenza non può essere isolata su un singolo disco, il blocco da ricostruire viene contrassegnato come illeggibile.
+
+La convalida può aumentare i tempi di ricostruzione per i dischi SSD, pertanto questa funzione può essere attivata o disattivata in base al tipo di supporto. Se attivata per un determinato tipo di supporto, la funzione viene applicata a tutti i pool e ai gruppi di volumi RAID 6 che utilizzano tale tipo di supporto.
+
+
+
+== Sintassi
+
+[listing]
+----
+set storageArray pqValidateOnReconstruct (enable | disable) driveMediaType=(hdd | ssd | allMedia)
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`pqValidateOnReconstruct`
+ a| 
+Modifica la convalida P/Q sulla funzione di ricostruzione.
+
+
+
+ a| 
+`enable` oppure `disable`
+ a| 
+Attiva o disattiva la convalida P/Q durante la ricostruzione.
+
+
+
+ a| 
+`driveMediaType`
+ a| 
+Il tipo di supporto del disco su cui impostare la funzione P/Q validate on reconstruction. Sono supportati i seguenti tipi di dischi:
+
+* `hdd` indica che si desidera impostare lo stato di convalida sui dischi rigidi
+* `ssd` indica che si desidera impostare lo stato di convalida sui dischi a stato solido
+* `allMedia` indica che si desidera impostare lo stato di convalida su tutti i supporti nell'array di storage.
+
+
+|===
+
+
+== Esempio con il tipo di disco specificato come disco rigido
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray pqValidateOnReconstruct enable driveMediaType=hdd;"
+
+SMcli completed successfully.
+----
+
+
+== Esempio con il tipo di supporto del disco specificato come unità a stato solido
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray pqValidateOnReconstruct disable driveMediaType=ssd;"
+
+SMcli completed successfully.
+----
+
+
+== Livello minimo del firmware
+
+8.42

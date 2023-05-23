@@ -1,0 +1,89 @@
+---
+permalink: commands-a-z/show-drivechannel-stats.html 
+sidebar: sidebar 
+keywords: show, drive channel, statistics 
+summary: 'Il comando show DriveChannel Stats (Mostra statistiche DriveChannel) mostra il trasferimento cumulativo dei dati per il canale del disco e le informazioni sugli errori.' 
+---
+= Mostra le statistiche del canale del disco
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show driveChannel stats` il comando mostra il trasferimento cumulativo dei dati per il canale del disco e le informazioni sugli errori.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Se il controller ha degradato automaticamente un canale del disco, questo comando mostra anche le statistiche degli intervalli. Quando si utilizza questo comando, è possibile visualizzare informazioni su uno specifico canale del disco, su diversi canali del disco o su tutti i canali del disco.
+
+
+
+== Sintassi
+
+[listing]
+----
+show (driveChannel [(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)] |
+   driveChannels [1 2 3 4 5 6 7 8] |
+   allDriveChannels) stats
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`driveChannel`
+ a| 
+Il numero identificativo del canale del disco per il quale si desidera visualizzare le informazioni. I valori validi del canale del disco sono `1`, `2`, `3`, `4`, `5`, `6`, `7`, o. `8`. Racchiudere il canale dell'unità tra parentesi quadre ([ ]).
+
+Utilizzare questo parametro quando si desidera visualizzare le statistiche per un solo canale del disco.
+
+
+
+ a| 
+`driveChannels`
+ a| 
+I numeri di identificazione di diversi canali di unità per i quali si desidera visualizzare le informazioni. I valori validi del canale del disco sono `1`, `2`, `3`, `4`, `5`, `6`, `7`, o. `8`. Racchiudere i canali dell'unità tra parentesi quadre ([ ]) con il valore del canale dell'unità separato da uno spazio.
+
+Utilizzare questo parametro quando si desidera visualizzare le statistiche per più di un canale del disco.
+
+
+
+ a| 
+`allDriveChannels`
+ a| 
+L'identificatore che seleziona tutti i canali del disco.
+
+|===
+
+
+== Note
+
+Nessuno.
+
+
+
+== Livello minimo del firmware
+
+6.10
+
+7.15 aggiunge un aggiornamento all'identificatore del canale del disco.

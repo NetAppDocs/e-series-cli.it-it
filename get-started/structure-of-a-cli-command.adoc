@@ -1,0 +1,35 @@
+---
+permalink: get-started/structure-of-a-cli-command.html 
+sidebar: sidebar 
+keywords: structure, cli, commands 
+summary: I comandi CLI sono sotto forma di wrapper di comandi ed elementi incorporati nel wrapper. 
+---
+= Struttura dei comandi CLI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+I comandi CLI sono sotto forma di wrapper di comandi ed elementi incorporati nel wrapper. Un comando CLI è composto dai seguenti elementi:
+
+* Un wrapper di comandi identificato dal termine `SMcli`
+* L'identificatore dell'array di storage
+* Terminali che definiscono l'operazione da eseguire
+* Comandi di script
+
+
+Il wrapper dei comandi CLI è una shell che identifica i controller degli array di storage, incorpora terminali operativi, incorpora comandi di script e passa questi valori al motore di script.
+
+Tutti i comandi CLI hanno la seguente struttura:
+
+[listing]
+----
+SMcli *storageArray terminal script-commands*;
+----
+* `SMcli` richiama l'interfaccia della riga di comando.
+* `storageArray` È il nome o l'indirizzo IP dello storage array.
+* `terminal` È un valore CLI che definisce l'ambiente e lo scopo del comando.
+* `script-commands` sono uno o più comandi di script o il nome di un file di script che contiene comandi di script. (I comandi di script configurano e gestiscono lo storage array).
+
+
+Se si immette un valore incompleto o impreciso `SMcli` stringa che non ha la sintassi, i nomi dei parametri, le opzioni o i terminali corretti, il motore di script restituisce informazioni sull'utilizzo.

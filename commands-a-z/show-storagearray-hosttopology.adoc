@@ -1,0 +1,87 @@
+---
+permalink: commands-a-z/show-storagearray-hosttopology.html 
+sidebar: sidebar 
+keywords: show, storage, array, host, topology 
+summary: 'Il comando show StorageArray hostTopology restituisce la topologia della partizione di storage, le etichette del tipo di host e l"indice del tipo di host per l"array di storage host.' 
+---
+= Mostrare la topologia degli host degli array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show storageArray hostTopology` il comando restituisce la topologia della partizione di storage, le etichette del tipo di host e l'indice del tipo di host per l'array di storage host.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Storage Monitor.
+
+
+
+== Sintassi
+
+[listing]
+----
+show storageArray hostTopology
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Note
+
+Questo comando restituisce le informazioni sulla topologia dell'host simili a questo esempio.
+
+[listing]
+----
+TOPOLOGY DEFINITIONS
+ DEFAULT GROUP
+  Default type: Windows 2000/Server 2003 Non-Clustered
+  Host Group: scott
+   Host: scott1
+    Host Port: 28:37:48:55:55:55:55:55
+     Alias: scott11
+     Type: Windows 2000/Server 2003 Clustered
+   Host: scott2
+    Host Port: 98:77:66:55:44:33:21:23
+     Alias: scott21
+     Type: Windows 2000/Server 2003 Clustered
+   Host: Bill
+    Host Port: 12:34:55:67:89:88:88:88
+     Alias: Bill1
+     Type: Windows 2000/Server 2003 Non-Clustered
+NVSRAM HOST TYPE INDEX DEFINITIONS
+HOST TYPE                         ALUA/AVT STATUS   ASSOCIATED INDEXS
+AIX MPIO                          Disabled          9
+AVT_4M                            Enabled           5
+Factory Default                   Disabled          0
+HP-UX                             Enabled           15
+Linux (ATTO)                      Enabled           24
+Linux (DM-MP)                     Disabled          6
+Linux (Pathmanager)               Enabled           25
+Mac OS                            Enabled           22
+ONTAP                             Disabled          4
+SVC                               Enabled           18
+Solaris (v11 or Later)            Enabled           17
+Solaris (version 10 or earlier)   Disabled          2
+VMWare                            Enabled           10 (Default)
+Windows                           Enabled           1
+----
+
+
+== Livello minimo del firmware
+
+5.20

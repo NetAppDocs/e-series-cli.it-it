@@ -1,0 +1,118 @@
+---
+permalink: commands-a-z/set-tray-drawer.html 
+sidebar: sidebar 
+keywords: set, drawer, service, action, allowed, indicator 
+summary: 'Il comando Imposta cassetto vassoio consente di attivare o disattivare la spia dell"azione di servizio consentita su un cassetto che contiene le unità.' 
+---
+= Imposta indicatore azione di servizio cassetto consentita
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set tray drawer` Il comando accende o spegne la spia Service Action Allowed (azione di servizio consentita) su un cassetto che contiene le unità.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+I cassetti vengono utilizzati nei vassoi per dischi ad alta capacità. I cassetti scorrono fuori dal vassoio dell'unità per consentire l'accesso alle unità. Utilizzare questo comando solo per i vassoi delle unità che utilizzano i cassetti. Se lo storage array non supporta la funzione indicatore luminoso azione servizio consentita, questo comando restituisce un errore. Se lo storage array supporta il comando ma non è in grado di accendere o spegnere l'indicatore luminoso, questo comando restituisce un errore.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set tray pass:quotes[[_trayID_]] drawer pass:quotes[[_drawerID_]]
+serviceAllowedIndicator=(on | off | forceOnWarning)
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`tray`
+ a| 
+Il vassoio in cui si trova il cassetto. I valori dell'ID vassoio sono `0` a. `99` . Racchiudere il valore dell'ID vassoio tra parentesi quadre ([ ]). Se non si immette un valore di ID vassoio, l'ID vassoio del vassoio del controller è il valore predefinito.
+
+
+
+ a| 
+`drawer`
+ a| 
+La posizione del cassetto per il quale si desidera attivare o disattivare la spia dell'indicatore azione di servizio consentita. I valori dell'ID cassetto sono `1` a. `5`. Racchiudere il valore dell'ID cassetto tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`serviceAllowedIndicator`
+ a| 
+L'impostazione per attivare o disattivare la spia dell'azione di servizio consentita. Per attivare l'indicatore luminoso dell'azione di servizio consentita, impostare questo parametro su `on`. Per disattivare la spia dell'indicatore di azione di servizio consentita, impostare questo parametro su `off`.
+
+Per informazioni sull'utilizzo di `forceOnWarning`, Vedere le note.
+
+|===
+
+
+== Note
+
+Prima di poter immettere questo comando, il vassoio dell'unità deve soddisfare le seguenti condizioni:
+
+* Il vassoio dell'unità non può essere troppo rigido.
+* Le ventole devono avere uno stato ottimale.
+* Tutti i componenti del vassoio dell'unità devono essere in posizione.
+* I volumi nel cassetto del disco non possono essere degradati. Se si rimuovono le unità dal cassetto e un volume si trova già in uno stato degradato, il volume potrebbe non funzionare.
+
+
+[NOTE]
+====
+Non eseguire questo comando se non si riesce a soddisfare una di queste condizioni.
+
+====
+Tutti i volumi con dischi nel cassetto del disco interessato vengono controllati per assicurarsi che i volumi abbiano la protezione dalle perdite dei cassetti prima dell'invio del comando. Se i volumi dispongono della protezione contro la perdita di cassetto, il comando Set Service Action Allowed (Imposta azione servizio consentita) procede senza interrompere l'attività i/o sul volume.
+
+Se alcuni volumi nel cassetto interessato non dispongono della protezione contro la perdita di cassetto, è necessario interrompere l'attività di i/o per tali volumi. Viene visualizzato un avviso che indica che questo comando non deve essere completato.
+
+Per accendere o spegnere la spia dell'indicatore di azione di servizio consentita per l'intero vassoio dell'unità ad alta capacità, utilizzare `set tray serviceAllowedIndicator` comando.
+
+
+
+== Utilizzo del parametro forceOnWarning
+
+Se si sta preparando un componente per la rimozione e si desidera ignorare l'avviso che i volumi non dispongono della protezione contro la perdita di cassetto, immettere questo parametro:
+
+[listing]
+----
+serviceAllowedIndicator=forceOnWarning
+----
+Il `forceOnWarning` il parametro invia la richiesta di preparazione per la rimozione di un componente al firmware del controller e forza il `set drawer serviceAllowedIndicator` per procedere.
+
+[NOTE]
+====
+Questo parametro contrassegna tutti i dischi nel cassetto come inaccessibili e potrebbe causare errori nei volumi e un ripristino complesso, inclusa la necessità di riavviare l'host. Utilizzare questo parametro con cautela.
+
+====
+
+
+== Livello minimo del firmware
+
+7.60

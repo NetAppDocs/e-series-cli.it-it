@@ -1,0 +1,148 @@
+---
+permalink: commands-a-z/start-controller.html 
+sidebar: sidebar 
+keywords: start, controller, trace 
+summary: 'Il comando start controller avvia un"operazione che salva le informazioni di traccia di debug in un file compresso.' 
+---
+= Avviare la traccia del controller
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `start controller` command avvia un'operazione che salva le informazioni di traccia di debug in un file compresso.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Le informazioni di traccia di debug possono essere utilizzate dal supporto tecnico per analizzare l'esecuzione di uno storage array.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+start controller [(a
+ | b
+ | both)] trace
+dataType=(current | flushed | currentFlushed | all)
+forceFlush=(TRUE | FALSE)
+pass:quotes[file="_fileName_]"
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`controller`
+ a| 
+Il controller per il quale si desidera raccogliere le informazioni di debug della traccia. Gli identificatori del controller validi sono `a` oppure `b`, dove `a` È il controller nello slot A , e. `b` Il controller si trova nello slot B. È inoltre possibile raccogliere simultaneamente il debug per entrambi i controller immettendo `both` . Racchiudere l'identificatore del controller tra parentesi quadre ([ ]). Se non si specifica un controller, il software di gestione dello storage restituisce un errore di sintassi.
+
+
+
+ a| 
+`dataType`
+ a| 
+Il tipo di dati che si desidera raccogliere:
+
+* `current` -- Recupera le tracce DQ correnti
+* `flushed` -- Recupera tutte le tracce di DQ con flusso
+* `currentFlushed` -- Recupera sia la traccia DQ corrente che la traccia DQ con flusso
+* `all` -- Recupera la traccia DQ corrente, la traccia DQ con flusso e tutte le tracce DQ della piattaforma
+
+
+[NOTE]
+====
+Se `dataType=flushed` e. `forceFlush=True`, viene visualizzato un messaggio di errore che indica che solo le tracce attive possono essere inviate al buffer al recupero.
+
+====
+
+
+ a| 
+`*forceFlush*`
+ a| 
+L'impostazione per spostare le informazioni DQ nel buffer corrente nel buffer di flusso quando le informazioni di traccia DQ definite da `dataType` il parametro viene recuperato. Per attivare il lavaggio forzato, impostare questo parametro su `TRUE`. Per disattivare il lavaggio forzato, impostare questo parametro su `FALSE`.
+
+[NOTE]
+====
+Se `dataType=flushed` e. `forceFlush=True`, viene visualizzato un messaggio di errore che indica che solo le tracce attive possono essere inviate al buffer al recupero.
+
+====
+
+
+ a| 
+`file`
+ a| 
+Il percorso del file e il nome del file in cui si desidera salvare le informazioni di traccia DQ. Racchiudere il nome del file tra virgolette doppie (" ").
+
+Fare riferimento alla sezione Note per informazioni su come assegnare un nome ai file.
+
+|===
+
+
+== Note
+
+Le informazioni di traccia DQ vengono scritte in un file compresso con estensione .zip. Il nome del file è una combinazione di un nome file definito dall'utente e dell'identificatore dell'array di storage (DETTO). Al nome del file viene aggiunta anche una costante "dq". Il nome completo del file ha questo modulo:
+
+[listing]
+----
+user_defined_file_name-SAID-dq.zip
+----
+Il file compresso contiene le informazioni elencate in questa tabella.
+
+[cols="3*"]
+|===
+| Nome file | Directory | Commenti 
+
+
+ a| 
+`user_provided_file_name-SAID-A.dq`
+ a| 
+`SAID/timestamp/`
+ a| 
+I dati di traccia DQ recuperati dal controller A.
+
+
+
+ a| 
+`user_provided_file_name-SAID-B.dq`
+ a| 
+`SAID/timestamp/`
+ a| 
+I dati di traccia DQ recuperati dal controller B.
+
+
+
+ a| 
+`user_provided_file_name-SAID-trace_description.xm`
+ a| 
+`SAID/timestamp/`
+ a| 
+Il file di descrizione in un formato xml che descrive gli attributi del file DQ per il data mining futuro.
+
+|===
+
+
+== Livello minimo del firmware
+
+7.75

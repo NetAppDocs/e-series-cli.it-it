@@ -1,0 +1,79 @@
+---
+permalink: commands-a-z/save-ioclog.html 
+sidebar: sidebar 
+keywords: save, input, output, controller, ioc, dump 
+summary: Il comando SAVE IOCLog salva i dump IOC dai controller di un array di storage a un file su un host. 
+---
+= Salva il dump del controller di output in ingresso (IOC)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `save IOCLog` Il comando salva i dump IOC dai controller di un array di storage in un file su un host.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+save IOCLog [file=pass:quotes["_filename_"]]
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`file`
+ a| 
+Il percorso del file e il nome del file in cui si salva il dump IOC. Racchiudere il nome del file tra virgolette doppie (" "). Ad esempio:
+
+[listing]
+----
+file="C:\Array Backups\IOCcoredump1.7z"
+----
+Questo comando salva i dati in un file compresso e aggiunge l'estensione del file `.7z` al file salvato. Il nome predefinito del file che contiene i dati relativi al IOC per i controller nell'array di storage utilizza il WWN dell'array di storage.
+
+|===
+
+
+== Note
+
+Questo comando recupera da entrambi i controller i dati del log di dump IOC e i metadati di dump IOC. Utilizzando un formato di file 7zip, i dati recuperati vengono archiviati e compressi in un singolo file con un nome di file a scelta. Il file di archivio 7zip contiene quanto segue:
+
+* Filename+"IOCLog"+[A|B].gz -- registri IOC recuperati dal controller A o dal controller B, se disponibili
+* FILENAME+"IOCLogInfo"+[A|B].txt -- il IOC registra le informazioni sui metadati recuperate dal controller A o dal controller B . Se non è possibile recuperare i dati del registro IOC da un controller, il file .txt di metadati conterrà la condizione e il motivo dell'errore.
+
+
+Di seguito sono riportate le condizioni di errore:
+
+* La piattaforma del controller e HIC non supportano il dump IOC.
+* I controller non hanno raccolto i dati di dump IOC.
+
+
+I registri compressi non sono in formato leggibile. È necessario restituire i registri al supporto tecnico per la valutazione.
+
+
+
+== Livello minimo del firmware
+
+8.20

@@ -1,0 +1,203 @@
+---
+permalink: commands-a-z/set-disk-pool.html 
+sidebar: sidebar 
+keywords: set, disk pool 
+summary: Il comando set diskPool imposta gli attributi associati a un pool di dischi in base ai parametri specificati. 
+---
+= Impostare il pool di dischi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set diskPool` command imposta gli attributi associati a un pool di dischi in base ai parametri specificati.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set (diskPool pass:quotes[[_diskPoolName_]] |
+diskPools pass:quotes[[_diskPoolName1_ ... _diskPoolNameN_]] | allDiskPools)
+[reservedDriveCount=pass:quotes[_reservedDriveCountValue_]]
+[warningThreshold=(warningThresholdValue | default)]
+[criticalThreshold=(criticalThresholdValue | default)]
+[criticalPriority=(highest | high | medium |low |lowest)]
+[degradedPriority=(highest |high |medium |low |lowest)]
+[backgroundPriority=(highest | high | medium |low |lowest)]
+[userLabel=pass:quotes[_diskPoolName_]]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`diskPool`
+ a| 
+Il nome del pool di dischi per cui si stanno impostando gli attributi. Racchiudere il nome del pool di dischi tra parentesi quadre ([ ]). Se il nome del pool di dischi ha caratteri speciali o è composto solo da numeri, è necessario racchiudere il nome del pool di dischi tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`diskPools`
+ a| 
+I nomi di diversi pool di dischi per i quali si desidera impostare gli attributi. Immettere i nomi dei pool di dischi utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Separare ciascuno dei nomi con uno spazio.
+
+
+Se i nomi dei pool di dischi hanno caratteri o numeri speciali, immettere i nomi utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Racchiudere ciascuno dei nomi tra virgolette doppie (" ").
+* Separare ciascuno dei nomi con uno spazio.
+
+
+
+
+ a| 
+`allDiskPools`
+ a| 
+Questo parametro imposta gli attributi per tutti i pool di dischi nell'array di storage.
+
+
+
+ a| 
+`reservedDriveCount`
+ a| 
+Questo parametro riserva spazio su ogni disco nel pool di dischi, da utilizzare esclusivamente per la ricostruzione dei dischi guasti. Ciascuna unità di questo conteggio rappresenta la capacità di ricostruire un disco guasto nel resto del pool di dischi.
+
+
+
+ a| 
+`warningThreshold`
+ a| 
+La percentuale di capacità del pool di dischi alla quale viene visualizzato un avviso che indica che il pool di dischi è quasi pieno. USA valori interi. Ad esempio, un valore di 70 significa 70%. Per un funzionamento ottimale, il valore di questo parametro deve essere inferiore al valore di `criticalThreshold` parametro.
+
+I valori validi vanno da 0 a 100.
+
+Il valore predefinito è 50.
+
+Impostare questo parametro su `0` disattiva gli avvisi di avviso.
+
+Se si imposta questa opzione su `default`, il valore della soglia di avviso viene determinato dal firmware del controller.
+
+
+
+ a| 
+`criticalThreshold`
+ a| 
+La percentuale di capacità del pool di dischi alla quale si riceve un avviso critico che indica che il pool di dischi è quasi pieno. USA valori interi. Ad esempio, un valore di 70 significa 70%. Per un funzionamento ottimale, il valore di questo parametro deve essere maggiore del valore di `warningThreshold` parametro.
+
+I valori validi vanno da 0 a 100.
+
+Il valore predefinito è 85 percento.
+
+Impostare questo parametro su `0` disattiva sia gli avvisi di avviso che gli avvisi critici.
+
+Se si imposta questa opzione su `default`, il valore della soglia di allarme critico è determinato dal firmware del controller.
+
+
+
+ a| 
+`criticalPriority`
+ a| 
+La priorità delle operazioni di ricostruzione per gli eventi critici nel pool di dischi. Ad esempio, la ricostruzione del pool di dischi dopo almeno due guasti del disco.
+
+I valori validi sono `highest`, `high`, `medium`, `low`, e. `lowest`. Il valore predefinito è `highest`.
+
+
+
+ a| 
+`degradedPriority`
+ a| 
+Priorità delle operazioni di ricostruzione per gli eventi degradati nel pool di dischi. Ad esempio, ricostruzione del pool di dischi dopo un guasto a un disco.
+
+I valori validi sono `highest`, `high`, `medium`, `low`, e. `lowest`. Il valore predefinito è `high`.
+
+
+
+ a| 
+`backgroundPriority`
+ a| 
+La priorità per le operazioni in background sul pool di dischi.
+
+I valori validi sono `highest`, `high`, `medium`, `low`, e. `lowest`. Il valore predefinito è `low`.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Il nuovo nome che si desidera assegnare al pool di dischi. Racchiudere il nome del pool di dischi tra virgolette doppie (" ").
+
+|===
+
+
+== Note
+
+Ciascun nome del pool di dischi deve essere univoco. È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per l'etichetta utente. Le etichette dell'utente possono contenere un massimo di 30 caratteri.
+
+È possibile specificare un set arbitrario di pool di dischi. Se si selezionano più pool di dischi, impostare un valore per `userLabel` causa un errore.
+
+Se non si specifica un valore per un parametro opzionale, viene assegnato un valore predefinito.
+
+
+
+== Soglie di avviso del pool di dischi
+
+Ogni pool di dischi dispone di due livelli di avvisi progressivamente gravi per informare gli utenti quando la capacità di storage del pool di dischi si sta avvicinando al pieno. La soglia per un avviso è la percentuale della capacità utilizzata rispetto alla capacità totale utilizzabile nel pool di dischi. Gli avvisi sono:
+
+* Attenzione -- questo è il primo livello di avviso che indica che la capacità utilizzata in un pool di dischi si sta quasi esaurendo. Quando viene raggiunta la soglia per l'avviso di avviso, viene generata una condizione di intervento richiesto e viene inviato un evento al software di gestione dello storage. La soglia di avviso viene superata dalla soglia critica. La soglia di avviso predefinita è 50%.
+* Critico -- questo è il livello più grave di avviso che la capacità utilizzata in un pool di dischi si sta avvicinando al pieno. Quando viene raggiunta la soglia per l'avviso critico, viene generata una condizione di intervento richiesto e un evento viene inviato al software di gestione dello storage. La soglia di avviso viene superata dalla soglia critica. La soglia predefinita per l'avviso critico è 85%.
+
+
+Per essere efficace, il valore di un avviso di avviso deve essere sempre inferiore al valore di un avviso critico. Se il valore per l'avviso di avviso è uguale al valore per un avviso critico, viene inviato solo l'avviso critico.
+
+
+
+== Operazioni in background del pool di dischi
+
+I pool di dischi supportano queste operazioni in background:
+
+* Ricostruzione
+* IAF (Instant Availability Format)
+* Formato
+* Espansione dinamica della capacità (DCE)
+* Riduzione dinamica della capacità (DCR)
+* Dynamic Volume Expansion (DVE) (per i pool di dischi, il DVE non è un'operazione in background, ma il DVE è supportato come operazione sincrona).
+
+
+I pool di dischi non accodano i comandi in background. È possibile avviare diversi comandi in background in sequenza, ma avviando più operazioni in background alla volta si ritarda il completamento dei comandi avviati in precedenza. I livelli di priorità relativi per le operazioni in background supportate sono:
+
+. Ricostruzione
+. Formato
+. IAF
+. DCE/DCR
+
+
+
+
+== Livello minimo del firmware
+
+7.83

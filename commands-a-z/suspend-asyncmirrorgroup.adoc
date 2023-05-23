@@ -1,0 +1,68 @@
+---
+permalink: commands-a-z/suspend-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: suspend, asynchronous, mirror, group 
+summary: Il comando suspend asyncMirrorGroup sospende la sincronizzazione dei dati su tutte le coppie mirrorate a livello di gruppo di mirror asincrono. 
+---
+= Sospendere il gruppo di mirror asincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `suspend asyncMirrorGroup` il comando sospende la sincronizzazione dei dati su tutte le coppie mirrorate a livello di gruppo di mirror asincrono.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Questo `suspend` command consente di ridurre l'impatto delle performance sull'applicazione host che potrebbe verificarsi durante la copia dei dati modificati sull'array di storage locale nell'array di storage remoto.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+
+pass:quotes[suspend asyncMirrorGroup [_asyncMirrorGroupName_]]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Il nome del gruppo di mirror asincrono per il quale si desidera sospendere la sincronizzazione dei dati. Racchiudere il nome del gruppo mirror asincrono tra parentesi quadre ([ ]). Se il nome del gruppo mirror asincrono ha caratteri speciali o numeri, è necessario racchiudere il nome del gruppo mirror asincrono tra virgolette doppie (" ") tra parentesi quadre.
+
+|===
+
+
+== Note
+
+Quando un gruppo di mirror asincrono si trova in uno stato sospeso, non viene eseguito alcun tentativo di copiare i dati dai volumi primari ai volumi secondari delle coppie mirrorate. Tutte le scritture sul lato primario del gruppo di mirror asincrono vengono registrate in modo persistente nei volumi di repository mirror associati. Una volta ripristinato il gruppo di mirror asincrono, solo le regioni modificate dei volumi primari vengono scritte nei volumi secondari.
+
+
+
+== Livello minimo del firmware
+
+7.84

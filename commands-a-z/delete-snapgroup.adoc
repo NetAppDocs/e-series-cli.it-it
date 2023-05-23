@@ -1,0 +1,80 @@
+---
+permalink: commands-a-z/delete-snapgroup.html 
+sidebar: sidebar 
+keywords: delete, snapgroup, command, entire, snapshot, group, option, associate, repository, volume 
+summary: Il comando delete snapGroup consente di creare un intero gruppo di snapshot e, facoltativamente, i volumi di repository associati. 
+---
+= Elimina gruppo di snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `delete snapGroup` comando di un intero gruppo di snapshot e, facoltativamente, dei volumi di repository associati.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+*Possibili danni alla configurazione dell'array di storage* -- tutti i dati nel gruppo di snapshot vengono persi non appena si esegue questo comando.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[delete snapGroup ["_snapGroupName_"]]
+[deleteRepositoryMembers=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`snapGroup`
+ a| 
+Il nome del gruppo di snapshot che si desidera eliminare. Racchiudere il nome del gruppo di snapshot tra virgolette doppie (" ") tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`deleteRepositoryMembers`
+ a| 
+Il parametro per eliminare o salvare i volumi del repository. Per eliminare i volumi del repository, impostare questo parametro su `TRUE`. Per salvare i volumi del repository, impostare questo parametro su `FALSE`. Il valore predefinito è `FALSE`.
+
+|===
+
+
+== Note
+
+È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per l'etichetta utente. Le etichette dell'utente possono contenere un massimo di 30 caratteri.
+
+È possibile eliminare un gruppo di snapshot se è vuoto o se contiene immagini di snapshot. Tutte le immagini snapshot nel gruppo vengono eliminate insieme al gruppo di snapshot. Se un'immagine snapshot esistente all'interno del gruppo di snapshot dispone di un volume di snapshot associato, ciascun volume di snapshot viene arrestato e scollegato dall'immagine di snapshot. Quando si elimina un gruppo di snapshot, viene eliminato anche il volume di repository associato. Per impostazione predefinita, tutti i volumi membri nel volume di repository vengono conservati come volumi standard non utilizzati e non mappati. Per rimuovere i volumi membro, impostare `deleteRepositoryMembers` parametro a. `TRUE`, o non utilizzare questo parametro. Per mantenere i volumi membro, impostare `deleteRepositoryMembers` parametro a. `FALSE`.
+
+
+
+== Livello minimo del firmware
+
+7.83

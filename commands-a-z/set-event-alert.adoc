@@ -1,0 +1,91 @@
+---
+permalink: commands-a-z/set-event-alert.html 
+sidebar: sidebar 
+keywords: set, event, alert, filter 
+summary: I comandi set event alert gestiscono la notifica degli eventi di avviso disattivando o attivando la notifica relativa a uno specifico evento che può essere associato a un allarme. Per impedire la notifica di uno specifico evento che può essere verificato, è necessario bloccarlo. Per attivare la notifica su uno specifico evento che può essere verificato, sbloccarlo. 
+---
+= Impostare il filtraggio degli avvisi di evento
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set event alert` i comandi gestiscono la notifica degli eventi di avviso disattivando o attivando la notifica relativa a un evento specifico. Per impedire la notifica di uno specifico evento che può essere verificato, _block_ it. Per abilitare la notifica su un evento specifico che può essere verificato, _sbloccherai_.
+
+
+
+== Array supportati
+
+Questo comando si applica solo agli array di storage E2700 ed E5600.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Questo comando è un comando SMcli, non un comando script. Eseguire questo comando da una riga di comando. Non è possibile eseguire questo comando dall'editor di script nel software di gestione dello storage
+
+====
+
+
+== Contesto
+
+Quando si definisce lo storage array, è possibile configurare gli avvisi e definire la modalità di gestione degli avvisi di evento. Se l'array di storage è stato configurato per l'invio di avvisi, viene inviata una notifica a un destinatario designato quando si verifica un evento che può essere avvisato. La notifica può essere di uno o di tutti i seguenti tipi:
+
+* e-mail
+* syslog
+* Notifiche trap SNMP
+
+
+I comandi set event alert CLI funzionano su un singolo array di storage. Quando si eseguono i comandi su un array di storage, solo tale array di storage viene influenzato dai comandi. Gli altri array di storage che non hanno eseguito il comando CLI su di essi hanno il comportamento predefinito.
+
+[NOTE]
+====
+Il blocco di un avviso di evento non impedisce l'invio dell'evento al registro eventi di sistema. Tutti gli eventi continuano a essere pubblicati nel registro eventi.
+
+====
+[NOTE]
+====
+Non è possibile rendere gli eventi non-alertable disponibili utilizzando questo comando.
+
+====
+
+
+== Sintassi per bloccare un avviso di evento
+
+[listing, subs="+macros"]
+----
+set blockEventAlert pass:quotes[_eventType_]
+----
+
+
+== Sintassi per sbloccare un avviso di evento
+
+[listing, subs="+macros"]
+----
+set unBlockEventAlert pass:quotes[_eventType_]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`_eventType_`
+ a| 
+Questo parametro rappresenta il valore intero dell'evento. Inserire il valore dell'evento in formato esadecimale, ad esempio 0x280D. Iniziare sempre il valore esadecimale con *0x* per indicare che è in formato esadecimale. Se non si utilizza 0x, il valore viene interpretato come decimale e convertito in un valore esadecimale, prima di applicare il comando block o unblock. Ciò può causare il blocco o lo sblocco di un evento errato.
+
+Se si inserisce un evento non valido, viene visualizzato un errore.
+
+|===
+
+
+== Livello minimo del firmware
+
+8.10

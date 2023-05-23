@@ -1,0 +1,161 @@
+---
+permalink: get-started/structure-of-a-script-command.html 
+sidebar: sidebar 
+keywords: structure, script command 
+summary: Tutti i comandi script hanno la seguente struttura. 
+---
+= Struttura di un comando script
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+Tutti i comandi script hanno la seguente struttura:
+
+[listing]
+----
+
+      *command operand-data* (*statement-data*)
+----
+* `command` identifica l'azione da eseguire.
+* `operand-data` rappresenta gli oggetti associati a un array di storage che si desidera configurare o gestire.
+* `statement-data` fornisce le informazioni necessarie per eseguire il comando.
+
+
+La sintassi per `_operand-data_` ha la seguente struttura:
+
+[listing]
+----
+(*object-type* | all *object-types* | [*qualifier*] (*object-type* [*identifier*] (*object-type* [*identifier*] | *object-types* [*identifier-list*])))
+----
+Un oggetto può essere identificato in quattro modi:
+
+* Tipo di oggetto -- utilizzare quando il comando non fa riferimento a un oggetto specifico.
+* `*all*` Parameter prefix (prefisso parametro) - utilizzare quando il comando fa riferimento a tutti gli oggetti del tipo specificato nell'array di storage (ad esempio, `*allVolumes*`).
+* Parentesi quadre -- utilizzare quando si esegue un comando su un oggetto specifico per identificare l'oggetto (ad esempio, `*volume [engineering]*`).
+* Un elenco di identificatori -- consente di specificare un sottoinsieme di oggetti. Racchiudere gli identificatori degli oggetti tra parentesi quadre (ad esempio, `*volumes [sales engineering marketing]*`).
+
+
+Se si desidera includere informazioni aggiuntive per descrivere gli oggetti, è necessario un qualificatore.
+
+Il tipo di oggetto e gli identificatori associati a ciascun tipo di oggetto sono elencati in questa tabella.
+
+[cols="2*"]
+|===
+| Tipo di oggetto | Identificatore 
+
+
+ a| 
+`*controller*`
+ a| 
+a o b
+
+
+
+ a| 
+`*drive*`
+ a| 
+Per i contenitori con cassetti, utilizzare l'ID del vassoio, l'ID del cassetto e l'ID dello slot. In alternativa, è possibile utilizzare solo l'ID vassoio e l'ID slot.
+
+
+
+ a| 
+`*replacementDrive*`
+ a| 
+Per i contenitori con cassetti, utilizzare l'ID del vassoio, l'ID del cassetto e l'ID dello slot. In alternativa, è possibile utilizzare solo l'ID vassoio e l'ID slot.
+
+
+
+ a| 
+`*driveChannel*`
+ a| 
+Identificatore del canale del disco
+
+
+
+ a| 
+`*host*`
+ a| 
+Etichetta utente
+
+
+
+ a| 
+`*hostChannel*`
+ a| 
+Identificatore del canale host
+
+
+
+ a| 
+`*hostGroup*`
+ a| 
+Etichetta utente
+
+
+
+ a| 
+`*hostPort*`
+ a| 
+Etichetta utente
+
+
+
+ a| 
+`*iscsiInitiator*`
+ a| 
+Etichetta utente o nome qualificato iSCSI (IQN)
+
+
+
+ a| 
+`*iscsiTarget*`
+ a| 
+Etichetta utente o IQN
+
+
+
+ a| 
+`*storageArray*`
+ a| 
+Non applicabile
+
+
+
+ a| 
+`*tray*`
+ a| 
+ID vassoio
+
+
+
+ a| 
+`*volume*`
+ a| 
+Etichetta utente del volume o WWID (World Wide Identifier) del volume (`set` solo comando)
+
+
+
+ a| 
+`*volumeCopy*`
+ a| 
+Etichetta utente del volume di destinazione e, facoltativamente, etichetta utente del volume di origine
+
+
+
+ a| 
+`*volumeGroup*`
+ a| 
+Etichetta utente
+
+I caratteri validi sono alfanumerici, un trattino e un carattere di sottolineatura.
+
+|===
+I dati delle dichiarazioni sono sotto forma di:
+
+* Parametro = valore (ad esempio `*raidLevel=5*`)
+* Nome-parametro (ad esempio `*batteryInstallDate*`)
+* Nome-operazione (ad esempio `*redundancyCheck*`)
+
+
+Una voce definita dall'utente (ad esempio l'etichetta utente) viene chiamata variabile. Nella sintassi, viene visualizzato in corsivo (ad esempio `trayID` oppure `volumeGroupName`).

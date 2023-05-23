@@ -1,0 +1,117 @@
+---
+permalink: commands-a-z/load-storagearray-dbmdatabase.html 
+sidebar: sidebar 
+keywords: load, storage array, database, command, management 
+summary: 'Il comando load StorageArray dbmDatabase ripristina un"immagine di database di gestione database (DBM) recuperando l"immagine da un file o dalla cache.' 
+---
+= Caricare il database DBM dell'array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `load storageArray dbmDatabase` Il comando ripristina un'immagine di database di gestione database (DBM) recuperando l'immagine da un file o dalla cache.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Contesto
+
+Questo comando ripristina un database DBM di array di storage alla configurazione esatta esistente al momento dell'acquisizione dell'immagine del database mediante `save storageArray dbmDatabase` comando. I dati di un file includono i dati per la configurazione RAID, i gruppi di volumi e i pool di dischi.
+
+Prima di utilizzare questo comando con `file` è necessario prima ottenere una stringa di convalida (un codice di sicurezza) dal supporto tecnico. Per ottenere una convalida, utilizzare `save storageArray dbmValidatorInfo` Per generare un file XML che contiene informazioni di convalida. Il supporto tecnico utilizza il file XML per generare la stringa di convalida richiesta per questo comando.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+load storageArray dbmDatabase
+pass:quotes[((file="_filename_" validator="_validatorValue_") | sourceLocation=onboard)]
+[controller [(a|b)]]
+[contentType= all]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`file`
+ a| 
+Il percorso e il nome del file del database DBM che si desidera caricare. Racchiudere il nome del file tra virgolette doppie (" "). Ad esempio:
+
+`file="C:\Array Backups\DBMbackup_03302010.dbm"` Questo comando non aggiunge automaticamente un'estensione al file salvato. Specificare un'estensione del file quando si inserisce il nome del file.
+
+
+
+ a| 
+`validator`
+ a| 
+Codice di protezione alfanumerico necessario per ripristinare una configurazione esistente di uno storage array.
+
+È necessario ottenere il validatore dal supporto tecnico. Per ottenere la convalida, generare il file XML delle informazioni di convalida richiesto eseguendo `save storageArray dbmValidatorInfo` comando. Una volta che il file XML delle informazioni di convalida è disponibile, contattare il supporto tecnico per ottenere la convalida.
+
+Racchiudere la convalida tra virgolette doppie (" ").
+
+
+
+ a| 
+`sourceLocation`
+ a| 
+Questo parametro specifica la posizione da cui recuperare le informazioni del database di backup. Il parametro deve essere incluso per la coerenza, ma l'unico valore consentito è `onboard`.
+
+
+
+ a| 
+`controller`
+ a| 
+Questo parametro specifica il controller da cui verranno recuperati esclusivamente i dati. Racchiudere l'identificatore del controller tra parentesi quadre ([ ]). Se il `controller` parametro non specificato, i dati potrebbero essere recuperati da uno dei controller.
+
+Gli identificatori del controller validi sono `a` oppure `b`, dove `a` È il controller nello slot A, e. `b` Il controller si trova nello slot B.
+
+
+
+ a| 
+`contentType`
+ a| 
+Questo parametro specifica il tipo di contenuto dei dati che verranno recuperati.
+
+Questo parametro è impostato su `all` per impostazione predefinita, in modo che tutti i dati, inclusi i dati di configurazione del pool di dischi, siano recuperati.
+
+|===
+
+
+== Note
+
+A seconda delle dimensioni dell'immagine del database, il ripristino del database potrebbe richiedere fino a 30 minuti. Il software host non mostrerà i controller in uno stato ottimale fino al completamento di tutte le azioni per il caricamento dell'immagine del database sui controller.
+
+
+
+== Livello minimo del firmware
+
+7.75
+
+7.83 aggiunge questi parametri:
+
+* `sourceLocation`
+* `controller`
+* `contentType`
+

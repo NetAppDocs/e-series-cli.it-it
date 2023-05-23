@@ -1,0 +1,84 @@
+---
+permalink: commands-a-z/create-snmptrapdestination.html 
+sidebar: sidebar 
+keywords: register, snmp, trap, destination 
+summary: 'Il comando create snmpTrapDestination crea una nuova destinazione trap SNMP (Simple Network Management Protocol). Una destinazione trap è il gestore SNMP per ricevere i messaggi trap.' 
+---
+= Registrare la destinazione della trap SNMP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `create snmpTrapDestination` Il comando crea una nuova destinazione trap SNMP (Simple Network Management Protocol). Una destinazione trap è il gestore SNMP per ricevere i messaggi trap.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+create snmpTrapDestination trapReceiverIP=ipAddress
+    (communityName=pass:quotes[_"communityName" | (userName="userName"_] [engineId=(local | engineId)]))
+    [sendAuthenticationFailureTraps=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`trapReceiverIP`
+ a| 
+L'indirizzo IP del gestore SNMP a cui si desidera inviare i messaggi trap.
+
+
+
+ a| 
+`communityName`
+ a| 
+Il nome della community SNMP per la quale si desidera inviare messaggi trap.
+
+
+
+ a| 
+`userName`
+ a| 
+Il nome dell'utente SNMP per cui si desidera inviare messaggi trap.
+
+
+
+ a| 
+`engineId`
+ a| 
+L'ID motore dell'utente SNMP per cui si desidera inviare messaggi trap. L'ID motore è obbligatorio se sono presenti più utenti USM con lo stesso nome utente. Il valore può essere "[.code]``local``" Per specificare l'agente SNMP locale si intende l'agente autorevole o una stringa di cifre esadecimali per specificare un ID del motore dell'agente SNMP remoto.
+
+
+
+ a| 
+`sendAuthenticationFailureTraps`
+ a| 
+Questo parametro attiva o disattiva l'invio di messaggi di errore di autenticazione a un gestore SNMP. Per inviare messaggi di errore di autenticazione, impostare il parametro su `TRUE`. Per impedire l'invio di messaggi di errore di autenticazione, impostare il parametro su `FALSE`. L'impostazione predefinita è `TRUE`.
+
+|===
+
+
+== Livello minimo del firmware
+
+8.30

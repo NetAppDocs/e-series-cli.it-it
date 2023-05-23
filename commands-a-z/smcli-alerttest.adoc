@@ -1,0 +1,49 @@
+---
+permalink: commands-a-z/smcli-alerttest.html 
+sidebar: sidebar 
+keywords: test, alerts 
+summary: Il comando SMcli alertTest invia un avviso di test al registro eventi di Windows e a tutti i ricevitori syslog configurati. 
+---
+= Test degli avvisi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `SMcli alertTest` Il comando invia un avviso di test al registro eventi di Windows e a tutti i ricevitori syslog configurati.
+
+
+
+== Array supportati
+
+Questo comando si applica solo agli array di storage E2700 ed E5600.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Questo comando è un comando SMcli, non un comando script. Eseguire questo comando da una riga di comando. Non è possibile eseguire questo comando dall'editor di script nel software di gestione dello storage
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+SMcli -alertTest
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Livello minimo del firmware
+
+7.83

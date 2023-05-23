@@ -1,0 +1,136 @@
+---
+permalink: commands-a-z/start-storagearray-configdbdiagnostic.html 
+sidebar: sidebar 
+keywords: start, storage, array, configuration, database, diagnostic 
+summary: Il comando start StorageArray configDbDiagnostic esegue un controllo di coerenza rispetto a un database di configurazione. 
+---
+= Avviare la diagnostica del database di configurazione degli array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `start storageArray configDbDiagnostic` il comando esegue un controllo di coerenza su un database di configurazione.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing]
+----
+start storageArray configDbDiagnostic
+[sourceLocation=(disk | onboard) |
+diagnosticType=(fileSystem | mirror) |
+controller[(a|b)]]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`sourceLocation`
+ a| 
+Questo parametro specifica la posizione del database.
+
+* `disk` indica che i dati provengono direttamente dal database sul disco
+* `onboard` Indica che i dati provengono dalla posizione della memoria RPA
+
+
+La posizione predefinita è `disk`.
+
+
+
+ a| 
+`diagnosticType`
+ a| 
+Il livello di test diagnostico che si desidera eseguire nel database. È possibile eseguire uno dei seguenti livelli di test:
+
+`fileSystem` -- questa opzione controlla l'integrità strutturale del database.
+
+`mirror` -- i test eseguiti utilizzando questa opzione variano in base al valore di `sourceLocation` parametro:
+
+* Quando il `*sourceLocation*` il parametro è impostato su `disk`, il controller peer avvia un controllo di blocco.
+* Quando il `*sourceLocation*` il parametro è impostato su `onboard` , il controller peer avvia un controllo dei record.
+
+
+[NOTE]
+====
+È possibile eseguire `mirror` Solo da una riga di comando o dall'editor di script. Questa opzione non è disponibile tramite la GUI del software di gestione dello storage. Il `mirror` consente di avviare un'operazione a esecuzione prolungata che non è possibile interrompere.
+
+====
+Il valore predefinito è `fileSystem`.
+
+
+
+ a| 
+`controller`
+ a| 
+Il controller in cui si trova il database su cui si desidera eseguire i test di diagnostica. Gli identificatori del controller validi sono `a` oppure `b`, dove `a` È il controller nello slot A, e. `b` Il controller si trova nello slot B. Racchiudere l'identificatore del controller tra parentesi quadre ([ ]).
+
+|===
+
+
+== Note
+
+Questo comando esegue un controllo di coerenza su un database di configurazione. Tutti i record del database vengono controllati. I dati degli errori vengono scritti automaticamente in un file nella cartella dei dati sul disco. Non è necessario specificare un file di output.
+
+[NOTE]
+====
+Esecuzione di un controllo di coerenza con `diagnosticType` parametro impostato su `mirror` e con `sourceLocation` parametro impostato su `onboard` può causare un'esecuzione prolungata dell'operazione. Questo può avere effetti negativi sull'elaborazione i/o dell'host. Questa operazione deve essere eseguita solo sotto la direzione dell'organizzazione di supporto.
+
+====
+Al termine del test diagnostico, il firmware del controller restituisce uno dei seguenti risultati:
+
+* `Diagnosis completed without errors. No ZIP file created.`
+* `Diagnosis completed with errors. Refer to the ZIP file created at:`
++
+`+...\Install_dir\data\FirmwareUpgradeReports\timestamp_buildNo.zip+`
+
+
+
+Se il test diagnostico rileva un'incoerenza nel database di configurazione, il firmware del controller esegue le seguenti azioni:
+
+* Restituisce una descrizione dell'incoerenza
+* Salva un file ZIP contenente dati binari raw
+
+
+Il firmware del controller salva il file ZIP in questa posizione:
+
+`+...\Install_dir\data\FirmwareUpgradeReports\timestamp_buildNo.zip+`
+
+È possibile utilizzare i dati binari per determinare la causa del problema oppure inviare il file contenente i dati binari al supporto tecnico.
+
+Per interrompere il test di diagnostica della configurazione del database, utilizzare `stop storageArray configDbDiagnostic` comando.
+
+Inoltre, è possibile avviare il test di diagnostica della configurazione del database attraverso la GUI del software di gestione dello storage; tuttavia, non è possibile interrompere il test di diagnostica della configurazione del database attraverso la GUI del software di gestione dello storage. Se si desidera interrompere un test di diagnostica in esecuzione, è necessario utilizzare `stop storageArray configDbDiagnostic` comando.
+
+
+
+== Livello minimo del firmware
+
+7.75
+
+7.83 aggiunge questi parametri:
+
+* `sourceLocation`
+* `diagnosticType`
+* `controller`
+

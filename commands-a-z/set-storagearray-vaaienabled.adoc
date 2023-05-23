@@ -1,0 +1,75 @@
+---
+permalink: commands-a-z/set-storagearray-vaaienabled.html 
+sidebar: sidebar 
+keywords: enable, disable, vaai 
+summary: 'Il comando set StorageArray vaaiEnabled attiva o disattiva VMware vStorage API Array Architecture (VAAI) per uno storage array.' 
+---
+= Attiva o disattiva VAAI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray vaaiEnabled` Il comando attiva o disattiva VMware vStorage API Array Architecture (VAAI) per uno storage array.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Lo storage array viene fornito con VAAI attivato. Utilizzare questo comando per disattivare VAAI se non si desidera eseguire VAAI o se VAAI sta causando problemi con lo storage array. L'unico array di storage interessato è l'array di storage su cui viene eseguito il comando.
+
+
+
+== Sintassi
+
+[listing]
+----
+set storageArray vaaiEnabled=(TRUE | FALSE)
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`vaaiEnabled`
+ a| 
+L'impostazione per attivare o disattivare VAAI. Per attivare VAAI, impostare questo parametro su `TRUE`. Per disattivare VAAI, impostare questo parametro su `FALSE`. L'impostazione predefinita è che VAAI sia attivato.
+
+|===
+
+
+== Note
+
+[NOTE]
+====
+VAAI consente di trasferire alcune attività di storage dall'hardware del server a un array di storage. L'offload delle attività di storage su un array di storage aumenta le performance dell'host riducendo le attività che l'host deve eseguire.
+
+====
+[NOTE]
+====
+Visualizzare l'impostazione VAAI utilizzando `show storageArray odxSetting` nome.
+
+====
+
+
+== Livello minimo del firmware
+
+8.20

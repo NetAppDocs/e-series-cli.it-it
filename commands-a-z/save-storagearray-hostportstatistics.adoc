@@ -1,0 +1,136 @@
+---
+permalink: commands-a-z/save-storagearray-hostportstatistics.html 
+sidebar: sidebar 
+keywords: save, storage, array, host, port, statistics 
+summary: 'Il comando Save StorageArray hostPortStatistics salva le statistiche delle porte host dell"array di storage.' 
+---
+= Salvare le statistiche delle porte host dell'array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `save storageArray hostPortStatistics` il comando salva le statistiche delle porte host dell'array di storage.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Security Admin.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Questo comando sostituisce il deprecato xref:save-storagearray-iscsistatistics.adoc[Salvare le statistiche iSCSI degli array di storage], xref:save-storagearray-iserstatistics.adoc[Salvare le statistiche iSER degli array di storage], e. xref:save-storagearray-ibstats.adoc[Salva le statistiche InfiniBand dell'array di storage] comandi.
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+save storageArray hostPortStatistics [(raw | baseline)] type=(ISCSI| ISER | SRP | NVMEOF) file="filename"
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`raw`
+ a| 
+Consente di recuperare le statistiche raccolte dall'inizio della giornata. Racchiudere il parametro tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`baseline`
+ a| 
+Consente di recuperare le statistiche raccolte dal momento in cui le linee di base dei controller` sono state azzerate. Racchiudere il parametro tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`type`
+ a| 
+Consente di indicare il tipo di statistiche da raccogliere. Le scelte valide sono: `ISCSI`, `ISER`, `SRP`, e. `NVMEOF`.
+
+
+
+ a| 
+`file`
+ a| 
+Consente di specificare il percorso del file e il nome del file per salvare le statistiche. Racchiudere il nome del file tra virgolette doppie (" "). Utilizzare un nome di file qualsiasi con `.csv` interno.
+
+|===
+[cols="6*"]
+|===
+| Tipo | Ethernet MAC, Ethernet TCP/IP, Local Initiator (protocollo), DCBX Operational state, LLDP TLV, TLV DCBX | Destinazione (protocollo) | Interfaccia InfiniBand | Sottosistema NVMe | Nome file ASUP 
+
+
+ a| 
+`iscsi`
+ a| 
+X
+ a| 
+X
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+`iser`
+ a| 
+ a| 
+X
+ a| 
+X
+ a| 
+ a| 
+
+
+
+ a| 
+`srp`
+ a| 
+ a| 
+ a| 
+X
+ a| 
+ a| 
+
+
+
+ a| 
+`nvmeof`
+ a| 
+ a| 
+ a| 
+X
+ a| 
+X
+ a| 
+
+|===
+
+
+== Livello minimo del firmware
+
+8.41

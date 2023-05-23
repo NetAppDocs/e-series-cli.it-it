@@ -1,0 +1,62 @@
+---
+permalink: commands-a-z/show-auditlog-summary.html 
+sidebar: sidebar 
+keywords: show, audit, log, summary 
+summary: 'Il comando show AuditLog summary (Mostra riepilogo AuditLog) visualizza le informazioni di riepilogo del registro di controllo.' 
+---
+= Mostra il riepilogo del registro di controllo
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show auditLog summary` visualizza le informazioni di riepilogo del registro di controllo.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Sintassi
+
+[listing]
+----
+
+show auditLog summary
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Esempi
+
+[listing]
+----
+
+SMcli -n Array1 -c "show auditLog summary;"
+
+Total log records: 1,532
+First log record: 1493070393313 (2017-04-24T16:46:33.313-0500)
+Last log record: 1493134565128 (2017-04-25T10:36:05.128-0500)
+
+SMcli completed successfully.
+----
+
+
+== Livello minimo del firmware
+
+8.40

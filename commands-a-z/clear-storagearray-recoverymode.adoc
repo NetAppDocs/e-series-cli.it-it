@@ -1,0 +1,60 @@
+---
+permalink: commands-a-z/clear-storagearray-recoverymode.html 
+sidebar: sidebar 
+keywords: clear, storage array, recovery, mode 
+summary: Il comando clear StorageArray recoveryMode forza uno storage array a uscire dalla modalità di recovery. 
+---
+= Cancellare la modalità di recovery dello storage array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `clear storageArray recoveryMode` il comando obbliga uno storage array a uscire dalla modalità di recovery.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing]
+----
+clear storageArray recoveryMode
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Note
+
+[NOTE]
+====
+La modalità di ripristino viene attivata durante le operazioni di inizio giornata quando la configurazione del sistema viene cancellata ed è disponibile un backup integrato valido. Per uscire da questa modalità, ripristinare la configurazione del sistema da una posizione di backup o cancellare i backup integrati esistenti. Mentre la modalità di ripristino è in vigore, viene sollevata una condizione di attenzione necessaria e il Recovery Guru è disponibile dall'interfaccia utente. Tuttavia, la configurazione del sistema è vuota durante la modalità di ripristino.
+
+====
+[NOTE]
+====
+Se si desidera ripristinare una configurazione precedente dello storage array, è necessario ripristinare la configurazione dal backup prima di cancellare la modalità di ripristino. Per assicurarsi che il ripristino sia stato eseguito correttamente, è necessario eseguire controlli di convalida o rivolgersi al supporto tecnico. Una volta stabilito che il ripristino è stato eseguito correttamente, è possibile cancellare la modalità di ripristino.
+
+====
+
+
+== Livello minimo del firmware
+
+7.83

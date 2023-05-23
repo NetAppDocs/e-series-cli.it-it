@@ -1,0 +1,49 @@
+---
+permalink: commands-a-z/show-certificates.html 
+sidebar: sidebar 
+keywords: show, certificates 
+summary: 'Il comando Mostra certificati consente di visualizzare i certificati installati nell"archivio di attendibilità del pacchetto CLI.' 
+---
+= Mostra certificati
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `Show certificates` Il comando consente di visualizzare i certificati installati nell'archivio di attendibilità del pacchetto CLI.
+
+
+
+== Array supportati
+
+Questo comando si applica agli array di storage EF600.
+
+
+
+== Sintassi
+
+[listing]
+----
+show localCertificate all | alias alias
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`alias`
+ a| 
+Consente di specificare un certificato tramite l'alias definito dall'utente.
+
+|===
+
+
+== Livello minimo del firmware
+
+8.60

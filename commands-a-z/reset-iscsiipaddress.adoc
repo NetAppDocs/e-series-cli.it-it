@@ -1,0 +1,79 @@
+---
+permalink: commands-a-z/reset-iscsiipaddress.html 
+sidebar: sidebar 
+keywords: reset, iscsi, ip address 
+summary: 'Il comando reset iscsiIpAddress ripristina l"indirizzo IP dell"array di storage remoto per ristabilire la connessione con l"array di storage locale.' 
+---
+= Ripristinare l'indirizzo IP iSCSI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `reset iscsiIpAddress` Il comando ripristina l'indirizzo IP dell'array di storage remoto per ristabilire la connessione con l'array di storage locale.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo array di storage, con alcune limitazioni. Se si esegue il comando sull'array E2700 o E5600, non esistono restrizioni.
+
+[NOTE]
+====
+Se si esegue il comando sull'array E2800 o E5700, il tipo di client deve essere impostato su `symbol`. Questo comando non viene eseguito se il tipo di client è impostato su `https`.
+
+====
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+È possibile utilizzare questo comando per notificare all'array di storage locale che l'indirizzo IP iSCSI dell'array di storage remoto è stato modificato e deve essere aggiornato.
+
+Quando si stabilisce una relazione di mirroring asincrono con una connessione iSCSI, gli array di storage locale e remoto memorizzano un record dell'indirizzo IP dell'array di storage remoto nella configurazione di mirroring asincrono. Se l'indirizzo IP di una porta iSCSI cambia, l'array di storage remoto che sta tentando di utilizzare tale porta rileva un errore di comunicazione.
+
+L'array di storage con l'indirizzo IP modificato invia un messaggio a ciascun array di storage remoto associato ai gruppi di mirror asincroni configurati per il mirroring su una connessione iSCSI. Gli array di storage che ricevono questo messaggio aggiornano automaticamente l'indirizzo IP di destinazione remota.
+
+Se lo storage array con l'indirizzo IP modificato non riesce a inviare il messaggio inter-controller a un array di storage remoto, il sistema invia un avviso relativo al problema di connettività. Utilizzare `reset` comando per ristabilire la connessione con lo storage array locale.
+
+
+
+== Sintassi
+
+[listing]
+----
+reset (remoteStorageArrayName="storageArrayName" | remoteStorageArrayWwid=<wwID>)
+iscsiIpAddress
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`remoteStorageArrayName`
+ a| 
+Il nome dell'array di storage remoto per il quale si sta reimpostando l'indirizzo IP iSCSI. Racchiudere il nome dello storage array tra virgolette doppie (" ").
+
+
+
+ a| 
+`remoteStorageArrayWwid`
+ a| 
+WWID (World Wide Identifier) dell'array di storage per il quale si sta reimpostando l'indirizzo IP iSCSI. Per identificare lo storage array, è possibile utilizzare il WWID invece del nome dello storage array. Racchiudere il WWID tra parentesi angolari (< >).
+
+|===
+
+
+== Livello minimo del firmware
+
+7.84

@@ -1,0 +1,46 @@
+---
+permalink: commands-a-z/stop-ssdcache-locate.html 
+sidebar: sidebar 
+keywords: stop, ssd, cache, locate 
+summary: 'Il comando stop ssdCache Locate spegne gli indicatori luminosi dei dischi a stato solido (SSD) che sono stati attivati dal comando start ssdCache Locate.' 
+---
+= Arrestare l'individuazione della cache SSD
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `stop ssdCache locate` Il comando spegne le spie dei dischi a stato solido (SSD) che sono stati accesi da `start ssdCache locate` comando.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800 o E5700, è necessario disporre del ruolo Support Admin.
+
+
+
+== Sintassi
+
+[listing]
+----
+stop ssdCache locate
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Livello minimo del firmware
+
+7.84

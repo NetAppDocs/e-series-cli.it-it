@@ -1,0 +1,119 @@
+---
+permalink: commands-a-z/set-volume-logicalunitnumber.html 
+sidebar: sidebar 
+keywords: set, volume, map 
+summary: 'Il comando set volume logicalUnitNumber definisce la mappatura LUN (Logical Unit Number) o NSID (Namespace ID) tra un volume e un host o un gruppo di host.' 
+---
+= Consente di impostare la mappatura del volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set volume logicalUnitNumber` Command definisce il mapping LUN (Logical Unit Number) o NSID (Namespace ID) tra un volume e un host o un gruppo di host.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Questo comando è applicabile ai volumi di un gruppo di volumi o di un pool di dischi.
+
+[NOTE]
+====
+Non è possibile utilizzare questo comando per un volume di snapshot utilizzato nella copia del volume online.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set (volume pass:quotes[[_volumeName_]] | volume <"wwID"> | accessVolume)
+pass:quotes[logicalUnitNumber=_lun_]
+pass:quotes[(host="_hostName_"] |
+hostGroup=pass:quotes[("_hostGroupName_"] | defaultGroup)
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`volume`
+ a| 
+Il nome del volume per il quale si desidera definire il numero dell'unità logica. Racchiudere il nome del volume tra parentesi quadre ([ ]). Se il nome del volume contiene caratteri speciali o numeri, è necessario racchiudere il nome del volume tra virgolette doppie (" ") all'interno di parentesi quadre.
+
+
+
+ a| 
+`volume`
+ a| 
+WWID (World Wide Identifier) del volume per il quale si desidera definire il numero dell'unità logica. Racchiudere il WWID tra virgolette doppie (" ") all'interno di parentesi angolari ( ).
+
+
+
+ a| 
+`accessVolume`
+ a| 
+Il numero dell'unità logica per il volume di accesso. Il numero dell'unità logica è l'unica proprietà che è possibile impostare per il volume di accesso.
+
+
+
+ a| 
+`logicalUnitNumber`
+ a| 
+Il numero dell'unità logica o l'ID dello spazio dei nomi che si desidera utilizzare per eseguire il mapping a un host specifico. Questo parametro assegna anche l'host a un gruppo di host.
+
+[NOTE]
+====
+Il numero dell'unità logica o l'ID dello spazio dei nomi specificato non deve essere già in uso e deve essere compreso nell'intervallo supportato dal sistema operativo host. Non si verificherà alcun errore se si esegue il mapping del volume a un numero di unità logica o a un ID dello spazio dei nomi non supportato dall'host, ma l'host non sarà in grado di accedere al volume.
+
+====
+
+
+ a| 
+`host`
+ a| 
+Il nome dell'host a cui è mappato il volume. Racchiudere il nome host tra virgolette doppie (" ").
+
+
+
+ a| 
+`hostGroup`
+ a| 
+Il nome del gruppo di host a cui è mappato il volume. Racchiudere il nome del gruppo di host tra virgolette doppie (" "). `defaultGroup` è il gruppo host che contiene l'host a cui è mappato il volume.
+
+|===
+
+
+== Note
+
+Un gruppo di host è un elemento topologico opzionale che è possibile definire se si desidera designare una raccolta di host che condividono l'accesso agli stessi volumi. Il gruppo host è un'entità logica. Definire un gruppo di host solo se si dispone di due o più host in grado di condividere l'accesso agli stessi volumi.
+
+È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, trattini e caratteri di sottolineatura per i nomi. I nomi possono avere un massimo di 30 caratteri.
+
+Il volume di accesso è il volume in un ambiente SAN utilizzato per la comunicazione in banda tra il software di gestione dello storage e il controller dell'array di storage. Questo volume utilizza un indirizzo LUN o NSID e consuma 20 MB di spazio di storage non disponibile per lo storage dei dati dell'applicazione. Un volume di accesso è richiesto solo per gli array di storage gestiti in-band. Se si specifica `accessVolume` l'unica proprietà che è possibile impostare è `logicalUnitNumber` parametro.
+
+
+
+== Livello minimo del firmware
+
+7.83 aggiunge un volume di snapshot per i pool di dischi.

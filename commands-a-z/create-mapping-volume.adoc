@@ -1,0 +1,92 @@
+---
+permalink: commands-a-z/create-mapping-volume.html 
+sidebar: sidebar 
+keywords: create, volume, map 
+summary: Il comando create mapping volume crea un mapping logico da un volume a un host o a un gruppo di host. 
+---
+= Creare la mappatura del volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `create mapping volume` il comando crea un mapping logico da un volume a un host o a un gruppo di host.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+create mapping volume=pass:quotes[_"VolumeName"_
+(host="_hostName_" | hostGroup=("_hostGroupName_"] | defaultGroup))
+logicalUnitNumber=lun
+mapWaitPeriod=mapWaitPeriodValue
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`Volume`
+ a| 
+Il nome del volume per il quale si desidera creare un mapping logico. Racchiudere il nome del volume tra virgolette doppie (" ").
+
+
+
+ a| 
+`host`
+ a| 
+Il nome di un host a cui si desidera creare un mapping logico. Racchiudere il nome host tra virgolette doppie (" ").
+
+
+
+ a| 
+`hostGroup`
+ a| 
+Il nome di un gruppo host a cui si desidera creare un mapping logico. Racchiudere il nome del gruppo di host tra virgolette doppie (" "). Se si utilizza `defaultGroup` parola chiave, non racchiuderla tra virgolette.
+
+
+
+ a| 
+`logicalUnitNumber`
+ a| 
+Il numero logico o l'ID dello spazio dei nomi che si desidera utilizzare per eseguire il mapping a un host specifico. Questo parametro assegna anche l'host a un gruppo di host.
+
+[NOTE]
+====
+Il numero dell'unità logica o l'ID dello spazio dei nomi specificato non deve essere già in uso e deve essere compreso nell'intervallo supportato dal sistema operativo host. Non si verificherà alcun errore se si esegue il mapping del volume a un numero di unità logica o a un ID dello spazio dei nomi non supportato dall'host, ma l'host non sarà in grado di accedere al volume.
+
+====
+
+
+ a| 
+`mapWaitPeriod`
+ a| 
+Blocca la mappatura fino a quando non è in grado di completare il comando o fino al timeout per non influire sull'interazione. Se non viene immesso alcun valore, il comportamento predefinito consiste nel non eseguire l'azione se il volume non può essere mappato immediatamente.
+
+|===
+
+
+== Livello minimo del firmware
+
+7.83
+
+8.63 aggiunge il parametro mapWaitPeriod.

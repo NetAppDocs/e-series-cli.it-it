@@ -1,0 +1,52 @@
+---
+permalink: commands-a-z/reset-storagearray-socbaseline.html 
+sidebar: sidebar 
+keywords: reset, storage array, soc, baseline 
+summary: 'Il comando reset StorageArray SOCBaseline ripristina la linea di base per tutti i dispositivi switch-on-a-chip (SOC) a cui si accede attraverso i controller.' 
+---
+= Ripristinare la linea di base SOC dell'array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `reset storageArray SOCBaseline` Command ripristina la linea di base per tutti i dispositivi switch-on-a-chip (SOC) a cui si accede attraverso i controller.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Questo comando ripristina la linea di base impostando tutti i conteggi SOC su 0. Questo comando è valido solo per i dispositivi Fibre Channel in una topologia ad anello arbitrato.
+
+
+
+== Sintassi
+
+[listing]
+----
+reset storageArray SOCBaseline
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Livello minimo del firmware
+
+6.16

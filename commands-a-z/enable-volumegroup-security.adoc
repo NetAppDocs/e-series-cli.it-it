@@ -1,0 +1,69 @@
+---
+permalink: commands-a-z/enable-volumegroup-security.html 
+sidebar: sidebar 
+keywords: enable, volumegroup, security, command, non secure, volume, group 
+summary: Il comando di protezione Enable VolumeGroup converte un gruppo di volumi non sicuro in un gruppo di volumi sicuro. 
+---
+= Abilitare la protezione del gruppo di volumi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `enable volumeGroup security` il comando converte un gruppo di volumi non sicuro in un gruppo di volumi sicuro.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[enable volumeGroup [_volumeGroupName_]] security
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Il nome del gruppo di volumi che si desidera inserire nello stato Security Enabled (protezione abilitata). Racchiudere il nome del gruppo di volumi tra parentesi quadre ([ ]).
+
+|===
+
+
+== Note
+
+Queste condizioni devono essere soddisfatte per eseguire correttamente questo comando.
+
+* Tutti i dischi del gruppo di volumi devono essere dischi con crittografia completa.
+* La funzione Drive Security deve essere attivata.
+* È necessario impostare la chiave di sicurezza dello storage array.
+* Il gruppo di volumi è ottimale e non dispone di volumi di repository.
+
+
+Il firmware del controller crea un blocco che limita l'accesso ai dischi FDE. I dischi FDE hanno uno stato chiamato Security Capable. Quando si crea una chiave di sicurezza, lo stato viene impostato su Security Enabled (protezione abilitata), che limita l'accesso a tutti i dischi FDE presenti nell'array di storage.
+
+
+
+== Livello minimo del firmware
+
+7.40

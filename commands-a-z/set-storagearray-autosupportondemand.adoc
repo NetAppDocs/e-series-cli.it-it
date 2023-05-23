@@ -1,0 +1,84 @@
+---
+permalink: commands-a-z/set-storagearray-autosupportondemand.html 
+sidebar: sidebar 
+keywords: enable, disable, autosupport, ondemand, feature, individual, E2800, E5700, arrays 
+summary: Il comando Set StorageArray autoSupportOnDemand attiva o disattiva la funzione AutoSupport OnDemand. Questa funzione consente al supporto tecnico di coordinare la trasmissione dei dati AutoSupport e di richiedere la ritrasmissione dei dati di supporto mancanti. 
+---
+= Attivare o disattivare la funzione AutoSupport su richiesta
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray autoSupportOnDemand` Il comando attiva o disattiva la funzione AutoSupport su richiesta. Questa funzione consente al supporto tecnico di coordinare la trasmissione dei dati AutoSupport e di richiedere la ritrasmissione dei dati di supporto mancanti.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Contesto
+
+Prima di attivare questa funzione, è necessario attivare la funzione AutoSupport sull'array di storage. Dopo aver attivato questa funzione, è possibile attivare la funzione di diagnostica remota AutoSupport (se si desidera).
+
+
+
+== Sintassi
+
+[listing]
+----
+set storageArray autoSupportOnDemand (enable | disable)
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`enable | disable`
+ a| 
+Consente all'utente di attivare o disattivare la funzione AutoSupport su richiesta. Se AutoSupport è disattivato, l'azione di abilitazione non viene eseguita e richiede all'utente di attivarla per prima. Se la funzione di diagnostica remota è attivata, l'azione di disattivazione disattiva anche la funzione di diagnostica remota.
+
+|===
+
+
+== Esempi
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray autoSupportOnDemand enable;"
+
+SMcli completed successfully.
+----
+
+
+== Verifica
+
+Utilizzare `show storageArray autoSupport` per verificare se la funzione è stata attivata. Le due righe iniziali dell'output visualizzato mostrano lo stato di abilitazione della funzione AutoSupport, seguita dalla funzione AutoSupport on Demand:
+
+[listing]
+----
+The AutoSupport is enabled on this storage array.
+The AutoSupport OnDemand feature is enabled on this storage array.
+The AutoSupport Remote Diagnostics feature is enabled on this storage array.
+----
+
+
+== Livello minimo del firmware
+
+8.40

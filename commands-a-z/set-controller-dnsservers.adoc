@@ -1,0 +1,102 @@
+---
+permalink: commands-a-z/set-controller-dnsservers.html 
+sidebar: sidebar 
+keywords: set, controller, dns 
+summary: 'Il comando set controller DNSServers aggiorna le impostazioni DNS (Domain Name System) di un controller. Il DNS viene utilizzato per risolvere i nomi di dominio completi per i controller e un server NTP (Network Time Protocol).' 
+---
+= Impostare le impostazioni DNS del controller
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set controller DNSServers` Il comando aggiorna le impostazioni DNS (Domain Name System) di un controller. Il DNS viene utilizzato per risolvere i nomi di dominio completi per i controller e un server NTP (Network Time Protocol).
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Prima di iniziare, assicurarsi che:
+
+* È stato configurato un server DNS.
+* Si conoscono gli indirizzi di un server DNS primario e di un server DNS di backup, in caso di guasto del server DNS primario. Questi indirizzi possono essere indirizzi IPv4 o IPv6.
+
+
+[NOTE]
+====
+È necessario inviare questo comando a entrambi i controller. Questo comando è specifico del controller.
+
+====
+[NOTE]
+====
+Se le porte di gestione dell'array sono già state configurate con DHCP (Dynamic host Configuration Protocol) e si dispone di uno o più server DNS o NTP associati alla configurazione DHCP, non è necessario configurare manualmente DNS/NTP. In questo caso, l'array avrebbe già ottenuto automaticamente gli indirizzi del server DNS/NTP.
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+
+set controller[a] DNSServers=(auto|(Address1 [Address2]))
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`DNSServers`
+ a| 
+Questo parametro configura i server DNS per il controller. Specificare `auto` Per utilizzare i server DNS forniti da DHCP. In caso contrario, utilizzare un elenco separato da spazi di uno o due server DNS.
+
+[NOTE]
+====
+Le porte Ethernet di gestione dell'array supportano contemporaneamente i protocolli IPv4 o IPv6. Gli indirizzi possono essere indirizzi IPv4 o IPv6. Se si specificano più indirizzi, non è necessario che i tipi di indirizzo corrispondano.
+
+====
+Se viene specificato più di un indirizzo, questi verranno utilizzati nell'ordine in cui sono specificati (il primo è primario, il secondo è il backup).
+
+
+
+ a| 
+`AddressX`
+ a| 
+IPV4Address|IPv6Address
+
+|===
+
+
+== Esempi
+
+[listing]
+----
+
+set controller[a] DNSServers=auto;
+set controller[a] DNSServers=(192.168.1.1);
+set controller[b] DNSServers=(192.168.1.1 192.168.1.105);
+set controller[b] DNSServers=(2001:0db8:85a3:0000:0000:8a2e:0370:7334 192.168.1.1)
+----
+
+
+== Livello minimo del firmware
+
+8.25

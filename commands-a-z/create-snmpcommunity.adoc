@@ -1,0 +1,54 @@
+---
+permalink: commands-a-z/create-snmpcommunity.html 
+sidebar: sidebar 
+keywords: register, snmp, community 
+summary: 'Il comando create snmpCommunity crea una nuova community SNMP (Simple Network Management Protocol), una stringa di nome di comunità e registra la nuova community come entità nota per l"agente SNMP. Qualsiasi tentativo di registrare una nuova community con lo stesso nome di una community esistente viene rifiutato e il firmware restituisce un messaggio di errore.' 
+---
+= Registrare la community SNMP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `create snmpCommunity` Il comando crea una nuova community SNMP (Simple Network Management Protocol), una stringa di nome di comunità e registra la nuova community come entità nota per l'agente SNMP. Qualsiasi tentativo di registrare una nuova community con lo stesso nome di una community esistente viene rifiutato e il firmware restituisce un messaggio di errore.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+create snmpCommunity communityName=pass:quotes[_"snmpCommunityName"_]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`communityName`
+ a| 
+Il nome della community SNMP che si desidera creare. Racchiudere il nome della community SNMP tra virgolette doppie (" ").
+
+|===
+
+
+== Livello minimo del firmware
+
+8.30

@@ -1,0 +1,103 @@
+---
+permalink: commands-a-z/set-snapgroup.html 
+sidebar: sidebar 
+keywords: set, snapshot, group, attributes 
+summary: Il comando set snapGroup definisce le proprietà di un gruppo di snapshot. 
+---
+= Impostare gli attributi del gruppo di snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set snapGroup` il comando definisce le proprietà di un gruppo di snapshot.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set snapGroup pass:quotes[["_snapGroupName_"]]
+[userLabel=pass:quotes["_snapGroupName_"]] |
+[repositoryFullPolicy=(failBaseWrites | purgeSnapImages) |
+[repositoryFullLimit=pass:quotes[_percentValue_] |
+[autoDeleteLimit=pass:quotes[_numberOfSnapImages_]] |
+[rollbackPriority=(lowest | low | medium | high | highest)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`snapGroup`
+ a| 
+Il nome del gruppo di snapshot per cui si stanno impostando le proprietà. Racchiudere il nome del gruppo di snapshot tra virgolette doppie (" ") all'interno delle parentesi quadre ([ ]).
+
+
+
+ a| 
+`userLabel`
+ a| 
+Il nuovo nome che si desidera assegnare al gruppo di snapshot. Utilizzare questo parametro quando si desidera rinominare il gruppo di snapshot. Racchiudere il nome del nuovo gruppo di snapshot tra virgolette doppie (" ").
+
+
+
+ a| 
+`repositoryFullPolicy`
+ a| 
+Come si desidera che l'elaborazione dell'immagine snapshot continui se i volumi del repository per il gruppo di immagini snapshot sono pieni. È possibile scegliere di non eseguire operazioni di scrittura nel volume di base (`failBaseWrites`) o eliminare (eliminare) le immagini snapshot  `purgeSnapImages`). L'azione predefinita è `purgeSnapImages`.
+
+
+
+ a| 
+`repositoryFullLimit`
+ a| 
+La percentuale di capacità del volume del repository alla quale viene visualizzato un avviso che indica che il volume del repository di immagini snapshot è quasi pieno. USA valori interi. Ad esempio, un valore di 70 significa 70%. Il valore predefinito è 75.
+
+
+
+ a| 
+`autoDeleteLimit`
+ a| 
+Il numero massimo di immagini snapshot che si desidera eliminare automaticamente se si è scelto di eliminare le immagini snapshot per una policy completa del repository. USA valori interi. Il valore predefinito è 32.
+
+
+
+ a| 
+`rollBackPriority`
+ a| 
+Utilizzare questo parametro per determinare se le risorse di sistema devono essere allocate all'operazione di rollback a scapito delle prestazioni del sistema. I valori validi sono `highest`, `high`, `medium`, `low`, o. `lowest` Un valore di `high` Indica che l'operazione di rollback ha la priorità su tutti gli altri i/o host Un valore di `lowest` Indica che l'operazione di rollback deve essere eseguita con un impatto minimo sull'i/o host
+
+|===
+
+
+== Note
+
+È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per i nomi. I nomi possono avere un massimo di 30 caratteri.
+
+Quando si utilizza questo comando, è possibile specificare uno o più parametri. Tuttavia, non è necessario utilizzare tutti i parametri.
+
+
+
+== Livello minimo del firmware
+
+7.83

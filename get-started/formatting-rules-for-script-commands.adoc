@@ -1,0 +1,89 @@
+---
+permalink: get-started/formatting-rules-for-script-commands.html 
+sidebar: sidebar 
+keywords: format, rules, script, commands 
+summary: La sintassi univoca di uno specifico comando script è illustrata nella sezione Note alla fine della descrizione di ogni comando script. 
+---
+= Regole di formattazione per i comandi script
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+La sintassi univoca di uno specifico comando script è illustrata nella sezione Note alla fine della descrizione di ogni comando script.
+
+*Distinzione tra maiuscole e minuscole* -- i comandi di script non distinguono tra maiuscole e minuscole. È possibile digitare i comandi di script in minuscolo, maiuscolo o minuscolo. (Nelle seguenti descrizioni dei comandi, viene utilizzato il maiuscolo/minuscolo come ausilio per la lettura dei nomi dei comandi e la comprensione dello scopo del comando).
+
+*Spaces* -- è necessario inserire gli spazi nei comandi script così come sono mostrati nelle descrizioni dei comandi.
+
+*Parentesi quadre* -- le staffe quadrate vengono utilizzate in due modi:
+
+* Come parte della sintassi del comando.
+* Per indicare che i parametri sono opzionali. La descrizione di ciascun parametro indica se è necessario racchiudere un valore di parametro tra parentesi quadre.
+
+
+*Parentesi* -- le parentesi mostrate nella sintassi del comando racchiudono scelte specifiche per un parametro. In altri termini, se si desidera utilizzare il parametro, è necessario inserire uno dei valori racchiusi tra parentesi. In genere, non si includono le parentesi in un comando script; tuttavia, in alcuni casi, quando si inseriscono gli elenchi, è necessario racchiudere l'elenco tra parentesi. Tale elenco potrebbe essere un elenco di valori ID vassoio e valori ID slot. La descrizione di ciascun parametro indica se è necessario racchiudere un valore tra parentesi.
+
+*Barre verticali* -- le barre verticali di un comando di script indicano "`o`" e separano i valori validi per il parametro. Ad esempio, la sintassi per `raidLevel` il parametro nella descrizione del comando viene visualizzato come segue:
+
+[listing]
+----
+ raidLevel=(0 | 1 | 3 | 5 | 6)
+----
+Per utilizzare `raidLevel` Parametro per impostare il livello RAID 5, inserire questo valore:
+
+[listing]
+----
+ raidLevel=5
+----
+*Ubicazioni delle unità* -- i comandi CLI che identificano le posizioni delle unità supportano sia i vassoi delle unità ad alta capacità che quelli a bassa capacità. Un vassoio per dischi ad alta capacità dispone di cassetti che trattengono le unità. I cassetti scorrono fuori dal vassoio dell'unità per consentire l'accesso alle unità. Un vassoio per unità a bassa capacità non dispone di cassetti. Per un vassoio dell'unità ad alta capacità, è necessario specificare l'identificativo (ID) del vassoio dell'unità, l'ID del cassetto e l'ID dello slot in cui si trova l'unità. Per un vassoio dell'unità a bassa capacità, è necessario specificare solo l'ID del vassoio dell'unità e l'ID dello slot in cui si trova un'unità. Per un vassoio dell'unità a bassa capacità, un metodo alternativo per identificare una posizione per un'unità consiste nel specificare l'ID del vassoio dell'unità, impostare l'ID del cassetto su 0 e specificare l'ID dello slot in cui si trova un'unità. Separare i valori ID con una virgola. Se si immettono più set di valori ID, separare ciascun set di valori con uno spazio.
+
+Esistono due convenzioni per specificare i dischi nella CLI. La convenzione da utilizzare viene specificata in ciascun comando. Una convenzione utilizza un segno uguale e le parentesi:
+
+[listing]
+----
+
+        drive=\(trayID,[drawerID,]slotID\)
+----
+La seconda convenzione non utilizza alcun segno uguale, ma una coppia di parentesi graffe intorno ai dischi specificati:
+
+[listing]
+----
+
+        drive \[trayID,[drawerID,]slotID\]
+----
+Ecco alcuni esempi che utilizzano le parentesi:
+
+[listing]
+----
+(1,1 1,2 1,3 1,4 2,1 2,2 2,3 2,4)
+----
+oppure, per un vassoio per dischi ad alta capacità, questo esempio:
+
+[listing]
+----
+(1,1,1 1,2,2 1,3,3 1,4,4 2,1,1 2,2,2 2,3,3 2,4,4)
+----
+*Corsivo termini* -- i termini corsivo nel comando indicano un valore o informazioni da fornire. Ad esempio, quando si incontra il termine in corsivo:
+
+[listing]
+----
+
+          *numberOfDrives*
+----
+Sostituire il termine in corsivo con un valore per il numero di dischi che si desidera includere nel comando script.
+
+*Punto e virgola* -- i comandi di script devono terminare con un punto e virgola (`;`). È possibile immettere più di un comando script nella riga di comando o in un file di script. Ad esempio, viene utilizzato un punto e virgola per separare ogni comando di script nel seguente file di script.
+
+[listing]
+----
+create volume drives=(0,2 0,3 1,4 1,5 2,6 2,7) raidLevel=5 userLabel=”v1” capacity=2gb owner=a;
+create volume volumeGroup=2 userLabel=”v2” capacity=1gb owner=b;
+create volume volumeGroup=2 userLabel=”v3” capacity=1gb owner=a;
+----
+[listing]
+----
+create volume drives=(0,4 0,5 1,6 1,7 2,8 2,9) raidLevel=5 userLabel=”v4” capacity=2gb owner=b;
+create volume volumeGroup=3 userLabel=”v5” capacity=1gb owner=a;
+create volume volumeGroup=3 userLabel=”v6” capacity=1gb owner=b;
+----

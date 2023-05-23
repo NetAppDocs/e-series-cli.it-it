@@ -1,0 +1,69 @@
+---
+permalink: commands-a-z/set-hostchannel.html 
+sidebar: sidebar 
+keywords: set, host, channel 
+summary: 'Il comando set hostChannel definisce l"ID loop per il canale host.' 
+---
+= Impostare il canale host
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set hostChannel` Command definisce l'ID loop per il canale host.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set hostChannel pass:quotes[[_hostChannelNumber_]]
+preferredID=pass:quotes[_portID_]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`hostChannel`
+ a| 
+Il numero identificativo del canale host per il quale si desidera impostare l'ID loop. Racchiudere il numero identificativo del canale host tra parentesi quadre ([ ]).
+
+Utilizzare un valore del canale host appropriato per il proprio modello di controller. Un vassoio del controller può supportare un canale host o fino a otto canali host. I valori validi del canale host sono `a1`, `a2`, `a3`, `a4`, `a5`, `a6`, `a7`, `a8`, `b1`, `b2`, `b3`, `b4`, `b5`, `b6`, `b7`, o. `b8`.
+
+
+
+ a| 
+`preferredID`
+ a| 
+Identificativo della porta per il canale host specificato. I valori ID porta sono `0` a. `127`.
+
+|===
+
+
+== Livello minimo del firmware
+
+6.10
+
+6.14 aggiunge un aggiornamento all'identificatore del canale host.
+
+7.15 aggiunge un aggiornamento all'identificatore del canale host.

@@ -1,0 +1,63 @@
+---
+permalink: commands-a-z/set-snmpcommunity.html 
+sidebar: sidebar 
+keywords: update, snmp, community 
+summary: 'Il comando set snmpCommunity crea un nuovo nome per una community SNMP (Simple Network Management Protocol) esistente.' 
+---
+= Aggiornare la community SNMP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set snmpCommunity` Command crea un nuovo nome per una community SNMP (Simple Network Management Protocol) esistente.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set snmpCommunity communityName=pass:quotes["_snmpCommunityName_"]
+newCommunityName=pass:quotes["_newSnmpCommunityName_"]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`communityName`
+ a| 
+Il nome della community SNMP esistente che si desidera rinominare. Racchiudere il nome della community SNMP tra virgolette doppie (" ").
+
+
+
+ a| 
+`newCommunityName`
+ a| 
+Il nuovo nome che si desidera assegnare alla community SNMP. Racchiudere il nome della community SNMP tra virgolette doppie (" ").
+
+|===
+
+
+== Livello minimo del firmware
+
+8.30

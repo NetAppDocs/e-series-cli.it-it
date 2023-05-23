@@ -1,0 +1,72 @@
+---
+permalink: commands-a-z/delete-hostport.html 
+sidebar: sidebar 
+keywords: delete, hostport, command, host, port, identification 
+summary: 'Il comando delete hostPort elimina l"identificazione della porta host.' 
+---
+= Eliminare la porta host
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `delete hostPort` il comando elimina l'identificazione di una porta host.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+L'identificazione è un valore software che rappresenta la porta host fisica al controller. Eliminando l'identificazione, il controller non riconosce più le istruzioni e i dati dalla porta host.
+
+[IMPORTANT]
+====
+Questo comando non funziona in un ambiente iSCSI, dove le porte host sono considerate iniziatori. Utilizzare invece il `delete iscsiInitiator` comando. Vedere xref:delete-iscsiinitiator.adoc[Eliminare iSCSI Initiator].
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+delete hostPort [hostPortName]
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`hostPort`
+ a| 
+Il nome della porta host che si desidera eliminare. Racchiudere il nome della porta host tra parentesi quadre ([ ]). Se il nome della porta host contiene caratteri speciali o è composto solo da numeri, è necessario racchiudere il nome tra virgolette doppie (" ") tra parentesi quadre.
+
+|===
+
+
+== Note
+
+Una porta host è una connessione fisica su un adattatore host che risiede all'interno di un computer host. Una porta host fornisce un accesso host ai volumi in un array di storage.
+
+
+
+== Livello minimo del firmware
+
+5.20

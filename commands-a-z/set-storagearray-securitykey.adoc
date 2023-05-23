@@ -1,0 +1,65 @@
+---
+permalink: commands-a-z/set-storagearray-securitykey.html 
+sidebar: sidebar 
+keywords: set, internal, storage, array, security key 
+summary: 'Il comando Set StorageArray securityKey imposta la chiave di sicurezza utilizzata nell"array di storage per implementare la funzione Drive Security.' 
+---
+= Impostare la chiave di sicurezza interna dello storage array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray securityKey` Command imposta la chiave di sicurezza utilizzata nell'array di storage per implementare la funzione Drive Security.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Contesto
+
+Quando un disco con funzionalità di sicurezza nell'array di storage viene assegnato a un gruppo di volumi o a un pool di dischi protetti, tale disco viene abilitato per la sicurezza utilizzando la chiave di sicurezza. Prima di poter impostare la chiave di sicurezza, è necessario utilizzare `create storageArray securityKey` per creare la chiave di sicurezza.
+
+[NOTE]
+====
+Questo comando si applica solo alla gestione interna delle chiavi.
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+set storageArray securityKey
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Note
+
+I dischi con funzionalità di sicurezza sono dotati di hardware per accelerare l'elaborazione crittografica e ciascuno di essi dispone di una chiave disco univoca. Un disco con funzionalità di protezione si comporta come qualsiasi altro disco fino a quando non viene aggiunto a un gruppo di volumi protetto, nel qual caso l'unità con funzionalità di protezione diventa protetta.
+
+Ogni volta che un disco abilitato alla sicurezza viene acceso, richiede la chiave di sicurezza corretta dal controller prima di poter leggere o scrivere i dati. Pertanto, un disco abilitato alla sicurezza utilizza due chiavi: La chiave del disco che crittografa e decrta i dati e la chiave di sicurezza che autorizza i processi di crittografia e decratura. Il `set storageArray securityKey` command commette la chiave di sicurezza a tutti i controller e le unità abilitate per la sicurezza nell'array di storage. La funzione di crittografia completa del disco garantisce che, se un disco abilitato alla sicurezza viene rimosso fisicamente da un array di storage, i dati non possono essere letti da nessun altro dispositivo, a meno che non sia nota la chiave di sicurezza.
+
+
+
+== Livello minimo del firmware
+
+7.50

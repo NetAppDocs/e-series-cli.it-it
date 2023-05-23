@@ -1,0 +1,46 @@
+---
+permalink: commands-a-z/set-storagearray-cachemirrordataassurancecheckenable.html 
+sidebar: sidebar 
+keywords: set, storage, array, enable, disable, cache, mirror, data, assurance, check 
+summary: Il comando Set StorageArray cacheMirrorDataAssuranceCheckEnable consente di attivare o disattivare il controllo dei dati mirror della cache. 
+---
+= Impostare lo storage array per abilitare o disabilitare il controllo di garanzia dei dati mirror della cache
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray cacheMirrorDataAssuranceCheckEnable` il comando consente di attivare o disattivare il controllo di garanzia dei dati mirror della cache.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Sintassi
+
+[listing]
+----
+set storageArray cacheMirrorDataAssuranceCheckEnable=(TRUE | FALSE)
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Livello minimo del firmware
+
+8.41 nuovo parametro di comando.

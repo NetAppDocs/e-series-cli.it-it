@@ -1,0 +1,69 @@
+---
+permalink: commands-a-z/set-volumegroup-forcedstate.html 
+sidebar: sidebar 
+keywords: set, volume, group, forced, state 
+summary: Il comando Set VolumeGroup forcedState sposta un gruppo di volumi in uno stato forzato. 
+---
+= Impostare lo stato forzato del gruppo di volumi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set volumeGroup forcedState` Il comando sposta un gruppo di volumi in uno stato forzato.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Utilizzare questo comando se `start volumeGroup import` Il comando non sposta il gruppo di volumi in uno stato importato o se l'operazione di importazione non funziona a causa di errori hardware. In uno stato forzato, il gruppo di volumi può essere importato ed è quindi possibile identificare gli errori hardware.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set volumeGroup pass:quotes[[_volumeGroupName_]] forcedState
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`volumeGroup`
+ a| 
+Il nome del gruppo di volumi che si desidera inserire in uno stato forzato. Racchiudere il nome del gruppo di volumi tra parentesi quadre ([ ]).
+
+|===
+
+
+== Note
+
+È possibile spostare le unità che compongono un gruppo di volumi da uno storage array a un altro storage array. La CLI fornisce tre comandi che consentono di spostare i dischi. I comandi sono `start volumeGroup export`, `start volumeGroup import`, e. `set volumeGroup forcedState`.
+
+Nello stato forzato, è possibile eseguire un'operazione di importazione sul gruppo di volumi.
+
+
+
+== Livello minimo del firmware
+
+7.10

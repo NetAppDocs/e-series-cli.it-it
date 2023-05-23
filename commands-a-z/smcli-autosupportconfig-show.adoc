@@ -1,0 +1,142 @@
+---
+permalink: commands-a-z/smcli-autosupportconfig-show.html 
+sidebar: sidebar 
+keywords: display, autosupport, bundle, collection, set 
+summary: Il comando SMcli -autoSupportConfig show visualizza le impostazioni della raccolta bundle AutoSupport per il dominio di gestione. Queste impostazioni si applicano a tutti gli array di storage nel dominio di gestione per cui è stato attivato AutoSupport. 
+---
+= Visualizzare le impostazioni della raccolta bundle AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `SMcli -autoSupportConfig show` Visualizza le impostazioni della raccolta bundle AutoSupport per il dominio di gestione. Queste impostazioni si applicano a tutti gli array di storage nel dominio di gestione per cui è stato attivato AutoSupport.
+
+
+
+== Array supportati
+
+Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E2800 o E5700.
+
+
+
+== Contesto
+
+L'output del comando da questo comando mostra le seguenti informazioni di configurazione:
+
+* Lo stato di attivazione di questo dominio di gestione della funzionalità AutoSupport, della funzione AutoSupport su richiesta e della funzione di diagnostica remota AutoSupport
+* Parametri di erogazione che dipendono dal metodo di erogazione configurato:
++
+** Il metodo di consegna è SMTP: Vengono visualizzati l'indirizzo e-mail di destinazione, il server di inoltro della posta e l'indirizzo e-mail del mittente
+** Il metodo di consegna è HTTP o HTTPS:
++
+*** Direct Connection (connessione diretta) - viene visualizzato l'indirizzo IP di destinazione
+*** Connessione al server proxy - vengono visualizzati l'indirizzo host, il numero di porta e i dettagli di autenticazione
+*** Connessione PAC (Automatic Proxy Configuration script) - viene visualizzata la posizione dello script
+
+
+
+
+* Tabella che elenca, per ciascun array di storage, il nome dell'array, se si tratta di un array compatibile con ASUP, i numeri di serie dello chassis e gli indirizzi IP dei controller dell'array
+
+
+
+
+== Contesto
+
+[NOTE]
+====
+Questo comando è un comando SMcli, non un comando script. Eseguire questo comando da una riga di comando. Non è possibile eseguire questo comando dall'editor di script nel software di gestione dello storage.
+
+====
+[NOTE]
+====
+Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E2800 o E5700.
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+SMcli -autoSupportConfig show
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Livello minimo del firmware
+
+8.25
+
+
+
+== Esempio di output per gli stati di attivazione
+
+[listing]
+----
+The AutoSupport feature is activated on this storage management station.
+The AutoSupport OnDemand feature is de-activated on this storage management station.
+The AutoSupport Remote Diagnostics feature is de-activated on this storage management station.
+----
+
+
+== Esempio di output per il metodo di consegna SMTP
+
+[listing]
+----
+Delivery method: SMTP
+Destination email address:  http://asupserver.corp.netapp.com/put/AsupPut/
+Mail relay server: server.eng.netapp.com
+Sender email address:  user@netapp.com
+----
+
+
+== Esempio di output per il metodo di erogazione HTTP o HTTPS con una connessione diretta
+
+[listing]
+----
+Delivery method:  HTTP
+Destination IP address:  http://asupserver.corp.netapp.com/put/AsupPut/
+Connection:  Direct
+----
+
+
+== Esempio di output per il metodo di erogazione HTTP con una connessione proxy
+
+[listing]
+----
+Connection:  Proxy server
+Host Address:  10.227.76.123
+Port number: 8080
+Authentication required: Yes
+User name: admin
+Password: **********
+----
+
+
+== Esempio di output per il metodo di erogazione HTTP con uno script di configurazione automatica del proxy (PAC)
+
+[listing]
+----
+Connection: Automatic proxy configuration script (PAC)
+Script location: http://esgweb.eng.netapp.com/~user/proxy.pac
+----
+
+
+== Esempio di output per la tabella di array (tutti i metodi di erogazione)
+
+[listing]
+----
+
+Name  AutoSupport Capable   Chassis Serial Number   IP Address
+SA_1  Yes (enabled)         SX94500434              10.113.173.123, 10.113.173.456
+SA_2  Yes (disabled)        SX94607107              10.113.174.789, 10.113.174.345
+SA_3  No                    Not available           10.113.59.58, 10.113.59.59
+----

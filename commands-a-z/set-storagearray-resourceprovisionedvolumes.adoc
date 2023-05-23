@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/set-storagearray-resourceprovisionedvolumes.html 
+sidebar: sidebar 
+keywords: set, storage, array, resource, provisioned, volumes 
+summary: Il comando Set StorageArray resourceProvisionedVolumes disattiva la funzione DULBE. 
+---
+= Impostare i volumi con provisioning delle risorse degli array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray resourceProvisionedVolumes` Il comando disattiva la funzione DULBE.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo array di storage, inclusi gli array EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array EF600 ed EF300, è necessario disporre del ruolo Storage Admin.
+
+
+
+== Contesto
+
+Il provisioning delle risorse è una funzionalità disponibile che consente di inizializzare rapidamente grandi volumi.
+
+Un volume con provisioning di risorse è un volume denso in un gruppo di volumi o pool SSD, in cui la capacità del disco viene allocata (assegnata al volume) quando viene creato il volume, ma i blocchi del disco vengono disallocati (non mappati). Con un volume con provisioning di risorse, non è prevista alcuna inizializzazione in background con time-bound. Al contrario, ogni stripe RAID viene inizializzata alla prima scrittura su un blocco di volume nello stripe
+
+I volumi con provisioning delle risorse sono supportati solo su gruppi di volumi e pool SSD, in cui tutti i dischi del gruppo o del pool supportano la funzionalità di ripristino degli errori NVMe Deallocated o Unwritten Logical Block Error Enable (DULBE). Quando viene creato un volume con provisioning di risorse, tutti i blocchi di dischi assegnati al volume vengono deallocati (non mappati). La deallocazione dei blocchi può migliorare la durata dell'utilizzo degli SSD e aumentare le massime prestazioni di scrittura. Il miglioramento varia in base al modello e alla capacità di ciascun disco.
+
+
+
+== Sintassi
+
+[listing]
+----
+set storageArray resourceProvisionedVolumes=(enable|disable)
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`resourceProvisionedVolumes`
+ a| 
+L'impostazione per specificare se le funzionalità di provisioning delle risorse sono attivate. Per disattivare il provisioning delle risorse, impostare questo parametro su `disable`. Il valore predefinito è `enable`.
+
+[NOTE]
+====
+La modifica di questo valore si applica solo ai gruppi di volumi e ai pool creati in futuro. Non modifica il valore dei gruppi di volumi e dei pool esistenti.
+
+====
+|===
+
+
+== Livello minimo del firmware
+
+8.63

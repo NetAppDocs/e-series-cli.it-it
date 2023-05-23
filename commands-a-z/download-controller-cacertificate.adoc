@@ -1,0 +1,89 @@
+---
+permalink: commands-a-z/download-controller-cacertificate.html 
+sidebar: sidebar 
+keywords: download, controller, certificate, command, install, root, intermediate, web, servers, validate, array, roles, context 
+summary: Il comando download controller caCertificate installa i certificati CA principali/intermedi sui server Web dei controller per convalidare il certificato firmato dal server Web. 
+---
+= Installare i certificati CA principali/intermedi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `download controller caCertificate` Il comando installa i certificati CA principali/intermedi sui server Web dei controller per convalidare il certificato firmato dal server Web.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Contesto
+
+Eseguire questa azione per ciascun controller.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+
+download controller[(a|b)] caCertificate pass:quotes[[alias="_string_"]]
+         pass:quotes[file="_filename_"]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`controller`
+ a| 
+Consente di specificare il controller su cui si desidera installare il certificato firmato root/intermedio. Gli identificatori di controller validi sono a o b, dove a è il controller nello slot A e b è il controller nello slot B. Racchiudere l'identificatore del controller tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`alias`
+ a| 
+Consente di specificare un alias per rappresentare il certificato root/intermedio. Questo alias viene utilizzato per cercare informazioni sui certificati root/intermedi o per eliminarli. Un alias è associato a un certificato root/intermedio e deve essere univoco.
+
+
+
+ a| 
+`file`
+ a| 
+Consente di specificare il file che contiene il certificato CA principale/intermedio. Le estensioni accettabili sono .pem, .cer, .crt e .der.
+
+|===
+
+
+== Esempi
+
+[listing]
+----
+
+SMcli -n Array1 -c "download controller[a] caCertificate alias="myAlias" file="C:\rootCA1.cer";"
+SMcli -n Array1 -c "download controller[b] caCertificate file="C:\rootCA1.cer";"
+
+SMcli completed successfully.
+----
+
+
+== Livello minimo del firmware
+
+8.40

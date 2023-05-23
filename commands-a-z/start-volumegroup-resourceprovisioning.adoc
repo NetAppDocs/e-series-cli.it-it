@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/start-volumegroup-resourceprovisioning.html 
+sidebar: sidebar 
+keywords: start, volume, group, resource, provision 
+summary: 'Il comando start VolumeGroup resourceProvisioning abilita il provisioning delle risorse su un determinato gruppo di volumi e avvia un"operazione asincrona di abilitazione del provisioning delle risorse su ciascun volume del gruppo di volumi. Il provisioning delle risorse richiede che tutti i dischi del gruppo di volumi supportino la funzionalità DULBE di NVMe.' 
+---
+= Avviare il provisioning delle risorse del gruppo di volumi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `start volumeGroup resourceProvisioning` il comando abilita il provisioning delle risorse su un determinato gruppo di volumi e avvia un'operazione asincrona di abilitazione del provisioning delle risorse su ciascun volume del gruppo di volumi. Il provisioning delle risorse richiede che tutti i dischi del gruppo di volumi supportino la funzionalità DULBE di NVMe.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo array di storage, inclusi gli array EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array EF600 e EF300, è necessario disporre dei ruoli Storage Admin o Support Admin.
+
+
+
+== Contesto
+
+Per disattivare il provisioning delle risorse in un gruppo di volumi, utilizzare il comando di provisioning completo con l'opzione per disattivare il provisioning delle risorse. Un gruppo di volumi viene fornito in base alle risorse quando viene creato se tutti i dischi sono compatibili con DULBE e gli array di storage `resourceProvisionedVolumes` l'impostazione è `true`.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[start volumeGroup[_volumeGroupName_]] resourceProvisioning
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`volumeGroupName`
+ a| 
+Il gruppo di volumi che si desidera attivare la funzionalità di provisioning delle risorse. Racchiudere il nome del gruppo di volumi tra parentesi quadre ([ ]).
+
+|===
+
+
+== Livello minimo del firmware
+
+11.73

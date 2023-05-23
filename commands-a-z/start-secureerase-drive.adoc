@@ -1,0 +1,81 @@
+---
+permalink: commands-a-z/start-secureerase-drive.html 
+sidebar: sidebar 
+keywords: start, fde, secure, drive, erase 
+summary: 'Il comando start secureErase drive cancella tutti i dati da uno o più dischi con crittografia completa dei dischi (FDE) in modo che possano essere riutilizzati come dischi FDE.' 
+---
+= Avviare la cancellazione sicura del disco FDE
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `start secureErase drive` Il comando cancella tutti i dati da uno o più dischi con crittografia completa dei dischi (FDE) in modo che possano essere riutilizzati come dischi FDE.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Contesto
+
+Eseguire questo comando solo quando i dischi FDE non fanno più parte di un gruppo di volumi o di un pool di dischi sicuri o quando la chiave di sicurezza non è nota.
+
+[NOTE]
+====
+Per cancellare un'unità FIPS quando l'unità è bloccata e la chiave di sicurezza per sbloccarla non è disponibile, utilizzare `set drive securityID` comando.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+[start secureErase (drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_]] | drives pass:quotes[[_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_]])
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`drive` oppure `drives`
+ a| 
+Per i vassoi ad alta capacità, specificare il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot per l'unità. Per i vassoi delle unità a bassa capacità, specificare il valore dell'ID del vassoio e il valore dell'ID dello slot per l'unità. I valori dell'ID vassoio sono `0` a. `99`. I valori dell'ID cassetto sono `1` a. `5`.
+
+Tutti i valori massimi di ID slot sono 24. I valori ID slot iniziano con 0 o 1, a seconda del modello di vassoio. I cassetti per dischi compatibili con i controller E2800 e E5700 hanno numeri ID slot a partire da 0. I vassoi per dischi compatibili con i controller E2700 e E5600 hanno numeri ID slot a partire da 1.
+
+Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot tra parentesi quadre ([ ]).
+
+[NOTE]
+====
+L'elenco delle unità non può contenere tutte le unità dell'array di storage, altrimenti il comando verrà rifiutato. Per cancellare tutti i dischi in modo sicuro, eseguire questo comando due volte, specificando l'elenco dei dischi in due gruppi separati.
+
+====
+|===
+
+
+== Note
+
+Il firmware del controller crea un blocco che limita l'accesso ai dischi FDE. I dischi FDE hanno uno stato chiamato Security Capable. Quando si crea una chiave di sicurezza, lo stato viene impostato su Security Enabled (protezione abilitata), che limita l'accesso a tutti i dischi FDE presenti nell'array di storage.
+
+
+
+== Livello minimo del firmware
+
+7.40

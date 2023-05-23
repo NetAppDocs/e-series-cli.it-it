@@ -1,0 +1,66 @@
+---
+permalink: commands-a-z/set-storagearray-managementinterface.html 
+sidebar: sidebar 
+keywords: set, storage, array, management, interface 
+summary: 'Il comando set StorageArray managementInterface modifica l"interfaccia di gestione del controller. Modificare il tipo di interfaccia di gestione per imporre la riservatezza tra lo storage array e il relativo software di gestione o per accedere a tool esterni.' 
+---
+= Impostare l'interfaccia di gestione degli array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray managementInterface` command modifica l'interfaccia di gestione del controller. Modificare il tipo di interfaccia di gestione per imporre la riservatezza tra lo storage array e il relativo software di gestione o per accedere a tool esterni.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Sintassi
+
+[listing]
+----
+
+set storageArray managementInterface restOnly={true | false}
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`restOnly`
+ a| 
+Quando è impostato su `true`, Indica che l'interfaccia RESTful è l'unica interfaccia di gestione consentita. Questa interfaccia impone una connessione crittografata tra lo storage array e il software di gestione.
+
+Quando è impostato su `false`indica che è consentita l'interfaccia legacy tra lo storage array e il software di gestione. Questa interfaccia non è crittografata.
+
+Alcuni strumenti che comunicano direttamente con l'interfaccia di gestione legacy, come il provider SMI-S di SANtricity o OnCommand Insight (OCI), non funzioneranno a meno che non lo sia `restOnly` il parametro è impostato su `false`. Per ulteriori informazioni, contatta il supporto tecnico.
+
+|===
+
+
+== Esempi
+
+[listing]
+----
+
+SMcli -n Array1 -c "set storageArray managementInterface restOnly=true;"
+
+SMcli completed successfully.
+----

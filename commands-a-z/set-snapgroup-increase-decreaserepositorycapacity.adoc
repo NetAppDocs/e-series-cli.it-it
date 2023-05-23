@@ -1,0 +1,125 @@
+---
+permalink: commands-a-z/set-snapgroup-increase-decreaserepositorycapacity.html 
+sidebar: sidebar 
+keywords: set, snapshot, group, repository, volume, capacity 
+summary: Il comando Set SnapGroup aumenta/diminuisce la capacità di RepositoryCapacity aumenta o diminuisce la capacità di un volume di repository di un gruppo di snapshot. 
+---
+= Impostare la capacità del volume del repository del gruppo di snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set snapGroup increase/decreaseRepositoryCapacity` il comando aumenta o diminuisce la capacità di un volume di repository di un gruppo di snapshot.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi per aumentare la capacità
+
+[listing, subs="+macros"]
+----
+set snapGroup pass:quotes[["_snapGroupName_"]] increaseRepositoryCapacity
+(repositoryVolumes="repos_xxxx" | repositoryVolumes=pass:quotes[((_volumeGroupName_]
+pass:quotes[[capacity=_capacityValue_]])) | repositoryVolumes=pass:quotes[((_diskPoolName_]
+pass:quotes[[capacity=_capacityValue_]])))
+----
+
+
+== Sintassi per ridurre la capacità
+
+[listing, subs="+macros"]
+----
+set snapGroup pass:quotes[["_snapGroupName_"]]
+decreaseRepositoryCapacity
+count=pass:quotes[_numberOfVolumes_]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`snapGroup`
+ a| 
+Il nome del gruppo di snapshot per il quale si desidera aumentare la capacità o ridurla. Racchiudere il nome del gruppo di snapshot tra virgolette doppie (" ") all'interno delle parentesi quadre ([ ]).
+
+
+
+ a| 
+`repositoryVolume`
+ a| 
+Il nome del volume di repository per il quale si desidera aumentare la capacità. Un volume standard disponibile viene aggiunto al volume di repository per aumentare la capacità del volume di repository.
+
+Sono disponibili due opzioni per definire il nome di un volume di repository:
+
+* Utilizzare un volume repository esistente: Nome
+* Creare un nuovo volume di repository quando si esegue questo comando
+
+
+Il nome di un volume di repository esistente è costituito da due parti:
+
+* Il termine "repos"
+* Identificatore numerico a quattro cifre assegnato dal software di gestione dello storage al nome del volume del repository
+
+
+Racchiudere il nome del volume di repository esistente tra virgolette doppie (" ").
+
+Se si desidera creare un nuovo volume di repository quando si esegue questo comando, è necessario immettere il nome di un gruppo di volumi o di un pool di dischi in cui si desidera creare il volume di repository. In alternativa, è anche possibile definire la capacità del volume di repository. Se si desidera definire la capacità, è possibile utilizzare i seguenti valori:
+
+* Un valore intero che rappresenta una percentuale della capacità del volume di base
+* Un valore di frazione decimale che rappresenta una percentuale della capacità del volume di base
+* Una dimensione specifica per il volume di repository. Le dimensioni sono definite in unità di `bytes`, `KB`, `MB`, `GB`, o. `TB`.
+
+
+Se non si utilizza l'opzione di capacità, il software di gestione dello storage imposta la capacità sul 20% della capacità del volume di base.
+
+Quando si esegue questo comando, il software di gestione dello storage crea il volume di repository per il volume di snapshot.
+
+
+
+ a| 
+`count`
+ a| 
+Il numero di volumi di repository che si desidera rimuovere dal gruppo di snapshot. USA valori interi.
+
+|===
+
+
+== Note
+
+È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per l'etichetta utente. Le etichette dell'utente possono contenere un massimo di 30 caratteri.
+
+Il nome del volume del repository viene creato automaticamente dal software di gestione dello storage e dal firmware quando si crea un nuovo gruppo di snapshot. Non è possibile rinominare il volume del repository perché la ridenominazione del volume del repository interrompe il collegamento con le immagini snapshot.
+
+Un volume di repository di gruppi di snapshot è un volume espandibile strutturato come un insieme concatenato di un massimo di 16 entità di volume standard. Inizialmente, un volume di repository espandibile ha un solo elemento. La capacità del volume di repository espandibile è esattamente quella del singolo elemento. È possibile aumentare la capacità di un volume di repository espandibile allegando volumi standard aggiuntivi. La capacità del volume del repository espandibile composito diventa quindi la somma delle capacità di tutti i volumi standard concatenati.
+
+Un volume di repository di gruppi di snapshot deve soddisfare un requisito di capacità minimo che corrisponde alla somma dei seguenti requisiti:
+
+* 32 MB per supportare un overhead fisso per il gruppo di snapshot e per l'elaborazione copy-on-write.
+* Capacità per l'elaborazione del rollback, pari a 1/5000esimo della capacità del volume di base.
+
+
+La capacità minima viene utilizzata dal firmware del controller e dal software di gestione dello storage.
+
+
+
+== Livello minimo del firmware
+
+7.83

@@ -1,0 +1,124 @@
+---
+permalink: commands-a-z/add-volume-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: add volume, asynchronous, mirror group, supported arrays, roles, context, syntax, parameter, minimum firmware level 
+summary: Il comando add volume asyncMirrorGroup aggiunge un volume primario a un gruppo di mirror asincrono. 
+---
+= Aggiungere il volume al gruppo di mirror asincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `add volume asyncMirrorGroup` il comando aggiunge un volume primario a un gruppo di mirror asincrono.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo array di storage, con alcune limitazioni. Se si esegue il comando sull'array E2700 o E5600, non esistono restrizioni.
+
+[NOTE]
+====
+Se si esegue il comando sull'array E2800 o E5700, il tipo di client deve essere impostato su `symbol`. Questo comando non viene eseguito se il tipo di client è impostato su `https`.
+
+====
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Questo comando è valido solo sull'array di storage locale che contiene il gruppo di mirror asincrono a cui si desidera aggiungere il volume primario. Un gruppo di mirror asincrono dispone di un volume di repository che viene utilizzato per salvare i dati per tutte le immagini point-in-time che fanno parte del gruppo di mirror asincrono. Ciascun volume primario del gruppo di mirror asincrono dispone di un volume mirror corrispondente su un array di storage remoto.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[add volume="_volumeName_" asyncMirrorGroup="_asyncMirrorGroupName_"
+remotePassword="_password_"
+(repositoryVolume="repos_xxxx" |
+repositoryVolume=(_volumeGroupName_ ]pass:quotes[[capacity=_capacityValue_])]
+repositoryVolume=pass:quotes[(_diskPoolName_] pass:quotes[[capacity=_capacityValue_]))
+----
+
+
+== Parametro
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`volume`
+ a| 
+Il nome del volume primario che si desidera aggiungere al gruppo di mirror asincrono. Racchiudere il nome del volume tra virgolette doppie (" ").
+
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Il nome del gruppo di mirror asincrono che conterrà il volume primario che si desidera aggiungere. Racchiudere il nome del gruppo mirror asincrono tra virgolette doppie (" ").
+
+
+
+ a| 
+`remotePassword`
+ a| 
+Questo parametro è facoltativo. Utilizzare questo parametro quando l'array di storage remoto è protetto da password. Racchiudere la password tra virgolette doppie (" ").
+
+
+
+ a| 
+`repositoryVolume`
+ a| 
+Il nome del volume di repository che conterrà i dati modificati dal volume primario.
+
+Sono disponibili due opzioni per definire il nome di un volume di repository:
+
+* Utilizzare un volume repository esistente: Nome.
+* Creare un nuovo volume di repository quando si esegue questo comando.
+
+
+Il nome di un volume di repository esistente è composto da due parti:
+
+* Il termine repos.
+* Identificatore numerico a quattro cifre assegnato dal software di gestione dello storage al nome del volume del repository.
+
+
+Racchiudere il nome del volume di repository esistente tra virgolette doppie (" ").
+
+Se si desidera creare un nuovo volume di repository quando si esegue questo comando, è necessario immettere il nome di un gruppo di volumi o di un pool di dischi in cui si desidera creare il volume di repository. In alternativa, è anche possibile definire la capacità del volume di repository. Se si desidera definire la capacità, è possibile utilizzare i seguenti valori:
+
+* Un valore intero che rappresenta una percentuale della capacità del volume di base.
+* Un valore di frazione decimale che rappresenta una percentuale della capacità del volume di base.
+* Una dimensione specifica per il volume di repository. Le dimensioni sono definite in unità di `bytes` , `KB` , `MB` , `GB` , o. `TB` .
+
+
+Se non si definisce la capacità, il software di gestione dello storage imposta la capacità sul 20% della capacità del volume primario.
+
+Il software di gestione dello storage crea il volume del repository e collega il volume del repository al volume primario.
+
+|===
+
+
+== Note
+
+* La funzionalità di mirroring asincrono deve essere attivata e attivata sugli array di storage locali e remoti che verranno utilizzati per le attività di mirroring.
+* Gli array di storage locali e remoti devono essere collegati tramite un fabric Fibre Channel o un'interfaccia iSCSI adeguata.
+* L'array di storage remoto deve avere un volume con una capacità superiore o uguale alla capacità del volume primario sull'array di storage locale. Il volume sull'array di storage remoto verrà utilizzato come volume mirror.
+
+
+
+
+== Livello minimo del firmware
+
+7.84

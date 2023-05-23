@@ -1,0 +1,385 @@
+---
+permalink: commands-a-z/autoconfigure-storagearray.html 
+sidebar: sidebar 
+keywords: autoconfigure storage array,supported, roles, syntax, parameters, minimum firmware level 
+summary: Il comando di configurazione automatica StorageArray configura automaticamente uno storage array. 
+---
+= Configurazione automatica dello storage array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `autoConfigure storageArray` il comando configura automaticamente un array di storage.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Prima di entrare in `autoConfigure storageArray` eseguire il comando `show storageArray autoConfiguration` comando. Il `show storageArray autoConfiguration` Il comando restituisce le informazioni di configurazione sotto forma di un elenco di tipi di dischi, livelli RAID, informazioni sui volumi e informazioni hot spare valide. (Questo elenco corrisponde ai parametri per `autoConfigure storageArray` comando.) I controller controllano l'array di storage e determinano il livello RAID più elevato supportato dall'array di storage e la definizione del volume più efficiente per il livello RAID. Se la configurazione descritta dall'elenco restituito è accettabile, è possibile immettere `autoConfigure storageArray` comando senza parametri. Se si desidera modificare la configurazione, è possibile modificare i parametri per soddisfare i requisiti di configurazione. È possibile modificare un singolo parametro o tutti i parametri. Dopo aver inserito `autoConfigure storageArray` i controller configurano lo storage array utilizzando i parametri predefiniti o quelli selezionati.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+autoConfigure storageArray
+[driveType=(SAS | NVMe4K)]
+[driveMediaType=(hdd | ssd | allMedia | unknown)]
+[raidLevel=(0 | 1 | 3 | 5 | 6)]
+pass:quotes[[volumeGroupWidth=_numberOfDrives_]]
+pass:quotes[[volumeGroupCount=_numberOfVolumeGroups_]]
+pass:quotes[[volumesPerGroupCount=_numberOfVolumesPerGroup_]]
+pass:quotes[[hotSpareCount=_numberOfHotSpares_]]
+pass:quotes[[segmentSize=_segmentSizeValue_]]
+[cacheReadPrefetch=(TRUE | FALSE)]
+pass:quotes[[readAheadMultiplier=_multiplierValue_]]
+[securityType=(none | capable | enabled)]
+[secureDrives=(fips | fde)]
+[dataAssurance=(none | enabled)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`driveType`
+ a| 
+Il tipo di unità che si desidera utilizzare per l'array di storage.
+
+È necessario utilizzare questo parametro quando si dispone di più di un tipo di disco nell'array di storage.
+
+Questi tipi di unità sono validi:
+
+* `SAS`
+* `NVMe4K`
+
+
+
+
+ a| 
+`driveMediaType`
+ a| 
+Il tipo di disco che si desidera utilizzare per l'array di storage.
+
+È necessario utilizzare questo parametro quando si dispone di più tipi di dischi nell'array di storage.
+
+Questi tipi di dischi sono validi:
+
+* `hdd` -- utilizzare questa opzione se si dispone di dischi rigidi.
+* `ssd` -- utilizzare questa opzione se si dispone di dischi a stato solido.
+* `unknown` -- utilizzare questa opzione se non si è sicuri dei tipi di supporti presenti nel vassoio dell'unità
+
+
+
+
+ a| 
+`raidLevel`
+ a| 
+Il livello RAID del gruppo di volumi che contiene i dischi nell'array di storage. I livelli RAID validi sono `0`, `1`, `3`, `5`, o. `6`.
+
+
+
+ a| 
+`volumeGroupWidth`
+ a| 
+Il numero di dischi in un gruppo di volumi nell'array di storage.
+
+
+
+ a| 
+`volumeGroupCount`
+ a| 
+Il numero di gruppi di volumi nell'array di storage. USA valori interi.
+
+
+
+ a| 
+`volumesPerGroupCount`
+ a| 
+Il numero di volumi a capacità uguale per gruppo di volumi. USA valori interi.
+
+
+
+ a| 
+`hotSpareCount`
+ a| 
+Il numero di hot spare che si desidera inserire nell'array di storage. USA valori interi.
+
+
+
+ a| 
+`segmentSize`
+ a| 
+La quantità di dati (in KB) che il controller scrive su un singolo disco di un volume prima di scrivere i dati sul disco successivo. I valori validi sono `4 (SSD only)``8`, `16`, `32`, `64`, `128`, `256`, o. `512`.
+
+
+
+ a| 
+`cacheReadPrefetch`
+ a| 
+L'impostazione per attivare o disattivare il prefetch di lettura della cache. Per disattivare il prefetch di lettura della cache, impostare questo parametro su `FALSE`. Per attivare il prefetch di lettura della cache, impostare questo parametro su `TRUE`.
+
+
+
+ a| 
+`readAheadMultiplier`
+ a| 
+Questo parametro definisce quanti blocchi di dati aggiuntivi vengono letti nella cache. I valori validi sono compresi tra `0` a. `65535`.
+
+[NOTE]
+====
+Questo parametro è obsoleto e verrà rimosso in una release futura del software di gestione dello storage. Per un funzionamento ottimale, utilizzare `cacheReadPrefetch` parametro.
+
+====
+
+
+ a| 
+`securityType`
+ a| 
+L'impostazione per specificare il livello di protezione durante la creazione dei gruppi di volumi e di tutti i volumi associati. Queste impostazioni sono valide:
+
+* `none` -- il gruppo di volumi e i volumi non sono sicuri.
+* `capable` -- il gruppo di volumi e i volumi sono in grado di impostare la protezione, ma la protezione non è stata attivata.
+* `enabled` -- il gruppo di volumi e i volumi hanno attivato la protezione.
+
+
+
+
+ a| 
+`secureDrives`
+ a| 
+Il tipo di dischi sicuri da utilizzare nel gruppo di volumi. Queste impostazioni sono valide:
+
+* `fips` -- per utilizzare solo dischi conformi a FIPS.
+* `fde` -- per utilizzare dischi compatibili con FDE.
+
+
+[NOTE]
+====
+Utilizzare questo parametro insieme a `securityType` parametro. Se si specifica `none` per `securityType` il valore di `secureDrives` il parametro viene ignorato, in quanto non è necessario che i gruppi di volumi non sicuri abbiano specificato tipi di dischi sicuri.
+
+====
+|===
+
+
+== Dischi e gruppi di volumi
+
+Un gruppo di volumi è un insieme di dischi raggruppati logicamente dai controller dell'array di storage. Il numero di dischi in un gruppo di volumi è un limite del livello RAID e del firmware del controller. Quando si crea un gruppo di volumi, attenersi alle seguenti linee guida:
+
+* A partire dalla versione del firmware 7.10, è possibile creare un gruppo di volumi vuoto in modo da riservare la capacità per un utilizzo successivo.
+* Non è possibile combinare tipi di unità all'interno di un singolo gruppo di volumi.
+* Non è possibile combinare dischi HDD e SSD in un singolo gruppo di volumi.
+* Il numero massimo di dischi in un gruppo di volumi dipende dalle seguenti condizioni:
++
+** Il tipo di controller
+** Il livello RAID
+
+
+* I livelli RAID includono: 0, 1, 3, 5 e 6.
++
+** Un gruppo di volumi con RAID livello 3, RAID livello 5 o RAID livello 6 non può avere più di 30 dischi e deve avere almeno tre dischi.
+** Un gruppo di volumi con livello RAID 6 deve avere un minimo di cinque dischi.
+** Se un gruppo di volumi con RAID livello 1 dispone di quattro o più dischi, il software di gestione dello storage converte automaticamente il gruppo di volumi in un RAID livello 10, ovvero RAID livello 1 + RAID livello 0.
+
+
+* Per attivare la protezione contro le perdite di vassoio/cassetto, fare riferimento alle seguenti tabelle per ulteriori criteri:
+
+
+|===
+| Livello | Criteri per la protezione dalla perdita dei vassoi | Numero minimo di vassoi richiesti 
+
+
+ a| 
+Pool di dischi
+ a| 
+Il pool di dischi non contiene più di due dischi in un singolo vassoio
+ a| 
+6
+
+
+
+ a| 
+RAID 6
+ a| 
+Il gruppo di volumi non contiene più di due unità in un singolo vassoio
+ a| 
+3
+
+
+
+ a| 
+RAID 3 o RAID 5
+ a| 
+Ciascuna unità del gruppo di volumi si trova in un vassoio separato
+ a| 
+3
+
+
+
+ a| 
+RAID 1
+ a| 
+Ogni disco di una coppia RAID 1 deve essere collocato in un vassoio separato
+ a| 
+2
+
+
+
+ a| 
+RAID 0
+ a| 
+Impossibile ottenere la protezione dalla perdita dei vassoi.
+ a| 
+Non applicabile
+
+|===
+|===
+| Livello | Criteri per la protezione contro le perdite di cassetto | Numero minimo di cassetti richiesti 
+
+
+ a| 
+Pool di dischi
+ a| 
+Il pool include dischi di tutti e cinque i cassetti e un numero uguale di dischi in ciascun cassetto. Un vassoio da 60 dischi può ottenere la protezione contro la perdita di cassetto quando il pool di dischi contiene 15, 20, 25, 30, 35, 40, 45, 50, 55 o 60 dischi.
+ a| 
+5
+
+
+
+ a| 
+RAID 6
+ a| 
+Il gruppo di volumi non contiene più di due dischi in un singolo cassetto.
+ a| 
+3
+
+
+
+ a| 
+RAID 3 o RAID 5
+ a| 
+Ciascuna unità del gruppo di volumi si trova in un cassetto separato.
+ a| 
+3
+
+
+
+ a| 
+RAID 1
+ a| 
+Ogni disco di una coppia mirrorata deve essere collocato in un cassetto separato.
+ a| 
+2
+
+
+
+ a| 
+RAID 0
+ a| 
+Impossibile ottenere la protezione perdita cassetto.
+ a| 
+Non applicabile
+
+|===
+
+
+== Hot spare
+
+Con i gruppi di volumi, una strategia preziosa per proteggere i dati consiste nell'assegnare le unità disponibili nell'array di storage come unità hot spare. Un hot spare è un disco, privo di dati, che agisce come standby nell'array di storage in caso di guasto di un disco in un gruppo di volumi RAID 1, RAID 3, RAID 5 o RAID 6. L'hot spare aggiunge un altro livello di ridondanza allo storage array.
+
+In genere, i dischi hot spare devono avere capacità uguali o superiori alla capacità utilizzata sui dischi che stanno proteggendo. Le unità hot spare devono essere dello stesso tipo di supporto, dello stesso tipo di interfaccia e della stessa capacità delle unità che proteggono.
+
+In caso di guasto di un disco nell'array di storage, il disco hot spare viene normalmente sostituito automaticamente per il disco guasto senza richiedere l'intervento dell'utente. Se è disponibile un hot spare in caso di guasto di un disco, il controller utilizza la parità dei dati di ridondanza per ricostruire i dati nell'hot spare. Il supporto per l'evacuazione dei dati consente inoltre di copiare i dati su un hot spare prima che il software contrassegni il disco "guasto".
+
+Una volta sostituito fisicamente il disco guasto, è possibile utilizzare una delle seguenti opzioni per ripristinare i dati:
+
+Una volta sostituito il disco guasto, i dati del disco hot spare vengono copiati nuovamente sul disco sostitutivo. Questa azione è chiamata copyback.
+
+Se si designa l'unità hot spare come membro permanente di un gruppo di volumi, l'operazione copyback non è necessaria.
+
+La disponibilità della protezione in caso di perdita dei vassoi e della protezione in caso di perdita dei cassetti per un gruppo di volumi dipende dalla posizione delle unità che compongono il gruppo di volumi. La protezione in caso di perdita dei vassoi e la protezione in caso di perdita dei cassetti potrebbero andare perse a causa di un disco guasto e della posizione dell'unità hot spare. Per assicurarsi che la protezione contro la perdita di vassoio e la protezione contro la perdita di cassetto non siano compromesse, è necessario sostituire un disco guasto per avviare il processo copyback.
+
+Lo storage array seleziona automaticamente le unità compatibili con Data Assurance (da) per la copertura hot spare dei volumi abilitati da.
+
+Assicurarsi di disporre di unità compatibili con da nell'array di storage per la copertura hot spare dei volumi abilitati da. Per ulteriori informazioni sulle unità compatibili con da, fare riferimento alla funzione Data Assurance.
+
+I dischi con funzionalità sicure (FIPS e FDE) possono essere utilizzati come hot spare per dischi con funzionalità sicure e non sicure. I dischi non sicuri possono fornire copertura per altri dischi non sicuri e per dischi sicuri se il gruppo di volumi non dispone della protezione abilitata. Un gruppo di volumi FIPS può utilizzare solo un'unità FIPS come hot spare; tuttavia, è possibile utilizzare un hot spare FIPS per gruppi di volumi non sicuri, sicuri e abilitati alla protezione.
+
+Se non si dispone di un hot spare, è comunque possibile sostituire un disco guasto mentre lo storage array è in funzione. Se l'unità fa parte di un gruppo di volumi RAID 1, RAID 3, RAID 5 o RAID 6, il controller utilizza la parità dei dati di ridondanza per ricostruire automaticamente i dati sull'unità sostitutiva. Questa azione è chiamata ricostruzione.
+
+
+
+== Dimensione del segmento
+
+Le dimensioni di un segmento determinano il numero di blocchi di dati che il controller scrive su un singolo disco di un volume prima di scrivere i dati sul disco successivo. Ogni blocco di dati memorizza 512 byte di dati. Un blocco di dati è l'unità di storage più piccola. La dimensione di un segmento determina il numero di blocchi di dati che contiene. Ad esempio, un segmento da 8 KB contiene 16 blocchi di dati. Un segmento da 64 KB contiene 128 blocchi di dati.
+
+Quando si inserisce un valore per la dimensione del segmento, il valore viene controllato rispetto ai valori supportati forniti dal controller in fase di esecuzione. Se il valore immesso non è valido, il controller restituisce un elenco di valori validi. L'utilizzo di un singolo disco per una singola richiesta lascia disponibili altri dischi per supportare contemporaneamente altre richieste. Se il volume si trova in un ambiente in cui un singolo utente sta trasferendo grandi unità di dati (ad esempio, contenuti multimediali), le prestazioni vengono massimizzate quando una singola richiesta di trasferimento dati viene servita con una singola stripe di dati. (Una stripe di dati è la dimensione del segmento moltiplicata per il numero di dischi nel gruppo di volumi utilizzati per i trasferimenti di dati). In questo caso, vengono utilizzati più dischi per la stessa richiesta, ma a ciascun disco viene effettuato l'accesso una sola volta.
+
+Per ottenere performance ottimali in un ambiente di storage di file system o database multiutente, impostare le dimensioni del segmento in modo da ridurre al minimo il numero di dischi necessari per soddisfare una richiesta di trasferimento dei dati.
+
+
+
+== Prefetch di lettura della cache
+
+Il prefetch di lettura della cache consente al controller di copiare ulteriori blocchi di dati nella cache, mentre il controller legge e copia i blocchi di dati richiesti dall'host dal disco nella cache. Questa azione aumenta la possibilità che una richiesta futura di dati possa essere soddisfatta dalla cache. Il prefetch di lettura della cache è importante per le applicazioni multimediali che utilizzano trasferimenti di dati sequenziali. Valori validi per `cacheReadPrefetch` i parametri sono `TRUE` oppure `FALSE`. L'impostazione predefinita è `TRUE`.
+
+
+
+== Tipo di sicurezza
+
+Utilizzare `securityType` parametro per specificare le impostazioni di sicurezza per lo storage array.
+
+Prima di poter impostare `securityType` parametro a. `enabled`, è necessario creare una chiave di sicurezza dello storage array. Utilizzare `create storageArray securityKey` comando per creare una chiave di sicurezza dello storage array. Questi comandi sono correlati alla chiave di sicurezza:
+
+* `create storageArray securityKey`
+* `export storageArray securityKey`
+* `import storageArray securityKey`
+* `set storageArray securityKey`
+* `enable volumeGroup [volumeGroupName] security`
+* `enable diskPool [diskPoolName] security`
+
+
+
+
+== Dischi sicuri
+
+Le unità compatibili con la protezione possono essere dischi con crittografia completa del disco (FDE) o dischi FIPS (Federal Information Processing Standard). Utilizzare `secureDrives` parametro per specificare il tipo di dischi protetti da utilizzare. I valori che è possibile utilizzare sono `fips` e. `fde`.
+
+
+
+== Esempio di comando
+
+[listing]
+----
+autoConfigure storageArray securityType=capable secureDrives=fips;
+----
+
+
+== Livello minimo del firmware
+
+7.10 aggiunge funzionalità RAID livello 6 e rimuove i limiti di hot spare.
+
+7.50 aggiunge `securityType` parametro.
+
+7.75 aggiunge `dataAssurance` parametro.
+
+8.25 aggiunge `secureDrives` parametro.

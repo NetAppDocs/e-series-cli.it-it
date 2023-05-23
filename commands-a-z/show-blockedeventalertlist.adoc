@@ -1,0 +1,62 @@
+---
+permalink: commands-a-z/show-blockedeventalertlist.html 
+sidebar: sidebar 
+keywords: show, blocked, events 
+summary: Il comando show blockedEventAlertList restituisce un elenco di eventi attualmente bloccati dal comando set blockEventAlert. Gli eventi in questo elenco sono gli eventi che non inviano alcuna notifica configurata utilizzando i terminali e i parametri di avviso, ovvero le notifiche e-mail, syslog e trap. 
+---
+= Mostra eventi bloccati
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show blockedEventAlertList` il comando restituisce un elenco di eventi attualmente bloccati da `set blockEventAlert` comando. Gli eventi in questo elenco sono gli eventi che non inviano alcuna notifica configurata utilizzando i terminali e i parametri di avviso, ovvero le notifiche e-mail, syslog e trap.
+
+
+
+== Array supportati
+
+Questo comando si applica solo agli array di storage E2700 ed E5600.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Questo comando è un comando SMcli, non un comando script. Eseguire questo comando da una riga di comando. Non è possibile eseguire questo comando dall'editor di script nel software di gestione dello storage.
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+show blockedEventAlertList
+----
+
+
+== Esempio
+
+L'output ha una riga per ogni evento bloccato, che elenca il tipo di evento in formato esadecimale seguito da una descrizione dell'evento. Di seguito viene riportato un esempio di output:
+
+[listing]
+----
+Executing Script...
+0x280D Enclosure Failure
+0x282B Tray Redundancy Lost
+Script execution complete.
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Livello minimo del firmware
+
+8.10

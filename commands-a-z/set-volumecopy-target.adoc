@@ -1,0 +1,109 @@
+---
+permalink: commands-a-z/set-volumecopy-target.html 
+sidebar: sidebar 
+keywords: set, volume, copy 
+summary: Il comando di destinazione Set VolumeCopy definisce le proprietà di una coppia di copie del volume. 
+---
+= Impostare la copia del volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set volumeCopy target` command definisce le proprietà di una coppia di copie del volume.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Con la versione del firmware 7.83 di `copyType=(online | offline)` il parametro non viene più utilizzato.
+
+====
+Questo comando è valido per le coppie di copie di volumi snapshot.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set volumeCopy target pass:quotes[[_targetName_]]
+source pass:quotes[[_sourceName_]]
+[copyPriority=(highest | high | medium | low | lowest)]
+[targetReadOnlyEnabled=(TRUE | FALSE)]
+[copyType=(online | offline)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`target`
+ a| 
+Il nome del volume in cui verranno copiati i dati. Racchiudere il nome del volume di destinazione tra parentesi quadre ([ ]). Se il nome del volume di destinazione contiene caratteri speciali o numeri, è necessario racchiudere il nome del volume di destinazione tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`source`
+ a| 
+Il nome del volume da cui verranno copiati i dati. Racchiudere il nome del volume di origine tra parentesi quadre ([ ]). Se il nome del volume di origine contiene caratteri speciali o numeri, è necessario racchiudere il nome del volume di origine tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`copyPriority`
+ a| 
+La priorità della copia del volume rispetto all'attività di i/o dell'host. I valori validi sono `highest`, `high`, `medium`, `low`, o. `lowest`.
+
+
+
+ a| 
+`targetReadOnlyEnabled`
+ a| 
+L'impostazione che consente di scrivere nel volume di destinazione o di leggere solo dal volume di destinazione. Per scrivere nel volume di destinazione, impostare questo parametro su `FALSE`. Per impedire la scrittura nel volume di destinazione, impostare questo parametro su `TRUE`.
+
+
+
+ a| 
+`copyType`
+ a| 
+[NOTE]
+====
+Questo parametro è stato obsoleto.
+
+====
+|===
+
+
+== Note
+
+Quando si utilizza questo comando, è possibile specificare uno o più parametri opzionali.
+
+
+
+== Livello minimo del firmware
+
+5.40
+
+7.83 rimuove `copyType=(online | offline)` parametro.

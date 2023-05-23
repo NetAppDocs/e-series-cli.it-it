@@ -1,0 +1,85 @@
+---
+permalink: commands-a-z/check-asyncmirrorgroup-repositoryconsistency.html 
+sidebar: sidebar 
+keywords: check, asynchronous mirror group, consistency 
+summary: 'Il comando check asyncMirrorGroup repositoryConsistency genera un report basato sull"analisi dei dati nel volume di repository sottostante del gruppo di mirror asincrono specificato.' 
+---
+= Verificare la coerenza del gruppo mirror asincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `check asyncMirrorGroup repositoryConsistency` il comando genera un report basato sull'analisi dei dati nel volume di repository sottostante del gruppo di mirror asincrono specificato.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+check asyncMirrorGrouppass:quotes[[_asyncMirrorGroupName_]]
+repositoryConsistency localVolume=pass:quotes[[_localVolumeName"_]]
+file=pass:quotes[_"filePath"_]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Il nome del gruppo di mirror asincrono su cui eseguire un controllo di coerenza. Racchiudere il nome del gruppo mirror asincrono tra parentesi quadre ([ ]). Se il nome del gruppo mirror asincrono contiene caratteri speciali o è composto solo da numeri, è necessario racchiudere il nome tra virgolette doppie (" ") all'interno di parentesi quadre.
+
+
+
+ a| 
+`repositoryConsistency`
+ a| 
+Specifica che il gruppo di mirror asincrono viene controllato per verificarne la coerenza.
+
+
+
+ a| 
+`localVolume`
+ a| 
+Specifica il nome di un volume locale che partecipa alla relazione mirror. È possibile specificare un volume locale che sia l'origine o la destinazione su una relazione mirror. Se il nome del volume locale contiene caratteri speciali o è composto solo da numeri, è necessario racchiuderlo tra virgolette doppie (" ") all'interno di parentesi quadre.
+
+
+
+ a| 
+`file`
+ a| 
+Il percorso del file e il nome del file in cui si desidera salvare il report risultante dalla verifica di coerenza. Racchiudere il nome del file tra virgolette doppie (" "). Ad esempio:
+
+`file="C:\Program Files\CLI\logs\repoConsistency.txt"` Questo parametro deve essere visualizzato per ultimo, dopo uno qualsiasi dei parametri opzionali.
+
+|===
+
+
+== Note
+
+Il report generato da questo comando è destinato all'utilizzo da parte del supporto tecnico per l'analisi dei problemi.
+
+
+
+== Livello minimo del firmware
+
+7.83

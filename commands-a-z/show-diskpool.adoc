@@ -1,0 +1,86 @@
+---
+permalink: commands-a-z/show-diskpool.html 
+sidebar: sidebar 
+keywords: show, disk pool 
+summary: Il comando show diskPool restituisce informazioni su un pool di dischi. 
+---
+= Mostra pool di dischi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show diskPool` il comando restituisce informazioni su un pool di dischi.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Questo comando restituisce queste informazioni su un pool di dischi:
+
+* Lo stato (ad esempio ottimale, online, offline)
+* La capacità totale
+* Capacità di conservazione, capacità utilizzabile e capacità inutilizzabile
+* La capacità utilizzata, la capacità libera e la percentuale di pieno
+* Il proprietario corrente (il controller nello slot A o il controller nello slot B )
+* Il disco (SAS)
+* Il tipo di supporto del disco (HDD o SSD)
+* Il tipo di interfaccia del disco (Fibre Channel, iSCSI, InfiniBand, SAS)
+* Protezione perdita vassoio (sì o no)
+* Secure Capable - indica se il pool di dischi è composto da tutti i dischi con funzionalità di protezione. I dischi sicuri possono essere dischi FDE o FIPS.
+* Secure (protezione) - indica se la protezione del disco nel pool di dischi è attivata (questa funzione è denominata Secure Enabled).
+* Le restanti impostazioni di notifica della capacità (avviso critico e tempestivo)
+* Le impostazioni di priorità
+* I volumi associati e la capacità libera
+* I dischi associati
+* Funzionalità di Data Assurance e presenza di volumi abilitati per Data Assurance
+* Funzionalità di provisioning delle risorse
+
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[show diskPool [_diskPoolName_]]
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`diskPool`
+ a| 
+Il nome del pool di dischi per il quale si stanno recuperando le informazioni. Racchiudere il nome del pool di dischi tra parentesi quadre ([ ]). Se il nome del pool di dischi contiene caratteri o numeri speciali, è necessario racchiudere il nome del pool di dischi tra virgolette doppie (" ") tra parentesi quadre.
+
+|===
+
+
+== Note
+
+Utilizzare questo comando per visualizzare il contenuto del pool di dischi del profilo dell'array di storage.
+
+
+
+== Livello minimo del firmware
+
+7.83

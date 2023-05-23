@@ -1,0 +1,116 @@
+---
+permalink: commands-a-z/set-syslog.html 
+sidebar: sidebar 
+keywords: configure, syslog, set 
+summary: Il comando set syslog configura le informazioni di avviso syslog. È possibile configurare il monitor degli eventi in modo che invii avvisi al server syslog ogni volta che si verifica un evento verificabile. 
+---
+= Configurare le impostazioni syslog
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set syslog` il comando configura le informazioni di avviso syslog. È possibile configurare il monitor degli eventi in modo che invii avvisi al server syslog ogni volta che si verifica un evento verificabile.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+* L'indirizzo del server syslog deve essere disponibile. Questo indirizzo può essere un nome di dominio completo, un indirizzo IPv4 o un indirizzo IPv6.
+* Il numero della porta UDP del server syslog deve essere disponibile. Questa porta è generalmente 514.
+
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+
+set syslog [defaultFacility=pass:quotes[_facilityNumber_]]
+| [defaultTag=pass:quotes[_defaultTag_]]
+| [syslogFormat=pass:quotes[_rfc3164_|_rfc5424_]]
+| (serverAddresses=pass:quotes[(_serverAddress:portNumber ... serverAddress:portNumber_)]
+| addServerAddresses=pass:quotes[(_serverAddress:portNumber ... serverAddress:portNumber_))]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`defaultFacility`
+ a| 
+Opzionale. Consente di specificare il numero predefinito della struttura. La struttura predefinita deve essere un valore numerico compreso tra 0 e 23.
+
+
+
+ a| 
+`defaultTag`
+ a| 
+Opzionale. Consente di specificare il tag predefinito. Racchiudere la stringa tra virgolette.
+
+
+
+ a| 
+`syslogFormat`
+ a| 
+Il formato di messaggistica utilizzato per i messaggi syslog. Il valore può essere uno dei seguenti:
+
+* `rfc3164` - Formato compatibile con RFC 3164
+* `rfc5424` - Formato compatibile con RFC 5424
+
+
+
+
+ a| 
+`serverAddresses`
+ a| 
+Consente di impostare uno o più indirizzi del server syslog con i numeri di porta associati. L'utilizzo di questa opzione consente di eliminare gli indirizzi dei server esistenti. Un indirizzo del server syslog può essere un nome di dominio completo, un indirizzo IPv4 o un indirizzo IPv6. La porta UDP deve essere un valore numerico compreso tra 0 e 65535. In genere, la porta UDP per syslog è 514. Racchiudere tutti gli indirizzi tra parentesi. Se si inseriscono più indirizzi, separarli con uno spazio.
+
+
+
+ a| 
+`addServerAddresses`
+ a| 
+Consente di aggiungere uno o più indirizzi server syslog con i numeri di porta associati. L'utilizzo di questa opzione di impostazione non elimina gli indirizzi dei server esistenti. Un indirizzo del server syslog può essere un nome di dominio completo, un indirizzo IPv4 o un indirizzo IPv6. La porta UDP deve essere un valore numerico compreso tra 0 e 65535. In genere, la porta UDP per syslog è 514. Racchiudere tutti gli indirizzi tra parentesi. Se si inseriscono più indirizzi, separarli con uno spazio.
+
+|===
+
+
+== Esempi
+
+[listing]
+----
+
+SMcli -n Array1 -c "set syslog serverAddresses=("ICTM1402S02H2.company.com:22");"
+
+SMcli -n Array1 -c "set syslog addServerAddresses=("serverName1.company.com:514"
+"serverName2.company.com:514");"
+
+SMcli completed successfully.
+----
+
+
+== Livello minimo del firmware
+
+8.40
+
+11.70.1 aggiunto il `syslogFormat` Parametro per specificare il formato del messaggio Syslog.

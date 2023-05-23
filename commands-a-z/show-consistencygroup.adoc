@@ -1,0 +1,96 @@
+---
+permalink: commands-a-z/show-consistencygroup.html 
+sidebar: sidebar 
+keywords: show, consistency, group 
+summary: Il comando show consistencyGroup restituisce informazioni su uno o più gruppi di coerenza. 
+---
+= Mostra gruppo di coerenza
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show consistencyGroup` il comando restituisce informazioni su uno o più gruppi di coerenza.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+show (allConsistencyGroups | consistencyGroup pass:quotes[[_consistencyGroupName_]] |
+consistencyGroups pass:quotes[[_consistencyGroupName1_ ... _consistencyGroupNameN_]])
+[(summary | schedule)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`allConsistencyGroups`
+ a| 
+Questa impostazione restituisce informazioni su tutti i gruppi di coerenza nell'array di storage.
+
+
+
+ a| 
+`consistencyGroup`
+ a| 
+Il nome del gruppo di coerenza per cui si stanno recuperando le informazioni. Racchiudere il nome del gruppo di coerenza tra parentesi quadre ([ ]). Se il nome del gruppo di coerenza contiene caratteri speciali o numeri, è necessario racchiudere il nome del gruppo di coerenza tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`consistencyGroups`
+ a| 
+I nomi di diversi gruppi di coerenza per i quali si stanno recuperando informazioni. Tutti i volumi avranno le stesse proprietà. Inserire i nomi dei volumi utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Separare ciascuno dei nomi con uno spazio.
+
+
+Se i nomi dei volumi hanno caratteri speciali o sono costituiti solo da numeri, immettere i nomi utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Racchiudere ciascuno dei nomi tra virgolette doppie (" ").
+* Separare ciascuno dei nomi con uno spazio.
+
+
+
+
+ a| 
+`summary`
+ a| 
+Questa impostazione restituisce un breve elenco di informazioni sui gruppi di coerenza.
+
+
+
+ a| 
+`schedule`
+ a| 
+Questo parametro restituisce informazioni su eventuali pianificazioni per un gruppo di coerenza.
+
+|===
+
+
+== Livello minimo del firmware
+
+7.83

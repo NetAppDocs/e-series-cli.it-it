@@ -1,0 +1,75 @@
+---
+permalink: commands-a-z/set-storagearray-isnslisteningport.html 
+sidebar: sidebar 
+keywords: set, storage, array, isns, server, listen, port 
+summary: Il comando set StorageArray isnsListeningPort imposta la porta di ascolto del server iSNS. 
+---
+= Impostare la porta di ascolto del server iSNS dello storage array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray isnsListeningPort` Il comando imposta la porta di ascolto del server iSNS.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set storageArray isnsListeningPort=pass:quotes[_listeningPortIPAddress_]
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`isnsListeningPort`
+ a| 
+L'indirizzo IP che si desidera utilizzare per la porta di ascolto del server iSNS. L'intervallo di valori per la porta di ascolto è `49152` a. `65535`. Il valore predefinito è `53205`.
+
+La porta di ascolto risiede sul server ed esegue le seguenti attività:
+
+* Monitora le richieste di connessione del client in entrata
+* Gestisce il traffico verso il server
+
+
+Quando un client richiede una sessione di rete con un server, il listener riceve la richiesta effettiva. Se le informazioni del client corrispondono alle informazioni del listener, il listener concede una connessione al server di database.
+
+|===
+
+
+== Note
+
+Una porta di ascolto risiede sul server del database ed è responsabile di queste attività:
+
+* In attesa (monitoraggio) delle richieste di connessione client in entrata
+* Gestione del traffico verso il server
+
+
+Quando un client richiede una sessione di rete con un server, un listener riceve la richiesta effettiva. Se le informazioni del client corrispondono alle informazioni del listener, il listener concede una connessione al server di database.
+
+
+
+== Livello minimo del firmware
+
+7.10

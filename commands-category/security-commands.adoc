@@ -1,0 +1,169 @@
+---
+permalink: commands-category/security-commands.html 
+sidebar: sidebar 
+keywords: security, commands, audit, log management, authentication, certificate, management, embedded, external, key 
+summary: Comandi di sicurezza 
+---
+= Comandi di sicurezza
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+
+
+== Comandi di gestione del log di audit
+
+link:../commands-a-z/delete-auditlog.html["Eliminare i record del registro di controllo"]
+
+link:../commands-a-z/save-auditlog.html["Salvare i record del registro di controllo"]
+
+link:../commands-a-z/set-auditlog.html["Impostare le impostazioni del registro di controllo"]
+
+link:../commands-a-z/show-auditlog-configuration.html["Mostra la configurazione del registro di controllo"]
+
+link:../commands-a-z/show-auditlog-summary.html["Mostra il riepilogo del registro di controllo"]
+
+
+
+== Comandi di autenticazione
+
+link:../commands-a-z/getting-started-with-authentication.html["Introduzione all'autenticazione"]
+
+link:../commands-a-z/create-storagearray-directoryserver.html["Creare un server di directory per array di storage"]
+
+link:../commands-a-z/delete-storagearray-directoryservers.html["Eliminare il server di directory dell'array di storage"]
+
+link:../commands-a-z/delete-storagearray-loginbanner.html["Eliminare il banner di accesso allo storage array"]
+
+link:../commands-a-z/show-storagearray-usersession.html["Visualizzare la sessione utente dello storage array"]
+
+link:../commands-a-z/remove-storagearray-directoryserver.html["Rimuovere la mappatura dei ruoli del server di directory dell'array di storage"]
+
+link:../commands-a-z/save-storagearray-loginbanner.html["Banner di login Save storage array"]
+
+link:../commands-a-z/set-storagearray-directoryserver.html["Impostare il server di directory dell'array di storage"]
+
+link:../commands-a-z/set-storagearray-directoryserver-roles.html["Impostare il mapping dei ruoli del server di directory dell'array di storage"]
+
+link:../commands-a-z/set-storagearray-localusername.html["Impostare la password utente locale o la password del simbolo dello storage array"]
+
+link:../commands-a-z/set-storagearray-loginbanner.html["Impostare il banner di accesso allo storage array"]
+
+link:../commands-a-z/set-storagearray-managementinterface.html["Impostare l'interfaccia di gestione degli array di storage"]
+
+link:../commands-a-z/set-storagearray-passwordlength.html["Impostare la lunghezza della password dell'array di storage"]
+
+link:../commands-a-z/set-storagearray-usersession.html["Impostare la sessione utente dello storage array"]
+
+link:../commands-a-z/show-storagearray-directoryservices-summary.html["Mostra il riepilogo dei servizi di directory degli array di storage"]
+
+link:../commands-a-z/start-storagearray-directoryservices-test.html["Test del server di directory degli array di storage"]
+
+
+
+== Comandi di gestione dei certificati per i controller E2800 e E5700
+
+link:../commands-a-z/save-controller-arraymanagementcsr.html["Generare la richiesta di firma del certificato (CSR) del server Web"]
+
+link:../commands-a-z/download-controller-arraymanagementservercertificate.html["Installare il certificato firmato dal server"]
+
+link:../commands-a-z/download-controller-cacertificate.html["Installare i certificati CA principali/intermedi"]
+
+link:../commands-a-z/download-controller-trustedcertificate.html["Installare certificati CA attendibili"]
+
+link:../commands-a-z/delete-storagearray-trustedcertificate.html["Rimuovere i certificati CA attendibili installati"]
+
+link:../commands-a-z/delete-controller-cacertificate.html["Rimuovere il certificato firmato installato"]
+
+link:../commands-a-z/reset-controller-arraymanagementsignedcertificate.html["Ripristinare il certificato firmato installato"]
+
+link:../commands-a-z/save-controller-cacertificate.html["Recuperare i certificati CA installati"]
+
+link:../commands-a-z/save-controller-arraymanagementsignedcertificate.html["Recuperare il certificato del server installato"]
+
+link:../commands-a-z/save-storagearray-trustedcertificate.html["Recuperare i certificati CA attendibili installati"]
+
+link:../commands-a-z/set-storagearray-revocationchecksettings.html["Impostare il controllo di revoca del certificato"]
+
+link:../commands-a-z/show-storagearray-revocationchecksettings.html["Mostra le impostazioni del controllo di revoca del certificato"]
+
+link:../commands-a-z/show-controller-cacertificate.html["Mostra il riepilogo dei certificati CA root/intermedi installati"]
+
+link:../commands-a-z/show-storagearray-trustedcertificate-summary.html["Mostra il riepilogo dei certificati CA attendibili installati"]
+
+link:../commands-a-z/show-controller-arraymanagementsignedcertificate-summary.html["Mostra certificato firmato"]
+
+link:../commands-a-z/start-storagearray-ocspresponderurl-test.html["Avviare il test del server OCSP per la revoca del certificato"]
+
+
+
+== Comandi di gestione dei certificati per EF600
+
+link:../commands-a-z/add-array-label.html["Aggiungere l'etichetta dell'array"]
+
+link:../commands-a-z/remove-array-label.html["Rimuovere l'etichetta dell'array"]
+
+link:../commands-a-z/show-array-label.html["Mostra etichetta array"]
+
+
+
+== Comandi del database
+
+link:../commands-a-z/clear-storagearray-configuration.html["Configurazione chiara degli array di storage"]
+
+link:../commands-a-z/clear-storagearray-recoverymode.html["Cancellare la modalità di recovery dello storage array"]
+
+link:../commands-a-z/load-storagearray-dbmdatabase.html["Caricare il database DBM dell'array di storage"]
+
+link:../commands-a-z/save-storagearray-dbmdatabase.html["Salvare il database DBM dell'array di storage"]
+
+link:../commands-a-z/save-storagearray-dbmvalidatorinfo.html["Salvare il file di informazioni di convalida DBM dell'array di storage"]
+
+link:../commands-a-z/show-storagearray-dbmdatabase.html["Mostra database DBM array storage"]
+
+link:../commands-a-z/start-storagearray-configdbdiagnostic.html["Avviare la diagnostica del database di configurazione degli array di storage"]
+
+link:../commands-a-z/stop-storagearray-configdbdiagnostic.html["Arrestare la diagnostica di configurazione dello storage array"]
+
+
+
+== Comandi di gestione delle chiavi esterne integrati
+
+link:../commands-a-z/set-storagearray-externalkeymanagement.html["Introduzione alla gestione esterna delle chiavi"]
+
+link:../commands-a-z/getting-started-with-internal-key-management.html["Introduzione alla gestione interna delle chiavi"]
+
+link:../commands-a-z/create-storagearray-securitykey.html["Creare la chiave di sicurezza dello storage array"]
+
+link:../commands-a-z/disable-storagearray-externalkeymanagement-file.html["Disattivare la gestione esterna delle chiavi di sicurezza"]
+
+link:../commands-a-z/enable-storagearray-externalkeymanagement-file.html["Abilitare la gestione esterna delle chiavi di sicurezza"]
+
+link:../commands-a-z/export-storagearray-securitykey.html["Esportare la chiave di sicurezza dello storage array"]
+
+link:../commands-a-z/import-storagearray-securitykey-file.html["Importare la chiave di sicurezza dello storage array"]
+
+link:../commands-a-z/set-storagearray-externalkeymanagement.html["Impostare l'identificatore di sicurezza del disco FIPS"]
+
+link:../commands-a-z/set-storagearray-externalkeymanagement.html["Impostare le impostazioni di gestione delle chiavi esterne"]
+
+link:../commands-a-z/set-storagearray-externalkeymanagement.html["Impostare la chiave di sicurezza dello storage array"]
+
+link:../commands-a-z/start-secureerase-drive.html["Avviare la cancellazione sicura del disco FDE"]
+
+link:../commands-a-z/start-storagearray-externalkeymanagement-test.html["Verificare la comunicazione esterna di gestione delle chiavi"]
+
+link:../commands-a-z/validate-storagearray-securitykey.html["Convalidare la chiave di sicurezza dello storage array"]
+
+
+
+== Comandi esterni di gestione delle chiavi relativi ai certificati
+
+link:../commands-a-z/save-storagearray-keymanagementclientcsr.html["Recuperare la richiesta CSR di gestione delle chiavi installate"]
+
+link:../commands-a-z/download-storagearray-keymanagementcertificate.html["Installare il certificato di gestione delle chiavi esterne dell'array di storage"]
+
+link:../commands-a-z/delete-storagearray-keymanagementcertificate.html["Rimuovere il certificato di gestione delle chiavi esterne installato"]
+
+link:../commands-a-z/save-storagearray-keymanagementcertificate.html["Recuperare il certificato di gestione delle chiavi esterne installato"]

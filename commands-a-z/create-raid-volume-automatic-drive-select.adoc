@@ -1,0 +1,470 @@
+---
+permalink: commands-a-z/create-raid-volume-automatic-drive-select.html 
+sidebar: sidebar 
+keywords: create, raid, volume, automatic, drive, select 
+summary: 'Il comando create volume crea un gruppo di volumi tra i dischi dell"array di storage e un nuovo volume nel gruppo di volumi. I controller degli array di storage scelgono i dischi da includere nel volume.' 
+---
+= Creazione di un volume RAID (selezione automatica del disco)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `create volume` il comando crea un gruppo di volumi tra i dischi dell'array di storage e un nuovo volume nel gruppo di volumi. I controller degli array di storage scelgono i dischi da includere nel volume.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Se si dispone di dischi con capacità diverse, non è possibile creare automaticamente i volumi specificando `driveCount` parametro. Se si desidera creare volumi con dischi di capacità diverse, vedere link:create-raid-volume-manual-drive-select.html["Creazione di un volume RAID (selezione manuale del disco)"].
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+create volume driveCount=pass:quotes[_numberOfDrives_]
+[volumeGroupUserLabel=pass:quotes[_"volumeGroupUserLabel"_]]
+raidLevel=(0 | 1 | 3 | 5 | 6)
+userLabel=pass:quotes[_"userLabel"_]
+driveMediaType=(HDD | SSD | unknown | allMedia)
+[driveType=(SAS | NVMe4K)]
+[capacity=pass:quotes[_volumeCapacity_]]
+[owner=(a|b)]
+[mapping=(none | default)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+[segmentSize=pass:quotes[_segmentSizeValue_]]
+[usageHint=(fileSystem | dataBase | multiMedia)]
+[trayLossProtect=(TRUE | FALSE)]
+[drawerLossProtect=(TRUE | FALSE)]
+[dssPreAllocate=(TRUE | FALSE)]
+[securityType=(none | capable | enabled)]
+[secureDrives=(fips | fde )]
+[dataAssurance=(none | enabled)]
+[resourceProvisioningCapable=(TRUE | FALSE)]
+[blockSize=blockSizeValue]
+----
+[listing, subs="+macros"]
+----
+create volume driveCount=pass:quotes[_numberOfDrives_]
+[volumeGroupUserLabel=pass:quotes[_"volumeGroupName"_]]
+raidLevel=(0 | 1 | 5 | 6)
+userLabel=pass:quotes[_"volumeName"_]
+driveMediaType=(HDD | SSD | unknown | allMedia)
+[driveType=SAS]
+[capacity=pass:quotes[_volumeCapacity_]]
+[owner=(a|b)]
+[mapping=(none | default)]
+[cacheReadPrefetch=(TRUE | FALSE)]
+[segmentSize=pass:quotes[_segmentSizeValue_]]
+[usageHint=(fileSystem | dataBase | multiMedia)]
+[trayLossProtect=(TRUE | FALSE)]
+[drawerLossProtect=(TRUE | FALSE)]
+[dssPreAllocate=(TRUE | FALSE)]
+[securityType=(none | capable | enabled)]
+[secureDrives=(fips | fde )]
+[dataAssurance=(none | enabled)]
+[resourceProvisioningCapable=(TRUE | FALSE)]
+[blockSize=blockSizeValue]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`driveCount`
+ a| 
+Il numero di unità non assegnate che si desidera utilizzare nel gruppo di volumi.
+
+
+
+ a| 
+`volumeGroupUserLabel`
+ a| 
+Il nome che si desidera assegnare al nuovo gruppo di volumi. Racchiudere il nome del nuovo gruppo di volumi tra virgolette doppie (" ").
+
+[NOTE]
+====
+Se non si specifica un'etichetta utente per il gruppo di volumi, il firmware del controller assegna un numero.
+
+====
+
+
+ a| 
+`raidLevel`
+ a| 
+Il livello RAID del gruppo di volumi che contiene il volume. I valori validi sono `0`, `1`, `3`, `5`, o. `6`.
+
+
+
+ a| 
+`userLabel`
+ a| 
+Il nome che si desidera assegnare al nuovo volume. Racchiudere il nuovo nome del volume tra virgolette doppie (" ").
+
+[NOTE]
+====
+Questo parametro è obbligatorio.
+
+====
+
+
+ a| 
+`driveMediaType`
+ a| 
+Il tipo di disco che si desidera utilizzare per il gruppo di volumi. Questi supporti sono validi:
+
+* `HDD` -- utilizzare questa opzione se si dispone di dischi rigidi nel vassoio dell'unità
+* `SSD` -- utilizzare questa opzione se si dispone di dischi a stato solido nel vassoio dell'unità
+* `unknown` -- utilizzare questa opzione se non si è sicuri dei tipi di supporti presenti nel vassoio dell'unità
+* `allMedia` -- utilizzare questa opzione se si desidera utilizzare tutti i tipi di supporti presenti nel vassoio dell'unità
+
+
+
+
+ a| 
+`driveType`
+ a| 
+Il tipo di disco che si desidera utilizzare nel volume. Non è possibile combinare tipi di unità.
+
+È necessario utilizzare questo parametro quando si dispone di più di un tipo di disco nell'array di storage.
+
+Questi tipi di unità sono validi:
+
+* `SAS`
+* `NVMe4K`
+
+
+Se non si specifica un tipo di disco, il comando viene impostato per impostazione predefinita su `any type`.
+
+
+
+ a| 
+`capacity`
+ a| 
+La dimensione del volume che si sta aggiungendo all'array di storage. Le dimensioni sono definite in unità di `bytes`, `KB`, `MB`, `GB`, o. `TB`.
+
+
+
+ a| 
+`owner`
+ a| 
+Il controller proprietario del volume. Gli identificatori del controller validi sono `a` oppure `b`, dove `a` È il controller nello slot A, e. `b` Il controller si trova nello slot B. Se non si specifica un proprietario, il firmware del controller determina il proprietario.
+
+
+
+ a| 
+`cacheReadPrefetch`
+ a| 
+L'impostazione per attivare o disattivare il prefetch di lettura della cache. Per disattivare il prefetch di lettura della cache, impostare questo parametro su `FALSE`. Per attivare il prefetch di lettura della cache, impostare questo parametro su `TRUE`.
+
+
+
+ a| 
+`segmentSize`
+ a| 
+La quantità di dati (in KB) che il controller scrive su un singolo disco di un volume prima di scrivere i dati sul disco successivo. I valori validi sono `8`, `16`, `32`, `64`, `128`, `256`, o. `512`.
+
+
+
+ a| 
+`usageHint`
+ a| 
+L'impostazione per entrambi `cacheReadPrefetch` e il `segmentSize` parametro da impostare come valori predefiniti. I valori predefiniti si basano sul tipico modello di utilizzo i/o dell'applicazione che utilizza il volume. I valori validi sono `fileSystem`, `dataBase`, o. `multiMedia`.
+
+
+
+ a| 
+`trayLossProtect`
+ a| 
+L'impostazione per applicare la protezione contro le perdite dei vassoi quando si crea il gruppo di volumi. Per applicare la protezione dalle perdite dei vassoi, impostare questo parametro su `TRUE`. Il valore predefinito è `FALSE`.
+
+
+
+ a| 
+`drawerLossProtect`
+ a| 
+L'impostazione per applicare la protezione dalle perdite dei cassetti quando si crea il gruppo di volumi del repository mirror. Per applicare la protezione dalle perdite dei cassetti, impostare questo parametro su `TRUE`. Il valore predefinito è `FALSE`.
+
+
+
+ a| 
+`dssPreAllocate`
+ a| 
+L'impostazione per assicurarsi che la capacità di riserva venga allocata per le dimensioni future del segmento aumenta. Il valore predefinito è `TRUE`.
+
+
+
+ a| 
+`securityType`
+ a| 
+L'impostazione per specificare il livello di protezione durante la creazione dei gruppi di volumi e di tutti i volumi associati. Queste impostazioni sono valide:
+
+* `none` -- il gruppo di volumi e i volumi non sono sicuri.
+* `capable` -- il gruppo di volumi e i volumi sono in grado di impostare la protezione, ma la protezione non è stata attivata.
+* `enabled` -- il gruppo di volumi e i volumi hanno attivato la protezione.
+
+
+
+
+ a| 
+`resourceProvisioningCapable`
+ a| 
+L'impostazione per specificare se le funzionalità di provisioning delle risorse sono attivate. Per disattivare il provisioning delle risorse, impostare questo parametro su `FALSE`. Il valore predefinito è `TRUE`.
+
+
+
+ a| 
+`mapping`
+ a| 
+Questo parametro consente di mappare il volume a un host. Se si desidera eseguire la mappatura in un secondo momento, impostare questo parametro su `none`. Se si desidera eseguire la mappatura ora, impostare questo parametro su `default`. Il volume viene mappato a tutti gli host che hanno accesso al pool di storage. Il valore predefinito è `none`.
+
+
+
+ a| 
+`blockSize`
+ a| 
+Questo parametro imposta la dimensione del blocco del volume da creare. Un valore pari a 0 o il parametro non impostato utilizza la dimensione predefinita del blocco.
+
+|===
+
+
+== Note
+
+È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, trattini e caratteri di sottolineatura per i nomi. I nomi possono avere un massimo di 30 caratteri.
+
+Il `driveCount` parametro consente di scegliere il numero di dischi da utilizzare nel gruppo di volumi. Non è necessario specificare le unità in base all'ID vassoio e all'ID slot. I controller scelgono le unità specifiche da utilizzare per il gruppo di volumi.
+
+Il `owner` parameter (parametro): definisce il controller proprietario del volume.
+
+Se non si specifica una capacità utilizzando `capacity` parametro, viene utilizzata tutta la capacità del disco disponibile nel gruppo di volumi. Se non si specificano le unità di capacità, `bytes` viene utilizzato come valore predefinito.
+
+
+
+== Dimensione del segmento
+
+Le dimensioni di un segmento determinano il numero di blocchi di dati che il controller scrive su un singolo disco di un volume prima di scrivere i dati sul disco successivo. Ogni blocco di dati memorizza 512 byte di dati. Un blocco di dati è l'unità di storage più piccola. La dimensione di un segmento determina il numero di blocchi di dati che contiene. Ad esempio, un segmento da 8 KB contiene 16 blocchi di dati. Un segmento da 64 KB contiene 128 blocchi di dati.
+
+Quando si inserisce un valore per la dimensione del segmento, il valore viene controllato rispetto ai valori supportati forniti dal controller in fase di esecuzione. Se il valore immesso non è valido, il controller restituisce un elenco di valori validi. L'utilizzo di un singolo disco per una singola richiesta lascia disponibili altri dischi per supportare contemporaneamente altre richieste. Se il volume si trova in un ambiente in cui un singolo utente sta trasferendo grandi unità di dati (ad esempio, contenuti multimediali), le prestazioni vengono massimizzate quando una singola richiesta di trasferimento dati viene servita con una singola stripe di dati. (Una stripe di dati è la dimensione del segmento moltiplicata per il numero di dischi nel gruppo di volumi utilizzati per i trasferimenti di dati). In questo caso, vengono utilizzati più dischi per la stessa richiesta, ma a ciascun disco viene effettuato l'accesso una sola volta.
+
+Per ottenere performance ottimali in un ambiente di storage di file system o database multiutente, impostare le dimensioni del segmento in modo da ridurre al minimo il numero di dischi necessari per soddisfare una richiesta di trasferimento dei dati.
+
+
+
+== Suggerimento per l'utilizzo
+
+[NOTE]
+====
+Non è necessario inserire un valore per `cacheReadPrefetch` o il `segmentSize` parametro. Se non si inserisce un valore, il firmware del controller utilizza `usageHint` parametro con `fileSystem` come valore predefinito. Immissione di un valore per `usageHint` e un valore per `cacheReadPrefetch` o un valore per `segmentSize` il parametro non causa alcun errore. Il valore immesso per `cacheReadPrefetch` o il `segmentSize` il parametro ha la priorità sul valore di `usageHint` parametro. Le impostazioni relative alle dimensioni dei segmenti e al prefetch di lettura della cache per i vari suggerimenti di utilizzo sono illustrate nella tabella seguente:
+
+====
+|===
+| Suggerimento per l'utilizzo | Impostazione delle dimensioni dei segmenti | Impostazione del prefetch di lettura della cache dinamica 
+
+
+ a| 
+File system
+ a| 
+128 KB
+ a| 
+Attivato
+
+
+
+ a| 
+Database
+ a| 
+128 KB
+ a| 
+Attivato
+
+
+
+ a| 
+Multimediale
+ a| 
+256 KB
+ a| 
+Attivato
+
+|===
+
+
+== Prefetch di lettura della cache
+
+Il prefetch di lettura della cache consente al controller di copiare ulteriori blocchi di dati nella cache, mentre il controller legge e copia i blocchi di dati richiesti dall'host dal disco nella cache. Questa azione aumenta la possibilità che una richiesta futura di dati possa essere soddisfatta dalla cache. Il prefetch di lettura della cache è importante per le applicazioni multimediali che utilizzano trasferimenti di dati sequenziali. Valori validi per `cacheReadPrefetch` i parametri sono `TRUE` oppure `FALSE`. L'impostazione predefinita è `TRUE`.
+
+
+
+== Tipo di sicurezza
+
+Utilizzare `securityType` parametro per specificare le impostazioni di sicurezza per lo storage array.
+
+Prima di poter impostare `securityType` parametro a. `enabled`, è necessario creare una chiave di sicurezza dello storage array. Utilizzare `create storageArray securityKey` comando per creare una chiave di sicurezza dello storage array. Questi comandi sono correlati alla chiave di sicurezza:
+
+* `create storageArray securityKey`
+* `export storageArray securityKey`
+* `import storageArray securityKey`
+* `set storageArray securityKey`
+* `enable volumeGroup [volumeGroupName] security`
+* `enable diskPool [diskPoolName] security`
+
+
+
+
+== Dischi sicuri
+
+Le unità compatibili con la protezione possono essere dischi con crittografia completa del disco (FDE) o dischi FIPS (Federal Information Processing Standard). Utilizzare `secureDrives` parametro per specificare il tipo di dischi protetti da utilizzare. I valori che è possibile utilizzare sono `fips` e. `fde`.
+
+
+
+== Protezione in caso di perdita dei vassoi e protezione in caso di perdita dei cassetti
+
+Per attivare la protezione contro le perdite di vassoio/cassetto, fare riferimento alle seguenti tabelle per ulteriori criteri:
+
+|===
+| Livello | Criteri per la protezione dalla perdita dei vassoi | Numero minimo di vassoi richiesti 
+
+
+ a| 
+`Disk Pool`
+ a| 
+Il pool di dischi non contiene più di due dischi in un singolo vassoio
+ a| 
+6
+
+
+
+ a| 
+`RAID 6`
+ a| 
+Il gruppo di volumi non contiene più di due unità in un singolo vassoio
+ a| 
+3
+
+
+
+ a| 
+`RAID 3` oppure `RAID 5`
+ a| 
+Ciascuna unità del gruppo di volumi si trova in un vassoio separato
+ a| 
+3
+
+
+
+ a| 
+`RAID 1`
+ a| 
+Ogni disco di una coppia RAID 1 deve essere collocato in un vassoio separato
+ a| 
+2
+
+
+
+ a| 
+`RAID 0`
+ a| 
+Impossibile ottenere la protezione dalla perdita dei vassoi.
+ a| 
+Non applicabile
+
+|===
+|===
+| Livello | Criteri per la protezione contro le perdite di cassetto | Numero minimo di cassetti richiesti 
+
+
+ a| 
+`Disk Pool`
+ a| 
+Il pool include dischi di tutti e cinque i cassetti e un numero uguale di dischi in ciascun cassetto. Un vassoio da 60 dischi può ottenere la protezione contro la perdita di cassetto quando il pool di dischi contiene 15, 20, 25, 30, 35, 40, 45, 50, 55 o 60 dischi.
+ a| 
+5
+
+
+
+ a| 
+`RAID 6`
+ a| 
+Il gruppo di volumi non contiene più di due dischi in un singolo cassetto.
+ a| 
+3
+
+
+
+ a| 
+`RAID 3` oppure `RAID 5`
+ a| 
+Ciascuna unità del gruppo di volumi si trova in un cassetto separato.
+ a| 
+3
+
+
+
+ a| 
+`RAID 1`
+ a| 
+Ogni disco di una coppia mirrorata deve essere collocato in un cassetto separato.
+ a| 
+2
+
+
+
+ a| 
+`RAID 0`
+ a| 
+Impossibile ottenere la protezione perdita cassetto.
+ a| 
+Non applicabile
+
+|===
+
+
+== Esempio di comando
+
+[listing]
+----
+create volume driveCount=2 volumeGroupUserLabel="FIPS_VG" raidLevel=1 userLabel="FIPS_V"
+----
+[listing]
+----
+driveMediaType=HDD securityType=capable secureDrives=fips
+----
+
+
+== Livello minimo del firmware
+
+7.10 aggiunge la funzionalità RAID livello 6 e il `dssPreAllocate` parametro.
+
+7.50 aggiunge `securityType` parametro.
+
+7.60 aggiunge `drawerLossProtect` parametro.
+
+7.75 aggiunge `dataAssurance` parametro.
+
+8.25 aggiunge `secureDrives` parametro.
+
+8.63 aggiunge `resourceProvisioningCapable` parametro.
+
+11.70 aggiunge `blockSize` parametro.

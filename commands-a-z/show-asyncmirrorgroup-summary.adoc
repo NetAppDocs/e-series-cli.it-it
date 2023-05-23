@@ -1,0 +1,98 @@
+---
+permalink: commands-a-z/show-asyncmirrorgroup-summary.html 
+sidebar: sidebar 
+keywords: show, asynchronous, mirror, groups 
+summary: Il comando show asyncMirrorGroup summary visualizza le informazioni di configurazione per uno o più gruppi di mirror asincroni. 
+---
+= Mostra gruppi di mirror asincroni
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show asyncMirrorGroup summary` il comando visualizza le informazioni di configurazione per uno o più gruppi di mirror asincroni.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Questo comando visualizza anche le coppie mirrorate asincrone associate a ciascun gruppo di mirror asincrono, incluse le coppie mirrorate asincrone incomplete.
+
+È inoltre possibile utilizzare questo comando per mostrare l'avanzamento della sincronizzazione periodica dei dati su tutte le coppie mirrorate all'interno del gruppo di mirror asincrono.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+show (allAsyncMirrorGroups |
+asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]] |
+asyncMirrorGroups pass:quotes[[_asyncMirrorGroupName1_ ... _asyncMirrorGroupNameN_]])
+[summary]
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`allAsyncMirrorGroups`
+ a| 
+Utilizzare questo parametro se si desidera visualizzare le proprietà di tutti i gruppi di mirror asincroni.
+
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Il nome di un gruppo di mirror asincrono per il quale si desidera visualizzare le informazioni di configurazione e l'avanzamento della sincronizzazione periodica dei dati. Racchiudere il nome del gruppo mirror asincrono tra parentesi quadre ([ ]). Se il nome del gruppo mirror asincrono ha caratteri speciali o numeri, è necessario racchiudere il nome del gruppo mirror asincrono tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`asyncMirrorGroups`
+ a| 
+I nomi di diversi gruppi di mirror asincroni per i quali si desidera recuperare le informazioni. Immettere i nomi dei gruppi di mirror asincroni utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Separare ciascuno dei nomi con uno spazio.
+
+
+Se i nomi dei gruppi mirror asincroni hanno caratteri o numeri speciali, immettere i nomi utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Racchiudere ciascuno dei nomi tra virgolette doppie (" ").
+* Separare ciascuno dei nomi con uno spazio.
+
+
+
+
+ a| 
+`summary`
+ a| 
+Questo parametro visualizza un breve elenco di informazioni sull'avanzamento della sincronizzazione di uno o più gruppi di mirror asincroni.
+
+|===
+
+
+== Livello minimo del firmware
+
+7.84

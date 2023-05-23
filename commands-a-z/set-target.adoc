@@ -1,0 +1,86 @@
+---
+permalink: commands-a-z/set-target.html 
+sidebar: sidebar 
+keywords: set, target, properties 
+summary: Il comando set target modifica le proprietà di una destinazione iSCSI/iSER, inclusi il metodo di autenticazione e il nome alias. 
+---
+= Impostare le proprietà di destinazione
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set target` Il comando modifica le proprietà di una destinazione iSCSI/iSER, inclusi il metodo di autenticazione e il nome alias.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Storage Monitor.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Questo comando sostituisce il deprecato xref:set-isertarget.adoc[Impostare la destinazione iSER] e. xref:set-iscsitarget.adoc[Impostare le proprietà di destinazione iSCSI] comandi.
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+
+set target (["targetAliasName"] | <"targetQualifiedName">) (authenticationMethod=(none | chap chapSecret="newSecurityKey") | targetAlias="newAliasName")
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`target`
+ a| 
+Consente di specificare quale destinazione si desidera impostare. È possibile specificare il nome alias o il nome qualificato della destinazione (ad esempio, iqn). Racchiudere l'identificatore di destinazione in virgolette doppie (" "). È inoltre necessario racchiudere l'identificatore tra parentesi quadre ([ ]) se si tratta di un alias o parentesi angolari ( ) se si tratta di un nome qualificato.
+
+
+
+ a| 
+`authenticationMethod`
+ a| 
+Consente di impostare i mezzi per autenticare la sessione. Le scelte valide sono: `none` oppure `chap`.
+
+
+
+ a| 
+`chapSecret`
+ a| 
+Consente di inserire la chiave di sicurezza per autenticare una connessione peer. Questo è applicabile solo quando `authenticationMethod` è impostato su `chap`.
+
+
+
+ a| 
+`targetAlias`
+ a| 
+Consente di specificare il nuovo nome alias per la destinazione. Racchiudere il nome tra virgolette doppie (" ").
+
+|===
+
+
+== Livello minimo del firmware
+
+8.41

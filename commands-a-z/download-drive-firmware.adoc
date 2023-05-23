@@ -1,0 +1,126 @@
+---
+permalink: commands-a-z/download-drive-firmware.html 
+sidebar: sidebar 
+keywords: download, drive, firmware, array, support, role, context, level 
+summary: 'Il comando di download del firmware del disco scarica un"immagine del firmware su un disco.' 
+---
+= Scaricare il firmware del disco
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `download drive firmware` il comando scarica un'immagine del firmware su un disco.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Contesto
+
+[CAUTION]
+====
+*Possibili danni alla configurazione dello storage array* -- il download errato del firmware del disco può causare danni ai dischi o la perdita dell'accesso ai dati.
+
+====
+[NOTE]
+====
+Il `content` parametro obsoleto. Utilizzare `firmware` parametro invece.
+
+====
+Questo comando consente di scaricare un'immagine del firmware su un solo modello di disco alla volta. Se si utilizza questo comando in uno script, assicurarsi di utilizzare questo comando una sola volta. Se si utilizza questo comando più di una volta, l'operazione potrebbe non riuscire. È possibile scaricare immagini firmware su tutte le unità di uno storage array contemporaneamente utilizzando `download storageArray driveFirmware` comando.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[download (drive \[_trayID_,[_drawerID,_]pass:quotes[_slotID_] \| drives\ pass:quotes[[_trayID1_,[_drawerID1_,]slotID1 ... trayIDn,[drawerIDn,]slotIDn\])
+ [online|offline] firmware file="filename"
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`drive` oppure `drives`
+ a| 
+Per i vassoi ad alta capacità, specificare il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot per l'unità. Per i vassoi delle unità a bassa capacità, specificare il valore dell'ID del vassoio e il valore dell'ID dello slot per l'unità. I valori dell'ID vassoio sono `0` a. `99`. I valori dell'ID cassetto sono `1` a. `5`.
+
+Tutti i valori massimi di ID slot sono 24. I valori ID slot iniziano con 0 o 1, a seconda del modello di vassoio. I cassetti per dischi compatibili con i controller E2800 e E5700 hanno numeri ID slot a partire da 0. I vassoi per dischi compatibili con i controller E2700 e E5600 hanno numeri ID slot a partire da 1.
+
+Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`online` oppure `offline`
+ a| 
+Selezionare `online` per eseguire il download online del firmware del disco, altrimenti selezionare `offline`. Il valore predefinito è `offline`.
+
+
+
+ a| 
+`file`
+ a| 
+Il percorso e il nome del file che contiene l'immagine del firmware. Racchiudere il percorso del file e il nome del file dell'immagine del firmware tra virgolette doppie (" "). Ad esempio:
+
+`file="C:\Program Files\CLI\dnld\drvfrm.dlp"`
+
+I nomi di file validi hanno un `.dlp` interno.
+
+
+
+ a| 
+`firmware`
+ a| 
+Indica di scaricare il firmware del controller.
+
+|===
+
+
+== Note
+
+Prima di tentare di scaricare il firmware del disco, adottare le seguenti precauzioni:
+
+* A meno che non si utilizzi `online` Interrompere tutte le attività i/o nell'array di storage prima di scaricare l'immagine del firmware. Il `download drive firmware` senza `online` Il parametro blocca tutte le attività di i/o fino a quando il download non termina o non riesce; tuttavia, per precauzione, assicurarsi che tutte le attività di i/o che potrebbero influire sul disco siano interrotte.
+* Assicurarsi che il file di immagine del firmware sia compatibile con il vassoio dell'unità Se si scarica un file di immagine del firmware non compatibile con il vassoio dell'unità selezionato, il vassoio dell'unità potrebbe diventare inutilizzabile.
+* Non apportare modifiche alla configurazione dello storage array durante il download del firmware del disco. Se si tenta di apportare una modifica alla configurazione, il download del firmware potrebbe non riuscire e rendere inutilizzabili le unità selezionate.
+* Per le richieste di aggiornamento online del firmware dei dischi emesse utilizzando questo comando, il controller rimuoverà i dischi del gruppo di volumi RAID 0 dall'elenco dei dischi in cui viene scaricato il nuovo firmware. Lo stato di restituzione delle singole unità viene impostato su `Never Attempted With Reason`.
+
+
+Quando si scarica il firmware sulle unità, è necessario fornire il percorso completo e il nome del file all'immagine del firmware memorizzata nel sistema.
+
+È possibile utilizzare `download drive` comando per verificare il firmware su un disco prima di installare il firmware su tutti i dischi di uno storage array. Il download restituisce uno dei seguenti stati:
+
+* Riuscito
+* Non riuscito con motivo
+* Mai tentato con ragione
+
+
+Il `drive` il parametro supporta sia i vassoi per dischi ad alta capacità che quelli a bassa capacità. Un vassoio per dischi ad alta capacità dispone di cassetti che trattengono le unità. I cassetti scorrono fuori dal vassoio dell'unità per consentire l'accesso alle unità. Un vassoio per unità a bassa capacità non dispone di cassetti. Per un vassoio dell'unità ad alta capacità, è necessario specificare l'identificativo (ID) del vassoio dell'unità, l'ID del cassetto e l'ID dello slot in cui si trova l'unità. Per un vassoio dell'unità a bassa capacità, è necessario specificare solo l'ID del vassoio dell'unità e l'ID dello slot in cui si trova un'unità. Per un vassoio dell'unità a bassa capacità, un metodo alternativo per identificare una posizione per un'unità consiste nel specificare l'ID del vassoio dell'unità, impostare l'ID del cassetto su `0`E specificare l'ID dello slot in cui si trova un'unità.
+
+
+
+== Livello minimo del firmware
+
+7.60 aggiunge `drawerID` input dell'utente.
+
+8.25 aggiunge `online` parametro.

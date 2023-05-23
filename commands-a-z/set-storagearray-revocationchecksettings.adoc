@@ -1,0 +1,80 @@
+---
+permalink: commands-a-z/set-storagearray-revocationchecksettings.html 
+sidebar: sidebar 
+keywords: set, certificate, revocation, check, set 
+summary: 'Il comando Set StorageArray revocationCheckSettings consente di attivare o disattivare il controllo della revoca e di configurare un server OCSP (Online Certificate Status Protocol).' 
+---
+= Impostare il controllo di revoca del certificato
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray revocationCheckSettings` Il comando consente di attivare o disattivare il controllo delle revoche e di configurare un server OCSP (Online Certificate Status Protocol).
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Contesto
+
+Il server OCSP verifica la presenza di eventuali certificati revocati dall'autorità di certificazione (CA) prima della data di scadenza pianificata. È possibile attivare il controllo delle revoche nei casi in cui la CA ha emesso un certificato in modo errato o se una chiave privata è compromessa.
+
+[NOTE]
+====
+Assicurarsi che su entrambi i controller sia configurato un server DNS, che consenta di utilizzare un nome di dominio completo per il server OCSP.
+
+====
+Dopo aver attivato il controllo della revoca, l'array di storage nega un tentativo di connessione a un server con un certificato revocato.
+
+
+
+== Sintassi
+
+[listing]
+----
+set storageArray revocationCheckSettings ([revocationCheckEnable = boolean] &| [ocspResponderUrl=stringLiteral])
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`revocationCheckEnable`
+ a| 
+Impostare su `true` per attivare il controllo della revoca del certificato.
+
+
+
+ a| 
+`ocspResponderUrl`
+ a| 
+URL del server di risposta OCSP da utilizzare per il controllo della revoca del certificato.
+
+[NOTE]
+====
+Se si specifica un indirizzo del responder OCSP, l'indirizzo OCSP trovato nel file del certificato viene sovrascritta.
+
+====
+|===
+
+
+== Livello minimo del firmware
+
+8.42

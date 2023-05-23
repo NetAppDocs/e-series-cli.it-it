@@ -1,0 +1,65 @@
+---
+permalink: commands-a-z/save-alltrays-logfile.html 
+sidebar: sidebar 
+keywords: save, tray log 
+summary: Il comando Save allTrimes logfile salva i dati di rilevamento del log in un file. 
+---
+= Salva log vassoio
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `save allTrays logFile` il comando salva i dati di rilevamento dei log in un file.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+I dati di log sense vengono conservati dalle schede ambientali di ciascun vassoio Non tutte le schede ambientali contengono dati di rilevamento dei log.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+save allTrays logFile=pass:quotes["_filename_"]
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`*logFile*`
+ a| 
+Il percorso del file e il nome del file in cui si desidera salvare i dati di rilevamento del log. Racchiudere il nome del file tra virgolette doppie (" "). Ad esempio:
+
+`file="C:\Program Files\CLI\logs\traylogdat.txt"`
+
+Questo comando non aggiunge automaticamente un'estensione al file salvato. Specificare un'estensione del file quando si inserisce il nome del file.
+
+|===
+
+
+== Livello minimo del firmware
+
+6.50

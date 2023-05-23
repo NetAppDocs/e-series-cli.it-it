@@ -1,0 +1,50 @@
+---
+permalink: commands-a-z/show-storagearray-unconfigurediscsiinitiators.html 
+sidebar: sidebar 
+keywords: show, storage, array, unconfigured, iscsi, initiators 
+summary: 'Il comando show StorageArray unconfiguredIscsiInitialators restituisce un elenco di iniziatori rilevati dall"array di storage ma non ancora configurati nella topologia dell"array di storage.' 
+---
+= Mostrare gli iniziatori iSCSI non configurati degli array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show storageArray unconfiguredIscsiInitiators` command restituisce un elenco di iniziatori rilevati dall'array di storage ma non ancora configurati nella topologia dell'array di storage.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Storage Monitor.
+
+Questo comando è obsoleto. Il comando che lo sostituisce è link:show-storagearray-unconfiguredinitiators.html["Mostra StorageArray unconfiguredInitialators"].
+
+
+
+== Sintassi
+
+[listing]
+----
+show storageArray unconfiguredIscsiInitiators
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Livello minimo del firmware
+
+7.10
+
+8.50 ha obsoleto questo comando.

@@ -1,0 +1,61 @@
+---
+permalink: commands-a-z/start-ssdcache-locate.html 
+sidebar: sidebar 
+keywords: start, ssd, cache, locate 
+summary: 'Il comando start ssdCache Locate identifica i dischi a stato solido (SSD) che sono raggruppati logicamente per formare la cache SSD facendo lampeggiare gli indicatori luminosi sugli SSD.' 
+---
+= Avviare SSD cache Locate
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `start ssdCache locate` Il comando identifica i dischi a stato solido (SSD) che sono raggruppati logicamente per formare la cache SSD facendo lampeggiare gli indicatori luminosi sugli SSD.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800 o E5700, è necessario disporre del ruolo Support Admin.
+
+
+
+== Contesto
+
+Utilizzare `stop ssdCache locate` comando per spegnere gli indicatori luminosi dei dischi.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+start ssdCache pass:quotes[[_ssdCacheName_]] locate
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`ssdCache`
+ a| 
+Il nome della cache SSD che si desidera individuare. Racchiudere il nome della cache SSD tra parentesi quadre ([ ]). Se il nome della cache SSD contiene caratteri speciali o è composto solo da numeri, è necessario racchiudere il nome della cache SSD tra virgolette doppie (" ") tra parentesi quadre.
+
+|===
+
+
+== Livello minimo del firmware
+
+7.84

@@ -1,0 +1,40 @@
+---
+permalink: commands-a-z/clear-alldrivechannels-stats.html 
+sidebar: sidebar 
+keywords: clear, drive channel, statistics 
+summary: Il comando clear allDriveChannels stats ripristina le statistiche per tutti i canali del disco. 
+---
+= Cancellare le statistiche del canale del disco
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `clear allDriveChannels stats` il comando ripristina le statistiche per tutti i canali del disco.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Sintassi
+
+[listing]
+----
+clear allDriveChannels stats
+----
+
+
+== Parametri
+
+Nessuno.

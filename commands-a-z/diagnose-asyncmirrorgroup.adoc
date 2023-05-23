@@ -1,0 +1,75 @@
+---
+permalink: commands-a-z/diagnose-asyncmirrorgroup.html 
+sidebar: sidebar 
+keywords: diagnose, command, tests, possible, communication, problems, local, storage, array, remote, asynchronous, mirror, group 
+summary: 'Il comando Diagnose asyncMirrorGroup verifica i possibili problemi di comunicazione tra l"array di storage locale e l"array di storage remoto associato a un gruppo di mirror asincrono.' 
+---
+= Verificare la connettività del gruppo mirror asincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `diagnose asyncMirrorGroup` il comando verifica i possibili problemi di comunicazione tra l'array di storage locale e l'array di storage remoto associato a un gruppo di mirror asincrono.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo array di storage, con alcune limitazioni. Se si esegue il comando sull'array E2700 o E5600, non esistono restrizioni.
+
+[NOTE]
+====
+Se si esegue il comando sull'array E2800 o E5700, il tipo di client deve essere impostato su `symbol`. Questo comando non viene eseguito se il tipo di client è impostato su `https`.
+
+====
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[diagnose asyncMirrorGroup [_asyncMirrorGroupName_]]
+testID=(all | connectivity | latency | bandwidth | portConnections)
+----
+
+
+== Parametro
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Il nome di un gruppo di mirror asincrono esistente che si desidera sottoporre a test. Racchiudere il nome del gruppo mirror asincrono tra parentesi quadre ([ ]). Se il nome del gruppo mirror asincrono ha caratteri speciali o numeri, è necessario racchiudere il nome del gruppo mirror asincrono tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`testID`
+ a| 
+L'identificativo del test di diagnostica che si desidera eseguire. L'identificatore e i test corrispondenti sono i seguenti:
+
+* *All* -- esegue tutti i test associati a questo comando.
+* *Connettività* -- verifica che i due controller dispongano di un percorso di comunicazione. Il test di connettività invia un messaggio tra controller tra gli array di storage, quindi convalida l'esistenza del gruppo di mirror asincrono corrispondente sull'array di storage remoto. Convalida inoltre che i membri del volume del gruppo di mirror asincrono sul sistema remoto corrispondano ai membri del volume del gruppo di mirror asincrono sul sistema locale.
+* *Latency* -- Invia un comando SCSI test unit a ciascun volume dell'array di storage remoto associato al gruppo di mirror asincrono per verificare la latenza minima, media e massima.
+* *Bandwidth* -- Invia due messaggi tra controller all'array di storage remoto per verificare la larghezza di banda minima, media e massima, nonché la velocità di collegamento negoziata della porta sul controller che esegue il test.
+* *Port Connections* -- Mostra la porta utilizzata per il mirroring sull'array di storage locale e la porta che riceve i dati mirrorati sull'array di storage remoto.
+
+
+|===
+
+
+== Livello minimo del firmware
+
+7.84

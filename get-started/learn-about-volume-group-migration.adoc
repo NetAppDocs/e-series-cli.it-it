@@ -1,0 +1,104 @@
+---
+permalink: get-started/learn-about-volume-group-migration.html 
+sidebar: sidebar 
+keywords: volume, group, migration, learn, data, access, export, import, component 
+summary: Scopri di più sulla migrazione dei gruppi di volumi 
+---
+= Scopri di più sulla migrazione dei gruppi di volumi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[CAUTION]
+====
+Se il gruppo di volumi è costituito da unità compatibili con NVMe o FIPS, la chiave di sicurezza e la password dovranno essere registrate/salvate dall'array di origine per sbloccare i dischi prima dell'inizio della migrazione all'array di destinazione. Se la chiave di sicurezza e la password non sono note e/o l'integrità dei dati non è necessaria, è possibile eseguire una cancellazione di sicurezza. La combinazione di diverse unità di sicurezza con crittografia non è supportata nei sistemi storage e-Series. Per ulteriori informazioni su come sbloccare i dischi utilizzando una chiave di sicurezza, cancellare i dischi FIPS e sbloccare o reimpostare i dischi NVMe bloccati, consultare la guida online di Gestione di sistema di SANtricity.
+
+====
+La migrazione dei gruppi di volumi consente di esportare un gruppo di volumi in modo da poter importare il gruppo di volumi in un array di storage diverso. È inoltre possibile esportare un gruppo di volumi in modo da memorizzare i dati offline.
+
+[NOTE]
+====
+*Possibile perdita di accesso ai dati* -- è necessario esportare un gruppo di volumi prima di spostare il gruppo di volumi o importarlo.
+
+====
+
+
+== Gruppo di volumi di esportazione
+
+L'operazione di esportazione del gruppo di volumi prepara i dischi nel gruppo di volumi per la rimozione. È possibile rimuovere le unità per lo storage offline oppure importare il gruppo di volumi in un array di storage diverso. Una volta completata l'operazione di esportazione del gruppo di volumi, tutti i dischi non sono in linea. Eventuali volumi o nodi di capacità libera associati non vengono più visualizzati nel software di gestione dello storage.
+
+
+
+== Componenti non esportabili
+
+È necessario rimuovere eventuali componenti non esportabili prima di completare la procedura di esportazione del gruppo di volumi. È necessario rimuovere questi componenti:
+
+* Prenotazioni persistenti
+* Mappature
+* Coppie di copie del volume
+* Coppie remote mirrorate
+* Repository mirrorati
+
+
+
+
+== Procedure di esportazione di base per un gruppo di volumi
+
+L'esportazione di un gruppo di volumi include questi passaggi sull'array di storage _source_.
+
+. Salvare la configurazione dello storage array.
+. Arrestare tutti i/o
+. Eseguire il backup dei dati nei volumi del gruppo di volumi.
+. Smontare o scollegare i file system sui volumi del gruppo di volumi.
+. Individuare il gruppo di volumi ed etichettare le unità con i nomi degli array di storage di origine e destinazione, il nome del gruppo di volumi e il numero totale di dischi nel gruppo di volumi.
+. Posizionare il gruppo di volumi offline.
+. Per mantenere un flusso d'aria adeguato all'interno del vassoio, procurarsi delle unità vuote o nuove unità in modo da poterle sostituire dopo aver rimosso le unità associate al gruppo di volumi esportato.
+
+
+L'esportazione di un gruppo di volumi include questi passaggi sull'array di storage _target_.
+
+. Assicurarsi che lo storage array di destinazione disponga di slot per dischi.
+. Assicurarsi che lo storage array di destinazione supporti le unità che si desidera importare.
+. Assicurarsi che lo storage array di destinazione supporti i nuovi volumi.
+. Assicurarsi che sul controller sia installata la versione più recente del firmware.
+. Se si esporta un gruppo di volumi RAID livello 6, assicurarsi che lo storage array di destinazione supporti RAID livello 6.
+. Assicurarsi che sull'array di storage di destinazione sia installata la versione più recente del software di gestione dello storage.
+. Se si sta esportando un gruppo di volumi con Drive Security abilitato, assicurarsi che Drive Security sia attivato sull'array di storage di destinazione.
+
+
+
+
+== Importa gruppo di volumi
+
+L'operazione di importazione del gruppo di volumi aggiunge il gruppo di volumi importati all'array di storage di destinazione. Una volta completata l'operazione di importazione dei gruppi di volumi, tutti i dischi hanno uno stato ottimale. Tutti i volumi associati o i nodi di capacità libera ora vengono visualizzati nel software di gestione dello storage installato sull'array di storage di destinazione.
+
+
+
+== Procedure di importazione di base per un gruppo di volumi
+
+[NOTE]
+====
+Prima di poter importare il gruppo di volumi, è necessario inserire tutte le unità del gruppo di volumi nel vassoio.
+
+====
+L'importazione di un gruppo di volumi include i seguenti passaggi sull'array di storage _target_:
+
+. Inserire le unità esportate negli slot disponibili.
+. Consultare il report di importazione per una panoramica del gruppo di volumi che si sta importando.
+. Verificare la presenza di componenti non importabili.
+. Confermare che si desidera procedere con la procedura di importazione.
+
+
+
+
+== Componenti non importabili
+
+Alcuni componenti non possono essere importati durante la procedura di importazione del gruppo di volumi. Questi componenti vengono rimossi durante la procedura:
+
+* Prenotazioni persistenti
+* Mappature
+* Coppie di copie del volume
+* Coppie remote mirrorate
+* Repository mirrorati
+

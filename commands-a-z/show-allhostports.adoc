@@ -1,0 +1,70 @@
+---
+permalink: commands-a-z/show-allhostports.html 
+sidebar: sidebar 
+keywords: show, host, ports 
+summary: Il comando show allHostPorts restituisce informazioni sulle porte host configurate. 
+---
+= Mostra porte host
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show allHostPorts` il comando restituisce informazioni sulle porte host configurate.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Per tutte le porte host collegate a un array di storage, questo comando restituisce le seguenti informazioni:
+
+* Identificativo della porta host
+* Il nome della porta host
+* Il tipo di host
+
+
+
+
+== Sintassi
+
+[listing]
+----
+show allHostPorts
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Note
+
+Questo comando restituisce informazioni sulla porta host HBA simili a questo esempio.
+
+[listing]
+----
+HOST PORT IDENTIFIER     HOST PORT NAME  HOST TYPE
+12:34:56:54:33:22:22:22  Jupiter1        Solaris
+12:34:56:78:98:98:88:88  Pluto1          Windows 2000/Server 2003 Clustered
+54:32:12:34:34:55:65:66  Undefined       Undefined
+----
+
+
+== Livello minimo del firmware
+
+5.40

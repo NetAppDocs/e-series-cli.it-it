@@ -1,0 +1,95 @@
+---
+permalink: commands-a-z/save-storagearray-dbmvalidatorinfo.html 
+sidebar: sidebar 
+keywords: save, storage, array, dbm, validator, information, file 
+summary: 'Il comando Save StorageArray dbmValidatorInfo salva le informazioni di convalida della gestione del database (DBM) per un array di storage in un file XML.' 
+---
+= Salvare il file di informazioni di convalida DBM dell'array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `save storageArray dbmValidatorInfo` Il comando salva le informazioni di convalida della gestione del database (DBM) per un array di storage in un file XML.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Contesto
+
+Il supporto tecnico può utilizzare questo file XML per generare una stringa di convalida (un codice di sicurezza). La stringa di convalida deve essere inclusa in `load storageArray dbmDatabase` quando si ripristina un array di storage in una configurazione preesistente.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+save storageArray dbmValidatorInfo file=pass:quotes["_filename_"] dbmDatabase=pass:quotes["_filename_"]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`file`
+ a| 
+Il percorso del file e il nome del file di convalida DBM richiesti per il supporto tecnico. Racchiudere il nome del file tra virgolette doppie (" "). Ad esempio:
+
+`file="C:\Array Backups \DBMvalidator.xml"` Questo comando non aggiunge automaticamente un'estensione al file salvato. Specificare l'estensione del file .xml quando si immette il nome del file.
+
+
+
+ a| 
+`dbmDatabase`
+ a| 
+Il percorso e il nome del file del database DBM da cui si desidera generare il file di informazioni XML. Racchiudere il nome del file tra virgolette doppie (" "). Ad esempio:
+
+`dbmDatabase="C:\Array Backups \DBMbackup_03302010.dbm"` Questo comando non aggiunge automaticamente un'estensione al file salvato. Specificare l'estensione del file .dbm quando si immette il nome del file.
+
+|===
+
+
+== Note
+
+Se si sta generando il file di informazioni XML per ottenere una stringa di convalida, è necessario eseguire questo comando mentre si è connessi al controller in cui si intende ripristinare il database. Il seguente esempio mostra il formato del file XML:
+
+[listing]
+----
+<?xml version="1.0" encoding="utf-8"?>
+<DbmImageMetadata>
+<Controllers>
+<A>1IT0nnnnnnnnnABCD</A>
+<B>1T0nnnnnnnnnABCD</B>
+</Controllers>
+<Header>
+<ImageVersion>1</ImageVersion>
+<TimeStamp>1269388283</TimeStamp>
+</Header>
+<Trailer>
+<CRC>nnnnnnnnnn</CRC><
+/Trailer>
+</DbmImageMetadata>
+----
+
+
+== Livello minimo del firmware
+
+7.75

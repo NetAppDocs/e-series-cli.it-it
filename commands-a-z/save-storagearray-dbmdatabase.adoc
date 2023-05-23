@@ -1,0 +1,109 @@
+---
+permalink: commands-a-z/save-storagearray-dbmdatabase.html 
+sidebar: sidebar 
+keywords: save, storage, array, dbm, database 
+summary: 'Il comando Save StorageArray dbmDatabase esegue il backup dei dati di configurazione RAID o di tutti i dati in un file sull"host. È possibile specificare più ubicazioni dei dati e controller.' 
+---
+= Salvare il database DBM dell'array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `save storageArray dbmDatabase` Command esegue il backup dei dati di configurazione RAID o di tutti i dati in un file sull'host. È possibile specificare più ubicazioni dei dati e controller.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+
+
+
+== Sintassi
+
+[listing]
+----
+save storageArray dbmDatabase
+[sourceLocation=(disk | onboard)]
+[controller [(a|b)]]
+[contentType= all]
+ file="fileName"
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`file`
+ a| 
+Il percorso del file e il nome del file in cui si desidera salvare il database. Racchiudere il nome del file tra virgolette doppie (" "). Ad esempio:
+
+`file="C:\Program Files\CLI\logs\dbmdata.zip"`
+
+Questo parametro deve essere visualizzato per ultimo, dopo uno qualsiasi dei parametri opzionali.
+
+Questo comando crea un file .zip e non è necessario specificare un'estensione del file.
+
+
+
+ a| 
+`sourceLocation`
+ a| 
+Questo parametro specifica la posizione da cui ottenere le informazioni del database di backup.
+
+* `disk` indica che i dati provengono direttamente dal database sul disco
+* `onboard` Indica che i dati provengono dalla posizione della memoria RPA
+
+
+La posizione predefinita è `onboard`.
+
+
+
+ a| 
+`controller`
+ a| 
+Questo parametro specifica il controller da cui verranno recuperati esclusivamente i dati, se `sourceLocation` è impostato su `onboard`. Se il `controller` parametro non specificato, i dati potrebbero essere recuperati da uno dei controller.
+
+Gli identificatori del controller validi sono `a` oppure `b`, dove `a` È il controller nello slot A, e. `b` Il controller si trova nello slot B.
+
+
+
+ a| 
+`contentType`
+ a| 
+Questo parametro specifica il tipo di contenuto dei dati che verranno recuperati.
+
+Questo parametro è impostato su `all` per impostazione predefinita, in modo che tutti i dati, inclusi i dati di configurazione del pool di dischi, siano recuperati.
+
+|===
+
+
+== Note
+
+Se necessario, i dati salvati nell'host utilizzando questo comando possono essere ripristinati nel controller. Tuttavia, per ripristinare i dati dal file sull'host è necessario un validatore.
+
+
+
+== Livello minimo del firmware
+
+7.75
+
+7.83 aggiunge questi parametri:
+
+* `sourceLocation`
+* `controller`
+* `contentType`
+

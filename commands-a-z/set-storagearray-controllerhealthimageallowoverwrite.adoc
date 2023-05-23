@@ -1,0 +1,65 @@
+---
+permalink: commands-a-z/set-storagearray-controllerhealthimageallowoverwrite.html 
+sidebar: sidebar 
+keywords: set, storage, array, controller, health, image, allow, overwrite 
+summary: 'Il comando Set StorageArray controllerHealthImageAllowOverWrite imposta un flag su un controller per consentire a una nuova immagine dello stato di salute del controller di sovrascrivere un"immagine dello stato di salute del controller esistente sugli array di storage che supportano la funzione dell"immagine dello stato di salute del controller.' 
+---
+= Impostare l'immagine dello stato di salute del controller dell'array di storage Allow overwrite (
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set storageArray controllerHealthImageAllowOverWrite` command imposta un flag su un controller per consentire a una nuova immagine dello stato di salute del controller di sovrascrivere un'immagine dello stato di salute del controller esistente su array di storage che supportano la funzione dell'immagine dello stato di salute del controller.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Se lo storage array non supporta la funzione di immagine dello stato del controller, il comando restituisce un errore.
+
+[NOTE]
+====
+Con la versione del firmware 8.20 di `coreDumpAllowOverWrite` il parametro viene sostituito con `controllerHealthImageAllowOverWrite` parametro.
+
+====
+
+
+== Sintassi
+
+[listing]
+----
+set storageArray controllerHealthImageAllowOverWrite
+----
+
+
+== Parametri
+
+Nessuno.
+
+
+
+== Note
+
+Quando l'immagine dello stato del controller viene recuperata, il `allow overwrite` flag impostato. Se l'immagine dello stato di salute del controller non viene recuperata, l'immagine scade tra 48 ore, dopo di che l' `allow overwrite` flag impostato. Quando si utilizza `set storageArray controllerHealthImageAllowOverWrite` per impostare `allow overwrite` flag, la scadenza di 48 ore viene revocata come se l'immagine fosse stata recuperata.
+
+
+
+== Livello minimo del firmware
+
+7.86
+
+8.20 sostituisce `*coreDumpAllowOverWrite*` con il `controllerHealthImageAllowOverWrite` parametro.

@@ -1,0 +1,89 @@
+---
+permalink: commands-a-z/check-storagearray-connectivity.html 
+sidebar: sidebar 
+keywords: check, storage array, connectivity 
+summary: Il comando check StorageArray Connectivity verifica che lo storage array locale e lo storage array remoto dispongano di un percorso di comunicazione e visualizza i dettagli di connessione tra lo storage array locale e remoto. 
+---
+= Controllare la connettività dello storage array
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `check storageArray connectivity` il comando verifica che l'array di storage locale e l'array di storage remoto dispongano di un percorso di comunicazione e visualizza i dettagli di connessione tra l'array di storage locale e remoto.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo array di storage, con alcune limitazioni. Se si esegue il comando sull'array E2700 o E5600, non esistono restrizioni.
+
+[NOTE]
+====
+Se si esegue il comando sull'array E2800 o E5700, il tipo di client deve essere impostato su `symbol`. Questo comando non viene eseguito se il tipo di client è impostato su `https`.
+
+====
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Prima di creare un gruppo di mirror asincrono, è necessario verificare se l'array di storage locale e l'array di storage remoto possono comunicare tra loro. Quando si esegue questo comando, il sistema richiede l'array di storage remoto su tutte le porte host idonee per determinare quali porte sono collegate all'array di storage remoto. Il risultato del test è un elenco di tutte le porte sull'array di storage locale, insieme a un elenco degli indirizzi delle porte dell'array di storage remoto accessibili attraverso tale porta.
+
+[NOTE]
+====
+La connettività viene testata utilizzando tutti i canali possibili e, se si tratta di una configurazione a doppio controller, la connettività viene controllata da ciascun controller. Potrebbero essere necessari fino a 20 minuti per controllare la connettività tra due array di storage.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+check storageArray connectivity
+(remoteStorageArrayName=pass:quotes[_"storageArrayName"_]|
+remoteStorageArrayWwid=<pass:quotes[_wwID_]>)
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`remoteStorageArrayName`
+ a| 
+Il nome dell'array di storage remoto per cui si sta verificando la connettività. Racchiudere il nome dello storage array tra virgolette doppie (" ").
+
+
+
+ a| 
+`remoteStorageArrayWwid`
+ a| 
+WWID (World Wide Identifier) dell'array di storage per il quale si sta verificando la connettività. Per identificare lo storage array, è possibile utilizzare il WWID invece del nome dello storage array. Racchiudere il WWID tra parentesi angolari (< >).
+
+|===
+
+
+== Note
+
+Prima di poter stabilire un mirror tra due array di storage, è necessario collegarli tramite una connessione Fibre Channel o iSCSI.
+
+Il mirroring asincrono Fibre Channel deve essere attivato su entrambi gli array di storage prima di poter comunicare tra loro per il mirroring o il controllo della connettività.
+
+Se lo storage array locale supporta iSCSI, viene selezionata la connettività su iSCSI. Se lo storage array locale supporta Fibre Channel ed è stato attivato il mirroring su Fibre Channel, viene selezionata la connettività su Fibre Channel. Se lo storage array locale non supporta iSCSI o Fibre Channel, viene visualizzato un messaggio di errore e l'operazione viene interrotta.
+
+
+
+== Livello minimo del firmware
+
+7.84

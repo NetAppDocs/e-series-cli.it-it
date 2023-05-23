@@ -1,0 +1,43 @@
+---
+permalink: commands-a-z/getting-started-with-external-key-management.html 
+sidebar: sidebar 
+keywords: security, key, string, characters, shared, secure, drives, controllers, storage, array, external, management, maintain, server 
+summary: Una chiave di sicurezza è una stringa di caratteri che viene condivisa tra i dischi abilitati alla protezione e i controller di un array di storage. Quando si utilizza la gestione esterna delle chiavi, si creano e si mantengono le chiavi di sicurezza su un server di gestione delle chiavi 
+---
+= Introduzione alla gestione esterna delle chiavi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Una chiave di sicurezza è una stringa di caratteri che viene condivisa tra i dischi abilitati alla protezione e i controller di un array di storage. Quando si utilizza la gestione esterna delle chiavi, si creano e si mantengono le chiavi di sicurezza su un server di gestione delle chiavi
+
+Consultare la guida in linea di Gestore di sistema di SANtricity per informazioni concettuali sull'utilizzo di chiavi di sicurezza e server di gestione delle chiavi esterni.
+
+Di seguito viene riportato il flusso di lavoro di base per l'implementazione delle chiavi di sicurezza esterne:
+
+. *Generare una richiesta di firma del certificato*
+. *Ottenere certificati client e server dal server KMIP*
+. *Installare il certificato del client*
+. *Impostare l'indirizzo IP e il numero di porta del server KMIP*
+. *Verifica della comunicazione con il server KMIP*
+. *Creare una chiave di sicurezza per lo storage array*
+. *Convalidare la chiave di sicurezza*
+
+
+
+
+== Fasi del flusso di lavoro
+
+Sia la gestione dei certificati che la gestione delle chiavi esterne sono nuove funzionalità di sicurezza con la release SANtricity11.40. Per iniziare, attenersi alla seguente procedura di base:
+
+. Generare una richiesta di firma del certificato utilizzando `save storageArray keyManagementClientCSR` comando. Vedere xref:save-storagearray-keymanagementclientcsr.adoc[Generare la richiesta di firma del certificato di gestione delle chiavi].
+. Dal server KMIP, richiedere un certificato client e un certificato server.
+. Installare il certificato client utilizzando `download storageArray keyManagementCertificate` con il `certificateType` parametro impostato su `client`. Vedere xref:download-storagearray-keymanagementcertificate.adoc[Installare il certificato di gestione delle chiavi esterne dell'array di storage].
+. Installare il certificato del server utilizzando `download storageArray keyManagementCertificate` con il `certificateType` parametro impostato su `server`. Vedere xref:download-storagearray-keymanagementcertificate.adoc[Installare il certificato di gestione delle chiavi esterne dell'array di storage].
+. Impostare l'indirizzo IP e il numero di porta del server di gestione delle chiavi utilizzando `set storageArray externalKeyManagement` comando. Vedere xref:set-storagearray-externalkeymanagement.adoc[Impostare le impostazioni di gestione delle chiavi esterne].
+. Verificare la comunicazione con il server di gestione delle chiavi esterno utilizzando `start storageArray externalKeyManagement test` comando. Vedere xref:start-storagearray-externalkeymanagement-test.adoc[Verificare la comunicazione esterna di gestione delle chiavi].
+. Creare una chiave di sicurezza utilizzando `create storageArray securityKey` comando. Vedere xref:create-storagearray-securitykey.adoc[Creare una chiave di sicurezza].
+. Convalidare la chiave di sicurezza utilizzando `validate storageArray securityKey` comando. Vedere xref:validate-storagearray-securitykey.adoc[Convalidare la chiave di sicurezza interna o esterna].
+

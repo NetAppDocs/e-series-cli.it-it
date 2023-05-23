@@ -1,0 +1,57 @@
+---
+permalink: commands-a-z/set-tray-attribute.html 
+sidebar: sidebar 
+keywords: set, tray, attribute 
+summary: 'Il comando set tray imposta gli attributi definiti dall"utente per un vassoio' 
+---
+= Impostare l'attributo del vassoio
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `set tray` il comando imposta gli attributi definiti dall'utente per un vassoio
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+set tray pass:quotes[[_trayID_]] (chassisName | assetTag)=pass:quotes["_userID_"]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`tray`
+ a| 
+Identifica un vassoio specifico per il quale impostare l'attributo. I valori dell'ID vassoio vanno da 0 a 99. È necessario inserire le parentesi ([ ]) intorno al valore ID dell'enclosure.
+
+
+
+ a| 
+`chassisName`
+ a| 
+Nome o numero dello chassis per assegnare il nuovo enclosure. I nomi degli chassis possono essere costituiti da qualsiasi combinazione di caratteri alfanumerici con una lunghezza massima di 32 caratteri. I caratteri alfabetici possono essere maiuscoli o minuscoli. È inoltre possibile utilizzare il carattere di sottolineatura (_) e il trattino (-). Non è possibile utilizzare spazi nel nome di uno chassis. È necessario inserire le virgolette (" ") intorno al nome del telaio.
+
+
+
+ a| 
+`assetTag`
+ a| 
+Nome o numero del tag asset per assegnare il nuovo enclosure. I tag delle risorse possono essere una combinazione di caratteri alfanumerici con una lunghezza massima di dieci caratteri. I caratteri alfabetici possono essere maiuscoli o minuscoli. È inoltre possibile utilizzare il carattere di sottolineatura (_) e il trattino (-). Non è possibile utilizzare spazi nel nome di un tag asset. È necessario inserire le virgolette (" ") intorno al nome del tag asset.
+
+|===
+
+
+== Livello minimo del firmware
+
+6.16

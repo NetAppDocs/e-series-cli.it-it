@@ -1,0 +1,79 @@
+---
+permalink: commands-a-z/delete-diskpool.html 
+sidebar: sidebar 
+keywords: delete, disk pool 
+summary: Il comando delete diskPool elimina un pool di dischi. 
+---
+= Eliminare il pool di dischi
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `delete diskPool` il comando elimina un pool di dischi.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+*Possibili danni alla configurazione dello storage array* -- tutti i dati nel pool di dischi vengono persi non appena si esegue questo comando.
+
+====
+A seconda della versione del software di gestione dello storage in uso, questo comando elimina anche tutti i volumi nel pool di dischi. Se la versione del software di gestione dello storage in uso non supporta l'eliminazione automatica dei volumi, è possibile forzare l'eliminazione del pool di dischi e dei volumi.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+delete diskPool pass:quotes[[_diskPoolName_]]
+[force=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`diskPoolName`
+ a| 
+Il nome del pool di dischi che si desidera eliminare. Racchiudere il nome del pool di dischi tra parentesi quadre ([ ]). Se il nome del pool di dischi contiene caratteri speciali o è composto solo da numeri, è necessario racchiuderlo tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`force`
+ a| 
+Questo parametro forza l'eliminazione dei volumi se il software di gestione dello storage non supporta l'eliminazione automatica dei volumi nel pool di dischi. Per forzare l'eliminazione di un pool di dischi e dei volumi in esso contenuti, impostare questo parametro su `TRUE`. L'impostazione predefinita è `FALSE`.
+
+|===
+
+
+== Note
+
+Ciascun nome del pool di dischi deve essere univoco. È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per l'etichetta utente. Le etichette dell'utente possono contenere un massimo di 30 caratteri.
+
+
+
+== Livello minimo del firmware
+
+7.83

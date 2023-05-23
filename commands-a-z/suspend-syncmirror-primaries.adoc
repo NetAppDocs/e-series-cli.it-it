@@ -1,0 +1,110 @@
+---
+permalink: commands-a-z/suspend-syncmirror-primaries.html 
+sidebar: sidebar 
+keywords: suspend, synchronous, mirror 
+summary: 'Il comando suspend SyncMirror primaries sospende un"operazione di mirroring sincrono.' 
+---
+= Sospendere il mirroring sincrono
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `suspend syncMirror primaries` il comando sospende un'operazione di mirroring sincrono.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Nelle versioni precedenti di questo comando, l'identificatore di funzione era `remoteMirror`. Questo identificatore di funzione non è più valido e viene sostituito da `syncMirror`.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+
+suspend syncMirror (primary pass:quotes[[_primaryVolumeName_]]
+primaries pass:quotes[[_primaryVolumeName1_ ... _primaryVolumeNameN_])]
+[writeConsistency=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`primary`
+ a| 
+Il nome del volume principale per il quale si desidera sospendere l'operazione. Racchiudere il nome del volume tra parentesi quadre ([ ]). Se il nome del volume contiene caratteri speciali o numeri, è necessario racchiudere il nome del volume tra virgolette doppie (" ") all'interno di parentesi quadre.
+
+
+
+ a| 
+`primaries`
+ a| 
+I nomi di diversi volumi primari per i quali si desidera sospendere le operazioni. Tutti i volumi avranno le stesse proprietà. Inserire i nomi dei volumi utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Separare ciascuno dei nomi con uno spazio.
+
+
+Se i nomi dei volumi contengono caratteri o numeri speciali, immettere i nomi utilizzando le seguenti regole:
+
+* Racchiudere tutti i nomi tra parentesi quadre ([ ]).
+* Racchiudere ciascuno dei nomi tra virgolette doppie (" ").
+* Separare ciascuno dei nomi con uno spazio.
+
+
+
+
+ a| 
+`writeConsistency`
+ a| 
+Questo parametro definisce se i volumi identificati in questo comando si trovano in un gruppo di coerenza di scrittura o sono separati. Per i volumi nello stesso gruppo di coerenza di scrittura, impostare questo parametro su `TRUE`. Per i volumi separati, impostare questo parametro su `FALSE`.
+
+|===
+
+
+== Note
+
+Se si imposta `writeConsistency` parametro a. `TRUE`, i volumi devono trovarsi in uno o più gruppi di coerenza di scrittura. Questo comando sospende tutti i gruppi di coerenza di scrittura che contengono i volumi. Ad esempio, se i volumi A, B e C si trovano in un gruppo di coerenza di scrittura e dispongono di controparti remote A`', B`' e C`', il comando:
+
+[listing]
+----
+suspend syncMirror volume ["A"] writeConsistency=TRUE
+----
+SOSPENDE A-A`', B-B`' E C-C`'. Se si dispone di un gruppo di coerenza di scrittura 1={A, B, C} e di un gruppo di coerenza di scrittura 2={D, e, F}, il comando:
+
+[listing]
+----
+suspend syncMirror volumes ["A" "D"] writeConsistency=TRUE
+----
+sospende entrambi i gruppi di coerenza di scrittura.
+
+
+
+== Livello minimo del firmware
+
+6.10

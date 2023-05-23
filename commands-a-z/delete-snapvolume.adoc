@@ -1,0 +1,72 @@
+---
+permalink: commands-a-z/delete-snapvolume.html 
+sidebar: sidebar 
+keywords: delete, snapvolume, command, snapshot, volume, optionally, associate, repository, members 
+summary: Il comando delete snapVolume elimina un volume di snapshot e, facoltativamente, i membri del repository di snapshot associati. 
+---
+= Elimina volume snapshot
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `delete snapVolume` il comando elimina un volume di snapshot e, facoltativamente, i membri del repository di snapshot associati.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+[NOTE]
+====
+Non è possibile utilizzare questo comando per le immagini snapshot coinvolte nella copia del volume online.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+pass:quotes[delete snapVolume ["_snapVolumeName_"]]
+[deleteRepositoryMembers=(TRUE | FALSE)]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`snapVolume`
+ a| 
+Il nome del volume di snapshot che si desidera eliminare. Racchiudere il nome del volume snapshot tra virgolette doppie (" ") tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`deleteRepositoryMembers`
+ a| 
+Il parametro per salvare o eliminare i membri del repository. Per salvare i membri del repository, impostare questo parametro su `FALSE`. Per eliminare i membri del repository, impostare questo parametro su `TRUE`. Il valore predefinito è `TRUE`. Se non si utilizza questo parametro, i membri del repository vengono automaticamente cancellati.
+
+|===
+
+
+== Livello minimo del firmware
+
+7.83

@@ -1,0 +1,82 @@
+---
+permalink: commands-a-z/show-asyncmirrorgroup-synchronizationprogress.html 
+sidebar: sidebar 
+keywords: show, asynchronous, mirror, group, synchronization, progress 
+summary: 'Il comando show asyncMirrorGroup SynchronizationProgress visualizza l"avanzamento della sincronizzazione periodica del gruppo di mirror asincrono tra l"array di storage locale e remoto.' 
+---
+= Mostra l'avanzamento della sincronizzazione asincrona del gruppo mirror
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show asyncMirrorGroup synchronizationProgress` il comando visualizza lo stato di avanzamento della sincronizzazione _periodica_ del gruppo di mirror asincrono tra lo storage array locale e remoto.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Contesto
+
+Questo comando restituisce l'avanzamento della sincronizzazione dei dati su tutte le coppie mirrorate all'interno del gruppo di mirror asincrono. Questo comando mostra l'avanzamento come percentuale di sincronizzazione dei dati completata.
+
+[NOTE]
+====
+Esistono due tipi di sincronizzazione: La sincronizzazione iniziale e la sincronizzazione periodica. L'avanzamento iniziale della sincronizzazione del gruppo mirror asincrono viene visualizzato nella finestra di dialogo *Long Running Operations* e eseguendo `show storageArray longRunningOperations` comando.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+show asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]]
+[synchronizationProgress]
+[summary]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`asyncMirrorGroup`
+ a| 
+Il nome di un gruppo di mirror asincrono per il quale si desidera visualizzare la sincronizzazione del gruppo di mirror asincrono tra l'array di storage locale e remoto. Racchiudere il nome del gruppo mirror asincrono tra parentesi quadre ([ ]). Se il nome del gruppo mirror asincrono ha caratteri speciali o numeri, è necessario racchiudere il nome del gruppo mirror asincrono tra virgolette doppie (" ") tra parentesi quadre.
+
+
+
+ a| 
+`synchronizationProgress`
+ a| 
+Questo parametro visualizza l'avanzamento periodico della sincronizzazione del gruppo di mirror asincrono.
+
+
+
+ a| 
+`summary`
+ a| 
+Questo parametro visualizza un breve elenco di informazioni sulla sincronizzazione del gruppo di mirror asincrono tra l'array di storage locale e remoto.
+
+|===
+
+
+== Livello minimo del firmware
+
+7.84

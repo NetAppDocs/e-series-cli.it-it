@@ -1,0 +1,87 @@
+---
+permalink: commands-a-z/save-storagearray-ibstats.html 
+sidebar: sidebar 
+keywords: save, storage, array, infiniband, statistics 
+summary: Il comando Save StorageArray ibStats salva le statistiche delle performance InfiniBand dello storage array in un file. 
+---
+= Salva le statistiche InfiniBand dell'array di storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `save storageArray ibStats` Il comando salva le statistiche delle performance di InfiniBand dell'array di storage in un file.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+[NOTE]
+====
+Questo comando è obsoleto e viene sostituito da xref:save-storagearray-hostportstatistics.adoc[Salvare le statistiche delle porte host dell'array di storage] comando.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+save storageArray ibStats [raw | baseline]
+file=pass:quotes["_filename_"]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`raw`
+ a| 
+Le statistiche raccolte sono tutte statistiche dell'inizio della giornata del controller. Racchiudere il parametro tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`baseline`
+ a| 
+Le statistiche raccolte sono tutte statistiche del momento in cui i controller sono stati azzerati utilizzando `reset storageArray ibStatsBaseline` comando. Racchiudere il parametro tra parentesi quadre ([ ]).
+
+
+
+ a| 
+`file`
+ a| 
+Il percorso del file e il nome del file in cui si desidera salvare le statistiche delle prestazioni. Racchiudere il nome del file tra virgolette doppie (" "). Ad esempio:
+
+`file="C:\Program Files\CLI\sup\ibstat.csv"`
+
+Il nome predefinito del file che contiene le statistiche delle prestazioni di InfiniBand è `ib-statistics.csv`. È possibile utilizzare qualsiasi nome di file, ma è necessario utilizzare `.csv` interno.
+
+|===
+
+
+== Note
+
+Se le statistiche di riferimento InfiniBand non sono state reimpostate dall'inizio della giornata del controller, l'ora di inizio giornata è l'ora di riferimento predefinita.
+
+
+
+== Livello minimo del firmware
+
+7.32
+
+8.41 questo comando è obsoleto.

@@ -1,0 +1,43 @@
+---
+permalink: commands-a-z/recover-disabled-driveports.html 
+sidebar: sidebar 
+keywords: recover, disable, drive ports 
+summary: 'Il comando Recover disabled drivePorts (Ripristina porte disco disabilitate) ripristina le porte disco disabilitate.' 
+---
+= Ripristinare le porte del disco disabilitate
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `recover disabled drivePorts` il comando ripristina le porte disco disabilitate.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+
+
+
+== Sintassi
+
+[listing]
+----
+recover disabled drivePorts;
+----
+
+
+== Esempi
+
+[listing]
+----
+recover disabled drivePorts;
+----

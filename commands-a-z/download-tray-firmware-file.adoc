@@ -1,0 +1,94 @@
+---
+permalink: commands-a-z/download-tray-firmware-file.html 
+sidebar: sidebar 
+keywords: download, tray, firmware, file, command, environmental, service, module, array, role, context 
+summary: 'Il comando download tray firmware file scarica il firmware ESM (Environmental Services Module).' 
+---
+= Scaricare il firmware della scheda ambientale
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `download tray firmware file` Il comando scarica il firmware del modulo dei servizi ambientali (ESM).
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+
+
+
+== Contesto
+
+[IMPORTANT]
+====
+Sui sistemi duplex gestiti da Gestore di sistema (ad esempio, E2800), sui controller è in esecuzione un servizio di sincronizzazione automatica IOM che sincronizza automaticamente il firmware IOM con la versione contenuta nel bundle del sistema operativo SANtricity caricato sui controller. Se non si desidera ripristinare il firmware IOM in modo che corrisponda alla versione caricata sui controller, è necessario disattivare questo servizio. Il servizio di sincronizzazione automatica IOM può essere sospeso utilizzando System Manager o l'API REST. Quando si sospende questo servizio, tenere presente che lasciando attivata la sincronizzazione automatica si garantisce che il firmware IOM sia aggiornato.
+
+====
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+download (allTrays | tray [trayID])
+pass:quotes[firmware file="_filename_"]
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`allTrays`
+ a| 
+Questo parametro scarica il nuovo firmware in tutti i vassoi compatibili dell'array di storage. Il pacchetto firmware selezionato determina i vassoi compatibili. I vassoi incompatibili vengono ignorati. Non viene visualizzato alcun messaggio di errore relativo ai vassoi incompatibili.
+
+
+
+ a| 
+`tray`
+ a| 
+Il vassoio dell'unità contenente la scheda ESM in cui si desidera caricare il nuovo firmware. I valori dell'ID vassoio sono `0` a. `99`. Racchiudere il valore dell'ID vassoio tra parentesi quadre ([ ]).
+
+[NOTE]
+====
+L'ID vassoio non può contenere lo zero iniziale. Ad esempio, se l'ID vassoio visualizzato è "02", questo comando richiede che sia specificato come [2], non come [02].
+
+====
+
+
+ a| 
+`file`
+ a| 
+Il percorso e il nome del file che contiene l'immagine del firmware. Racchiudere il percorso del file e il nome del file dell'immagine del firmware tra virgolette doppie (" "). Ad esempio:
+
+`file="C:\Program Files\CLI\dnld\esmfrm.esm"`
+
+I nomi di file validi hanno un `.esm` interno.
+
+|===
+
+
+== Note
+
+Il `tray` il parametro scarica il nuovo firmware su un vassoio dell'unità specifico Se è necessario scaricare il nuovo firmware su più vassoi dell'unità, ma non su tutti, immettere questo comando per ciascun vassoio dell'unità
+
+
+
+== Livello minimo del firmware
+
+5.20
