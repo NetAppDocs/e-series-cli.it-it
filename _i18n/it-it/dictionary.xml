@@ -7508,4 +7508,6 @@
   <block id="f915b7dcf11bca08338740cf9f00983e" category="sidebar">sospendere ssdcache</block>
   <block id="2d30e328ae4f6dcf3d38d3968d0319a6" category="sidebar">sospendere i primari SyncMirror</block>
   <block id="16c09c2705a79763c9682b2f80400d1a" category="sidebar">validare la chiave di sicurezza storagearray</block>
+  <block id="4d73148eba8bbf93563afef1a810a39e" category="section-title">SANtricity 11.70.5</block>
+  <block id="a1b47df4de15fbd87aeeb6fd140013ca" category="paragraph">Non sono state apportate modifiche alla CLI o al comando script per la versione 11.70.5.</block>
 </blocks>

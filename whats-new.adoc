@@ -25,6 +25,12 @@ Se si utilizza SANtricity 11.52 o una versione precedente, non è possibile eseg
 ====
 
 
+== SANtricity 11.70.5
+
+Non sono state apportate modifiche alla CLI o al comando script per la versione 11.70.5.
+
+
+
 == SANtricity 11.70.4
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.4.
