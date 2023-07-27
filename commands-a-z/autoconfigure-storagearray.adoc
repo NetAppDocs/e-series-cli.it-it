@@ -51,6 +51,7 @@ pass:quotes[[readAheadMultiplier=_multiplierValue_]]
 [securityType=(none | capable | enabled)]
 [secureDrives=(fips | fde)]
 [dataAssurance=(none | enabled)]
+[blockSize=(512 | 4096)]
 ----
 
 
@@ -178,6 +179,13 @@ Il tipo di dischi sicuri da utilizzare nel gruppo di volumi. Queste impostazioni
 Utilizzare questo parametro insieme a `securityType` parametro. Se si specifica `none` per `securityType` il valore di `secureDrives` il parametro viene ignorato, in quanto non è necessario che i gruppi di volumi non sicuri abbiano specificato tipi di dischi sicuri.
 
 ====
+
+
+ a| 
+`blockSize`
+ a| 
+La dimensione del blocco dei volumi creati in byte. I valori supportati sono `512` e. `4096`.
+
 |===
 
 

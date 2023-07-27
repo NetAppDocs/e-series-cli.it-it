@@ -31,7 +31,7 @@ Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, 
 
 Questo comando restituisce queste informazioni su un pool di dischi:
 
-* Lo stato (ad esempio ottimale, online, offline)
+* Lo stato (come ottimale, degradato, non riuscito, mancante)
 * La capacità totale
 * Capacità di conservazione, capacità utilizzabile e capacità inutilizzabile
 * La capacità utilizzata, la capacità libera e la percentuale di pieno

@@ -368,6 +368,8 @@ link:../commands-a-z/save-storagearray-arvmstats-asyncmirrorgroup.html["Salva le
 
 link:../commands-a-z/save-auditlog.html["Salvare i record del registro di controllo"]
 
+link:../commands-a-z/save-check-vol-parity-job-errors.html["Save Check Volume Parity Job Parity Errors (Salva errori di parità del volume)"]
+
 link:../commands-a-z/save-controller-nvsram-file.html["Salva NVSRAM controller"]
 
 link:../commands-a-z/save-drivechannel-faultdiagnostics-file.html["Salvataggio dello stato di diagnostica dell'isolamento degli errori del canale del disco"]
@@ -582,6 +584,8 @@ link:../commands-a-z/show-storagearray-revocationchecksettings.html["Mostra le i
 
 link:../commands-a-z/show-array-label.html["Mostra etichetta array"]
 
+link:../commands-a-z/show-check-vol-parity-jobs.html["Mostra job di verifica parità volume"]
+
 link:../commands-a-z/show-consistencygroup.html["Mostra gruppo di coerenza"]
 
 link:../commands-a-z/show-cgsnapimage.html["Mostra immagine snapshot del gruppo di coerenza"]
@@ -698,6 +702,8 @@ link:../commands-a-z/set-autosupport-https-delivery-method-e2800-e5700.html["Spe
 
 link:../commands-a-z/start-storagearray-ocspresponderurl-test.html["Avviare il test URL del server OCSP"]
 
+link:../commands-a-z/start-check-vol-parity-job.html["Avviare il processo di verifica della parità del volume"]
+
 link:../commands-a-z/start-cgsnapimage-rollback.html["Avviare il rollback dello snapshot del gruppo di coerenza"]
 
 link:../commands-a-z/start-controller.html["Avviare la traccia del controller"]
@@ -755,6 +761,8 @@ link:../commands-a-z/start-volumegroup-import.html["Avviare l'importazione dei g
 link:../commands-a-z/start-volumegroup-locate.html["Avviare l'individuazione del gruppo di volumi"]
 
 link:../commands-a-z/start-volume-initialization.html["Avviare l'inizializzazione del volume"]
+
+link:../commands-a-z/stop-check-vol-parity-job.html["Interrompere il processo Check Volume Parity"]
 
 link:../commands-a-z/stop-cgsnapimage-rollback.html["Interrompere il rollback dello snapshot del gruppo di coerenza"]
 

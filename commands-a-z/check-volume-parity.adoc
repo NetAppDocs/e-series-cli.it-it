@@ -108,3 +108,9 @@ L'impostazione per acquisire i dettagli di avanzamento, ad esempio la percentual
 == Note
 
 L'indirizzo del blocco logico iniziale e l'indirizzo del blocco logico finale sono utili per LUN o spazi dei nomi di volumi singoli molto grandi. L'esecuzione di un controllo di parità del volume su un LUN o uno spazio dei nomi di un singolo volume molto grande può richiedere molto tempo. Definendo l'indirizzo iniziale e l'indirizzo finale dei blocchi di dati, è possibile ridurre il tempo necessario per il completamento di un controllo di parità del volume.
+
+
+
+== Livello minimo del firmware
+
+11.80 - questo comando è obsoleto.

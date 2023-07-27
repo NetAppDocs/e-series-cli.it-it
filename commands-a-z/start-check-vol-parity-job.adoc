@@ -1,0 +1,84 @@
+---
+permalink: commands-a-z/start-check-vol-parity-job.html 
+sidebar: sidebar 
+keywords: start, check, volume, parity, job 
+summary: Il comando start check volume parity job avvia una nuova operazione di verifica della parità del volume su un determinato volume. 
+---
+= Avviare il processo di verifica della parità del volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `start check volume parity job` il comando avvia una nuova operazione di verifica della parità del volume su un determinato volume.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo array di storage, inclusi gli array EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array EF600 ed EF300, è necessario disporre del ruolo Storage Admin.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+start check volume[<volume_label>] parity job
+(startingLba=<start_lba> endingLba=<end_lba> scanPriority=<scan_priority> repairParityErrors=<true | false>
+repairMediaErrors=<true | false>);
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`startingLba`
+ a| 
+L'indirizzo del blocco logico del volume in cui viene avviata la scansione di parità. Il valore predefinito è `0`.
+
+
+
+ a| 
+`endingLba`
+ a| 
+L'indirizzo del blocco logico del volume in cui viene interrotta la scansione di parità. Il valore predefinito è `maximum volume lba`.
+
+
+
+ a| 
+`scanPriority`
+ a| 
+La priorità di scansione della parità. Il valore predefinito è `medium`
+
+
+
+ a| 
+`repairParityErrors`
+ a| 
+Determina se tentare automaticamente di riparare gli errori di parità rilevati durante la scansione di parità. Il valore predefinito è `true`.
+
+
+
+ a| 
+`repairMediaErrors`
+ a| 
+Determina se tentare automaticamente di riparare gli errori dei supporti rilevati durante la scansione di parità. Il valore predefinito è `true`.
+
+|===
+
+
+== Livello minimo del firmware
+
+11.80

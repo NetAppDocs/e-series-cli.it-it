@@ -67,22 +67,7 @@ capacity=_volumeCapacity_]
 [(existingRepositoryLabel=pass:quotes[_existingRepositoryName_] |
 [newRepositoryCapacity=pass:quotes[_newRepositoryCapacityValue_] (KB | MB | GB | TB | Bytes)]
 [repositoryMaxCapacity=pass:quotes[_repositoryMaxCapacityValue_](KB|MB|GB|TB|Bytes)]
-[warningThresholdPercent=pass:quotes[_warningThresholdPercentValue_]
-[repositoryExpansionPolicy=(automatic|manual)]
-[cacheReadPrefetch=(TRUE | FALSE)]
-----
-[listing, subs="+macros"]
-----
-create volume diskPool=pass:quotes[_"diskPoolName"_
-userLabel="_volumeName_"
-capacity=_volumeCapacity_]
-[thinProvisioned=(TRUE | FALSE)]
-[owner=(a|b)]
-[mapping=(none|default)]
-[(existingRepositoryLabel=pass:quotes[_existingRepositoryName_] |
-[newRepositoryCapacity=pass:quotes[_newRepositoryCapacityValue_] (KB | MB | GB | TB | Bytes)]
-[repositoryMaxCapacity=pass:quotes[_repositoryMaxCapacityValue_](KB|MB|GB|TB|Bytes)]
-[warningThresholdPercent=pass:quotes[_warningThresholdPercentValue_]]
+[warningThresholdPercent=pass:quotes][_warningThresholdPercentValue_]
 [repositoryExpansionPolicy=(automatic|manual)]
 [cacheReadPrefetch=(TRUE | FALSE)]
 ----
@@ -235,6 +220,8 @@ Per i volumi sottili, il `capacity` il parametro specifica la capacità virtuale
 Per ottenere risultati ottimali durante la creazione di un volume thin, il volume repository deve già esistere o essere creato in un pool di dischi già esistente. Se non si specificano alcuni dei parametri opzionali durante la creazione di thin volumi, il software di gestione dello storage tenterà di creare il volume del repository. Il volume candidato più desiderabile è un volume di repository già esistente e che rientra nei requisiti di dimensione. Il successivo volume candidato più desiderabile è un nuovo volume di repository creato nell'estensione libera del pool di dischi.
 
 Non è possibile creare volumi di repository per volumi thin in gruppi di volumi.
+
+I volumi con thin provisioning non sono supportati su EF300 o EF600.
 
 
 

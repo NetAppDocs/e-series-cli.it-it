@@ -1,0 +1,54 @@
+---
+permalink: commands-a-z/show-check-vol-parity-job.html 
+sidebar: sidebar 
+keywords: show, check, volume, parity, job, 
+summary: Il comando show check volume parity job mostra un job di verifica della parità del volume specificato e lo stato del job. 
+---
+= Mostra job di verifica parità volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il `show check volume parity job` il comando mostra un job di parità del volume di controllo specificato e lo stato del job.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi singolo array di storage, inclusi gli array EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array EF600 ed EF300, è necessario disporre del ruolo Storage Admin.
+
+
+
+== Sintassi
+
+[listing, subs="+macros"]
+----
+show check volume parity job jobId=<job_id>;
+----
+
+
+== Parametri
+
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`jobId`
+ a| 
+L'ID del processo di verifica parità volume. Questo valore è obbligatorio.
+
+|===
+
+
+== Livello minimo del firmware
+
+11.80

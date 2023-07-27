@@ -17,13 +17,13 @@ Il `stop ssdCache locate` Il comando spegne le spie dei dischi a stato solido (S
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800 o E5700, è necessario disporre del ruolo Support Admin.
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Support Admin.
 
 
 
@@ -44,3 +44,5 @@ Nessuno.
 == Livello minimo del firmware
 
 7.84
+
+11.80 aggiunge il supporto degli array EF600 e EF300

@@ -25,11 +25,75 @@ Se si utilizza SANtricity 11.52 o una versione precedente, non è possibile eseg
 ====
 
 
+== SANtricity 11.80
+
+Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.80.
+
+[cols="2*"]
+|===
+| Comando | Descrizione della modifica 
+
+
+ a| 
+xref:./commands-a-z/save-check-vol-parity-job-errors.adoc[Salva errori di parità del job di controllo del volume carity]
+ a| 
+Aggiunto comando
+
+
+
+ a| 
+xref:./commands-a-z/start-check-vol-parity-job.adoc[Avviare il processo di verifica della parità del volume]
+ a| 
+Aggiunto comando
+
+
+
+ a| 
+xref:./commands-a-z/show-check-vol-parity-jobs.adoc[Mostra job di controllo parità volume]
+ a| 
+Aggiunto comando
+
+
+
+ a| 
+xref:./commands-a-z/show-check-vol-parity-job.adoc[Mostra job di verifica parità volume]
+ a| 
+Aggiunto comando
+
+
+
+ a| 
+xref:./commands-a-z/stop-check-vol-parity-job.adoc[Interrompere il processo di verifica della parità del volume]
+ a| 
+Aggiunto comando
+
+
+
+ a| 
+xref:./get-started/command-line-parameters.adoc[Parametri della riga di comando legacy]
+ a| 
+Aggiunto `-useLegacyTransferPort` parametro.
+
+
+
+ a| 
+xref:./commands-a-z/autoconfigure-storagearray.adoc[Configurazione automatica dello storage array]
+ a| 
+Aggiunto `blockSize` parametro.
+
+
+
+ a| 
+xref:./commands-a-z/check-volume-parity.adoc[Controllare la parità del volume]
+ a| 
+Comando obsoleto.
+
+|===
+[]
+====
 == SANtricity 11.70.5
 
 Non sono state apportate modifiche alla CLI o al comando script per la versione 11.70.5.
-
-
 
 == SANtricity 11.70.4
 
@@ -46,8 +110,6 @@ xref:./get-started/downloadable-smcli-parameters.adoc[Scaricare i parametri dell
 Aggiunto `-t` e. `-T` descrizioni dei parametri del token di accesso per l'autenticazione a più fattori.
 
 |===
-
-
 == SANtricity 11.70.3
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.3.
@@ -98,8 +160,6 @@ xref:./commands-a-z/create-diskpool.html[Creare un pool di dischi]
 Aggiornato `driveCount` descrizione del parametro.
 
 |===
-
-
 == SANtricity 11.70.2
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.2.
@@ -157,8 +217,6 @@ xref:./commands-a-z/start-snmptrapdestination.adoc[Verificare la destinazione de
 Aggiunto `userName` e. `engineid` parametri.
 
 |===
-
-
 == SANtricity 11.70.1
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.1.
@@ -223,8 +281,6 @@ xref:./commands-a-z/recover-volume.adoc[Ripristinare il volume RAID]
 Aggiunto `blockSize` parametro.
 
 |===
-
-
 == SANtricity 11.70
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.
@@ -268,258 +324,4 @@ xref:./commands-a-z/recover-volume.adoc[Ripristinare il volume RAID]
 Aggiunto `hostUnmapEnabled` parametro.
 
 |===
-
-
-== SANtricity 11.63
-
-Le seguenti tabelle elencano le modifiche apportate ai comandi CLI e script per la release 11.63.
-
-[cols="2*"]
-|===
-| Comando | Descrizione della modifica 
-
-
- a| 
-xref:./commands-a-z/start-storagearray-autosupport-manualdispatch.adoc[Avviare l'invio manuale di Storage Array AutoSupport]
- a| 
-Aggiunto comando
-
-
-
- a| 
-xref:./commands-a-z/start-volumegroup-fullprovisioning.adoc[Avviare il provisioning completo del gruppo di volumi]
- a| 
-Aggiunto comando
-
-
-
- a| 
-xref:./commands-a-z/start-diskpool-fullprovisioning.adoc[Avviare il provisioning completo del pool di dischi]
- a| 
-Aggiunto comando
-
-
-
- a| 
-xref:./commands-a-z/repair-data-parity.adoc[Riparare la parità dei dati]
- a| 
-Aggiunto comando
-
-
-
- a| 
-xref:./commands-a-z/set-storagearray-resourceprovisionedvolumes.adoc[Impostare i volumi con provisioning delle risorse degli array di storage]
- a| 
-Aggiunto comando
-
-
-
- a| 
-xref:./commands-a-z/create-mapping-volume.adoc[Creare la mappatura del volume]
- a| 
-Aggiunto `mapWaitPeriod` parametro.
-
-
-
- a| 
-xref:./commands-a-z/show-storagearray.adoc[Mostrare lo storage array]
- a| 
-Aggiunto `Resource-Provisioned Volumes` sotto `profile` risultati dei parametri.
-
-
-
- a| 
-xref:./commands-a-z/create-diskpool.adoc[Creare un pool di dischi]
- a| 
-Aggiunto `resourceProvisioningCapable` parametro.
-
-
-
- a| 
-xref:./commands-a-z/create-volumegroup.adoc[Creare un gruppo di volumi]
- a| 
-Aggiunto `resourceProvisioningCapable` parametro.
-
-
-
- a| 
-xref:./commands-a-z/show-volumegroup.adoc[Mostra gruppo di volumi]
- a| 
-Aggiunto `resource-provisioned` informazioni nei risultati del comando.
-
-
-
- a| 
-xref:./commands-a-z/create-raid-volume-automatic-drive-select.adoc[Creazione di un volume RAID (selezione automatica del disco)]
- a| 
-Aggiunto `resourceProvisioningCapable` parametro.
-
-
-
- a| 
-xref:./commands-a-z/create-raid-volume-manual-drive-select.adoc[Creazione di un volume RAID (selezione manuale del disco)]
- a| 
-Aggiunto `resourceProvisioningCapable` parametro.
-
-
-
- a| 
-xref:./commands-a-z/show-diskpool.adoc[Mostra pool di dischi]
- a| 
-Aggiunto `resource-provisioned` informazioni nei risultati del comando.
-
-|===
-
-
-== SANtricity 11.62
-
-Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.62.
-
-[cols="2*"]
-|===
-| Comando | Descrizione della modifica 
-
-
- a| 
-xref:./commands-a-z/set-controller-hostport.adoc[Impostare le proprietà della porta host del controller]
- a| 
-Aggiunto `Physical` e. `Virtual` valori per `host Port` parametro.
-
-|===
-
-
-== SANtricity 11.61 e versioni precedenti
-
-* Aggiunta della piattaforma EF600 come array supportato per i comandi applicabili.
-
-
-[cols="2*"]
-|===
-| Comando | Descrizione della modifica 
-
-
- a| 
-xref:./commands-a-z/save-storagearray-supportdata.adoc[Salvataggio dei dati di supporto degli array di storage]
- a| 
-Aggiunto `object-bundle.json` tipo di dati.
-
-
-
- a| 
-xref:./commands-a-z/show-alldrives.adoc[Mostrare il disco]
- a| 
-Compatibilità NVMe4K aggiunta.
-
-
-
- a| 
-xref:./commands-a-z/activate-synchronous-mirroring.adoc[Attivare il mirroring sincrono]
- a| 
-Compatibilità NVMe4K aggiunta.
-
-
-
- a| 
-xref:./commands-a-z/recreate-storagearray-mirrorrepository.adoc[Ricreare il volume del repository di mirroring sincrono]
- a| 
-Compatibilità NVMe4K aggiunta.
-
-
-
- a| 
-xref:./commands-a-z/create-raid-volume-automatic-drive-select.adoc[Creazione di un volume RAID (selezione automatica del disco)]
- a| 
-Compatibilità NVMe4K aggiunta.
-
-
-
- a| 
-xref:./commands-a-z/show-storagearray-autoconfiguration.adoc[Mostra la configurazione automatica dello storage array]
- a| 
-Compatibilità NVMe4K aggiunta.
-
-
-
- a| 
-xref:./commands-a-z/autoconfigure-storagearray.adoc[Configurazione automatica dello storage array]
- a| 
-Compatibilità NVMe4K aggiunta.
-
-
-
- a| 
-xref:./commands-a-z/create-diskpool.adoc[Creare un pool di dischi]
- a| 
-Compatibilità NVMe4K aggiunta.
-
-
-
- a| 
-xref:./commands-a-z/create-volumegroup.adoc[Creare un gruppo di volumi]
- a| 
-Compatibilità NVMe4K aggiunta.
-
-
-
- a| 
-xref:./commands-a-z/save-storagearray-autoloadbalancestatistics-file.adoc[Salva le statistiche di bilanciamento del carico automatico]
- a| 
-Aggiunta della nota "Drive Lost Primary Path"
-
-
-
- a| 
-xref:./commands-a-z/set-storagearray-autoloadbalancingenable.adoc[Impostare lo storage array per abilitare o disabilitare il bilanciamento automatico del carico]
- a| 
-Aggiunta della nota "Drive Lost Primary Path"
-
-
-
- a| 
-xref:./commands-a-z/add-certificate-from-array.adoc[Aggiungere il certificato dall'array]
- a| 
-Aggiunto comando
-
-
-
- a| 
-xref:./commands-a-z/add-certificate-from-file.adoc[Aggiungi certificato dal file]
- a| 
-Aggiunto comando
-
-
-
- a| 
-xref:./commands-a-z/delete-certificates.adoc[Eliminare i certificati]
- a| 
-Aggiunto comando
-
-
-
- a| 
-xref:./commands-a-z/show-certificates.adoc[Mostra certificati]
- a| 
-Aggiunto comando
-
-
-
- a| 
-xref:./commands-a-z/add-array-label.adoc[Aggiungere l'etichetta dell'array]
- a| 
-Aggiunto comando
-
-
-
- a| 
-xref:./commands-a-z/remove-array-label.adoc[Rimuovere l'etichetta dell'array]
- a| 
-Aggiunto comando
-
-
-
- a| 
-xref:./commands-a-z/show-array-label.adoc[Mostra etichetta array]
- a| 
-Aggiunto comando
-
-|===
+====

@@ -30,6 +30,8 @@ link:../commands-a-z/show-diskpool.html["Mostra pool di dischi"]
 
 link:../commands-a-z/start-diskpool-fullprovisioning.html["Avviare il provisioning completo del pool di dischi"]
 
+link:../commands-a-z/start-diskpool-resourceprovisioning.html["Avviare Disk Pool Resource Provisioning"]
+
 link:../commands-a-z/start-diskpool-locate.html["Avviare disk pool individuare"]
 
 link:../commands-a-z/stop-diskpool-locate.html["Arrestare l'individuazione del pool di dischi"]
@@ -154,6 +156,8 @@ link:../commands-a-z/repair-volume-parity.html["Riparare la parità del volume"]
 
 link:../commands-a-z/repair-data-parity.html["Riparare la parità dei dati"]
 
+link:../commands-a-z/save-check-vol-parity-job-errors.html["Save Check Volume Parity Job Parity Errors (Salva errori di parità del volume)"]
+
 link:../commands-a-z/set-thin-volume-attributes.html["Impostare gli attributi dei volumi thin"]
 
 link:../commands-a-z/set-volumes.html["Impostare gli attributi di un volume in un pool di dischi..."]
@@ -161,6 +165,8 @@ link:../commands-a-z/set-volumes.html["Impostare gli attributi di un volume in u
 link:../commands-a-z/set-volume-group-attributes-for-volume-in-a-volume-group.html["Impostare gli attributi di un volume in un gruppo di volumi..."]
 
 link:../commands-a-z/set-volume-logicalunitnumber.html["Consente di impostare la mappatura del volume"]
+
+link:../commands-a-z/show-check-vol-parity-jobs.html["Mostra job di verifica parità volume"]
 
 link:../commands-a-z/show-volume.html["Mostra volume sottile"]
 
@@ -172,7 +178,11 @@ link:../commands-a-z/show-volume-performancestats.html["Mostra le statistiche su
 
 link:../commands-a-z/show-volume-reservations.html["Mostra prenotazioni di volumi"]
 
+link:../commands-a-z/start-check-vol-parity-job.html["Avviare il processo di verifica della parità del volume"]
+
 link:../commands-a-z/start-volume-initialization.html["Avviare l'inizializzazione del volume"]
+
+link:../commands-a-z/stop-check-vol-parity-job.html["Interrompere il processo Check Volume Parity"]
 
 
 
@@ -201,6 +211,8 @@ link:../commands-a-z/start-volumegroup-defragment.html["Avviare la deframmentazi
 link:../commands-a-z/start-volumegroup-export.html["Avviare l'esportazione dei gruppi di volumi"]
 
 link:../commands-a-z/start-volumegroup-fullprovisioning.html["Avviare il provisioning completo del gruppo di volumi"]
+
+link:../commands-a-z/start-volumegroup-resourceprovisioning.html["Avviare il provisioning delle risorse del gruppo di volumi"]
 
 link:../get-started/learn-about-volume-group-migration.html["Informazioni sulla migrazione dei gruppi di volumi (solo CLI)"]
 

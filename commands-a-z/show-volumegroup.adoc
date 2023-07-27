@@ -31,7 +31,7 @@ Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, 
 
 Questo comando restituisce queste informazioni su un gruppo di volumi:
 
-* Lo stato (online o offline)
+* Lo stato (come ottimale, degradato, non riuscito, mancante)
 * La capacità
 * Il proprietario corrente (il controller nello slot A o il controller nello slot B )
 * Il livello RAID

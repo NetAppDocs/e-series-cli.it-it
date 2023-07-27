@@ -21,14 +21,14 @@ Questo comando si applica a qualsiasi singolo array di storage, con alcune limit
 
 [NOTE]
 ====
-Se si esegue il comando sull'array E2800 o E5700, il tipo di client deve essere impostato su `symbol`. Questo comando non viene eseguito se il tipo di client è impostato su `https`.
+Se si esegue il comando sugli array E2800, E5700, EF600 e EF300, il tipo di client deve essere impostato su `symbol`. Questo comando non viene eseguito se il tipo di client è impostato su `https`.
 
 ====
 
 
 == Ruoli
 
-Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
 
 
 
@@ -73,3 +73,5 @@ L'identificativo del test di diagnostica che si desidera eseguire. L'identificat
 == Livello minimo del firmware
 
 7.84
+
+11.80 aggiunge il supporto degli array EF600 e EF300

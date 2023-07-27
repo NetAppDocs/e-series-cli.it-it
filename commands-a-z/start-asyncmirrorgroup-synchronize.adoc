@@ -17,13 +17,13 @@ Il `start asyncMirrorGroup synchronize` Il comando avvia la sincronizzazione del
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
 
 
 
@@ -62,3 +62,5 @@ Il parametro per eliminare il punto di ripristino se i dati di sincronizzazione 
 7.84
 
 8.10 aggiunge `deleteRecoveryPointIfNecessary` parametro.
+
+11.80 aggiunge il supporto degli array EF600 e EF300

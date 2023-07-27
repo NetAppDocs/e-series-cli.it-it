@@ -17,13 +17,13 @@ Il `resume ssdCache` Il comando riavvia il caching per tutti i volumi utilizzand
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800 o E5700, è necessario disporre del ruolo Support Admin.
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Support Admin.
 
 
 
@@ -52,3 +52,5 @@ Il nome della cache SSD per la quale si desidera riprendere le operazioni di cac
 == Livello minimo del firmware
 
 7.84
+
+11.80 aggiunge il supporto degli array EF600 e EF300

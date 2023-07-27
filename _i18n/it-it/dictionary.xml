@@ -1802,14 +1802,12 @@
   <block id="40bca54aff18bd6b61ab776afa82b445" category="summary">In questo argomento sono elencate le modifiche apportate alle release più recenti di Gestione di sistema di SANtricity relative ai comandi CLI e script.</block>
   <block id="490414e0366b091220802d406e52c076" category="doc">Novità</block>
   <block id="951c6ae7fff0668a89aef7dc85bf76d0" category="paragraph">Quando si emettono comandi SMcli al prompt dei comandi, è necessario immettere una barra rovesciata aggiuntiva <block ref="28d397e87306b8631f3ed80d858d35f0" prefix="(" category="inline-code"></block>) Come carattere di escape nel nome del percorso di un file di input o output quando si utilizza il sistema operativo Windows. La barra rovesciata aggiuntiva <block ref="28d397e87306b8631f3ed80d858d35f0" prefix="(" category="inline-code"></block>) Deve essere incluso quando si utilizza SMcli in modalità https sicura, fornendo l'opzione -u per specificare un utente di gestione degli accessi basato sui ruoli. Esempio:<block ref="1c05e98ca61c10b2b98fcdccf3f101eb" prefix=" " category="inline-code"></block></block>
-  <block id="06d2539958ee4762f25ee6e06e44b9f1" category="section-title">SANtricity 11.70.4</block>
   <block id="88f7095a6da86281dee41ca1973b59da" category="paragraph">Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.4.</block>
   <block id="ee97be03cb04119af45014d815621ce1" category="cell">Comando</block>
   <block id="cabd3dec14f47181e4af36eb550db0ea" category="cell">Descrizione della modifica</block>
   <block id="3c81bd0a1f22910d21ddab30497f0cad" category="inline-xref-macro">Scaricare i parametri della riga di comando SMcli</block>
   <block id="26f5c6a358189222507298d61acc474c" category="paragraph"><block ref="26f5c6a358189222507298d61acc474c" category="inline-xref-macro-rx"></block></block>
   <block id="5c0565b7c4e3a02c6f7da8e8b79a7540" category="paragraph">Aggiunto<block ref="b7cc4b6b2b8c0f37377b5cc259385de0" prefix=" " category="inline-code"></block> e.<block ref="f2349da52d073d93e5c41656eac03cfe" prefix=" " category="inline-code"></block> descrizioni dei parametri del token di accesso per l'autenticazione a più fattori.</block>
-  <block id="e5b376b9bdbfe1612d578d30462ed6ff" category="section-title">SANtricity 11.70.3</block>
   <block id="71fff74a4c9d69eab84efedd296433b6" category="paragraph">Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.3.</block>
   <block id="2095fd6c65341ab93c351699ae64c34e" category="inline-xref-macro">Avviare Disk Pool Resource Provisioning</block>
   <block id="28d2b76e39ac881658909c65abcd0daa" category="paragraph"><block ref="28d2b76e39ac881658909c65abcd0daa" category="inline-xref-macro-rx"></block></block>
@@ -1823,7 +1821,6 @@
   <block id="8240d06183810907de9b280dfee9a05e" category="paragraph">Aggiunto<block ref="94774b0e9e2f3de99f5e163c521fda11" prefix=" " category="inline-code"></block> parametro.</block>
   <block id="6d75466b80c625b48fc8ba8590e96c95" category="paragraph"><block ref="6d75466b80c625b48fc8ba8590e96c95" category="inline-xref-macro-rx"></block></block>
   <block id="6f716bfd4057a5bb2f73f7b626fff002" category="paragraph">Aggiornato<block ref="f871051bec311fb059ec65b39e21ab07" prefix=" " category="inline-code"></block> descrizione del parametro.</block>
-  <block id="3cffe633df330392f4d88b8478c9390b" category="section-title">SANtricity 11.70.2</block>
   <block id="f66791a36a8e67b4d2634d7f1e8c68c5" category="paragraph">Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.2.</block>
   <block id="326299687f74c312b7aaa299887c7d36" category="inline-xref-macro">Registrare l'utente SNMPv3 USM</block>
   <block id="b0712e32c143076d1b1765d28c4ff86d" category="paragraph"><block ref="b0712e32c143076d1b1765d28c4ff86d" category="inline-xref-macro-rx"></block></block>
@@ -1837,7 +1834,6 @@
   <block id="a2c9974b236ee81969b25e3fb9ab1358" category="paragraph">Aggiunto<block ref="435e0648d634175c46bd40ac366545a8" prefix=" " category="inline-code"></block> e.<block ref="44c2dfa855186a2c325ac82588fba7f2" prefix=" " category="inline-code"></block> parametri.</block>
   <block id="f36c4239322f1d6c4d0012326bb82baf" category="paragraph"><block ref="f36c4239322f1d6c4d0012326bb82baf" category="inline-xref-macro-rx"></block></block>
   <block id="4e922eeab0693268617854964f734062" category="paragraph"><block ref="4e922eeab0693268617854964f734062" category="inline-xref-macro-rx"></block></block>
-  <block id="cfafd61e53ff8b90ff59654a31683d33" category="section-title">SANtricity 11.70.1</block>
   <block id="59316ba483ba3aec447f68f9ec6e01ea" category="paragraph">Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.1.</block>
   <block id="5e1960d53d0e67e3cd307a126a8f75ac" category="inline-xref-macro">Avviare la cancellazione del disco</block>
   <block id="e49e67325ea9057b09b143e96207afc5" category="paragraph"><block ref="e49e67325ea9057b09b143e96207afc5" category="inline-xref-macro-rx"></block></block>
@@ -1854,7 +1850,6 @@
   <block id="5739d7add341e0326107e029f52ef372" category="paragraph">Aggiunto<block ref="c2239a92bde29f0a9f9173193cc2fe00" prefix=" " category="inline-code"></block> crittografia, porta e dati dei parametri delle credenziali.</block>
   <block id="05271dc1a2c676675a63e13c5b53b947" category="paragraph"><block ref="05271dc1a2c676675a63e13c5b53b947" category="inline-xref-macro-rx"></block></block>
   <block id="b38477e0ffa079ffe6db9ea9609c7c0c" category="paragraph">Aggiunto<block ref="480d1b61a0432d1319f7504a3d7318dd" prefix=" " category="inline-code"></block> parametro.</block>
-  <block id="474034f7e02f357e3878ae2514a2b3fd" category="section-title">SANtricity 11.70</block>
   <block id="a74afad0edcf76c0a4a9f8c65d64b174" category="paragraph">Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.</block>
   <block id="5e84b4270d9ce9be0ad2533dbfd95b65" category="paragraph"><block ref="5e84b4270d9ce9be0ad2533dbfd95b65" category="inline-xref-macro-rx"></block></block>
   <block id="ddc948fd2b779667ef8ac6b9fa14e17c" category="paragraph">Aggiunto<block ref="cd264f3907ee4c8120d67b4ed26a2bb8" prefix=" " category="inline-code"></block> parametro.</block>
@@ -1864,47 +1859,8 @@
   <block id="4d926e7d603a8be98a85dd68645636bc" category="paragraph">Aggiunto<block ref="b182d51fe65bf7239a2992c767d0bbb8" prefix=" " category="inline-code"></block> parametro.</block>
   <block id="8ab3987f5e11278960924053c1c48603" category="paragraph"><block ref="8ab3987f5e11278960924053c1c48603" category="inline-xref-macro-rx"></block></block>
   <block id="dd62ecca79626b0abf30ba505a8993ef" category="paragraph">Aggiunto<block ref="3a53bf66495d7b495faf8750a3363cbf" prefix=" " category="inline-code"></block> parametro.</block>
-  <block id="89009756cb3faf02b7f235c5a54cf270" category="section-title">SANtricity 11.63</block>
-  <block id="facc1a9ea58302b0eaf856a4b4dc50f5" category="paragraph">Le seguenti tabelle elencano le modifiche apportate ai comandi CLI e script per la release 11.63.</block>
-  <block id="3c4554618d02db0aef828e22246c6b59" category="paragraph"><block ref="3c4554618d02db0aef828e22246c6b59" category="inline-xref-macro-rx"></block></block>
-  <block id="c18cced0b91c7306eba8aa95974d5d73" category="paragraph"><block ref="c18cced0b91c7306eba8aa95974d5d73" category="inline-xref-macro-rx"></block></block>
-  <block id="8dc0796d131f84b22d35084484e6f712" category="paragraph"><block ref="8dc0796d131f84b22d35084484e6f712" category="inline-xref-macro-rx"></block></block>
-  <block id="94ac69661c2d717315d8018624ebbe85" category="paragraph"><block ref="94ac69661c2d717315d8018624ebbe85" category="inline-xref-macro-rx"></block></block>
-  <block id="35f524b6f8efa87c84a9936f8afa6ce1" category="paragraph">Aggiunto<block ref="cc3accead92b92e102f3e47ebabea671" prefix=" " category="inline-code"></block> parametro.</block>
-  <block id="f7c28deada4fce505c370bfe9336570b" category="paragraph"><block ref="f7c28deada4fce505c370bfe9336570b" category="inline-xref-macro-rx"></block></block>
-  <block id="0ea2489c97700044a62ec015cbfea8cb" category="paragraph">Aggiunto<block ref="e009524fee8b8e10f9b29422dc077ba2" prefix=" " category="inline-code"></block> sotto<block ref="7d97481b1fe66f4b51db90da7e794d9f" prefix=" " category="inline-code"></block> risultati dei parametri.</block>
-  <block id="9e0e2266a81338fbfaf354427a1629c8" category="paragraph"><block ref="9e0e2266a81338fbfaf354427a1629c8" category="inline-xref-macro-rx"></block></block>
-  <block id="a7dcd6b31c24cfb3a203758b09c31835" category="paragraph">Aggiunto<block ref="68be23cdd8bbb477ee631a8f038d0975" prefix=" " category="inline-code"></block> parametro.</block>
-  <block id="9b609f7e87918bf9211f6e0e9f22fa5a" category="paragraph"><block ref="9b609f7e87918bf9211f6e0e9f22fa5a" category="inline-xref-macro-rx"></block></block>
-  <block id="40b41041d07ac7993f03456611c81f15" category="paragraph"><block ref="40b41041d07ac7993f03456611c81f15" category="inline-xref-macro-rx"></block></block>
-  <block id="feb2059d63d5e46b9d607e1e6c9f4005" category="paragraph">Aggiunto<block ref="bde28ac063c77324055d244420e9325d" prefix=" " category="inline-code"></block> informazioni nei risultati del comando.</block>
-  <block id="480576ccaea5bc0e0e8ae41d4a033c1b" category="paragraph"><block ref="480576ccaea5bc0e0e8ae41d4a033c1b" category="inline-xref-macro-rx"></block></block>
-  <block id="c9b3eea1b5f6b5ad2989b197b28eedce" category="paragraph"><block ref="c9b3eea1b5f6b5ad2989b197b28eedce" category="inline-xref-macro-rx"></block></block>
-  <block id="4ad59273ade530447003d676a301cc73" category="paragraph"><block ref="4ad59273ade530447003d676a301cc73" category="inline-xref-macro-rx"></block></block>
-  <block id="54f27706dd97a6e4af870a74b6d36046" category="section-title">SANtricity 11.62</block>
-  <block id="fd83f34fd47d642e467d2796b016b097" category="paragraph">Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.62.</block>
-  <block id="bbc33257024b79e4fd9ad85a4d1e5402" category="paragraph">Aggiunto<block ref="ce898d62ed9ca7653a01fe0c781e97e9" prefix=" " category="inline-code"></block> e.<block ref="615e6f9baca5553d44683a098d342b70" prefix=" " category="inline-code"></block> valori per<block ref="345c17688f3bf4e657228853d6e455b5" prefix=" " category="inline-code"></block> parametro.</block>
-  <block id="92ebf9c09deafce375aa7192c5ffc460" category="section-title">SANtricity 11.61 e versioni precedenti</block>
-  <block id="e4c60892daa50d0e069f9aaacd2b3e74" category="list-text">Aggiunta della piattaforma EF600 come array supportato per i comandi applicabili.</block>
-  <block id="f37b13e86f97e59ee48d67277e240520" category="paragraph"><block ref="f37b13e86f97e59ee48d67277e240520" category="inline-xref-macro-rx"></block></block>
-  <block id="41598ebadd139da8827dc3df7cd355cf" category="paragraph">Aggiunto<block ref="94043d4908770f573cbc981b32ad4fe5" prefix=" " category="inline-code"></block> tipo di dati.</block>
-  <block id="a26ca5d017415a1eef700afbebf2489d" category="paragraph"><block ref="a26ca5d017415a1eef700afbebf2489d" category="inline-xref-macro-rx"></block></block>
-  <block id="7706dccc3fd27017e7e31f08d81ce0ca" category="paragraph">Compatibilità NVMe4K aggiunta.</block>
-  <block id="3529e34205440babbcc2a342fff713bd" category="paragraph"><block ref="3529e34205440babbcc2a342fff713bd" category="inline-xref-macro-rx"></block></block>
-  <block id="579c3e6c53c24b3c13e14718b192a91c" category="paragraph"><block ref="579c3e6c53c24b3c13e14718b192a91c" category="inline-xref-macro-rx"></block></block>
-  <block id="adeab83c7aebbd6a5921e03b39ae3692" category="paragraph"><block ref="adeab83c7aebbd6a5921e03b39ae3692" category="inline-xref-macro-rx"></block></block>
   <block id="e9b46bd45d89b563069e32b2ab8efeec" category="paragraph"><block ref="e9b46bd45d89b563069e32b2ab8efeec" category="inline-xref-macro-rx"></block></block>
-  <block id="6e0478ffff0b3c1332c63ff8e7b14b09" category="paragraph"><block ref="6e0478ffff0b3c1332c63ff8e7b14b09" category="inline-xref-macro-rx"></block></block>
-  <block id="9064185bbc267e27fe8336512ff6fb89" category="paragraph">Aggiunta della nota "Drive Lost Primary Path"</block>
   <block id="799587ec57d3ccaff63b5aeba6541ba1" category="inline-xref-macro">Impostare lo storage array per abilitare o disabilitare il bilanciamento automatico del carico</block>
-  <block id="d90e4abdd3ee227c0579661d5d24cef3" category="paragraph"><block ref="d90e4abdd3ee227c0579661d5d24cef3" category="inline-xref-macro-rx"></block></block>
-  <block id="98f0ea9a8f189ba8cb3b4e0f6aad5027" category="paragraph"><block ref="98f0ea9a8f189ba8cb3b4e0f6aad5027" category="inline-xref-macro-rx"></block></block>
-  <block id="d45145e28afa4b36a26e000619d7782f" category="paragraph"><block ref="d45145e28afa4b36a26e000619d7782f" category="inline-xref-macro-rx"></block></block>
-  <block id="0ce9ea5c4824c57f4a47b87c1c3d0a25" category="paragraph"><block ref="0ce9ea5c4824c57f4a47b87c1c3d0a25" category="inline-xref-macro-rx"></block></block>
-  <block id="5a73a4d3914ce0c6f82c2c6d8225421d" category="paragraph"><block ref="5a73a4d3914ce0c6f82c2c6d8225421d" category="inline-xref-macro-rx"></block></block>
-  <block id="98104774738b4d9c0bba90497a5272b7" category="paragraph"><block ref="98104774738b4d9c0bba90497a5272b7" category="inline-xref-macro-rx"></block></block>
-  <block id="2ce1112caa707f16f23146b202be4be9" category="paragraph"><block ref="2ce1112caa707f16f23146b202be4be9" category="inline-xref-macro-rx"></block></block>
-  <block id="7a18d8afc4de5a81e7b0321efd958d8c" category="paragraph"><block ref="7a18d8afc4de5a81e7b0321efd958d8c" category="inline-xref-macro-rx"></block></block>
   <block id="cf3eb43ecfe9ff5a2482d314a0d46897" category="summary">Il comando SMcli enable autoSupportFeature attiva la funzione ASUP (AutoSupport) per tutti gli array di storage gestiti e consente di trasmettere messaggi al sito del supporto tecnico. Dopo aver attivato la funzione ASUP, qualsiasi array di storage compatibile con ASUP viene automaticamente preparato per raccogliere e inviare i dati relativi al supporto al supporto tecnico. I dati possono quindi essere utilizzati per la risoluzione dei problemi e l'analisi dei problemi in remoto.</block>
   <block id="e3fc1c8c9213c6bd73399d183b9c4a81" category="doc">Abilitare o disabilitare AutoSupport a livello di dominio di gestione EMW (solo SMcli)</block>
   <block id="58b00cb497eb36843198cdc1d641b3f5" category="paragraph">Il<block ref="1e9fdb167ad0e290a95f32468c05e9ec" prefix=" " category="inline-code"></block> Command attiva la funzione ASUP (AutoSupport) per tutti gli storage array gestiti e consente di trasmettere messaggi al sito di supporto tecnico. Dopo aver attivato la funzione ASUP, qualsiasi array di storage compatibile con ASUP viene automaticamente preparato per raccogliere e inviare i dati relativi al supporto al supporto tecnico. I dati possono quindi essere utilizzati per la risoluzione dei problemi e l'analisi dei problemi in remoto.</block>
@@ -2225,7 +2181,6 @@
   <block id="bcb90d40eef38a487b4a8ce3523d68c4" category="paragraph">La capacità minima viene utilizzata dal firmware del controller e dal software di gestione dello storage.</block>
   <block id="49fd71c632f37e8e078a3434c8df691d" category="summary">Il comando start ssdCache Locate identifica i dischi a stato solido (SSD) che sono raggruppati logicamente per formare la cache SSD facendo lampeggiare gli indicatori luminosi sugli SSD.</block>
   <block id="1b9353984e172c1ef2093caa22374c93" category="paragraph">Il<block ref="094b7498415e3c0ddc90aab8eaac178f" prefix=" " category="inline-code"></block> Il comando identifica i dischi a stato solido (SSD) che sono raggruppati logicamente per formare la cache SSD facendo lampeggiare gli indicatori luminosi sugli SSD.</block>
-  <block id="d24a85231044845c23be2998d29a2c91" category="paragraph">Per eseguire questo comando su un array di storage E2800 o E5700, è necessario disporre del ruolo Support Admin.</block>
   <block id="f00858dd62cfb6fb992f0919bafbff1b" category="paragraph">Utilizzare<block ref="e521fe826f57c2f01aa95d8a6e933a70" prefix=" " category="inline-code"></block> comando per spegnere gli indicatori luminosi dei dischi.</block>
   <block id="3f76922f2ad18d49eadc4d1e94db0e04" category="paragraph"><block ref="4893b2a87797ae99cffec900a8cac354" prefix="" category="inline-code"></block></block>
   <block id="67f2192a8dabf2e4edcc42cd502851ad" category="paragraph">Il nome della cache SSD che si desidera individuare. Racchiudere il nome della cache SSD tra parentesi quadre ([ ]). Se il nome della cache SSD contiene caratteri speciali o è composto solo da numeri, è necessario racchiudere il nome della cache SSD tra virgolette doppie (" ") tra parentesi quadre.</block>
@@ -2530,7 +2485,6 @@
   <block id="63964fb23f39fb8b3e99a57a8cb68c3c" category="paragraph">I nomi di diversi volumi che si desidera utilizzare come volumi primari. Immettere i nomi dei volumi primari utilizzando le seguenti regole:</block>
   <block id="deed60dd5930ffa4c4aa40e45d046c69" category="summary">Il comando reset iscsiIpAddress ripristina l'indirizzo IP dell'array di storage remoto per ristabilire la connessione con l'array di storage locale.</block>
   <block id="6ebd3d3d6290579fda08e91cb365e148" category="paragraph">Il<block ref="3425b3042477c4ac9db837cbc83dabbb" prefix=" " category="inline-code"></block> Il comando ripristina l'indirizzo IP dell'array di storage remoto per ristabilire la connessione con l'array di storage locale.</block>
-  <block id="3fd819ef2f4ad34931e3c5ff7c16558d" category="paragraph">Se si esegue il comando sull'array E2800 o E5700, il tipo di client deve essere impostato su<block ref="97bff26855a8bfa63e05d5477e794b24" prefix=" " category="inline-code"></block>. Questo comando non viene eseguito se il tipo di client è impostato su<block ref="5e056c500a1c4b6a7110b50d807bade5" prefix=" " category="inline-code"></block>.</block>
   <block id="9e0f49298f001edc2901614bd34976ad" category="paragraph">È possibile utilizzare questo comando per notificare all'array di storage locale che l'indirizzo IP iSCSI dell'array di storage remoto è stato modificato e deve essere aggiornato.</block>
   <block id="fd6fd032baf66907fa006af6877faa89" category="paragraph">Quando si stabilisce una relazione di mirroring asincrono con una connessione iSCSI, gli array di storage locale e remoto memorizzano un record dell'indirizzo IP dell'array di storage remoto nella configurazione di mirroring asincrono. Se l'indirizzo IP di una porta iSCSI cambia, l'array di storage remoto che sta tentando di utilizzare tale porta rileva un errore di comunicazione.</block>
   <block id="aa27ef8a51c244ed1771232e3e14ab2f" category="paragraph">L'array di storage con l'indirizzo IP modificato invia un messaggio a ciascun array di storage remoto associato ai gruppi di mirror asincroni configurati per il mirroring su una connessione iSCSI. Gli array di storage che ricevono questo messaggio aggiornano automaticamente l'indirizzo IP di destinazione remota.</block>
@@ -2667,7 +2621,6 @@
   <block id="4f0bf867026e0ecf3a0cc3561bafe3ab" category="summary">Il comando show diskPool restituisce informazioni su un pool di dischi.</block>
   <block id="54cc32b178ac45024f346ea073fe9a28" category="paragraph">Il<block ref="1d4383ff9043eee9d740d6653447ad37" prefix=" " category="inline-code"></block> il comando restituisce informazioni su un pool di dischi.</block>
   <block id="cfbfb0a7091eeae23528d0e4f1277a69" category="paragraph">Questo comando restituisce queste informazioni su un pool di dischi:</block>
-  <block id="a4d625a9a6e3d7702b6ab1e595957ee6" category="list-text">Lo stato (ad esempio ottimale, online, offline)</block>
   <block id="5a1254af269407ce6329e7035c3b1041" category="list-text">La capacità totale</block>
   <block id="899286562b9965acb592007d01535de8" category="list-text">Capacità di conservazione, capacità utilizzabile e capacità inutilizzabile</block>
   <block id="d4cc0fc2fdefffaffa7456e1a7eb61da" category="list-text">La capacità utilizzata, la capacità libera e la percentuale di pieno</block>
@@ -4415,7 +4368,6 @@
   <block id="5f8a89b5343a845dbad6de0b124d1b59" category="paragraph">Il percorso del file e il nome del file in cui si desidera salvare i dati relativi al supporto per l'array di storage. Racchiudere il percorso del file e il nome del file tra virgolette doppie (" "). Ad esempio:</block>
   <block id="816647081b41d87eb98c65dc0339fbd5" category="paragraph"><block ref="996f10663732b8b126d2ecf44a637d57" prefix="" category="inline-code"></block></block>
   <block id="5460db65a06abfbe2f06d0abbb49be5b" category="paragraph">Questo parametro forza la raccolta dei dati di supporto in caso di errori nella protezione di un blocco delle operazioni del controller. Per forzare la raccolta dei dati di supporto, impostare questo parametro su<block ref="c0d83f0b82a6b30de8811e69e6d95c61" prefix=" " category="inline-code"></block>. Il valore predefinito è<block ref="946003f97ccc52d5d3b54ac0ec31bbfc" prefix=" " category="inline-code"></block>.</block>
-  <block id="964a586cd5cc36b6fd2ab29833213673" category="paragraph">A partire dal livello di firmware 7.86, l'estensione del nome file deve essere<block ref="e795c338d1095de382d06049d8de4ddc" prefix=" " category="inline-code"></block> Nei sistemi Windows. Se si utilizza una versione del firmware precedente alla 7.86 su un sistema Windows, l'estensione dei file deve essere<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>. Nei sistemi che non eseguono Windows, è possibile utilizzare qualsiasi estensione di file adatta al sistema.</block>
   <block id="9b474f4f03efbc0e06b8664b35dca364" category="paragraph">7.80 aggiunge<block ref="ae254d63f2381cc183c11594873793e0" prefix=" " category="inline-code"></block> parametro.</block>
   <block id="98bc8a76c30f367ceaec2706ac60d5c6" category="paragraph">8.30 aggiunge informazioni per lo storage array E2800.</block>
   <block id="6a79a4a86e76b524a13d337011868e29" category="summary">Il comando Set StorageArray autoSupportOnDemand attiva o disattiva la funzione AutoSupport OnDemand. Questa funzione consente al supporto tecnico di coordinare la trasmissione dei dati AutoSupport e di richiedere la ritrasmissione dei dati di supporto mancanti.</block>
@@ -7508,6 +7460,85 @@
   <block id="f915b7dcf11bca08338740cf9f00983e" category="sidebar">sospendere ssdcache</block>
   <block id="2d30e328ae4f6dcf3d38d3968d0319a6" category="sidebar">sospendere i primari SyncMirror</block>
   <block id="16c09c2705a79763c9682b2f80400d1a" category="sidebar">validare la chiave di sicurezza storagearray</block>
-  <block id="4d73148eba8bbf93563afef1a810a39e" category="section-title">SANtricity 11.70.5</block>
   <block id="a1b47df4de15fbd87aeeb6fd140013ca" category="paragraph">Non sono state apportate modifiche alla CLI o al comando script per la versione 11.70.5.</block>
+  <block id="b97310209803fdc9ec050e8c5c8d93ba" category="paragraph"><block ref="b97310209803fdc9ec050e8c5c8d93ba" category="inline-link-macro-rx"></block></block>
+  <block id="1b9c994f5747c133d89fc34ba261d7ba" category="paragraph"><block ref="1b9c994f5747c133d89fc34ba261d7ba" category="inline-link-macro-rx"></block></block>
+  <block id="7b45f8f8ff130a8fa0d8063e75b1e838" category="paragraph"><block ref="7b45f8f8ff130a8fa0d8063e75b1e838" category="inline-link-macro-rx"></block></block>
+  <block id="54e1edf6f95294f62c7bacdaf6bd3342" category="paragraph"><block ref="54e1edf6f95294f62c7bacdaf6bd3342" category="inline-link-macro-rx"></block></block>
+  <block id="142fd8f59bb8370e7a1e3f59d9222388" category="paragraph"><block ref="142fd8f59bb8370e7a1e3f59d9222388" category="inline-link-macro-rx"></block></block>
+  <block id="974c39615a30eb12263edf94ca8b50a1" category="inline-link-macro">Save Check Volume Parity Job Parity Errors (Salva errori di parità del volume)</block>
+  <block id="133fba1f812cada0c7b9feb43526fffc" category="paragraph"><block ref="133fba1f812cada0c7b9feb43526fffc" category="inline-link-macro-rx"></block></block>
+  <block id="a913a4f2a05c2c75cf27237242cc5ce5" category="inline-link-macro">Mostra job di verifica parità volume</block>
+  <block id="6752d22f8e0c2b7fadbf03092d48e8dc" category="paragraph"><block ref="6752d22f8e0c2b7fadbf03092d48e8dc" category="inline-link-macro-rx"></block></block>
+  <block id="19a44391940469dc830474bf5c98724a" category="inline-link-macro">Avviare il processo di verifica della parità del volume</block>
+  <block id="a8b2140d67c28203565fcc17acca3749" category="paragraph"><block ref="a8b2140d67c28203565fcc17acca3749" category="inline-link-macro-rx"></block></block>
+  <block id="7607bf5e58c096bde56f286de6f07317" category="inline-link-macro">Interrompere il processo Check Volume Parity</block>
+  <block id="14abf2f164eb8cf61e71ff65e43085e7" category="paragraph"><block ref="14abf2f164eb8cf61e71ff65e43085e7" category="inline-link-macro-rx"></block></block>
+  <block id="026a94a62949aee5d60c432cd25ffe01" category="paragraph"><block ref="026a94a62949aee5d60c432cd25ffe01" category="inline-link-macro-rx"></block></block>
+  <block id="5cc95b76fb76374efd724d73f3bc96c1" category="section-title">SANtricity 11.80</block>
+  <block id="76ef75e53e9f3900484d89f765e447d8" category="paragraph">Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.80.</block>
+  <block id="1d1b21291be65507e066fd926b610856" category="inline-xref-macro">Salva errori di parità del job di controllo del volume carity</block>
+  <block id="ec3e4abd08eb33f880d24807c8824890" category="paragraph"><block ref="ec3e4abd08eb33f880d24807c8824890" category="inline-xref-macro-rx"></block></block>
+  <block id="1c934ca6d783f9f52ca805e994bce393" category="paragraph"><block ref="1c934ca6d783f9f52ca805e994bce393" category="inline-xref-macro-rx"></block></block>
+  <block id="a8b3143da5c7097d03191bc288da4b72" category="inline-xref-macro">Mostra job di controllo parità volume</block>
+  <block id="ae69c6007e0eb7a9fe101aadf79026a2" category="paragraph"><block ref="ae69c6007e0eb7a9fe101aadf79026a2" category="inline-xref-macro-rx"></block></block>
+  <block id="4ffe7669db62b58d2632f6047da1c113" category="inline-xref-macro">Mostra job di verifica parità volume</block>
+  <block id="d78face51c8f5dff6bafb9879c9bbbb4" category="paragraph"><block ref="d78face51c8f5dff6bafb9879c9bbbb4" category="inline-xref-macro-rx"></block></block>
+  <block id="3fc6c33101584c7bde9838ff559f7748" category="inline-xref-macro">Interrompere il processo di verifica della parità del volume</block>
+  <block id="ccb61bda1ba5395e375edd331ea21dee" category="paragraph"><block ref="ccb61bda1ba5395e375edd331ea21dee" category="inline-xref-macro-rx"></block></block>
+  <block id="55493e98e602a03e07f56f1acb2fb353" category="paragraph"><block ref="55493e98e602a03e07f56f1acb2fb353" category="inline-xref-macro-rx"></block></block>
+  <block id="84b6254e1011f96e6fb4b9cee656d730" category="paragraph">Aggiunto<block ref="ab1f19425d80842e646857a8f89eeecb" prefix=" " category="inline-code"></block> parametro.</block>
+  <block id="a74eb5af8064272ba51d646a8d151084" category="paragraph"><block ref="a74eb5af8064272ba51d646a8d151084" category="inline-xref-macro-rx"></block></block>
+  <block id="138fadba8fa114a89807217041227cdc" category="paragraph">Comando obsoleto.</block>
+  <block id="3dedaa7cf415b3360432eef09568c523" category="paragraph">== SANtricity 11.70.5</block>
+  <block id="e55ad5000b4d4a51d8ccc3424997ec08" category="paragraph">== SANtricity 11.70.4</block>
+  <block id="6088d4dbc3d83010beb562a6aa463823" category="paragraph">== SANtricity 11.70.3</block>
+  <block id="c1a02b1fca86aca7666380fa2eef3d9f" category="paragraph">== SANtricity 11.70.2</block>
+  <block id="b35f09e5780fa9c288e3717362d54062" category="paragraph">== SANtricity 11.70.1</block>
+  <block id="d26b558d85ae05626c16f88bd78ab67b" category="paragraph">== SANtricity 11.70</block>
+  <block id="962d9ad1b8030cfc38372c70a910a150" category="paragraph">Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.</block>
+  <block id="620a3709ded9e8d65119f943b821804a" category="paragraph">Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Support Admin.</block>
+  <block id="1bbe4f0d1be16abbdd83a481a65ca5a4" category="paragraph">11.80 aggiunge il supporto degli array EF600 e EF300</block>
+  <block id="a477516db1bcb6e305b3dcf84ce294c2" category="paragraph">Se si esegue il comando sull'array E2800, E5700, EF600 o EF300, il tipo di client deve essere impostato su<block ref="97bff26855a8bfa63e05d5477e794b24" prefix=" " category="inline-code"></block>. Questo comando non viene eseguito se il tipo di client è impostato su<block ref="5e056c500a1c4b6a7110b50d807bade5" prefix=" " category="inline-code"></block>.</block>
+  <block id="b5686fd94e2c11d0beb5597a3520313c" category="summary">Il comando show check volume parity job mostra un job di verifica della parità del volume specificato e lo stato del job.</block>
+  <block id="dd6daf5faf9779e778db769f3be87c3e" category="paragraph">Il<block ref="444d9d2a89ab0f7e0925c167387212b0" prefix=" " category="inline-code"></block> il comando mostra un job di parità del volume di controllo specificato e lo stato del job.</block>
+  <block id="26dd5ebc9516419ec6866f88343d77bc" category="paragraph"><block ref="7143244908eefa9a01f826fcd8ecb03d" prefix="" category="inline-code"></block></block>
+  <block id="0210ca6c57a6f1ebc9350f7961a1630e" category="paragraph">L'ID del processo di verifica parità volume. Questo valore è obbligatorio.</block>
+  <block id="8ebe5bb4f19a0865e0dca0fc02a8ad6a" category="paragraph">11.80</block>
+  <block id="8fe6e97510e09ec53b4d8934ee3aa8d2" category="paragraph">I volumi con thin provisioning non sono supportati su EF300 o EF600.</block>
+  <block id="7d4fdfb752f88986444792e93b73869f" category="paragraph">La dimensione del blocco dei volumi creati in byte. I valori supportati sono<block ref="10a7cdd970fe135cf4f7bb55c0e3b59f" prefix=" " category="inline-code"></block> e.<block ref="f7efa4f864ae9b88d43527f4b14f750f" prefix=" " category="inline-code"></block>.</block>
+  <block id="43553b7327b1a67ac5cd1a8f34257215" category="paragraph">Tutti i valori massimi di ID slot sono 24. I valori ID slot iniziano con 0 o 1, a seconda del modello di vassoio. I cassetti per dischi compatibili con i controller E2800, E5700, EF600 e EF300 hanno numeri ID slot a partire da 0. I vassoi per dischi compatibili con i controller E2700 e E5600 hanno numeri ID slot a partire da 1.</block>
+  <block id="08117640ccc49245e4b0a9cfe59d3d24" category="summary">Il comando show check volume parity jobs mostra tutti i job di controllo della parità del volume e il relativo stato.</block>
+  <block id="5419272dcf0119b1498b0ee6cd83a7d7" category="paragraph">Il<block ref="892bb8e3c297dc4bbfaa485b428ef7c7" prefix=" " category="inline-code"></block> il comando mostra tutti i job di controllo della parità del volume e il relativo stato.</block>
+  <block id="697582c632d5495c3bdf4f125d6e44ad" category="list-text">Lo stato (come ottimale, degradato, non riuscito, mancante)</block>
+  <block id="7b3de16c9afd0104d287ad63852f3582" category="paragraph">A partire dal livello di firmware 7.86, l'estensione del nome file deve essere<block ref="e795c338d1095de382d06049d8de4ddc" prefix=" " category="inline-code"></block>. Se si utilizza una versione del firmware precedente alla 7.86, l'estensione file deve essere<block ref="daf4de58883c030f033f07e61debf025" prefix=" " category="inline-code"></block>.</block>
+  <block id="fc5c266cb6f96079b69c331a8c58e99b" category="summary">Il comando Save check volume parity job errors salva nel file specificato gli errori di parità registrati da un job di controllo della parità del volume.</block>
+  <block id="20a43b7f4af8035ddcbe0a2510381d6d" category="doc">Salva gli errori di parità del job di controllo del volume</block>
+  <block id="c7bd3caec6027c755f14662ba61e171e" category="paragraph">Il<block ref="5a726fa69132fec2b565c201f259a2b6" prefix=" " category="inline-code"></block> il comando salva nel file specificato gli errori di parità registrati da un processo di verifica della parità del volume. Il file di output viene scritto nello stesso formato del comando di parità del volume di controllo obsoleto e può quindi essere utilizzato come input per il comando di parità del volume di riparazione esistente.</block>
+  <block id="039eafa34dfe9090ee2439418ba00ba3" category="paragraph">l'id lavoro per il quale recuperare e salvare gli errori di parità registrati. Questo valore è obbligatorio.</block>
+  <block id="858ba3ba3c6cb8647feb46cf7e1984f3" category="paragraph">Il file specificato dall'utente per indicare dove salvare gli errori di parità registrati. Questo valore è obbligatorio.</block>
+  <block id="47c80eab32112d40d0ee9b1401add46f" category="summary">Il comando start check volume parity job avvia una nuova operazione di verifica della parità del volume su un determinato volume.</block>
+  <block id="8550240ace19de7d9a92385e41daa0ba" category="paragraph">Il<block ref="26ff9cf33d84624073951cbdf4a00a9f" prefix=" " category="inline-code"></block> il comando avvia una nuova operazione di verifica della parità del volume su un determinato volume.</block>
+  <block id="a748353fef9822b19d635dd205b0b714" category="paragraph"><block ref="9b586e1d58823a81abe58995347df40f" prefix="" category="inline-code"></block></block>
+  <block id="59ba2acb1d35993da825989fc8028f63" category="paragraph">L'indirizzo del blocco logico del volume in cui viene avviata la scansione di parità. Il valore predefinito è<block ref="cfcd208495d565ef66e7dff9f98764da" prefix=" " category="inline-code"></block>.</block>
+  <block id="426d9c081bf615e02b68ee2f9996be99" category="paragraph"><block ref="6fff50e225150b304b4fcfc4bdec99ec" prefix="" category="inline-code"></block></block>
+  <block id="17faffeb6424490ce2546081753e97de" category="paragraph">L'indirizzo del blocco logico del volume in cui viene interrotta la scansione di parità. Il valore predefinito è<block ref="a3471a23652620565146ea6816ff1e8a" prefix=" " category="inline-code"></block>.</block>
+  <block id="3bbba301a135690bd27e353f91380d61" category="paragraph"><block ref="910171eaa7cebbceb693a7f05b7e3fa2" prefix="" category="inline-code"></block></block>
+  <block id="811b5a74b7588afc6a6f33fa9845b722" category="paragraph">La priorità di scansione della parità. Il valore predefinito è<block ref="075a3e36a0a52dcbc568c05788e8a713" prefix=" " category="inline-code"></block></block>
+  <block id="59e446b4fd16efca7255734b1858148e" category="paragraph"><block ref="42dd52accf6a49a70daab7465cf830e4" prefix="" category="inline-code"></block></block>
+  <block id="ef5e3e26a81172762ba3b85edb6cdb1e" category="paragraph">Determina se tentare automaticamente di riparare gli errori di parità rilevati durante la scansione di parità. Il valore predefinito è<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>.</block>
+  <block id="cba0c3df6373876bbdae2cea9dd5f8c8" category="paragraph"><block ref="598f0662b3650c066aebeb6b45ddca04" prefix="" category="inline-code"></block></block>
+  <block id="ae5e9333878c081473c4e929ba4d97b5" category="paragraph">Determina se tentare automaticamente di riparare gli errori dei supporti rilevati durante la scansione di parità. Il valore predefinito è<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>.</block>
+  <block id="9024466b5711346757a4b8d930d0bbad" category="paragraph">11.80 - questo comando è obsoleto.</block>
+  <block id="ea34451b91444994bfc4402f792f1dd5" category="paragraph">8.10 aggiunge<block ref="2b16831698e26c1c84d0f9576ef3e8d8" prefix=" " category="inline-code"></block> parametro</block>
+  <block id="8787ce4b8a4c03ba45431f367412472f" category="summary">Il comando di interruzione del processo di verifica della parità del volume interrompe un processo di verifica della parità del volume in corso.</block>
+  <block id="28d62c9a6bee1cfdb574a22ef875004f" category="paragraph">Il<block ref="e375a2dea1356a7fa1ccb75cb2608251" prefix=" " category="inline-code"></block> il comando interrompe un processo di verifica della parità del volume in corso.</block>
+  <block id="5b4abcaacf5de9ef06f2361d8ed99ee8" category="paragraph">l'id lavoro corrispondente al processo di verifica parità volume da arrestare. Questo valore è obbligatorio.</block>
+  <block id="96a29fbb29b6b974b913d1533c75e23a" category="paragraph">Se si esegue il comando sugli array E2800, E5700, EF600 e EF300, il tipo di client deve essere impostato su<block ref="97bff26855a8bfa63e05d5477e794b24" prefix=" " category="inline-code"></block>. Questo comando non viene eseguito se il tipo di client è impostato su<block ref="5e056c500a1c4b6a7110b50d807bade5" prefix=" " category="inline-code"></block>.</block>
+  <block id="fc3bb4c64d686e2af46c9c6ab9cbe52c" category="paragraph"><block ref="ab1f19425d80842e646857a8f89eeecb" prefix="" category="inline-code"></block></block>
+  <block id="850782176356c5fe7366cf2f766cb110" category="paragraph">Consente di impostare la porta di trasferimento su<block ref="7e6b20d014d1c659e4eaf20dc2dcd7eb" prefix=" " category="inline-code"></block> invece dell'impostazione predefinita<block ref="13f3cf8c531952d72e5847c4183e6910" prefix=" " category="inline-code"></block>.</block>
+  <block id="5a726fa69132fec2b565c201f259a2b6" category="sidebar">salva gli errori di parità del job di controllo del volume</block>
+  <block id="892bb8e3c297dc4bbfaa485b428ef7c7" category="sidebar">mostra job di controllo parità volume</block>
+  <block id="26ff9cf33d84624073951cbdf4a00a9f" category="sidebar">avviare il processo di verifica della parità del volume</block>
+  <block id="e375a2dea1356a7fa1ccb75cb2608251" category="sidebar">interrompere il processo di verifica della parità del volume</block>
 </blocks>

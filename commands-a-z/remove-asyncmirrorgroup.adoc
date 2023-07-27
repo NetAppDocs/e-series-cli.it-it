@@ -17,13 +17,13 @@ Il `remove asyncMirrorGroup` il comando rimuove un volume di coppia di mirroring
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
 
 
 
@@ -70,3 +70,5 @@ Il nome del volume orfano che si desidera rimuovere dal gruppo di mirror asincro
 == Livello minimo del firmware
 
 7.84
+
+11.80 aggiunge il supporto degli array EF600 e EF300

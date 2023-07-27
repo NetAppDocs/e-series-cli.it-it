@@ -69,6 +69,31 @@ Se la destinazione iSCSI utilizza un nome iSCSI qualificato (IQN), racchiudere l
 |===
 
 
+== Esempio
+
+[listing]
+----
+Retrieve initiator:
+
+SMcli -n Array1 -u admin@local -p adminPassword -k -c "show iscsiSessions;"
+
+Initiator information:
+    Host user label:               bbb000b00b0
+    Host port user label:          bbb000b00b0b0
+    Name:                          iqn.0b0b-0b.com:b0b0b0b0b0b0
+    Alias:                         None
+
+Host port user label:
+
+SMcli -n Array1 -u admin@local -p adminPassword -k -c "show iscsiInitiator [\"bbb000b00b0b0\"] iscsiSessions;"
+
+
+IQN:
+
+SMcli -n Array1 -u admin@local -p adminPassword -k -c "show iscsiInitiator <\"iqn.0b0b-0b.com:b0b0b0b0b0b0\"> iscsiSessions;"
+----
+
+
 == Note
 
 Se si immette questo comando senza definire alcun argomento, questo comando restituisce informazioni su tutte le sessioni iSCSI attualmente in esecuzione. Il seguente comando restituisce informazioni su tutte le sessioni iSCSI correnti:

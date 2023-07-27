@@ -346,6 +346,13 @@ Elimina i messaggi informativi che descrivono l'avanzamento del comando visualiz
 
 
  a| 
+`-useLegacyTransferPort`
+ a| 
+Consente di impostare la porta di trasferimento su `8443` invece dell'impostazione predefinita `443`.
+
+
+
+ a| 
 `-v`
  a| 
 Mostra lo stato globale corrente dei dispositivi noti in un file di configurazione se utilizzato con `-d` parametro.
