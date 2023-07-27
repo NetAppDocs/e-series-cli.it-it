@@ -89,13 +89,15 @@ xref:./commands-a-z/check-volume-parity.adoc[Controllare la parità del volume]
 Comando obsoleto.
 
 |===
-[]
-====
-== SANtricity 11.70.5
 
-Non sono state apportate modifiche alla CLI o al comando script per la versione 11.70.5.
 
-== SANtricity 11.70.4
+== 4d73148eba8bbf93563afef1a810a39e
+
+Non sono state apportate modifiche a CLI e script Command per la versione 11.70.5.
+
+
+
+== 06d2539958ee4762f25ee6e06e44b9f1
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.4.
 
@@ -110,7 +112,9 @@ xref:./get-started/downloadable-smcli-parameters.adoc[Scaricare i parametri dell
 Aggiunto `-t` e. `-T` descrizioni dei parametri del token di accesso per l'autenticazione a più fattori.
 
 |===
-== SANtricity 11.70.3
+
+
+== e5b376b9bdbfe1612d578d30462ed6ff
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.3.
 
@@ -160,7 +164,9 @@ xref:./commands-a-z/create-diskpool.html[Creare un pool di dischi]
 Aggiornato `driveCount` descrizione del parametro.
 
 |===
-== SANtricity 11.70.2
+
+
+== 3cffe633df330392f4d88b8478c9390b
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.2.
 
@@ -217,7 +223,9 @@ xref:./commands-a-z/start-snmptrapdestination.adoc[Verificare la destinazione de
 Aggiunto `userName` e. `engineid` parametri.
 
 |===
-== SANtricity 11.70.1
+
+
+== cfafd61e53ff8b90ff59654a31683d33
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.1.
 
@@ -281,7 +289,9 @@ xref:./commands-a-z/recover-volume.adoc[Ripristinare il volume RAID]
 Aggiunto `blockSize` parametro.
 
 |===
-== SANtricity 11.70
+
+
+== 474034f7e02f357e3878ae2514a2b3fd
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.
 
@@ -324,4 +334,3 @@ xref:./commands-a-z/recover-volume.adoc[Ripristinare il volume RAID]
 Aggiunto `hostUnmapEnabled` parametro.
 
 |===
-====

@@ -7460,7 +7460,6 @@
   <block id="f915b7dcf11bca08338740cf9f00983e" category="sidebar">sospendere ssdcache</block>
   <block id="2d30e328ae4f6dcf3d38d3968d0319a6" category="sidebar">sospendere i primari SyncMirror</block>
   <block id="16c09c2705a79763c9682b2f80400d1a" category="sidebar">validare la chiave di sicurezza storagearray</block>
-  <block id="a1b47df4de15fbd87aeeb6fd140013ca" category="paragraph">Non sono state apportate modifiche alla CLI o al comando script per la versione 11.70.5.</block>
   <block id="b97310209803fdc9ec050e8c5c8d93ba" category="paragraph"><block ref="b97310209803fdc9ec050e8c5c8d93ba" category="inline-link-macro-rx"></block></block>
   <block id="1b9c994f5747c133d89fc34ba261d7ba" category="paragraph"><block ref="1b9c994f5747c133d89fc34ba261d7ba" category="inline-link-macro-rx"></block></block>
   <block id="7b45f8f8ff130a8fa0d8063e75b1e838" category="paragraph"><block ref="7b45f8f8ff130a8fa0d8063e75b1e838" category="inline-link-macro-rx"></block></block>
@@ -7490,12 +7489,6 @@
   <block id="84b6254e1011f96e6fb4b9cee656d730" category="paragraph">Aggiunto<block ref="ab1f19425d80842e646857a8f89eeecb" prefix=" " category="inline-code"></block> parametro.</block>
   <block id="a74eb5af8064272ba51d646a8d151084" category="paragraph"><block ref="a74eb5af8064272ba51d646a8d151084" category="inline-xref-macro-rx"></block></block>
   <block id="138fadba8fa114a89807217041227cdc" category="paragraph">Comando obsoleto.</block>
-  <block id="3dedaa7cf415b3360432eef09568c523" category="paragraph">== SANtricity 11.70.5</block>
-  <block id="e55ad5000b4d4a51d8ccc3424997ec08" category="paragraph">== SANtricity 11.70.4</block>
-  <block id="6088d4dbc3d83010beb562a6aa463823" category="paragraph">== SANtricity 11.70.3</block>
-  <block id="c1a02b1fca86aca7666380fa2eef3d9f" category="paragraph">== SANtricity 11.70.2</block>
-  <block id="b35f09e5780fa9c288e3717362d54062" category="paragraph">== SANtricity 11.70.1</block>
-  <block id="d26b558d85ae05626c16f88bd78ab67b" category="paragraph">== SANtricity 11.70</block>
   <block id="962d9ad1b8030cfc38372c70a910a150" category="paragraph">Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.</block>
   <block id="620a3709ded9e8d65119f943b821804a" category="paragraph">Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Support Admin.</block>
   <block id="1bbe4f0d1be16abbdd83a481a65ca5a4" category="paragraph">11.80 aggiunge il supporto degli array EF600 e EF300</block>
@@ -7541,4 +7534,5 @@
   <block id="892bb8e3c297dc4bbfaa485b428ef7c7" category="sidebar">mostra job di controllo parità volume</block>
   <block id="26ff9cf33d84624073951cbdf4a00a9f" category="sidebar">avviare il processo di verifica della parità del volume</block>
   <block id="e375a2dea1356a7fa1ccb75cb2608251" category="sidebar">interrompere il processo di verifica della parità del volume</block>
+  <block id="92b7fece7bb38ec7e732ddbfaadf63f3" category="paragraph">Non sono state apportate modifiche a CLI e script Command per la versione 11.70.5.</block>
 </blocks>
