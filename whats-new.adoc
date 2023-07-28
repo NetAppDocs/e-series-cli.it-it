@@ -35,7 +35,7 @@ Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e scr
 
 
  a| 
-xref:./commands-a-z/save-check-vol-parity-job-errors.adoc[Salva errori di parità del job di controllo del volume carity]
+xref:./commands-a-z/save-check-vol-parity-job-errors.adoc[Salva gli errori di parità del job di controllo del volume]
  a| 
 Aggiunto comando
 
@@ -91,13 +91,13 @@ Comando obsoleto.
 |===
 
 
-== 4d73148eba8bbf93563afef1a810a39e
+== SANtricity 11.70.5
 
 Non sono state apportate modifiche a CLI e script Command per la versione 11.70.5.
 
 
 
-== 06d2539958ee4762f25ee6e06e44b9f1
+== SANtricity 11.70.4
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.4.
 
@@ -114,7 +114,7 @@ Aggiunto `-t` e. `-T` descrizioni dei parametri del token di accesso per l'auten
 |===
 
 
-== e5b376b9bdbfe1612d578d30462ed6ff
+== SANtricity 11.70.3
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.3.
 
@@ -166,7 +166,7 @@ Aggiornato `driveCount` descrizione del parametro.
 |===
 
 
-== 3cffe633df330392f4d88b8478c9390b
+== SANtricity 11.70.2
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.2.
 
@@ -225,7 +225,7 @@ Aggiunto `userName` e. `engineid` parametri.
 |===
 
 
-== cfafd61e53ff8b90ff59654a31683d33
+== SANtricity 11.70.1
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.1.
 
@@ -291,7 +291,7 @@ Aggiunto `blockSize` parametro.
 |===
 
 
-== 474034f7e02f357e3878ae2514a2b3fd
+== SANtricity 11.70
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.
 

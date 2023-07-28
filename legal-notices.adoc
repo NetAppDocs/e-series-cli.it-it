@@ -46,3 +46,5 @@ https://www.netapp.com/us/legal/privacypolicy/index.aspx[]
 == Open source
 
 I file di avviso forniscono informazioni sul copyright e sulle licenze di terze parti utilizzate nel software NetApp.
+
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2885978["Avviso per i sistemi operativi SANtricity e-Series/EF-Series"]
