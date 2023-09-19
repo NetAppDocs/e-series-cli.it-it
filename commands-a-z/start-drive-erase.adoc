@@ -54,7 +54,7 @@ start drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID
 
 
  a| 
-`drive` oppure `drives`
+`drive`
  a| 
 Per i vassoi ad alta capacità, specificare il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot per l'unità. Per i vassoi delle unità a bassa capacità, specificare il valore dell'ID del vassoio e il valore dell'ID dello slot per l'unità. I valori dell'ID vassoio sono `0` a. `99`. I valori dell'ID cassetto sono `1` a. `5`.
 
