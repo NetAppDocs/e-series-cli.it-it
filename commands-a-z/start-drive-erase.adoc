@@ -17,7 +17,7 @@ Il `start drive erase` il comando cancella tutti i dati da uno o più dischi.
 
 == Array supportati
 
-Questo comando si applica a un singolo array E2800, E5700, EF600 o EF300. Funziona sugli storage array E2700 e E5600.
+Questo comando si applica a un singolo array E2800, E5700, EF600 o EF300. Non funziona su storage array E2700 e E5600.
 
 
 
