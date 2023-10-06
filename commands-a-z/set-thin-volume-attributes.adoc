@@ -93,7 +93,7 @@ Questo parametro aumenta la capacità virtuale del volume thin. La capacità vir
 
 La capacità virtuale minima è di 32 MB.
 
-La capacità virtuale massima è di 63 TB.
+La capacità virtuale massima è di 256 TB.
 
 
 
@@ -168,7 +168,7 @@ Capacità virtuale minima
  a| 
 Capacità virtuale massima
  a| 
-63 TB
+256 TB
 
 
 
@@ -182,7 +182,7 @@ Capacità fisica minima
  a| 
 Capacità fisica massima
  a| 
-64 TB
+257 TB
 
 |===
 I thin volumi supportano tutte le operazioni eseguite dai volumi standard con le seguenti eccezioni:

@@ -5576,7 +5576,6 @@
   <block id="d27ee9db41cb355edea349ea7588c692" category="paragraph"><block ref="a1c3679c7d982dab6bd6f4bd43ac7dca" prefix="" category="inline-code"></block></block>
   <block id="8ec6fac1bb3dd6db9c73855881642036" category="paragraph">Questo parametro aumenta la capacità virtuale del volume thin. La capacità virtuale è il valore che il volume riporta a un host mappato al volume. Valori inferiori o uguali alla capacità esistente causeranno un errore. Le dimensioni sono definite in unità di<block ref="4b3a6218bb3e3a7303e8a171a60fcf92" prefix=" " category="inline-code"></block>,<block ref="ab57fd0432e25d5b3013133a1c910d56" prefix=" " category="inline-code"></block>,<block ref="8d8fcc1abd550c5f25dbfaa57d59cb67" prefix=" " category="inline-code"></block>,<block ref="79cba1185463850dedba31f172f1dc5b" prefix=" " category="inline-code"></block>, o.<block ref="ff88442a425c06d961f97bccb11ddf5d" prefix=" " category="inline-code"></block>.</block>
   <block id="4bd944c067cd0308263d9df1c820d71f" category="paragraph">La capacità virtuale minima è di 32 MB.</block>
-  <block id="b306bb1dc4b136b774d5f8dca7910774" category="paragraph">La capacità virtuale massima è di 63 TB.</block>
   <block id="e167788620b4089b203eb07b9e11ba76" category="paragraph"><block ref="66df1d057801aedf5dafc4d377db30bb" prefix="" category="inline-code"></block></block>
   <block id="c25c025f154c8960a89c48b38d090c3d" category="paragraph">Questo parametro imposta la capacità massima del volume di repository. Il valore non deve essere inferiore alla capacità fisica del volume di repository. Se il nuovo valore comporta una riduzione della capacità fino a un livello inferiore alla soglia di avviso, il comando genera un errore.</block>
   <block id="6e1e474416e0564ab880c5863366af19" category="paragraph">Il comando<block ref="47e69dffbac7ef9058fd468e720fc3af" prefix=" " category="inline-code"></block> compatibile con<block ref="c27b887b72654438a26b70dbc21dec11" prefix=" " category="inline-code"></block>.</block>
@@ -5591,8 +5590,6 @@
   <block id="f1ab280b8906396f9d0a560168414811" category="paragraph">Il comando<block ref="6dd180b2c150094c222f0936d2fb0f87" prefix=" " category="inline-code"></block> compatibile con<block ref="cbf81f6a86656efd05928c9474feec57" prefix=" " category="inline-code"></block>.</block>
   <block id="de44d9b0c50726b618b8207ce1ec73ab" category="paragraph"><block ref="b255ca1b0045baea680dc8a0f3c6d3e1" prefix="" category="inline-code"></block></block>
   <block id="948966fb14713f2284165893e91b093c" category="paragraph">Questo parametro modifica il modo in cui il volume thin viene riportato all'host. I valori validi sono<block ref="c00f0c4675b91fb8b918e4079a0b1bac" prefix=" " category="inline-code"></block> oppure<block ref="36ea88c42525c5f42ebbe0fd38a893a5" prefix=" " category="inline-code"></block>.</block>
-  <block id="52157289efd480729928e4e0118c38e6" category="paragraph">63 TB</block>
-  <block id="c1edd650c09defc6ca8d0aaf67803ddc" category="paragraph">64 TB</block>
   <block id="baa18f900a95045a652e805388c097c0" category="summary">Il comando download controller arrayManagementServerCertificate installa il certificato del server sul controller.</block>
   <block id="344c40f889a5792072d9362609a36559" category="paragraph">Il<block ref="7418bc43abba976db657850b5df931c4" prefix=" " category="inline-code"></block> il comando installa il certificato del server sul controller.</block>
   <block id="27a83784fb0b4b5fe56c37e231e2d28e" category="paragraph">Eseguire questa azione per ciascun controller utilizzando il certificato firmato applicabile al controller. Il certificato firmato deve includere i nomi IP/DNS del controller.</block>
@@ -7546,4 +7543,5 @@
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="f31b4701e236492b39f4226355cb1d49" category="paragraph">Questo comando si applica a un singolo array E2800, E5700, EF600 o EF300. Non funziona su storage array E2700 e E5600.</block>
+  <block id="9c224ec894ababac5f928548e584eb45" category="paragraph">La capacità virtuale massima è di 256 TB.</block>
 </blocks>
