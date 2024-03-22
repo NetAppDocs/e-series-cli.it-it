@@ -1,0 +1,33 @@
+---
+indexpage:
+  title: Comandi di Gestore di sistema di SANtricity
+  summary: Descrive la sintassi e l'utilizzo dei comandi SANtricity.
+  keywords: santricity, syntax, commands, user assistance
+  lead: Benvenuto nell'assistenza utente della CLI integrata di SANtricity, in cui
+    è possibile scoprire come configurare, monitorare e ottimizzare lo storage array
+    utilizzando l'interfaccia a riga di comando (CLI)".
+  tiles:
+  - title: Inizia subito
+    links:
+    - title: Panoramica della CLI
+      url: get-started/overview-format-commands.html
+    - title: Struttura dei comandi CLI
+      url: get-started/structure-of-a-cli-command.html
+  - title: Documenti e-Series
+    links:
+    - title: Documentazione sui sistemi e-Series
+      url: https://docs.netapp.com/us-en/e-series/index.html
+    - title: Gestore di sistema di SANtricity 11.8
+      url: https://docs.netapp.com/us-en/e-series-santricity/system-manager/index.html
+    - title: Gestore unificato SANtricity 6
+      url: https://docs.netapp.com/us-en/e-series-santricity/unified-manager/index.html
+  - title: Supporto degli strumenti
+    links:
+    - title: Matrice di interoperabilità NetApp
+      url: http://mysupport.netapp.com/matrix/
+    - title: Knowledge base di NetApp
+      url: https://kb.netapp.com/
+    - title: Active IQ (accesso richiesto)
+      url: https://activeiq.netapp.com/?source=aiqnsspage
+    - title: Download di e-Series/SANtricity (accesso richiesto)
+      url: https://mysupport.netapp.com/site/downloads#E
