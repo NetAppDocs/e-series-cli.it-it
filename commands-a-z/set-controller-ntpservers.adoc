@@ -48,7 +48,7 @@ Se si configura NTP utilizzando un nome di dominio completo, è necessario confi
 [listing]
 ----
 
-set controller(a|b) NTPServers=(disabled|auto|(Address1 [keyIdentifier=integerLiteral() keyType=stringLiteral() passPhrase=stringLiteral()] [Address2 [keyIdentifier=integerLiteral() keyType=stringLiteral() passPhrase=stringLiteral()]]))
+set controller(a|b) NTPServers=(disabled|auto|(Address1 [Address2]))
 ----
 
 
@@ -99,20 +99,6 @@ Circondare il nome del server NTP con le virgolette, come mostrato nella sezione
 Se viene specificato un nome di dominio, è necessario configurare anche un server DNS per consentire al controller di risolvere l'indirizzo IP del server.
 
 ====
-
-
- a| 
-`keyIdentifier` `keyType`
-
-`passPhrase`
- a| 
-Facoltativamente, questi parametri forniscono le credenziali chiave per l'attivazione dell'autenticazione NTP:
-
-* `key Identifier` è un numero intero compreso tra 0 e 65535.
-* `keyType` è uno dei seguenti: none, sha1, sha224, sha256, sha384 o sha512.
-* `passPhrase` È una cifra esadecimale (0-9, con a-f consentito), che è esattamente di 40 cifre inserite come stringa letterale, o una stringa di caratteri alfanumerici fino a 20 byte.
-
-
 |===
 
 
@@ -122,9 +108,9 @@ Facoltativamente, questi parametri forniscono le credenziali chiave per l'attiva
 ----
 set controller[a] NTPServers=disabled;
 set controller[a] NTPServers=auto;
-set controller[a] NTPServers=("0.pool.ntp.org" keyIdentifier=3 keyType="sha1" passPhrase="SomePassword1" "1.us.pool.ntp.org" keyIdentifier=3 keyType="sha1" passPhrase=" SomePassword1");
-set controller[b] NTPServers=(192.168.1.105 keyIdentifier=3 keyType="sha1" passPhrase=" SomePassword1" "1.us.pool.ntp.org");
-set controller[b] NTPServers=(set controller[b] NTPServers=(2001:0db8:85a3:0000:0000:8a2e:0370:7334 keyIdentifier=3 keyType="sha1" passPhrase=" SomePassword1");
+set controller[a] NTPServers=("0.pool.ntp.org" "1.us.pool.ntp.org");
+set controller[b] NTPServers=(192.168.1.105 "1.us.pool.ntp.org");
+set controller[b] NTPServers=(2001:0db8:85a3:0000:0000:8a2e:0370:7334);
 ----
 
 

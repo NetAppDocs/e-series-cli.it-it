@@ -25,6 +25,23 @@ Se si utilizza SANtricity 11.52 o una versione precedente, non è possibile eseg
 ====
 
 
+== SANtricity 11,81
+
+Nella tabella seguente sono elencate le modifiche ai comandi CLI e script per la versione 11,81.
+
+[cols="2*"]
+|===
+| Comando | Descrizione della modifica 
+
+
+ a| 
+xref:./get-started/downloadable-smcli-parameters.adoc#identify-Devices[Identificare i dispositivi]
+ a| 
+Aggiunto `identifyDevices` parametro.
+
+|===
+
+
 == SANtricity 11.80
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.80.
