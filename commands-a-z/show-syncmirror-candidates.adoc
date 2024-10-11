@@ -21,7 +21,7 @@ Questo comando si applica a qualsiasi singolo array di storage, con alcune limit
 
 [NOTE]
 ====
-Se si esegue il comando sull'array E2800 o E5700, il tipo di client deve essere impostato su `symbol`. Questo comando non viene eseguito se il tipo di client è impostato su `https`.
+Questo comando non è supportato sulle piattaforme E2800, E5700, EF600 e EF300.
 
 ====
 
