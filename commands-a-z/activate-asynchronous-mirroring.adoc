@@ -19,6 +19,11 @@ Il `activate storageArray feature` Attiva la funzione di mirroring asincrono.
 
 Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
 
+[NOTE]
+====
+Questo comando è applicabile solo per il mirroring asincrono su Fibre Channel.
+
+====
 
 
 == Ruoli
@@ -38,10 +43,6 @@ Dopo aver attivato la funzione di mirroring asincrono, è necessario impostare u
 [listing]
 ----
 activate storageArray feature=asyncRemoteMirror
-----
-[listing]
-----
-activate storageArray feature=asyncMirror
 ----
 
 
