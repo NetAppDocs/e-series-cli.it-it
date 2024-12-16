@@ -7,7 +7,7 @@ summary: 'Il comando Elimina certificati consente di eliminare un certificato da
 = Eliminare i certificati
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -23,7 +23,7 @@ Questo comando si applica agli array di storage EF600 ed EF300.
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 delete localCertificate all | alias pass:quotes[_alias_]
 ----

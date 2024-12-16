@@ -7,7 +7,7 @@ summary: Il comando reset StorageArray iserStatsBaseline reimposta la linea di b
 = Ripristinare la linea di base iSER dell'array di storage
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `reset storageArray iserStatsBaseline` Il comando ripristina la linea di base
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 ed E5700, purché siano installati tutti i pacchetti SMcli.
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800 e E5700, a condizione che siano installati tutti i pacchetti SMcli.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+Per eseguire questo comando su uno storage array E4000, E2800 o E5700, è necessario avere il ruolo di amministratore dello storage.
 
 [NOTE]
 ====
@@ -34,7 +34,7 @@ Questo comando è obsoleto e viene sostituito da xref:reset-storagearray-hostpor
 
 == Sintassi
 
-[listing]
+[source, cli]
 ----
 reset storageArray iserStatsBaseline
 ----

@@ -7,7 +7,7 @@ summary: Il comando enable StorageArray feature file consente di eseguire un agg
 = Abilitare la funzione di array di storage
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `enable storageArray feature file` il comando consente di attivare una funzio
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800, E5700, EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage o di amministratore del supporto.
 
 
 
@@ -46,7 +46,7 @@ Per determinare le funzionalità caricate nell'array di storage, eseguire `show 
 
 == Per attivare una chiave funzione
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[enable storageArray feature file="_filename_"]
 ----
@@ -64,7 +64,7 @@ Per ciascuna funzione che si desidera attivare, è necessario un file delle chia
 
 == Per abilitare un Feature Pack
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[enable storageArray featurePack file="_filename_"]
 ----
@@ -80,7 +80,7 @@ I nomi di file validi per i file delle chiavi di funzione terminano con a. `.key
 
 == Per abilitare una funzione per un periodo di prova
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[enable storageArray feature=_featureAttributeList_]
 ----

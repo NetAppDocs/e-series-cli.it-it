@@ -7,7 +7,7 @@ summary: 'Il comando set tray imposta l"ID del vassoio di un controller tray, di
 = Impostare l'identificazione del vassoio
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -35,7 +35,7 @@ Questo comando è valido solo per i vassoi del controller, dei controller-drive 
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set tray pass:quotes[["_serialNumber_"]] pass:quotes[id=_trayID_]
 ----

@@ -7,10 +7,13 @@ summary: I comandi CLI sono sotto forma di wrapper di comandi ed elementi incorp
 = Struttura dei comandi CLI
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-I comandi CLI sono sotto forma di wrapper di comandi ed elementi incorporati nel wrapper. Un comando CLI è composto dai seguenti elementi:
+[role="lead"]
+I comandi CLI sono sotto forma di wrapper di comandi ed elementi incorporati nel wrapper.
+
+Un comando CLI è costituito dai seguenti elementi:
 
 * Un wrapper di comandi identificato dal termine `SMcli`
 * L'identificatore dell'array di storage

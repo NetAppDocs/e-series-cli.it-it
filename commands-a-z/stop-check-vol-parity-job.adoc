@@ -7,7 +7,7 @@ summary: Il comando di interruzione del processo di verifica della parità del v
 = Interrompere il processo di verifica della parità del volume
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -29,7 +29,7 @@ Per eseguire questo comando su uno storage array EF600 ed EF300, è necessario d
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 stop check volume parity job jobId=<job_id>;
 ----

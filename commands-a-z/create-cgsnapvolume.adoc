@@ -7,7 +7,7 @@ summary: Il comando create cgSnapVolume crea un volume di snapshot di immagini s
 = Creare un volume snapshot di gruppo di coerenza
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `create cgSnapVolume` il comando crea un volume di snapshot di immagini speci
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800, E5700, EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario avere il ruolo di amministratore dello storage.
 
 
 
@@ -35,7 +35,7 @@ Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, 
 
 == Sintassi con volumi di base specificati dall'utente
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 create cgSnapVolume userLabel=pass:quotes[_"cgVolumeName"_]
 cgSnapImageID=pass:quotes[_"snapCGID:imageID"_]
@@ -45,7 +45,7 @@ members=pass:quotes[_(baseVolume1:repos_XXXX ... baseVolumen:repos_YYYY)_]
 
 == Sintassi quando si imposta il volume snapshot del gruppo di coerenza su sola lettura
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 create cgSnapVolume userLabel=pass:quotes[_"cgVolumeName"_]
 cgSnapImageID=pass:quotes[_"snapCGID:imageID"_]
@@ -55,7 +55,7 @@ readOnly
 
 == Sintassi durante l'impostazione del limite completo del repository
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 create cgSnapVolume userLabel=pass:quotes[_"cgVolumeName"_]
 cgSnapImageID=pass:quotes[_"snapCGID:imageID"_]

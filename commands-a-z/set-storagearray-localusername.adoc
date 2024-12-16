@@ -7,7 +7,7 @@ summary: Il comando set StorageArray localUsername e il comando set StorageArray
 = Impostare la password utente locale o la password del simbolo dello storage array
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,19 +17,19 @@ Il `set storageArray localUsername` e il `set storageArray symbol` Comando conse
 
 == Array supportati
 
-Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+Questo comando si applica a un singolo array di storage E4000, E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin, Support Admin, Security Admin o Storage Monitor.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di Storage Admin, Support Admin, Security Admin o Storage Monitor.
 
 
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set storageArray (localUsername=pass:quotes[{ _admin_ | _storage_ | _security_ | _support_ | _monitor_}]
 | symbol [userRole={admin | monitor}])

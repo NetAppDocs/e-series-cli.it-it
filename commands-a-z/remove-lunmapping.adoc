@@ -7,7 +7,7 @@ summary: 'Il comando remove lunMapping rimuove il mapping LUN (Logical Unit Numb
 = Rimuovere la mappatura LUN del volume
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,19 +17,19 @@ Il `remove lunMapping` Il comando rimuove il mapping LUN (Logical Unit Number) o
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800, E5700, EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario avere il ruolo di amministratore dello storage.
 
 
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 remove (volume pass:quotes[[_"volumeName"_]] | accessVolume) lunMapping
 (host=pass:quotes[_"hostName_" | hostGroup=(_"hostGroupName"_] | defaultGroup)
@@ -38,7 +38,7 @@ remove (volume pass:quotes[[_"volumeName"_]] | accessVolume) lunMapping
 
 == Sintassi per la rimozione della mappatura LUN o NSID da più LUN o NSID di un volume
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 remove (allVolumes | volumes pass:quotes[[_volumeName1 ... volumeNameN_]])
 lunMapping

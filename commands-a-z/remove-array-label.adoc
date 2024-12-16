@@ -7,7 +7,7 @@ summary: 'Il comando Remove array label consente di rimuovere un"etichetta defin
 = Rimuovere l'etichetta dell'array
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -23,7 +23,7 @@ Questo comando si applica agli array di storage EF600 ed EF300.
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 delete storageArrayLabel label pass:quotes[_userDefinedString_]
 delete storageArrayLabel all

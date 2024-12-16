@@ -7,7 +7,7 @@ summary: Il comando SMcli -autoSupportConfig show visualizza le impostazioni del
 = Visualizzare le impostazioni della raccolta bundle AutoSupport
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -52,14 +52,14 @@ Questo comando è un comando SMcli, non un comando script. Eseguire questo coman
 ====
 [NOTE]
 ====
-Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E2800 o E5700.
+Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E4000, E2800 o E5700.
 
 ====
 
 
 == Sintassi
 
-[listing]
+[source, cli]
 ----
 SMcli -autoSupportConfig show
 ----

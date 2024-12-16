@@ -7,7 +7,7 @@ summary: Il comando Disattiva feature StorageArray disattiva la funzionalità di
 = Disattivare il mirroring sincrono
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `deactivate storageArray feature` il comando disattiva la funzionalità di mi
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800 e E5700, a condizione che siano installati tutti i pacchetti SMcli.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo Storage Admin o Support Admin.
+Per eseguire questo comando su uno storage array E4000, E2800 o E5700, è necessario avere il ruolo di amministratore dello storage o di amministratore del supporto.
 
 
 
@@ -40,7 +40,7 @@ Nelle versioni precedenti di questo comando, l'identificatore di funzione era `r
 
 == Sintassi
 
-[listing]
+[source, cli]
 ----
 deactivate storageArray feature=syncMirror
 ----

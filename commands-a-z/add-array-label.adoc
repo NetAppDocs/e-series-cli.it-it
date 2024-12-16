@@ -7,7 +7,7 @@ summary: 'Il comando Add array label consente di aggiungere un array di storage 
 = Aggiungere l'etichetta dell'array
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -28,7 +28,7 @@ Questo comando si applica agli array di storage EF600 ed EF300.
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 
 pass:quotes[ _Address1 Address2_ add storageArrayLabel label _userDefinedString_]

@@ -7,10 +7,13 @@ summary: 'Windows PowerShell è una shell interattiva e di scripting che fornisc
 = Regole di formattazione per i comandi CLI in Windows PowerShell
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-Windows PowerShell è una shell interattiva e di scripting che fornisce l'accesso agli strumenti della riga di comando. Windows PowerShell migliora il prompt dei comandi di Windows con una serie più solida di comandi e funzionalità di scripting. È possibile eseguire tutti i comandi CLI e script in Windows PowerShell; tuttavia, Windows PowerShell ha alcuni requisiti di formattazione univoci. I requisiti sono i seguenti:
+[role="lead"]
+Windows PowerShell è una shell interattiva e di scripting che fornisce l'accesso agli strumenti della riga di comando.
+
+Windows PowerShell migliora il prompt dei comandi di Windows con una serie più solida di comandi e funzionalità di scripting. È possibile eseguire tutti i comandi CLI e script in Windows PowerShell; tuttavia, Windows PowerShell ha alcuni requisiti di formattazione univoci. I requisiti sono i seguenti:
 
 * Iniziare tutti i comandi SMcli con un punto e una barra (./)
 * Il wrapper SMcli deve essere identificato come un comando eseguibile con estensione .exe (SMcli.exe)

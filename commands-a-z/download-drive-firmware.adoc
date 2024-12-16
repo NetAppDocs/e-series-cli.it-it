@@ -7,7 +7,7 @@ summary: 'Il comando di download del firmware del disco scarica un"immagine del 
 = Scaricare il firmware del disco
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `download drive firmware` il comando scarica un'immagine del firmware su un d
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800, E5700, EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage o di amministratore del supporto.
 
 
 
@@ -45,7 +45,7 @@ Questo comando consente di scaricare un'immagine del firmware su un solo modello
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[download (drive \[_trayID_,[_drawerID,_]pass:quotes[_slotID_] \| drives\ pass:quotes[[_trayID1_,[_drawerID1_,]slotID1 ... trayIDn,[drawerIDn,]slotIDn\])
  [online|offline] firmware file="filename"

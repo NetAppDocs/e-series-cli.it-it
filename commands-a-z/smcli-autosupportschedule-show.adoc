@@ -7,7 +7,7 @@ summary: 'Il comando SMcli -autoSupportSchedule show mostra la pianificazione pe
 = Visualizza il programma di raccolta dei messaggi AutoSupport
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Il `SMcli -autoSupportSchedule show` Il comando mostra la pianificazione per la 
 
 == Array supportati
 
-Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E2800 o E5700.
+Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E4000, E2800 o E5700.
 
 
 
@@ -40,7 +40,7 @@ Tenere presente quanto segue per quanto riguarda la pianificazione della raccolt
 
 == Sintassi
 
-[listing]
+[source, cli]
 ----
 SMcli -autoSupportSchedule show
 ----

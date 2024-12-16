@@ -7,7 +7,7 @@ summary: 'Il comando schedule SMcli -supportBundle crea o rimuove una pianificaz
 = Pianificare la configurazione automatica della raccolta di pacchetti di supporto
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -28,7 +28,7 @@ Questo comando è un comando SMcli, non un comando script. Eseguire questo coman
 
 == Sintassi per la creazione di una pianificazione giornaliera/settimanale
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 SMcli -supportBundle schedule enable
 pass:quotes[(all | _storageArrayName_)]
@@ -42,7 +42,7 @@ pass:quotes[data=_pathName_]
 
 == Sintassi per la creazione di una pianificazione mensile/annuale
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 SMcli -supportBundle schedule enable
 pass:quotes[(all | _storageArrayName_)]
@@ -65,7 +65,7 @@ pass:quotes[data=_pathName_]
 Questo comando rimuove completamente la pianificazione per lo storage array. Per iniziare a salvare nuovamente le informazioni del bundle di supporto, è necessario creare una nuova pianificazione.
 
 ====
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 SMcli -supportBundle schedule disable
 pass:quotes[(all|_storageArrayName_)]

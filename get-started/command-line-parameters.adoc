@@ -7,14 +7,17 @@ summary: La release SANtricity OS 11.40 ha introdotto, per i controller E2800 e 
 = Parametri della riga di comando legacy
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+La release SANtricity OS 11.40 ha introdotto, per i controller E2800 e E5700 con servizi Web integrati, la possibilità di interagire sulla riga di comando utilizzando un protocollo HTTPS sicuro. Questi controller possono invece utilizzare il protocollo Symbol per le interazioni della riga di comando.
 
 
 
 == 11.53 e parametri della riga di comando precedenti
 
-La release SANtricity OS 11.40 ha introdotto, per i controller E2800 e E5700 con servizi Web integrati, la possibilità di interagire sulla riga di comando utilizzando un protocollo HTTPS sicuro. Questi controller possono invece utilizzare il protocollo Symbol per le interazioni della riga di comando. Il protocollo Symbol è l'unico protocollo supportato per i controller E2700 ed E5600. Per preservare gli script esistenti e ridurre al minimo i tempi di transizione, le opzioni CLI e la grammatica vengono mantenute il più possibile. Tuttavia, esistono alcune differenze nelle funzionalità dei controller E2800 e E5700 in termini di sicurezza, autenticazione, AutoSupport e messaggi di avviso che rendono obsoleta una parte della grammatica CLI per tali controller. Tuttavia, in alcuni casi la grammatica è obsoleta solo su E2800 o E5700 quando viene utilizzato il nuovo protocollo https.
+Il protocollo Symbol è l'unico protocollo supportato per i controller E2700 ed E5600. Per preservare gli script esistenti e ridurre al minimo i tempi di transizione, le opzioni CLI e la grammatica vengono mantenute il più possibile. Tuttavia, esistono alcune differenze nelle funzionalità dei controller E2800 e E5700 in termini di sicurezza, autenticazione, AutoSupport e messaggi di avviso che rendono obsoleta una parte della grammatica CLI per tali controller. Tuttavia, in alcuni casi la grammatica è obsoleta solo su E2800 o E5700 quando viene utilizzato il nuovo protocollo https.
 
 Per i nuovi parametri che si applicano solo a `*https*` Tipo di client, ne consegue che si applicano anche solo ai controller E2800 o E5700.
 

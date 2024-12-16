@@ -2,15 +2,18 @@
 permalink: get-started/firmware-compatibility-levels.html 
 sidebar: sidebar 
 keywords: firmware, compatibility, levels 
-summary: I comandi script e i parametri dei comandi non vengono eseguiti in tutte le versioni del firmware del controller. 
+summary: I comandi di script nelle sezioni seguenti elencano i livelli minimi di firmware sotto cui possono essere eseguiti i comandi di script. 
 ---
 = Livelli di compatibilità del firmware
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-I comandi script e i parametri dei comandi non vengono eseguiti in tutte le versioni del firmware del controller. I comandi di script nelle sezioni seguenti elencano i livelli minimi di firmware sotto cui possono essere eseguiti i comandi di script. Nei comandi di script, i livelli del firmware sono elencati sotto l'intestazione "`MInimum firmware Level`" (livello minimo firmware). Questo elenco descrive come interpretare le informazioni relative ai livelli del firmware.
+[role="lead"]
+I comandi di script nelle sezioni seguenti elencano i livelli minimi di firmware sotto cui possono essere eseguiti i comandi di script.
+
+I comandi script e i parametri dei comandi non vengono eseguiti in tutte le versioni del firmware del controller. Nei comandi di script, i livelli del firmware sono elencati sotto l'intestazione "`MInimum firmware Level`" (livello minimo firmware). Questo elenco descrive come interpretare le informazioni relative ai livelli del firmware.
 
 * Se un comando script non elenca un livello minimo di firmware del controller, il comando script e tutti i parametri associati a tale comando possono essere eseguiti con qualsiasi livello di firmware del controller.
 * Un numero di firmware del controller senza informazioni esplicative indica che il livello di firmware del controller si applica all'intero comando script e a tutti i parametri per quel comando script.

@@ -7,7 +7,7 @@ summary: 'Il comando Show array label restituisce informazioni sulla definizione
 = Mostra etichetta array
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `Show array label` il comando restituisce informazioni sulla definizione di u
 
 == Array supportati
 
-Questo comando si applica agli array di storage EF600.
+Questo comando si applica agli array di storage EF600 ed EF300.
 
 
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[show storageArrayLabel label _userDefinedString_]
 show storageArrayLabel all

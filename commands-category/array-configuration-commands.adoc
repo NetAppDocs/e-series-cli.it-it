@@ -7,8 +7,11 @@ summary: Comandi di configurazione degli array
 = Comandi di configurazione degli array
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+Per il tuo sistema storage e-Series è disponibile il seguente elenco di comandi di configurazione degli array.
 
 
 

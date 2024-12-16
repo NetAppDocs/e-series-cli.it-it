@@ -1,5 +1,5 @@
 ---
-permalink: commands-a-z/set-email-smtp-delivery-method-e2800-e5700.html 
+permalink: commands-a-z/set-email-smtp-delivery-method.html 
 sidebar: sidebar 
 keywords: specify, email, smtp, delivery method, individual, E2800, E5700, arrays 
 summary: 'Il comando set StorageArray AutoSupport deliveryMethod imposta il metodo di invio dei messaggi AutoSupport alla posta elettronica (SMTP).' 
@@ -7,7 +7,7 @@ summary: 'Il comando set StorageArray AutoSupport deliveryMethod imposta il meto
 = Specificare il metodo di recapito e-mail (SMTP)
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,22 +17,22 @@ Il `set storageArray autoSupport deliveryMethod` Il comando imposta il metodo di
 
 == Array supportati
 
-Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+Questo comando si applica a un singolo array di storage E4000, E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage o di amministratore del supporto.
 
 
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set storageArray autoSupport deliveryMethod=email
-mailRelayServer=pass:quotes["_serverAddress_" senderEmail="_emailAddress_"]
+mailRelayServer=pass:quotes["_serverAddress_" senderEmail="_emailAddress_"] destinationAddress="destination1@example.com" destinationAddress="destination2@example.com";
 ----
 
 
@@ -49,7 +49,6 @@ mailRelayServer=pass:quotes["_serverAddress_" senderEmail="_emailAddress_"]
 Consente all'utente di specificare il metodo di consegna per la raccolta AutoSupport. Le scelte valide sono:
 
 * e-mail
-* HTTP
 * HTTPS
 
 
@@ -71,6 +70,13 @@ Consente all'utente di specificare il server di inoltro della posta per la racco
 `senderEmail`
  a| 
 Consente all'utente di specificare l'indirizzo e-mail di invio per la raccolta AutoSupport.
+
+
+
+ a| 
+`destinationAddress`
+ a| 
+Indirizzo e-mail a cui verranno inviate le spedizioni AutoSupport. Questo parametro può essere fornito più volte per consentire l'invio di spedizioni a più indirizzi.
 
 |===
 

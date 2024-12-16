@@ -7,7 +7,7 @@ summary: 'L"autenticazione richiede che gli utenti accedano al sistema con crede
 = Introduzione all'autenticazione
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

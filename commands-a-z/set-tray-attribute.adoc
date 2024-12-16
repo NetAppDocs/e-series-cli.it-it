@@ -7,7 +7,7 @@ summary: 'Il comando set tray imposta gli attributi definiti dall"utente per un 
 = Impostare l'attributo del vassoio
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Il `set tray` il comando imposta gli attributi definiti dall'utente per un vasso
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set tray pass:quotes[[_trayID_]] (chassisName | assetTag)=pass:quotes["_userID_"]
 ----

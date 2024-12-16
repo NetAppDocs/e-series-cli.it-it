@@ -1,39 +1,38 @@
 ---
 permalink: commands-a-z/save-controller-arraymanagementsignedcertificate.html 
 sidebar: sidebar 
-keywords: retrieve, installed, server, certificate 
-summary: Il comando Save controller arrayManagementSignedCertificate recupera il certificato del server installato per il controller in modo da poter visualizzare i dettagli del certificato. 
+keywords: retrieve, installed, server, certificate, sign, request, csr 
+summary: 'Il comando Save controller arrayManagementCSR recupera la richiesta di firma del certificato (CSR) del server installato per il controller in modo da poter visualizzare i dettagli del certificato.' 
 ---
 = Recuperare il certificato del server installato
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
-Il `save controller arrayManagementSignedCertificate` il comando recupera il certificato del server installato per il controller in modo da visualizzare i dettagli del certificato.
+Il `save controller arrayManagementCSR` comando recupera la richiesta di firma del certificato (CSR) del server installato per il controller in modo da poter visualizzare i dettagli del certificato.
 
 
 
 == Array supportati
 
-Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+Questo comando si applica a un singolo array di storage E4000, E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore della sicurezza.
 
 
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 
-save controller [(a|b)] arrayManagementSignedCertificate
-     file=pass:quotes["_filename_"]
+save controller [(a|b)] arrayManagementCSR file=pass:quotes["_filename_"]
 ----
 
 
@@ -64,10 +63,10 @@ Consente di specificare il file per il quale salvare il file di certificato firm
 [listing]
 ----
 
-SMcli -n Array1 -c "save controller [a] arrayManagementSignedCertificate
+SMcli -n Array1 -c "save controller [a] aarrayManagementCSR
    file="C:\controllerAcertificate.cer";"
 
-SMcli -n Array1 -c "save controller [b] arrayManagementSignedCertificate
+SMcli -n Array1 -c "save controller [b] arrayManagementCSR
    file="C:\controllerBcertificate.cer";"
 
 SMcli completed successfully.

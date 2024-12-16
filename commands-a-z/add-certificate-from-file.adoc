@@ -7,7 +7,7 @@ summary: 'Il comando Add certificate from file (Aggiungi certificato da file) co
 = Aggiungi certificato dal file
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -23,7 +23,7 @@ Questo comando si applica agli array di storage EF600 ed EF300.
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[trust localCertificate file _filename_ alias user _specified alias_]
 ----

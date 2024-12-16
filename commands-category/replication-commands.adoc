@@ -7,8 +7,11 @@ summary: Comandi di replica
 = Comandi di replica
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+Per il sistema storage e-Series è disponibile il seguente elenco di comandi di replica.
 
 
 

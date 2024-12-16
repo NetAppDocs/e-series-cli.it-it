@@ -7,7 +7,7 @@ summary: Il comando Save StorageArray warningEvents salva gli eventi dal registr
 = Salvare gli eventi degli array di storage
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `save storageArray warningEvents` Il comando salva gli eventi dal registro ev
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800, E5700, EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario avere il ruolo di amministratore dello storage.
 
 
 
@@ -46,7 +46,7 @@ Alcuni storage array potrebbero non essere in grado di supportare tutti e quattr
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 save storageArray (allEvents | criticalEvents |
 warningEvents | infoEvents | debugEvents)

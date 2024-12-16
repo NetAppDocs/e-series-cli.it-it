@@ -7,7 +7,7 @@ summary: Il comando start StorageArray DirectoryServices verifica la comunicazio
 = Test del server di directory degli array di storage
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `start storageArray directoryServices test` il comando verifica la comunicazi
 
 == Array supportati
 
-Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+Questo comando si applica a un singolo array di storage E4000, E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore della sicurezza.
 
 
 
@@ -35,9 +35,8 @@ Questo comando restituisce un errore se almeno un server di directory non è gi�
 
 == Sintassi
 
-[listing]
+[source, cli]
 ----
-
 start storageArray directoryServices test
 ----
 

@@ -7,10 +7,13 @@ summary: 'Poiché è possibile utilizzare i comandi di script per definire e ges
 = Sintesi dei comandi di script
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-Poiché è possibile utilizzare i comandi di script per definire e gestire i diversi aspetti di un array di storage (ad esempio topologia host, configurazione del disco, configurazione del controller, definizioni dei volumi e definizioni dei gruppi di volumi), il numero effettivo di comandi è elevato. I comandi, tuttavia, rientrano in categorie generali che vengono riutilizzate quando si applicano i comandi per configurare o gestire un array di storage. La tabella seguente elenca la forma generale dei comandi script e la definizione di ciascun comando.
+[role="lead"]
+Poiché è possibile utilizzare i comandi di script per definire e gestire i diversi aspetti di un array di storage (ad esempio topologia host, configurazione del disco, configurazione del controller, definizioni dei volumi e definizioni dei gruppi di volumi), il numero effettivo di comandi è elevato.
+
+I comandi si suddividono in categorie generali che vengono riutilizzate quando si applicano i comandi per configurare o gestire uno storage array. La tabella seguente elenca la forma generale dei comandi script e la definizione di ciascun comando.
 
 [cols="2*"]
 |===

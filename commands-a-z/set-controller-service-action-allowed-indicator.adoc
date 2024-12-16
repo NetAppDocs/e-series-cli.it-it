@@ -7,7 +7,7 @@ summary: 'Il comando set controller attiva o disattiva la spia Service Action Al
 = Impostare l'indicatore di azione di servizio del controller consentita
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -34,7 +34,7 @@ Questo comando è valido solo per E2700, E5600 o EF560 (e per altre generazioni 
 
 == Sintassi
 
-[listing]
+[source, cli]
 ----
 set controller [(a| b)]
 serviceAllowedIndicator=(on | off)

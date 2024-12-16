@@ -7,7 +7,7 @@ summary: 'Il comando Recover disabled drivePorts (Ripristina porte disco disabil
 = Ripristinare le porte del disco disabilitate
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Il `recover disabled drivePorts` il comando ripristina le porte disco disabilita
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800, E5700, EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
 
 
 
@@ -29,7 +29,7 @@ Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, 
 
 == Sintassi
 
-[listing]
+[source, cli]
 ----
 recover disabled drivePorts;
 ----

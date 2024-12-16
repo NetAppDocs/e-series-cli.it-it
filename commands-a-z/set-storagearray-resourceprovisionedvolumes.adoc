@@ -7,7 +7,7 @@ summary: Il comando Set StorageArray resourceProvisionedVolumes disattiva la fun
 = Impostare i volumi con provisioning delle risorse degli array di storage
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -39,7 +39,7 @@ I volumi con provisioning delle risorse sono supportati solo su gruppi di volumi
 
 == Sintassi
 
-[listing]
+[source, cli]
 ----
 set storageArray resourceProvisionedVolumes=(enable|disable)
 ----

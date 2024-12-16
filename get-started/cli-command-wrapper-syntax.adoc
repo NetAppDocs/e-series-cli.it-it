@@ -7,10 +7,15 @@ summary: In questa sezione sono elencate le forme di sintassi generali dei wrapp
 = Sintassi del wrapper del comando CLI
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
+[role="lead"]
 In questa sezione sono elencate le forme di sintassi generali dei wrapper di comando CLI. Le convenzioni utilizzate nella sintassi del wrapper del comando CLI sono elencate nella tabella seguente.
+
+
+
+== Convenzioni per la sintassi del wrapper dei comandi CLI
 
 [cols="2*"]
 |===

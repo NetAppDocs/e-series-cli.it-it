@@ -7,7 +7,7 @@ summary: Il comando show SyncMirror Candidates restituisce informazioni sui volu
 = Mostra i volumi di mirroring sincrono candidati
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -21,14 +21,14 @@ Questo comando si applica a qualsiasi singolo array di storage, con alcune limit
 
 [NOTE]
 ====
-Questo comando non è supportato sulle piattaforme E2800, E5700, EF600 e EF300.
+Questo comando non è supportato sulle piattaforme E4000, E2800, E5700, EF600 e EF300.
 
 ====
 
 
 == Ruoli
 
-Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo Storage Admin o Storage Monitor.
+N/A.
 
 
 
@@ -43,7 +43,7 @@ Nelle versioni precedenti di questo comando, l'identificatore di funzione era `r
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[show syncMirror candidates primary="_volumeName_"
 remoteStorageArrayName="_storageArrayName_"]

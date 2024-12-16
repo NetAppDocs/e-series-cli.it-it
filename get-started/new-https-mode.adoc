@@ -7,7 +7,7 @@ summary: Il nuovo SMcli può funzionare in una modalità https che offre funzion
 = Modalità SMcli https
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

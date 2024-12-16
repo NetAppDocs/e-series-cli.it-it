@@ -7,7 +7,7 @@ summary: Il comando SMcli alertTest invia un avviso di test al registro eventi d
 = Test degli avvisi
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -32,7 +32,7 @@ Questo comando è un comando SMcli, non un comando script. Eseguire questo coman
 
 == Sintassi
 
-[listing]
+[source, cli]
 ----
 SMcli -alertTest
 ----

@@ -7,7 +7,7 @@ summary: 'Il comando reset iscsiIpAddress ripristina l"indirizzo IP dell"array d
 = Ripristinare l'indirizzo IP iSCSI
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -21,14 +21,14 @@ Questo comando si applica a qualsiasi singolo array di storage, con alcune limit
 
 [NOTE]
 ====
-Questo comando non è supportato sulle piattaforme E2800, E5700, EF600 e EF300.
+Questo comando non è supportato sulle piattaforme E4000, E2800, E5700, EF600 e EF300.
 
 ====
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+N/A.
 
 
 
@@ -46,7 +46,7 @@ Se lo storage array con l'indirizzo IP modificato non riesce a inviare il messag
 
 == Sintassi
 
-[listing]
+[source, cli]
 ----
 reset (remoteStorageArrayName="storageArrayName" | remoteStorageArrayWwid=<wwID>)
 iscsiIpAddress

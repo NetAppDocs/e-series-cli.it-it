@@ -7,7 +7,7 @@ summary: 'Il comando Activate StorageArray firmware attiva il firmware precedent
 = Attivare il firmware dello storage array
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Il `activate storageArray firmware` il comando attiva il firmware precedentement
 
 == Sintassi
 
-[listing]
+[source, cli]
 ----
 activate storageArray firmware
 [healthCheckMelOverride=(TRUE | FALSE)]

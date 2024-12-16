@@ -1,13 +1,13 @@
 ---
-permalink: commands-a-z/set-autosupport-https-delivery-method-e2800-e5700.html 
+permalink: commands-a-z/set-autosupport-https-delivery-method.html 
 sidebar: sidebar 
-keywords: 'Specify AutoSupport HTTP(S) delivery method (for individual E2800 or E5700 arrays)' 
+keywords: 'Specify AutoSupport HTTP(S) delivery method' 
 summary: 'Il comando set StorageArray AutoSupport deliveryMethod imposta il metodo di consegna per l"invio di messaggi AutoSupport a HTTP(S).' 
 ---
-= Specificare il metodo di erogazione HTTP(S) AutoSupport (per singoli array E2800 o E5700)
+= Specificare il metodo di distribuzione HTTP(S) AutoSupport
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,25 +17,22 @@ Il `set storageArray autoSupport deliveryMethod` Command imposta il metodo di in
 
 == Array supportati
 
-Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+Questo comando si applica a un singolo array di storage E4000, E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Support Admin.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage o di amministratore del supporto.
 
 
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 
-set storageArray autoSupport deliveryMethod={HTTP | HTTPS}
-   {direct | proxyConfigScript=pass:quotes["_proxyConfigScriptUrl_"] |
-proxyServer hostAddress=pass:quotes[_address_] portNumber=pass:quotes[_portNumber_]
- [userName=pass:quotes["_username_"] password=pass:quotes["_password_"]]}
+set storageArray autoSupport deliveryMethod=email mailRelayServer="mail.example.com" senderEmail="sender@example.com"
 ----
 
 
@@ -52,7 +49,6 @@ proxyServer hostAddress=pass:quotes[_address_] portNumber=pass:quotes[_portNumbe
 Consente all'utente di specificare il metodo di consegna per la raccolta AutoSupport. Le scelte valide sono:
 
 * e-mail
-* HTTP
 * HTTPS
 
 

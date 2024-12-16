@@ -7,7 +7,7 @@ summary: Il comando set syslog configura le informazioni di avviso syslog. È po
 = Configurare le impostazioni syslog
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `set syslog` il comando configura le informazioni di avviso syslog. È possib
 
 == Array supportati
 
-Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+Questo comando si applica a un singolo array di storage E4000, E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario avere il ruolo di amministratore dello storage.
 
 
 
@@ -37,9 +37,8 @@ Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, 
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
-
 set syslog [defaultFacility=pass:quotes[_facilityNumber_]]
 | [defaultTag=pass:quotes[_defaultTag_]]
 | [syslogFormat=pass:quotes[_rfc3164_|_rfc5424_]]

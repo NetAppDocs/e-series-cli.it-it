@@ -7,10 +7,13 @@ summary: 'L"interfaccia a riga di comando (CLI) è un"applicazione software che 
 = Panoramica di CLI
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-L'interfaccia a riga di comando (CLI) è un'applicazione software che consente di configurare e monitorare gli array di storage. Utilizzando l'interfaccia CLI, è possibile eseguire i comandi da un prompt del sistema operativo, ad esempio DOS `C:` Prompt, percorso del sistema operativo Linux o percorso del sistema operativo Solaris.
+[role="lead"]
+L'interfaccia a riga di comando (CLI) è un'applicazione software che consente di configurare e monitorare gli array di storage.
+
+Utilizzando la CLI, è possibile eseguire comandi da un prompt del sistema operativo, come il prompt DOS `C:`, un percorso del sistema operativo Linux o un percorso del sistema operativo Solaris.
 
 L'interfaccia CLI consente di accedere direttamente a un motore di script che è un'utility del software di gestione dello storage. Il motore di script esegue comandi che configurano e gestiscono gli array di storage. Il motore di script legge i comandi, attraverso un file di script o direttamente dalla riga di comando, ed esegue le operazioni indicate dai comandi.
 

@@ -7,7 +7,7 @@ summary: 'Il comando SMcli -autoSupportConfig imposta il metodo di recapito per 
 = Specificare il metodo di erogazione AutoSupport
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Il `SMcli -autoSupportConfig` Il comando imposta il metodo di recapito per l'inv
 
 == Array supportati
 
-Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E2800 o E5700.
+Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E4000, E2800 o E5700.
 
 
 
@@ -38,7 +38,7 @@ Questo comando è un comando SMcli, non un comando script. Eseguire questo coman
 
 == Sintassi per il metodo di consegna SMTP
 
-[listing]
+[source, cli]
 ----
 SMcli -autoSupportConfig deliveryMethod=SMTP
 mailRelayServer=<mailRelayServerName> senderMail=<senderEmailAddress>

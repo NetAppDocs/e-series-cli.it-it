@@ -2,13 +2,18 @@
 permalink: commands-category/e2800-e5700-ef600-and-ef300-commands.html 
 sidebar: sidebar 
 keywords: commands, cache, file, array, certificate, autoconfigure, storage array 
-summary: Comandi E2800, E5700, EF600 e EF300 
+summary: Comandi E4000, E2800, E5700, EF600 e EF300 
 ---
-= Comandi E2800, E5700, EF600 e EF300
+= Comandi E4000, E2800, E5700, EF600 e EF300
 :allow-uri-read: 
-:icons: font
-:imagesdir: ./media/
 
+
+[role="lead"]
+Per i sistemi E4000, E2800, E5700, EF600 e EF300 è disponibile il seguente elenco di comandi.
+
+
+
+= Comandi E4000, E2800, E5700, EF600 e EF300
 
 link:../commands-a-z/activate-asynchronous-mirroring.html["Attivare il mirroring asincrono"]
 
@@ -214,11 +219,11 @@ link:../commands-a-z/smcli-enable-autosupportfeature.html["Abilitare o disabilit
 
 link:../commands-a-z/enable-or-disable-autosupport-individual-arrays.html["Abilitare o disabilitare AutoSupport (tutti i singoli array)"]
 
-link:../commands-a-z/set-storagearray-autosupportmaintenancewindow.html["Attivazione o disattivazione della finestra di manutenzione AutoSupport (per singoli array E2800 o E5700)"]
+link:../commands-a-z/set-storagearray-autosupportmaintenancewindow.html["Consente di attivare o disattivare la finestra di manutenzione AutoSupport"]
 
 link:../commands-a-z/smcli-enable-disable-autosupportondemand.html["Attivare o disattivare la funzione AutoSupport on Demand nell'EMW..."]
 
-link:../commands-a-z/set-storagearray-autosupportondemand.html["Attivare o disattivare la funzione AutoSupport OnDemand (per singoli array E2800 o E5700)"]
+link:../commands-a-z/set-storagearray-autosupportondemand.html["Attivare o disattivare la funzione AutoSupport su richiesta"]
 
 link:../commands-a-z/smcli-enable-disable-autosupportremotediag.html["Attivare o disattivare la funzione di diagnostica remota AutoSupport OnDemand all'indirizzo..."]
 
@@ -306,7 +311,7 @@ link:../commands-a-z/reset-storagearray-arvmstats-asyncmirrorgroup.html["Riprist
 
 link:../commands-a-z/smcli-autosupportschedule-reset.html["Ripristinare la pianificazione della raccolta dei messaggi AutoSupport"]
 
-link:../commands-a-z/reset-storagearray-autosupport-schedule.html["Ripristino della pianificazione della raccolta dei messaggi AutoSupport (per singoli array E2800 o E5700)"]
+link:../commands-a-z/reset-storagearray-autosupport-schedule.html["Ripristinare la pianificazione della raccolta dei messaggi AutoSupport"]
 
 link:../commands-a-z/reset-controller.html["Ripristinare il controller"]
 
@@ -346,7 +351,7 @@ link:../commands-a-z/resume-ssdcache.html["Riprendi cache SSD"]
 
 link:../commands-a-z/resume-syncmirror.html["Riprendere il mirroring sincrono"]
 
-link:../commands-a-z/save-storagearray-autosupport-log.html["Recuperare un log AutoSupport (per singoli array E2800 o E5700)"]
+link:../commands-a-z/save-storagearray-autosupport-log.html["Recuperare un registro AutoSupport"]
 
 link:../commands-a-z/save-storagearray-keymanagementcertificate.html["Recuperare il certificato di gestione delle chiavi esterne installato"]
 
@@ -424,7 +429,9 @@ link:../commands-a-z/set-asyncmirrorgroup.html["Impostare un gruppo di mirror as
 
 link:../commands-a-z/set-auditlog.html["Impostare le impostazioni del registro di controllo"]
 
-link:../commands-a-z/set-storagearray-autosupport-schedule.html["Impostare il programma di raccolta dei messaggi AutoSupport (per i singoli array E2800 o E5700)"]
+link:../commands-a-z/set-autosupport-dispatch-limit.html["Imposta limite dimensioni spedizione AutoSupport"]
+
+link:../commands-a-z/set-storagearray-autosupport-schedule.html["Impostare il programma di raccolta dei messaggi AutoSupport"]
 
 link:../commands-a-z/set-storagearray-revocationchecksettings.html["Impostare il controllo di revoca del certificato"]
 
@@ -696,9 +703,9 @@ link:../commands-a-z/smcli-autosupportconfig.html["Specificare il metodo di erog
 
 link:../commands-a-z/start-asyncmirrorgroup-synchronize.html["Avviare la sincronizzazione del mirroring asincrono"]
 
-link:../commands-a-z/set-email-smtp-delivery-method-e2800-e5700.html["Specificare il metodo di recapito e-mail (SMTP) (per singoli array E2800 o E5700)"]
+link:../commands-a-z/set-email-smtp-delivery-method.html["Specificare il metodo di recapito e-mail (SMTP)"]
 
-link:../commands-a-z/set-autosupport-https-delivery-method-e2800-e5700.html["Specificare il metodo di erogazione HTTP(S) AutoSupport (per singoli array E2800 o E5700)"]
+link:../commands-a-z/set-autosupport-https-delivery-method.html["Specificare il metodo di distribuzione HTTP(S) AutoSupport"]
 
 link:../commands-a-z/start-storagearray-ocspresponderurl-test.html["Avviare il test URL del server OCSP"]
 
@@ -812,7 +819,7 @@ link:../commands-a-z/suspend-syncmirror-primaries.html["Sospendere il mirroring 
 
 link:../commands-a-z/diagnose-asyncmirrorgroup.html["Verificare la connettività del gruppo mirror asincrono"]
 
-link:../commands-a-z/start-storagearray-autosupport-deliverytest.html["Test delle impostazioni di erogazione AutoSupport (per singoli array E2800 o E5700)"]
+link:../commands-a-z/start-storagearray-autosupport-deliverytest.html["Verificare le impostazioni di erogazione di AutoSupport"]
 
 link:../commands-a-z/start-emailalert-test.html["Verificare la configurazione degli avvisi e-mail"]
 

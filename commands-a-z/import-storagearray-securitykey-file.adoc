@@ -7,7 +7,7 @@ summary: 'Il comando import StorageArray securityKey file sblocca uno o più dis
 = Importare la chiave di sicurezza dello storage array
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `import storageArray securityKey file` Il comando sblocca una o più unità c
 
 == Array supportati
 
-Se è attivata la gestione esterna delle chiavi, questo comando si applica solo agli array E2800, E5700, EF600 o EF300. Se è attivata la gestione delle chiavi interne, il comando si applica a qualsiasi singolo array di storage, purché siano installati tutti i pacchetti SMcli.
+Se è abilitata la gestione esterna delle chiavi, questo comando si applica solo agli array E4000, E2800, E5700, EF600 o EF300. Se è attivata la gestione delle chiavi interne, il comando si applica a qualsiasi singolo array di storage, purché siano installati tutti i pacchetti SMcli.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore della sicurezza.
 
 
 
@@ -40,7 +40,7 @@ Questo comando si applica alla gestione delle chiavi sia interna che esterna.
 
 == Sintassi
 
-[listing]
+[source, cli]
 ----
 import storageArray securityKey file="fileName"
 passPhrase="passPhraseString"

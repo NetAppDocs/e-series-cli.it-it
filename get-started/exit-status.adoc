@@ -2,15 +2,20 @@
 permalink: get-started/exit-status.html 
 sidebar: sidebar 
 keywords: exit, status 
-summary: Questa tabella elenca gli stati di uscita che potrebbero essere restituiti e il significato di ciascuno stato. 
+summary: Gli stati di uscita vengono restituiti ai comandi eseguiti. Questa tabella elenca gli stati di uscita che potrebbero essere restituiti e il significato di ciascuno stato. 
 ---
 = Stato di uscita
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-Questa tabella elenca gli stati di uscita che potrebbero essere restituiti e il significato di ciascuno stato.
+[role="lead"]
+Gli stati di uscita vengono restituiti ai comandi eseguiti. Nella tabella seguente sono elencati gli stati di uscita che potrebbero essere restituiti e il significato di ogni stato.
+
+
+
+== Uscire dalle definizioni dello stato
 
 [cols="3*"]
 |===

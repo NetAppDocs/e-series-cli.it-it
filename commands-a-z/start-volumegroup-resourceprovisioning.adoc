@@ -7,7 +7,7 @@ summary: 'Il comando start VolumeGroup resourceProvisioning abilita il provision
 = Avviare il provisioning delle risorse del gruppo di volumi
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -35,7 +35,7 @@ Per disattivare il provisioning delle risorse in un gruppo di volumi, utilizzare
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 pass:quotes[start volumeGroup[_volumeGroupName_]] resourceProvisioning
 ----

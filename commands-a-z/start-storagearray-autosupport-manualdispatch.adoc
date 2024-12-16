@@ -7,7 +7,7 @@ summary: 'Il comando start StorageArray AutoSupport manualDispatch avvia un bund
 = Avviare l'invio manuale di Storage Array AutoSupport
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `start storageArray autoSupport manualDispatch` Command avvia un bundle di su
 
 == Array supportati
 
-Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+Questo comando si applica a un singolo array di storage E4000, E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario avere il ruolo di amministratore dello storage.
 
 
 
@@ -35,7 +35,7 @@ A causa del tempo necessario per il completamento, il comando viene restituito c
 
 == Sintassi
 
-[listing]
+[source, cli]
 ----
 start storageArray autoSupport manualDispatch
 ----

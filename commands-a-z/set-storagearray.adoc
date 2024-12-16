@@ -7,7 +7,7 @@ summary: Il comando Set StorageArray definisce le proprietà dello storage array
 = Impostare l'array di storage
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `set storageArray` command definisce le proprietà dell'array di storage.
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800, E5700, EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario avere il ruolo di amministratore dello storage.
 
 
 
@@ -38,7 +38,7 @@ Con la versione del firmware 8.10 di `cacheFlushStop` il parametro è obsoleto e
 
 == Sintassi
 
-[listing]
+[source, cli]
 ----
 set storageArray
 ([autoLoadBalancingEnable=(TRUE | FALSE)]|
@@ -49,7 +49,6 @@ set storageArray
 [autoSupportRemoteDiag (enable |disable)]|
 [cacheBlockSize=cacheBlockSizeValue]|
 [cacheFlushStart=cacheFlushStartSize]|
-[cacheFlushStop=cacheFlushStopSize]|
 [cacheMirrorDataAssuranceCheckEnable=(TRUE | FALSE)]|
 [controllerHealthImageAllowOverWrite]|
 [defaultHostType=("hostTypeName" |"hostTypeIdentifier")] |
@@ -60,13 +59,13 @@ set storageArray
 [icmpPingResponse=(TRUE | FALSE)]|
 [isnsIPV4ConfigurationMethod isns IPv4 Config Method Parameters]|
 [isnsIPv6Address=ipAddress]|
-[isnsListeningPort=listeningPortIPAddress]]|
+[isnsListeningPort=listeningPortIPAddress]|
 [isnsRegistration=(TRUE | FALSE)]|
 [learnCycleDate learn cycle parameters]|
 [localUsername=local user name parameters]|
 [loginBanner file="path_to_login_banner"]|
 [managementInterface restOnly={true | false}]|
-[mediaScanRate=(disabled | 1-30)]|
+[mediaScanRate=(disabled | 1-210)]|
 [odxEnabled=(TRUE | FALSE)]|
 [password="password"]|
 [passwordLength=<INTEGER>]|
@@ -306,7 +305,7 @@ Modifica l'interfaccia di gestione del controller. Modificare il tipo di interfa
  a| 
 `mediaScanRate`
  a| 
-Il numero di giorni in cui viene eseguita la scansione del supporto. I valori validi sono `disabled` , che disattiva la scansione del supporto, o. `1` giorno a. `30` giorni, dove `1` il giorno è la velocità di scansione più elevata, e. `30` giorni è la velocità di scansione più lenta. Un valore diverso da `disabled` oppure `1` a. `30` non consente il funzionamento della scansione del supporto.
+Il numero di giorni in cui viene eseguita la scansione del supporto. I valori validi sono `disabled` , che disattiva la scansione del supporto, o `1` giorno per `210` giorno, dove `1` giorno è la velocità di scansione più veloce, e `210` giorni è la velocità di scansione più lenta. Un valore diverso da `disabled` o `1` da a `210` non consente il funzionamento della scansione dei supporti.
 
 
 

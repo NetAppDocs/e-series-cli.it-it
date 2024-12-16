@@ -7,7 +7,7 @@ summary: 'Il comando remove asyncMirrorGroup rimuove un volume di coppia di mirr
 = Rimuovere la coppia di mirroring asincrono incompleta dal gruppo di mirror asincrono
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `remove asyncMirrorGroup` il comando rimuove un volume di coppia di mirroring
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800, E5700, EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario avere il ruolo di amministratore dello storage.
 
 
 
@@ -39,7 +39,7 @@ Utilizzare questo comando quando la relazione di mirroring viene rimossa corrett
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 remove asyncMirrorGroup pass:quotes[[_"asyncMirrorGroupName"_]]
 incompleteMirror volume=pass:quotes[_"volumeName"_]

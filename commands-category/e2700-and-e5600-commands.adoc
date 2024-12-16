@@ -6,9 +6,14 @@ summary: Comandi E2700 ed E5600
 ---
 = Comandi E2700 ed E5600
 :allow-uri-read: 
-:icons: font
-:imagesdir: ./media/
 
+
+[role="lead"]
+Per i sistemi E2700 e E5600 sono disponibili i seguenti comandi.
+
+
+
+= Comandi E2700 ed E5600
 
 link:../commands-a-z/activate-asynchronous-mirroring.html["Attivare il mirroring asincrono"]
 

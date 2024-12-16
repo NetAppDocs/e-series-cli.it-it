@@ -2,19 +2,22 @@
 permalink: get-started/downloadable-smcli-parameters.html 
 sidebar: sidebar 
 keywords: downloadable, smcli, command line, parameters, identify, devices, SAML, multifactor, authentication, https, certificate, array, 
-summary: 'La release SANtricity OS 11.60 includeva la possibilità di scaricare e installare la versione basata su http di CLI (nota anche come CLI sicuro o SMcli) direttamente tramite Gestore di sistema di SANtricity.' 
+summary: 'SANtricity OS 11,60 e le versioni più recenti includono la possibilità di scaricare e installare la versione basata su http della CLI (nota anche come Secure CLI o SMcli) direttamente attraverso il Gestore di sistema di SANtricity.' 
 ---
 = Parametri della riga di comando SMcli scaricabili
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+SANtricity OS 11,60 e le versioni più recenti includono la possibilità di scaricare e installare la versione basata su http della CLI (nota anche come "Secure CLI" o SMcli) direttamente attraverso il Gestore di sistema di SANtricity.
 
 
 
 == 11.60 e parametri della riga di comando SMcli scaricabili più recenti
 
-SANtricity OS 11.60 include la possibilità di scaricare e installare la versione di CLI basata su http (nota anche come "CLI sicura" o SMcli) direttamente tramite Gestore di sistema di SANtricity. Questa versione scaricabile di SMcli è disponibile su EF600, EF300, E5700, EF570, E2800, E EF280. Per scaricare SMcli in Gestione sistema di SANtricity, selezionare *Impostazioni* > *sistema* e *componenti aggiuntivi* > *interfaccia riga di comando* .
+La versione scaricabile di SMcli è disponibile sui controller E4000, EF600, EF300, E5700, EF570, E2800 e EF280. Per scaricare SMcli in Gestione di sistema di SANtricity, selezionare *Impostazioni* *sistema* e *componenti aggiuntivi* *interfaccia della riga di comando* .
 
 
 NOTE: Sul sistema di gestione in cui si intende eseguire i comandi CLI deve essere disponibile Java Runtime Environment (JRE), versione 8 e successive.

@@ -7,8 +7,11 @@ summary: Comandi del personale di monitoraggio dello storage
 = Comandi del personale di monitoraggio dello storage
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+Per il tuo sistema storage e-Series è disponibile il seguente elenco di comandi del personale dei monitor storage.
 
 link:../commands-a-z/show-storagearray-usersession.html["Visualizzare la sessione utente dello storage array"]
 

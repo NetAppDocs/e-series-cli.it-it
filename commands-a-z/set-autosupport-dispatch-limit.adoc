@@ -1,0 +1,68 @@
+---
+permalink: commands-a-z/set-autosupport-dispatch-limit.html 
+sidebar: sidebar 
+keywords: Autosupport, bundle, dispatch, delivery type, size 
+summary: Consente di impostare le dimensioni massime di pacchetti e spedizioni AutoSupport per i diversi tipi di consegna. 
+---
+= Imposta limite dimensioni spedizione AutoSupport
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ `set storageArray autoSupport dispatchSizeLimit`Imposta le dimensioni massime di pacchetti e spedizioni AutoSupport per diversi tipi di consegna.
+
+Tramite questo comando, gli utenti possono configurare le dimensioni della posta elettronica in base a ciò che il server di posta elettronica supporta. Le dimensioni più grandi riducono la possibilità di troncare il pacchetto di supporto.
+
+
+NOTE: In genere, gli utenti non devono configurare le dimensioni HTTPS, a meno che non sia richiesto dal supporto NetApp.
+
+
+
+== Array supportati
+
+Questo comando si applica a un singolo array di storage E4000, E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage o di amministratore del supporto.
+
+
+
+== Sintassi
+
+[source, cli, subs="+macros"]
+----
+
+set storageArray autoSupport dispatchSizeLimit (https=(<sizeInBytes>|unlimited)|email=(<sizeInBytes>|unlimited));
+----
+
+
+== Parametri
+
+[cols="2*"]
+|===
+| Parametro | Descrizione 
+
+
+ a| 
+`https`
+ a| 
+La dimensione massima dell'invio HTTPS in byte. Se la dimensione massima non è configurata, il valore predefinito è 50 MIB. Il valore "illimitato" o 0 non consente alcuna limitazione delle dimensioni. La dimensione minima consentita è di 2 MIB.
+
+
+
+ a| 
+`email`
+ a| 
+La dimensione massima di recapito della posta elettronica (SMTP) in byte. Se la dimensione massima non è configurata, il valore predefinito è 5 MIB. Il valore "illimitato" o 0 non consente alcuna limitazione delle dimensioni. La dimensione minima consentita è di 2 MIB.
+
+|===
+
+
+== Livello minimo del firmware
+
+8,90

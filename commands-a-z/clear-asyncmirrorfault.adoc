@@ -7,7 +7,7 @@ summary: 'Il comando clear asyncMirrorFault elimina un errore "ticky" di mirrori
 = Eliminare gli errori di mirroring asincrono
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `clear asyncMirrorFault` il comando elimina un errore "sticky" di mirroring a
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800, E5700, EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario avere il ruolo di amministratore dello storage.
 
 
 
@@ -37,7 +37,7 @@ Un gruppo di mirror asincrono e i relativi volumi membri potrebbero avere o poss
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 clear asyncMirrorFault(all |
 asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]] |

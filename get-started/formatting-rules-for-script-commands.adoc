@@ -7,9 +7,10 @@ summary: La sintassi univoca di uno specifico comando script è illustrata nella
 = Regole di formattazione per i comandi script
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
+[role="lead"]
 La sintassi univoca di uno specifico comando script è illustrata nella sezione Note alla fine della descrizione di ogni comando script.
 
 *Distinzione tra maiuscole e minuscole* -- i comandi di script non distinguono tra maiuscole e minuscole. È possibile digitare i comandi di script in minuscolo, maiuscolo o minuscolo. (Nelle seguenti descrizioni dei comandi, viene utilizzato il maiuscolo/minuscolo come ausilio per la lettura dei nomi dei comandi e la comprensione dello scopo del comando).

@@ -7,7 +7,7 @@ summary: 'Il comando Recreate StorageArray mirrorRepository crea un nuovo volume
 = Ricreare il volume del repository di mirroring sincrono
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `recreate storageArray mirrorRepository` Il comando crea un nuovo volume di r
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E2700, E5600, E2800 e E5700, Finché tutti i pacchetti SMcli sono installati.
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800 e E5700, a condizione che siano installati tutti i pacchetti SMcli.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
+Per eseguire questo comando su uno storage array E4000, E2800 o E5700, è necessario avere il ruolo di amministratore dello storage.
 
 
 
@@ -40,7 +40,7 @@ Il requisito sottostante è che in precedenza è stato creato un volume di repos
 
 == Sintassi (dischi definiti dall'utente)
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 recreate storageArray mirrorRepository
 repositoryRAIDLevel=(1 | 3 | 5 | 6)
@@ -53,7 +53,7 @@ repositoryDrives=pass:quotes[(_trayID1_,pass:quotes[[_drawerID1,_]]pass:quotes[_
 
 == Sintassi (gruppo di volumi definito dall'utente)
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 recreate storageArray mirrorRepository
 repositoryVolumeGroup=pass:quotes[_volumeGroupName_
@@ -63,7 +63,7 @@ repositoryVolumeGroup=pass:quotes[_volumeGroupName_
 
 == Sintassi (numero di dischi definito dall'utente)
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 recreate storageArray mirrorRepository
 repositoryRAIDLevel=(1 | 3 | 5 | 6)

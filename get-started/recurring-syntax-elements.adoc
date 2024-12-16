@@ -7,9 +7,10 @@ summary: Gli elementi di sintassi ricorrenti sono una categoria generale di para
 = Elementi di sintassi ricorrenti
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
+[role="lead"]
 Gli elementi di sintassi ricorrenti sono una categoria generale di parametri e opzioni che è possibile utilizzare nei comandi di script. La tabella seguente elenca le convenzioni utilizzate negli elementi di sintassi ricorrenti.
 
 [cols="2*"]

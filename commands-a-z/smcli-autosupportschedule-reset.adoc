@@ -7,7 +7,7 @@ summary: Il comando di ripristino SMcli autoSupportSchedule ripristina gli orari
 = Ripristinare la pianificazione della raccolta dei messaggi AutoSupport
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,7 +17,7 @@ Il `SMcli autoSupportSchedule reset` Il comando ripristina gli orari e i giorni 
 
 == Array supportati
 
-Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E2800 o E5700.
+Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E4000, E2800 o E5700.
 
 
 
@@ -38,7 +38,7 @@ Questo comando è un comando SMcli, non un comando script. Eseguire questo coman
 
 == Sintassi
 
-[listing]
+[source, cli]
 ----
 SMcli -autoSupportSchedule reset | (dailyTime=<startTime>-<endTime>
    dayOfWeek=[Sunday Monday Tuesday Wednesday Thursday Friday Saturday]

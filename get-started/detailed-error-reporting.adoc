@@ -7,10 +7,13 @@ summary: I dati raccolti in seguito a un errore rilevato dalla CLI vengono scrit
 = Segnalazione dettagliata degli errori
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
-I dati raccolti in seguito a un errore rilevato dalla CLI vengono scritti in un file. La segnalazione dettagliata degli errori nell'ambito della CLI funziona come segue:
+[role="lead"]
+I dati raccolti in seguito a un errore rilevato dalla CLI vengono scritti in un file.
+
+La segnalazione dettagliata degli errori nell'ambito della CLI funziona come segue:
 
 * Se la CLI deve terminare in modo anomalo l'esecuzione dei comandi CLI e dei comandi script, i dati degli errori vengono raccolti e salvati prima del completamento della CLI.
 * La CLI salva i dati di errore scrivendo i dati in un nome di file standard.

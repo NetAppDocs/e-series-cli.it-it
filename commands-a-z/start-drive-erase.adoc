@@ -7,7 +7,7 @@ summary: Il comando start drive erase cancella tutti i dati da uno o più dischi
 = Avviare la cancellazione del disco
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `start drive erase` il comando cancella tutti i dati da uno o più dischi.
 
 == Array supportati
 
-Questo comando si applica a un singolo array E2800, E5700, EF600 o EF300. Non funziona su storage array E2700 e E5600.
+Questo comando si applica a un singolo array E4000, E2800, E5700, EF600 o EF300. Non funziona su storage array E2700 e E5600.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore della sicurezza.
 
 
 
@@ -40,7 +40,7 @@ L'operazione di cancellazione non può essere annullata. Assicurarsi di selezion
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 start drive pass:quotes[[_trayID_],pass:quotes[[_drawerID_,]]pass:quotes[_slotID_]] | drivespass:quotes[[_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1_] ... pass:quotes[_trayIDn_],pass:quotes[[_drawerIDn_,]]pass:quotes[_slotIDn_]] erase
 ----

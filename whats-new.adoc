@@ -25,6 +25,51 @@ Se si utilizza SANtricity 11.52 o una versione precedente, non è possibile eseg
 ====
 
 
+== SANtricity 11,90
+
+Nella tabella seguente sono elencate le modifiche ai comandi CLI e script per la versione 11,90.
+
+[cols="2*"]
+|===
+| Comando | Descrizione della modifica 
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/set-autosupport-dispatch-limit.html["Imposta limite dimensioni spedizione AutoSupport"]
+ a| 
+Aggiunto comando
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/save-controller-arraymanagementcsr.html["Salvare l'arrayManagementCSR del controller"]
+ a| 
+Parametro aggiunto `KeySize`.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/set-email-smtp-delivery-method.html["Impostare il metodo di recapito della posta elettronica (SMTP)"]
+ a| 
+Parametro aggiunto `destinationAddress`.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/show-storagearray-autosupport.html#examples["Mostra impostazioni AutoSupport"]
+ a| 
+Sono stati aggiunti i limiti delle dimensioni di spedizione e gli indirizzi e-mail di destinazione all'output di esempio per il comando.
+
+
+
+ a| 
+https://docs.netapp.com/us-en/e-series-cli/commands-a-z/download-storagearray-keymanagementcertificate.html["Scarica StorageArray keyManagementCertificate"]
+ a| 
+Parametro aggiunto `privateKeyFile`.
+
+|===
+
+
 == SANtricity 11,81
 
 Nella tabella seguente sono elencate le modifiche ai comandi CLI e script per la versione 11,81.
@@ -35,7 +80,7 @@ Nella tabella seguente sono elencate le modifiche ai comandi CLI e script per la
 
 
  a| 
-xref:./get-started/downloadable-smcli-parameters.adoc#identify-Devices[Identificare i dispositivi]
+https://docs.netapp.com/us-en/e-series-cli/get-started/downloadable-smcli-parameters.html#identify-devices["Identificare i dispositivi"]
  a| 
 Aggiunto `identifyDevices` parametro.
 

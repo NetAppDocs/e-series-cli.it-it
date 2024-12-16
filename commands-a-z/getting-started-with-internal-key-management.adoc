@@ -7,7 +7,7 @@ summary: Una chiave di sicurezza è una stringa di caratteri che viene condivisa
 = Introduzione alla gestione interna delle chiavi
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

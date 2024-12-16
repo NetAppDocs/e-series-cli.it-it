@@ -7,7 +7,7 @@ summary: Il comando set target modifica le proprietà di una destinazione iSCSI/
 = Impostare le proprietà di destinazione
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `set target` Il comando modifica le proprietà di una destinazione iSCSI/iSER
 
 == Array supportati
 
-Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+Questo comando si applica a un singolo array di storage E4000, E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Storage Admin o Storage Monitor.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage o di Storage Monitor.
 
 
 
@@ -38,9 +38,8 @@ Questo comando sostituisce il deprecato xref:set-isertarget.adoc[Impostare la de
 
 == Sintassi
 
-[listing]
+[source, cli]
 ----
-
 set target (["targetAliasName"] | <"targetQualifiedName">) (authenticationMethod=(none | chap chapSecret="newSecurityKey") | targetAlias="newAliasName")
 ----
 

@@ -7,7 +7,7 @@ summary: Il comando stop pendingSnapImageCreation annulla tutte le immagini snap
 = Interrompere le immagini snapshot in sospeso del gruppo di snapshot
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `stop pendingSnapImageCreation` il comando annulla tutte le immagini snapshot
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800, E5700, EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario avere il ruolo di amministratore dello storage.
 
 
 
@@ -35,7 +35,7 @@ Se il gruppo di snapshot non dispone di immagini snapshot in sospeso, il firmwar
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 stop (snapGroup pass:quotes[[_snapGroupName_]] |
 consistencyGroup pass:quotes[[_snapConsistencyGroupName_]])

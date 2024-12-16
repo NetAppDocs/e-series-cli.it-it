@@ -7,7 +7,7 @@ summary: Il comando set diskPool riduce la capacità del pool di dischi rimuoven
 = Ridurre la capacità del pool di dischi
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `set diskPool` il comando riduce la capacità del pool di dischi rimuovendo l
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800, E5700, EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario avere il ruolo di amministratore dello storage.
 
 
 
@@ -37,7 +37,7 @@ Il numero massimo di unità che è possibile rimuovere da un pool di dischi in u
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
 set diskPool pass:quotes[[_diskPoolName_]]
 removeDrives=pass:quotes[(_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1

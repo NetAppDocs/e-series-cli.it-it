@@ -7,7 +7,7 @@ summary: Il comando Set StorageArray directoryServer aggiorna la configurazione 
 = Impostare il server di directory dell'array di storage
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,21 +17,20 @@ Il `set storageArray directoryServer` il comando aggiorna la configurazione del 
 
 == Array supportati
 
-Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+Questo comando si applica a un singolo array di storage E4000, E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo Security Admin.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore della sicurezza.
 
 
 
 == Sintassi
 
-[listing, subs="+macros"]
+[source, cli, subs="+macros"]
 ----
-
 set storageArray directoryServer ["domainId"]
     (domainNames=pass:quotes[("_domainName1_"..."_domainNameN_")] |
      addDomainNames=pass:quotes[("_domainName1_"..."_domainNameN_")] |

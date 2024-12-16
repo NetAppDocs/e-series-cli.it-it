@@ -7,7 +7,7 @@ summary: 'Il comando Set StorageArray pqValidateOnReconstruct imposta lo stato d
 = Impostare la convalida della qualità di stampa dell'array di storage alla ricostruzione
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `set storageArray pqValidateOnReconstruct` Il comando imposta lo stato di con
 
 == Array supportati
 
-Questo comando si applica a un singolo array di storage E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+Questo comando si applica a un singolo array di storage E4000, E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+Per eseguire questo comando su uno storage array E4000, 2800, E5700, EF600 o EF300, è necessario avere il ruolo di amministratore dello storage.
 
 
 
@@ -37,7 +37,7 @@ La convalida può aumentare i tempi di ricostruzione per i dischi SSD, pertanto 
 
 == Sintassi
 
-[listing]
+[source, cli]
 ----
 set storageArray pqValidateOnReconstruct (enable | disable) driveMediaType=(hdd | ssd | allMedia)
 ----

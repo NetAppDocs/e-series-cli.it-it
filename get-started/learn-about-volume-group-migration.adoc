@@ -2,21 +2,22 @@
 permalink: get-started/learn-about-volume-group-migration.html 
 sidebar: sidebar 
 keywords: volume, group, migration, learn, data, access, export, import, component 
-summary: Scopri di più sulla migrazione dei gruppi di volumi 
+summary: La migrazione dei gruppi di volumi consente di esportare un gruppo di volumi in modo da poter importare il gruppo di volumi in un array di storage diverso. È inoltre possibile esportare un gruppo di volumi in modo da memorizzare i dati offline. 
 ---
 = Scopri di più sulla migrazione dei gruppi di volumi
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
+
+[role="lead"]
+La migrazione dei gruppi di volumi consente di esportare un gruppo di volumi in modo da poter importare il gruppo di volumi in un array di storage diverso. È inoltre possibile esportare un gruppo di volumi in modo da memorizzare i dati offline.
 
 [CAUTION]
 ====
 Se il gruppo di volumi è costituito da unità compatibili con NVMe o FIPS, la chiave di sicurezza e la password dovranno essere registrate/salvate dall'array di origine per sbloccare i dischi prima dell'inizio della migrazione all'array di destinazione. Se la chiave di sicurezza e la password non sono note e/o l'integrità dei dati non è necessaria, è possibile eseguire una cancellazione di sicurezza. La combinazione di diverse unità di sicurezza con crittografia non è supportata nei sistemi storage e-Series. Per ulteriori informazioni su come sbloccare i dischi utilizzando una chiave di sicurezza, cancellare i dischi FIPS e sbloccare o reimpostare i dischi NVMe bloccati, consultare la guida online di Gestione di sistema di SANtricity.
 
 ====
-La migrazione dei gruppi di volumi consente di esportare un gruppo di volumi in modo da poter importare il gruppo di volumi in un array di storage diverso. È inoltre possibile esportare un gruppo di volumi in modo da memorizzare i dati offline.
-
 [NOTE]
 ====
 *Possibile perdita di accesso ai dati* -- è necessario esportare un gruppo di volumi prima di spostare il gruppo di volumi o importarlo.

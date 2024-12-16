@@ -7,7 +7,7 @@ summary: Il comando set controller iscsiHostPort modifica le proprietà di rete 
 = Impostare le proprietà di rete della porta host iSCSI
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -17,13 +17,13 @@ Il `set controller iscsiHostPort` Il comando modifica le proprietà di rete di u
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800, E5700, EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario avere il ruolo di amministratore dello storage.
 
 [NOTE]
 ====
@@ -34,94 +34,94 @@ Questo comando è obsoleto e viene sostituito da xref:set-controller-hostport.ad
 
 == Sintassi
 
-[listing]
+[source, cli]
 ----
 set controller [(a|b)]
 iscsiHostPort [portLabel]
 ----
-[listing]
+[source, cli]
 ----
 ([IPv4Address=(0-255).(0-255).(0-255).(0-255) ]|
 ----
-[listing]
+[source, cli]
 ----
 [IPv6LocalAddress=(0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF): (0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF)] |
 ----
-[listing]
+[source, cli]
 ----
 [IPv6RoutableAddress=(0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF): (0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF) ]|
 ----
-[listing]
+[source, cli]
 ----
 [IPv6RouterAddress=(0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF): (0-FFFF):(0-FFFF):(0-FFFF):(0-FFFF) ]|
 ----
-[listing]
+[source, cli]
 ----
 [enableIPv4=(TRUE | FALSE) | enableIPv6=(TRUE | FALSE)] |
 ----
-[listing]
+[source, cli]
 ----
 [enableIPv4Vlan=(TRUE | FALSE) | enableIPv6Vlan=(TRUE | FALSE)] |
 ----
-[listing]
+[source, cli]
 ----
 [enableIPv4Priority=(TRUE | FALSE) | enableIPv6Priority=(TRUE | FALSE) ]|
 ----
-[listing]
+[source, cli]
 ----
 [IPv4ConfigurationMethod=(static | dhcp) ]|
 ----
-[listing]
+[source, cli]
 ----
 [IPv6ConfigurationMethod=(static | auto)] |
 ----
-[listing]
+[source, cli]
 ----
 [IPv4GatewayIP=(TRUE | FALSE)] |
 ----
-[listing]
+[source, cli]
 ----
 [IPv6HopLimit=[0-255] ]|
 ----
-[listing]
+[source, cli]
 ----
 [IPv6NdDetectDuplicateAddress=[0-256] ]|
 ----
-[listing]
+[source, cli]
 ----
 [IPv6NdReachableTime=[0-65535] ]|
 ----
-[listing]
+[source, cli]
 ----
 [IPv6NdRetransmitTime=[0-65535]] |
 ----
-[listing]
+[source, cli]
 ----
 [IPv6NdTimeOut=[0-65535] ]|
 ----
-[listing]
+[source, cli]
 ----
 [IPv4Priority=[0-7] | IPv6Priority=[0-7] ]|
 ----
-[listing]
+[source, cli]
 ----
 [IPv4SubnetMask=(0-255).(0-255).(0-255).(0-255)] |
 ----
-[listing]
+[source, cli]
 ----
 [IPv4VlanId=[1-4094] | IPv6VlanId=[1-4094]] |
 ----
-[listing]
+[source, cli]
 ----
 [maxFramePayload=[*frameSize*]] |
 ----
-[listing]
+[source, cli]
 ----
 [tcpListeningPort=[3260, 49152-65536] ]|
 ----
-[listing]
+[source, cli]
 ----
-[portSpeed=[(10 | 25)])
+[portSpeed=[(10 | 25)]])
 ----
 
 
