@@ -932,7 +932,6 @@
   <block id="ac2d254aa2e560dc3b390f9ee0e9955b" category="paragraph"><block ref="ac2d254aa2e560dc3b390f9ee0e9955b" category="inline-link-macro-rx"></block></block>
   <block id="29102362018fb2d608f91ebaaa794ae8" category="inline-link-macro">Mostra prenotazioni di volumi</block>
   <block id="2a3c57f176b1e95d00fa20d3975a32f5" category="paragraph"><block ref="2a3c57f176b1e95d00fa20d3975a32f5" category="inline-link-macro-rx"></block></block>
-  <block id="7aa544bbf9280961acfdcfa2d71984cb" category="summary">Comandi di supporto automatico</block>
   <block id="788a0a0737156f6df5e8987a7fb89831" category="section-title">Comandi di raccolta bundle AutoSupport per E2700 ed E5600</block>
   <block id="df083c030c607768df467927ef99b960" category="inline-link-macro">Acquisire o visualizzare un registro AutoSupport</block>
   <block id="ac1075dc83edb8641eb8ef9a6fa7288c" category="paragraph"><block ref="ac1075dc83edb8641eb8ef9a6fa7288c" category="inline-link-macro-rx"></block></block>
@@ -6171,7 +6170,6 @@
   <block id="bf34b975fc8b4c0399f27482343783df" category="paragraph"><block ref="fdc656adaeca5612e51b68645d71791d" prefix="" category="inline-code"></block></block>
   <block id="9cd2c4a736609c872b659ec8f0f81c17" category="paragraph">Attiva o disattiva VMware vStorage API Array Architecture (VAAI) per uno storage array</block>
   <block id="d088930721693a65d59f92b69b7a1a65" category="paragraph">Ad eccezione di<block ref="eea7089ff91928271ea047f8777b435a" prefix=" " category="inline-code"></block>, quando si utilizza questo comando è possibile specificare uno o più parametri opzionali.</block>
-  <block id="b8a27435b63207164489e175a608261a" category="section-title">Dati del supporto automatico</block>
   <block id="6fbf4b60b0cd4dd67ba1febddba8dee6" category="paragraph">Quando questa opzione è attivata, il<block ref="dd3f70e6356e01b6b6fbd34512887b9f" prefix=" " category="inline-code"></block> Il comando provoca la restituzione di tutte le informazioni di configurazione e stato dell'array di storage ogni volta che viene rilevato un evento MEL (Critical Major Event Log). Le informazioni di configurazione e stato vengono restituite sotto forma di grafico a oggetti. Il grafico a oggetti contiene tutti gli oggetti logici e fisici rilevanti e le relative informazioni di stato associate per l'array di storage.</block>
   <block id="7cf3236cfa030bb0624e61dedbe4115c" category="paragraph">Il<block ref="dd3f70e6356e01b6b6fbd34512887b9f" prefix=" " category="inline-code"></block> command raccoglie le informazioni di configurazione e stato in questo modo:</block>
   <block id="f5a46ee44f2a39219ad0cb7b3b8cb232" category="list-text">La raccolta automatica delle informazioni di configurazione e stato avviene ogni 72 ore. Le informazioni di configurazione e stato vengono salvate nel file di archivio zip dell'array di storage. Il file di archivio ha un indicatore orario che viene utilizzato per gestire i file di archivio.</block>
@@ -7555,8 +7553,6 @@
   <block id="59ed469f8c0fb1e7540b9c5e0e274379" category="paragraph"><block ref="59ed469f8c0fb1e7540b9c5e0e274379" category="inline-link-macro-rx"></block></block>
   <block id="ca611b7f5b98899a7abee91397e031fa" category="paragraph">Per il tuo sistema storage e-Series è disponibile il seguente elenco di comandi di configurazione degli alert.</block>
   <block id="478f3d35dcc84bea1a78b7ac21781c63" category="paragraph">Per il tuo sistema storage e-Series è disponibile il seguente elenco di comandi di configurazione degli array.</block>
-  <block id="27a16d7fcbdb2e5222cbb08871982f58" category="paragraph">Per il tuo sistema storage e-Series è disponibile il seguente elenco di comandi di supporto automatico.</block>
-  <block id="3debeae67dbeb507c3cb1a41e3d15efe" category="section-title">Comandi AutoSupport per E4000, EF300, EF400, E2800, E5700</block>
   <block id="b9aa6488935866e17a533f7cb9907f95" category="paragraph"><block ref="b9aa6488935866e17a533f7cb9907f95" category="inline-link-macro-rx"></block></block>
   <block id="48dd72449a509b862d1dbc2e5df66c1d" category="paragraph"><block ref="48dd72449a509b862d1dbc2e5df66c1d" category="inline-link-macro-rx"></block></block>
   <block id="91791fe8747c000ea0ee9806ad0b2697" category="paragraph">Segue un elenco completo di comandi disponibili per il tuo sistema storage e-Series.</block>
@@ -7616,4 +7612,8 @@
   <block id="d8e44ec6283b9e1b03ebe13f2b9bf377" category="sidebar">impostare il metodo di recapito smtp della posta elettronica</block>
   <block id="27ed3c2f0cc271f3ffd55cef1621928d" category="sidebar">Gestore di sistema di SANtricity 11.9</block>
   <block id="ece14770330886bc2d41238acbfe48aa" category="sidebar">Gestore unificato SANtricity 7</block>
+  <block id="d0a774826d0463e72211475dbf19c749" category="section-title">Dati AutoSupport</block>
+  <block id="e12f84520db4494b5d41a3376aaf2efe" category="summary">Comandi AutoSupport</block>
+  <block id="f92f6d9fbe12679709b79badc45794e4" category="paragraph">Il seguente elenco di comandi AutoSupport è disponibile per il tuo sistema storage e-Series.</block>
+  <block id="3668b2be3ec33e7453152c010b5ad26a" category="section-title">Comandi AutoSupport per E4000, EF300, EF400, E2800, E5700</block>
 </blocks>
