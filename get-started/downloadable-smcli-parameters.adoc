@@ -17,7 +17,7 @@ SANtricity OS 11,60 e le versioni più recenti includono la possibilità di scar
 
 == 11.60 e parametri della riga di comando SMcli scaricabili più recenti
 
-La versione scaricabile di SMcli è disponibile sui controller E4000, EF600, EF300, E5700, EF570, E2800 e EF280. Per scaricare SMcli in Gestione di sistema di SANtricity, selezionare *Impostazioni* *sistema* e *componenti aggiuntivi* *interfaccia della riga di comando* .
+La versione scaricabile di SMcli è disponibile sui controller E4000, EF600, EF300, E5700, EF570, E2800, EF280, EF300C e EF600C. Per scaricare SMcli in Gestione di sistema di SANtricity, selezionare *Impostazioni* *sistema* e *componenti aggiuntivi* *interfaccia della riga di comando* .
 
 
 NOTE: Sul sistema di gestione in cui si intende eseguire i comandi CLI deve essere disponibile Java Runtime Environment (JRE), versione 8 e successive.
