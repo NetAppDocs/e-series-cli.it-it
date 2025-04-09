@@ -3,9 +3,9 @@ indexpage:
   title: Comandi di Gestore di sistema di SANtricity
   summary: Descrive la sintassi e l'utilizzo dei comandi SANtricity.
   keywords: santricity, syntax, commands, user assistance
-  lead: Benvenuto nell'assistenza utente della CLI integrata di SANtricity, in cui
-    è possibile scoprire come configurare, monitorare e ottimizzare lo storage array
-    utilizzando l'interfaccia a riga di comando (CLI)".
+  lead: Benvenuti nell'assistenza utente della CLI integrata di SANtricity, in cui
+    è possibile scoprire come configurare, monitorare e mettere a punto lo storage
+    array utilizzando l'interfaccia a riga di comando (CLI).
   tiles:
   - title: Inizia subito
     links:

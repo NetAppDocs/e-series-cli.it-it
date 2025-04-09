@@ -1692,7 +1692,6 @@
   <block id="3fd189c2e587458713eb634145bec876" category="inline-link-macro">Impostare lo storage array per abilitare o disabilitare il bilanciamento automatico del carico</block>
   <block id="598a1b95e8b521f17974886964f9cbcc" category="paragraph"><block ref="598a1b95e8b521f17974886964f9cbcc" category="inline-link-macro-rx"></block></block>
   <block id="9699bac418080d7801154f82c1955b5e" category="section-title">Comandi della cache SSD</block>
-  <block id="75d0cfb68b71d4c1551f137d574c98e2" category="summary">Comandi E2700 ed E5600</block>
   <block id="481ce360b5105a401e1347f460d1e067" category="summary">Comandi di configurazione degli array</block>
   <block id="41ba1a47a928c76e81f4ed3303461461" category="section-title">Comandi di cache mirrored data assurance</block>
   <block id="3de022619dea8c91c6647ce597102ea2" category="section-title">Comandi del controller</block>
@@ -7457,7 +7456,6 @@
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="9c224ec894ababac5f928548e584eb45" category="paragraph">La capacità virtuale massima è di 256 TB.</block>
-  <block id="85e8092ad24869d134ad6af40b479c96" category="sidebar">Benvenuto nell'assistenza utente della CLI integrata di SANtricity, in cui è possibile scoprire come configurare, monitorare e ottimizzare lo storage array utilizzando l'interfaccia a riga di comando (CLI)".</block>
   <block id="c4f2e9f91e3e5a0d9fb8f8728ed63376" category="paragraph">Come per le versioni precedenti di SMcli, l'SMcli scaricabile tramite Gestore di sistema di SANtricity dispone di un insieme unico di parametri. Per informazioni sull'utilizzo dei parametri della riga di comando per SANtricity OS 11.53 e versioni precedenti, vedere <block ref="f6644819b412d8968161178a2ccec029" category="inline-link-macro-rx"></block>.</block>
   <block id="2115a9072c5575f3300b4b18e5722de6" category="section-title">Identificare i dispositivi</block>
   <block id="90f4cf9a1fcd3d43e57768f9bb55bbfb" category="paragraph">Il seguente parametro della riga di comando consente di visualizzare le informazioni relative a tutti i dispositivi applicabili visibili all'host.</block>
@@ -7480,7 +7478,6 @@
   <block id="f6d06651df499131aa8d5acf7a129e3f" category="paragraph">I valori validi dell'identificatore del controller e del canale host sono<block ref="8a8bb7cd343aa2ad99b7d762030857a2" prefix=" " category="inline-code"></block>,<block ref="693a9fdd4c2fd0700968fba0d07ff3c0" prefix=" " category="inline-code"></block><block ref="9d607a663f3e9b0a90c3c8d4426640dc" prefix=" " category="inline-code"></block>,<block ref="894f782a148b33af1e39a0efed952d69" prefix=" " category="inline-code"></block><block ref="32cfe6c19200b67afb7c3d0e1c43eadb" prefix=" " category="inline-code"></block>, , ,<block ref="f74dd50cfec0f8549406fee6191d2f8d" prefix=" " category="inline-code"></block><block ref="c692562238d8c12c32434c50b96d56ae" prefix=" " category="inline-code"></block>, , , ,<block ref="68c42382c8b93fc29c2fcb6a444aeda5" prefix=" " category="inline-code"></block><block ref="edbab45572c72a5d9440b40bcc0500c0" prefix=" " category="inline-code"></block>, ,<block ref="fbfba2e45c2045dc5cab22a5afe83d9d" prefix=" " category="inline-code"></block><block ref="7a6f150b83091ce20c89368641f9a137" prefix=" " category="inline-code"></block><block ref="3dfe563103ab11bec75bb5081e7a1dbe" prefix=" " category="inline-code"></block>, , , ,<block ref="2283335d8d12b21001439091e74f5028" prefix=" " category="inline-code"></block><block ref="528953727ef3a4e1c441c6078534c39b" prefix=" " category="inline-code"></block>, ,<block ref="d8708ecb9a1e7ba172c83d8360c57e7d" prefix=" " category="inline-code"></block><block ref="75d99404a02e2bc993a6bac34c60d679" prefix=" " category="inline-code"></block>o .</block>
   <block id="2bc4f5f65d530be66960542e14f46660" category="paragraph">Questo comando è applicabile solo per il mirroring asincrono su Fibre Channel.</block>
   <block id="761f226704fa8b9a2ea64701b36a66e1" category="paragraph">Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800, E5700, EF600 e EF300, purché siano installati tutti i pacchetti SMcli.</block>
-  <block id="a354034e1792cd00f19c11de116a69f4" category="paragraph">Per eseguire questo comando su uno storage array E400, E2800, E5700, EF600 o EF300, è necessario avere il ruolo di amministratore dello storage.</block>
   <block id="4818a1577bb873e9a1bea01f94e168fb" category="paragraph">Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800 e E5700, a condizione che siano installati tutti i pacchetti SMcli.</block>
   <block id="4ec343cf7b1916cb714cf2eed7cc2a56" category="paragraph">Per eseguire questo comando su uno storage array E4000, E2800 o E5700, è necessario avere il ruolo di amministratore dello storage.</block>
   <block id="076b233b5a4449b721cbb8368f8fb958" category="paragraph">Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario avere il ruolo di Support Admin.</block>
@@ -7558,9 +7555,6 @@
   <block id="91791fe8747c000ea0ee9806ad0b2697" category="paragraph">Segue un elenco completo di comandi disponibili per il tuo sistema storage e-Series.</block>
   <block id="c71942c4a8b171695841ba7046fc3eca" category="inline-link-macro">Attiva o disattiva la funzione di diagnostica remota AutoSupport</block>
   <block id="2fa9ab72f6f5ccc0cf969e1a230ce942" category="paragraph"><block ref="2fa9ab72f6f5ccc0cf969e1a230ce942" category="inline-link-macro-rx"></block></block>
-  <block id="fb10773226243f93cf4024b28436d09c" category="paragraph">Per i sistemi E2700 e E5600 sono disponibili i seguenti comandi.</block>
-  <block id="365f3ca0540bf35310ae0332b69b7733" category="summary">Comandi E4000, E2800, E5700, EF600 e EF300</block>
-  <block id="d98c52acb3963aab4c26465735d8ccd1" category="paragraph">Per i sistemi E4000, E2800, E5700, EF600 e EF300 è disponibile il seguente elenco di comandi.</block>
   <block id="a7e37cb158c978c104225254d414a1d2" category="paragraph">Per il sistema storage e-Series è disponibile il seguente elenco di comandi di mirroring.</block>
   <block id="3c987a7895df93dcf7095d41701a10a9" category="paragraph">Per il tuo sistema storage e-Series è disponibile il seguente elenco di comandi per il tuning delle performance.</block>
   <block id="273c6d6b2b49f1a011b0804803e8c061" category="paragraph">Per il sistema storage e-Series è disponibile il seguente elenco di comandi di replica.</block>
@@ -7616,4 +7610,5 @@
   <block id="f92f6d9fbe12679709b79badc45794e4" category="paragraph">Il seguente elenco di comandi AutoSupport è disponibile per il tuo sistema storage e-Series.</block>
   <block id="7cfe927cc93acde3fd26ff2626d6a30c" category="section-title">Comandi AutoSupport per E4000, EF300, EF600, E2800, E5700</block>
   <block id="4446202efb248928e4f489743b194e56" category="paragraph">La versione scaricabile di SMcli è disponibile sui controller E4000, EF600, EF300, E5700, EF570, E2800, EF280, EF300C e EF600C. Per scaricare SMcli in Gestione di sistema di SANtricity, selezionare *Impostazioni* *sistema* e *componenti aggiuntivi* *interfaccia della riga di comando* .</block>
+  <block id="d14e73691bb33d04604da5d4d66f9630" category="sidebar">Benvenuti nell'assistenza utente della CLI integrata di SANtricity, in cui è possibile scoprire come configurare, monitorare e mettere a punto lo storage array utilizzando l'interfaccia a riga di comando (CLI).</block>
 </blocks>
