@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, synchronous, mirror 
 summary: Il comando remove SyncMirror rimuove la relazione di mirroring tra il volume primario e il volume secondario in una coppia con mirroring remoto. 
 ---
-= Rimuovere il mirroring sincrono
+= Rimuovi mirroring sincrono - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

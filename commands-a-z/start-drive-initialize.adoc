@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, drive, initialize 
 summary: 'Il comando start drive initialize avvia l"inizializzazione del disco.' 
 ---
-= Avviare l'inizializzazione del disco
+= Inizializzazione dell'unità di avvio - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

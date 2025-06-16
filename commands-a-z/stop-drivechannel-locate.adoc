@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, drive, channel, locate 
 summary: Il comando STOP DriveChannel Locate spegne gli indicatori luminosi sui vassoi delle unità attivati dal comando START DriveChannel Locate. 
 ---
-= Arrestare la posizione del canale del disco
+= Arresta la localizzazione del canale di azionamento - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

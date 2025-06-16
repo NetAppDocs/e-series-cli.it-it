@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, user, session 
 summary: Il comando Set StorageArray userSession consente di impostare un timeout in System Manager, in modo che le sessioni inattive degli utenti vengano disconnesse dopo un determinato periodo di tempo. 
 ---
-= Impostare la sessione utente dello storage array
+= Imposta sessione utente array di archiviazione - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

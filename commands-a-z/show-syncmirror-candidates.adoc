@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, synchronous, mirror, volume, candidates 
 summary: Il comando show SyncMirror Candidates restituisce informazioni sui volumi candidati su un array di storage remoto che è possibile utilizzare come volumi secondari in una configurazione di mirroring sincrono. 
 ---
-= Mostra i volumi di mirroring sincrono candidati
+= Mostra i candidati al volume di mirroring sincrono - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

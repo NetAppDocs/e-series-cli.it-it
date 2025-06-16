@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, disk pool 
 summary: Il comando set diskPool imposta gli attributi associati a un pool di dischi in base ai parametri specificati. 
 ---
-= Impostare il pool di dischi
+= Imposta pool di dischi - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

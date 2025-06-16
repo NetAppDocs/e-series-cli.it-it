@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, array, label 
 summary: 'Il comando Show array label restituisce informazioni sulla definizione di un"etichetta di array di storage o su tutte le etichette di array di storage esistenti.' 
 ---
-= Mostra etichetta array
+= Mostra etichetta array - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

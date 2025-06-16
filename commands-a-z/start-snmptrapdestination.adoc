@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: test, snmp, trap, destination 
 summary: 'Il comando start snmpTrapDestination verifica la connessione e l"identificazione del ricevitore trap per una specifica community o utente SNMP (Simple Network Management Protocol). Questo comando verifica la destinazione del trap inviando un messaggio trap al ricevitore del trap.' 
 ---
-= Verificare la destinazione della trap SNMP
+= Test della destinazione della trappola SNMP - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, controller, ntp 
 summary: 'Il comando set controller NTPServers imposta le impostazioni NTP per il controller in modo che il controller possa sincronizzare automaticamente i clock con un host esterno utilizzando SNTP (Simple Network Time Protocol).' 
 ---
-= Impostare le impostazioni NTP del controller
+= Imposta le impostazioni NTP del controller - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

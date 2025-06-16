@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, consistency, group, snapshot, volume 
 summary: Il comando set cgSnapVolume crea un nome univoco per un volume snapshot di un gruppo di coerenza. 
 ---
-= Impostare il volume snapshot del gruppo di coerenza
+= Imposta volume snapshot gruppo di coerenza - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

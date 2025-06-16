@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: retrieve, installed, ca, certificates 
 summary: Il comando Save controller caCertificate recupera i certificati CA installati dal controller specificato. Nei certificati recuperati sono inclusi tutti i certificati CA richiesti dal server Web del controller. 
 ---
-= Recuperare i certificati CA installati
+= Recupera i certificati CA installati - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, target, properties 
 summary: Il comando set target modifica le proprietà di una destinazione iSCSI/iSER, inclusi il metodo di autenticazione e il nome alias. 
 ---
-= Impostare le proprietà di destinazione
+= Imposta proprietà di destinazione - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

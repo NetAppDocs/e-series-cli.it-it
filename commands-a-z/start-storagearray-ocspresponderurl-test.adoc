@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, ocsp, server, url, test 
 summary: 'Il comando start StorageArray ocspResponderUrl test verifica la presenza di una connessione aperta all"URL specificato del server OCSP (Online Certificate Status Protocol).' 
 ---
-= Avviare il test URL del server OCSP
+= Avvia il test URL del server OCSP - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

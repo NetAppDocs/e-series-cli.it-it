@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: configure, syslog, set 
 summary: Il comando set syslog configura le informazioni di avviso syslog. È possibile configurare il monitor degli eventi in modo che invii avvisi al server syslog ogni volta che si verifica un evento verificabile. 
 ---
-= Configurare le impostazioni syslog
+= Configurare le impostazioni di syslog - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, host, port 
 summary: Il comando set hostPort modifica le proprietà di una porta host. 
 ---
-= Impostare la porta host
+= Imposta la porta host - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

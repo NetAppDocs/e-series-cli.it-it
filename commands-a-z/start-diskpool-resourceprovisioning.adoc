@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, disk pool, resource, provision 
 summary: 'Il comando start diskPool resourceProvisioning abilita il provisioning delle risorse su un determinato pool di dischi e avvia un"operazione asincrona di abilitazione del provisioning delle risorse su ciascun volume del pool di dischi. Il provisioning delle risorse richiede che tutte le unità del pool di dischi supportino la funzionalità DULBE di NVMe.' 
 ---
-= Avviare Disk Pool Resource Provisioning
+= Avvia il provisioning delle risorse del pool di dischi - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

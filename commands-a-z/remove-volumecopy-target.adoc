@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, volume, copy 
 summary: Il comando di destinazione Remove VolumeCopy rimuove una coppia di copie del volume. 
 ---
-= Rimuovere la copia del volume
+= Rimuovi copia volume - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

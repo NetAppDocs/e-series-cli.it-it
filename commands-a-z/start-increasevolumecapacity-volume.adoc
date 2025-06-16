@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: increase, capacity, volume, disk pool, volume, group 
 summary: Il comando start increaseVolumeCapacity volume aumenta la capacità di un volume standard o di un volume di repository in un pool di dischi o un gruppo di volumi. 
 ---
-= Aumentare la capacità del volume nel pool di dischi o nel gruppo di volumi
+= Aumentare la capacità del volume nel pool di dischi o nel gruppo di volumi - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

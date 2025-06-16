@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, synchronous, mirror, synchronization 
 summary: Il comando start SyncMirror primary synchronize avvia la sincronizzazione del mirroring sincrono. 
 ---
-= Avviare la sincronizzazione del mirroring sincrono
+= Avvia la sincronizzazione del mirroring sincrono - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

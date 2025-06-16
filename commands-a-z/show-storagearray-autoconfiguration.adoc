@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, auto, configuration 
 summary: 'Il comando show StorageArray autofirConfiguration mostra la configurazione automatica predefinita creata dall"array di storage se si esegue il comando di autoconfigurazione StorageArray.' 
 ---
-= Mostra la configurazione automatica dello storage array
+= Mostra la configurazione automatica dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

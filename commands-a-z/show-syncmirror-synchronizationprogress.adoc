@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, synchronous, mirror, volume, synchronization, progress 
 summary: 'Il comando show SyncMirror SynchronizationProgress restituisce l"avanzamento della sincronizzazione dei dati tra il volume primario e il volume secondario in una configurazione di mirroring sincrono.' 
 ---
-= Mostra l'avanzamento della sincronizzazione del volume di mirroring sincrono
+= Mostra lo stato di avanzamento della sincronizzazione del volume di mirroring sincrono - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

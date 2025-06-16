@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, storage, array, trusted, certificate, command, remove, specified, installed, web, servers 
 summary: 'Il comando delete StorageArray trustedCertificate rimuove i certificati CA installati dall"utente specificati dai server Web dell"array.' 
 ---
-= Rimuovere i certificati CA attendibili installati
+= Rimuovere i certificati CA attendibili installati - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

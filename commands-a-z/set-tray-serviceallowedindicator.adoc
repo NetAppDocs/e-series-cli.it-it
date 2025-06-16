@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, tray, service, action, allowed, indicator 
 summary: 'Il comando set tray serviceAllowedIndicator attiva o disattiva la spia Service Action Allowed (azione di servizio consentita) su un contenitore della ventola di alimentazione, un contenitore della batteria di interconnessione o un contenitore del modulo per servizi ambientali (ESM).' 
 ---
-= Imposta indicatore azione servizio vassoio consentita
+= Imposta l'indicatore di azione consentita del servizio del vassoio - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

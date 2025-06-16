@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recover, disable, drive ports 
 summary: 'Il comando Recover disabled drivePorts (Ripristina porte disco disabilitate) ripristina le porte disco disabilitate.' 
 ---
-= Ripristinare le porte del disco disabilitate
+= Ripristina le porte delle unità disabilitate - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

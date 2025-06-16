@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, host, channel 
 summary: 'Il comando set hostChannel definisce l"ID loop per il canale host.' 
 ---
-= Impostare il canale host
+= Imposta canale host - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, snapimage, command, snapshot, images, group, support, array, roles 
 summary: Il comando delete SnapImage elimina una o più immagini snapshot da un gruppo di snapshot. 
 ---
-= Eliminare l'immagine istantanea
+= Elimina immagine snapshot - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

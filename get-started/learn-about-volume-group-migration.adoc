@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: volume, group, migration, learn, data, access, export, import, component 
 summary: La migrazione dei gruppi di volumi consente di esportare un gruppo di volumi in modo da poter importare il gruppo di volumi in un array di storage diverso. È inoltre possibile esportare un gruppo di volumi in modo da memorizzare i dati offline. 
 ---
-= Scopri di più sulla migrazione dei gruppi di volumi
+= Scopri di più sulla migrazione dei gruppi di volumi nel software SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, directory, server, role, map 
 summary: Il comando Set StorageArray directoryServer roles consente di definire le mappature dei ruoli per un server di directory specifico. Questi mapping di ruoli vengono utilizzati per autenticare gli utenti che tentano di eseguire vari comandi SMcli. 
 ---
-= Impostare il mapping dei ruoli del server di directory dell'array di storage
+= Imposta il mapping dei ruoli del server di directory dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, volume, attributes, group 
 summary: Il comando set volume definisce le proprietà dei volumi in un gruppo di volumi. 
 ---
-= Impostare gli attributi di un volume in un gruppo di volumi
+= Imposta gli attributi del volume per un volume in un gruppo di volumi - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

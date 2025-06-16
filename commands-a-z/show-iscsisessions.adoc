@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, current, iscsi, sessions 
 summary: Il comando show iscsiSessions restituisce informazioni su una sessione iSCSI per un iSCSI Initiator o una destinazione iSCSI. 
 ---
-= Mostra le sessioni iSCSI correnti
+= Mostra le sessioni iSCSI correnti - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add array label, supported, syntax, parameters, minimum firmware level 
 summary: 'Il comando Add array label consente di aggiungere un array di storage alla configurazione con un"etichetta definita dall"utente. Ciò consente ai comandi successivi di indirizzare lo storage array in base all"etichetta definita dall"utente piuttosto che in base all"indirizzo IP o al nome host.' 
 ---
-= Aggiungere l'etichetta dell'array
+= Aggiungi etichetta array - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, foreign, drive, native 
 summary: 'Il comando set drive nativeState aggiunge le unità mancanti (estranee) al gruppo di volumi originale e le rende parte del gruppo di volumi nel nuovo array di storage.' 
 ---
-= Impostare disco esterno su nativo
+= Imposta l'unità esterna su nativa - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

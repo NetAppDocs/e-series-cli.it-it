@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: generate, key, management, certificate, sign, request, csr 
 summary: Il comando Save StorageArray keyManagementClientCSR richiede una CSR generata per lo storage array che è possibile salvare in un file. 
 ---
-= Generare la richiesta di firma del certificato di gestione delle chiavi (CSR)
+= Genera richiesta di firma del certificato di gestione delle chiavi (CSR) - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

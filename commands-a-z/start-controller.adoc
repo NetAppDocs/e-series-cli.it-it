@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, controller, trace 
 summary: 'Il comando start controller avvia un"operazione che salva le informazioni di traccia di debug in un file compresso.' 
 ---
-= Avviare la traccia del controller
+= Avvia traccia del controller - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

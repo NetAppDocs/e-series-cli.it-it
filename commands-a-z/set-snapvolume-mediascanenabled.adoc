@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, snapshot, volume, media, scan 
 summary: Il comando Set SnapVolume mediaScanEnabled esegue una scansione dei supporti sui dischi utilizzati per un volume di snapshot. 
 ---
-= Consente di impostare la scansione dei supporti del volume Snapshot
+= Imposta la scansione del supporto del volume snapshot - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

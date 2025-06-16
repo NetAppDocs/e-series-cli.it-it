@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recur, syntax, elements 
 summary: Gli elementi di sintassi ricorrenti sono una categoria generale di parametri e opzioni che è possibile utilizzare nei comandi di script. 
 ---
-= Elementi di sintassi ricorrenti
+= Scopri gli elementi ricorrenti della sintassi CLI di SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

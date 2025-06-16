@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, snapshot, images, consistency, group 
 summary: Il comando stop consistencyGroup pendingSnapImageCreation arresta tutte le immagini snapshot in sospeso che devono essere create in un gruppo di coerenza snapshot. 
 ---
-= Interrompere le immagini snapshot in sospeso sul gruppo di coerenza
+= Arresta le immagini snapshot in sospeso sul gruppo di coerenza - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

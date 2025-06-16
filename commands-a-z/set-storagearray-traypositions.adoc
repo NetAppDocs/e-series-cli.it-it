@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, tray, positions 
 summary: 'Il comando Set StorageArray tryPositions definisce la posizione dei vassoi in un array di storage. Quando si immette questo comando, è necessario includere tutti i vassoi nell"array di storage.' 
 ---
-= Impostare le posizioni dei vassoi degli array di storage
+= Imposta le posizioni del vassoio dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

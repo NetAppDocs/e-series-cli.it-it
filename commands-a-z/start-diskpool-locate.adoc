@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, disk pool, locate 
 summary: Il comando start diskPool Locate identifica i dischi raggruppati in modo logico per formare il pool di dischi specificato facendo lampeggiare gli indicatori luminosi dei dischi. 
 ---
-= Avviare disk pool individuare
+= Avvia la ricerca del pool di dischi - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

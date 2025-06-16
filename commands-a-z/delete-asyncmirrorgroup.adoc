@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, asynchronous, mirror group 
 summary: 'Il comando delete asyncMirrorGroup elimina uno o più gruppi di mirror asincroni dall"array di storage locale e dall"array di storage remoto.' 
 ---
-= Eliminare il gruppo di mirror asincrono
+= Elimina gruppo mirror asincrono - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

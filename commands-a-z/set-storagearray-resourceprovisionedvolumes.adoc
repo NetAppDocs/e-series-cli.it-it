@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, resource, provisioned, volumes 
 summary: Il comando Set StorageArray resourceProvisionedVolumes disattiva la funzione DULBE. 
 ---
-= Impostare i volumi con provisioning delle risorse degli array di storage
+= Imposta i volumi forniti per le risorse dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

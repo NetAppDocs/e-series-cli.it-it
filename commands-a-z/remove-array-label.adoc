@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, array, label 
 summary: 'Il comando Remove array label consente di rimuovere un"etichetta definita dall"utente per uno storage array.' 
 ---
-= Rimuovere l'etichetta dell'array
+= Rimuovi etichetta array - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

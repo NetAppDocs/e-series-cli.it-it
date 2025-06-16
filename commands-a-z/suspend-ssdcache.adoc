@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: suspend, ssd cache 
 summary: Il comando suspend ssdCache interrompe temporaneamente il caching per tutti i volumi che utilizzano la cache SSD. 
 ---
-= Sospendere la cache SSD
+= Sospendi cache SSD - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

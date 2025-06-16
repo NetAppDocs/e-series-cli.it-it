@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, drive channel, statistics 
 summary: Il comando clear allDriveChannels stats ripristina le statistiche per tutti i canali del disco. 
 ---
-= Cancellare le statistiche del canale del disco
+= Cancella le statistiche del canale di unità - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

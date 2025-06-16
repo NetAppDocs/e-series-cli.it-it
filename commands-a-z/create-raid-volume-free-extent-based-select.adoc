@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, raid, volume, free, extent, based, select 
 summary: Il comando create volume crea un volume nello spazio libero di un gruppo di volumi. 
 ---
-= Creazione di un volume RAID (selezione basata su estensione libera)
+= Creazione di un volume RAID (selezione basata su estensione libera) - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

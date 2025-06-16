@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cancel, asynchronous, mirror, group, role, reversal 
 summary: 'Il comando stop asyncMirrorGroup rolechange annulla un"operazione di inversione del ruolo in sospeso tra gruppi di mirror asincroni.' 
 ---
-= Annulla l'inversione del ruolo del gruppo mirror asincrono
+= Annulla l'inversione del ruolo del gruppo mirror asincrono - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

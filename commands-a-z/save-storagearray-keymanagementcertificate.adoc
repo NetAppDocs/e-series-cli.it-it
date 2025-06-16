@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: retrieve, installed, external, key management, certificate 
 summary: Il comando Save StorageArray keyManagementCertificate recupera il certificato installato. 
 ---
-= Recuperare il certificato di gestione delle chiavi esterne installato
+= Recupera il certificato di gestione delle chiavi esterne installato - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

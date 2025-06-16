@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, installed, root, intermediate, ca, certificates, summary 
 summary: Il comando show controller caCertificate visualizza il riepilogo dei certificati CA installati dal controller specificato. Questo comando è utile da utilizzare prima di eseguire il comando delete controller caCertificate in modo da conoscere i nomi alias dei certificati da eliminare. 
 ---
-= Mostra il riepilogo dei certificati CA root/intermedi installati
+= Mostra il riepilogo dei certificati CA radice/intermedi installati - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

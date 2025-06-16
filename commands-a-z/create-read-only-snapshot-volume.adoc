@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, read only, snapshot, volume 
 summary: Il comando create snapVolume crea un volume snapshot di sola lettura per le immagini snapshot di un volume di base. Per modificare un volume snapshot di sola lettura in un volume di lettura/scrittura, utilizzare il comando set SnapVolume convertToReadWrite. 
 ---
-= Creare un volume snapshot di sola lettura
+= Crea volume snapshot di sola lettura - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

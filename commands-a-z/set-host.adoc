@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, host 
 summary: Il comando set host assegna un host a un gruppo di host o lo sposta in un gruppo di host diverso. 
 ---
-= Impostare l'host
+= Imposta host - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

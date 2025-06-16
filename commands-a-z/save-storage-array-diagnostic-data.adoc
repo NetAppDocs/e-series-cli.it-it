@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, diagnostic, data 
 summary: 'Il comando SAVE StorageArray diagnosticData salva i dati diagnostici dello storage array dai controller o dai moduli dei servizi ambientali (ESM) in un file.' 
 ---
-= Salvataggio dei dati diagnostici degli array di storage
+= Salvataggio dei dati diagnostici dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

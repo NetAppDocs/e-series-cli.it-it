@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, snapshot, volume, repository, capacity 
 summary: Il comando Set SnapVolume Invit/DideceRepositoryCapacity aumenta o diminuisce la capacità di un volume di repository di un volume di snapshot. 
 ---
-= Impostare la capacità del volume del repository del volume Snapshot
+= Imposta la capacità del volume del repository del volume snapshot - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

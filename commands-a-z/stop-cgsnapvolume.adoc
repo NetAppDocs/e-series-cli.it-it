@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, consistency, group, snapshot, volume 
 summary: 'Il comando stop cgSnapVolume interrompe l"operazione di copia su scrittura per la creazione di un volume snapshot di un gruppo di coerenza.' 
 ---
-= Arrestare il volume snapshot del gruppo di coerenza
+= Arresta il volume dello snapshot del gruppo di coerenza - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, snapshot, group, schedule 
 summary: 'Il comando Set SnapGroup enableSchedule definisce la pianificazione per l"acquisizione di immagini snapshot per un gruppo di snapshot.' 
 ---
-= Impostare la pianificazione del gruppo di snapshot
+= Imposta la pianificazione del gruppo di snapshot - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

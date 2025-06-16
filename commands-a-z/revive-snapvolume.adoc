@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: revive, snapshot, volume 
 summary: 'Il comando rivive snapVolume (rivivi snapVolume) forza uno specifico volume di snapshot allo stato ottimale.' 
 ---
-= Ripristinare il volume di snapshot
+= Ripristina volume snapshot - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

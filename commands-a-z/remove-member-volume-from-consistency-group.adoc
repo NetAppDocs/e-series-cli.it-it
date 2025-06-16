@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, member, volume, consistency group 
 summary: Il comando set consistencyGroup rimuove un volume membro da un gruppo di coerenza snapshot esistente. 
 ---
-= Rimuovere il volume membro dal gruppo di coerenza
+= Rimuovi il volume membro dal gruppo di coerenza - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

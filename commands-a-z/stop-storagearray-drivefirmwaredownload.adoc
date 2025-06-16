@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, storage, array, drive, firmware, download 
 summary: Il comando stop StorageArray driveFirmwareDownload interrompe il download del firmware sui dischi di uno storage array avviato con il comando download StorageArray drivefirmware. 
 ---
-= Interrompere il download del firmware del disco array di storage
+= Interrompere il download del firmware dell'unità array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, consistency, group 
 summary: Il comando show consistencyGroup restituisce informazioni su uno o più gruppi di coerenza. 
 ---
-= Mostra gruppo di coerenza
+= Mostra gruppo di coerenza - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

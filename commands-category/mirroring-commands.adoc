@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: commands, mirroring, asynchronous, synchronous, command 
 summary: Comandi di mirroring 
 ---
-= Comandi di mirroring
+= Comandi di mirroring della CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

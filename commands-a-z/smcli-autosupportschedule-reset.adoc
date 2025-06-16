@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, autosupport, message, collection, schedule 
 summary: Il comando di ripristino SMcli autoSupportSchedule ripristina gli orari e i giorni giornalieri e settimanali della settimana in cui vengono inviati i messaggi AutoSupport. È possibile accettare i valori casuali predefiniti generati dal software di gestione oppure specificare i valori con questo comando. 
 ---
-= Ripristinare la pianificazione della raccolta dei messaggi AutoSupport
+= Reimposta la pianificazione della raccolta dei messaggi di AutoSupport - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

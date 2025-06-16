@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: import, storage, array, security, file, command, unlock, disk, encryption, context, syntax, firmware level, role, context 
 summary: 'Il comando import StorageArray securityKey file sblocca uno o più dischi con crittografia completa dei dischi (FDE) spostati da uno storage array a un altro storage array.' 
 ---
-= Importare la chiave di sicurezza dello storage array
+= Importa la chiave di sicurezza dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

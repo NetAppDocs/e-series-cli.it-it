@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, volume, group, import, dependencies 
 summary: 'Il comando show VolumeGroup importDependencies (Mostra dipendenze VolumeGroup) mostra un elenco di dipendenze per i dischi di un gruppo di volumi che si desidera spostare da un array di storage a un secondo array di storage.' 
 ---
-= Mostra le dipendenze di importazione dei gruppi di volumi
+= Mostra le dipendenze di importazione del gruppo di volumi - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

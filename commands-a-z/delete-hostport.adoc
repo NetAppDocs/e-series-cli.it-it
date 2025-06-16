@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, hostport, command, host, port, identification 
 summary: 'Il comando delete hostPort elimina l"identificazione della porta host.' 
 ---
-= Eliminare la porta host
+= Elimina la porta host - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, volume, reservations 
 summary: Il comando show volume reservations restituisce informazioni sui volumi con riserve persistenti. 
 ---
-= Mostra prenotazioni di volumi
+= Mostra prenotazioni volume - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

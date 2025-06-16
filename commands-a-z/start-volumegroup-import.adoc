@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, volume, group, import 
 summary: Il comando START VolumeGroup import sposta un gruppo di volumi in uno stato completo per rendere disponibile un nuovo gruppo di volumi al nuovo array di storage. 
 ---
-= Avviare l'importazione dei gruppi di volumi
+= Avvia l'importazione del gruppo di volumi - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

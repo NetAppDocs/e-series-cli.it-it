@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, replaceable, drives 
 summary: Il comando show replaceableDrives mostra tutte le unità sostituibili in un array di storage. 
 ---
-= Mostra i dischi sostituibili
+= Mostra unità sostituibili - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

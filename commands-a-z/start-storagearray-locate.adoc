@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, storage, array, locate 
 summary: Il comando start StorageArray Locate individua uno storage array accendendo gli indicatori luminosi dello storage array. 
 ---
-= Avviare lo storage array Locate
+= Avvia la localizzazione dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

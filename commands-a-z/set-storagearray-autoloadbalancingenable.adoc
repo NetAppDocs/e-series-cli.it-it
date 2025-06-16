@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, enable, disable, automatic, load, balance 
 summary: Il comando Set StorageArray autoLoadBalancingEnable attiva o disattiva la funzione di bilanciamento automatico del carico. 
 ---
-= Impostare lo storage array per abilitare o disabilitare il bilanciamento automatico del carico
+= Imposta l'array di archiviazione per abilitare o disabilitare il bilanciamento automatico del carico - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

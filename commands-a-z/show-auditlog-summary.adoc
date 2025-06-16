@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, audit, log, summary 
 summary: 'Il comando show AuditLog summary (Mostra riepilogo AuditLog) visualizza le informazioni di riepilogo del registro di controllo.' 
 ---
-= Mostra il riepilogo del registro di controllo
+= Mostra riepilogo registro di controllo - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

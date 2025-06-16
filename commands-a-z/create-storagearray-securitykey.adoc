@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, storage, array, security, key 
 summary: 'Il comando create StorageArray securityKey crea o modifica una nuova chiave di sicurezza per uno storage array che dispone di dischi con crittografia completa dei dischi (FDE).' 
 ---
-= Creare la chiave di sicurezza dello storage array
+= Crea chiave di sicurezza dell'array di archiviazione - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

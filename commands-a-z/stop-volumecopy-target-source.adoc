@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, volume, copy 
 summary: 'Il comando STOP VolumeCopy target source interrompe un"operazione di copia del volume. Questo comando è valido per le coppie di copie di volumi snapshot.' 
 ---
-= Interrompere la copia del volume
+= Interrompi copia volume - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

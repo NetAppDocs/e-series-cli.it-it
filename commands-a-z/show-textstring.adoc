@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, str 
 summary: Il comando show textstring mostra una stringa di testo da un file di script. Questo comando è simile al comando echo in MS-DOS e UNIX. 
 ---
-= Mostra stringa
+= Mostra stringa - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

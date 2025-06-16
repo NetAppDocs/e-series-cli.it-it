@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear email, alert, configuration 
 summary: Il comando di configurazione Clear emailAlert cancella i valori predefiniti della configurazione degli avvisi di posta elettronica. 
 ---
-= Cancellare la configurazione degli avvisi e-mail
+= Configurazione di avviso e-mail chiaro - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

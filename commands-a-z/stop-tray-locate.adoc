@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, tray, locate 
 summary: Il comando STOP tray Locate spegne la spia sul vassoio che è stato attivato dal comando START tray Locate. 
 ---
-= Arrestare il posizionamento del vassoio
+= Arresta la localizzazione del vassoio - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

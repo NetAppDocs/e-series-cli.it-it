@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reduce, disk pool, capacity 
 summary: Il comando set diskPool riduce la capacità del pool di dischi rimuovendo logicamente i dischi dal pool. 
 ---
-= Ridurre la capacità del pool di dischi
+= Ridurre la capacità del pool di dischi - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

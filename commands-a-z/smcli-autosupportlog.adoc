@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: capture, view, autosupport, log 
 summary: 'Il comando SMcli -autoSupportLog consente di visualizzare un file di log di AutoSupport. Questo file fornisce informazioni sullo stato, la cronologia delle attività di trasmissione e gli eventuali errori riscontrati durante l"invio dei messaggi AutoSupport. Il log è disponibile per tutti gli array di storage compatibili con AutoSupport e abilitati per AutoSupport.' 
 ---
-= Acquisire o visualizzare un registro AutoSupport
+= Acquisisci o visualizza un registro AutoSupport - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

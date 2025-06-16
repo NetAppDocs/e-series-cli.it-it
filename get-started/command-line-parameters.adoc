@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: legacy, command line, parameters 
 summary: La release SANtricity OS 11.40 ha introdotto, per i controller E2800 e E5700 con servizi Web integrati, la possibilità di interagire sulla riga di comando utilizzando un protocollo HTTPS sicuro. Questi controller possono invece utilizzare il protocollo Symbol per le interazioni della riga di comando. 
 ---
-= Parametri della riga di comando legacy
+= Informazioni sui parametri della riga di comando CLI SANtricity legacy
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

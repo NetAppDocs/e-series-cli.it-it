@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, volume, group, export 
 summary: Il comando di esportazione start VolumeGroup sposta un gruppo di volumi in uno stato esportato. 
 ---
-= Avviare l'esportazione dei gruppi di volumi
+= Avvia l'esportazione del gruppo di volumi - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

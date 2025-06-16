@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, drive, channel, status 
 summary: Il comando Set DriveChannel definisce le prestazioni del canale del disco. 
 ---
-= Impostare lo stato del canale del disco
+= Imposta lo stato del canale di unità - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, drive 
 summary: Il comando di ripristino del disco consente di spegnere e riaccendere un disco di un gruppo di volumi o di un pool di dischi per agevolare il ripristino di un disco che presenta un comportamento incoerente o non ottimale. 
 ---
-= Ripristinare il disco
+= Reimposta unità - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

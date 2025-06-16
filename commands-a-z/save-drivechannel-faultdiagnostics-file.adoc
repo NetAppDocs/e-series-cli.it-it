@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, drive, channel, fault, isolation, diagnostic, status 
 summary: Il comando SAVE DriveChannel faultDiagnostics file salva i dati diagnostici di isolamento degli errori del canale del disco che vengono restituiti dal comando START DriveChannel faultDiagnostics. 
 ---
-= Salvataggio dello stato di diagnostica dell'isolamento degli errori del canale del disco
+= Salva lo stato diagnostico di isolamento degli errori del canale di unità - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

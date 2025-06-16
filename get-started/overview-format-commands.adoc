@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: overview, cli 
 summary: 'L"interfaccia a riga di comando (CLI) è un"applicazione software che consente di configurare e monitorare gli array di storage.' 
 ---
-= Panoramica di CLI
+= Scopri di più sulla CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

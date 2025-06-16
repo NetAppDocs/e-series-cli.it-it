@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resume, asynchronous, mirror, group 
 summary: Il comando resume asyncMirrorGroup ripristina il trasferimento dei dati tra tutte le coppie mirrorate in un gruppo di mirror asincrono. 
 ---
-= Riprendere il gruppo di mirror asincrono
+= Riprendi il gruppo mirror asincrono - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: replication, commands, consistency group, command, repository volume, 
 summary: Comandi di replica 
 ---
-= Comandi di replica
+= Comandi di replicazione CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, drive channel, fault, isolation, diagnostics 
 summary: Il comando START DriveChannel faultDiagnostics esegue la diagnostica di isolamento degli errori del canale del disco e memorizza i risultati. 
 ---
-= Avviare la diagnostica di isolamento degli errori del canale del disco
+= Avvia la diagnostica di isolamento degli errori del canale di unità - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

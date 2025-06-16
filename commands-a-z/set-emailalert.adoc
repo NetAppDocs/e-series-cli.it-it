@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: configure, email, alert, set 
 summary: 'Il comando Set emailAlert configura l"email per inviare un email a un supporto tecnico o a un"organizzazione specifica. L"avviso e-mail contiene un riepilogo dell"evento, informazioni dettagliate sullo storage interessato e informazioni di contatto del cliente.' 
 ---
-= Configurare le impostazioni degli avvisi e-mail
+= Configurare le impostazioni degli avvisi e-mail - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

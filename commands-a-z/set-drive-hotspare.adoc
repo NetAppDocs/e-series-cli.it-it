@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, drive, hot spare 
 summary: Il comando set drive hotspare assegna o disassegna uno o più dischi come hot spare. 
 ---
-= Impostare lo spare a caldo del disco
+= Imposta hot spare dell'unità - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

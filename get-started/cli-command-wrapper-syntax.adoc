@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cli, command, wrapper, syntax 
 summary: In questa sezione sono elencate le forme di sintassi generali dei wrapper di comando CLI. 
 ---
-= Sintassi del wrapper del comando CLI
+= Scopri la sintassi del wrapper dei comandi CLI di SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: specify, autosupport, delivery, method 
 summary: 'Il comando SMcli -autoSupportConfig imposta il metodo di recapito per l"invio dei messaggi AutoSupport.' 
 ---
-= Specificare il metodo di erogazione AutoSupport
+= Specificare il metodo di consegna di AutoSupport - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

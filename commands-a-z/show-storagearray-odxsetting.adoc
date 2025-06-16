@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, odx, set 
 summary: 'Il comando show StorageArray odxsetting restituisce le impostazioni correnti per Offloaded Data Transfer (ODX) e VMware vStorage API Array Architecture (VAAI) sullo storage array.' 
 ---
-= Mostra l'impostazione ODX dell'array di storage
+= Mostra l'impostazione ODX dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

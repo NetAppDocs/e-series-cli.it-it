@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, tray, attribute 
 summary: 'Il comando set tray imposta gli attributi definiti dall"utente per un vassoio' 
 ---
-= Impostare l'attributo del vassoio
+= Imposta attributo tray - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

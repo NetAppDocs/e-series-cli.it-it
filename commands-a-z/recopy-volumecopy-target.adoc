@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: volumecopy, target, command, operation, volume, copy, pair, reinitiate, array, role, context 
 summary: 'Il comando di destinazione Recopy VolumeCopy consente di avviare nuovamente un"operazione di copia del volume utilizzando una coppia di copie del volume esistente.' 
 ---
-= Copia di un volume di ricopia
+= Copia del volume di ricopia - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

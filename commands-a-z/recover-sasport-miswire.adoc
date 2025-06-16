@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recover, sas, port, mis-wire 
 summary: 'Il comando recover sasPort miswire indica a un controller che è stata intrapresa un"azione correttiva per il ripristino da una condizione di errato cablaggio.' 
 ---
-= Ripristinare la porta SAS in modo errato
+= Ripristinare il cablaggio errato della porta SAS - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

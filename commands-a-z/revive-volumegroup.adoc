@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: revive, volume, group 
 summary: 'Il comando Revive VolumeGroup (Revive VolumeGroup) forza lo stato ottimale del gruppo di volumi specificato e dei dischi guasti associati.' 
 ---
-= Ripristinare il gruppo di volumi
+= Ripristina gruppo di volumi - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

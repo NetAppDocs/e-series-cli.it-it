@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: test, autosupport, delivery, set, individual, E2800, E5700, arrays 
 summary: Il comando start StorageArray AutoSupport deliveryTest invia un messaggio di raccolta bundle AutoSupport di esempio in modo da poter verificare la connessione al sistema di supporto tecnico di destinazione utilizzando i parametri di erogazione specificati. 
 ---
-= Verificare le impostazioni di erogazione di AutoSupport
+= Test delle impostazioni di consegna di AutoSupport - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

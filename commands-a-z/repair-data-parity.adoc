@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: repair, data, parity 
 summary: Il comando Repair Data Parity corregge gli errori di parità dei dati. 
 ---
-= Riparare la parità dei dati
+= Riparazione della parità dei dati - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

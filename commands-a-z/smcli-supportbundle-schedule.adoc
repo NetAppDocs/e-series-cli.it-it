@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: schedule, automatic, support, bundle, collection, configuration 
 summary: 'Il comando schedule SMcli -supportBundle crea o rimuove una pianificazione per il salvataggio di un bundle di supporto su uno o più array di storage. Le informazioni di sistema e configurazione vengono raccolte in bundle di supporto per trasmettere le informazioni al supporto tecnico per l"analisi e la diagnostica.' 
 ---
-= Pianificare la configurazione automatica della raccolta di pacchetti di supporto
+= Pianifica la configurazione automatica della raccolta di pacchetti di supporto - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

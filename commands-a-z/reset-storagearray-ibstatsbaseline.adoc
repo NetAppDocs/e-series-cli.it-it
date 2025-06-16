@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, storage array, infiniband, statistics, baseline 
 summary: Il comando reset StorageArray ibStatsBaseline reimposta la baseline delle statistiche InfiniBand su 0 per lo storage array. 
 ---
-= Ripristinare la baseline delle statistiche InfiniBand dell'array di storage
+= Reimposta la baseline delle statistiche InfiniBand dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

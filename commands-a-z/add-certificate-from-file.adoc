@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add certificate file, supported arrays, syntax, parameters, minimum firmware level 
 summary: 'Il comando Add certificate from file (Aggiungi certificato da file) consente di estrarre un certificato dal file e aggiungerlo all"archivio di attendibilità del pacchetto CLI. Il certificato aggiunto verrà utilizzato solo dal pacchetto CLI.' 
 ---
-= Aggiungi certificato dal file
+= Aggiungi certificato da file - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: establish, asynmirror, volume, asynchronous, mirrored, remote, storage, array, secondary, existing 
 summary: 'Il comando del volume stabilisci asyncMirror completa una coppia di mirroring asincrono sull"array di storage remoto aggiungendo un volume secondario a un gruppo di mirror asincrono esistente.' 
 ---
-= Stabilire una coppia asincrona con mirroring
+= Stabilire una coppia speculare asincrona - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

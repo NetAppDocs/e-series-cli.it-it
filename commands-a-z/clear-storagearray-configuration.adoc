@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, storage array, configuration 
 summary: 'Il comando Clear StorageArray Configuration (Cancella configurazione StorageArray) cancella un"intera configurazione dello storage array o parte di una configurazione dello storage array oppure cancella solo la configurazione del volume e del gruppo di volumi.' 
 ---
-= Configurazione chiara degli array di storage
+= Cancella la configurazione dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

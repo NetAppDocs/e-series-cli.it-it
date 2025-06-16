@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, consistency group, snapshot image 
 summary: Il comando create cgSnapImage consistencyGroup crea una nuova immagine snapshot per ogni volume di base che è membro di un gruppo di coerenza snapshot. 
 ---
-= Creare un'immagine snapshot del gruppo di coerenza
+= Crea un'immagine snapshot del gruppo di coerenza - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

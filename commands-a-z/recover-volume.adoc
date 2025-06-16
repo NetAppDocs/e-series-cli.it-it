@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recover, raid, volume 
 summary: Il comando Recover volume crea un volume RAID con le proprietà specificate senza inizializzare alcuna area dati utente sui dischi. 
 ---
-= Ripristinare il volume RAID
+= Recupera volume RAID - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

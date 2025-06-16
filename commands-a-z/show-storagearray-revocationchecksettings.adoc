@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, certificate, revocation, check, set 
 summary: Il comando show StorageArray revocationCheckSettings consente di visualizzare le impostazioni di revoca del certificato per lo storage array. 
 ---
-= Mostra le impostazioni del controllo di revoca del certificato
+= Mostra le impostazioni di controllo della revoca del certificato - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

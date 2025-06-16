@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, consistency, group, attributes 
 summary: Il comando set consistencyGroup definisce le proprietà di un gruppo di coerenza snapshot. 
 ---
-= Impostare gli attributi del gruppo di coerenza
+= Imposta gli attributi del gruppo di coerenza - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

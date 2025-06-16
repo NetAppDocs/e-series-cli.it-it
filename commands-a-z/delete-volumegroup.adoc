@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, volume, group, command, entire, associated, support, role 
 summary: Il comando delete VolumeGroup elimina un intero gruppo di volumi e i volumi associati. 
 ---
-= Elimina gruppo di volumi
+= Elimina gruppo di volumi - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

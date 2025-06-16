@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: security key, string, characters, secure enabled, drive, controllers, storage, array, internal, key, management, create, maintain, persistent, memory 
 summary: Una chiave di sicurezza è una stringa di caratteri che viene condivisa tra i dischi abilitati alla protezione e i controller di un array di storage. Quando si utilizza la gestione interna delle chiavi, si creano e si mantengono le chiavi di sicurezza nella memoria persistente del controller. 
 ---
-= Introduzione alla gestione interna delle chiavi
+= Introduzione alla gestione delle chiavi interne - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

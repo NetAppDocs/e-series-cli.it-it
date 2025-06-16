@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: retrieve, installed, trusted, ca, certificates 
 summary: 'Il comando Save StorageArray trustedCertificate recupera i certificati CA attendibili installati per l"array. Nei file recuperati sono inclusi tutti i certificati CA richiesti dai server Web dell"array.' 
 ---
-= Recuperare i certificati CA attendibili installati
+= Recupera i certificati CA attendibili installati - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

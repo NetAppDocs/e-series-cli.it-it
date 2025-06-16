@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, tray, configuration, settings, commands, factory, default, drive, array, specific, storage, roles, support 
 summary: Il comando download tray ConfigurationSettings scarica le impostazioni predefinite in fabbrica su tutti i vassoi delle unità di uno storage array o su uno specifico tray di dischi di uno storage array. 
 ---
-= Scaricare le impostazioni di configurazione del vassoio
+= Scarica le impostazioni di configurazione del vassoio - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

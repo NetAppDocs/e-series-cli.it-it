@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, storage, array, syslog, test 
 summary: Il comando start StorageArray syslog test consente di verificare le comunicazioni tra lo storage array e un server syslog. 
 ---
-= Avviare il test syslog dell'array di storage
+= Avvia il test syslog dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

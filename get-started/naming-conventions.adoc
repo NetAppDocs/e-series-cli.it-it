@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: name, conventions 
 summary: È necessario rispettare regole specifiche per i nomi utilizzati nei comandi CLI. 
 ---
-= Convenzioni di naming
+= Scopri le convenzioni di denominazione della CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

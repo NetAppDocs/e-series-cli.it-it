@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: revive, drive 
 summary: Il comando revive drive forza il disco specificato allo stato ottimale. 
 ---
-= Risvegliare il disco
+= Ripristina unità - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

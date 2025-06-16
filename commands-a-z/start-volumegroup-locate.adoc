@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, volume, group, locate 
 summary: Il comando START VolumeGroup Locate identifica i dischi raggruppati in modo logico per formare il gruppo di volumi specificato facendo lampeggiare gli indicatori luminosi sui dischi. 
 ---
-= Avviare l'individuazione del gruppo di volumi
+= Avvia la localizzazione del gruppo di volumi - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

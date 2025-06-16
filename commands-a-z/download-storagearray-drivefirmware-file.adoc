@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, storage, array, drive, firmware, command, images, roles, supported 
 summary: Il comando download StorageArray drivefirmware scarica le immagini del firmware su tutti i dischi dello storage array. 
 ---
-= Scaricare il firmware del disco dell'array di storage
+= Scarica il firmware dell'unità array di archiviazione - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

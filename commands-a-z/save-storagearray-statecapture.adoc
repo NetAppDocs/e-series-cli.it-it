@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, state, capture 
 summary: 'Il comando Save StorageArray stateCapture salva l"acquisizione dello stato di un array di storage in un file.' 
 ---
-= Salva l'acquisizione dello stato dell'array di storage
+= Salvataggio dell'acquisizione dello stato dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

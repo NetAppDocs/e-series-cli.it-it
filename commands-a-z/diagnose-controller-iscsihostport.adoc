@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: diagnose, controller, hostport, command, diagnostic, tests, copper, cable, host, interface, cards, support, roles 
 summary: Il comando Diagnose controller iscsiHostPort esegue test diagnostici sui cavi di rame tra le schede di interfaccia host iSCSI e un controller. 
 ---
-= Diagnosticare il cavo host iSCSI del controller
+= Diagnosi del cavo host iSCSI del controller - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

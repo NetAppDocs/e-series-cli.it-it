@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resume, snapshot, volume 
 summary: 'Il comando resume snapVolume riprende un"operazione di volume snapshot interrotta.' 
 ---
-= Riprendi volume snapshot
+= Riprendi volume snapshot - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

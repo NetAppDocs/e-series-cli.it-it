@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, volume, initialization 
 summary: Il comando start volume initialize avvia la formattazione di un volume in un array di storage. 
 ---
-= Avviare l'inizializzazione del volume
+= Inizializzazione del volume di avvio - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

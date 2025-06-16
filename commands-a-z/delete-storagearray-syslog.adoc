@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, storage, array, syslog, command, allow, delete, specified, configuration, storing, audit, logs, role 
 summary: Il comando delete StorageArray syslog consente di eliminare la configurazione syslog specificata utilizzata per la memorizzazione dei registri di controllo. 
 ---
-= Eliminare la configurazione syslog dell'array di storage
+= Elimina la configurazione syslog dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

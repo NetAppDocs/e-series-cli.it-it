@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, configuration 
 summary: 'Il comando di configurazione SAVE StorageArray crea un file di script che può essere utilizzato per ricreare la configurazione corrente del volume dell"array di storage.' 
 ---
-= Salvare la configurazione dello storage array
+= Salvataggio della configurazione dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

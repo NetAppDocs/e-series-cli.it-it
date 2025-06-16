@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, snapshot, volume 
 summary: 'Il comando stop snapVolume interrompe l"operazione di un volume snapshot.' 
 ---
-= Arrestare il volume di snapshot
+= Arresta il volume snapshot - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: suspend, synchronous, mirror 
 summary: 'Il comando suspend SyncMirror primaries sospende un"operazione di mirroring sincrono.' 
 ---
-= Sospendere il mirroring sincrono
+= Sospendi mirroring sincrono - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

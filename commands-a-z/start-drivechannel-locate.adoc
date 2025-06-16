@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, drive, channel, locate 
 summary: Il comando START DriveChannel Locate identifica i vassoi delle unità collegati a un canale specifico accendendo gli indicatori luminosi del vassoio delle unità collegato al canale delle unità. 
 ---
-= Avviare l'individuazione del canale del disco
+= Avvia la localizzazione del canale di unità - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

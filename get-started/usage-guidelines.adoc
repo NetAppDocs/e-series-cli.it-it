@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: script command, guidelines 
 summary: Attenersi alle seguenti linee guida per la scrittura dei comandi di script. 
 ---
-= Linee guida per i comandi degli script
+= Scopri le linee guida per i comandi dello script CLI di SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: test, syslog, configuration 
 summary: Il comando start syslog test invia un messaggio di esempio per verificare la configurazione di syslog. 
 ---
-= Test della configurazione syslog
+= Configurazione di test syslog - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

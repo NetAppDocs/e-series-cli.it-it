@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, volume, performance, statistics 
 summary: Il comando show volume performanceStats restituisce informazioni sulle prestazioni del volume. 
 ---
-= Mostra le statistiche sulle performance dei volumi
+= Mostra statistiche sulle prestazioni del volume - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

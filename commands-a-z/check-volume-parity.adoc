@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: check, volume, parity 
 summary: Il comando check volume parity verifica la presenza di errori di parità e di supporti in un volume, quindi scrive i risultati del controllo in un file. 
 ---
-= Controllare la parità del volume
+= Controlla la parità del volume - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

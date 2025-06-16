@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, certificates 
 summary: 'Il comando Mostra certificati consente di visualizzare i certificati installati nell"archivio di attendibilità del pacchetto CLI.' 
 ---
-= Mostra certificati
+= Mostra certificati - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, soc, counts 
 summary: Il comando Save StorageArray SOCCounts salva le statistiche degli errori SOC in un file. 
 ---
-= Risparmio dei conteggi SOC degli array di storage
+= Salva i conteggi SOC dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

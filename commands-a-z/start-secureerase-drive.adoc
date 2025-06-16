@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, fde, secure, drive, erase 
 summary: 'Il comando start secureErase drive cancella tutti i dati da uno o più dischi con crittografia completa dei dischi (FDE) in modo che possano essere riutilizzati come dischi FDE.' 
 ---
-= Avviare la cancellazione sicura del disco FDE
+= Avvia la cancellazione sicura dell'unità FDE - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

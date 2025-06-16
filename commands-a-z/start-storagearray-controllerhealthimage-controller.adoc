@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, storage, array, controller, health, image 
 summary: 'Il comando start StorageArray controllerHealthImage controller produce un"immagine dello stato di salute del controller dell"array di storage sugli array di storage che supportano la funzionalità dell"immagine dello stato di salute del controller.' 
 ---
-= Avviare l'immagine dello stato del controller dell'array di storage
+= Avvia l'immagine di integrità del controller dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

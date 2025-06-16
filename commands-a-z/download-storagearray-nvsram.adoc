@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, storagearray, down, values, controller, support, role, command, array 
 summary: 'Il comando download StorageArray NVSRAM scarica i valori NVSRAM per il controller dell"array di storage.' 
 ---
-= Scarica lo storage array NVSRAM
+= Scarica array di archiviazione NVSRAM - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

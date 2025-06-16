@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, drive, service, action, allowed, indicator 
 summary: 'Il comando set drive serviceAllowedIndicator attiva o disattiva la spia Service Action Allowed (azione di servizio consentita) su una o più unità nei vassoi delle unità che supportano la funzione Service Action Allowed Indicator (indicatore di azione di servizio consentita).' 
 ---
-= Impostare l'indicatore di intervento del servizio del disco consentito
+= Imposta l'indicatore di azione consentita del servizio di unità - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

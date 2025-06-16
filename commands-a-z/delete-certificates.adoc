@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete, certificates 
 summary: 'Il comando Elimina certificati consente di eliminare un certificato dall"archivio di attendibilità del pacchetto CLI.' 
 ---
-= Eliminare i certificati
+= Elimina certificati - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

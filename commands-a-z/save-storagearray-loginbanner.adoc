@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, login, banner 
 summary: Il comando Save StorageArray loginBanner consente di salvare un banner di accesso sul computer locale. Il testo del banner può includere un avviso e un messaggio di consenso, che vengono presentati agli utenti prima di stabilire le sessioni. 
 ---
-= Banner di login Save storage array
+= Salva il banner di accesso all'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

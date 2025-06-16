@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, redundancy, mode 
 summary: 'Il comando set StorageArray RedundancyMode imposta la modalità di ridondanza dell"array di storage su simplex o duplex.' 
 ---
-= Impostare la modalità di ridondanza degli array di storage
+= Imposta la modalità di ridondanza dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, host group 
 summary: Il comando create hostGroup crea un nuovo gruppo di host. 
 ---
-= Creare un gruppo di host
+= Crea gruppo host - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, drive 
 summary: 'Il comando show allDrives restituisce informazioni sui dischi nell"array di storage.' 
 ---
-= Mostrare il disco
+= Mostra unità - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

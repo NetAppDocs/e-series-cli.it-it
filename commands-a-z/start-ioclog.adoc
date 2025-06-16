@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, input, output, controller, ioc, dump 
 summary: Il comando start IOCLog produce un dump del log IOC delle trasmissioni di dati tra un host e un controller. 
 ---
-= Avviare il dump del controller di input output (IOC)
+= Avvia il dump del controller di input/output (IOC) - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, synchronous, mirror 
 summary: Il comando Set SyncMirror definisce le proprietà di una coppia con mirroring remoto. 
 ---
-= Impostare il mirroring sincrono
+= Imposta mirroring sincrono - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

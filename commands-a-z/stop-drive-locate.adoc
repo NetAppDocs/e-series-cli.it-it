@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, drive, locate 
 summary: 'Il comando STOP Drive Locate spegne la spia dell"unità accesa dal comando START Drive Locate.' 
 ---
-= Arrestare il disco individuare
+= Arresta la localizzazione dell'unità - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, storage, array, syslog, configuration 
 summary: Il comando create StorageArray syslog consente di archiviare i registri di controllo su un server syslog esterno. Dopo aver stabilito una connessione tra lo storage array e il server syslog, i registri di controllo vengono salvati automaticamente nel server syslog. 
 ---
-= Creare la configurazione syslog dell'array di storage
+= Creare la configurazione syslog dell'array di archiviazione - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

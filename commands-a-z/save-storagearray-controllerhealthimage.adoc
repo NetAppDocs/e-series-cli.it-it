@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, controller, health, image 
 summary: 'Il comando SAVE StorageArray controllerHealthImage salva un"immagine dello stato di salute del controller in un file specifico su un host, per gli array di storage che supportano la funzionalità dell"immagine dello stato di salute del controller.' 
 ---
-= Salvare l'immagine dello stato del controller dell'array di storage
+= Salvataggio dell'immagine di integrità del controller dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resume, synchronous, mirroring 
 summary: 'Il comando resume SyncMirror riprende un"operazione di mirroring sincrono sospesa.' 
 ---
-= Riprendere il mirroring sincrono
+= Riprendi il mirroring sincrono - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

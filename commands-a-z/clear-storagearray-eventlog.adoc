@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, storage array, event log 
 summary: 'Il comando clear StorageArray EventLog cancella il registro eventi nell"array di storage eliminando i dati nel buffer del registro eventi.' 
 ---
-= Cancellare il registro eventi dello storage array
+= Cancella il registro eventi dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

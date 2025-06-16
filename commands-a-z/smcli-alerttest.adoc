@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: test, alerts 
 summary: Il comando SMcli alertTest invia un avviso di test al registro eventi di Windows e a tutti i ricevitori syslog configurati. 
 ---
-= Test degli avvisi
+= Avvisi di test - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

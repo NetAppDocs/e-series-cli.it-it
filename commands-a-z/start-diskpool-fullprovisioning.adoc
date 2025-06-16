@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, disk pool, full, provision 
 summary: 'Il comando start diskPool fullProvisioning avvia un"operazione di provisioning completo su tutti i volumi nel pool di dischi e, facoltativamente, disattiva il provisioning delle risorse nel pool di dischi.' 
 ---
-= Avviare il provisioning completo del pool di dischi
+= Avvia il provisioning completo del pool di dischi - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

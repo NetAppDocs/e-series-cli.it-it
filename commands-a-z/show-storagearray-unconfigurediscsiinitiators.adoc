@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, unconfigured, iscsi, initiators 
 summary: 'Il comando show StorageArray unconfiguredIscsiInitialators restituisce un elenco di iniziatori rilevati dall"array di storage ma non ancora configurati nella topologia dell"array di storage.' 
 ---
-= Mostrare gli iniziatori iSCSI non configurati degli array di storage
+= Mostra gli iniziatori iSCSI non configurati dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: security, key, string, characters, shared, secure, drives, controllers, storage, array, external, management, maintain, server 
 summary: Una chiave di sicurezza è una stringa di caratteri che viene condivisa tra i dischi abilitati alla protezione e i controller di un array di storage. Quando si utilizza la gestione esterna delle chiavi, si creano e si mantengono le chiavi di sicurezza su un server di gestione delle chiavi 
 ---
-= Introduzione alla gestione esterna delle chiavi
+= Introduzione alla gestione delle chiavi esterne - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

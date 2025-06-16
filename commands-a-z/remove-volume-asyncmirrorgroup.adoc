@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, volume, asynchronous, mirror, group 
 summary: Il comando remove volume asyncMirrorGroup rimuove un volume membro da un gruppo di mirror asincrono esistente. 
 ---
-= Rimuovere il volume dal gruppo di mirror asincrono
+= Rimuovi volume dal gruppo mirror asincrono - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

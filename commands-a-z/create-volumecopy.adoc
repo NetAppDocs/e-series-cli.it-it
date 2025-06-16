@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, volume, copy 
 summary: 'Il comando create VolumeCopy crea una copia del volume e avvia l"operazione di copia del volume. Questo comando è valido per le coppie di copia del volume dell"immagine snapshot.' 
 ---
-= Creare una copia del volume
+= Crea copia del volume - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

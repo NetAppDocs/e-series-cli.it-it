@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, audit log, records 
 summary: Il comando SAVE AuditLog recupera i record del registro di controllo. 
 ---
-= Salvare i record del registro di controllo
+= Salvataggio dei record del registro di controllo - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

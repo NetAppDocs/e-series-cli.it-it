@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, event, alert, filter 
 summary: I comandi set event alert gestiscono la notifica degli eventi di avviso disattivando o attivando la notifica relativa a uno specifico evento che può essere associato a un allarme. Per impedire la notifica di uno specifico evento che può essere verificato, è necessario bloccarlo. Per attivare la notifica su uno specifico evento che può essere verificato, sbloccarlo. 
 ---
-= Impostare il filtraggio degli avvisi di evento
+= Imposta filtro avvisi evento - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

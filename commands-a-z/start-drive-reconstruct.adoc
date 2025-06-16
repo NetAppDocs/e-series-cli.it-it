@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, drive, reconstruction 
 summary: Il comando start drive reconstruct avvia la ricostruzione di un disco. 
 ---
-= Avviare la ricostruzione del disco
+= Avvia la ricostruzione dell'unità - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

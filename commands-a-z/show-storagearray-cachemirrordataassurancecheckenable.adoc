@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, cache, mirror, data, assurance, check, enable 
 summary: Il comando show StorageArray cacheMirrorDataAssuranceCheckEnable restituisce lo stato di abilitazione della funzione di controllo dei dati mirror della cache. 
 ---
-= Mostra abilitazione controllo data assurance mirror cache array storage
+= Mostra abilitazione controllo garanzia dati mirror cache array storage - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

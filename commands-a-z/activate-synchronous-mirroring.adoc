@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: activate, synchronous mirroring, supported arrays, roles, context, syntax, parameters, data assurance management, minimum firmware level 
 summary: Il comando Activate StorageArray Feature attiva la funzione Synchronous Mirroring e crea il volume di repository mirror. 
 ---
-= Attivare il mirroring sincrono
+= Attiva il mirroring sincrono - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

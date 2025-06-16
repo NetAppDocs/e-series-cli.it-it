@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, controller, trusted, certificate, command, install, web, servers, validate, array, roles, context 
 summary: Il comando download controller trustedCertificate installa i certificati CA attendibili sui server Web dei controller per convalidare il certificato firmato dal server LDAP. 
 ---
-= Installare certificati CA attendibili
+= Installa certificati CA attendibili - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

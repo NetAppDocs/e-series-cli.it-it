@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, rls, counts 
 summary: 'Il comando SAVE StorageArray RLSCounts salva i contatori di stato del collegamento in lettura (RLS) in un file.' 
 ---
-= Risparmio dei conteggi RLS degli array di storage
+= Salvataggio dei conteggi RLS dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

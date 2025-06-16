@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: update, snmpv3, usm, user 
 summary: 'Il comando set snmpUser Username aggiorna un utente USM SNMP (Simple Network Management Protocol) esistente. L"utente USM da modificare viene identificato utilizzando il nome utente se esiste un solo utente con il nome utente. L"utente viene identificato utilizzando il nome utente e l"ID motore se sono presenti più utenti con lo stesso nome utente e ID motore diverso.' 
 ---
-= Aggiornare l'utente SNMPv3 USM
+= Aggiorna utente USM SNMPv3 - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

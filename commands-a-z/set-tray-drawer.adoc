@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, drawer, service, action, allowed, indicator 
 summary: 'Il comando Imposta cassetto vassoio consente di attivare o disattivare la spia dell"azione di servizio consentita su un cassetto che contiene le unità.' 
 ---
-= Imposta indicatore azione di servizio cassetto consentita
+= Indicatore di azione consentita del servizio del cassetto di set - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

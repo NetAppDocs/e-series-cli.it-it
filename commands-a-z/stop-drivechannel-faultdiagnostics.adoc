@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, drive, channel, fault, isolation, diagnostics 
 summary: Il comando STOP DriveChannel faultDiagnostics arresta la diagnostica di isolamento degli errori del canale di trasmissione, che interrompe il comando di diagnostica di isolamento degli errori del canale di avvio prima del completamento. 
 ---
-= Arrestare la diagnostica di isolamento degli errori del canale di trasmissione
+= Diagnostica di isolamento degli errori del canale di arresto dell'unità - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

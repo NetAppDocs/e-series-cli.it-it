@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, thin, volume, attributes 
 summary: Il comando set volume definisce le proprietà di un volume sottile. 
 ---
-= Impostare gli attributi dei volumi thin
+= Imposta gli attributi del volume sottile - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

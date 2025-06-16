@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, tray, firmware, file, command, environmental, service, module, array, role, context 
 summary: 'Il comando download tray firmware file scarica il firmware ESM (Environmental Services Module).' 
 ---
-= Scaricare il firmware della scheda ambientale
+= Scarica il firmware della scheda ambientale - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, volume, copy 
 summary: Il comando di destinazione Set VolumeCopy definisce le proprietà di una coppia di copie del volume. 
 ---
-= Impostare la copia del volume
+= Imposta copia volume - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

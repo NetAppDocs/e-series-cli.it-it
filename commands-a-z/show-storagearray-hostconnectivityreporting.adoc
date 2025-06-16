@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, host, connectivity, report 
 summary: Il comando show StorageArray hostConnectivityReporting restituisce lo stato di abilitazione della funzione di reporting della connettività host. 
 ---
-= Mostrare il reporting sulla connettività degli host degli array di storage
+= Mostra report sulla connettività dell'host dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

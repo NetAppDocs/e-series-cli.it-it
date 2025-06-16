@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, incomplete, asynchronous, mirror, pair, group 
 summary: 'Il comando remove asyncMirrorGroup rimuove un volume di coppia di mirroring orfano sull"array di storage.' 
 ---
-= Rimuovere la coppia di mirroring asincrono incompleta dal gruppo di mirror asincrono
+= Rimuovi la coppia di mirror asincroni incompleta dal gruppo di mirror asincroni - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

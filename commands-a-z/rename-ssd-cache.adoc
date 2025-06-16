@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: rename, ssd, cache 
 summary: Il comando set ssdCache modifica il nome della cache SSD. 
 ---
-= Rinominare la cache SSD
+= Rinominare la cache SSD - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

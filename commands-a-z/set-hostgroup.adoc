@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, host, group 
 summary: Il comando set hostGroup rinomina un gruppo di host. 
 ---
-= Impostare il gruppo di host
+= Imposta gruppo host - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: update, snmp, trap, destination 
 summary: 'Il comando set snmpTrapDestination trapReceiverIP attiva o disattiva l"invio di messaggi di errore di autenticazione per una destinazione di trap SNMP. L"errore si verifica quando l"agente SNMP ha ricevuto un messaggio da un gestore SNMP, ma il messaggio conteneva un nome di comunità o un nome utente non valido.' 
 ---
-= Aggiorna destinazione trap SNMP
+= Aggiorna la destinazione della trap SNMP - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

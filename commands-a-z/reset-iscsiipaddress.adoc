@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, iscsi, ip address 
 summary: 'Il comando reset iscsiIpAddress ripristina l"indirizzo IP dell"array di storage remoto per ristabilire la connessione con l"array di storage locale.' 
 ---
-= Ripristinare l'indirizzo IP iSCSI
+= Reimposta l'indirizzo IP iSCSI - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

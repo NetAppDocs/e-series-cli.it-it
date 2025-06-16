@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, thin, volume 
 summary: Il comando show volume restituisce la cronologia di espansione o la capacità consumata per il volume o i volumi thin specificati. 
 ---
-= Mostra volume sottile
+= Mostra volume sottile - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, tray log 
 summary: Il comando Save allTrimes logfile salva i dati di rilevamento del log in un file. 
 ---
-= Salva log vassoio
+= Salva registro vassoio - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

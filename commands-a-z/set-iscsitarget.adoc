@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, iscsi, target, properties 
 summary: Il comando set iscsiTarget definisce le proprietà di una destinazione iSCSI. 
 ---
-= Impostare le proprietà di destinazione iSCSI
+= Imposta le proprietà della destinazione iSCSI - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

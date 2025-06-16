@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ssd cache application type 
 summary: Il comando set ssdCache modifica il tipo di applicazione associato alla cache SSD. Il tipo di applicazione può essere server Web, database o multimedia. La modifica del tipo di applicazione modifica la dimensione del blocco, la dimensione del sottoblocco, il popolamento alla soglia di lettura e il popolamento alla soglia di scrittura per i volumi sottostanti la cache SSD. 
 ---
-= Modificare il tipo di applicazione della cache SSD
+= Cambia il tipo di applicazione della cache SSD - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

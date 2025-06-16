@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, controller, health, image, allow, overwrite 
 summary: 'Il comando Set StorageArray controllerHealthImageAllowOverWrite imposta un flag su un controller per consentire a una nuova immagine dello stato di salute del controller di sovrascrivere un"immagine dello stato di salute del controller esistente sugli array di storage che supportano la funzione dell"immagine dello stato di salute del controller.' 
 ---
-= Impostare l'immagine dello stato di salute del controller dell'array di storage Allow overwrite (
+= Imposta l'immagine di integrità del controller dell'array di archiviazione per consentire la sovrascrittura - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

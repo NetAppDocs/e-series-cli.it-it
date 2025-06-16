@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, ssd, cache, locate 
 summary: 'Il comando stop ssdCache Locate spegne gli indicatori luminosi dei dischi a stato solido (SSD) che sono stati attivati dal comando start ssdCache Locate.' 
 ---
-= Arrestare l'individuazione della cache SSD
+= Arresta la localizzazione della cache SSD - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

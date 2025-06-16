@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, tray, identification 
 summary: 'Il comando set tray imposta l"ID del vassoio di un controller tray, di un controller-drive tray o di un drive tray di uno storage array.' 
 ---
-= Impostare l'identificazione del vassoio
+= Identificazione del vassoio - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

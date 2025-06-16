@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, drive, performance, statistics 
 summary: Il comando show allDrives performanceStats restituisce informazioni sulle prestazioni del disco. 
 ---
-= Mostra le statistiche delle performance del disco
+= Mostra statistiche sulle prestazioni dell'unità - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

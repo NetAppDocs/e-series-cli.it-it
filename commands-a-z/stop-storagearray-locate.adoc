@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, storage, array, locate 
 summary: Il comando STOP StorageArray Locate disattiva gli indicatori luminosi dello storage array che sono stati attivati dal comando start StorageArray Locate. 
 ---
-= Arrestare l'individuazione dell'array di storage
+= Arresta la localizzazione dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

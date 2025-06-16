@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, asynchronous mirroring, fault 
 summary: 'Il comando clear asyncMirrorFault elimina un errore "ticky" di mirroring asincrono da uno o più gruppi di mirror asincroni e da uno o più volumi membri del gruppo di mirror asincroni.' 
 ---
-= Eliminare gli errori di mirroring asincrono
+= Cancella errore di mirroring asincrono - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

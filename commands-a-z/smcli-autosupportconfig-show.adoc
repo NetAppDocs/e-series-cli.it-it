@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: display, autosupport, bundle, collection, set 
 summary: Il comando SMcli -autoSupportConfig show visualizza le impostazioni della raccolta bundle AutoSupport per il dominio di gestione. Queste impostazioni si applicano a tutti gli array di storage nel dominio di gestione per cui è stato attivato AutoSupport. 
 ---
-= Visualizzare le impostazioni della raccolta bundle AutoSupport
+= Visualizza le impostazioni della raccolta bundle AutoSupport - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

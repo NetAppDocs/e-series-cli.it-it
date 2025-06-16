@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, volume, group, locate 
 summary: Il comando STOP VolumeGroup Locate disattiva gli indicatori luminosi dei dischi che sono stati attivati dal comando START VolumeGroup Locate. 
 ---
-= Arrestare l'individuazione del gruppo di volumi
+= Arresta la localizzazione del gruppo di volumi - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, auto-load, balance, statistics 
 summary: Il comando SAVE StorageArray autoLoadBalanceStatistics file fornisce il bilanciamento automatizzato del carico di lavoro i/o e garantisce che il traffico i/o in entrata dagli host sia gestito dinamicamente e bilanciato su entrambi i controller. 
 ---
-= Salva le statistiche di bilanciamento del carico automatico
+= Salva le statistiche di bilanciamento automatico del carico - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

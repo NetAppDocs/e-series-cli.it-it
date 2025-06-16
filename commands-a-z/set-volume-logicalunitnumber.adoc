@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, volume, map 
 summary: 'Il comando set volume logicalUnitNumber definisce la mappatura LUN (Logical Unit Number) o NSID (Namespace ID) tra un volume e un host o un gruppo di host.' 
 ---
-= Consente di impostare la mappatura del volume
+= Imposta la mappatura del volume - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

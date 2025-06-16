@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, unnamed, discovery, session 
 summary: 'Il comando Set StorageArray unnamedDiscoverySession consente all"array di storage di partecipare a sessioni di rilevamento senza nome.' 
 ---
-= Impostare la sessione di rilevamento senza nome dell'array di storage
+= Imposta sessione di individuazione senza nome dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

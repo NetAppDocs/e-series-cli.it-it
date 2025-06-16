@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: configuration, commands, array, controller, health, image, hostport, feature, management 
 summary: Comandi di configurazione degli array 
 ---
-= Comandi di configurazione degli array
+= Comandi di configurazione dell'array CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

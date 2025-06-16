@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: format, rules, script, commands 
 summary: La sintassi univoca di uno specifico comando script è illustrata nella sezione Note alla fine della descrizione di ogni comando script. 
 ---
-= Regole di formattazione per i comandi script
+= Regole di formato per i comandi script CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

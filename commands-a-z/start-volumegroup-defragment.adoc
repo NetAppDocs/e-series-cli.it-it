@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, volume, group, defragment 
 summary: 'Il comando start defragment di VolumeGroup avvia un"operazione di deframmentazione sul gruppo di volumi specificato.' 
 ---
-= Avviare la deframmentazione del gruppo di volumi
+= Avvia la deframmentazione del gruppo di volumi - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, check, volume, parity, job 
 summary: Il comando start check volume parity job avvia una nuova operazione di verifica della parità del volume su un determinato volume. 
 ---
-= Avviare il processo di verifica della parità del volume
+= Avvia il processo di controllo della parità del volume - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

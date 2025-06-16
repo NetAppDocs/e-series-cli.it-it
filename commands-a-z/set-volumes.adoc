@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, volume, attributes, disk pool 
 summary: Il comando Set Volumes definisce le proprietà di un volume in un pool di dischi. 
 ---
-= Impostare gli attributi di un volume in un pool di dischi
+= Impostare gli attributi del volume per un volume in un pool di dischi - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, local, user, password, symbol 
 summary: Il comando set StorageArray localUsername e il comando set StorageArray symbol consentono di impostare una password locale per il nome utente o un simbolo per un ruolo specifico. 
 ---
-= Impostare la password utente locale o la password del simbolo dello storage array
+= Imposta la password utente locale dell'array di archiviazione o la password SYMbol - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

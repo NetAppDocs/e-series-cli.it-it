@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, input, output, controller, ioc, dump 
 summary: Il comando SAVE IOCLog salva i dump IOC dai controller di un array di storage a un file su un host. 
 ---
-= Salva il dump del controller di output in ingresso (IOC)
+= Salvataggio del dump del controller di input/output (IOC) - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, login, banner 
 summary: Il comando Set StorageArray loginBanner consente di caricare un file di testo da utilizzare come banner di accesso. Il testo del banner può includere un avviso e un messaggio di consenso, che viene presentato agli utenti prima di stabilire sessioni in Gestione sistema SANtricity o prima di eseguire i comandi. 
 ---
-= Impostare il banner di accesso allo storage array
+= Imposta il banner di accesso all'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

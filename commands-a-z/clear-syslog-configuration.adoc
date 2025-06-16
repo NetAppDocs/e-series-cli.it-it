@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, syslog, configuration 
 summary: Il comando di configurazione Clear syslog cancella le informazioni di avviso syslog. 
 ---
-= Cancellare la configurazione syslog
+= Cancella la configurazione di syslog - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

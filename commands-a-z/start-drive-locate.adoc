@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: start, drive, locate 
 summary: Il comando START Drive Locate individua un disco accendendo una spia luminosa sul disco. 
 ---
-= Avviare l'individuazione del disco
+= Avvia la localizzazione dell'unità - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

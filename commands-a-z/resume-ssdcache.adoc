@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: resume, ssd, cache 
 summary: Il comando resume ssdCache riavvia il caching per tutti i volumi utilizzando la cache SSD che è stata temporaneamente interrotta con il comando sospend ssdCache. 
 ---
-= Riprendi cache SSD
+= Riprendi la cache SSD - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

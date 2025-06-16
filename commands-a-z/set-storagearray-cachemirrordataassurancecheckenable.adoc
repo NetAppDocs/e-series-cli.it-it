@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, enable, disable, cache, mirror, data, assurance, check 
 summary: Il comando Set StorageArray cacheMirrorDataAssuranceCheckEnable consente di attivare o disattivare il controllo dei dati mirror della cache. 
 ---
-= Impostare lo storage array per abilitare o disabilitare il controllo di garanzia dei dati mirror della cache
+= Imposta l'array di archiviazione per abilitare o disabilitare il controllo di garanzia dei dati del mirroring della cache - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

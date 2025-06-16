@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: autoconfigure, storage, array, hot spares, supported, roles, syntax, parameters, minimum firmware level 
 summary: Il comando di configurazione automatica StorageArray Hotspares definisce e configura automaticamente le hot spare in un array di storage. È possibile eseguire questo comando in qualsiasi momento. Questo comando fornisce la migliore copertura hot spare per uno storage array. 
 ---
-= Configurazione automatica delle hot spare degli array di storage
+= Configurazione automatica degli hot spare dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

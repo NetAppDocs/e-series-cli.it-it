@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, sas, phy, counts 
 summary: 'Il comando Save StorageArray SASPHYCounts salva i contatori SAS Physical Layer (SAS PHY) in un file.' 
 ---
-= Risparmio del numero di PHY SAS dell'array di storage
+= Salvataggio dei conteggi PHY SAS dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

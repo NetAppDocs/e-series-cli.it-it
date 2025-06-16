@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: autoconfigure storage array,supported, roles, syntax, parameters, minimum firmware level 
 summary: Il comando di configurazione automatica StorageArray configura automaticamente uno storage array. 
 ---
-= Configurazione automatica dello storage array
+= Configurazione automatica dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array 
 summary: Il comando Set StorageArray definisce le proprietà dello storage array. 
 ---
-= Impostare l'array di storage
+= Imposta array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: validate, storage array, security key 
 summary: Il comando validate StorageArray securityKey convalida la chiave di sicurezza per uno storage array dotato di dischi con funzionalità di sicurezza per garantire che il file della chiave di sicurezza di backup non sia corrotto. 
 ---
-= Convalidare la chiave di sicurezza dello storage array
+= Convalida della chiave di sicurezza dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

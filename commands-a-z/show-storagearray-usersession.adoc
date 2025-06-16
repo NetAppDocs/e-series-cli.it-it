@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: display, storage, array, user, session 
 summary: Il comando show StorageArray userSession consente di visualizzare il periodo di timeout della sessione per System Manager. 
 ---
-= Visualizzare la sessione utente dello storage array
+= Visualizza la sessione utente dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

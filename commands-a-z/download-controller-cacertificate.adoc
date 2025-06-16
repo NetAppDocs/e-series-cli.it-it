@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, controller, certificate, command, install, root, intermediate, web, servers, validate, array, roles, context 
 summary: Il comando download controller caCertificate installa i certificati CA principali/intermedi sui server Web dei controller per convalidare il certificato firmato dal server Web. 
 ---
-= Installare i certificati CA principali/intermedi
+= Installa certificati CA radice/intermedi - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

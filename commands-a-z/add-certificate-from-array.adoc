@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add certificate array, supported, syntax, parameters, minimum firmware level 
 summary: 'Il comando Add certificate from array (Aggiungi certificato da array) consente di estrarre un certificato dall"array e aggiungerlo all"archivio di trust del pacchetto CLI. Il certificato aggiunto verrà utilizzato solo dal pacchetto CLI.' 
 ---
-= Aggiungere il certificato dall'array
+= Aggiungi certificato da array - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

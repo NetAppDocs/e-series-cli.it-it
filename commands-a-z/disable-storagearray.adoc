@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: disable, storage, array, command, storage, feature 
 summary: Il comando disable StorageArray disattiva la funzione di array di storage. 
 ---
-= Disattivare la funzione di array di storage
+= Disabilitare la funzionalità di array di archiviazione - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

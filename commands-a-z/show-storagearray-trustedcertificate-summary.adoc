@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, installed, trusted, ca, certificates, summary 
 summary: 'Il comando show StorageArray trustedCertificate summary visualizza il riepilogo dei certificati CA attendibili installati dall"array. Questo comando è utile da utilizzare prima di eseguire il comando delete StorageArray trustedCertificate in modo da conoscere i nomi alias dei certificati da eliminare.' 
 ---
-= Mostra il riepilogo dei certificati CA attendibili installati
+= Mostra il riepilogo dei certificati CA attendibili installati - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

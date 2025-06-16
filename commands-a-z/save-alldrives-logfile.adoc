@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, drive log 
 summary: Il comando Save allDrives logfile salva i log del disco in un file. 
 ---
-= Salvare il log del disco
+= Salvataggio del registro di unità - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

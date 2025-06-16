@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storage, monitor, personnel, commands, asynchronous, autosupport, cache, array, synchronous 
 summary: Comandi del personale di monitoraggio dello storage 
 ---
-= Comandi del personale di monitoraggio dello storage
+= Comandi del personale di monitoraggio dello storage CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

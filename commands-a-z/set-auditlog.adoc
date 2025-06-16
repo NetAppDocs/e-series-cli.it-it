@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, audit log 
 summary: Il comando Set AuditLog configura le impostazioni del registro di controllo. 
 ---
-= Impostare le impostazioni del registro di controllo
+= Imposta le impostazioni del registro di controllo - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

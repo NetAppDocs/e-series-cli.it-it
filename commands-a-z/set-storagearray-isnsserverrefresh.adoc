@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, isns, server, refresh 
 summary: 'Il comando set StorageArray isnsServerRefresh aggiorna le informazioni dell"indirizzo di rete per il server iSNS.' 
 ---
-= Impostare il refresh del server iSNS dell'array di storage
+= Imposta l'aggiornamento del server iSNS dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

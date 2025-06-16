@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create, snapshot, group 
 summary: Il comando create snapGroup crea un nuovo gruppo di snapshot e il volume di repository associato. 
 ---
-= Creare un gruppo di snapshot
+= Crea gruppo snapshot - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

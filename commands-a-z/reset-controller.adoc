@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reset, controller 
 summary: Il comando RESET controller ripristina un controller e interrompe le operazioni di i/O. 
 ---
-= Ripristinare il controller
+= Reimposta controller - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

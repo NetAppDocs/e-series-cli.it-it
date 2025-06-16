@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: clear, storage array, recovery, mode 
 summary: Il comando clear StorageArray recoveryMode forza uno storage array a uscire dalla modalità di recovery. 
 ---
-= Cancellare la modalità di recovery dello storage array
+= Cancella la modalità di ripristino dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

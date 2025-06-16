@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: exit, status 
 summary: Gli stati di uscita vengono restituiti ai comandi eseguiti. Questa tabella elenca gli stati di uscita che potrebbero essere restituiti e il significato di ciascuno stato. 
 ---
-= Stato di uscita
+= Informazioni sullo stato di uscita della CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

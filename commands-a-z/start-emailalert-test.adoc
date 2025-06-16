@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: test, email, alert, configuration 
 summary: Il comando start emailAlert test consente di verificare la configurazione degli avvisi inviando un messaggio e-mail di esempio. 
 ---
-= Verificare la configurazione degli avvisi e-mail
+= Configurazione di test degli avvisi e-mail - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: save, storage, array, host, port, statistics 
 summary: 'Il comando Save StorageArray hostPortStatistics salva le statistiche delle porte host dell"array di storage.' 
 ---
-= Salvare le statistiche delle porte host dell'array di storage
+= Salva le statistiche delle porte host dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, volume, copy, target, candidates 
 summary: 'Il comando show VolumeCopy source targetCandidate restituisce informazioni sui volumi candidati che è possibile utilizzare come destinazione per un"operazione di copia del volume. Questo comando è valido per le coppie di copie di volumi snapshot.' 
 ---
-= Mostra candidati di destinazione per la copia del volume
+= Mostra i candidati target per la copia del volume - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

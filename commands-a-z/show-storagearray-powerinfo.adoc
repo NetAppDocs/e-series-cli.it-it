@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, storage, array, power, information 
 summary: 'Il comando show StorageArray powerInfo restituisce informazioni sulla quantità di energia consumata dall"intero array di storage e da ciascun tray dell"array di storage.' 
 ---
-= Mostra le informazioni sull'alimentazione degli array di storage
+= Mostra informazioni sull'alimentazione dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

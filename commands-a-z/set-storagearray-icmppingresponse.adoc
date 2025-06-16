@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, icmp, response 
 summary: Il comando set StorageArray icmpPingResponse restituisce i valori predefiniti per le impostazioni negoziabili per sessioni e connessioni, che rappresentano il punto di partenza per lo storage array per le negoziazioni. 
 ---
-= Impostare la risposta ICMP dell'array di storage
+= Imposta la risposta ICMP dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

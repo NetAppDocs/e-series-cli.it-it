@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, audit log, configuration 
 summary: Il comando show AuditLog Configuration mostra le impostazioni di configurazione del registro di controllo per lo storage array. 
 ---
-= Mostra la configurazione del registro di controllo
+= Mostra la configurazione del registro di controllo - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

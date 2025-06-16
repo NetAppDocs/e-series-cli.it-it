@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: stop, check, volume, parity, job, 
 summary: Il comando di interruzione del processo di verifica della parità del volume interrompe un processo di verifica della parità del volume in corso. 
 ---
-= Interrompere il processo di verifica della parità del volume
+= Interrompi il processo di controllo della parità del volume - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

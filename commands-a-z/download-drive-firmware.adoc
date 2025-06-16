@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: download, drive, firmware, array, support, role, context, level 
 summary: 'Il comando di download del firmware del disco scarica un"immagine del firmware su un disco.' 
 ---
-= Scaricare il firmware del disco
+= Scarica il firmware dell'unità - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -47,8 +47,8 @@ Questo comando consente di scaricare un'immagine del firmware su un solo modello
 
 [source, cli, subs="+macros"]
 ----
-pass:quotes[download (drive \[_trayID_,[_drawerID,_]pass:quotes[_slotID_] \| drives\ pass:quotes[[_trayID1_,[_drawerID1_,]slotID1 ... trayIDn,[drawerIDn,]slotIDn\])
- [online|offline] firmware file="filename"
+download (drive [trayID,[drawerID,]slotID] | drives [trayID1,[drawerID1,]slotID1 ... trayIDn,[drawerIDn,]slotIDn])
+[online|offline] firmware file="filename"
 ----
 
 

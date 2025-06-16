@@ -5,7 +5,6 @@
   <block id="545944d3ed6b702648d0cff3bdddb3a9" category="list-text">Aggiungere il testo dopo due barre <block ref="7bc0ee636b3b83484fc3b9348863bd22" prefix="(" category="inline-code"></block> ) come commento fino a quando non viene raggiunto un carattere di fine riga. Se il motore di script non trova un carattere di fine riga nello script dopo l'elaborazione di un commento, viene visualizzato un messaggio di errore e l'operazione di script viene terminata. Questo errore si verifica di solito quando un commento viene inserito alla fine di uno script e si è dimenticato di premere il tasto *Invio*.</block>
   <block id="60b3f8c24959c89262e2b343157442cb" category="list-text">Aggiungere testo tra<block ref="523048e7f5ca9550505f2d8ea6d587e7" prefix=" " category="inline-code"></block> e.<block ref="c4c9bdd47ee05028cb84873da0ebf2b5" prefix=" " category="inline-code"></block> come commento. Se il motore di script non trova sia una notazione di commento iniziale che una notazione di commento finale, viene visualizzato un messaggio di errore e l'operazione di script viene terminata.</block>
   <block id="e782805f580a9e1271f7ace0eef0b6d1" category="list-text">Utilizzare<block ref="a7dd12b1dab17d25467b0b0a4c8d4a92" prefix=" " category="inline-code"></block> per incorporare i commenti in un file di script che si desidera visualizzare durante l'esecuzione del file di script. Racchiudere il testo che si desidera visualizzare utilizzando virgolette doppie ("` `").</block>
-  <block id="bb0d07b5620d2e85d47a3dfc403a4ee0" category="doc">Regole di formattazione per i comandi CLI</block>
   <block id="02fcb96a2220221658b695dc783c341f" category="paragraph">Le virgolette doppie (" ") utilizzate come parte di un nome o di un'etichetta richiedono una particolare considerazione quando si eseguono i comandi CLI e i comandi script su un sistema operativo Windows, Linux o Solaris.</block>
   <block id="88f31185f3b63664c188b018aa2994d0" category="paragraph">Quando le virgolette doppie (" ") fanno parte di un nome o di un valore, è necessario inserire una barra rovesciata (") prima di ogni virgoletta doppia.</block>
   <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">Ad esempio:</block>
@@ -17,7 +16,6 @@
   <block id="9400d94b39e32be5bf47fa3cb8a28a39" category="paragraph">Inserire un accento circonflesso prima di ogni carattere di script speciale quando viene utilizzato con i terminali<block ref="9cefd96d40d0ee1256c8eff1def0312d" prefix=" " category="inline-code"></block>,<block ref="b2ed43620b7fff2689035f1e99c24ded" prefix=" " category="inline-code"></block>,<block ref="5338b151154663bac9980b0f044518f2" prefix=" " category="inline-code"></block>, e.<block ref="b3868ba70a8f4cf55464dd9926381db1" prefix=" " category="inline-code"></block>. Ad esempio, per specificare l'array di storage CLI&gt;CLIENT, immettere la seguente stringa:</block>
   <block id="9184a090a1d4a1cb5e36b1517050f931" category="paragraph">Inserire un caret ({caret}) prima di ogni carattere speciale dello script quando viene utilizzato all'interno di una stringa letterale in un comando script. Ad esempio, per modificare il nome di un array di storage in FINANCE_|_PAYROLL, immettere la seguente stringa:</block>
   <block id="0113d123180a32d636b7a88fda0ca384" category="paragraph">Quando si emettono comandi SMcli al prompt dei comandi, viene visualizzata una barra rovesciata aggiuntiva <block ref="28d397e87306b8631f3ed80d858d35f0" prefix="(" category="inline-code"></block>) È un carattere di escape nel nome del percorso di un file di input o output quando si utilizza il sistema operativo Windows. La barra rovesciata aggiuntiva <block ref="28d397e87306b8631f3ed80d858d35f0" prefix="(" category="inline-code"></block>) Deve essere incluso quando si utilizza SMcli in modalità https sicura, fornendo l'opzione -u per specificare un utente di gestione degli accessi basato sui ruoli. *Esempio:*</block>
-  <block id="2b21cb9530a6c7704a66108d45c196a1" category="doc">Parametri della riga di comando SMcli scaricabili</block>
   <block id="ab21a9218cf2507b606b474a8958d92d" category="section-title">11.60 e parametri della riga di comando SMcli scaricabili più recenti</block>
   <block id="75842716a65060950b20cba161cbac95" category="admonition">Sul sistema di gestione in cui si intende eseguire i comandi CLI deve essere disponibile Java Runtime Environment (JRE), versione 8 e successive.</block>
   <block id="c3369045597873cd151e0a9b94edab23" category="inline-xref-macro">Parametri della riga di comando legacy</block>
@@ -376,7 +374,6 @@
   <block id="a3f390d88e4c41f2747bfa2f1b5f87db" category="paragraph">68</block>
   <block id="fca34b0028dd6b39f2766938660645b1" category="paragraph">FILE_PASSWORD_NON_VALIDO</block>
   <block id="4415f88f8516743ac7ab25e136f3173b" category="paragraph">Impossibile trovare il file della password o non è leggibile.</block>
-  <block id="225df3023bbec8bcdc760941a198bdcc" category="summary">Scopri di più sulla migrazione dei gruppi di volumi</block>
   <block id="a51bd146136c0effef8bf09de49de95a" category="paragraph">Se il gruppo di volumi è costituito da unità compatibili con NVMe o FIPS, la chiave di sicurezza e la password dovranno essere registrate/salvate dall'array di origine per sbloccare i dischi prima dell'inizio della migrazione all'array di destinazione. Se la chiave di sicurezza e la password non sono note e/o l'integrità dei dati non è necessaria, è possibile eseguire una cancellazione di sicurezza. La combinazione di diverse unità di sicurezza con crittografia non è supportata nei sistemi storage e-Series. Per ulteriori informazioni su come sbloccare i dischi utilizzando una chiave di sicurezza, cancellare i dischi FIPS e sbloccare o reimpostare i dischi NVMe bloccati, consultare la guida online di Gestione di sistema di SANtricity.</block>
   <block id="b675c1a78d8533024a8878b054c013a6" category="paragraph">La migrazione dei gruppi di volumi consente di esportare un gruppo di volumi in modo da poter importare il gruppo di volumi in un array di storage diverso. È inoltre possibile esportare un gruppo di volumi in modo da memorizzare i dati offline.</block>
   <block id="331aca7f6d2f21d3d59fcbafe29ac125" category="paragraph">*Possibile perdita di accesso ai dati* -- è necessario esportare un gruppo di volumi prima di spostare il gruppo di volumi o importarlo.</block>
@@ -504,7 +501,6 @@
   <block id="30519d48d6d4c9815bf2bf282229fd09" category="paragraph"><block ref="f04510959c08fcd1fefb100a4b7e7a74" prefix="" category="inline-code"></block> (maiuscolo)</block>
   <block id="80d0b4e2317c44f184a47842d232139a" category="paragraph">Elimina un array di storage da una configurazione.</block>
   <block id="94536b08c149b401c1e3d4aa164b853c" category="summary">Windows PowerShell è una shell interattiva e di scripting che fornisce l'accesso agli strumenti della riga di comando.</block>
-  <block id="0a6760c3056dd4237b647943d44dae70" category="doc">Regole di formattazione per i comandi CLI in Windows PowerShell</block>
   <block id="50d9f3447707fa32e9c0df1880bba9e0" category="list-text">Iniziare tutti i comandi SMcli con un punto e una barra (./)</block>
   <block id="caa5d9328bfc806fa16f762ba7bdcb27" category="list-text">Il wrapper SMcli deve essere identificato come un comando eseguibile con estensione .exe (SMcli.exe)</block>
   <block id="a2957c139a7a919a4f46836dd373b576" category="list-text">Racchiudere il comando script tra virgolette singole (' ')</block>
@@ -655,7 +651,6 @@
   <block id="6eebd4a1d6a48d968730cf80e8e3d088" category="list-text"><block ref="a10311459433adf322f2590a4987c423" prefix="" category="inline-code"></block> -- il gruppo di volumi è abilitato per la protezione.</block>
   <block id="328ce1e7b08cc5e66a5ab81f4b53d470" category="paragraph">Se si desidera impostare una chiave di sicurezza per lo storage array, è necessario creare una chiave di sicurezza per lo storage array<block ref="39658fa1e0f09153b0523362d5528d1e" prefix=" " category="inline-code"></block>. (Per creare una chiave di sicurezza dello storage array, utilizzare<block ref="36ef9cc664c3c8b1ff2bbe46b6e0eefa" prefix=" " category="inline-code"></block> comando.)</block>
   <block id="9ffd32c9234d40afa0a6b642e854507f" category="summary">La sintassi univoca di uno specifico comando script è illustrata nella sezione Note alla fine della descrizione di ogni comando script.</block>
-  <block id="a34f8e9b3e8c0a5db5363d6ba9f8d58b" category="doc">Regole di formattazione per i comandi script</block>
   <block id="16239040ff489b7b750a9f4319c180ea" category="paragraph">*Distinzione tra maiuscole e minuscole* -- i comandi di script non distinguono tra maiuscole e minuscole. È possibile digitare i comandi di script in minuscolo, maiuscolo o minuscolo. (Nelle seguenti descrizioni dei comandi, viene utilizzato il maiuscolo/minuscolo come ausilio per la lettura dei nomi dei comandi e la comprensione dello scopo del comando).</block>
   <block id="89691c5fe7e61ba9d8ec5ee5055f6f85" category="paragraph">*Spaces* -- è necessario inserire gli spazi nei comandi script così come sono mostrati nelle descrizioni dei comandi.</block>
   <block id="34acea0cfbd046edcc6eae6cd380f6bc" category="paragraph">*Parentesi quadre* -- le staffe quadrate vengono utilizzate in due modi:</block>
@@ -723,13 +718,11 @@
   <block id="969ae0c2de293b383ec4b22d9aec2b24" category="list-text"><block ref="e77057c887938aefffa20b4f82e41610" prefix="" category="inline-code"></block> sono uno o più comandi di script o il nome di un file di script che contiene comandi di script. (I comandi di script configurano e gestiscono lo storage array).</block>
   <block id="c28c75dffe7b4d4a4d0486aaff29d1a6" category="paragraph">Se si immette un valore incompleto o impreciso<block ref="6c1c8c9ef027362a508a3965a2e7831b" prefix=" " category="inline-code"></block> stringa che non ha la sintassi, i nomi dei parametri, le opzioni o i terminali corretti, il motore di script restituisce informazioni sull'utilizzo.</block>
   <block id="d5a07a929adbc3f8e1dccfa24e88da4b" category="summary">L'interfaccia a riga di comando (CLI) è un'applicazione software che consente di configurare e monitorare gli array di storage.</block>
-  <block id="e469e58c2e81413c1d3a4e14f355fb8f" category="doc">Panoramica di CLI</block>
   <block id="43fc05846dc9a6463afd1a669e1e6af3" category="paragraph">L'interfaccia CLI consente di accedere direttamente a un motore di script che è un'utility del software di gestione dello storage. Il motore di script esegue comandi che configurano e gestiscono gli array di storage. Il motore di script legge i comandi, attraverso un file di script o direttamente dalla riga di comando, ed esegue le operazioni indicate dai comandi.</block>
   <block id="3ab8d5bf5932f687f0670270fa3cf437" category="paragraph">I comandi di script configurano e gestiscono un array di storage. I comandi script sono distinti dai comandi CLI. È possibile immettere singoli comandi di script oppure eseguire un file di comandi di script. Quando si immette un singolo comando script, il comando script viene incorporato in un comando CLI. Quando si esegue un file di comandi di script, il nome del file viene incorporato nel comando CLI.</block>
   <block id="155d01e6206b0910227f88561d2675bf" category="paragraph">Alcune funzionalità software descritte in questo documento potrebbero non essere disponibili per il sistema storage e-Series in uso. Per domande sulle funzioni disponibili, contattare il rappresentante commerciale.</block>
   <block id="ab2307dc857f6a7ccdbed0391d1f8d0a" category="paragraph">La CLI è una funzione del software di gestione dello storage SANtricity.</block>
   <block id="832c4bddc90301ed87414e7217d12a80" category="summary">Poiché è possibile utilizzare i comandi di script per definire e gestire i diversi aspetti di un array di storage (ad esempio topologia host, configurazione del disco, configurazione del controller, definizioni dei volumi e definizioni dei gruppi di volumi), il numero effettivo di comandi è elevato.</block>
-  <block id="9ab03979fb14b675494053f695a63b30" category="doc">Sintesi dei comandi di script</block>
   <block id="92e9d6227d5534e7afc27a11179c808e" category="cell">Sintassi</block>
   <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">Descrizione</block>
   <block id="622d27cd104889791f5af80d64bd606f" category="paragraph">Esegue l'operazione in sospeso.</block>
@@ -784,7 +777,6 @@
   <block id="e09eb504f4a302a718a04fda53bbcb8c" category="section-title">Operazioni di sola lettura, modalità client http</block>
   <block id="87af3705302719c8461683fbfb64f57a" category="paragraph">Nell'esempio seguente, anche utilizzando un'operazione di sola lettura ma in<block ref="de6b0dcfbccd619d18dc01c80f872c93" prefix=" " category="inline-code"></block> client mode (modalità client), nome utente e password sono richiesti e forniti insieme a.<block ref="ff2bddd61609f26dc3255408781890ad" prefix=" " category="inline-code"></block> per accettare un certificato autofirmato. Il<block ref="de6b0dcfbccd619d18dc01c80f872c93" prefix=" " category="inline-code"></block> la modalità client richiede una password anche per le operazioni di sola lettura.</block>
   <block id="11f48f6028fc13ed8d31867639998d8e" category="summary">In questa sezione sono elencate le forme di sintassi generali dei wrapper di comando CLI.</block>
-  <block id="53e4bf7c03a168dc39f408a2e59f4b84" category="doc">Sintassi del wrapper del comando CLI</block>
   <block id="c558c32077e3c358acaec2447b67b869" category="paragraph">In questa sezione sono elencate le forme di sintassi generali dei wrapper di comando CLI. Le convenzioni utilizzate nella sintassi del wrapper del comando CLI sono elencate nella tabella seguente.</block>
   <block id="7df65e857e3ee61a91e73f3afc266725" category="paragraph"><block ref="48f485558905476afd521fd6d45ecce7" prefix="" category="inline-code"></block></block>
   <block id="dbeaf36a6fb1ac5f367bf849475e568a" category="paragraph"><block ref="9418abac99571c88413603d0c9f97ccd" prefix="" category="inline-code"></block></block>
@@ -1814,9 +1806,7 @@
   <block id="8ab3987f5e11278960924053c1c48603" category="paragraph"><block ref="8ab3987f5e11278960924053c1c48603" category="inline-xref-macro-rx"></block></block>
   <block id="dd62ecca79626b0abf30ba505a8993ef" category="paragraph">Aggiunto<block ref="3a53bf66495d7b495faf8750a3363cbf" prefix=" " category="inline-code"></block> parametro.</block>
   <block id="e9b46bd45d89b563069e32b2ab8efeec" category="paragraph"><block ref="e9b46bd45d89b563069e32b2ab8efeec" category="inline-xref-macro-rx"></block></block>
-  <block id="799587ec57d3ccaff63b5aeba6541ba1" category="inline-xref-macro">Impostare lo storage array per abilitare o disabilitare il bilanciamento automatico del carico</block>
   <block id="cf3eb43ecfe9ff5a2482d314a0d46897" category="summary">Il comando SMcli enable autoSupportFeature attiva la funzione ASUP (AutoSupport) per tutti gli array di storage gestiti e consente di trasmettere messaggi al sito del supporto tecnico. Dopo aver attivato la funzione ASUP, qualsiasi array di storage compatibile con ASUP viene automaticamente preparato per raccogliere e inviare i dati relativi al supporto al supporto tecnico. I dati possono quindi essere utilizzati per la risoluzione dei problemi e l'analisi dei problemi in remoto.</block>
-  <block id="e3fc1c8c9213c6bd73399d183b9c4a81" category="doc">Abilitare o disabilitare AutoSupport a livello di dominio di gestione EMW (solo SMcli)</block>
   <block id="58b00cb497eb36843198cdc1d641b3f5" category="paragraph">Il<block ref="1e9fdb167ad0e290a95f32468c05e9ec" prefix=" " category="inline-code"></block> Command attiva la funzione ASUP (AutoSupport) per tutti gli storage array gestiti e consente di trasmettere messaggi al sito di supporto tecnico. Dopo aver attivato la funzione ASUP, qualsiasi array di storage compatibile con ASUP viene automaticamente preparato per raccogliere e inviare i dati relativi al supporto al supporto tecnico. I dati possono quindi essere utilizzati per la risoluzione dei problemi e l'analisi dei problemi in remoto.</block>
   <block id="6a21deb5d5cefe85b0876b69bb5e25f7" category="section-title">Array supportati</block>
   <block id="19d9b187990ba6558dc39071886bd1fb" category="paragraph">Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E2800 o E5700.</block>
@@ -3938,7 +3928,6 @@
   <block id="c541b19edb726cff4809a2f51c52aea2" category="paragraph">La formattazione di un volume avvia un'operazione a esecuzione prolungata che non è possibile interrompere.</block>
   <block id="0055d82afd8b33e02e6c9cbbef61f0f7" category="paragraph">Il nome di un volume che si desidera formattare. Racchiudere il nome del volume tra parentesi quadre ([ ]). Se il nome del volume contiene caratteri speciali o numeri, è necessario racchiuderlo tra virgolette doppie (" ") all'interno di parentesi quadre.</block>
   <block id="0a971bdaf647eec5727bb73b4fdaf62a" category="summary">Il comando Set StorageArray cacheMirrorDataAssuranceCheckEnable consente di attivare o disattivare il controllo dei dati mirror della cache.</block>
-  <block id="4f856a887e5732ed9116694218089f06" category="doc">Impostare lo storage array per abilitare o disabilitare il controllo di garanzia dei dati mirror della cache</block>
   <block id="a2f3cff920191a1785038eb770af11ac" category="paragraph">Il<block ref="4e9e70c51aa47d98d09a798ae70b33ce" prefix=" " category="inline-code"></block> il comando consente di attivare o disattivare il controllo di garanzia dei dati mirror della cache.</block>
   <block id="ecd8f68d5c8a073ab5f744175bcfc48d" category="paragraph">8.41 nuovo parametro di comando.</block>
   <block id="d4f9a77cb39a46be6313aaf52bfe5bc0" category="summary">Il comando remove asyncMirrorGroup rimuove un volume di coppia di mirroring orfano sull'array di storage.</block>
@@ -3998,7 +3987,6 @@
   <block id="d7e8c3f5d3480ad7bac676ed8c657cd0" category="paragraph">Il nome che si desidera assegnare al gruppo host che si sta creando. Racchiudere il nome del gruppo di host tra virgolette doppie (" ").</block>
   <block id="e85933fc5f82672a5feddf74a3f954b8" category="paragraph">Un gruppo di host è un elemento topologico opzionale che è possibile definire se si desidera designare una raccolta di host che condividono l'accesso agli stessi volumi. Il gruppo host è un'entità logica. Definire un gruppo di host solo se si dispone di due o più host in grado di condividere l'accesso agli stessi volumi.</block>
   <block id="3a67810abc8da793d40e0d9c714d2958" category="summary">Il comando show StorageArray AutoSupport visualizza le impostazioni della raccolta bundle AutoSupport per lo storage array.</block>
-  <block id="b9a29215603a15544fa6c897c678da0a" category="doc">Mostra configurazione AutoSupport</block>
   <block id="019fa4ba5e1d588b0e5c8dd094fde7d5" category="paragraph">Il<block ref="71eae19fa70d29030673e081786d825b" prefix=" " category="inline-code"></block> Il comando visualizza le impostazioni della raccolta bundle AutoSupport per lo storage array.</block>
   <block id="d999a9c760b0f5e1d68715c95898430c" category="list-text">Il metodo di consegna è e-mail (SMTP): Vengono visualizzati l'indirizzo e-mail di destinazione, il server di inoltro e l'indirizzo e-mail del mittente</block>
   <block id="12e80b12563c6f7b86f4a49dc6ab595f" category="list-text">Intervalli di tempo preferiti giornalieri e settimanali AutoSupport</block>
@@ -4788,7 +4776,6 @@
   <block id="24ddb9b0c3a8785c8d546660273c1700" category="paragraph">Il pool di dischi che si desidera attivare la funzione di provisioning delle risorse. Racchiudere il nome del pool di dischi tra parentesi quadre ([ ]).</block>
   <block id="0a5ed37f3e3a0785e8ade689487b3583" category="paragraph">11.73</block>
   <block id="60229ca5c99f5f79f718787dae6e6bd8" category="summary">Il comando Set Volumes definisce le proprietà di un volume in un pool di dischi.</block>
-  <block id="12e44abaed4e25a729a846c77e446e73" category="doc">Impostare gli attributi di un volume in un pool di dischi</block>
   <block id="bf06c203cdd9cc13c223c1d55e86a3f0" category="paragraph">Il<block ref="69276fc0881f6d9b0d01abfd5aabb727" prefix=" " category="inline-code"></block> command definisce le proprietà di un volume in un pool di dischi.</block>
   <block id="1c38ffc45b9eed61dc4f59ea613d7bbe" category="paragraph">Nelle configurazioni in cui i pool di dischi sono costituiti da più di 32 volumi, l'operazione può causare errori di i/o dell'host o il riavvio del controller interno a causa della scadenza del periodo di timeout prima del completamento dell'operazione. Se si verificano errori di i/o dell'host o si riavvia il controller interno, portare l'host in uno stato di inattività e riprovare l'operazione.</block>
   <block id="870e4751c04286ba1a2cbb2a7d419a56" category="paragraph">Questo parametro imposta le proprietà per tutti i volumi nell'array di storage.</block>
@@ -4901,7 +4888,6 @@
   <block id="4659813bbaeb1a0e12dd1ba0b38ebbe5" category="paragraph">Il<block ref="3d25b8a7089d44a5daae6f6555bcfb8f" prefix=" " category="inline-code"></block> Il comando ripristina la linea di base RLS (Read link status) per tutti i dispositivi impostando tutti i conteggi RLS su 0.</block>
   <block id="51d726b7c54c7cc98e1d092be83866f1" category="paragraph">5.00</block>
   <block id="eb898012b2c7229201036dae959b6f4c" category="summary">Il comando set volume definisce le proprietà dei volumi in un gruppo di volumi.</block>
-  <block id="0ce231527ebd6152c54062aca57f49bf" category="doc">Impostare gli attributi di un volume in un gruppo di volumi</block>
   <block id="e09985b1b214254d8a7d853c6502babc" category="paragraph">Il<block ref="e1f9a5338247a47a7f5634f1f4489bd7" prefix=" " category="inline-code"></block> il comando definisce le proprietà dei volumi in un gruppo di volumi.</block>
   <block id="ed0d9147c134f6026e18fae4ef807490" category="paragraph">È possibile utilizzare la maggior parte dei parametri per definire le proprietà di uno o più volumi. È inoltre possibile utilizzare alcuni parametri per definire le proprietà di un solo volume. Le definizioni di sintassi sono separate per mostrare quali parametri si applicano a diversi volumi e che si applicano a un solo volume.</block>
   <block id="a1596d4bec10e80dcf7cb002340b0680" category="paragraph">Nelle configurazioni in cui i gruppi di volumi sono costituiti da più di 32 volumi, l'operazione può causare errori di i/o dell'host o il riavvio del controller interno a causa della scadenza del periodo di timeout prima del completamento dell'operazione. Se si verificano errori di i/o dell'host o si riavvia il controller interno, interrompere l'i/o dell'host e riprovare l'operazione.</block>
@@ -5178,7 +5164,6 @@
   <block id="1f010fe7ead454e4e43036138f209b40" category="paragraph">Questo parametro visualizza l'avanzamento periodico della sincronizzazione del gruppo di mirror asincrono.</block>
   <block id="5e40e00afc43dd0440de52e4b129a656" category="paragraph">Questo parametro visualizza un breve elenco di informazioni sulla sincronizzazione del gruppo di mirror asincrono tra l'array di storage locale e remoto.</block>
   <block id="86f8ad5baca5c765cbae20b60fc051b7" category="summary">Il comando start increaseVolumeCapacity volume aumenta la capacità di un volume standard o di un volume di repository in un pool di dischi o un gruppo di volumi.</block>
-  <block id="92925efe9ea6338363bb32d12325a085" category="doc">Aumentare la capacità del volume nel pool di dischi o nel gruppo di volumi</block>
   <block id="eb0eb459c4b030d19a12632181b31657" category="paragraph">Il<block ref="48d5a7483fede70d759f17edefe58921" prefix=" " category="inline-code"></block> command aumenta la capacità di un volume standard o di un volume di repository in un pool di dischi o un gruppo di volumi.</block>
   <block id="06161399e996c50a2080df16e4f78c24" category="paragraph">In questo comando, un volume standard viene chiamato anche volume thick.</block>
   <block id="27a7c6652ea41a703a6f5cffbe53deec" category="paragraph">Non è possibile utilizzare questo comando per aumentare la capacità di un volume thin.</block>
@@ -5563,7 +5548,6 @@
   <block id="1f30119432559a599c9ed4bf64a84608" category="summary">Il comando stop diskPool Locate spegne gli indicatori luminosi dei dischi che sono stati attivati dal comando start diskPool Locate.</block>
   <block id="5a8257139eee41d81db432bb93df7899" category="paragraph">Il<block ref="1c131c5259f1e4534ab686668b3a30f0" prefix=" " category="inline-code"></block> il comando spegne gli indicatori luminosi dei dischi accesi da<block ref="95c54d9f9ba76508c7e821a47155b55e" prefix=" " category="inline-code"></block> comando.</block>
   <block id="fef563ac437ffe92676ddb5f4870b392" category="summary">Il comando SMcli enable|disable autoportRemoteDiag attiva o disattiva la funzione di diagnostica remota AutoSupport. Questa funzione consente al supporto tecnico di richiedere i dati di supporto per diagnosticare i problemi in remoto.</block>
-  <block id="5985e51532f00463ea0d009e35d3f730" category="doc">Attivare o disattivare la funzione di diagnostica remota AutoSupport a livello di dominio di gestione EMW (solo SMcli)</block>
   <block id="d696d59ee6929514ea1ab9ef31828954" category="paragraph">Il<block ref="635945d7d12fff869420a15e434f25e1" prefix=" " category="inline-code"></block> Command consente di attivare o disattivare la funzione di diagnostica remota AutoSupport. Questa funzione consente al supporto tecnico di richiedere i dati di supporto per diagnosticare i problemi in remoto.</block>
   <block id="a7dcc0992cb74c432e1e0f6a766c5185" category="paragraph">Questo comando influisce su tutti gli storage array compatibili con ASUP nel dominio di gestione.</block>
   <block id="0d9ea4e8fdd29724752b9a7c688f0e2a" category="paragraph">Prima di attivare questa funzione, attivare la funzione AutoSupport e quindi la funzione AutoSupport su richiesta nel dominio di gestione.</block>
@@ -7611,4 +7595,461 @@
   <block id="7cfe927cc93acde3fd26ff2626d6a30c" category="section-title">Comandi AutoSupport per E4000, EF300, EF600, E2800, E5700</block>
   <block id="4446202efb248928e4f489743b194e56" category="paragraph">La versione scaricabile di SMcli è disponibile sui controller E4000, EF600, EF300, E5700, EF570, E2800, EF280, EF300C e EF600C. Per scaricare SMcli in Gestione di sistema di SANtricity, selezionare *Impostazioni* *sistema* e *componenti aggiuntivi* *interfaccia della riga di comando* .</block>
   <block id="d14e73691bb33d04604da5d4d66f9630" category="sidebar">Benvenuti nell'assistenza utente della CLI integrata di SANtricity, in cui è possibile scoprire come configurare, monitorare e mettere a punto lo storage array utilizzando l'interfaccia a riga di comando (CLI).</block>
+  <block id="005c36a73508bafe714d7c28636a6690" category="doc">Attiva il mirroring asincrono - SANtricity CLI</block>
+  <block id="67b8a5ea93ae643bff796aec41a595da" category="doc">Attivazione del firmware dell'array di archiviazione - CLI SANtricity</block>
+  <block id="bc85fa0f0fd1ceedb542c4b8b859dcee" category="doc">Attiva il mirroring sincrono - SANtricity CLI</block>
+  <block id="12856608d68a33cbe72594a7d9540217" category="doc">Aggiungi etichetta array - SANtricity CLI</block>
+  <block id="0a2c65f489bae54378b7ad476a1e6424" category="doc">Aggiungi certificato da array - SANtricity CLI</block>
+  <block id="f17c5d851e2596993b9afa10dfa95c13" category="doc">Aggiungi certificato da file - SANtricity CLI</block>
+  <block id="61d9f0699262e7806a0950c1f566ec58" category="doc">Aggiungere unità alla cache SSD - SANtricity CLI</block>
+  <block id="ea6f10db24a0158f856705e05eef4fd5" category="doc">Aggiungi volume al gruppo mirror asincrono - SANtricity CLI</block>
+  <block id="a58246e032eb943bf69df48455b3219b" category="doc">Configurazione automatica degli hot spare dell'array di archiviazione - CLI SANtricity</block>
+  <block id="5fd3f8ef44dc5d5c2c2fca274b5ff380" category="doc">Configurazione automatica dell'array di archiviazione - CLI SANtricity</block>
+  <block id="51edd45492d71c667f8acd41fbe0c605" category="doc">Cambia il tipo di applicazione della cache SSD - SANtricity CLI</block>
+  <block id="78b392a667c853bce601d347536fd664" category="doc">Verifica la coerenza del gruppo mirror asincrono - SANtricity CLI</block>
+  <block id="d2a16adfad6f5941743ac184f2138079" category="doc">Verifica la coerenza del repository - SANtricity CLI</block>
+  <block id="2c4f8c6cdbed7998a3c085f8def49c45" category="doc">Controllare la connettività dell'array di archiviazione - SANtricity CLI</block>
+  <block id="c832da0a07ea055b89ac0b59d81f8789" category="doc">Verifica lo stato del mirroring sincrono - SANtricity CLI</block>
+  <block id="2e6ffa6e35abba4ff76780c1d8c5e110" category="doc">Controlla la parità del volume - SANtricity CLI</block>
+  <block id="6b4e700a3d15e87bb7cd9142f5fe8b0e" category="doc">Cancella le statistiche del canale di unità - SANtricity CLI</block>
+  <block id="d9a6f9fe601f15e2754e4a0a652d5aae" category="doc">Cancella errore di mirroring asincrono - SANtricity CLI</block>
+  <block id="b69da91c13a58517a6086fb7419b47ea" category="doc">Configurazione di avviso e-mail chiaro - CLI SANtricity</block>
+  <block id="34e1ebf4a111d468ce79bff328a168f6" category="doc">Cancella la configurazione dell'array di archiviazione - CLI SANtricity</block>
+  <block id="504c1e0ecb45485f7e19d0b5ef7d2cf3" category="doc">Cancella il registro eventi dell'array di archiviazione - CLI SANtricity</block>
+  <block id="981b6d5deadf650da1b8ee0ddbb5f0e2" category="doc">Cancella l'area in attesa del firmware dell'array di archiviazione - CLI SANtricity</block>
+  <block id="76399c915900c3c8dd213d25b9b95547" category="doc">Cancella la modalità di ripristino dell'array di archiviazione - CLI SANtricity</block>
+  <block id="ce87c774d43a3cf3a7ee89d9e37b7643" category="doc">Cancella la configurazione di syslog - SANtricity CLI</block>
+  <block id="4166852febc547b38535cde1aa1cfb4d" category="doc">Cancella le prenotazioni di volume - SANtricity CLI</block>
+  <block id="ab5405013880a50b2bf4fc87dff0bfb1" category="doc">Cancella i settori illeggibili del volume - SANtricity CLI</block>
+  <block id="fd466847736d39467f51f37882f49fb4" category="doc">Crea un gruppo mirror asincrono - SANtricity CLI</block>
+  <block id="5c1fa9251daae5f4f16e5cb4cddd5934" category="doc">Crea un'immagine snapshot del gruppo di coerenza - SANtricity CLI</block>
+  <block id="9cc46ec6c5eefdabc7808151718da5e7" category="doc">Crea un volume snapshot del gruppo di coerenza - SANtricity CLI</block>
+  <block id="5dfbb4542d2252a24a76bd6f97d2b2e2" category="doc">Crea gruppo di coerenza - SANtricity CLI</block>
+  <block id="9a377d0e408d40006fafad85f3957463" category="doc">Creazione di pool di dischi - SANtricity CLI</block>
+  <block id="f10014b5f811ffe9cf0e7881ab83dae3" category="doc">Crea host - SANtricity CLI</block>
+  <block id="d67d4367ad6facb674da5e01f150f4a2" category="doc">Crea gruppo host - SANtricity CLI</block>
+  <block id="77d49c2db36bfc03f960f878d4c8b3b8" category="doc">Crea porta host - SANtricity CLI</block>
+  <block id="f066c8c7718a3c91c03f107027645a4c" category="doc">Crea iniziatore - SANtricity CLI</block>
+  <block id="8c86ae314150ab12a7efab9b93640dd0" category="doc">Crea iniziatore iSCSI - SANtricity CLI</block>
+  <block id="9b3b3b16d6c729c53e59bfbe6ac37e44" category="doc">Crea la mappatura del volume dello snapshot del gruppo di coerenza - SANtricity CLI</block>
+  <block id="99adeb2827528130fab9af8c94eee13e" category="doc">Crea mappatura del volume - SANtricity CLI</block>
+  <block id="95171ca1a47ff9ab7693c06b1f145267" category="doc">Creazione di un volume RAID (selezione automatica dell'unità) - SANtricity CLI</block>
+  <block id="435014f1fe7ebef616b8e5374a499aa0" category="doc">Creazione di un volume RAID (selezione basata su estensione libera) - CLI SANtricity</block>
+  <block id="200cc04eea595957b6251663e069f4cb" category="doc">Creazione di un volume RAID (selezione manuale dell'unità) - SANtricity CLI</block>
+  <block id="739fc0d96ced269d45916544bef28248" category="doc">Crea volume snapshot di sola lettura - SANtricity CLI</block>
+  <block id="70a1bd6a6ce94a09b03a24806c05ebf1" category="doc">Crea gruppo snapshot - SANtricity CLI</block>
+  <block id="1908e5347445b6efc1c90aef4831f9a4" category="doc">Crea immagine snapshot - SANtricity CLI</block>
+  <block id="757a750e63ed93b105b005a12062e1ea" category="doc">Crea volume snapshot - SANtricity CLI</block>
+  <block id="dba94d66d62939236aa8b6128cb273e2" category="doc">Registra la community SNMP - SANtricity CLI</block>
+  <block id="d198df8d0f6cbc517ccb18b6d064da1b" category="doc">Registra la destinazione della trap SNMP - CLI SANtricity</block>
+  <block id="a1ebd51b31899a01b342b87710ed0fb2" category="doc">Registra l'utente USM SNMPv3 - SANtricity CLI</block>
+  <block id="75d6a06bc2227a83b9563b5cbe662a8a" category="doc">Crea cache SSD - SANtricity CLI</block>
+  <block id="49d054e1a2bed6805cd18a14be0f6112" category="doc">Creare un server di directory di array di archiviazione - SANtricity CLI</block>
+  <block id="afd02d7abdcccc4a275fd78dc612db65" category="doc">Crea chiave di sicurezza dell'array di archiviazione - SANtricity CLI</block>
+  <block id="76a6f138246872859dd77201e509ccdc" category="doc">Creare la configurazione syslog dell'array di archiviazione - SANtricity CLI</block>
+  <block id="18eb4664e11a6e36e89a3315b00802e6" category="doc">Crea mirroring sincrono - SANtricity CLI</block>
+  <block id="5c524efe873e996a554466592021106a" category="doc">Crea volume nel pool di dischi - SANtricity CLI</block>
+  <block id="51f0fca898df8c84c9744436064d6f7b" category="doc">Crea copia del volume - SANtricity CLI</block>
+  <block id="2e9378d750fba1571722e5f01a103270" category="doc">Crea gruppo di volumi - SANtricity CLI</block>
+  <block id="79e371c41d54e1a109f28bba4972d4aa" category="doc">Disattivare il mirroring sincrono - SANtricity CLI</block>
+  <block id="5b13848f40804b92df92e8b2e74c9e82" category="doc">Disattivare il mirroring asincrono - SANtricity CLI</block>
+  <block id="d546d72f18a1b35f8696f239e488672d" category="doc">Elimina gruppo mirror asincrono - SANtricity CLI</block>
+  <block id="5b5fa8789c276a542c8658fbca52595c" category="doc">Elimina i record del registro di controllo - SANtricity CLI</block>
+  <block id="1ebf49384a50774c6f8e8e89fe176b23" category="doc">Elimina certificati - SANtricity CLI</block>
+  <block id="67dc5d816c2ca55e9793f2fbbbe38c0f" category="doc">Elimina l'immagine snapshot del gruppo di coerenza - SANtricity CLI</block>
+  <block id="32303290bec027f492c8973f34bdc216" category="doc">Elimina gruppo di coerenza - SANtricity CLI</block>
+  <block id="e5536d6ffbe7ddca21b1a54c5c4f715e" category="doc">Rimuovere i certificati CA radice/intermedi installati - SANtricity CLI</block>
+  <block id="d95639af01814d0b6c146c322ff5146a" category="doc">Elimina pool di dischi - SANtricity CLI</block>
+  <block id="d1afca45100a598b7c7b718ec68f9ff3" category="doc">Elimina destinatario avviso e-mail - SANtricity CLI</block>
+  <block id="d1bd38dad03a2c484e36e8d1f1d0872b" category="doc">Elimina host - SANtricity CLI</block>
+  <block id="4efc7a016782872bb388c0663575ae41" category="doc">Elimina gruppo host - SANtricity CLI</block>
+  <block id="09c32cca573c42f8d3f39c7eb8d506e6" category="doc">Elimina la porta host - SANtricity CLI</block>
+  <block id="b9742886d59e4570de017efb62495929" category="doc">Elimina iniziatore - SANtricity CLI</block>
+  <block id="1a11ebb7be6909943af16c1da78a4478" category="doc">Elimina l'iniziatore iSCSI - SANtricity CLI</block>
+  <block id="daab452e282cd2f6e00cff75fc2e3f3d" category="doc">Elimina volume snapshot del gruppo di coerenza - SANtricity CLI</block>
+  <block id="8abcd08a894cf444a59dbf3ec1e23fb0" category="doc">Elimina gruppo snapshot - SANtricity CLI</block>
+  <block id="e14211f312568fdf5f4e1fd12261bed9" category="doc">Elimina immagine snapshot - SANtricity CLI</block>
+  <block id="6d55e12d9f38b85eee691f192f5369ed" category="doc">Elimina volume snapshot - SANtricity CLI</block>
+  <block id="23fb0d56da68f02e699a743e8486a7c2" category="doc">Annulla registrazione comunità SNMP - SANtricity CLI</block>
+  <block id="02f6e21729b6f7de09d0c95c0903409f" category="doc">Annulla registrazione destinazione trap SNMP - CLI SANtricity</block>
+  <block id="ff4cbdbcb944197627eb3fb92999dc2b" category="doc">Annulla la registrazione dell'utente USM SNMPv3 - SANtricity CLI</block>
+  <block id="68cf89bc4032166f0abce517503e748a" category="doc">Elimina cache SSD - SANtricity CLI</block>
+  <block id="6bcfd69c50b85b6d7209b08c0bc8cd5c" category="doc">Elimina il server di directory dell'array di archiviazione - SANtricity CLI</block>
+  <block id="eccf4b307574a066e9a7407be2013403" category="doc">Rimuovere il certificato di gestione delle chiavi esterne installato - SANtricity CLI</block>
+  <block id="11e9df45f9680456b5e05bcbfaf42a0c" category="doc">Elimina il banner di accesso all'array di archiviazione - CLI SANtricity</block>
+  <block id="af693cd1594d36107e2e0c0eccdc6270" category="doc">Elimina la configurazione syslog dell'array di archiviazione - CLI SANtricity</block>
+  <block id="b64177d18b6eaae65b73ae923fb26e01" category="doc">Rimuovere i certificati CA attendibili installati - SANtricity CLI</block>
+  <block id="765d919c0ea4455bc7292a0dc11114db" category="doc">Elimina il server syslog - SANtricity CLI</block>
+  <block id="a928fef7533ee74e5f9335e21f078682" category="doc">Elimina volume dal pool di dischi - SANtricity CLI</block>
+  <block id="52359be666efea0125b9a390dd4d85fe" category="doc">Elimina volume - SANtricity CLI</block>
+  <block id="803335491ded8016c6407a2004805598" category="doc">Elimina gruppo di volumi - SANtricity CLI</block>
+  <block id="a1f60f07d97338cef902b19dc1714dbd" category="doc">Test della connettività del gruppo mirror asincrono - SANtricity CLI</block>
+  <block id="5f32e53bf65b2e40976d277e1958406a" category="doc">Diagnosi del cavo host iSCSI del controller - SANtricity CLI</block>
+  <block id="9faddec54c85a84e6e7a28b27fcf8b4c" category="doc">Diagnostica del controller - SANtricity CLI</block>
+  <block id="b2fa3386eac5b6ef940c476e6c5d25ec" category="doc">Diagnosi del mirroring sincrono - SANtricity CLI</block>
+  <block id="b1ffb3cc12fd837ecdf15bab0b234bae" category="doc">Disabilitare la gestione delle chiavi di sicurezza esterne - SANtricity CLI</block>
+  <block id="4c391819f753ade397beb393cc2c4b41" category="doc">Disabilitare la funzionalità di array di archiviazione - SANtricity CLI</block>
+  <block id="a61b1c53f2d43943ab17d9d494fb75d2" category="doc">Installa il certificato firmato dal server - SANtricity CLI</block>
+  <block id="f7cd70d640ba0c8ee23df61079602c92" category="doc">Installa certificati CA radice/intermedi - SANtricity CLI</block>
+  <block id="972e5cb40d309028b90323979004ffba" category="doc">Installa certificati CA attendibili - SANtricity CLI</block>
+  <block id="d4279fc2897988f3bc961ad411389edf" category="doc">Scarica il firmware dell'unità - SANtricity CLI</block>
+  <block id="ad9e6d206a5f5d5de772574852df7485" category="doc">Scarica il firmware dell'unità array di archiviazione - SANtricity CLI</block>
+  <block id="f8ee46e7a752cb9b016d7e341a1ff56c" category="doc">Scarica il firmware/NVSRAM dell'array di archiviazione - CLI SANtricity</block>
+  <block id="463378cd4a0dbea8865f6760eeb386a4" category="doc">Installa il certificato di gestione delle chiavi esterne dell'array di archiviazione - SANtricity CLI</block>
+  <block id="3b6e76802bce9c7d171fdf50c1c5a95f" category="doc">Scarica array di archiviazione NVSRAM - CLI SANtricity</block>
+  <block id="4f9e074522bffb74884234f2d91b5c05" category="doc">Scarica le impostazioni di configurazione del vassoio - SANtricity CLI</block>
+  <block id="f70ab1d30e2967330625eb62c69f6a73" category="doc">Scarica il firmware della scheda ambientale - SANtricity CLI</block>
+  <block id="355944a3c5691270ea0d65bcb5a8d25d" category="doc">Abilita il trasferimento dei dati del controller - SANtricity CLI</block>
+  <block id="0b9e5db02f4eb038f75e41a1605c98d8" category="doc">Abilita la sicurezza del pool di dischi - SANtricity CLI</block>
+  <block id="3f4555c80245327da09edd0903ebd62a" category="doc">Abilitare o disabilitare AutoSupport (tutti i singoli array) - SANtricity CLI</block>
+  <block id="04607e3a40db92f548b95f8c34c5f5c7" category="doc">Abilitare la gestione delle chiavi di sicurezza esterne - SANtricity CLI</block>
+  <block id="dc54a2fb9cfa8f4785c762cca5e5012f" category="doc">Abilita la funzionalità di array di archiviazione - SANtricity CLI</block>
+  <block id="a3ae0f16af3632dfbb3f21e49956fd5c" category="doc">Abilita la sicurezza del gruppo di volumi - SANtricity CLI</block>
+  <block id="4954c5bb5ce5141a5ce68b31e60c0359" category="doc">Stabilire una coppia speculare asincrona - SANtricity CLI</block>
+  <block id="8f1a4d873b35d3a53dbc2b0cd0045722" category="doc">Esportazione della chiave di sicurezza dell'array di archiviazione - CLI SANtricity</block>
+  <block id="a31b32c2e30c19a34f066ce0ccde56da" category="doc">Introduzione all'autenticazione - SANtricity CLI</block>
+  <block id="388523294499aaa99d2963caaa332317" category="doc">Introduzione alla gestione delle chiavi esterne - SANtricity CLI</block>
+  <block id="fbf45569efeef51447cf89ed71471302" category="doc">Introduzione alla gestione delle chiavi interne - SANtricity CLI</block>
+  <block id="90f9604feaf4f1f2a54500ae0b92f857" category="doc">Importa la chiave di sicurezza dell'array di archiviazione - CLI SANtricity</block>
+  <block id="63a45e49456d076aa0458b90927e5a7b" category="doc">Carica database DBM di array di archiviazione - CLI SANtricity</block>
+  <block id="06b3d91daee6cf90e3b5387b4d2e85ae" category="doc">Copia del volume di ricopia - CLI SANtricity</block>
+  <block id="f618268c4a19fad794d36f52f88b02b9" category="doc">Ripristina le porte delle unità disabilitate - SANtricity CLI</block>
+  <block id="304b8d2dae6f61d70597de843ebc44ed" category="doc">Ripristinare il cablaggio errato della porta SAS - SANtricity CLI</block>
+  <block id="c84c059779fe7c0eab8554e8930fd80b" category="doc">Recupera volume RAID - SANtricity CLI</block>
+  <block id="dc537bb4fb9bfd9c176c91c02ca95670" category="doc">Ricrea il volume del repository di mirroring sincrono - SANtricity CLI</block>
+  <block id="26d497c7d257284f04d33abd6f6084df" category="doc">Ricrea la chiave di sicurezza esterna - SANtricity CLI</block>
+  <block id="32c99d9fefc74348447dce4dd5aa87c4" category="doc">Ridurre la capacità del pool di dischi - SANtricity CLI</block>
+  <block id="1bec119991bc1bc67e04feefb1ebf419" category="doc">Rimuovi etichetta array - SANtricity CLI</block>
+  <block id="14c43e1fa0759f4def1d78387dac9cfa" category="doc">Rimuovi la coppia di mirror asincroni incompleta dal gruppo di mirror asincroni - SANtricity CLI</block>
+  <block id="633c055b85ef35662cc7ebb31dd2049c" category="doc">Rimuovere le unità dalla cache SSD - SANtricity CLI</block>
+  <block id="6de87b1e584d49bc16946d3c583ee20c" category="doc">Rimuovi la mappatura LUN del volume - SANtricity CLI</block>
+  <block id="73202d1c153f833dab44324bb84dc4ae" category="doc">Rimuovi il volume membro dal gruppo di coerenza - SANtricity CLI</block>
+  <block id="3537b7d3550903d4ed9d6e17b9542d82" category="doc">Rimuovi mirroring sincrono - SANtricity CLI</block>
+  <block id="2c4bb3df5f623c1af83bf67a2c2822dc" category="doc">Rimuovi volume dal gruppo mirror asincrono - SANtricity CLI</block>
+  <block id="32269b89fc242f40c3937f757140c7cf" category="doc">Rimuovi copia volume - SANtricity CLI</block>
+  <block id="7092c5382562f3434e89a4b5bcf58192" category="doc">Rinominare la cache SSD - SANtricity CLI</block>
+  <block id="9f7743669b46bf031392ae6716e6b5eb" category="doc">Riparazione della parità dei dati - SANtricity CLI</block>
+  <block id="3960aa443e97a4a1ad410200dff0e1e2" category="doc">Parità del volume di riparazione - SANtricity CLI</block>
+  <block id="4629971ecc3de16ef5af44ecd76f6754" category="doc">Sostituisci unità - SANtricity CLI</block>
+  <block id="037e6c2e767dc44baed4727886fe3e8f" category="doc">Reimposta il certificato firmato installato - SANtricity CLI</block>
+  <block id="8da276164b6d727f2b88e501130a1e5a" category="doc">Reimposta controller - CLI SANtricity</block>
+  <block id="f2ec599c8bb98c0b338441f654e19b8e" category="doc">Reimposta unità - SANtricity CLI</block>
+  <block id="9b4417e12876d7dd6c7977c22b93b5d1" category="doc">Reimposta l'indirizzo IP iSCSI - CLI SANtricity</block>
+  <block id="5a8f008fef7e030693b4f6c585aeb52e" category="doc">Reimposta le statistiche del gruppo mirror asincrono - SANtricity CLI</block>
+  <block id="fe0b5e35ace9fa1455de90f22ce2fbd4" category="doc">Reimposta la pianificazione della raccolta dei messaggi di AutoSupport - CLI SANtricity</block>
+  <block id="8b1b8f6218b9aa4d453bec8ba351cbda" category="doc">Reimposta i dati diagnostici dell'array di archiviazione - CLI SANtricity</block>
+  <block id="1cf2d0a90c4423e1df27926a42ea683b" category="doc">Reimposta la baseline delle statistiche delle porte host dell'array di archiviazione - CLI SANtricity</block>
+  <block id="6c0a34b1edd67a92d3b143795d071608" category="doc">Reimposta la baseline delle statistiche InfiniBand dell'array di archiviazione - CLI SANtricity</block>
+  <block id="194641d3bdbc65d577eba6daa3f18aca" category="doc">Reimposta la baseline iSCSI dell'array di archiviazione - CLI SANtricity</block>
+  <block id="7c7da0c10f5f52e4974265f1fc71b8e0" category="doc">Reimposta la baseline iSER dell'array di archiviazione - CLI SANtricity</block>
+  <block id="f10adae9c9ec7630895b659121457c0f" category="doc">Reimposta la baseline RLS dell'array di archiviazione - CLI SANtricity</block>
+  <block id="88875befa5b4b70618a12bb3e447da27" category="doc">Reimposta la baseline PHY SAS dell'array di archiviazione - CLI SANtricity</block>
+  <block id="ac3ac283e395fd0476d4573e98b18e25" category="doc">Reimposta la baseline SOC dell'array di archiviazione - CLI SANtricity</block>
+  <block id="7db0a37b97d6e8362a2f20a0467c8a62" category="doc">Reimposta la distribuzione del volume dell'array di archiviazione - CLI SANtricity</block>
+  <block id="8e9ad1e274101cdd92c4c6221e37597d" category="doc">Riprendi il gruppo mirror asincrono - SANtricity CLI</block>
+  <block id="096dde05acee64bdf4eabcbaf6427e51" category="doc">Riprendi il volume dello snapshot del gruppo di coerenza - CLI SANtricity</block>
+  <block id="12617a1ac0195150de7705d93b69628c" category="doc">Riprendi il rollback dell'immagine snapshot - SANtricity CLI</block>
+  <block id="01a86595cc3246cc1f444a6559b13020" category="doc">Riprendi volume snapshot - CLI SANtricity</block>
+  <block id="9226199421ef829a6bb020a8e8ee484a" category="doc">Riprendi la cache SSD - SANtricity CLI</block>
+  <block id="35eaa23a93da910998167f6943ddf89f" category="doc">Riprendi il mirroring sincrono - SANtricity CLI</block>
+  <block id="de04ce9fa7b4502f461a1ad3242b3977" category="doc">Ripristina unità - CLI SANtricity</block>
+  <block id="6304f749130a21f67d9848cfb65ace45" category="doc">Ripristina gruppo snapshot - SANtricity CLI</block>
+  <block id="762c01be118edba6d6658b1a85a03686" category="doc">Ripristina volume snapshot - CLI SANtricity</block>
+  <block id="755672f1b7dbf66fdfbc396f102c7ece" category="doc">Ripristina gruppo di volumi - SANtricity CLI</block>
+  <block id="bf0ba9deb78dd3845474d7a5de958275" category="doc">Salvataggio del registro di unità - SANtricity CLI</block>
+  <block id="0bcef94a1383a489c21b411ffdd24f9f" category="doc">Salva registro vassoio - SANtricity CLI</block>
+  <block id="9f5454ee6517de84f16ee904543b9891" category="doc">Salvataggio dei record del registro di controllo - CLI SANtricity</block>
+  <block id="f9794eaac133b5e1c988f8dd3fc7b5df" category="doc">Salvataggio, verifica volume, errori di parità del lavoro di parità - SANtricity CLI</block>
+  <block id="ae659fcd0c293bddd2a71a94e9655883" category="doc">Genera richiesta di firma del certificato (CSR) del server web - SANtricity CLI</block>
+  <block id="6e8c9b377a579d5daf18c1be6552a409" category="doc">Recupera il certificato del server installato - SANtricity CLI</block>
+  <block id="721e7047643e338ac5dff894203bd79c" category="doc">Recupera i certificati CA installati - SANtricity CLI</block>
+  <block id="f38175190c66ea116f172e39e30b79cb" category="doc">Salva controller NVSRAM - SANtricity CLI</block>
+  <block id="2a442c8309fa985c6b7aa20442cd6f56" category="doc">Salva lo stato diagnostico di isolamento degli errori del canale di unità - CLI SANtricity</block>
+  <block id="5da81cd8162b4040a145a3a5cfa237f5" category="doc">Salvataggio del dump del controller di input/output (IOC) - CLI SANtricity</block>
+  <block id="067a6f6bb2ae93f05fbab6fb8b93619d" category="doc">Salvataggio dei dati diagnostici dell'array di archiviazione - CLI SANtricity</block>
+  <block id="1a0dac721c6d3af2560591671d2b001e" category="doc">Salva le statistiche del gruppo mirror asincrono - SANtricity CLI</block>
+  <block id="5bd98adb3f2df21219d86b306bb82960" category="doc">Salva le statistiche di bilanciamento automatico del carico - SANtricity CLI</block>
+  <block id="d90059470c5e1244c241e56e6868eb26" category="doc">Salvataggio della configurazione dell'array di archiviazione - CLI SANtricity</block>
+  <block id="e43ad0fac31d13d5394a08c80b0b8c42" category="doc">Salvataggio dell'immagine di integrità del controller dell'array di archiviazione - CLI SANtricity</block>
+  <block id="fe2233031dbd20ed9fd1c07c38246875" category="doc">Salvataggio del database DBM dell'array di archiviazione - CLI SANtricity</block>
+  <block id="e2a2217398369d77276c34b6832875ba" category="doc">Salva il file di informazioni del validatore DBM dell'array di archiviazione - CLI SANtricity</block>
+  <block id="bf97fb0b070850aa66f7efe9ec671282" category="doc">Salvataggio dell'inventario del firmware dell'array di archiviazione - CLI SANtricity</block>
+  <block id="d48c4b89c53c73b79a4c88a6bb122a77" category="doc">Salva le statistiche delle porte host dell'array di archiviazione - CLI SANtricity</block>
+  <block id="bee3faa5a56c1c13b10a012f82949a5a" category="doc">Salva le statistiche InfiniBand dell'array di archiviazione - CLI SANtricity</block>
+  <block id="1a765a60404f641d5a67e6d9d9c7b26b" category="doc">Salva le statistiche iSCSI dell'array di archiviazione - CLI SANtricity</block>
+  <block id="8426d510817a097e1e10da3d2299044b" category="doc">Salva le statistiche iSER dell'array di archiviazione - CLI SANtricity</block>
+  <block id="ab8217d44a62df6672e2ca6856140397" category="doc">Recupera il certificato di gestione delle chiavi esterne installato - SANtricity CLI</block>
+  <block id="1148a42a3f1391e7eab0603bbabf0520" category="doc">Genera richiesta di firma del certificato di gestione delle chiavi (CSR) - SANtricity CLI</block>
+  <block id="9e8e7893290ddf96429aa5fb05fac032" category="doc">Salva il banner di accesso all'array di archiviazione - CLI SANtricity</block>
+  <block id="10530ea7c5bd786c382bb911b6c9061c" category="doc">Salva le statistiche sulle prestazioni dell'array di archiviazione - CLI SANtricity</block>
+  <block id="7c00547a628c15ecc02e009e50f8ff1b" category="doc">Salvataggio dei conteggi RLS dell'array di archiviazione - CLI SANtricity</block>
+  <block id="4206788d80d091984bc0d5fc7d2c02bb" category="doc">Salvataggio dei conteggi PHY SAS dell'array di archiviazione - CLI SANtricity</block>
+  <block id="df3c47b086fbbac244ffe5e1fc77aa75" category="doc">Salva i conteggi SOC dell'array di archiviazione - CLI SANtricity</block>
+  <block id="c19b19bc223d129f4b0dbb1245a78dd0" category="doc">Salvataggio dell'acquisizione dello stato dell'array di archiviazione - CLI SANtricity</block>
+  <block id="d16868325b64d0e6256c31e0e533924a" category="doc">Salvataggio dei dati di supporto dell'array di archiviazione - CLI SANtricity</block>
+  <block id="5d64950dd0451ea71081746a33de8eca" category="doc">Recupera i certificati CA attendibili installati - SANtricity CLI</block>
+  <block id="06d26ba3410497773dbac1234e938ed6" category="doc">Salvataggio degli eventi dell'array di archiviazione - CLI SANtricity</block>
+  <block id="f9f150185a89e8938527928fe24a52ed" category="doc">Imposta gruppo mirror asincrono - SANtricity CLI</block>
+  <block id="5d95bcd120557e8c909e608efc732fd4" category="doc">Imposta le impostazioni del registro di controllo - CLI SANtricity</block>
+  <block id="44d7108588ea51888a62f82fb116ab75" category="doc">Imposta il limite delle dimensioni di invio di AutoSupport - CLI SANtricity</block>
+  <block id="6e9dc202d9e85baa28d3a21188bea8ff" category="doc">Specificare il metodo di consegna http(s) di AutoSupport - CLI SANtricity</block>
+  <block id="2585a88518bfe31b2670bc0218a27105" category="doc">Imposta volume snapshot gruppo di coerenza - SANtricity CLI</block>
+  <block id="fbd42244a4f577a763f78f027323b789" category="doc">Imposta gli attributi del gruppo di coerenza - SANtricity CLI</block>
+  <block id="da26e055c75810ad029bd7614cb3c676" category="doc">Aggiungi membro al gruppo di coerenza - SANtricity CLI</block>
+  <block id="066afee1df17dacac8f9fd525f2b7360" category="doc">Imposta le impostazioni DNS del controller - CLI SANtricity</block>
+  <block id="ba18bb20fdac2c9e862d63b3f46eaab1" category="doc">Imposta le proprietà della porta host del controller - SANtricity CLI</block>
+  <block id="be9a09269b77c56a957853a08c2edf42" category="doc">Imposta le proprietà di rete della porta host iSCSI - SANtricity CLI</block>
+  <block id="5f5f80b5e8b5e8c7ebb8f026d403a5f7" category="doc">Imposta le impostazioni NTP del controller - CLI SANtricity</block>
+  <block id="930e2aaf7f874c62860302fc466048c2" category="doc">Imposta l'indicatore di azione consentita del servizio controller - CLI SANtricity</block>
+  <block id="0e4110d6d92a405f4523cb3f17f7752a" category="doc">Imposta controller - SANtricity CLI</block>
+  <block id="66791453231d01b5fffe467da4812471" category="doc">Imposta pool di dischi (modifica pool di dischi) - SANtricity CLI</block>
+  <block id="80b800ff645d8b6eb9b4ada4e4fe1ef3" category="doc">Imposta pool di dischi - SANtricity CLI</block>
+  <block id="dc708b2fc26550ca482f3f39121f29e4" category="doc">Imposta hot spare dell'unità - SANtricity CLI</block>
+  <block id="411c2bc6575767f7be683052a4ca92b1" category="doc">Imposta l'unità esterna su nativa - SANtricity CLI</block>
+  <block id="e6d4014d3ab0bf11681d73268d3d78c0" category="doc">Imposta lo stato dell'unità - CLI SANtricity</block>
+  <block id="1c61d59dbca80ebdd9d23133098f5301" category="doc">Imposta l'identificatore di sicurezza dell'unità FIPS - CLI SANtricity</block>
+  <block id="04f32a1288fac994ed8ee12fb33d346f" category="doc">Imposta l'indicatore di azione consentita del servizio di unità - CLI SANtricity</block>
+  <block id="6ea93b330d7ae35a3308b49d8a204d24" category="doc">Imposta lo stato del canale di unità - CLI SANtricity</block>
+  <block id="343eafa07e9aa11d1648a4536826ae09" category="doc">Configurare le impostazioni degli avvisi e-mail - SANtricity CLI</block>
+  <block id="becc8365179e28b5fd4adf0073638027" category="doc">Imposta filtro avvisi evento - SANtricity CLI</block>
+  <block id="cb9963d672c1181e3aea11b618a751a2" category="doc">Imposta host - CLI SANtricity</block>
+  <block id="6c3e96a78384e25e2b3f678909c20056" category="doc">Imposta canale host - CLI SANtricity</block>
+  <block id="d516470ba9c729582e8b81783509f555" category="doc">Imposta gruppo host - SANtricity CLI</block>
+  <block id="48cdf48a8fb13e394cd244d3d9e3a5ea" category="doc">Imposta la porta host - CLI SANtricity</block>
+  <block id="f2eb0540675fe32930d441ed62102e76" category="doc">Imposta iniziatore: SANtricity CLI</block>
+  <block id="645c27ba780d75659b9cc30e89240268" category="doc">Imposta l'iniziatore iSCSI - CLI SANtricity</block>
+  <block id="1bbf6b77c960b65dd59db30158aed599" category="doc">Imposta le proprietà della destinazione iSCSI - SANtricity CLI</block>
+  <block id="396dae48263cc1a6acccb7761df52c94" category="doc">Imposta target iSER - CLI SANtricity</block>
+  <block id="2b6788a3478449663072c884314d993e" category="doc">Imposta sessione - SANtricity CLI</block>
+  <block id="837aae416e7f9e42612b784b7c3e96b8" category="doc">Imposta la pianificazione del gruppo di snapshot - CLI SANtricity</block>
+  <block id="7fece1dcfb939bf9e5eee63dbd2bdd89" category="doc">Imposta la capacità del volume del repository del gruppo snapshot - SANtricity CLI</block>
+  <block id="da0f1a9cef203bf0f7b927c385f974c6" category="doc">Imposta la scansione del supporto del gruppo snapshot - SANtricity CLI</block>
+  <block id="3d64e0ee5ea0d706a8595a4346a9aa90" category="doc">Imposta gli attributi del gruppo snapshot - SANtricity CLI</block>
+  <block id="be3d6ccf283e840d7d4af6f999243384" category="doc">Imposta il volume snapshot di sola lettura su volume di lettura/scrittura - SANtricity CLI</block>
+  <block id="59b144ce58219e65bf805525e2cb87be" category="doc">Imposta la capacità del volume del repository del volume snapshot - SANtricity CLI</block>
+  <block id="8ba2129582acdd8aeca3e22e183c5539" category="doc">Imposta la scansione del supporto del volume snapshot - SANtricity CLI</block>
+  <block id="2e543614285939d3382ea5895110b803" category="doc">Rinomina volume snapshot - SANtricity CLI</block>
+  <block id="4295a4cbe69adaafe94535bae4759ec3" category="doc">Aggiorna la community SNMP - SANtricity CLI</block>
+  <block id="e3ebcf74988ef36a1dd1a20651bf3227" category="doc">Aggiorna le variabili del gruppo di sistema SNMP MIB II - SANtricity CLI</block>
+  <block id="b0d7bcc4d4422f63f870be646218859e" category="doc">Aggiorna la destinazione della trap SNMP - CLI SANtricity</block>
+  <block id="a27059a0bde02160f2af815a235ea2d5" category="doc">Aggiorna utente USM SNMPv3 - SANtricity CLI</block>
+  <block id="478d9eac74f211a6e4508c495b89cc50" category="doc">Imposta l'array di archiviazione per abilitare o disabilitare il bilanciamento automatico del carico - SANtricity CLI</block>
+  <block id="7cf360bea3336524dc26770dd53bb19d" category="doc">Abilitare o disabilitare la finestra di manutenzione di AutoSupport - SANtricity CLI</block>
+  <block id="aec0ea19527546f885748f34c8e84dc3" category="doc">Imposta l'array di archiviazione per abilitare o disabilitare il controllo di garanzia dei dati del mirroring della cache - CLI SANtricity</block>
+  <block id="2896a57542dbfa813cf8ca9efd08302f" category="doc">Imposta l'immagine di integrità del controller dell'array di archiviazione per consentire la sovrascrittura - CLI SANtricity</block>
+  <block id="25d2b46b426ff50bb7dbf6dcd72275c9" category="doc">Imposta il mapping dei ruoli del server di directory dell'array di archiviazione - CLI SANtricity</block>
+  <block id="b882bffdea9863d283f7f5e1bfd07c6b" category="doc">Imposta le impostazioni di gestione delle chiavi esterne - SANtricity CLI</block>
+  <block id="8728af0bddcba152623eb6e4ae69fc6d" category="doc">Abilitare o disabilitare la segnalazione della connettività host - SANtricity CLI</block>
+  <block id="16bf2b7c9cda5762d10edbeec1977a01" category="doc">Imposta la risposta ICMP dell'array di archiviazione - CLI SANtricity</block>
+  <block id="31236f8be341ba04c1278a8b21bc8e0f" category="doc">Imposta l'indirizzo IPv4 del server iSNS dell'array di archiviazione - CLI SANtricity</block>
+  <block id="85f6064b9997b9e6e12e9129557b3f20" category="doc">Imposta l'indirizzo IPv6 del server iSNS dell'array di archiviazione - CLI SANtricity</block>
+  <block id="65ebff496bec0f12f091b4171a2c78d8" category="doc">Imposta la porta di ascolto del server iSNS dell'array di archiviazione - CLI SANtricity</block>
+  <block id="c48556b73aa71b26fbdf7ef082c0660e" category="doc">Imposta la registrazione iSNS dell'array di archiviazione - CLI SANtricity</block>
+  <block id="922181eed729d70f5e1ba9580cc65836" category="doc">Imposta l'aggiornamento del server iSNS dell'array di archiviazione - CLI SANtricity</block>
+  <block id="e9fa65b64bdc96d546c6f5bbb53137f4" category="doc">Imposta il ciclo di apprendimento della batteria del controller dell'array di archiviazione - CLI SANtricity</block>
+  <block id="e80e39e9d1abb8f9d0e0e9e3a5b0da20" category="doc">Imposta la password utente locale dell'array di archiviazione o la password SYMbol - SANtricity CLI</block>
+  <block id="55fb77acf8993d37e668139d365d4cca" category="doc">Imposta il banner di accesso all'array di archiviazione - CLI SANtricity</block>
+  <block id="587197a04dfac2e0be72d0094d64c863" category="doc">Abilitare o disabilitare ODX - SANtricity CLI</block>
+  <block id="91aaa6a96fb60808b7fd9597535e0796" category="doc">Imposta la lunghezza della password dell'array di archiviazione - CLI SANtricity</block>
+  <block id="85a46ed663704a7fe2d4a1fa32c91fea" category="doc">Imposta la modalità di ridondanza dell'array di archiviazione - CLI SANtricity</block>
+  <block id="434db8fd853c9aabfc8681c41244482e" category="doc">Imposta i volumi forniti per le risorse dell'array di archiviazione - CLI SANtricity</block>
+  <block id="6431aaba0e797f0ffab144f38413d673" category="doc">Imposta le impostazioni di controllo della revoca del certificato - CLI SANtricity</block>
+  <block id="e6f70a57061ad31ee2b5ce4a2eed5e13" category="doc">Imposta la chiave di sicurezza dell'array di archiviazione interna - SANtricity CLI</block>
+  <block id="4ac9e1a945eaafb353c2a61993ca086a" category="doc">Aggiorna la configurazione syslog dell'array di archiviazione - CLI SANtricity</block>
+  <block id="85bdffb1bf4856b76ad133dda8633bff" category="doc">Imposta l'ora dell'array di archiviazione - CLI SANtricity</block>
+  <block id="b7d1fda9defa85bcc496c7d235e4b8db" category="doc">Imposta le posizioni del vassoio dell'array di archiviazione - CLI SANtricity</block>
+  <block id="8b0483e5e4d2e976495bd4388f823488" category="doc">Imposta sessione di individuazione senza nome dell'array di archiviazione - CLI SANtricity</block>
+  <block id="4b49f9c3e0da2db04840a0e9e2b929dc" category="doc">Imposta sessione utente array di archiviazione - SANtricity CLI</block>
+  <block id="23d4f6cae16b2c4ca5d65a01deae432a" category="doc">Abilitare o disabilitare VAAI - SANtricity CLI</block>
+  <block id="06b6b8855566a62a467552c032c88f85" category="doc">Imposta array di archiviazione - CLI SANtricity</block>
+  <block id="17013e984c9adc55ab6d4e0959626814" category="doc">Imposta mirroring sincrono - SANtricity CLI</block>
+  <block id="b3beae2e002662a954fd1e4c7bee5186" category="doc">Configurare le impostazioni di syslog - SANtricity CLI</block>
+  <block id="6b6255e14f0d98eedf32603c4df22770" category="doc">Imposta proprietà di destinazione - SANtricity CLI</block>
+  <block id="8bda48dc32e378642f84b2a07070d462" category="doc">Imposta gli attributi del volume sottile - CLI SANtricity</block>
+  <block id="38a1a96cc2807ce0a8cfa2644c504e1f" category="doc">Imposta attributo tray - SANtricity CLI</block>
+  <block id="4ce44084e9a8be6d56a9deab94c3e3b6" category="doc">Indicatore di azione consentita del servizio del cassetto di set - CLI SANtricity</block>
+  <block id="984d9575a17cdfc26d5c647ce95bf2fc" category="doc">Identificazione del vassoio - CLI SANtricity</block>
+  <block id="b72f83bf254d1d872fb8b629fa6d5661" category="doc">Imposta l'indicatore di azione consentita del servizio del vassoio - CLI SANtricity</block>
+  <block id="82ff34f626191648b36a2067c0303068" category="doc">Imposta gli attributi del volume per un volume in un gruppo di volumi - SANtricity CLI</block>
+  <block id="0e66b159e1b56411f2acaccf22bd8cb2" category="doc">Imposta la mappatura del volume - CLI SANtricity</block>
+  <block id="6013576e9e6ff479cad964b6d6cb1452" category="doc">Imposta la cache SSD per un volume - SANtricity CLI</block>
+  <block id="d8bd72b502dd260cc3ba2eda5cfde836" category="doc">Imposta copia volume - SANtricity CLI</block>
+  <block id="5bd426e378d19a0539f18cd0c6aabce5" category="doc">Imposta lo stato forzato del gruppo di volumi - SANtricity CLI</block>
+  <block id="e27ec150e65c0367ae2919834c3a961b" category="doc">Imposta gruppo di volumi - SANtricity CLI</block>
+  <block id="91af049778cfffe2bba2149317a9e776" category="doc">Impostare gli attributi del volume per un volume in un pool di dischi - SANtricity CLI</block>
+  <block id="2778b5e2b1249bec76b59a8fd3d516aa" category="doc">Mostra avanzamento download unità - SANtricity CLI</block>
+  <block id="76317680fbc5d6c38790d18a587c0a20" category="doc">Mostra statistiche sulle prestazioni dell'unità - SANtricity CLI</block>
+  <block id="c6cb87fe259e9c27b1e9ecde61e21f9b" category="doc">Mostra unità - SANtricity CLI</block>
+  <block id="14688c179ab5b91923d24656238a7acb" category="doc">Mostra porte host - SANtricity CLI</block>
+  <block id="f30804f385685028d8661aea49090f86" category="doc">Mostra comunità SNMP - SANtricity CLI</block>
+  <block id="038f3a219ee3f3c8fbdd50622b03b889" category="doc">Mostra utente USM SNMPv3 - SANtricity CLI</block>
+  <block id="1c72ce74bf32b2a5ad925620b58999c8" category="doc">Mostra etichetta array - CLI SANtricity</block>
+  <block id="2cc51b23237c746b1cf6182bd8303990" category="doc">Mostra gruppi mirror asincroni - SANtricity CLI</block>
+  <block id="a09126bb24ddc3e2c30f4388b0025b61" category="doc">Mostra lo stato di avanzamento della sincronizzazione del gruppo mirror asincrono - CLI SANtricity</block>
+  <block id="ae745d43c18044df8c50b058ef7cc21b" category="doc">Mostra la configurazione del registro di controllo - CLI SANtricity</block>
+  <block id="1467fef0d9976dcc6a32eafa797ae992" category="doc">Mostra riepilogo registro di controllo - SANtricity CLI</block>
+  <block id="6ea261bb3289353475aaf3a6e5ce5bb2" category="doc">Mostra eventi bloccati - SANtricity CLI</block>
+  <block id="29409043b5a9f59f616bcc1f5d5369d0" category="doc">Mostra certificati - SANtricity CLI</block>
+  <block id="18e4e4f541b1270c710c3e978cc9763a" category="doc">Mostra l'immagine dello snapshot del gruppo di coerenza - SANtricity CLI</block>
+  <block id="87807c6900003719eff87f81e6cab952" category="doc">Mostra il lavoro di controllo del volume di parità - CLI SANtricity</block>
+  <block id="ccfb24184ef22ca50eaa8bdcc8637da1" category="doc">Mostra i lavori di controllo del volume di parità - CLI SANtricity</block>
+  <block id="6bcbb1208daf54ff6891bd6695cc540b" category="doc">Mostra gruppo di coerenza - SANtricity CLI</block>
+  <block id="60aebe2e4caf925f6162adf4e98e0608" category="doc">Mostra certificato firmato - SANtricity CLI</block>
+  <block id="5a064aceaedc8db34187ce7ef5a81dbd" category="doc">Mostra il riepilogo dei certificati CA radice/intermedi installati - SANtricity CLI</block>
+  <block id="95b7224f997dc9ff3129125730546303" category="doc">Mostra lo stato diagnostico del controller - CLI SANtricity</block>
+  <block id="bc21b1258ce8b69a931d8d8af3901dcc" category="doc">Mostra controller NVSRAM - CLI SANtricity</block>
+  <block id="466687f57ce48ea4f75e61a9ab88f1da" category="doc">Mostra controller - SANtricity CLI</block>
+  <block id="19cad3d5ad56ca89bcda791d8582bd70" category="doc">Mostra pool di dischi - SANtricity CLI</block>
+  <block id="7d4223c5f5e9b2ed343220ab679d6241" category="doc">Mostra le statistiche del canale di unità - SANtricity CLI</block>
+  <block id="d0a8058a87025c025fc40bf3fcade90c" category="doc">Mostra la configurazione degli avvisi e-mail - SANtricity CLI</block>
+  <block id="b5e08dd56ef5f41a307807bf30b45f74" category="doc">Mostra le sessioni iSCSI correnti - SANtricity CLI</block>
+  <block id="20b502229fc8b5b0f8c26a5965e8d7a5" category="doc">Mostra unità sostituibili - SANtricity CLI</block>
+  <block id="0ac4d28222354e00f9071f3584f66291" category="doc">Mostra gruppo snapshot - SANtricity CLI</block>
+  <block id="adb4d61083a0c9e666805d56c43a2f5d" category="doc">Mostra immagine istantanea - SANtricity CLI</block>
+  <block id="e5241c2f11fca1315326aa3aa8f26f81" category="doc">Mostra volumi snapshot - SANtricity CLI</block>
+  <block id="0ca1fa8aafb076c8f32f2b7aaa960792" category="doc">Mostra le variabili del gruppo di sistema SNMP MIB II - SANtricity CLI</block>
+  <block id="30e98ad1e8c888115c1ed450f133b98c" category="doc">Mostra le statistiche della cache SSD - CLI SANtricity</block>
+  <block id="f8cbdaa67d64ff906ef16f5ab73c6918" category="doc">Mostra cache SSD - CLI SANtricity</block>
+  <block id="7e4e5050e51f14a471034225a2f7393b" category="doc">Mostra la configurazione automatica dell'array di archiviazione - CLI SANtricity</block>
+  <block id="156c227b1314532667a4a69c67d76b8d" category="doc">Mostra la configurazione di AutoSupport - SANtricity CLI</block>
+  <block id="d3e04af0773bdfa9f8258a51278c4536" category="doc">Mostra abilitazione controllo garanzia dati mirror cache array storage - CLI SANtricity</block>
+  <block id="79190a5edbc92c9ff4c1d735d31fe23f" category="doc">Mostra l'immagine di integrità del controller dell'array di archiviazione - CLI SANtricity</block>
+  <block id="f5d6b1a4a6ab287674f474408df3b267" category="doc">Mostra database DBM dell'array di archiviazione - CLI SANtricity</block>
+  <block id="e7c3d46e54ead3976bbedcd4b77be862" category="doc">Mostra report sulla connettività dell'host dell'array di archiviazione - CLI SANtricity</block>
+  <block id="270d635fa44995d158df73f2dc7eb459" category="doc">Mostra la topologia host dell'array di archiviazione - CLI SANtricity</block>
+  <block id="3c7b9c328520a30aa221cf3afff3f0a7" category="doc">Mostra i valori predefiniti di negoziazione dell'array di archiviazione - CLI SANtricity</block>
+  <block id="f2b84f20203e7d9132bba6063bfd64f2" category="doc">Mostra i mapping LUN dell'array di archiviazione - CLI SANtricity</block>
+  <block id="511b96a9e7d64a9f0b3fb6a19e780473" category="doc">Mostra l'impostazione ODX dell'array di archiviazione - CLI SANtricity</block>
+  <block id="a039ad73ad9bc51937687a0f9848b0c8" category="doc">Mostra informazioni sull'alimentazione dell'array di archiviazione - CLI SANtricity</block>
+  <block id="8d13be50cd7b996ee90bf818af584f7f" category="doc">Mostra le impostazioni di controllo della revoca del certificato - SANtricity CLI</block>
+  <block id="8a287d2b29f8de8bdefa3d7392db8c75" category="doc">Visualizza la configurazione syslog dell'array di archiviazione - CLI SANtricity</block>
+  <block id="a154887df888e3565a3be73d4dd5fb1f" category="doc">Mostra il riepilogo dei certificati CA attendibili installati - SANtricity CLI</block>
+  <block id="7f17c8e8281c30457bd5acff4b4441b7" category="doc">Mostra iniziatori non configurati - SANtricity CLI</block>
+  <block id="649d10a695d17256ecc6438c49c8c447" category="doc">Mostra gli iniziatori iSCSI non configurati dell'array di archiviazione - CLI SANtricity</block>
+  <block id="6f0b63e19f8eecd41eb9496aca4b10f2" category="doc">Mostra settori illeggibili dell'array di archiviazione - CLI SANtricity</block>
+  <block id="84fe8f54db8c5504e4020cfbd89d57ef" category="doc">Visualizza la sessione utente dell'array di archiviazione - CLI SANtricity</block>
+  <block id="5e12bd1119c477648df0260c272fcdc3" category="doc">Mostra array di archiviazione - CLI SANtricity</block>
+  <block id="369ea0b080e29dbc409c9ffef2442ad7" category="doc">Mostra i candidati al volume di mirroring sincrono - SANtricity CLI</block>
+  <block id="e1b17122217e83bb1149cde954c258ae" category="doc">Mostra lo stato di avanzamento della sincronizzazione del volume di mirroring sincrono - CLI SANtricity</block>
+  <block id="bd998bc8c6f04c61ec1c1f68244f1cfb" category="doc">Mostra la configurazione syslog - SANtricity CLI</block>
+  <block id="18f7b88846694a89d4c3a86bc5b322b6" category="doc">Mostra stringa - SANtricity CLI</block>
+  <block id="d21ef43f00b20d3f7ad7ea6c4aa34afd" category="doc">Mostra avanzamento azione volume - CLI SANtricity</block>
+  <block id="9a5ec6fd73df1bb587a19b433782d480" category="doc">Mostra statistiche sulle prestazioni del volume - SANtricity CLI</block>
+  <block id="b569df116891dad2e089a31a2ab6b5a2" category="doc">Mostra prenotazioni volume - SANtricity CLI</block>
+  <block id="92155f1fec3da835a3ff77c3954c35af" category="doc">Mostra volume - SANtricity CLI</block>
+  <block id="4b1ec08d27d4f418875cc92ea259f791" category="doc">Mostra volume sottile - SANtricity CLI</block>
+  <block id="ec03be41ebcb38bee3170cfa1ca2a758" category="doc">Mostra i candidati target per la copia del volume - SANtricity CLI</block>
+  <block id="fcb8b1ad2a3ecb59c2ab476b83180daa" category="doc">Mostra i candidati per la copia del volume originale - SANtricity CLI</block>
+  <block id="d0fc1ff6f879860cbcd9c2bef7f95063" category="doc">Mostra copia volume - SANtricity CLI</block>
+  <block id="fad6ead6a919ca47ed1ae7233fce3729" category="doc">Mostra le dipendenze di esportazione del gruppo di volumi - SANtricity CLI</block>
+  <block id="baa8a6db36d040c8d18802e763a40b6d" category="doc">Mostra le dipendenze di importazione del gruppo di volumi - SANtricity CLI</block>
+  <block id="90724c8ab8050f88c30fc61ebe7fe05d" category="doc">Mostra gruppo di volumi - SANtricity CLI</block>
+  <block id="b49fa608a47c52f72f0860abdce3a30b" category="doc">Avvisi di test - CLI SANtricity</block>
+  <block id="26da5db3100d0a756599f439585ff54d" category="doc">Visualizza le impostazioni della raccolta bundle AutoSupport - CLI SANtricity</block>
+  <block id="be37096a862fa43d8a97c4e0e5d4be7b" category="doc">Testare la configurazione di AutoSupport - SANtricity CLI</block>
+  <block id="41acb7360e0876145ebf042564444be1" category="doc">Specificare il metodo di consegna di AutoSupport - SANtricity CLI</block>
+  <block id="219a6c2f737547c7d67241a03a7e1703" category="doc">Acquisisci o visualizza un registro AutoSupport - SANtricity CLI</block>
+  <block id="4ab7a8f8c53824d6516ed5bc0f7dfe7b" category="doc">Visualizza la pianificazione della raccolta dei messaggi di AutoSupport - CLI SANtricity</block>
+  <block id="691334917d58b68cc7b056e568b4c780" category="doc">Abilitare o disabilitare AutoSupport a livello di dominio di gestione EMW (solo SMcli) - SANtricity CLI</block>
+  <block id="dbaacd5578eb5e1a85f8f5f391585dff" category="doc">Abilitare o disabilitare la funzionalità AutoSupport OnDemand a livello di dominio di gestione EMW (solo SMcli) - SANtricity CLI</block>
+  <block id="1b9bb5091eb9ce2891761f72b9af647f" category="doc">Abilitare o disabilitare la funzionalità di diagnostica remota AutoSupport a livello di dominio di gestione EMW (solo SMcli) - SANtricity CLI</block>
+  <block id="6689cc8ff757357e80263aac4f0bd24d" category="doc">Pianifica la configurazione automatica della raccolta di pacchetti di supporto - SANtricity CLI</block>
+  <block id="0a97a5582e066eec0e75b202decd2324" category="doc">Avvia la sincronizzazione del mirroring asincrono - SANtricity CLI</block>
+  <block id="9a61477e71e421dd419c085c559f38e4" category="doc">Avvia il rollback dello snapshot del gruppo di coerenza - SANtricity CLI</block>
+  <block id="c5255e793a811946f82b332eda96a439" category="doc">Avvia il processo di controllo della parità del volume - SANtricity CLI</block>
+  <block id="0c40fb12565993f4e408cc8bb339b0ec" category="doc">Avvia l'aggiornamento DHCP iSCSI - CLI SANtricity</block>
+  <block id="a318607b3e2c5ae507bb0510233a397f" category="doc">Avvia traccia del controller - CLI SANtricity</block>
+  <block id="118173c4342d86355b19d5e1239c78a2" category="doc">Avvia il provisioning completo del pool di dischi - SANtricity CLI</block>
+  <block id="8cbf9e70bcf23228b716f1132f56272d" category="doc">Avvia la ricerca del pool di dischi - CLI SANtricity</block>
+  <block id="aaac61e3e42f26d128242c4786e36902" category="doc">Avvia il provisioning delle risorse del pool di dischi - SANtricity CLI</block>
+  <block id="fa757da2c9ccc225a51504228aaa391d" category="doc">Avvia la cancellazione dell'unità - SANtricity CLI</block>
+  <block id="f9a3e71b3625251694b22941504665c5" category="doc">Inizializzazione dell'unità di avvio - CLI SANtricity</block>
+  <block id="2c5d04d07e48a6fc90fc0f47e2a2907d" category="doc">Avvia la localizzazione dell'unità - CLI SANtricity</block>
+  <block id="efb55d86b508c494720d4b1630d12028" category="doc">Avvia la ricostruzione dell'unità - SANtricity CLI</block>
+  <block id="675d002fa4194958f2347fb0c9365a60" category="doc">Avvia la diagnostica di isolamento degli errori del canale di unità - CLI SANtricity</block>
+  <block id="cfb0f6e7ccd025a568622b470ef666ff" category="doc">Avvia la localizzazione del canale di unità - CLI SANtricity</block>
+  <block id="913f18421fa0a29e968979742e51dc8f" category="doc">Configurazione di test degli avvisi e-mail - CLI SANtricity</block>
+  <block id="529d2221aae9db9ace9fdc47cfcf1447" category="doc">Aumentare la capacità del volume nel pool di dischi o nel gruppo di volumi - SANtricity CLI</block>
+  <block id="0dae4d0d0b1ead46a5847f8501d3a308" category="doc">Avvia il dump del controller di input/output (IOC) - CLI SANtricity</block>
+  <block id="919c16d8699218d2d0f666b97a41ded3" category="doc">Avvia la cancellazione sicura dell'unità FDE - CLI SANtricity</block>
+  <block id="d0214b63d84f565ed92f39fd4038094c" category="doc">Avvia il rollback dell'immagine snapshot - SANtricity CLI</block>
+  <block id="5cc193e166f328bdf99edd3e8178cab8" category="doc">Test della destinazione della trappola SNMP - CLI SANtricity</block>
+  <block id="f298945068838945662c8b8965a8b7ed" category="doc">Avvia la localizzazione della cache SSD - CLI SANtricity</block>
+  <block id="ec724d3e650b5bfa66d84fd93f4f46fd" category="doc">Avvia la modellazione delle prestazioni della cache SSD - SANtricity CLI</block>
+  <block id="93c20d650760be804d5843c701dcdbfe" category="doc">Test delle impostazioni di consegna di AutoSupport - CLI SANtricity</block>
+  <block id="11a86c832efec296ba2fadbd4dedc6e6" category="doc">Avvia l'invio manuale di AutoSupport all'array di archiviazione - CLI SANtricity</block>
+  <block id="70148fcc7fbd0e053017f2602a39e861" category="doc">Avvia la diagnostica del database di configurazione dell'array di archiviazione - CLI SANtricity</block>
+  <block id="220aff0b746d64227c6277f85a5b6a25" category="doc">Avvia l'immagine di integrità del controller dell'array di archiviazione - CLI SANtricity</block>
+  <block id="e81e42e2f544782fd8bcc78e9cba96a4" category="doc">Test della comunicazione di gestione delle chiavi esterne - SANtricity CLI</block>
+  <block id="3dfe7c7eacdb7ed25de385a373d7d835" category="doc">Avvia l'aggiornamento del server iSNS dell'array di archiviazione - CLI SANtricity</block>
+  <block id="6606b7355a3cad5245fb64e92205fa91" category="doc">Avvia la localizzazione dell'array di archiviazione - CLI SANtricity</block>
+  <block id="61eb6e6c9f19f6ff1c9577a5f20dbb62" category="doc">Avvia il test URL del server OCSP - CLI SANtricity</block>
+  <block id="2c80ae6b7347ef6563ab968298df1b18" category="doc">Avvia il test syslog dell'array di archiviazione - CLI SANtricity</block>
+  <block id="dcda764fd3602bf66eff50785e76bd4e" category="doc">Avvia la sincronizzazione del mirroring sincrono - SANtricity CLI</block>
+  <block id="246c272dee9b7e00ee57d0817a8ffbdb" category="doc">Configurazione di test syslog - CLI SANtricity</block>
+  <block id="c826e2c84eaa823bc7413cd99a58f29d" category="doc">Localizzazione del vassoio di avvio - CLI SANtricity</block>
+  <block id="439c20f74478b8d1e1a478583ccc547e" category="doc">Inizializzazione del volume di avvio - CLI SANtricity</block>
+  <block id="050119e21368e0439a456980eb29f276" category="doc">Inizializzazione del volume sottile - SANtricity CLI</block>
+  <block id="9d71a4467008c08ff27949408b0de45a" category="doc">Avvia la deframmentazione del gruppo di volumi - SANtricity CLI</block>
+  <block id="1588bf269dbd549d8ca6ab8c79e4c0b1" category="doc">Avvia l'esportazione del gruppo di volumi - SANtricity CLI</block>
+  <block id="24f614469b689fc9b8c13914c5f4027f" category="doc">Avvia il provisioning completo del gruppo di volumi - SANtricity CLI</block>
+  <block id="07072175b6b88030c4108bc2112119a4" category="doc">Avvia l'importazione del gruppo di volumi - SANtricity CLI</block>
+  <block id="596ed5aa438be8938af0f7f3b28792ae" category="doc">Avvia la localizzazione del gruppo di volumi - SANtricity CLI</block>
+  <block id="c5f949582278d06b6e1b9411a5c1cd83" category="doc">Avvia il provisioning delle risorse del gruppo di volumi - SANtricity CLI</block>
+  <block id="e44ef18583f4eb5f3e36be336a0e7436" category="doc">Annulla l'inversione del ruolo del gruppo mirror asincrono - SANtricity CLI</block>
+  <block id="0758c7ef4554bf77d8c3fbc63aa02bb0" category="doc">Arresta il rollback dello snapshot del gruppo di coerenza - CLI SANtricity</block>
+  <block id="ea93de0d08823edd2ffcbfa6fbf3f99d" category="doc">Arresta il volume dello snapshot del gruppo di coerenza - CLI SANtricity</block>
+  <block id="5677591e686d39249525d2354a13f975" category="doc">Interrompi il processo di controllo della parità del volume - CLI SANtricity</block>
+  <block id="4c57d4e1ec387c37451ef856a800944b" category="doc">Arresta le immagini snapshot in sospeso sul gruppo di coerenza - SANtricity CLI</block>
+  <block id="6d7b2551f7130ef61938c67f0fa483a2" category="doc">Arresta l'individuazione del pool di dischi - CLI SANtricity</block>
+  <block id="647ba943a65085d3bbafb7a8a9a55960" category="doc">Arresta la localizzazione dell'unità - CLI SANtricity</block>
+  <block id="254aa707e54c4207b387262f493b620a" category="doc">Interrompi sostituzione unità - CLI SANtricity</block>
+  <block id="5babf79e80b24b238ee38ff325444b44" category="doc">Diagnostica di isolamento degli errori del canale di arresto dell'unità - CLI SANtricity</block>
+  <block id="7facb591c907c430d873c8bb048b635b" category="doc">Arresta la localizzazione del canale di azionamento - CLI SANtricity</block>
+  <block id="8fd5a424cbc9f4dccc0fddb6c84b9dd6" category="doc">Arresta il gruppo di snapshot in attesa di immagini snapshot - SANtricity CLI</block>
+  <block id="1ceb1f08560dbfd519a1f5350de52d63" category="doc">Arresta il rollback dell'immagine snapshot - SANtricity CLI</block>
+  <block id="c887f843cfaa5207f21ded2ede3d6f71" category="doc">Arresta il volume snapshot - CLI SANtricity</block>
+  <block id="bfdb284d77fa91a0bf339b12213d5a31" category="doc">Arresta la localizzazione della cache SSD - CLI SANtricity</block>
+  <block id="6e931c73733d9634b41d0d993b34e388" category="doc">Arresta la modellazione delle prestazioni della cache SSD - CLI SANtricity</block>
+  <block id="75ca73164eb487a9ba43e1aa643e3a83" category="doc">Arresta la diagnostica del database di configurazione dell'array di archiviazione - CLI SANtricity</block>
+  <block id="a2825719e6486700d326b40509b80bf6" category="doc">Interrompere il download del firmware dell'unità array di archiviazione - CLI SANtricity</block>
+  <block id="3d045609db70d0f1ffd3aed5039d0501" category="doc">Arresta la sessione iSCSI dell'array di archiviazione - CLI SANtricity</block>
+  <block id="cf37c5a2c78e3b2891f4f76b52726940" category="doc">Arresta la localizzazione dell'array di archiviazione - CLI SANtricity</block>
+  <block id="813093623fc6bb5ee57455c32949cf8a" category="doc">Arresta la localizzazione del vassoio - CLI SANtricity</block>
+  <block id="3b680e4806ba89aa469667f4896def10" category="doc">Interrompi copia volume - SANtricity CLI</block>
+  <block id="e8896ca4203c5c16c4013b9cbeaadacf" category="doc">Arresta la localizzazione del gruppo di volumi - CLI SANtricity</block>
+  <block id="f778cc83e7fd8fe1ff4739e4c0d160d5" category="doc">Sospendi gruppo mirror asincrono - SANtricity CLI</block>
+  <block id="001582ee94dbe257db1029cee650f07a" category="doc">Sospendi cache SSD - CLI SANtricity</block>
+  <block id="26a1c1c6efefa05d44fc590320e04217" category="doc">Sospendi mirroring sincrono - SANtricity CLI</block>
+  <block id="8a4d07e71e7d36a85ccb3beb4f17924d" category="doc">Convalida della chiave di sicurezza dell'array di archiviazione - CLI SANtricity</block>
+  <block id="afd514e0104d1ebc0c51f118206391fe" category="doc">Comandi degli amministratori della CLI SANtricity</block>
+  <block id="1d39e1ed63f4f5905396b2928de848c9" category="doc">Comandi di configurazione degli avvisi CLI SANtricity</block>
+  <block id="04c1682362235c55241753a26ea4c427" category="doc">Comandi di configurazione dell'array CLI SANtricity</block>
+  <block id="6ecada277de3cc0d76c13a8e475fabf0" category="doc">Comandi di SANtricity AutoSupport</block>
+  <block id="3eda0abcfa6adf76c8b2be3b51ac6b7a" category="doc">Comandi di mirroring della CLI SANtricity</block>
+  <block id="c2f5aba26d8fa2e0c603290e9fb99435" category="doc">Comandi di ottimizzazione delle prestazioni della CLI SANtricity</block>
+  <block id="5d0559a132eeaa537a7b5d90994c97a6" category="doc">Comandi di replicazione CLI SANtricity</block>
+  <block id="b6bebc197ba6d8954245ee93f9c804bb" category="doc">Comandi di sicurezza CLI SANtricity</block>
+  <block id="73c9b363ff629a14cd1693e3b6e69e40" category="doc">Comandi del personale di monitoraggio dello storage CLI SANtricity</block>
+  <block id="331d33d7a7238617ac154486f8e55c4e" category="doc">Comandi di configurazione del volume CLI SANtricity</block>
+  <block id="5e27e1b49d97c8a06e053d6d6f49c0c8" category="doc">Aggiungere commenti a un file di script CLI SANtricity</block>
+  <block id="287858dfcc22764b472503cc1e1f5d94" category="doc">Scopri la sintassi del wrapper dei comandi CLI di SANtricity</block>
+  <block id="e8ad2b3afd03143023d6840c982be5e6" category="doc">Informazioni sui parametri della riga di comando CLI SANtricity legacy</block>
+  <block id="937ae65b4e52d36785cddb3c12ea7499" category="doc">Scopri di più sulla segnalazione dettagliata degli errori di SANtricity CLI</block>
+  <block id="3145754e4855858cb1cc89fa2376188f" category="doc">Scopri i parametri scaricabili di SANtricity Secure CLI (SMcli)</block>
+  <block id="563fb6ef5de7d13e640b5ffc7953d14e" category="doc">Informazioni sullo stato di uscita della CLI SANtricity</block>
+  <block id="3c08eb24645fa240624a6f91f93f90c4" category="doc">Scopri i livelli di compatibilità del firmware SANtricity CLI</block>
+  <block id="5ac7dea127bec6e62c95983c7736669d" category="doc">Regole di formattazione per i comandi CLI di SANtricity in Windows PowerShell</block>
+  <block id="5f53dbe6abe408d8a86aa6d580709bf2" category="doc">Regole di formato per i comandi CLI SANtricity</block>
+  <block id="2c34dbebc71bf04eec35a11b1d9cbfac" category="doc">Regole di formato per i comandi script CLI SANtricity</block>
+  <block id="a400145c3b8b870b8c5a6c644eabbf29" category="doc">Scopri la modalità interattiva di SANtricity CLI</block>
+  <block id="30aabd0f3fb1d9aed3b4df1edd801136" category="doc">Scopri di più sulla migrazione dei gruppi di volumi nel software SANtricity</block>
+  <block id="9ab52d49eae6fe9c13882fef1d3e6158" category="doc">Scopri le convenzioni di denominazione della CLI SANtricity</block>
+  <block id="e77479d03e13e5457b5143e09aaef40b" category="doc">Scopri di più su SANtricity Secure CLI (SMcli) in modalità https</block>
+  <block id="6922805ac8c399933f9a380b55dc8685" category="doc">Scopri di più sulla CLI SANtricity</block>
+  <block id="72620124ac6533d0b7b4563bfd1db676" category="doc">Scopri gli elementi ricorrenti della sintassi CLI di SANtricity</block>
+  <block id="466342d4ceed605fc65275c81c79450c" category="doc">Scopri la struttura dei comandi CLI di SANtricity</block>
+  <block id="912cc2f8fec83a8f0f502fa5d8213432" category="doc">Scopri la struttura dei comandi dello script CLI di SANtricity</block>
+  <block id="7749a7749c067a57803053149311ba25" category="doc">Scopri i comandi script CLI di SANtricity</block>
+  <block id="7aa1a554fa97ed75a945661977f56a71" category="doc">Scopri le linee guida per i comandi dello script CLI di SANtricity</block>
 </blocks>

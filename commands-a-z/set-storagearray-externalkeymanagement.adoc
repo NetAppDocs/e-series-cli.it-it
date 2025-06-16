@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, external, key, management, set 
 summary: 'Il comando Set StorageArray externalKeyManagement configura l"indirizzo del server di gestione delle chiavi esterno e il numero di porta.' 
 ---
-= Impostare le impostazioni di gestione delle chiavi esterne
+= Imposta le impostazioni di gestione delle chiavi esterne - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

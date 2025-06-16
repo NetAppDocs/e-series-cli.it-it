@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: structure, cli, commands 
 summary: I comandi CLI sono sotto forma di wrapper di comandi ed elementi incorporati nel wrapper. 
 ---
-= Struttura dei comandi CLI
+= Scopri la struttura dei comandi CLI di SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: show, drive, download, progress 
 summary: Il comando show allDrives downloadProgress restituisce lo stato dei download del firmware per i dischi a cui si rivolge il comando di download del firmware del disco o il comando di download del drivefirmware StorageArray. 
 ---
-= Mostra lo stato di avanzamento del download del disco
+= Mostra avanzamento download unità - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

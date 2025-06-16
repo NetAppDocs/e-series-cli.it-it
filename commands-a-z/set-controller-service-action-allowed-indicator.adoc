@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, controller, service, action, allowed, indicator 
 summary: 'Il comando set controller attiva o disattiva la spia Service Action Allowed (azione servizio consentita) su un controller nel vassoio di un controller o di un controller-drive' 
 ---
-= Impostare l'indicatore di azione di servizio del controller consentita
+= Imposta l'indicatore di azione consentita del servizio controller - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
