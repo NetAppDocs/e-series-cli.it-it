@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: specify, email, smtp, delivery method, individual, E2800, E5700, arrays 
 summary: 'Il comando set StorageArray AutoSupport deliveryMethod imposta il metodo di invio dei messaggi AutoSupport alla posta elettronica (SMTP).' 
 ---
-= Specificare il metodo di recapito e-mail (SMTP)
+= Specificare il metodo di recapito e-mail (SMTP) - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

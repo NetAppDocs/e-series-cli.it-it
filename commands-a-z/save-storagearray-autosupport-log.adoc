@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: retrieve, autosupport, log, individual, E2800, E5700, arrays 
 summary: 'Il comando Save StorageArray AutoSupport log consente di visualizzare un file di log AutoSupport. Questo file fornisce informazioni sullo stato, la cronologia delle attività di trasmissione e gli eventuali errori riscontrati durante l"invio dei messaggi AutoSupport. Il log è disponibile per tutti gli array di storage compatibili con AutoSupport e abilitati per AutoSupport.' 
 ---
-= Recuperare un registro AutoSupport
+= Recupera un registro AutoSupport - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

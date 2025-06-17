@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: test, storage, array, directory, server 
 summary: Il comando start StorageArray DirectoryServices verifica la comunicazione con tutti i server di directory configurati e convalida le configurazioni del dominio del server. 
 ---
-= Test del server di directory degli array di storage
+= Test del server di directory dell'array di archiviazione - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

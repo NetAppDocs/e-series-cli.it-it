@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, management, interface 
 summary: 'Il comando set StorageArray managementInterface modifica l"interfaccia di gestione del controller. Modificare il tipo di interfaccia di gestione per imporre la riservatezza tra lo storage array e il relativo software di gestione o per accedere a tool esterni.' 
 ---
-= Impostare l'interfaccia di gestione degli array di storage
+= Imposta l'interfaccia di gestione dell'array di archiviazione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

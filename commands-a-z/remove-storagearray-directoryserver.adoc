@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove, storage array, directory, server, role, mapping 
 summary: Il comando remove StorageArray directoryServer rimuove le mappature dei ruoli definite per il server di directory specificato. 
 ---
-= Rimuovere la mappatura dei ruoli del server di directory dell'array di storage
+= Rimuovere la mappatura dei ruoli del server di directory dell'array di archiviazione - SANtricity CLI
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

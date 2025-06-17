@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: set, storage, array, pq validation, reconstruct 
 summary: 'Il comando Set StorageArray pqValidateOnReconstruct imposta lo stato di convalida P/Q dell"array di storage durante la ricostruzione. Quando questa funzionalità è attivata, i dati vengono ricostruiti utilizzando sia data+P che data+Q e i risultati vengono controllati per verificarne la coerenza prima di determinare come procedere.' 
 ---
-= Impostare la convalida della qualità di stampa dell'array di storage alla ricostruzione
+= Imposta la convalida PQ dell'array di archiviazione durante la ricostruzione - CLI SANtricity
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
