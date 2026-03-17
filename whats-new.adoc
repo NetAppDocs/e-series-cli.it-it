@@ -25,9 +25,9 @@ Se si utilizza SANtricity 11.52 o una versione precedente, non è possibile eseg
 ====
 
 
-== SANtricity 12.0
+== SANtricity 12.00
 
-La tabella seguente elenca le modifiche ai comandi CLI e Script per la release 12.0.
+La tabella seguente elenca le modifiche ai comandi CLI e Script per la release 12.00.
 
 [cols="2*"]
 |===
