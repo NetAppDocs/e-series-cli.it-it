@@ -22,7 +22,7 @@ Il `Add array label` il comando consente di aggiungere un array di storage alla 
 L'etichetta definita dall'utente fornita non deve corrispondere al nome dell'array di storage visualizzato in System Manager. Si tratta di un'etichetta locale utilizzata solo per fare riferimento all'array di storage dalla CLI.
 
 ====
-Questo comando si applica agli array di storage EF600 ed EF300.
+Questo comando si applica agli array di storage EF600, EF300, EF50 e EF80.
 
 
 

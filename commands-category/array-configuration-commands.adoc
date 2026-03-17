@@ -99,6 +99,8 @@ link:../commands-a-z/reset-storagearray-hostportstatisticsbaseline.html["Riprist
 
 link:../commands-a-z/save-storagearray-hostportstatistics.html["Salvare le statistiche delle porte host dell'array di storage"]
 
+link:../commands-a-z/set-storagearray-host-io-protocol.html["Imposta il protocollo I/O host dell'array di storage"]
+
 link:../commands-a-z/set-controller-hostport.html["Impostare le proprietà della porta host del controller"]
 
 link:../commands-a-z/set-target.html["Impostare le proprietà di destinazione"]
@@ -108,6 +110,8 @@ link:../commands-a-z/set-controller-iscsihostport.html["Impostare le proprietà 
 link:../commands-a-z/set-iscsiinitiator.html["Impostare iSCSI Initiator"]
 
 link:../commands-a-z/show-storagearray-unconfigurediscsiinitiators.html["Mostrare gli iniziatori iSCSI non configurati degli array di storage"]
+
+link:../commands-a-z/show-storage-array-host-io-protocol.html["Mostra il protocollo I/O host dell'array di storage"]
 
 link:../commands-a-z/show-storagearray-unconfiguredinitiators.html["Mostra iniziatori non configurati"]
 

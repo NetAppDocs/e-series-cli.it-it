@@ -17,7 +17,7 @@ Il `Add certificate from array` Il comando consente di estrarre un certificato d
 
 == Array supportati
 
-Questo comando si applica agli array di storage EF600 ed EF300.
+Questo comando si applica agli array di storage EF600, EF300, EF50 e EF80.
 
 
 

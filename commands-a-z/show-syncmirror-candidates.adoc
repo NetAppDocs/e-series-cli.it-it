@@ -21,7 +21,7 @@ Questo comando si applica a qualsiasi singolo array di storage, con alcune limit
 
 [NOTE]
 ====
-Questo comando non è supportato sulle piattaforme E4000, E2800, E5700, EF600 e EF300.
+Questo comando non è supportato sulle piattaforme E4000, E2800, E5700, EF600, EF300, EF50 ed EF80.
 
 ====
 

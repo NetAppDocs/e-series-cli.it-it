@@ -21,4 +21,4 @@ I comandi di script configurano e gestiscono un array di storage. I comandi scri
 
 Alcune funzionalità software descritte in questo documento potrebbero non essere disponibili per il sistema storage e-Series in uso. Per domande sulle funzioni disponibili, contattare il rappresentante commerciale.
 
-La CLI è una funzione del software di gestione dello storage SANtricity.
+La CLI è una funzionalità del SANtricity System Manager software.

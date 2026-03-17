@@ -17,13 +17,13 @@ Il `start storageArray externalKeyManagement test` Il comando utilizza le creden
 
 == Array supportati
 
-Questo comando si applica a un singolo array di storage E4000, E2800, E5700, EF600 o EF300. Non funziona sugli storage array E2700 o E5600.
+Questo comando si applica ai singoli array di storage E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Non si applica agli array di storage E2700 o E5600.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore della sicurezza.
+Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Security Admin.
 
 
 
@@ -48,6 +48,65 @@ start storageArray externalKeyManagement test
 
 Nessuno.
 
+
+
+== Note
+
+L'esempio seguente mostra l'output del comando quando l'array di storage è in grado di comunicare con il server di gestione delle chiavi esterno. L'output include lo stato del server di gestione delle chiavi, del certificato client e del certificato server.
+
+[listing]
+----
+Key servers configured:
+C:\Users\Administrator\Downloads\SMcli (1)\SMcli-02.00.00.0011\bin>SMcli.bat 10.115.XX.XXX -u admin -p infiniti -k -c "start storageArray externalKeyManagement test;"
+Performing syntax check...
+
+Syntax check complete.
+
+Executing script...
+
+SUMMARY:
+   Key management server:
+      Server address: ::
+      Server port: 9003
+      Local controller status: Connection failure
+      Alternate controller status: Unknown
+      Client certificate status: Ok
+      Server certificate status: Ok
+
+DETAILS:
+Unable to communicate with the key management server. To correct the problem, perform the
+following steps: 1) Check that the key management server address and port is correct. 2) If
+the key management server's address is a domain name, check that both controller's DNS
+servers are operational and reachable from the controller given your network configuration.
+3) Check that the key management server operational and reachable from the controller given
+your network configuration. 4) Once the problem has been found and corrected, re-perform the
+communication test between the storage array and key management server to clear the needs
+attention state on the array.
+
+
+Script execution complete.
+
+SMcli completed successfully.
+
+C:\Users\Administrator\Downloads\SMcli (1)\SMcli-02.00.00.0011\bin>
+
+
+No key servers configured:
+C:\Users\Administrator\Downloads\SMcli (1)\SMcli-02.00.00.0011\bin>SMcli.bat 10.115.XX.XXX -u admin -p infiniti -k -c "start storageArray externalKeyManagement test;"
+Performing syntax check...
+
+Syntax check complete.
+
+Executing script...
+
+No key management servers configured.
+
+Script execution complete.
+
+SMcli completed successfully.
+
+C:\Users\Administrator\Downloads\SMcli (1)\SMcli-02.00.00.0011\bin>
+----
 
 
 == Livello minimo del firmware

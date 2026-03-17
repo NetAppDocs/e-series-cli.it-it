@@ -17,13 +17,13 @@ Il `show check volume parity job` il comando mostra un job di parità del volume
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo array di storage, inclusi gli array EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
+Questo comando si applica a qualsiasi array di storage individuale, inclusi gli array EF600, EF300, EF50 e EF80, purché tutti i pacchetti SMcli siano installati.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su uno storage array EF600 ed EF300, è necessario disporre del ruolo Storage Admin.
+Per eseguire questo comando su un array di storage EF600, EF300, EF50 e EF80, devi avere il ruolo Storage Admin.
 
 
 

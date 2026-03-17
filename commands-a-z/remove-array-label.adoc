@@ -17,7 +17,7 @@ Il `Remove array label` il comando consente di rimuovere un'etichetta definita d
 
 == Array supportati
 
-Questo comando si applica agli array di storage EF600 ed EF300.
+Questo comando si applica agli array di storage EF600, EF300, EF50 e EF80.
 
 
 

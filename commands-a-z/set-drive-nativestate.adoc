@@ -23,7 +23,7 @@ Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E
 
 == Ruoli
 
-Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario avere il ruolo di amministratore dello storage.
+Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
@@ -61,7 +61,7 @@ allDrives) nativeState
  a| 
 Per i vassoi ad alta capacità, specificare il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot per l'unità. Per i vassoi delle unità a bassa capacità, specificare il valore dell'ID del vassoio e il valore dell'ID dello slot per l'unità. I valori dell'ID vassoio sono `0` a. `99`. I valori dell'ID cassetto sono `1` a. `5`.
 
-Tutti i valori massimi di ID slot sono 24. I valori ID slot iniziano con 0 o 1, a seconda del modello di vassoio. I cassetti per dischi compatibili con i controller E2800, E5700, EF600 e EF300 hanno numeri ID slot a partire da 0. I vassoi per dischi compatibili con i controller E2700 e E5600 hanno numeri ID slot a partire da 1.
+Tutti i valori massimi degli slot ID sono 24. I valori degli slot ID iniziano da 0 o da 1, a seconda del modello del vassoio. I vassoi per unità compatibili con i controller E2800, E5700, EF600, EF300, EF50 e EF80 hanno numeri di slot ID che iniziano da 0. I vassoi per unità compatibili con i controller E2700 e E5600 hanno numeri di slot ID che iniziano da 1.
 
 Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore dell'ID slot tra parentesi quadre ([ ]).
 

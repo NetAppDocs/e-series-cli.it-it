@@ -1,0 +1,46 @@
+---
+permalink: commands-a-z/show-storage-array-host-io-protocol.html 
+sidebar: sidebar 
+keywords: show, storage, array, host, io, protocol 
+summary: Il comando show storageArray hostIoProtocolInformation visualizza informazioni sulle impostazioni del protocollo I/O per uno specifico storage array. 
+---
+= Mostra informazioni sul protocollo I/O host dell'array di storage - SANtricity CLI
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il  `show storageArray hostIoProtocolInformation` comando visualizza informazioni sulle impostazioni del protocollo I/O per uno specifico array di storage.
+
+
+
+== Array supportati
+
+Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
+
+
+
+== Ruoli
+
+Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo di Support Admin.
+
+
+
+== Sintassi
+
+[source, cli, subs="+macros"]
+----
+show storageArray hostIoProtocolInfo;
+----
+
+
+== Parametro
+
+Nessuno.
+
+
+
+== Livello minimo del firmware
+
+12,0

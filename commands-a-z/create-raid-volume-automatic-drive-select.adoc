@@ -17,13 +17,13 @@ Il `create volume` il comando crea un gruppo di volumi tra i dischi dell'array d
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800, E5700, EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
+Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su uno storage array E4000, E2800, E5700, EF600 o EF300, è necessario avere il ruolo di amministratore dello storage.
+Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
@@ -208,7 +208,7 @@ L'impostazione per specificare il livello di protezione durante la creazione dei
  a| 
 `resourceProvisioningCapable`
  a| 
-L'impostazione per specificare se le funzionalità di provisioning delle risorse sono attivate. Per disattivare il provisioning delle risorse, impostare questo parametro su `FALSE`. Il valore predefinito è `TRUE`.
+Se questo parametro è impostato su `TRUE`, verranno utilizzate solo unità compatibili con DULBE per creare pool di dischi o gruppi di volumi. Se il parametro è impostato su `FALSE` o non specificato, non viene eseguito alcun controllo sulla compatibilità con DULBE. Se tutte le unità selezionate per il gruppo di volumi o il pool di dischi sono compatibili con DULBE, il flag a livello di storage array determina se il gruppo di volumi o il pool di dischi viene creato come risorsa con provisioning.
 
 
 

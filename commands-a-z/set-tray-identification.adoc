@@ -17,13 +17,13 @@ Il `set tray` Command imposta l'ID del vassoio di un controller tray, di un cont
 
 == Array supportati
 
-Questo comando si applica a qualsiasi singolo storage array, inclusi E2700, E5600, E2800, E5700, Array EF600 e EF300, purché tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi array di storage individuale, inclusi E2700, E5600, E2800, E5700, EF600, EF300, EF50 ed EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
 == Ruoli
 
-Per eseguire questo comando su un array di storage E2800, E5700, EF600 o EF300, è necessario disporre del ruolo di amministratore dello storage.
+Per eseguire questo comando su un array di storage E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin.
 
 
 
