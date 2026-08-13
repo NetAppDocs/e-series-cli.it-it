@@ -45,6 +45,7 @@ summary: È necessario rispettare regole specifiche per i nomi utilizzati nei co
 
 
 
+[[entering-numerical-names]]
 == Immissione di nomi numerici
 
 Quando il software di gestione dello storage configura automaticamente un array di storage, il software di gestione dello storage assegna nomi composti da caratteri numerici. I nomi composti solo da caratteri numerici sono nomi validi. I nomi di caratteri numerici, tuttavia, devono essere trattati in modo diverso dai nomi che iniziano con caratteri alfabetici.

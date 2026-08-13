@@ -15,24 +15,28 @@ Il `start driveChannel locate` il comando identifica i vassoi delle unità colle
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Utilizzare `stop driveChannel locate` comando per spegnere gli indicatori luminosi sul vassoio dell'unità
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -41,6 +45,7 @@ start driveChannel [(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)] locate
 ----
 
 
+[[parameter]]
 == Parametro
 
 [cols="2*"]
@@ -56,6 +61,7 @@ Il numero identificativo del canale del disco che si desidera individuare. I val
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

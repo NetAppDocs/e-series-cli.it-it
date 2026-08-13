@@ -15,18 +15,21 @@ Il `start volumeGroup export` Il comando sposta un gruppo di volumi in uno stato
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Quindi, è possibile rimuovere le unità che compongono il gruppo di volumi e reinstallare le unità in un array di storage diverso.
@@ -43,6 +46,7 @@ All'interno del gruppo di volumi, non è possibile spostare i volumi associati a
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -51,6 +55,7 @@ pass:quotes[start volumeGroup [_volumeGroupName_]] export
 ----
 
 
+[[parameter]]
 == Parametro
 
 [cols="2*"]
@@ -66,6 +71,7 @@ Il nome del gruppo di volumi che si desidera esportare. Racchiudere il nome del 
 |===
 
 
+[[notes]]
 == Note
 
 Una volta eseguito correttamente questo comando, è possibile eseguire `start volumeGroup import` Comando per terminare lo spostamento del gruppo di volumi in uno stato completo, rendendo il gruppo di volumi disponibile per il nuovo array di storage.
@@ -76,6 +82,7 @@ Una volta che il gruppo di volumi si trova in uno stato esportato o forzato, è 
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.10

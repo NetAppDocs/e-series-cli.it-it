@@ -15,6 +15,7 @@ Il `set tray` il comando imposta gli attributi definiti dall'utente per un vasso
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -23,6 +24,7 @@ set tray pass:quotes[[_trayID_]] (chassisName | assetTag)=pass:quotes["_userID_"
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -52,6 +54,7 @@ Nome o numero del tag asset per assegnare il nuovo enclosure. I tag delle risors
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.16

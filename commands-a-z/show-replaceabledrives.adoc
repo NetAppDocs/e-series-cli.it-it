@@ -15,18 +15,21 @@ Il `show replaceableDrives` il comando mostra tutte le unità sostituibili in un
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Per ogni disco sostituibile nell'array di storage, questo comando restituisce le seguenti informazioni:
@@ -39,6 +42,7 @@ Per ogni disco sostituibile nell'array di storage, questo comando restituisce le
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -47,6 +51,7 @@ show replaceableDrives
 ----
 
 
+[[example-output]]
 == Output di esempio
 
 [listing]
@@ -66,6 +71,7 @@ Replaceable drive at Tray 0, Slot 24
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.10

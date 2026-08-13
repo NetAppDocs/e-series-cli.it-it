@@ -15,24 +15,28 @@ Il `suspend ssdCache` Il comando interrompe temporaneamente il caching per tutti
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo di Support Admin.
 
 
 
+[[context]]
 == Contesto
 
 Durante l'interruzione del caching, le letture degli host vengono gestite dai volumi di base invece che dalla cache SSD.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ pass:quotes[suspend ssdCache [_ssdCacheName_]]
 ----
 
 
+[[parameter]]
 == Parametro
 
 [cols="2*"]
@@ -56,12 +61,14 @@ Il nome della cache SSD che si desidera sospendere. Racchiudere il nome della ca
 |===
 
 
+[[notes]]
 == Note
 
 Per riavviare il caching, utilizzare `resume ssdCache` comando.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.84

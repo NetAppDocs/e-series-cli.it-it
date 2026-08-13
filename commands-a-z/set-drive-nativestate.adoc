@@ -15,18 +15,21 @@ Il `set drive nativeState` il comando aggiunge le unità mancanti (esterne) al g
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800, E5700, EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Un disco viene considerato nativo quando fa parte di un gruppo di volumi in un array di storage. Un disco viene considerato estraneo quando non appartiene a un gruppo di volumi in un array di storage o quando non viene importato con i dischi di un gruppo di volumi che vengono trasferiti a un nuovo array di storage. Quest'ultimo errore crea un gruppo di volumi incompleto sul nuovo array di storage.
@@ -40,6 +43,7 @@ Utilizzare questa operazione solo per il ripristino di emergenza: Quando uno o p
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -49,6 +53,7 @@ allDrives) nativeState
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -75,12 +80,14 @@ L'impostazione per selezionare tutte le unità.
 |===
 
 
+[[notes]]
 == Note
 
 Il `drive` il parametro supporta sia i vassoi per dischi ad alta capacità che quelli a bassa capacità. Un vassoio per dischi ad alta capacità dispone di cassetti che trattengono le unità. I cassetti scorrono fuori dal vassoio dell'unità per consentire l'accesso alle unità. Un vassoio per unità a bassa capacità non dispone di cassetti. Per un vassoio dell'unità ad alta capacità, è necessario specificare l'identificativo (ID) del vassoio dell'unità, l'ID del cassetto e l'ID dello slot in cui si trova l'unità. Per un vassoio dell'unità a bassa capacità, è necessario specificare solo l'ID del vassoio dell'unità e l'ID dello slot in cui si trova un'unità. Per un vassoio dell'unità a bassa capacità, un metodo alternativo per identificare una posizione per un'unità consiste nel specificare l'ID del vassoio dell'unità, impostare l'ID del cassetto su `0`E specificare l'ID dello slot in cui si trova un'unità.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.10

@@ -15,24 +15,28 @@ Il `revive snapGroup` Il comando forza lo stato ottimale del gruppo di snapshot 
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Support Admin.
 
 
 
+[[context]]
 == Contesto
 
 Se il gruppo di snapshot non si trova in uno stato di errore, il firmware visualizza un messaggio di errore e non esegue questo comando.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ revive snapGroup pass:quotes[[_snapGroupName_]]
 ----
 
 
+[[parameter]]
 == Parametro
 
 |===
@@ -55,12 +60,14 @@ Il nome del gruppo di snapshot che si desidera impostare sullo stato ottimale. R
 |===
 
 
+[[notes]]
 == Note
 
 È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per i nomi. I nomi possono avere un massimo di 30 caratteri.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.83

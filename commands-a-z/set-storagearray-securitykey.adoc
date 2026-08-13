@@ -15,18 +15,21 @@ Il `set storageArray securityKey` Command imposta la chiave di sicurezza utilizz
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Security Admin.
 
 
 
+[[context]]
 == Contesto
 
 Quando un disco con funzionalità di sicurezza nell'array di storage viene assegnato a un gruppo di volumi o a un pool di dischi protetti, tale disco viene abilitato per la sicurezza utilizzando la chiave di sicurezza. Prima di poter impostare la chiave di sicurezza, è necessario utilizzare `create storageArray securityKey` per creare la chiave di sicurezza.
@@ -38,6 +41,7 @@ Questo comando si applica solo alla gestione interna delle chiavi.
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -46,12 +50,14 @@ set storageArray securityKey
 ----
 
 
+[[parameters]]
 == Parametri
 
 Nessuno.
 
 
 
+[[notes]]
 == Note
 
 I dischi con funzionalità di sicurezza sono dotati di hardware per accelerare l'elaborazione crittografica e ciascuno di essi dispone di una chiave disco univoca. Un disco con funzionalità di protezione si comporta come qualsiasi altro disco fino a quando non viene aggiunto a un gruppo di volumi protetto, nel qual caso l'unità con funzionalità di protezione diventa protetta.
@@ -60,6 +66,7 @@ Ogni volta che un disco abilitato alla sicurezza viene acceso, richiede la chiav
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.50

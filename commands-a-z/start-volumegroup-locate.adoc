@@ -15,24 +15,28 @@ Il `start volumeGroup locate` il comando identifica le unità raggruppate in mod
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Utilizzare `stop volumeGroup locate` comando per spegnere gli indicatori luminosi dei dischi.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ pass:quotes[start volumeGroup [_volumeGroupName_]] locate
 ----
 
 
+[[parameter]]
 == Parametro
 
 [cols="2*"]
@@ -56,6 +61,7 @@ Il nome del gruppo di volumi per il quale si desidera individuare le unità appa
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.16

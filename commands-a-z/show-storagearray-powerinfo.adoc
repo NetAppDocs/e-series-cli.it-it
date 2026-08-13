@@ -15,18 +15,21 @@ Il `show storageArray powerInfo` il comando restituisce informazioni sulla quant
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Storage Monitor.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -35,12 +38,14 @@ show storageArray powerInfo
 ----
 
 
+[[parameters]]
 == Parametri
 
 Nessuno.
 
 
 
+[[notes]]
 == Note
 
 Questo comando restituisce informazioni sul consumo di energia simili a questo esempio.
@@ -56,6 +61,7 @@ tray power input details:
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.10

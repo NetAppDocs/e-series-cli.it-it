@@ -15,18 +15,21 @@ Il `set syncMirror` command definisce le proprietà di una coppia con mirroring 
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800 e E5700, a condizione che siano installati tutti i pacchetti SMcli.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su uno storage array E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -36,6 +39,7 @@ Nelle versioni precedenti di questo comando, l'identificatore di funzione era `r
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -51,6 +55,7 @@ localVolumes pass:quotes[[_volumeName1 ... volumeNameN_]])
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -135,6 +140,7 @@ Utilizzare `force` solo quando si utilizza `role` parametro.
 |===
 
 
+[[notes]]
 == Note
 
 Quando si utilizza questo comando, è possibile specificare uno o più parametri opzionali.
@@ -145,6 +151,7 @@ Il `writeOrder` il parametro si applica solo alle modalità di scrittura asincro
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

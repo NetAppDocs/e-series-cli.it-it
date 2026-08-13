@@ -15,18 +15,21 @@ Il `start volume initialize` il comando inizializza o reinizializza un volume th
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 L'azione dipende dai parametri utilizzati:
@@ -42,6 +45,7 @@ L'inizializzazione di un volume thin avvia un'operazione a esecuzione prolungata
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -53,6 +57,7 @@ pass:quotes[[diskPool=_diskPoolName_ capacity=_capacityValue_]]
 ----
 
 
+[[parameter]]
 == Parametro
 
 [cols="2*"]
@@ -111,6 +116,7 @@ Se questo parametro è impostato su `TRUE`, viene conservato il vecchio reposito
 |===
 
 
+[[notes]]
 == Note
 
 Se non si specifica un volume con `volume` parametro, questo comando ripristina i metadati nel repository e, in effetti, fa sì che il volume thin appaia vuoto nell'host. Se si specifica un volume con `*volume*` il volume viene sostituito da un volume appena creato o da un volume esistente, se specificato con `existingRepositoryLabel` parametro. Se si specifica un volume esistente con `existingRepositoryLabel` parametro che si trova in un pool di dischi diverso, il volume thin cambierà proprietà nel nuovo pool di dischi.
@@ -168,6 +174,7 @@ Se si desidera modificare un volume thin in un volume standard, utilizzare l'ope
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.83

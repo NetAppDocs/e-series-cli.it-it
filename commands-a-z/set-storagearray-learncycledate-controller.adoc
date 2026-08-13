@@ -15,18 +15,21 @@ Il `set storageArray learnCycleDate controller` il comando imposta i cicli di ap
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -46,6 +49,7 @@ Il completamento di un ciclo di apprendimento potrebbe richiedere diverse ore.
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -56,6 +60,7 @@ day=_dayOfTheWeek_)] pass:quotes[time=_HH:MM_]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -97,6 +102,7 @@ L'ora nel formato a 24 ore, ad esempio 8:00 viene immesso come `08:00`. Ore nove
 |===
 
 
+[[example]]
 == Esempio
 
 [listing]
@@ -105,6 +111,7 @@ set storageArray learnCycleDate controller [a] daysToNextLearnCycle=4 time=08:30
 ----
 
 
+[[notes]]
 == Note
 
 È possibile impostare il ciclo di apprendimento in modo che si verifichi una sola volta durante un periodo di sette giorni.
@@ -115,6 +122,7 @@ Se il giorno e l'ora specificati sono passati, il ciclo di apprendimento success
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.15

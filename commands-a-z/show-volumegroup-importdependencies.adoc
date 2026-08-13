@@ -15,18 +15,21 @@ Il `show volumeGroup importDependencies` il comando mostra un elenco di dipenden
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Storage Monitor.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -36,6 +39,7 @@ pass:quotes[show volumeGroup [_volumeGroupName_]] importDependencies
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -58,6 +62,7 @@ L'impostazione per eseguire nuovamente lo spin dei dischi dopo la lettura delle 
 |===
 
 
+[[notes]]
 == Note
 
 Questo comando restituisce le dipendenze di un gruppo di volumi specifico, che deve trovarsi in uno stato esportato o forzato. Se si decide di mantenere le dipendenze elencate, il `cancelImport` il parametro può essere applicato per far tornare indietro le unità.
@@ -66,6 +71,7 @@ Questo comando restituisce le dipendenze di un gruppo di volumi specifico, che d
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.10

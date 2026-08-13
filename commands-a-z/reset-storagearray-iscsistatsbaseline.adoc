@@ -15,12 +15,14 @@ Il `reset storageArray iscsiStatsBaseline` Il comando ripristina la linea di bas
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800 e E5700, a condizione che siano installati tutti i pacchetti SMcli.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su uno storage array E4000, E2800 o E5700, è necessario avere il ruolo di amministratore dello storage.
@@ -32,6 +34,7 @@ Questo comando è obsoleto e viene sostituito da xref:reset-storagearray-hostpor
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -40,18 +43,21 @@ reset storageArray iscsiStatsBaseline
 ----
 
 
+[[parameters]]
 == Parametri
 
 Nessuno.
 
 
 
+[[notes]]
 == Note
 
 Questo comando ripristina la linea di base su 0 per entrambi i controller nell'array di storage. Lo scopo del ripristino di entrambe le linee di base dei controller è quello di garantire che i conteggi dei controller siano sincronizzati tra i controller. Se un controller viene reimpostato ma il secondo controller non viene reimpostato, l'host viene informato che i controller non sono sincronizzati. L'host viene informato dai timestamp riportati con le statistiche.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.10

@@ -15,18 +15,21 @@ Il `save storageArray hostPortStatistics` il comando salva le statistiche delle 
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica ai singoli array di storage E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Non si applica agli array di storage E2700 o E5600.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Security Admin.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -36,6 +39,7 @@ Questo comando sostituisce il deprecato xref:save-storagearray-iscsistatistics.a
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -44,6 +48,7 @@ save storageArray hostPortStatistics [(raw | baseline)] type=(ISCSI| ISER | SRP 
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -131,6 +136,7 @@ X
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.41

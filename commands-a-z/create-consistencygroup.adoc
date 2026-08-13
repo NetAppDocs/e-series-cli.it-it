@@ -15,18 +15,21 @@ Il `create consistencyGroup` il comando crea un nuovo gruppo di coerenza vuoto c
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -41,6 +44,7 @@ create consistencyGroup userLabel=pass:quotes[_"consistencyGroupName"_]
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -90,6 +94,7 @@ Determina se le risorse di sistema devono essere allocate all'operazione di roll
 |===
 
 
+[[notes]]
 == Note
 
 Un gruppo di coerenza è un'entità logica che consente di gestire in batch tutte le immagini snapshot aggiunte alla raccolta. Il gruppo di coerenza è un insieme di gruppi di snapshot che hanno requisiti di coerenza o dipendenze reciproche per le immagini snapshot. Tutte le immagini snapshot create e utilizzate per questa raccolta devono essere gestite in base alle dipendenze di coerenza.
@@ -104,12 +109,14 @@ In base a questo comportamento, tutti i membri di un gruppo di coerenza di solit
 
 
 
+[[auto-delete]]
 == Eliminazione automatica
 
 È possibile configurare ciascun gruppo di snapshot in modo che elimini automaticamente le proprie immagini di snapshot per mantenere il numero totale di immagini di snapshot nel gruppo di snapshot al massimo o al di sotto di un numero massimo di immagini. Quando il numero di immagini snapshot nel gruppo di snapshot è al limite massimo, il `autoDeleteLimit` il parametro elimina automaticamente le immagini snapshot ogni volta che viene creata una nuova immagine snapshot nel gruppo di snapshot. Il `autoDeleteLimit` il parametro elimina le immagini snapshot meno recenti nel gruppo di snapshot fino a quando non viene raggiunto il numero massimo di immagini definito con il parametro. Questo ha l'effetto di liberare la capacità del repository in modo che possa essere utilizzata per soddisfare i requisiti di copy-on-write in corso per le immagini snapshot rimanenti.
 
 
 
+[[scheduling-snapshot-images-in-a-consistency-group]]
 == Pianificazione di immagini snapshot in un gruppo di coerenza
 
 Il `enableSchedule` e il `schedule` il parametro consente di pianificare le snapshot. Utilizzando questi parametri, è possibile pianificare le snapshot giornalmente, settimanalmente o mensilmente (per giorno o per data). Il `enableSchedule` il parametro attiva o disattiva la possibilità di pianificare snapshot. Quando si attiva la pianificazione, si utilizza `schedule` parametro per definire quando si desidera che vengano eseguite le istantanee.
@@ -972,6 +979,7 @@ Quando si esegue un rollback in un gruppo di coerenza, l'operazione predefinita 
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.83

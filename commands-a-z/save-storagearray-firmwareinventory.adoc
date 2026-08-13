@@ -15,18 +15,21 @@ Il `save storageArray firmwareInventory` command salva un report in un file di t
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Il report elenca il firmware per questi componenti:
@@ -42,6 +45,7 @@ Il report elenca il firmware per questi componenti:
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -50,6 +54,7 @@ save storageArray firmwareInventory file=pass:quotes["_filename_"]
 ----
 
 
+[[parameter]]
 == Parametro
 
 [cols="2*"]
@@ -69,6 +74,7 @@ Il nome predefinito del file che contiene l'inventario del firmware è `firmware
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.70

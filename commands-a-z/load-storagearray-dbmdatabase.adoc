@@ -15,18 +15,21 @@ Il `load storageArray dbmDatabase` Il comando ripristina un'immagine di database
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Security Admin.
 
 
 
+[[context]]
 == Contesto
 
 Questo comando ripristina un database DBM di array di storage alla configurazione esatta esistente al momento dell'acquisizione dell'immagine del database mediante `save storageArray dbmDatabase` comando. I dati di un file includono i dati per la configurazione RAID, i gruppi di volumi e i pool di dischi.
@@ -35,6 +38,7 @@ Prima di utilizzare questo comando con `file` è necessario prima ottenere una s
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ pass:quotes[((file="_filename_" validator="_validatorValue_") | sourceLocation=o
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -99,12 +104,14 @@ Questo parametro è impostato su `all` per impostazione predefinita, in modo che
 |===
 
 
+[[notes]]
 == Note
 
 A seconda delle dimensioni dell'immagine del database, il ripristino del database potrebbe richiedere fino a 30 minuti. Il software host non mostrerà i controller in uno stato ottimale fino al completamento di tutte le azioni per il caricamento dell'immagine del database sui controller.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.75

@@ -15,24 +15,28 @@ Il `show driveChannel stats` il comando mostra il trasferimento cumulativo dei d
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Se il controller ha degradato automaticamente un canale del disco, questo comando mostra anche le statistiche degli intervalli. Quando si utilizza questo comando, è possibile visualizzare informazioni su uno specifico canale del disco, su diversi canali del disco o su tutti i canali del disco.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -43,6 +47,7 @@ show (driveChannel [(1 | 2 | 3 | 4 | 5 | 6 | 7 | 8)] |
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -76,12 +81,14 @@ L'identificatore che seleziona tutti i canali del disco.
 |===
 
 
+[[notes]]
 == Note
 
 Nessuno.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

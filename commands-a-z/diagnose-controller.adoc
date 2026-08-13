@@ -15,24 +15,28 @@ Il `diagnose controller` command esegue test diagnostici sul controller.
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 I test diagnostici consistono in test di loopback in cui i dati vengono scritti sui dischi e letti dai dischi.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ pass:quotes[[patternFile="_filename_"]]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -88,6 +93,7 @@ Il percorso del file e il nome del file che contiene un modello di dati che si d
 |===
 
 
+[[notes]]
 == Note
 
 Quando si esegue un test di loop-back dei dati, è possibile specificare un file che contiene un modello di dati. Se non si specifica un file, il firmware del controller fornisce un modello predefinito.
@@ -112,6 +118,7 @@ One or more controller discrete lines failed the diagnostic test.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10 aggiunge il test di lettura, il test di scrittura e il test di loopback dei dati.

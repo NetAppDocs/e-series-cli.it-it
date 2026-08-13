@@ -15,12 +15,14 @@ Il `Add certificate from array` Il comando consente di estrarre un certificato d
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica agli array di storage EF600, EF300, EF50 e EF80.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -30,6 +32,7 @@ pass:quotes[_ipAddress1 ipAddress2_  trust localCertificate]
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -44,6 +47,7 @@ Consente di specificare l'indirizzo IP per lo storage array.
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.60

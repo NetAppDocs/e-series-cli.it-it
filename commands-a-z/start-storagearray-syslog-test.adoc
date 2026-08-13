@@ -15,18 +15,21 @@ Il `start storageArray syslog test` il comando consente di verificare le comunic
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica ai singoli array di storage E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Non si applica agli array di storage E2700 o E5600.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Security Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -35,6 +38,7 @@ start storageArray syslog test id="<id>"
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -50,6 +54,7 @@ ID di configurazione syslog da testare. L'ID è disponibile utilizzando `show st
 |===
 
 
+[[example]]
 === Esempio
 
 [listing]
@@ -60,6 +65,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.42

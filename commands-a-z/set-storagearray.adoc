@@ -15,18 +15,21 @@ Il `set storageArray` command definisce le proprietà dell'array di storage.
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -36,6 +39,7 @@ Con la versione del firmware 8.10 di `cacheFlushStop` il parametro è obsoleto e
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -84,6 +88,7 @@ set storageArray
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -430,12 +435,14 @@ Attiva o disattiva VMware vStorage API Array Architecture (VAAI) per uno storage
 |===
 
 
+[[notes]]
 == Note
 
 Ad eccezione di `isnsRegistration`, quando si utilizza questo comando è possibile specificare uno o più parametri opzionali.
 
 
 
+[[autosupport-data]]
 == Dati AutoSupport
 
 [NOTE]
@@ -456,6 +463,7 @@ Il `set storageArray autoSupportConfig` command raccoglie le informazioni di con
 
 
 
+[[cache-block-size]]
 == Dimensione del blocco della cache
 
 Quando si definiscono le dimensioni dei blocchi della cache, utilizzare le dimensioni dei blocchi della cache da 4 KB per gli array di storage che richiedono flussi di i/o generalmente piccoli e casuali. Utilizzare le dimensioni del blocco della cache da 8 KB quando la maggior parte dei flussi di i/o è superiore a 4 KB ma inferiore a 8 KB. Utilizzare le dimensioni dei blocchi della cache da 16 KB o le dimensioni dei blocchi della cache da 32 KB per gli array di storage che richiedono un grande trasferimento di dati, applicazioni sequenziali o a elevata larghezza di banda.
@@ -464,24 +472,28 @@ Il `cacheBlockSize` il parametro definisce le dimensioni del blocco cache suppor
 
 
 
+[[cache-flush-start]]
 == Inizio del vampare della cache
 
 Quando si definiscono i valori per avviare un'operazione di scaricamento della cache, un valore troppo basso aumenta la probabilità che i dati necessari per una lettura host non siano nella cache. Un valore basso aumenta anche il numero di scritture del disco necessarie per mantenere il livello di cache, aumentando l'overhead del sistema e diminuendo le performance.
 
 
 
+[[default-host-type]]
 == Tipo di host predefinito
 
 Quando si definiscono i tipi di host, se la partizione dello storage è attivata, il tipo di host predefinito influisce solo sui volumi mappati nel gruppo predefinito. Se la partizione dello storage non è attivata, tutti gli host collegati allo storage array devono eseguire lo stesso sistema operativo ed essere compatibili con il tipo di host predefinito.
 
 
 
+[[media-scan-rate]]
 == Velocità di scansione dei supporti
 
 La scansione dei supporti viene eseguita su tutti i volumi dell'array di storage con stato ottimale, senza operazioni di modifica in corso e con `mediaScanRate` parametro attivato. Utilizzare `set volume` per attivare o disattivare `mediaScanRate` parametro.
 
 
 
+[[password]]
 == Password
 
 Le password vengono memorizzate in ciascun array di storage. Per una protezione ottimale, la password deve soddisfare i seguenti criteri:
@@ -505,6 +517,7 @@ Se si utilizzano dischi con crittografia completa nell'array di storage, è nece
 ====
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 5.00 aggiunge `defaultHostType` parametro.

@@ -15,18 +15,21 @@ Il `set volume logicalUnitNumber` Command definisce il mapping LUN (Logical Unit
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Questo comando è applicabile ai volumi di un gruppo di volumi o di un pool di dischi.
@@ -38,6 +41,7 @@ Non è possibile utilizzare questo comando per un volume di snapshot utilizzato 
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -49,6 +53,7 @@ hostGroup=pass:quotes[("_hostGroupName_"] | defaultGroup)
 ----
 
 
+[[parameter]]
 == Parametro
 
 [cols="2*"]
@@ -104,6 +109,7 @@ Il nome del gruppo di host a cui è mappato il volume. Racchiudere il nome del g
 |===
 
 
+[[notes]]
 == Note
 
 Un gruppo di host è un elemento topologico opzionale che è possibile definire se si desidera designare una raccolta di host che condividono l'accesso agli stessi volumi. Il gruppo host è un'entità logica. Definire un gruppo di host solo se si dispone di due o più host in grado di condividere l'accesso agli stessi volumi.
@@ -114,6 +120,7 @@ Il volume di accesso è il volume in un ambiente SAN utilizzato per la comunicaz
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.83 aggiunge un volume di snapshot per i pool di dischi.

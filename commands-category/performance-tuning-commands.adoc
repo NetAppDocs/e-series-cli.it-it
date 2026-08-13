@@ -15,6 +15,7 @@ Per il tuo sistema storage e-Series è disponibile il seguente elenco di comandi
 
 
 
+[[automatic-load-balancing-commands]]
 == Comandi automatici di bilanciamento del carico
 
 link:../commands-a-z/save-storagearray-autoloadbalancestatistics-file.html["Salva le statistiche di bilanciamento del carico automatico"]
@@ -23,6 +24,7 @@ link:../commands-a-z/set-storagearray-autoloadbalancingenable.html["Impostare lo
 
 
 
+[[ssd-cache-commands]]
 == Comandi della cache SSD
 
 link:../commands-a-z/add-drives-to-ssd-cache.html["Aggiunta di unità alla cache SSD"]

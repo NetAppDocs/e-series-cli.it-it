@@ -15,18 +15,21 @@ Il `set storageArray autoSupport schedule` Il comando consente di impostare gli 
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica ai singoli array di storage E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Non si applica agli array di storage E2700 o E5600.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Support Admin.
 
 
 
+[[context]]
 == Contesto
 
 * Se AutoSupport è attivato, il software di gestione invia sia messaggi AutoSupport giornalieri che messaggi AutoSupport settimanali.
@@ -36,6 +39,7 @@ Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, E
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ weeklyTime=pass:quotes[_startTime-endTime_]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -75,6 +80,7 @@ weeklyTime=pass:quotes[_startTime-endTime_]
 |===
 
 
+[[examples]]
 === Esempi
 
 [listing]
@@ -88,12 +94,14 @@ SMcli completed successfully.
 ----
 
 
+[[verification]]
 === Verifica
 
 Utilizzare `show storageArray autoSupport` per visualizzare la modifica risultante alla pianificazione.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.40

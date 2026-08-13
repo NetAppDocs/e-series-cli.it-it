@@ -15,18 +15,21 @@ Il `delete volume` il comando elimina volumi normali o thin da un pool di dischi
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 È inoltre possibile utilizzare questo comando per eliminare eventuali pianificazioni correlate al volume. Quando si elimina la pianificazione, il volume non viene cancellato.
@@ -38,6 +41,7 @@ Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, E
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -51,6 +55,7 @@ pass:quotes[volumes ["_volumeName1_" ... "_volumeNameN_"]]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -105,12 +110,14 @@ Quando si elimina un volume thin, il volume repository associato viene cancellat
 |===
 
 
+[[notes]]
 == Note
 
 Quando si utilizza `allVolumes` parametro, questo comando elimina i volumi fino a quando tutti i volumi non vengono rimossi o fino a quando non viene rilevato un errore. Se si verifica un errore, questo comando non tenta di eliminare i volumi rimanenti. È possibile eliminare volumi da diversi gruppi di volumi. Se si imposta, tutti i gruppi di volumi vuoti vengono eliminati `removeVolumeGroup` parametro a. `TRUE`.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.83

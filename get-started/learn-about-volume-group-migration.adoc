@@ -25,12 +25,14 @@ Se il gruppo di volumi è costituito da unità compatibili con NVMe o FIPS, la c
 ====
 
 
+[[export-volume-group]]
 == Gruppo di volumi di esportazione
 
 L'operazione di esportazione del gruppo di volumi prepara i dischi nel gruppo di volumi per la rimozione. È possibile rimuovere le unità per lo storage offline oppure importare il gruppo di volumi in un array di storage diverso. Una volta completata l'operazione di esportazione del gruppo di volumi, tutti i dischi non sono in linea. Eventuali volumi o nodi di capacità libera associati non vengono più visualizzati nel software di gestione dello storage.
 
 
 
+[[non-exportable-components]]
 == Componenti non esportabili
 
 È necessario rimuovere eventuali componenti non esportabili prima di completare la procedura di esportazione del gruppo di volumi. È necessario rimuovere questi componenti:
@@ -44,6 +46,7 @@ L'operazione di esportazione del gruppo di volumi prepara i dischi nel gruppo di
 
 
 
+[[basic-export-steps-for-a-volume-group]]
 == Procedure di esportazione di base per un gruppo di volumi
 
 L'esportazione di un gruppo di volumi include questi passaggi sull'array di storage _source_.
@@ -70,12 +73,14 @@ L'esportazione di un gruppo di volumi include questi passaggi sull'array di stor
 
 
 
+[[import-volume-group]]
 == Importa gruppo di volumi
 
 L'operazione di importazione del gruppo di volumi aggiunge il gruppo di volumi importati all'array di storage di destinazione. Una volta completata l'operazione di importazione dei gruppi di volumi, tutti i dischi hanno uno stato ottimale. Tutti i volumi associati o i nodi di capacità libera ora vengono visualizzati nel software di gestione dello storage installato sull'array di storage di destinazione.
 
 
 
+[[basic-import-steps-for-a-volume-group]]
 == Procedure di importazione di base per un gruppo di volumi
 
 [NOTE]
@@ -93,6 +98,7 @@ L'importazione di un gruppo di volumi include i seguenti passaggi sull'array di 
 
 
 
+[[non-importable-components]]
 == Componenti non importabili
 
 Alcuni componenti non possono essere importati durante la procedura di importazione del gruppo di volumi. Questi componenti vengono rimossi durante la procedura:

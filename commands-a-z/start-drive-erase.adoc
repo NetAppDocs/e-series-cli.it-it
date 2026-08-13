@@ -15,18 +15,21 @@ Il `start drive erase` il comando cancella tutti i dati da uno o più dischi.
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a un singolo array E4000, E2800, E5700, EF600 o EF300. Non funziona su storage array E2700 e E5600.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Security Admin.
 
 
 
+[[context]]
 == Contesto
 
 Eseguire questo comando solo se si desidera rimuovere in modo permanente tutti i dati presenti su un disco. Se il disco è abilitato per la protezione, il `start drive erase` command option esegue una cancellazione crittografica e ripristina gli attributi di sicurezza del disco su secure-capable.
@@ -38,6 +41,7 @@ L'operazione di cancellazione non può essere annullata. Assicurarsi di selezion
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ start (drive [trayID,[drawerID,]slotID] | drives[trayID1,[drawerID1,]slotID1 ...
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -70,6 +75,7 @@ L'elenco delle unità non può contenere tutte le unità dell'array di storage, 
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 11.70.1

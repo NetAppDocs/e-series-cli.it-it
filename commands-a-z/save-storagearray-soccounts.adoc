@@ -15,24 +15,28 @@ Il `save storageArray SOCCounts` Il comando salva le statistiche degli errori SO
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Questo comando è valido solo per i dispositivi Fibre Channel in una topologia ad anello arbitrato.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ save storageArray SOCCounts file=pass:quotes["_filename_"]
 ----
 
 
+[[parameter]]
 == Parametro
 
 [cols="2*"]
@@ -60,6 +65,7 @@ Il nome predefinito del file che contiene le statistiche degli errori SOC è `so
 |===
 
 
+[[notes]]
 == Note
 
 Per salvare in modo più efficace le statistiche degli errori SOC in un file, attenersi alla seguente procedura:
@@ -71,6 +77,7 @@ Per salvare in modo più efficace le statistiche degli errori SOC in un file, at
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.16

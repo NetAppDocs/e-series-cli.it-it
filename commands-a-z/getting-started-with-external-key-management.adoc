@@ -28,6 +28,7 @@ Di seguito viene riportato il flusso di lavoro di base per l'implementazione del
 
 
 
+[[workflow-steps]]
 == Fasi del flusso di lavoro
 
 Sia la gestione dei certificati che la gestione delle chiavi esterne sono nuove funzionalità di sicurezza con la release SANtricity11.40. Per iniziare, attenersi alla seguente procedura di base:

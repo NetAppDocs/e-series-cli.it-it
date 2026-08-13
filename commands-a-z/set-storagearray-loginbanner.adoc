@@ -15,18 +15,21 @@ Il `set storageArray loginBanner` il comando consente di caricare un file di tes
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica ai singoli array di storage E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Non si applica agli array di storage E2700 o E5600.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Security Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -35,12 +38,14 @@ set storageArray loginBanner file="path_to_login_banner"
 ----
 
 
+[[context]]
 == Contesto
 
 Una volta caricato, il file di testo viene salvato nell'array di storage. Il testo del banner viene visualizzato prima della schermata di accesso a Gestore di sistema di SANtricity o prima di eseguire i comandi.
 
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -61,6 +66,7 @@ Il file banner di accesso non può essere vuoto e deve essere di almeno 5 KB.
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.41

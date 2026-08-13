@@ -15,18 +15,21 @@ Il `start secureErase drive` Il comando cancella tutti i dati da uno o più disc
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Security Admin.
 
 
 
+[[context]]
 == Contesto
 
 Eseguire questo comando solo quando i dischi FDE non fanno più parte di un gruppo di volumi o di un pool di dischi sicuri o quando la chiave di sicurezza non è nota.
@@ -38,6 +41,7 @@ Per cancellare un'unità FIPS quando l'unità è bloccata e la chiave di sicurez
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ Per cancellare un'unità FIPS quando l'unità è bloccata e la chiave di sicurez
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -70,12 +75,14 @@ L'elenco delle unità non può contenere tutte le unità dell'array di storage, 
 |===
 
 
+[[notes]]
 == Note
 
 Il firmware del controller crea un blocco che limita l'accesso ai dischi FDE. I dischi FDE hanno uno stato chiamato Security Capable. Quando si crea una chiave di sicurezza, lo stato viene impostato su Security Enabled (protezione abilitata), che limita l'accesso a tutti i dischi FDE presenti nell'array di storage.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.40

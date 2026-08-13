@@ -15,18 +15,21 @@ Il `show storageArray unreadableSectors` command restituisce una tabella degli i
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Storage Monitor.
 
 
 
+[[context]]
 == Contesto
 
 La tabella restituita è organizzata con intestazioni di colonna per le seguenti informazioni:
@@ -45,6 +48,7 @@ I dati vengono ordinati per prima in base all'etichetta utente del volume e per 
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -53,12 +57,14 @@ show storageArray unreadableSectors
 ----
 
 
+[[parameters]]
 == Parametri
 
 Nessuno.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

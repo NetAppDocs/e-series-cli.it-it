@@ -15,18 +15,21 @@ Il `resume snapImage rollback` command riprende un'operazione di rollback che è
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Un'operazione di rollback può entrare in uno stato di pausa a causa di errori di elaborazione, causando una condizione di attenzione necessaria per l'array di storage.
@@ -40,6 +43,7 @@ Non è possibile utilizzare questo comando per le immagini snapshot coinvolte ne
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -48,6 +52,7 @@ resume snapImage pass:quotes[[_snapImageName_]] rollback
 ----
 
 
+[[parameter]]
 == Parametro
 
 |===
@@ -75,6 +80,7 @@ Racchiudere il nome dell'immagine istantanea tra virgolette doppie (" ") tra par
 |===
 
 
+[[notes]]
 == Note
 
 Il nome di un'immagine istantanea ha due parti separate da due punti (:):
@@ -91,6 +97,7 @@ resume snapImage ["snapgroup1:12345"] rollback;
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.83

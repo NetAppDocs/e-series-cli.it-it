@@ -15,18 +15,21 @@ Il `show snapImage` il comando restituisce informazioni sulle immagini snapshot 
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[syntax-for-showing-a-specific-snapshot-image]]
 == Sintassi per la visualizzazione di un'immagine snapshot specifica
 
 [source, cli, subs="+macros"]
@@ -37,6 +40,7 @@ snapImages pass:quotes[["_snapImageName1_" ... "_snapImageNamen_"]])
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -91,6 +95,7 @@ Questo parametro restituisce un elenco conciso di informazioni sulle immagini sn
 |===
 
 
+[[notes]]
 == Note
 
 Il nome di un'immagine istantanea ha due parti separate da due punti (:):
@@ -119,6 +124,7 @@ show snapImages ["snapGroup1:12345 snapGroup2:newest snapGroup3:oldest"];
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.83

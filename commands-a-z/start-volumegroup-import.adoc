@@ -15,18 +15,21 @@ Il `start volumeGroup import` Il comando sposta un gruppo di volumi in uno stato
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Prima di eseguire questo comando, il gruppo di volumi deve trovarsi in uno stato esportato o forzato. Una volta eseguito correttamente il comando, il gruppo di volumi è operativo.
@@ -38,6 +41,7 @@ All'interno del gruppo di volumi, non è possibile spostare i volumi associati a
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ pass:quotes[start volumeGroup [_volumeGroupName_]] import
 ----
 
 
+[[parameter]]
 == Parametro
 
 [cols="2*"]
@@ -61,6 +66,7 @@ Il nome del gruppo di volumi che si desidera importare. Racchiudere il nome del 
 |===
 
 
+[[notes]]
 == Note
 
 I volumi di livello superiore specificamente correlati alle funzionalità (mirroring sincrono, copia del volume, mappatura e prenotazioni persistenti) vengono rimossi durante l'operazione di importazione.
@@ -69,6 +75,7 @@ I volumi di livello superiore specificamente correlati alle funzionalità (mirro
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.10

@@ -15,18 +15,21 @@ Il `start diskPool fullProvisioning` il comando avvia un'operazione di provision
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi gli array EF600, EF300, EF50 e EF80, purché tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage EF600, EF300, EF50 e EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 La funzione Resource Provisioning migliora la durata degli SSD e aumenta le performance di scrittura lasciando una porzione maggiore dei blocchi di dischi in uno stato non allocato rispetto a un volume standard. Un volume con provisioning di risorse è un volume denso in un gruppo di volumi o pool SSD, in cui la capacità del disco viene allocata (assegnata al volume), ma i blocchi disco vengono deallocati (non mappati) durante la creazione del volume. I blocchi di dischi vengono allocati in base alle necessità per completare l'host Write iOS. Le operazioni di annullamento della mappatura dell'host possono riportare i blocchi di dischi allo stato non allocato . Il provisioning delle risorse elimina inoltre l'inizializzazione in background con vincoli di tempo, consentendo l'inizializzazione rapida di grandi volumi.
@@ -37,6 +40,7 @@ Il formato di provisioning completo garantisce che tutti i blocchi necessari per
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -45,6 +49,7 @@ start diskPool[diskPoolName] fullProvisioning [disableResourceProvisioning=(TRUE
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -72,6 +77,7 @@ Per riattivare il provisioning delle risorse in un pool di storage e in tutti i 
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 11.72

@@ -15,18 +15,21 @@ Il `delete volume` il comando elimina uno o più volumi standard.
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -41,6 +44,7 @@ Quando un volume supera una determinata dimensione (attualmente 128 TB), l'elimi
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -53,6 +57,7 @@ volumes [volumeName1 ... volumeNameN]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -107,6 +112,7 @@ Utilizzare questo parametro per forzare l'eliminazione immediata di un volume an
 |===
 
 
+[[notes]]
 == Note
 
 Quando si utilizza `allVolumes` parametro, questo comando elimina i volumi fino a quando tutti i volumi non vengono rimossi o fino a quando non viene rilevato un errore. Se si verifica un errore, questo comando non tenta di eliminare i volumi rimanenti. È possibile eliminare volumi da diversi gruppi di volumi. Se si imposta, tutti i gruppi di volumi vuoti vengono eliminati `removeVolumeGroup` parametro a. `TRUE`.
@@ -115,6 +121,7 @@ Se si desidera eliminare un intero gruppo di volumi, è possibile utilizzare anc
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

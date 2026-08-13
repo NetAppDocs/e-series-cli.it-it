@@ -15,18 +15,21 @@ Il `establish asyncMirror volume` il comando completa una coppia di mirroring as
 
 
 
+[[supported-arrays]]
 == Array supportati
 
-Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi array di storage, inclusi E4000, E2700, E5600, E2800, E5700, EF600 ed EF300, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
-Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
+Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600 o EF300, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Prima di eseguire questo comando, il gruppo di mirror asincrono deve esistere e il volume primario deve esistere nel gruppo di mirror asincrono. Una volta completato correttamente questo comando, viene avviato il mirroring asincrono tra il volume primario e il volume secondario.
@@ -35,6 +38,7 @@ I due volumi che comprendono una coppia di mirroring asincrono funzionano come u
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -45,6 +49,7 @@ pass:quotes[primaryVolume="_primaryVolumeName_"]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -74,6 +79,7 @@ Il nome di un volume esistente nell'array di storage locale che si desidera util
 |===
 
 
+[[notes]]
 == Note
 
 Una coppia di mirroring asincrono è composta da due volumi, un volume primario e un volume secondario, che contengono copie identiche degli stessi dati. La coppia mirrorata fa parte di un gruppo di mirror asincrono, che consente alla coppia mirrorata di sincronizzarsi contemporaneamente a qualsiasi altra coppia mirrorata all'interno del gruppo di mirror asincrono.
@@ -84,6 +90,7 @@ Quando si scelgono il volume primario e il volume secondario, il volume secondar
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.84

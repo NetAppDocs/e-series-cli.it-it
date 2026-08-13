@@ -15,12 +15,14 @@ Il `SMcli alertTest` Il comando invia un avviso di test al registro eventi di Wi
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica solo agli array di storage E2700 ed E5600.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -30,6 +32,7 @@ Questo comando è un comando SMcli, non un comando script. Eseguire questo coman
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -38,12 +41,14 @@ SMcli -alertTest
 ----
 
 
+[[parameters]]
 == Parametri
 
 Nessuno.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.83

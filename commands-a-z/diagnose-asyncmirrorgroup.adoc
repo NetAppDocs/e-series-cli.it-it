@@ -15,23 +15,26 @@ Il `diagnose asyncMirrorGroup` il comando verifica i possibili problemi di comun
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi singolo array di storage, con alcune limitazioni. Se si esegue il comando sull'array E2700 o E5600, non esistono restrizioni.
 
 [NOTE]
 ====
-Questo comando non è supportato sulle piattaforme E4000, E2800, E5700, EF600, EF300, EF50 ed EF80.
+Questo comando non è supportato sulle piattaforme E4000, E2800, E5700, EF600 e EF300.
 
 ====
 
 
+[[roles]]
 == Ruoli
 
 N/A.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -41,6 +44,7 @@ testID=(all | connectivity | latency | bandwidth | portConnections)
 ----
 
 
+[[parameter]]
 == Parametro
 
 [cols="2*"]
@@ -70,6 +74,7 @@ L'identificativo del test di diagnostica che si desidera eseguire. L'identificat
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.84

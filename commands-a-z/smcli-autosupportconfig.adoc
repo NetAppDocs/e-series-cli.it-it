@@ -15,12 +15,14 @@ Il `SMcli -autoSupportConfig` Il comando imposta il metodo di recapito per l'inv
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E4000, E2800 o E5700.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -36,6 +38,7 @@ Questo comando è un comando SMcli, non un comando script. Eseguire questo coman
 
 
 
+[[syntax-for-smtp-delivery-method]]
 == Sintassi per il metodo di consegna SMTP
 
 [source, cli]
@@ -45,6 +48,7 @@ mailRelayServer=<mailRelayServerName> senderMail=<senderEmailAddress>
 ----
 
 
+[[parameters-for-the-smtp-delivery-method]]
 == Parametri per il metodo di consegna SMTP
 
 [cols="2*"]
@@ -74,6 +78,7 @@ Consente di specificare l'indirizzo di posta elettronica del mittente per i mess
 |===
 
 
+[[syntax-for-httphttps-delivery-methods]]
 == Sintassi per i metodi di erogazione HTTP/HTTPS
 
 [listing]
@@ -84,6 +89,7 @@ hostAddress:<address>portNumber=<portNumber> [userName=<userName>password=<passw
 ----
 
 
+[[parameters-for-the-httphttps-delivery-methods]]
 == Parametri per i metodi di erogazione HTTP/HTTPS
 
 La tabella seguente elenca i parametri per i metodi di erogazione HTTP/HTTPS.
@@ -150,12 +156,14 @@ La password di autenticazione. Questo parametro è obbligatorio.
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.25
 
 
 
+[[examples]]
 == Esempi
 
 [listing]
@@ -172,6 +180,7 @@ userName=user password=0987654321
 ----
 
 
+[[verification]]
 == Verifica
 
 Inviare un messaggio di prova utilizzando `SMcli -autoSupportConfig test` per verificare che i metodi di consegna siano impostati correttamente.

@@ -15,6 +15,7 @@ SANtricity OS 11,60 e le versioni più recenti includono la possibilità di scar
 
 
 
+[[11-60-and-newer-downloadable-smcli-command-line-parameters]]
 == 11.60 e parametri della riga di comando SMcli scaricabili più recenti
 
 La versione scaricabile di SMcli è disponibile sui controller E4000, EF600, EF300, E5700, EF570, E2800, EF280, EF300C e EF600C. Per scaricare SMcli in Gestione di sistema di SANtricity, selezionare *Impostazioni* *sistema* e *componenti aggiuntivi* *interfaccia della riga di comando* .
@@ -26,6 +27,7 @@ Come per le versioni precedenti di SMcli, l'SMcli scaricabile tramite Gestore di
 
 
 
+[[multifactor-authentication]]
 === Autenticazione a più fattori
 
 Se SAML (Security Assertion Markup Language) è attivato, solo i token di accesso possono essere utilizzati con la CLI. Se SAML non è attivato, è possibile utilizzare il nome utente/password o i token di accesso. I token di accesso possono essere generati tramite Gestore di sistema di SANtricity.
@@ -83,6 +85,7 @@ Questo argomento richiede uno dei due argomenti seguenti:
 |===
 
 
+[[general-https-mode-command-line-parameters]]
 === Parametri generali della riga di comando della modalità https
 
 L'SMcli scaricabile supporta solo la modalità https. Di seguito sono riportati i parametri della riga di comando comunemente utilizzati per la modalità https.
@@ -177,6 +180,7 @@ Mostra le informazioni sull'utilizzo dei comandi CLI.
 |===
 
 
+[[managing-stored-arrays]]
 === Gestione degli storage array
 
 I seguenti parametri della riga di comando consentono di gestire gli array memorizzati tramite l'etichetta memorizzata localmente.
@@ -184,6 +188,7 @@ I seguenti parametri della riga di comando consentono di gestire gli array memor
 
 NOTE: L'etichetta memorizzata localmente potrebbe non corrispondere al nome effettivo dell'array di storage visualizzato sotto Gestione di sistema di SANtricity.
 
+[[managearrays]]
 [cols="2*"]
 |===
 | Parametro | Definizione 
@@ -228,6 +233,7 @@ Elimina l'etichetta memorizzata localmente denominata `<LABEL>`
 NOTE: SMcli non contatta lo storage array quando si aggiunge un'etichetta memorizzata localmente.
 
 |===
+[[storedcertificates]]
 [cols="2*"]
 |===
 | Parametro | Definizione 
@@ -282,6 +288,7 @@ Elimina un certificato attendibile memorizzato localmente con l'alias `<ALIAS>`
 |===
 
 
+[[identify-devices]]
 === Identificare i dispositivi
 
 Il seguente parametro della riga di comando consente di visualizzare le informazioni relative a tutti i dispositivi applicabili visibili all'host.
@@ -289,6 +296,7 @@ Il seguente parametro della riga di comando consente di visualizzare le informaz
 
 NOTE: A partire dalla versione SANtricity 11,81, SMcli `identifyDevices` Parametro sostituisce le funzionalità disponibili in precedenza tramite lo strumento SMdevices.
 
+[[identifyDevices]]
 [cols="2*"]
 |===
 | Parametro | Definizione 

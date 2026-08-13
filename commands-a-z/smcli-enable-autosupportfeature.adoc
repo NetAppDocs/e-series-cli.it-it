@@ -15,12 +15,14 @@ Il `SMcli enable autoSupportFeature` Command attiva la funzione ASUP (AutoSuppor
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E4000, E2800 o E5700.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -51,6 +53,7 @@ Dopo aver attivato questa funzione, è possibile attivare la funzione AutoSuppor
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -59,12 +62,14 @@ SMcli enable|disable autoSupportFeature
 ----
 
 
+[[parameters]]
 == Parametri
 
 Nessuno.
 
 
 
+[[verification]]
 == Verifica
 
 Utilizzare `SMcli -autoSupportConfig show` per verificare se la funzione è stata attivata. La riga iniziale dell'output visualizzato mostra lo stato di abilitazione:
@@ -75,6 +80,7 @@ The AutoSupport feature is activated on this storage management station.
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.86

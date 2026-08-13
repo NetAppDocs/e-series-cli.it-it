@@ -15,18 +15,21 @@ Il `show asyncMirrorGroup synchronizationProgress` il comando visualizza lo stat
 
 
 
+[[supported-arrays]]
 == Array supportati
 
-Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi array di storage, inclusi E4000, E2700, E5600, E2800, E5700, EF600 ed EF300, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
-Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
+Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600 o EF300, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Questo comando restituisce l'avanzamento della sincronizzazione dei dati su tutte le coppie mirrorate all'interno del gruppo di mirror asincrono. Questo comando mostra l'avanzamento come percentuale di sincronizzazione dei dati completata.
@@ -38,6 +41,7 @@ Esistono due tipi di sincronizzazione: La sincronizzazione iniziale e la sincron
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -48,6 +52,7 @@ show asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -77,6 +82,7 @@ Questo parametro visualizza un breve elenco di informazioni sulla sincronizzazio
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.84

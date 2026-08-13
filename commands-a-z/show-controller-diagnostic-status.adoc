@@ -17,6 +17,7 @@ Al termine della diagnostica, vengono visualizzati tutti i risultati dei test di
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -25,6 +26,7 @@ show controller [(a| b)] diagnosticStatus pass:quotes[[file=_filename_]]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -47,6 +49,7 @@ Il nome del file che contiene i risultati dei test diagnostici. Questo comando n
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.70 aggiunge la funzionalità per lo stato diagnostico del controller.

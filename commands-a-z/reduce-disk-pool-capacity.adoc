@@ -15,18 +15,21 @@ Il `set diskPool` il comando riduce la capacità del pool di dischi rimuovendo l
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Questo comando utilizza la funzione DCR (Dynamic Capacity Reduction), che consente di rimuovere le unità selezionate da un pool di dischi e riutilizzare le unità rimosse in base alle necessità.
@@ -35,6 +38,7 @@ Il numero massimo di unità che è possibile rimuovere da un pool di dischi in u
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -45,6 +49,7 @@ removeDrives=pass:quotes[(_trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slo
 ----
 
 
+[[parameter]]
 == Parametro
 
 |===
@@ -70,6 +75,7 @@ Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore de
 |===
 
 
+[[notes]]
 == Note
 
 Ciascun nome del pool di dischi deve essere univoco. È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per l'etichetta utente. Le etichette dell'utente possono contenere un massimo di 30 caratteri.
@@ -86,6 +92,7 @@ Un'operazione DCR potrebbe comportare il superamento di una o di entrambe le sog
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.10

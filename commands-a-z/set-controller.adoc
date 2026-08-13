@@ -15,18 +15,21 @@ Il `set controller` command definisce gli attributi per i controller.
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -44,6 +47,7 @@ set controller [(a|b)]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -124,6 +128,7 @@ L'impostazione che consente di attivare o disattivare la spia dell'azione di ser
 |===
 
 
+[[identifying-an-iscsi-host-port-label]]
 == Identificazione di un'etichetta della porta host iSCSI
 
 Specificare un'etichetta per la porta host. Per specificare l'etichetta della porta host, procedere come segue:
@@ -172,6 +177,7 @@ iscsiHostPort[3]
 ====
 
 
+[[options-for-the-ethernetport-parameter]]
 == Opzioni per il parametro ethernetPort
 
 [listing]
@@ -212,6 +218,7 @@ portSpeed=[(autoNegotiate | 10 | 100 | 1000)]
 ----
 
 
+[[options-for-the-iscsihostport-parameter]]
 == Opzioni per il parametro iSCSIHostPort
 
 [listing]
@@ -300,6 +307,7 @@ portSpeed=[( 10 | 25)]
 ----
 
 
+[[notes]]
 == Note
 
 [NOTE]
@@ -340,6 +348,7 @@ I seguenti valori sono i valori predefiniti per `iscsiHostOptions`:
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.15 rimuove `bootp` E aggiunge le nuove opzioni della porta Ethernet e le nuove opzioni della porta host iSCSI.

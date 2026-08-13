@@ -15,18 +15,21 @@ Il `save storageArray diagnosticData` Il comando salva i dati diagnostici dello 
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 È possibile rivedere il contenuto del file in un secondo momento. È inoltre possibile inviare il file al supporto tecnico per ulteriori revisioni.
@@ -40,6 +43,7 @@ Eseguire questo comando solo con l'assistenza del supporto tecnico.
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -49,6 +53,7 @@ file=pass:quotes["_filename_"]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -75,12 +80,14 @@ Questo comando salva automaticamente i dati in un file compresso; tuttavia, ques
 |===
 
 
+[[notes]]
 == Note
 
 Nelle versioni di questo comando precedenti alla 7.77, l'opzione utente era `esm` invece di `tray`. A partire dal 7.77, `tray` sostituisce `esm`. L'utilizzo di `esm` è ancora supportato, ma per la migliore compatibilità con le versioni future, sostituire `esm` con `tray`.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.16

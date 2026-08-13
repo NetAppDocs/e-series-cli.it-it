@@ -15,24 +15,28 @@ Il `set consistencyGroup addCGMemberVolume` il comando aggiunge un nuovo volume 
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 È possibile specificare un volume di repository esistente per il nuovo membro del gruppo di coerenza o creare un nuovo volume di repository. Quando si crea un nuovo volume di repository, si identifica un gruppo di volumi esistente o un pool di dischi esistente in cui si desidera il volume di repository.
 
 
 
+[[syntax-for-use-with-an-existing-repository-volume]]
 == Sintassi da utilizzare con un volume di repository esistente
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ repositoryVolume=pass:quotes["_volumeGroupName_"]
 ----
 
 
+[[syntax-for-use-when-creating-a-new-repository-volume-in-a-volume-group]]
 == Sintassi da utilizzare quando si crea un nuovo volume di repository in un gruppo di volumi
 
 [source, cli, subs="+macros"]
@@ -55,6 +60,7 @@ repositoryVolume=pass:quotes[("_volumeGroupName_"] capacity=pass:quotes[_capacit
 ----
 
 
+[[syntax-for-use-when-creating-a-new-repository-volume-in-a-disk-pool]]
 == Sintassi da utilizzare quando si crea un nuovo volume di repository in un pool di dischi
 
 [source, cli, subs="+macros"]
@@ -66,6 +72,7 @@ repositoryVolume=pass:quotes[("_diskPoolName_"] capacity=pass:quotes[_capacityVa
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -110,6 +117,7 @@ Le dimensioni di un nuovo volume di repository in un gruppo di volumi o in un po
 |===
 
 
+[[notes]]
 == Note
 
 È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per i nomi. I nomi possono avere un massimo di 30 caratteri.
@@ -155,6 +163,7 @@ Quando si crea un nuovo volume di repository in un gruppo di volumi o in un pool
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.83

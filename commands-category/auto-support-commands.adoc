@@ -15,6 +15,7 @@ Il seguente elenco di comandi AutoSupport è disponibile per il tuo sistema stor
 
 
 
+[[autosupport-bundle-collection-commands-for-the-e2700-and-e5600]]
 == Comandi di raccolta bundle AutoSupport per E2700 ed E5600
 
 link:../commands-a-z/smcli-autosupportlog.html["Acquisire o visualizzare un registro AutoSupport"]
@@ -39,6 +40,7 @@ link:../commands-a-z/smcli-autosupportconfig-test.html["Verificare la configuraz
 
 
 
+[[autosupport-commands-for-all-storage-arrays]]
 == Comandi AutoSupport per tutti gli array di storage
 
 link:../commands-a-z/enable-or-disable-autosupport-individual-arrays.html["Abilitare o disabilitare AutoSupport (singoli array, solo per array E2800, E5700)"]
@@ -47,6 +49,7 @@ link:../commands-a-z/save-storagearray-supportdata.html["Salvataggio dei dati di
 
 
 
+[[autosupport-commands-for-the-e4000-ef300-ef600-e2800-e5700]]
 == Comandi AutoSupport per E4000, EF300, EF600, E2800, E5700
 
 link:../commands-a-z/set-autosupport-dispatch-limit.html["Imposta limite dimensioni spedizione AutoSupport"]

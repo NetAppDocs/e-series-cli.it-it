@@ -15,18 +15,21 @@ Il `deactivate storageArray feature` il comando disattiva la funzionalità di mi
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800 e E5700, a condizione che siano installati tutti i pacchetti SMcli.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su uno storage array E4000, E2800 o E5700, è necessario avere il ruolo di amministratore dello storage o di amministratore del supporto.
 
 
 
+[[context]]
 == Contesto
 
 La porta host del controller dedicata al volume secondario è disponibile per i trasferimenti di dati dell'host.
@@ -38,6 +41,7 @@ Nelle versioni precedenti di questo comando, l'identificatore di funzione era `r
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -46,12 +50,14 @@ deactivate storageArray feature=syncMirror
 ----
 
 
+[[parameters]]
 == Parametri
 
 Nessuno.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

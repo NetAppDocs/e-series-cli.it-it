@@ -15,18 +15,21 @@ Il `save storageArray configuration` command crea un file di script che è possi
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo di Storage Admin. Tuttavia, l'utilizzo di questo comando con il parametro LDAP è riservato agli utenti con il ruolo di Security Admin.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -36,6 +39,7 @@ Questo comando non salva i dati di configurazione del mirroring remoto o della c
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -48,6 +52,7 @@ save storageArray configuration file=pass:quotes["_filename_"]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -102,12 +107,14 @@ L'impostazione per salvare la mappatura LUN o NSID nel file. Per salvare la mapp
 |===
 
 
+[[notes]]
 == Note
 
 Quando si utilizza questo comando, è possibile specificare qualsiasi combinazione dei parametri per l'impostazione globale, l'impostazione di configurazione del volume, la topologia dell'host o la mappatura del LUN. Se si desidera inserire tutte le impostazioni, utilizzare `allConfig` parametro. È necessario utilizzare il `allConfig` o uno o più degli altri quattro parametri.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

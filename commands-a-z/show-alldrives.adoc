@@ -15,18 +15,21 @@ Il `show allDrives` il comando restituisce informazioni sui dischi nell'array di
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Per ogni disco dell'array di storage, questo comando restituisce le seguenti informazioni:
@@ -69,6 +72,7 @@ Le informazioni sulla data di produzione non sono disponibili per i dischi NVMe.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -81,6 +85,7 @@ summary
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -142,6 +147,7 @@ L'impostazione per restituire lo stato, la capacità, la velocità di trasferime
 |===
 
 
+[[notes]]
 == Note
 
 Per determinare le informazioni relative al tipo e alla posizione di tutte le unità nell'array di storage, utilizzare `allDrives` parametro.
@@ -154,6 +160,7 @@ Il `drive` il parametro supporta sia i vassoi per dischi ad alta capacità che q
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 5.43

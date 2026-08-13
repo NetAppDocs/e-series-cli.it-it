@@ -15,18 +15,21 @@ Il `save storageArray autoLoadBalanceStatistics file` Command fornisce il bilanc
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Questo comando salva le statistiche di bilanciamento automatico del carico dell'array di storage in un file. Queste statistiche mostrano la cronologia delle modifiche di proprietà su ciascun volume dell'array.
@@ -38,6 +41,7 @@ Inviare questo file al supporto tecnico per l'interpretazione.
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ Inviare questo file al supporto tecnico per l'interpretazione.
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -76,6 +81,7 @@ Il numero di giorni di statistiche da salvare. Questo parametro è facoltativo e
 |===
 
 
+[[example]]
 == Esempio
 
 [listing]
@@ -89,6 +95,7 @@ Una condizione attiva di "Drive Lost Primary Path" (percorso principale disco pe
 ====
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.30

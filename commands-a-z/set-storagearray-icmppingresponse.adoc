@@ -15,18 +15,21 @@ Il `set storageArray icmpPingResponse` command restituisce i valori predefiniti 
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -35,6 +38,7 @@ set storageArray icmpPingResponse=(TRUE | FALSE)
 ----
 
 
+[[parameter]]
 == Parametro
 
 [cols="2*"]
@@ -50,12 +54,14 @@ Questo parametro attiva o disattiva i messaggi Echo Request. Impostare il parame
 |===
 
 
+[[notes]]
 == Note
 
 Il protocollo ICMP (Internet Control message Protocol) viene utilizzato dai sistemi operativi di una rete per inviare messaggi di errore, pacchetti di test e messaggi informativi relativi all'IP, ad esempio un servizio richiesto non disponibile o che non è stato possibile raggiungere un host o un router. Il comando di risposta ICMP invia messaggi ICMP Echo Request e riceve messaggi ICMP Echo Response per determinare se un host è raggiungibile e il tempo necessario per i pacchetti da e verso tale host.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.10

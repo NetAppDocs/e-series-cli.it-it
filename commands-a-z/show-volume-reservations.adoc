@@ -15,18 +15,21 @@ Il `show volume reservations` il comando restituisce informazioni sui volumi con
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Storage Monitor.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -36,6 +39,7 @@ volumes pass:quotes[[_volumeName1_ ... _volumeNameN_]]) reservations
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -76,6 +80,7 @@ Se i nomi dei volumi contengono caratteri o numeri speciali, immettere i nomi ut
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 5.40

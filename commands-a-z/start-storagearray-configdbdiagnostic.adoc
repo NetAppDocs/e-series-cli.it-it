@@ -15,18 +15,21 @@ Il `start storageArray configDbDiagnostic` il comando esegue un controllo di coe
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -38,6 +41,7 @@ controller[(a|b)]]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -88,6 +92,7 @@ Il controller in cui si trova il database su cui si desidera eseguire i test di 
 |===
 
 
+[[notes]]
 == Note
 
 Questo comando esegue un controllo di coerenza su un database di configurazione. Tutti i record del database vengono controllati. I dati degli errori vengono scritti automaticamente in un file nella cartella dei dati sul disco. Non è necessario specificare un file di output.
@@ -124,6 +129,7 @@ Inoltre, è possibile avviare il test di diagnostica della configurazione del da
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.75

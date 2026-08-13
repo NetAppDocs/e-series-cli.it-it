@@ -15,18 +15,21 @@ Il `save storageArray keyManagementClientCSR` Il comando richiede una CSR genera
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica ai singoli array di storage E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Non si applica agli array di storage E2700 o E5600.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Security Admin.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -36,6 +39,7 @@ Questo comando si applica solo alla gestione esterna delle chiavi.
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -51,6 +55,7 @@ file=pass:quotes["_file_"]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -108,6 +113,7 @@ Consente di specificare lo stato o la regione in cui si trova l'array di storage
 |===
 
 
+[[example]]
 == Esempio
 
 [listing, subs="+macros"]
@@ -125,6 +131,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.40

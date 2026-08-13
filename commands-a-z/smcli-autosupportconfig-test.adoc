@@ -15,12 +15,14 @@ Utilizzare `SMcli -autoSupportConfig test` Comando per verificare la configurazi
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E2800 o E5700.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -35,6 +37,7 @@ Il monitor persistente deve essere in esecuzione sulla stazione di gestione per 
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -43,6 +46,7 @@ SMcli -autoSupportConfig test reply-toEmail<address>
 ----
 
 
+[[parameters]]
 == Parametri
 
 La seguente tabella elenca i parametri per l'invio di un messaggio di test AutoSupport.
@@ -67,12 +71,14 @@ Consente all'utente di specificare l'indirizzo e-mail di risposta per i messaggi
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.25
 
 
 
+[[example-of-testing-using-httphttps-delivery]]
 == Esempio di test con l'erogazione HTTP/HTTPS
 
 Di seguito sono riportati alcuni esempi dell'utilizzo di questo comando quando si utilizza un tipo di recapito HTTP o HTTPS, in cui non si specifica un indirizzo e-mail per il recapito.
@@ -86,6 +92,7 @@ SMcli completed successfully.
 ----
 
 
+[[example-of-testing-using-smtp-delivery]]
 == Esempio di test mediante la distribuzione SMTP
 
 Di seguito sono riportati alcuni esempi dell'utilizzo di questo comando. Quando si utilizza un metodo di consegna SMTP, è possibile utilizzare `reply-toEmail` parametro per specificare l'indirizzo di destinazione.

@@ -15,18 +15,21 @@ Il `create volumeGroup` il comando crea un gruppo di volumi a capacità libera o
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -45,6 +48,7 @@ userLabel=pass:quotes[_"volumeGroupName"_]
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -144,6 +148,7 @@ Se questo parametro è impostato su `TRUE`, verranno utilizzate solo unità comp
 |===
 
 
+[[drives-and-volume-groups]]
 == Dischi e gruppi di volumi
 
 Un gruppo di volumi è un insieme di dischi raggruppati logicamente dai controller dell'array di storage. Il numero di dischi in un gruppo di volumi è un limite del livello RAID e del firmware del controller. Quando si crea un gruppo di volumi, attenersi alle seguenti linee guida:
@@ -265,6 +270,7 @@ Non applicabile
 |===
 
 
+[[hot-spares]]
 == Hot spare
 
 Con i gruppi di volumi, una strategia preziosa per proteggere i dati consiste nell'assegnare le unità disponibili nell'array di storage come unità hot spare. Un hot spare è un disco, privo di dati, che agisce come standby nell'array di storage in caso di guasto di un disco in un gruppo di volumi RAID 1, RAID 3, RAID 5 o RAID 6. L'hot spare aggiunge un altro livello di ridondanza allo storage array.
@@ -291,6 +297,7 @@ Se non si dispone di un hot spare, è comunque possibile sostituire un disco gua
 
 
 
+[[segment-size]]
 == Dimensione del segmento
 
 Le dimensioni di un segmento determinano il numero di blocchi di dati che il controller scrive su un singolo disco di un volume prima di scrivere i dati sul disco successivo. Ogni blocco di dati memorizza 512 byte di dati. Un blocco di dati è l'unità di storage più piccola. La dimensione di un segmento determina il numero di blocchi di dati che contiene. Ad esempio, un segmento da 8 KB contiene 16 blocchi di dati. Un segmento da 64 KB contiene 128 blocchi di dati.
@@ -301,6 +308,7 @@ Per ottenere performance ottimali in un ambiente di storage di file system o dat
 
 
 
+[[usage-hint]]
 == Suggerimento per l'utilizzo
 
 [NOTE]
@@ -340,12 +348,14 @@ Attivato
 |===
 
 
+[[cache-read-prefetch]]
 == Prefetch di lettura della cache
 
 Il prefetch di lettura della cache consente al controller di copiare ulteriori blocchi di dati nella cache, mentre il controller legge e copia i blocchi di dati richiesti dall'host dal disco nella cache. Questa azione aumenta la possibilità che una richiesta futura di dati possa essere soddisfatta dalla cache. Il prefetch di lettura della cache è importante per le applicazioni multimediali che utilizzano trasferimenti di dati sequenziali. Valori validi per `cacheReadPrefetch` i parametri sono `TRUE` oppure `FALSE`. L'impostazione predefinita è `TRUE`.
 
 
 
+[[security-type]]
 == Tipo di sicurezza
 
 Utilizzare `securityType` parametro per specificare le impostazioni di sicurezza per lo storage array.
@@ -362,12 +372,14 @@ Prima di poter impostare `securityType` parametro a. `enabled`, è necessario cr
 
 
 
+[[secure-drives]]
 == Dischi sicuri
 
 Le unità compatibili con la protezione possono essere dischi con crittografia completa del disco (FDE) o dischi FIPS (Federal Information Processing Standard). Utilizzare `secureDrives` parametro per specificare il tipo di dischi protetti da utilizzare. I valori che è possibile utilizzare sono `fips` e. `fde`.
 
 
 
+[[data-assurance-management]]
 == Gestione della data assurance
 
 La funzione Data Assurance (da) aumenta l'integrità dei dati nell'intero sistema storage. DA consente all'array di storage di verificare la presenza di errori che potrebbero verificarsi quando i dati vengono spostati tra gli host e i dischi. Quando questa funzione è attivata, l'array di storage aggiunge i codici di controllo degli errori (noti anche come CRC (Cyclic Redundancy Checks) a ciascun blocco di dati del volume. Dopo lo spostamento di un blocco di dati, l'array di storage utilizza questi codici CRC per determinare se si sono verificati errori durante la trasmissione. I dati potenzialmente corrotti non vengono scritti su disco né restituiti all'host.
@@ -383,6 +395,7 @@ Se il `dataAssurance` il parametro è impostato su `enabled`, per i candidati ai
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.10

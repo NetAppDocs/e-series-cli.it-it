@@ -15,24 +15,28 @@ Il `set tray` Command imposta l'ID del vassoio di un controller tray, di un cont
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E2700, E5600, E2800, E5700, EF600, EF300, EF50 ed EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Questo comando è valido solo per i vassoi del controller, dei controller-drive o dei dischi con ID vassoio che è possibile impostare attraverso il firmware del controller. Non è possibile utilizzare questo comando per i vassoi del controller, dei controller o dei dischi con un ID vassoio impostato con uno switch.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ set tray pass:quotes[["_serialNumber_"]] pass:quotes[id=_trayID_]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -78,6 +83,7 @@ Valori dei vassoi di `00` attraverso `09` vengono rifiutati dal controller. Util
 |===
 
 
+[[notes]]
 == Note
 
 Questo comando originariamente supportava il tray di controller CE6998 I tray controller della serie CE6998 possono essere collegati a diversi vassoi di dischi, inclusi quelli i cui ID vassoio sono impostati dagli switch. Quando si collega un vassoio del controller della serie CE6998 ai vassoi delle unità i cui ID vassoio sono impostati dagli switch, i valori validi per gli ID vassoio per il vassoio del controller sono `80` attraverso `99`. Questo intervallo consente di evitare conflitti con gli ID dei vassoi utilizzati per i vassoi delle unità collegati.

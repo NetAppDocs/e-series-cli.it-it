@@ -15,12 +15,14 @@ Il `Show certificates` Il comando consente di visualizzare i certificati install
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica agli array di storage EF600, EF300, EF50 e EF80.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -29,6 +31,7 @@ show localCertificate all | alias alias
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -44,6 +47,7 @@ Consente di specificare un certificato tramite l'alias definito dall'utente.
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.60

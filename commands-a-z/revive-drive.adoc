@@ -15,18 +15,21 @@ Il `revive drive` Il comando forza il disco specificato allo stato ottimale.
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Support Admin.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -36,6 +39,7 @@ Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, E
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ revive drive pass:quotes[[_trayID_],pass:quotes[[_drawerID,_]]pass:quotes[_slotI
 ----
 
 
+[[parameter]]
 == Parametro
 
 |===
@@ -62,12 +67,14 @@ Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore de
 |===
 
 
+[[notes]]
 == Note
 
 Il `drive` il parametro supporta sia i vassoi per dischi ad alta capacità che quelli a bassa capacità. Un vassoio per dischi ad alta capacità dispone di cassetti che trattengono le unità. I cassetti scorrono fuori dal vassoio dell'unità per consentire l'accesso alle unità. Un vassoio per unità a bassa capacità non dispone di cassetti. Per un vassoio dell'unità ad alta capacità, è necessario specificare l'identificativo (ID) del vassoio dell'unità, l'ID del cassetto e l'ID dello slot in cui si trova l'unità. Per un vassoio dell'unità a bassa capacità, è necessario specificare solo l'ID del vassoio dell'unità e l'ID dello slot in cui si trova un'unità. Per un vassoio dell'unità a bassa capacità, un metodo alternativo per identificare una posizione per un'unità consiste nel specificare l'ID del vassoio dell'unità, impostare l'ID del cassetto su `0`E specificare l'ID dello slot in cui si trova un'unità.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 5.43

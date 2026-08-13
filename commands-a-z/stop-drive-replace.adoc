@@ -15,18 +15,21 @@ Il `stop drive replace` il comando interrompe un'operazione di copia dei dati av
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -35,6 +38,7 @@ stop drive replace ([trayID,[drawerID,]slotID] | <"wwID">)
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -61,12 +65,14 @@ Il WWID (World Wide Identifier) dell'unità che si desidera sostituire. Racchiud
 |===
 
 
+[[notes]]
 == Note
 
 Il `drive` il parametro supporta sia i vassoi per dischi ad alta capacità che quelli a bassa capacità. Un vassoio per dischi ad alta capacità dispone di cassetti che trattengono le unità. I cassetti scorrono fuori dal vassoio dell'unità per consentire l'accesso alle unità. Un vassoio per unità a bassa capacità non dispone di cassetti. Per un vassoio dell'unità ad alta capacità, è necessario specificare l'identificativo (ID) del vassoio dell'unità, l'ID del cassetto e l'ID dello slot in cui si trova l'unità. Per un vassoio dell'unità a bassa capacità, è necessario specificare solo l'ID del vassoio dell'unità e l'ID dello slot in cui si trova un'unità. Per un vassoio dell'unità a bassa capacità, un metodo alternativo per identificare una posizione per un'unità consiste nel specificare l'ID del vassoio dell'unità, impostare l'ID del cassetto su `0`E specificare l'ID dello slot in cui si trova un'unità.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.20

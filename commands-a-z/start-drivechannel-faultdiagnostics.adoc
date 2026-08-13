@@ -15,18 +15,21 @@ Il `start driveChannel faultDiagnostics` il comando esegue la diagnostica di iso
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -36,6 +39,7 @@ Con la versione del firmware 8.10, il `start driveChannel faultDiagnostics` coma
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -54,6 +58,7 @@ pass:quotes[timeout=_timeInterval_]]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -128,6 +133,7 @@ Il periodo di tempo in minuti in cui si desidera eseguire il test.
 |===
 
 
+[[notes]]
 == Note
 
 È possibile immettere più di un tipo di dispositivo da sottoporre a test ed è possibile immettere più di un tipo di test da eseguire.
@@ -140,6 +146,7 @@ Esempi di valido `patternNumber` le voci sono `0xA5A5`, `0x3C3C`, `8787`, e. `12
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.15

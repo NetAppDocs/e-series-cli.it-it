@@ -15,18 +15,21 @@ Il `repair volume parity` il comando corregge gli errori di parità su un volume
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 [CAUTION]
@@ -36,6 +39,7 @@ Se la parità del volume e i dati del volume non corrispondono, i dati del volum
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ parityErrorFile=pass:quotes[_"filename"_]
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -81,6 +86,7 @@ L'impostazione per acquisire i dettagli di avanzamento, ad esempio la percentual
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

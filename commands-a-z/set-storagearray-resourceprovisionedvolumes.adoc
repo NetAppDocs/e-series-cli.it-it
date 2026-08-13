@@ -15,18 +15,21 @@ Il `set storageArray resourceProvisionedVolumes` Il comando disattiva la funzion
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi gli array EF600, EF300, EF50 e EF80, purché tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage EF600, EF300, EF50 e EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Il provisioning delle risorse è una funzionalità disponibile che consente di inizializzare rapidamente grandi volumi.
@@ -37,6 +40,7 @@ I volumi con provisioning delle risorse sono supportati solo su gruppi di volumi
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -45,6 +49,7 @@ set storageArray resourceProvisionedVolumes=(enable|disable)
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -65,6 +70,7 @@ La modifica di questo valore si applica solo ai gruppi di volumi e ai pool creat
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.63

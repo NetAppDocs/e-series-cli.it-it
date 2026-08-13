@@ -15,18 +15,21 @@ Il `reset storageArray SASPHYBaseline` Il comando ripristina la linea di base SA
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Il `.csv` il file viene generato quando si esegue `save storageArray SASPHYCounts` comando.
@@ -38,6 +41,7 @@ La versione precedente di `reset storageArray SASPHYBaseline` il comando ha canc
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -46,12 +50,14 @@ reset storageArray SASPHYBaseline
 ----
 
 
+[[parameters]]
 == Parametri
 
 Nessuno.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

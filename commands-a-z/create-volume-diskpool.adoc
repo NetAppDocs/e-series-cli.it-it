@@ -15,18 +15,21 @@ Il `create volume diskPool` Il comando crea un nuovo volume RAID standard o un v
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -36,6 +39,7 @@ Alcuni parametri per la creazione di un volume RAID standard in un gruppo di vol
 ====
 
 
+[[syntax-for-creating-a-standard-volume]]
 == Sintassi per la creazione di un volume standard
 
 [source, cli, subs="+macros"]
@@ -53,6 +57,7 @@ capacity=_volumeCapacity_]
 ----
 
 
+[[syntax-for-creating-a-thin-provisioned-volume]]
 == Sintassi per la creazione di un volume con thin provisioning
 
 [source, cli, subs="+macros"]
@@ -73,6 +78,7 @@ capacity=_volumeCapacity_]
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -211,6 +217,7 @@ Questo parametro imposta la dimensione del blocco del volume da creare. Un valor
 |===
 
 
+[[notes]]
 == Note
 
 Ciascun nome di volume deve essere univoco. È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per l'etichetta utente. Le etichette dell'utente possono contenere un massimo di 30 caratteri.
@@ -225,6 +232,7 @@ I volumi con thin provisioning non sono supportati su EF300 o EF600.
 
 
 
+[[data-assurance-management]]
 == Gestione della data assurance
 
 La funzione Data Assurance (da) aumenta l'integrità dei dati nell'intero sistema storage. DA consente all'array di storage di verificare la presenza di errori che potrebbero verificarsi quando i dati vengono spostati tra gli host e i dischi. Quando questa funzione è attivata, l'array di storage aggiunge i codici di controllo degli errori (noti anche come CRC (Cyclic Redundancy Checks) a ciascun blocco di dati del volume. Dopo lo spostamento di un blocco di dati, l'array di storage utilizza questi codici CRC per determinare se si sono verificati errori durante la trasmissione. I dati potenzialmente corrotti non vengono scritti su disco né restituiti all'host.
@@ -240,6 +248,7 @@ Se `dataAssurance` il parametro è impostato su `enabled`, per i candidati ai vo
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.83

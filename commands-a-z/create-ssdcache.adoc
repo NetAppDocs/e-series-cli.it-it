@@ -15,24 +15,28 @@ Il `create ssdCache` Command crea una cache di lettura per un array di storage u
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo di Support Admin.
 
 
 
+[[context]]
 == Contesto
 
 L'utilizzo di SSD dalle performance elevate per memorizzare nella cache i dati di lettura migliora le performance di i/o e i tempi di risposta delle applicazioni e offre un miglioramento delle performance sostenuto per carichi di lavoro diversi, in particolare per carichi di lavoro con IOP elevati. La cache SSD massimizza l'utilizzo di costosi SSD veloci. La cache SSD funziona in aggiunta alla cache primaria nella DRAM del controller. Con la cache del controller, i dati vengono memorizzati nella DRAM dopo la lettura dell'host. Con la cache SSD, i dati vengono copiati dai volumi di base specificati dall'utente e quindi memorizzati nella cache degli SSD.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ drives=pass:quotes[_(trayID1_],pass:quotes[[_drawerID1_,]]pass:quotes[_slotID1 .
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -88,6 +93,7 @@ Questo parametro opzionale specifica il livello di sicurezza durante la creazion
 |===
 
 
+[[notes]]
 == Note
 
 È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per il nome. I nomi possono avere un massimo di 30 caratteri.
@@ -100,6 +106,7 @@ Se tutti gli SSD nella cache SSD sono compatibili con Data Assurance (da) e la f
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.84

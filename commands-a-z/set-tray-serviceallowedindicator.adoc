@@ -15,18 +15,21 @@ Il `set tray serviceAllowedIndicator` Il comando accende o spegne la spia Servic
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Support Admin.
 
 
 
+[[context]]
 == Contesto
 
 Se lo storage array non supporta la funzione indicatore luminoso azione servizio consentita, questo comando restituisce un errore. Se lo storage array supporta il comando ma non è in grado di accendere o spegnere l'indicatore luminoso, questo comando restituisce un errore.
@@ -35,6 +38,7 @@ Per accendere o spegnere la spia Service Action Allowed (azione di servizio cons
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -50,6 +54,7 @@ serviceAllowedIndicator=(on | off)
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -114,12 +119,14 @@ L'impostazione per attivare o disattivare la spia dell'azione di servizio consen
 |===
 
 
+[[notes]]
 == Note
 
 Questo comando è stato originariamente definito per l'utilizzo con il vassoio del controller CE6998 Questo comando non è supportato dai vassoi del controller spediti prima dell'introduzione del vassoio del controller CE6998
 
 
 
+[[example]]
 == Esempio
 
 Questo comando accende la spia Service Action Allowed (azione servizio consentita) per l'ESM sinistro nel vassoio 5 con l'indirizzo IP 155.155.155.155.
@@ -131,6 +138,7 @@ ESM [left] serviceAllowedIndicator=on;"
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.14 aggiunge questi parametri:

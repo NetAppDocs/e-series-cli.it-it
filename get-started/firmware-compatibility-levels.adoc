@@ -27,6 +27,7 @@ Il livello minimo del firmware del controller indica il supporto da parte del so
 ====
 
 
+[[examples-of-firmware-compatibility-levels]]
 == Esempi di livelli di compatibilità del firmware
 
 Il `create hostGroup` command ha la seguente sezione.

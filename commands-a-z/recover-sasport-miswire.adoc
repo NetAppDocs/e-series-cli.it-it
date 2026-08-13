@@ -15,18 +15,21 @@ Il `recover sasPort miswire` il comando indica a un controller che è stata intr
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Support Admin.
 
 
 
+[[context]]
 == Contesto
 
 Il controller può quindi riattivare le porte SAS disabilitate a causa di un errore di cablaggio. Eseguire questo comando dopo aver corretto le condizioni di errore del cavo SAS.
@@ -41,6 +44,7 @@ Le condizioni di errato collegamento dei cavi SAS possono essere una delle segue
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -49,12 +53,14 @@ recover sasPort miswire
 ----
 
 
+[[parameters]]
 == Parametri
 
 Nessuno.
 
 
 
+[[notes]]
 == Note
 
 Quando viene rilevata una condizione di errato cablaggio, il firmware del controller segnala quanto segue:
@@ -82,6 +88,7 @@ In caso di errori di cablaggio in cui il controller disattiva una o più porte S
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.10

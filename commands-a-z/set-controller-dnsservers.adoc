@@ -15,18 +15,21 @@ Il `set controller DNSServers` Il comando aggiorna le impostazioni DNS (Domain N
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Prima di iniziare, assicurarsi che:
@@ -47,6 +50,7 @@ Se le porte di gestione dell'array sono già state configurate con DHCP (Dynamic
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -55,6 +59,7 @@ set controller[a] DNSServers=(auto|(Address1 [Address2]))
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -84,6 +89,7 @@ IPV4Address|IPv6Address
 |===
 
 
+[[examples]]
 == Esempi
 
 [listing]
@@ -96,6 +102,7 @@ set controller[b] DNSServers=(2001:0db8:85a3:0000:0000:8a2e:0370:7334 192.168.1.
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.25

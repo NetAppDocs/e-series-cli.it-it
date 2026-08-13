@@ -15,24 +15,28 @@ Il `set asyncMirrorGroup` il comando modifica le impostazioni di sincronizzazion
 
 
 
+[[supported-arrays]]
 == Array supportati
 
-Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi array di storage, inclusi E4000, E2700, E5600, E2800, E5700, EF600 ed EF300, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
-Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Support Admin.
+Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600 o EF300, devi avere il ruolo di Storage Admin o Support Admin.
 
 
 
+[[context]]
 == Contesto
 
 La modifica delle impostazioni di sincronizzazione influisce sulle operazioni di sincronizzazione di tutte le coppie mirrorate all'interno del gruppo di mirror asincrono.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -49,6 +53,7 @@ set asyncMirrorGroup pass:quotes[[_asyncMirrorGroupName_]]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -137,6 +142,7 @@ Le impostazioni per la risincronizzazione automatica tra i volumi primari e i vo
 |===
 
 
+[[notes]]
 == Note
 
 È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per i nomi. I nomi possono avere un massimo di 30 caratteri.
@@ -147,6 +153,7 @@ Un volume di repository di gruppi di mirror asincroni è un volume espandibile s
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.84

@@ -15,18 +15,21 @@ Il `set storageArray autoLoadBalancingEnable` Il comando attiva o disattiva la f
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -35,6 +38,7 @@ set storageArray autoLoadBalancingEnable=(TRUE | FALSE)
 ----
 
 
+[[parameter]]
 == Parametro
 
 [cols="2*"]
@@ -57,6 +61,7 @@ Questo parametro attiva o disattiva il bilanciamento automatico del carico sul c
 |===
 
 
+[[what-is-automatic-load-balancing]]
 == Che cos'è il bilanciamento automatico del carico?
 
 La funzione di bilanciamento automatico del carico offre una migliore gestione delle risorse i/o, reagendo in modo dinamico alle variazioni di carico nel tempo e regolando automaticamente la proprietà dei controller di volume per correggere eventuali problemi di squilibrio del carico quando i carichi di lavoro si spostano tra i controller.
@@ -71,6 +76,7 @@ Quando il bilanciamento automatico del carico è attivato, esegue le seguenti fu
 
 
 
+[[enabling-and-disabling-automatic-load-balancing]]
 == Attivazione e disattivazione del bilanciamento automatico del carico
 
 Il bilanciamento automatico del carico è attivato per impostazione predefinita su tutti gli array di storage forniti con SANtricity OS (controller software) 8.30 o versioni successive. I driver multipath Linux, Windows e VMware possono utilizzare la funzione di bilanciamento automatico del carico. Se si aggiorna il controller da SANtricity OS (software del controller) 8.25 o versioni precedenti a 8.30 o versioni successive, il bilanciamento automatico del carico viene disattivato per impostazione predefinita sull'array di storage.
@@ -85,6 +91,7 @@ In Gestore di sistema di SANtricity, selezionare *Impostazioni* > *sistema*, sco
 
 
 
+[[examples]]
 == Esempi
 
 [listing]
@@ -100,6 +107,7 @@ Una condizione attiva di "Drive Lost Primary Path" (percorso principale disco pe
 ====
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.30

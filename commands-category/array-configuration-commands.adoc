@@ -15,6 +15,7 @@ Per il tuo sistema storage e-Series è disponibile il seguente elenco di comandi
 
 
 
+[[cache-mirror-data-assurance-commands]]
 == Comandi di cache mirrored data assurance
 
 link:../commands-a-z/set-storagearray-cachemirrordataassurancecheckenable.html["Impostare lo storage array per attivare o disattivare i dati mirror della cache"]
@@ -23,6 +24,7 @@ link:../commands-a-z/show-storagearray-cachemirrordataassurancecheckenable.html[
 
 
 
+[[controller-commands]]
 == Comandi del controller
 
 link:../commands-a-z/clear-alldrivechannels-stats.html["Cancellare le statistiche del canale del disco"]
@@ -73,6 +75,7 @@ link:../commands-a-z/stop-drivechannel-locate.html["Arrestare la posizione del c
 
 
 
+[[controller-health-image-commands]]
 == Comandi dell'immagine dello stato del controller
 
 link:../commands-a-z/save-storagearray-controllerhealthimage.html["Salvare l'immagine dello stato del controller dell'array di storage"]
@@ -85,6 +88,7 @@ link:../commands-a-z/start-storagearray-controllerhealthimage-controller.html["A
 
 
 
+[[controller-host-port-configuration-commands]]
 == Comandi di configurazione della porta host del controller
 
 link:../commands-a-z/create-hostport.html["Creare la porta host"]
@@ -117,6 +121,7 @@ link:../commands-a-z/show-storagearray-unconfiguredinitiators.html["Mostra inizi
 
 
 
+[[drive-commands]]
 == Comandi del disco
 
 link:../commands-a-z/download-drive-firmware.html["Scaricare il firmware del disco"]
@@ -165,6 +170,7 @@ link:../commands-a-z/stop-drive-locate.html["Arrestare il disco individuare"]
 
 
 
+[[feature-management-commands]]
 == Comandi di gestione delle funzioni
 
 link:../commands-a-z/disable-storagearray.html["Disattivare la funzione di array di storage"]
@@ -177,6 +183,7 @@ link:../commands-a-z/show-storagearray.html["Mostrare lo storage array"]
 
 
 
+[[input-output-controller-ioc-dump-commands]]
 == Comandi di dump del controller di output in ingresso (IOC)
 
 link:../commands-a-z/save-ioclog.html["Salva il dump del controller di output in ingresso (IOC)"]
@@ -185,6 +192,7 @@ link:../commands-a-z/start-ioclog.html["Avviare il dump del controller di input 
 
 
 
+[[misbehaving-drive-mbd-commands]]
 == Errore di comportamento dei comandi del disco (MBD)
 
 link:../commands-a-z/replace-drive-replacementdrive.html["Sostituire l'unità"]
@@ -197,6 +205,7 @@ link:../commands-a-z/stop-drive-replace.html["Sostituire il disco di arresto"]
 
 
 
+[[offloaded-data-transfer-odx-commands]]
 == Comandi ODX (Offload data transfer)
 
 link:../commands-a-z/set-storagearray-odxenabled.html["Attivare o disattivare ODX"]
@@ -207,18 +216,21 @@ link:../commands-a-z/show-storagearray-odxsetting.html["Mostra l'impostazione OD
 
 
 
+[[repository-volume-analysis-commands]]
 == Comandi di analisi del volume del repository
 
 link:../commands-a-z/check-repositoryconsistency.html["Verificare la coerenza del repository"]
 
 
 
+[[session-commands]]
 == Comandi di sessione
 
 link:../commands-a-z/set-session-erroraction.html["Impostare la sessione"]
 
 
 
+[[storage-array-commands]]
 == Comandi degli array di storage
 
 link:../commands-a-z/activate-storagearray-firmware.html["Attivare il firmware dello storage array"]
@@ -383,6 +395,7 @@ link:../commands-a-z/validate-storagearray-securitykey.html["Convalidare la chia
 
 
 
+[[tray-commands]]
 == Comandi del vassoio
 
 link:../commands-a-z/download-tray-firmware-file.html["Scaricare il firmware della scheda ambientale"]
@@ -405,6 +418,7 @@ link:../commands-a-z/stop-tray-locate.html["Arrestare il posizionamento del vass
 
 
 
+[[uncategorized-commands]]
 == Comandi senza categoria
 
 link:../commands-a-z/recover-sasport-miswire.html["Ripristinare la porta SAS in modo errato"]

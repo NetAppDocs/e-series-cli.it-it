@@ -17,18 +17,21 @@ Utilizzare una finestra di manutenzione per eliminare la creazione automatica di
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica ai singoli array di storage E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Non si applica agli array di storage E2700 o E5600.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Support Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -39,6 +42,7 @@ set storageArray autoSupportMaintenanceWindow (enable | disable)
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -61,6 +65,7 @@ Opzionale. La durata (in ore) dell'attivazione della finestra di manutenzione. S
 |===
 
 
+[[examples]]
 == Esempi
 
 [listing]
@@ -88,6 +93,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.42

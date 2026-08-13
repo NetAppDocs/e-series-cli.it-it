@@ -15,24 +15,28 @@ Il `stop ssdCache performanceModeling` Il comando interrompe l'operazione di mod
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo di Support Admin.
 
 
 
+[[context]]
 == Contesto
 
 Prima di eseguire questo comando, è necessario avviare l'operazione di modellazione delle performance con `start ssdCache performanceModeling` comando. In alternativa, è possibile salvare i dati in un file.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -42,6 +46,7 @@ pass:quotes[stop ssdCache [_ssdCacheName_]] performanceModeling pass:quotes[[fil
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -68,6 +73,7 @@ Il percorso del file e il nome del file in cui si desidera salvare i dati di mod
 |===
 
 
+[[notes]]
 == Note
 
 Questo comando restituisce le informazioni di modellazione delle performance simili a questo esempio. Le dimensioni del monitor determinano il modo in cui le informazioni vengono inserite e influiscono sulla visualizzazione delle informazioni.
@@ -118,6 +124,7 @@ Cache Capacity    Cache Hit %
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.84

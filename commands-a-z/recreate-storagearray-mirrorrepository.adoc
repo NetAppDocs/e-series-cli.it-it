@@ -15,18 +15,21 @@ Il `recreate storageArray mirrorRepository` Il comando crea un nuovo volume di r
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800 e E5700, a condizione che siano installati tutti i pacchetti SMcli.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su uno storage array E4000, E2800 o E5700, è necessario avere il ruolo di amministratore dello storage.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -38,6 +41,7 @@ Il requisito sottostante è che in precedenza è stato creato un volume di repos
 
 
 
+[[syntax-user-defined-drives]]
 == Sintassi (dischi definiti dall'utente)
 
 [source, cli, subs="+macros"]
@@ -51,6 +55,7 @@ repositoryDrives=pass:quotes[(_trayID1_,pass:quotes[[_drawerID1,_]]pass:quotes[_
 ----
 
 
+[[syntax-user-defined-volume-group]]
 == Sintassi (gruppo di volumi definito dall'utente)
 
 [source, cli, subs="+macros"]
@@ -61,6 +66,7 @@ repositoryVolumeGroup=pass:quotes[_volumeGroupName_
 ----
 
 
+[[syntax-user-defined-number-of-drives]]
 == Sintassi (numero di dischi definito dall'utente)
 
 [source, cli, subs="+macros"]
@@ -79,6 +85,7 @@ repositoryDriveCount=pass:quotes[_numberOfDrives_]
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -189,6 +196,7 @@ L'impostazione per applicare la protezione dalle perdite dei cassetti quando si 
 |===
 
 
+[[notes]]
 == Note
 
 Se si immette un valore troppo piccolo per lo spazio di storage del volume del repository mirror, il firmware del controller restituisce un messaggio di errore che indica la quantità di spazio necessaria per il volume del repository mirror. Il comando non tenta di modificare il volume del repository mirror. È possibile immettere di nuovo il comando utilizzando il valore del messaggio di errore relativo al valore dello spazio di storage del volume del repository mirror.
@@ -201,6 +209,7 @@ Quando il firmware del controller assegna i dischi, se si imposta `trayLossProte
 
 
 
+[[data-assurance-management]]
 == Gestione della data assurance
 
 La funzione Data Assurance (da) aumenta l'integrità dei dati nell'intero sistema storage. DA consente all'array di storage di verificare la presenza di errori che potrebbero verificarsi quando i dati vengono spostati tra gli host e i dischi. Quando questa funzione è attivata, l'array di storage aggiunge i codici di controllo degli errori (noti anche come CRC (Cyclic Redundancy Checks) a ciascun blocco di dati del volume. Dopo lo spostamento di un blocco di dati, l'array di storage utilizza questi codici CRC per determinare se si sono verificati errori durante la trasmissione. I dati potenzialmente corrotti non vengono scritti su disco né restituiti all'host.
@@ -216,6 +225,7 @@ Se il `dataAssurance` il parametro è impostato su `enabled`, per i candidati ai
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

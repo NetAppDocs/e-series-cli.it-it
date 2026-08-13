@@ -15,18 +15,21 @@ Il `show volume` il comando restituisce la cronologia di espansione o la capacit
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Storage Monitor.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -38,6 +41,7 @@ volumes pass:quotes[[_volumeName1_ ... _volumeNameN_]])
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -99,6 +103,7 @@ Il `file` parametro specifica un file per registrare l'output di `expansionHisto
 |===
 
 
+[[notes]]
 == Note
 
 Con `expansionHistory` il comando restituisce informazioni simili all'esempio mostrato di seguito.
@@ -141,6 +146,7 @@ Con `consumedCapacity` il comando restituisce informazioni simili all'esempio mo
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.83

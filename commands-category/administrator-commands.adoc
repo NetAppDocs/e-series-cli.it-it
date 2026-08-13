@@ -15,6 +15,7 @@ Per il tuo sistema storage e-Series è disponibile il seguente elenco di comandi
 
 
 
+[[storage-administrators-commands]]
 == Comandi degli amministratori dello storage
 
 link:../commands-a-z/activate-asynchronous-mirroring.html["Attivare il mirroring asincrono"]
@@ -727,6 +728,7 @@ link:../commands-a-z/set-snmptrapdestination-trapreceiverip.html["Aggiorna desti
 
 
 
+[[support-administrators-commands]]
 == Supportare i comandi degli amministratori
 
 link:../commands-a-z/activate-asynchronous-mirroring.html["Attivare il mirroring asincrono"]
@@ -851,6 +853,7 @@ link:../commands-a-z/set-snmptrapdestination-trapreceiverip.html["Aggiorna desti
 
 
 
+[[security-administrators-commands]]
 == Comandi degli amministratori della sicurezza
 
 link:../commands-a-z/create-storagearray-directoryserver.html["Creare un server di directory per array di storage"]

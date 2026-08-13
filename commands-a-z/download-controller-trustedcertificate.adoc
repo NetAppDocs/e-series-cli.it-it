@@ -15,24 +15,28 @@ Il `download controller trustedCertificate` Il comando installa i certificati CA
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica ai singoli array di storage E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Non si applica agli array di storage E2700 o E5600.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Security Admin.
 
 
 
+[[context]]
 == Contesto
 
 Eseguire questa azione solo se la CA che ha firmato i certificati non è nota o comunemente attendibile. Il comando installa il certificato CA su entrambi i controller.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ pass:quotes[download storageArray trustedCertificate [alias=_string_]] pass:quot
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -62,6 +67,7 @@ Consente di specificare il file che contiene il certificato CA attendibile. Le e
 |===
 
 
+[[examples]]
 == Esempi
 
 [listing]
@@ -76,6 +82,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.40

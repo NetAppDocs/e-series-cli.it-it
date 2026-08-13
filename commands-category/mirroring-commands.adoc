@@ -15,6 +15,7 @@ Per il sistema storage e-Series è disponibile il seguente elenco di comandi di 
 
 
 
+[[asynchronous-mirroring-commands]]
 == Comandi di mirroring asincrono
 
 link:../commands-a-z/activate-asynchronous-mirroring.html["Attivare il mirroring asincrono"]
@@ -61,6 +62,7 @@ link:../commands-a-z/diagnose-asyncmirrorgroup.html["Verificare la connettività
 
 
 
+[[synchronous-mirroring-commands]]
 == Comandi di mirroring sincrono
 
 link:../commands-a-z/activate-synchronous-mirroring.html["Attivare il mirroring sincrono"]

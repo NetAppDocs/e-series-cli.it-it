@@ -15,18 +15,21 @@ Il `set volumeGroup` command definisce le proprietà di un gruppo di volumi.
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -36,6 +39,7 @@ Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, E
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ set volumeGroup pass:quotes[[_volumeGroupName_]]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -87,6 +92,7 @@ Controller proprietario del gruppo di volumi. Gli identificatori del controller 
 |===
 
 
+[[notes]]
 == Note
 
 Gli errori di i/o dell'host possono causare gruppi di volumi con più di 32 volumi. Questa operazione potrebbe anche causare il riavvio del controller interno perché il periodo di timeout termina prima dell'impostazione della definizione del gruppo di volumi. Se si verifica questo problema, interrompere le operazioni di i/o dell'host e provare a eseguire nuovamente il comando.
@@ -102,6 +108,7 @@ Il `addDrives` il parametro supporta sia i vassoi per dischi ad alta capacità c
 
 
 
+[[troubleshooting]]
 == Risoluzione dei problemi
 
 Se si tenta di espandere gruppi di volumi di grandi dimensioni aggiungendo unità, denominate anche Dynamic Capacity Expansion (DCE), potrebbe non riuscire e viene visualizzato il seguente messaggio:
@@ -128,6 +135,7 @@ Se si riscontra la situazione sopra descritta, le possibili soluzioni sono le se
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.10 aggiunge funzionalità RAID 6.

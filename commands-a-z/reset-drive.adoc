@@ -15,18 +15,21 @@ Il `reset drive` il comando consente di spegnere e riaccendere un disco di un gr
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Spegnendo e riaccendendo un disco, è possibile eliminare alcuni errori che causano un comportamento incoerente o non ottimale. In questo modo si evita di sostituire un disco quando si verifica solo un errore transitorio e non fatale e il disco può rimanere operativo. Il ripristino di un disco in questo modo riduce le interruzioni ed evita la sostituzione di un disco.
@@ -40,6 +43,7 @@ Questo comando non può essere utilizzato per i dischi SSD prodotti da pliant. U
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -48,6 +52,7 @@ reset drive([trayID,[drawerID,]slotID] | <"wwID">)
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -73,6 +78,7 @@ Il WWID (World Wide Identifier) dell'unità che si desidera sostituire. Racchiud
 |===
 
 
+[[notes]]
 == Note
 
 Il `drive` il parametro supporta sia i vassoi per dischi ad alta capacità che quelli a bassa capacità. Un vassoio per dischi ad alta capacità dispone di cassetti che trattengono le unità. I cassetti scorrono fuori dal vassoio dell'unità per consentire l'accesso alle unità. Un vassoio per unità a bassa capacità non dispone di cassetti. Per un vassoio dell'unità ad alta capacità, è necessario specificare l'identificativo (ID) del vassoio dell'unità, l'ID del cassetto e l'ID dello slot in cui si trova l'unità. Per un vassoio dell'unità a bassa capacità, è necessario specificare solo l'ID del vassoio dell'unità e l'ID dello slot in cui si trova un'unità. Per un vassoio dell'unità a bassa capacità, un metodo alternativo per identificare una posizione per un'unità consiste nel specificare l'ID del vassoio dell'unità, impostare l'ID del cassetto su `0` E specificare l'ID dello slot in cui si trova un'unità.
@@ -83,6 +89,7 @@ I dischi guasti non possono essere ripristinati con un ciclo di alimentazione pi
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.20

@@ -24,6 +24,7 @@ Di seguito viene riportato il flusso di lavoro di base per l'utilizzo delle chia
 
 
 
+[[workflow-steps]]
 == Fasi del flusso di lavoro
 
 I seguenti comandi consentono di iniziare a utilizzare le chiavi di sicurezza interne:

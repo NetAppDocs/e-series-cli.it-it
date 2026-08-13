@@ -15,24 +15,28 @@ Il `stop storageArray driveFirmwareDownload` il comando interrompe il download d
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Questo comando non interrompe il download del firmware già in corso su un disco. Questo comando interrompe tutti i download del firmware sui dischi in attesa del download.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -41,12 +45,14 @@ stop storageArray driveFirmwareDownload
 ----
 
 
+[[parameters]]
 == Parametri
 
 Nessuno.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

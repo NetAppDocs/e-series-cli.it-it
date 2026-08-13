@@ -15,24 +15,28 @@ Il `save storageArray dbmValidatorInfo` Il comando salva le informazioni di conv
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Security Admin.
 
 
 
+[[context]]
 == Contesto
 
 Il supporto tecnico può utilizzare questo file XML per generare una stringa di convalida (un codice di sicurezza). La stringa di convalida deve essere inclusa in `load storageArray dbmDatabase` quando si ripristina un array di storage in una configurazione preesistente.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ save storageArray dbmValidatorInfo file=pass:quotes["_filename_"] dbmDatabase=pa
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -67,6 +72,7 @@ Il percorso e il nome del file del database DBM da cui si desidera generare il f
 |===
 
 
+[[notes]]
 == Note
 
 Se si sta generando il file di informazioni XML per ottenere una stringa di convalida, è necessario eseguire questo comando mentre si è connessi al controller in cui si intende ripristinare il database. Il seguente esempio mostra il formato del file XML:
@@ -90,6 +96,7 @@ Se si sta generando il file di informazioni XML per ottenere una stringa di conv
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.75

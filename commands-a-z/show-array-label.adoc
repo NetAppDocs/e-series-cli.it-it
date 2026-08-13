@@ -15,12 +15,14 @@ Il `Show array label` il comando restituisce informazioni sulla definizione di u
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica agli array di storage EF600, EF300, EF50 e EF80.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -30,6 +32,7 @@ show storageArrayLabel all
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -45,6 +48,7 @@ Consente di specificare un'etichetta definita dall'utente per l'array di storage
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.60

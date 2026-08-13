@@ -15,6 +15,7 @@ Gli stati di uscita vengono restituiti ai comandi eseguiti. Nella tabella seguen
 
 
 
+[[exit-status-definitions]]
 == Uscire dalle definizioni dello stato
 
 [cols="3*"]

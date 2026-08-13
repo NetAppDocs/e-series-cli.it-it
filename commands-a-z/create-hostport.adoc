@@ -15,24 +15,28 @@ Il `create hostPort` Il comando crea una nuova identificazione della porta host 
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 L'identificazione della porta host è un valore software che rappresenta la porta host HBA o HCA fisica al controller. Senza l'identificazione corretta della porta host, il controller non può ricevere istruzioni o dati dalla porta host.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ userLabel="_portLabel"_]
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -90,6 +95,7 @@ Se non si specifica il tipo di interfaccia, `FC` viene utilizzata come interfacc
 |===
 
 
+[[notes]]
 == Note
 
 Una porta host HBA o una porta host HCA è una connessione fisica su un host bus adapter o su un host channel adapter che risiede in un computer host. Una porta host HBA o una porta host HCA fornisce l'accesso host ai volumi in un array di storage. Se l'HBA o l'HCA dispone di una sola connessione fisica (una porta host), i termini porta host e adattatore bus host o adattatore canale host sono sinonimi.
@@ -98,6 +104,7 @@ Una porta host HBA o una porta host HCA è una connessione fisica su un host bus
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 5.20

@@ -15,24 +15,28 @@ Il `set diskPool` Il comando aggiunge capacità a un pool di dischi (Dynamic Cap
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Queste due operazioni si escludono a vicenda.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ addCapacity=pass:quotes[(_diskPoolCapacity_))]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -85,6 +90,7 @@ Il controller proprietario del pool di dischi. Gli identificatori del controller
 |===
 
 
+[[notes]]
 == Note
 
 I volumi già presenti nel pool di dischi rimangono online e disponibili per le operazioni di i/o mentre si aggiungono nuove unità. Prima di aggiungere capacità, il pool di dischi deve trovarsi nello stato completo. Se il pool di dischi non si trova nello stato completo, eseguire `set diskPool complete` prima di aggiungere nuovi dischi.
@@ -95,6 +101,7 @@ Per aggiungere capacità, specificare i singoli dischi con `addDrives` o una qua
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.83

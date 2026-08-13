@@ -15,6 +15,7 @@ Per il sistema storage e-Series è disponibile il seguente elenco di comandi di 
 
 
 
+[[consistency-group-commands]]
 == Comandi di gruppo di coerenza
 
 link:../commands-a-z/set-consistencygroup-addcgmembervolume.html["Aggiungi membro al gruppo di coerenza"]
@@ -55,12 +56,14 @@ link:../commands-a-z/stop-consistencygroup-pendingsnapimagecreation.html["Interr
 
 
 
+[[repository-volume-analysis-commands]]
 == Comandi di analisi del volume del repository
 
 link:../commands-a-z/check-repositoryconsistency.html["Verificare la coerenza del repository"]
 
 
 
+[[snapshot-group-commands]]
 == Comandi del gruppo Snapshot
 
 link:../commands-a-z/create-snapgroup.html["Creare un gruppo di snapshot"]
@@ -85,6 +88,7 @@ link:../commands-a-z/stop-pendingsnapimagecreation.html["Interrompere le immagin
 
 
 
+[[snapshot-image-commands]]
 == Comandi dell'immagine Snapshot
 
 link:../commands-a-z/create-snapimage.html["Creare un'immagine snapshot"]
@@ -101,6 +105,7 @@ link:../commands-a-z/stop-snapimage-rollback.html["Interrompere il rollback dell
 
 
 
+[[snapshot-volume-commands]]
 == Comandi del volume Snapshot
 
 link:../commands-a-z/create-read-only-snapshot-volume.html["Creare un volume snapshot di sola lettura"]
@@ -129,6 +134,7 @@ link:../commands-a-z/stop-snapvolume.html["Arrestare il volume di snapshot"]
 
 
 
+[[volume-copy-commands]]
 == Comandi di copia del volume
 
 link:../commands-a-z/create-volumecopy.html["Creare una copia del volume"]

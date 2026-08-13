@@ -15,24 +15,28 @@ Il `show storageArray` il comando restituisce le informazioni di configurazione 
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Storage Monitor.
 
 
 
+[[context]]
 == Contesto
 
 I parametri restituiscono elenchi di valori per i componenti e le funzionalità nell'array di storage. È possibile immettere il comando con un singolo parametro o più parametri. Se si immette il comando senza parametri, viene visualizzato l'intero profilo dell'array di storage (che corrisponde alle stesse informazioni immesse nel `*profile*` parametro).
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -47,6 +51,7 @@ cacheMirrorDataAssuranceCheckEnable | hostConnectivityReporting]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -235,6 +240,7 @@ Il parametro che indica il proprietario corrente del controller per ciascun volu
 |===
 
 
+[[notes]]
 == Note
 
 Il `profile` il parametro mostra informazioni dettagliate sull'array di storage. Le informazioni vengono visualizzate su diverse schermate di un monitor. Potrebbe essere necessario aumentare le dimensioni del buffer di visualizzazione per visualizzare tutte le informazioni. Poiché queste informazioni sono così dettagliate, è possibile salvare l'output di questo parametro in un file. Per salvare l'output in un file, eseguire `show storageArray` comando simile a questo esempio.
@@ -376,6 +382,7 @@ volume name: JCG_Remote_MirrorMenuTests
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 5.00 aggiunge `defaultHostType` parametro.

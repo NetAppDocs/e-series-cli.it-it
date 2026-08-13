@@ -15,18 +15,21 @@ Il `set storageArray trayPositions` il comando definisce la posizione dei vassoi
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -35,6 +38,7 @@ set storageArray trayPositions=pass:quotes[(controller | _trayID_ ... _trayIDn_)
 ----
 
 
+[[parameter]]
 == Parametro
 
 [cols="2*"]
@@ -50,6 +54,7 @@ Un elenco di tutti gli ID dei vassoi. La sequenza degli ID dei vassoi nell'elenc
 |===
 
 
+[[notes]]
 == Note
 
 Questo comando definisce la posizione di un vassoio in un array di storage in base alla posizione dell'ID vassoio in `trayPositions` elenco. Ad esempio, se si dispone di un vassoio del controller con un ID impostato su 84 e di vassoi dell'unità con ID impostati su 1, 12 e 50, il `trayPositions` sequenza (`84 1 12 50`) posiziona il vassoio del controller nella prima posizione, il vassoio dell'unità 1 nella seconda posizione, il vassoio dell'unità 12 nella terza posizione e il vassoio dell'unità 50 nella quarta posizione. Il `trayPositions` sequenza (`1 84 50 12`) posiziona il vassoio del controller nella seconda posizione, il vassoio dell'unità 1 nella prima posizione, il vassoio dell'unità 50 nella terza posizione e il vassoio dell'unità 12 nella quarta posizione.
@@ -66,6 +71,7 @@ Il software di gestione mostra visivamente la prima posizione in alto e le altre
 ====
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

@@ -15,6 +15,7 @@ Il `Add array label` il comando consente di aggiungere un array di storage alla 
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 [NOTE]
@@ -26,6 +27,7 @@ Questo comando si applica agli array di storage EF600, EF300, EF50 e EF80.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -35,6 +37,7 @@ pass:quotes[ _Address1 Address2_ add storageArrayLabel label _userDefinedString_
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -61,6 +64,7 @@ Consente di specificare un'etichetta per lo storage array.
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.60

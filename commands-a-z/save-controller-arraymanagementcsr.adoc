@@ -15,24 +15,28 @@ Il `save controller arrayManagementCSR` Il comando genera una CSR (Certificate S
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica ai singoli array di storage E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Non si applica agli array di storage E2700 o E5600.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Security Admin.
 
 
 
+[[context]]
 == Contesto
 
 La CSR deve essere firmata da un'autorità di certificazione (CA). Il certificato firmato risultante viene installato sul server Web del controller in modo che i browser possano automaticamente considerare attendibile il server Web del controller quando tentano di gestire l'array. Eseguire questa azione per ciascun controller.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -52,6 +56,7 @@ save controller [(a|b)] arrayManagementCSR
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -137,6 +142,7 @@ Consente di specificare il file per il quale salvare il file CSR del controller.
 |===
 
 
+[[examples]]
 == Esempi
 
 [listing]
@@ -156,6 +162,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.40

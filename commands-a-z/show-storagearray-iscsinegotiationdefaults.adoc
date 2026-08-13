@@ -15,18 +15,21 @@ Il `show storageArray iscsiNegotiationDefaults` il comando restituisce informazi
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Storage Monitor.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -35,18 +38,21 @@ show storageArray iscsiNegotiationDefaults
 ----
 
 
+[[parameters]]
 == Parametri
 
 Nessuno.
 
 
 
+[[notes]]
 == Note
 
 Le informazioni restituite includono le impostazioni predefinite del vassoio del controller (ovvero quelle che costituiscono il punto di partenza per la negoziazione) e le impostazioni attive correnti.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.10

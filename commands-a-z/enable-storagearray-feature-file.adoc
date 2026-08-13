@@ -15,18 +15,21 @@ Il `enable storageArray feature file` il comando consente di attivare una funzio
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Support Admin.
 
 
 
+[[context]]
 == Contesto
 
 Questo comando esegue una delle seguenti azioni:
@@ -44,6 +47,7 @@ Per determinare le funzionalità caricate nell'array di storage, eseguire `show 
 
 
 
+[[syntax-to-enable-a-feature-key]]
 == Per attivare una chiave funzione
 
 [source, cli, subs="+macros"]
@@ -62,6 +66,7 @@ Per ciascuna funzione che si desidera attivare, è necessario un file delle chia
 
 
 
+[[syntax-to-enable-a-feature-pack]]
 == Per abilitare un Feature Pack
 
 [source, cli, subs="+macros"]
@@ -78,6 +83,7 @@ I nomi di file validi per i file delle chiavi di funzione terminano con a. `.key
 
 
 
+[[syntax-to-enable-a-feature-for-a-trial-period]]
 == Per abilitare una funzione per un periodo di prova
 
 [source, cli, subs="+macros"]
@@ -91,6 +97,7 @@ Per valutare una funzione per un periodo di prova, è possibile immettere uno o 
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.25 rimuove tutti gli attributi che non sono più validi.

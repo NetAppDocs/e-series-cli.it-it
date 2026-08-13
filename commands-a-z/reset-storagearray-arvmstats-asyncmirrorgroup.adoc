@@ -15,18 +15,21 @@ Il `reset storageArray arvmStats asyncMirrorGroup` il comando ripristina le stat
 
 
 
+[[supported-arrays]]
 == Array supportati
 
-Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi array di storage, inclusi E4000, E2700, E5600, E2800, E5700, EF600 ed EF300, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
-Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
+Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600 o EF300, devi avere il ruolo Storage Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -36,6 +39,7 @@ volume=pass:quotes[_"volumeName"_] sampleType=(all | mostRecent | longestSyncTim
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -72,6 +76,7 @@ Questo parametro è facoltativo. Il valore predefinito per `sampleType` è `all`
 |===
 
 
+[[notes]]
 == Note
 
 Le statistiche vengono reimpostate per i volumi mirrorati nel ruolo primario. Le statistiche reimpostate includono i seguenti dati:
@@ -89,6 +94,7 @@ Le statistiche vengono reimpostate per i volumi mirrorati nel ruolo primario. Le
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.84

@@ -15,24 +15,28 @@ Il `start IOCLog` Il comando produce un dump del log IOC delle trasmissioni di d
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 I controller sono identificati come "a " o "b". Ciascun controller può avere fino a quattro canali host; ciascun canale è identificato in modo univoco da un numero compreso tra 1 e 8.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -42,6 +46,7 @@ start IOCLog [(a1 | a2 | a3 | a4 | a5 | a6 | a7 | a8 | b1 | b2 | b3 | b4 | b5 | 
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -68,6 +73,7 @@ Questo parametro fa sì che il nuovo dump del log IOC sovrascriva un dump esiste
 |===
 
 
+[[notes]]
 == Note
 
 Questo comando genera un log di debug dal IOC del controller selezionato e memorizza i dati in un formato compresso in un buffer di memoria persistente sul controller. È possibile recuperare i dati dal registro di debug utilizzando `save IOCLog` comando. Il controller restituisce un errore per queste condizioni:
@@ -79,6 +85,7 @@ Questo comando genera un log di debug dal IOC del controller selezionato e memor
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.20

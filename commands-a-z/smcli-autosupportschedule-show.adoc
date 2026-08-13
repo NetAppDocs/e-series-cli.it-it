@@ -15,12 +15,14 @@ Il `SMcli -autoSupportSchedule show` Il comando mostra la pianificazione per la 
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E4000, E2800 o E5700.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -38,6 +40,7 @@ Tenere presente quanto segue per quanto riguarda la pianificazione della raccolt
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -46,18 +49,21 @@ SMcli -autoSupportSchedule show
 ----
 
 
+[[parameters]]
 == Parametri
 
 Nessuno.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.25
 
 
 
+[[example]]
 == Esempio
 
 L'output mostra entrambi gli intervalli di tempo preferiti, seguiti dalla pianificazione giornaliera e settimanale.

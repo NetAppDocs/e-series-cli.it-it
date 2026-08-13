@@ -15,18 +15,21 @@ Il `create storageArray securityKey` Il comando crea o modifica una nuova chiave
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Se la gestione delle chiavi esterne è abilitata, allora questo comando si applica solo agli array E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Se la gestione delle chiavi interne è abilitata, allora il comando si applica a qualsiasi array di storage, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Security Admin.
 
 
 
+[[context]]
 == Contesto
 
 Per la gestione interna delle chiavi, questo comando attiva la funzione di gestione interna delle chiavi e crea la chiave di sicurezza. Dopo aver creato la chiave, utilizzare `set storageArray securityKey` per utilizzare la chiave. Questo comando può essere utilizzato anche per modificare la chiave di sicurezza.
@@ -35,6 +38,7 @@ Per la gestione delle chiavi esterne, questo comando crea una chiave diversa per
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ file=_"fileName"_]
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -131,6 +136,7 @@ Il valore predefinito è FALSE. Se questo parametro è impostato su FALSE, invia
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.40, introdotto per la gestione interna delle chiavi

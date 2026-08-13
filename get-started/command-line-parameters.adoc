@@ -15,6 +15,7 @@ La release SANtricity OS 11.40 ha introdotto, per i controller E2800 e E5700 con
 
 
 
+[[11-53-and-older-command-line-parameters]]
 == 11.53 e parametri della riga di comando precedenti
 
 Il protocollo Symbol è l'unico protocollo supportato per i controller E2700 ed E5600. Per preservare gli script esistenti e ridurre al minimo i tempi di transizione, le opzioni CLI e la grammatica vengono mantenute il più possibile. Tuttavia, esistono alcune differenze nelle funzionalità dei controller E2800 e E5700 in termini di sicurezza, autenticazione, AutoSupport e messaggi di avviso che rendono obsoleta una parte della grammatica CLI per tali controller. Tuttavia, in alcuni casi la grammatica è obsoleta solo su E2800 o E5700 quando viene utilizzato il nuovo protocollo https.
@@ -68,6 +69,7 @@ Questo argomento opzionale consente di eseguire un `*https*` client per operare 
 |===
 
 
+[[command-line-parameters-that-only-apply-to-e2700-or-e5600-controllers]]
 == Parametri della riga di comando applicabili solo ai controller E2700 o E5600
 
 Poiché i controller E2700 e E5600 non dispongono di funzionalità integrate di gestione degli avvisi, questi parametri della riga di comando sono applicabili. Questi parametri non sono applicabili ai controller E2800 o E5700.
@@ -130,6 +132,7 @@ Questa opzione della riga di comando è obsoleta per gli storage array E2800 e E
 |===
 
 
+[[command-line-parameters-that-apply-to-all-controllers-running-with-a-symbol-client-type]]
 == Parametri della riga di comando applicabili a tutti i controller in esecuzione con un tipo di client Symbol
 
 [cols="2*"]
@@ -157,6 +160,7 @@ Il `*-R*` il parametro è obbligatorio solo se la funzione di doppia password è
 |===
 
 
+[[command-line-parameters-applicable-to-all-controllers-and-all-client-types]]
 == Parametri della riga di comando applicabili a tutti i controller e a tutti i tipi di client
 
 [cols="2*"]

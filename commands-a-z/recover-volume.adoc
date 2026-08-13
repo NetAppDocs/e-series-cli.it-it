@@ -15,18 +15,21 @@ Il `recover volume` Il comando crea un volume RAID con le proprietà specificate
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 I valori dei parametri derivano dal file di dati del profilo di ripristino (`recovery-profile.csv`) per lo storage array. Questo comando consente di creare il volume di ripristino in un gruppo di volumi esistente o un nuovo gruppo di volumi.
@@ -43,6 +46,7 @@ Non è possibile utilizzare questo comando per i volumi DDP (Dynamic Disk Pool).
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -66,6 +70,7 @@ SSID=_subsystemVolumeID_]
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -186,6 +191,7 @@ Questa impostazione indica la dimensione del blocco del volume in byte.
 |===
 
 
+[[notes]]
 == Note
 
 Il software di gestione dello storage raccoglie i profili di ripristino degli array di storage monitorati e li salva su una stazione di gestione dello storage.
@@ -200,12 +206,14 @@ Il `owner` parameter (parametro): definisce il controller proprietario del volum
 
 
 
+[[preallocating-storage-capacity]]
 == Preallocazione della capacità di storage
 
 Il `dssPreAllocate` il parametro consente di assegnare capacità in un volume per la memorizzazione delle informazioni utilizzate per ricostruire un volume. Quando si imposta `dssPreallocate` parametro a. `TRUE`, la logica di allocazione dello spazio di storage nel firmware del controller alloca preventivamente lo spazio in un volume per future modifiche delle dimensioni dei segmenti. Lo spazio pre-allocato è la dimensione massima consentita del segmento. Il `dssPreAllocate` il parametro è necessario per ripristinare correttamente le configurazioni di volume che non sono recuperabili dal database del controller. Per disattivare la funzione di preallocazione, impostare `dssPreAllocate` a. `FALSE`.
 
 
 
+[[segment-size]]
 == Dimensione del segmento
 
 Le dimensioni di un segmento determinano il numero di blocchi di dati che il controller scrive su un singolo disco di un volume prima di scrivere i dati sul disco successivo. Ogni blocco di dati memorizza 512 byte di dati. Un blocco di dati è l'unità di storage più piccola. La dimensione di un segmento determina il numero di blocchi di dati che contiene. Ad esempio, un segmento da 8 KB contiene 16 blocchi di dati. Un segmento da 64 KB contiene 128 blocchi di dati.
@@ -218,12 +226,14 @@ Per ottenere performance ottimali in un ambiente di storage di file system o dat
 
 
 
+[[cache-read-prefetch]]
 == Prefetch di lettura della cache
 
 Il prefetch di lettura della cache consente al controller di copiare ulteriori blocchi di dati nella cache, mentre il controller legge e copia i blocchi di dati richiesti dall'host dal disco nella cache. Questa azione aumenta la possibilità che una richiesta futura di dati possa essere soddisfatta dalla cache. Il prefetch di lettura della cache è importante per le applicazioni multimediali che utilizzano trasferimenti di dati sequenziali. Le impostazioni di configurazione per lo storage array utilizzato determinano il numero di blocchi di dati aggiuntivi letti dal controller nella cache. Valori validi per `cacheReadPrefetch` i parametri sono `TRUE` oppure `FALSE`.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 5.43

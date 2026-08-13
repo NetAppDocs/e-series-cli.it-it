@@ -15,18 +15,21 @@ Il `set driveChannel` command definisce le prestazioni del canale di trasmission
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Support Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -36,6 +39,7 @@ status=(optimal | degraded)
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -58,12 +62,14 @@ La condizione del canale del disco. È possibile impostare lo stato del canale s
 |===
 
 
+[[notes]]
 == Note
 
 Utilizzare `optimal` Opzione per riportare un canale disco degradato allo stato ottimale. Utilizzare `degraded` opzione quando si verificano problemi nel canale del disco e l'array di storage richiede tempo aggiuntivo per il trasferimento dei dati.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

@@ -15,18 +15,21 @@ Il `delete storageArray directoryServers` consente di eliminare uno o più serve
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica ai singoli array di storage E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Non si applica agli array di storage E2700 o E5600.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Security Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -36,6 +39,7 @@ pass:quotes[delete storageArray (allDirectoryServers |
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -63,6 +67,7 @@ Racchiudere gli ID tra parentesi quadre ([ ]). Se sono stati forniti più di uno
 |===
 
 
+[[examples]]
 == Esempi
 
 [listing]
@@ -76,6 +81,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.40 aggiunge il comando.

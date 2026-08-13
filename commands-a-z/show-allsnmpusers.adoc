@@ -15,18 +15,21 @@ Il `show allsnmpUsers` Il comando restituisce informazioni sugli utenti di Simpl
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica ai singoli array di storage E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Non si applica agli array di storage E2700 o E5600.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Support Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -73,6 +76,7 @@ DETAILS
 ====
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -114,6 +118,7 @@ Questo parametro restituisce un elenco del numero totale di utenti SNMP e del nu
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.72

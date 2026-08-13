@@ -15,18 +15,21 @@ Il `import storageArray securityKey file` Il comando sblocca una o più unità c
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Se la gestione delle chiavi esterne è abilitata, questo comando si applica solo agli array E4000, E2800, E5700, EF600, EF300, EF50 o EF80. Se la gestione delle chiavi interne è abilitata, il comando si applica a qualsiasi array di storage, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Security Admin.
 
 
 
+[[context]]
 == Contesto
 
 Vengono sbloccati solo i dischi con la chiave di sicurezza corrispondente. Una volta sbloccati, viene applicata la chiave di sicurezza per il nuovo array di storage.
@@ -38,6 +41,7 @@ Questo comando si applica alla gestione delle chiavi sia interna che esterna.
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -48,6 +52,7 @@ passPhrase="passPhraseString"
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -86,6 +91,7 @@ Se questo parametro è impostato su `TRUE`, L'importazione forzerà la sovrascri
 |===
 
 
+[[notes]]
 == Note
 
 Il firmware del controller crea un blocco che limita l'accesso ai dischi FDE. I dischi FDE hanno uno stato chiamato Security Capable. Quando si crea una chiave di sicurezza, lo stato viene impostato su Security Enabled (protezione abilitata), che limita l'accesso a tutti i dischi FDE presenti nell'array di storage.
@@ -106,6 +112,7 @@ Se la password non soddisfa questi criteri, viene visualizzato un messaggio di e
 ====
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.40

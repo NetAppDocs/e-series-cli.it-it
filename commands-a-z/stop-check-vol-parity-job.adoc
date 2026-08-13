@@ -15,18 +15,21 @@ Il `stop check volume parity job` il comando interrompe un processo di verifica 
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi gli array EF600, EF300, EF50 e EF80, purché tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage EF600, EF300, EF50 e EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -35,6 +38,7 @@ stop check volume parity job jobId=<job_id>;
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -49,6 +53,7 @@ l'id lavoro corrispondente al processo di verifica parità volume da arrestare. 
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 11.80

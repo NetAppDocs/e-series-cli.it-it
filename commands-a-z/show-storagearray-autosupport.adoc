@@ -15,18 +15,21 @@ Il `show storageArray autoSupport` Il comando visualizza le impostazioni della r
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando è operativo per gli array di storage E4000, E2800, E5700, EF600, EF300, EF50 e EF80.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Support Admin o Storage Monitor.
 
 
 
+[[context]]
 == Contesto
 
 L'output del comando da questo comando mostra le seguenti informazioni di configurazione:
@@ -50,6 +53,7 @@ L'output del comando da questo comando mostra le seguenti informazioni di config
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -58,12 +62,14 @@ show storageArray autoSupport
 ----
 
 
+[[parameters]]
 == Parametri
 
 Nessuno.
 
 
 
+[[examples]]
 === Esempi
 
 [listing]
@@ -115,6 +121,7 @@ Nessuno.
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.40

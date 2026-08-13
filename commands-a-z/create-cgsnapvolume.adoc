@@ -15,24 +15,28 @@ Il `create cgSnapVolume` il comando crea un volume di snapshot di immagini speci
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 È possibile selezionare un volume di base o più volumi di base dal gruppo di coerenza da includere nel volume di snapshot. Quando si crea un volume snapshot di un gruppo di coerenza, si crea un volume con contenuti visualizzabili.
 
 
 
+[[syntax-with-user-specified-base-volumes]]
 == Sintassi con volumi di base specificati dall'utente
 
 [source, cli, subs="+macros"]
@@ -43,6 +47,7 @@ members=pass:quotes[_(baseVolume1:repos_XXXX ... baseVolumen:repos_YYYY)_]
 ----
 
 
+[[syntax-when-setting-the-consistency-group-snapshot-volume-to-read-only]]
 == Sintassi quando si imposta il volume snapshot del gruppo di coerenza su sola lettura
 
 [source, cli, subs="+macros"]
@@ -53,6 +58,7 @@ readOnly
 ----
 
 
+[[syntax-when-setting-the-repository-full-limit]]
 == Sintassi durante l'impostazione del limite completo del repository
 
 [source, cli, subs="+macros"]
@@ -69,6 +75,7 @@ repositoryFullLimit=pass:quotes[_percentValue_]
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -159,6 +166,7 @@ L'impostazione per determinare se è possibile scrivere nel volume di snapshot o
 |===
 
 
+[[notes]]
 == Note
 
 È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per i nomi. I nomi possono avere un massimo di 30 caratteri.
@@ -224,6 +232,7 @@ cgSnapImageID="snapCG1:oldest";
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.83

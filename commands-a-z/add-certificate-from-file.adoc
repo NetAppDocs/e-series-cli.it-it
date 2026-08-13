@@ -15,12 +15,14 @@ Il `Add certificate from file` Il comando consente di estrarre un certificato da
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica agli array di storage EF600, EF300, EF50 e EF80.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -29,6 +31,7 @@ pass:quotes[trust localCertificate file _filename_ alias user _specified alias_]
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -50,6 +53,7 @@ Consente di specificare un certificato tramite l'alias definito dall'utente.
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.60

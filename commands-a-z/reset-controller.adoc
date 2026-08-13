@@ -15,18 +15,21 @@ Il `reset controller` Il comando ripristina un controller e interrompe le operaz
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -41,6 +44,7 @@ Se si utilizza la gestione in-band, non è possibile controllare a quale control
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -49,6 +53,7 @@ reset controller [(a|b)]
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -63,12 +68,14 @@ Il controller che si desidera ripristinare. Gli identificatori del controller va
 |===
 
 
+[[notes]]
 == Note
 
 Il controller che riceve il comando RESET controller ripristina il controller specificato. Ad esempio, se il comando RESET controller viene inviato al controller A per richiedere un reset del controller A, il controller A si riavvia eseguendo un soft reboot. Se il comando di ripristino del controller viene inviato al controller A per richiedere un ripristino del controller B, il controller A mantiene il controller B in reset e quindi rilascia il controller B dal reset, che è un riavvio a freddo. Un soft reboot in alcuni prodotti ripristina solo il chip IOC. Un riavvio a freddo ripristina sia il IOC che i chip di espansione nel controller.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 5.20

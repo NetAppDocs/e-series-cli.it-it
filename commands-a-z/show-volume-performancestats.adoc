@@ -15,18 +15,21 @@ Il `show volume performanceStats` il comando restituisce informazioni sulle pres
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Storage Monitor.
 
 
 
+[[context]]
 == Contesto
 
 Per ogni volume nell'array di storage, questo comando restituisce le seguenti informazioni:
@@ -53,6 +56,7 @@ Per ogni volume nell'array di storage, questo comando restituisce le seguenti in
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -62,6 +66,7 @@ volumes pass:quotes[["_volumeName1_" ... "_volumeNameN_"]]) performanceStats
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -102,6 +107,7 @@ Se i nomi dei volumi contengono caratteri o numeri speciali, immettere i nomi ut
 |===
 
 
+[[notes]]
 == Note
 
 Prima di eseguire `show volume performanceStat` eseguire il comando `set session performanceMonitorInterval` e il `set session performanceMonitorIterations` per definire la frequenza di raccolta delle statistiche.
@@ -127,6 +133,7 @@ Date/Time: 11/6/12 10:00: 34 AM - Polling interval in seconds: 5
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

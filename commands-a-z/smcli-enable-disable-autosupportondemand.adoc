@@ -15,12 +15,14 @@ Il `SMcli enable|disable autoSupportOnDemand` Il comando attiva o disattiva la f
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E4000, E2800 o E5700.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -32,6 +34,7 @@ Prima di attivare questa funzione, è necessario attivare la funzionalità AutoS
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -40,12 +43,14 @@ SMcli enable|disable autoSupportOnDemand
 ----
 
 
+[[parameters]]
 == Parametri
 
 Nessuno.
 
 
 
+[[verification]]
 == Verifica
 
 Utilizzare `SMcli -autoSupportConfig show` per verificare se la funzione è stata attivata. Le due righe iniziali dell'output visualizzato mostrano lo stato di abilitazione della funzione AutoSupport, seguita dalla funzione AutoSupport on Demand:
@@ -59,6 +64,7 @@ management station.
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.25

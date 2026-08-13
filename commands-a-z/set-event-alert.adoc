@@ -15,12 +15,14 @@ Il `set event alert` i comandi gestiscono la notifica degli eventi di avviso dis
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica solo agli array di storage E2700 ed E5600.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -30,6 +32,7 @@ Questo comando è un comando SMcli, non un comando script. Eseguire questo coman
 ====
 
 
+[[context]]
 == Contesto
 
 Quando si definisce lo storage array, è possibile configurare gli avvisi e definire la modalità di gestione degli avvisi di evento. Se l'array di storage è stato configurato per l'invio di avvisi, viene inviata una notifica a un destinatario designato quando si verifica un evento che può essere avvisato. La notifica può essere di uno o di tutti i seguenti tipi:
@@ -53,6 +56,7 @@ Non è possibile rendere gli eventi non-alertable disponibili utilizzando questo
 ====
 
 
+[[syntax-to-block-an-event-alert]]
 == Sintassi per bloccare un avviso di evento
 
 [source, cli, subs="+macros"]
@@ -61,6 +65,7 @@ set blockEventAlert pass:quotes[_eventType_]
 ----
 
 
+[[syntax-to-unblock-an-event-alert]]
 == Sintassi per sbloccare un avviso di evento
 
 [source, cli, subs="+macros"]
@@ -69,6 +74,7 @@ set unBlockEventAlert pass:quotes[_eventType_]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -86,6 +92,7 @@ Se si inserisce un evento non valido, viene visualizzato un errore.
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.10

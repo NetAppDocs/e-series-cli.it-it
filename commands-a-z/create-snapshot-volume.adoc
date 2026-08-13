@@ -15,18 +15,21 @@ Il `create snapVolume` il comando crea un volume di snapshot con funzionalità d
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 È possibile mappare il volume di snapshot a un host e tutte le scritture dell'host risiedono nel volume di repository associato al volume di snapshot. È possibile assegnare il nuovo volume di snapshot a un volume di repository esistente oppure creare un nuovo volume di repository in un gruppo di volumi o in un pool di dischi.
@@ -38,6 +41,7 @@ Non è possibile utilizzare questo comando per un'immagine snapshot utilizzata n
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -50,6 +54,7 @@ create snapVolume userLabel=pass:quotes[_"snapVolumeName_" snapImageID="_snapCGI
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -123,6 +128,7 @@ La percentuale di capacità del repository alla quale viene visualizzato un avvi
 |===
 
 
+[[notes]]
 == Note
 
 È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per i nomi. I nomi possono avere un massimo di 30 caratteri.
@@ -144,6 +150,7 @@ L'identificatore del volume del repository viene creato automaticamente dal soft
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.83

@@ -15,18 +15,21 @@ Il `show ssdCache` Il comando visualizza i dati relativi all'utilizzo della cach
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo di Support Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -37,6 +40,7 @@ pass:quotes[[file="_filename_"]]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -79,6 +83,7 @@ Racchiudere il nome del file tra virgolette doppie (" "). Ad esempio:
 |===
 
 
+[[notes]]
 == Note
 
 Sullo schermo vengono visualizzate le seguenti statistiche:
@@ -161,6 +166,7 @@ I byte disponibili, allocati e dati utente vengono utilizzati per calcolare la p
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.84

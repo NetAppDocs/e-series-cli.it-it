@@ -15,6 +15,7 @@ Per il tuo sistema storage e-Series è disponibile il seguente elenco di comandi
 
 
 
+[[disk-pool-commands]]
 == Comandi del pool di dischi
 
 link:../commands-a-z/create-diskpool.html["Creare un pool di dischi"]
@@ -41,6 +42,7 @@ link:../commands-a-z/stop-diskpool-locate.html["Arrestare l'individuazione del p
 
 
 
+[[host-topology-commands]]
 == Comandi della topologia dell'host
 
 link:../commands-a-z/create-host.html["Creare l'host"]
@@ -69,6 +71,7 @@ link:../commands-a-z/show-storagearray-hosttopology.html["Mostrare la topologia 
 
 
 
+[[internet-storage-name-service-isns-commands]]
 == Comandi iSNS (Internet Storage Name Service)
 
 link:../commands-a-z/set-storagearray.html["Impostare l'array di storage"]
@@ -87,6 +90,7 @@ link:../commands-a-z/start-storagearray-isnsserverrefresh.html["Avviare il refre
 
 
 
+[[iscsi-extension-for-rdma-iser-commands]]
 == Estensione ISCSI per comandi RDMA (iSER)
 
 link:../commands-a-z/reset-storagearray-iserstatsbaseline.html["Ripristinare la linea di base iSER dell'array di storage"]
@@ -97,6 +101,7 @@ link:../commands-a-z/set-isertarget.html["Impostare la destinazione iSER"]
 
 
 
+[[iscsi-commands]]
 == Comandi ISCSI
 
 link:../commands-a-z/create-iscsiinitiator.html["Creare iSCSI Initiator"]
@@ -125,6 +130,7 @@ link:../commands-a-z/stop-storagearray-iscsisession.html["Arrestare la sessione 
 
 
 
+[[volume-commands]]
 == Comandi di volume
 
 link:../commands-a-z/check-volume-parity.html["Controllare la parità del volume"]
@@ -189,6 +195,7 @@ link:../commands-a-z/stop-check-vol-parity-job.html["Interrompere il processo Ch
 
 
 
+[[volume-group-commands]]
 == Comandi del gruppo di volumi
 
 link:../commands-a-z/create-volumegroup.html["Creare un gruppo di volumi"]

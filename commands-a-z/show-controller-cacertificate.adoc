@@ -15,18 +15,21 @@ Il `show controller caCertificate` Visualizza il riepilogo dei certificati CA in
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica ai singoli array di storage E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Non si applica agli array di storage E2700 o E5600.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Security Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -35,6 +38,7 @@ show controller [(a|b)] caCertificate [all | aliases=pass:quotes[("_alias1_" ...
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -64,6 +68,7 @@ Consente all'utente di specificare quale certificato root/intermedio recuperare 
 |===
 
 
+[[examples]]
 == Esempi
 
 [listing, subs="+macros"]
@@ -91,6 +96,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.40

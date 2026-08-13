@@ -15,24 +15,28 @@ Il `set tray drawer` Il comando accende o spegne la spia Service Action Allowed 
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 I cassetti vengono utilizzati nei vassoi per dischi ad alta capacità. I cassetti scorrono fuori dal vassoio dell'unità per consentire l'accesso alle unità. Utilizzare questo comando solo per i vassoi delle unità che utilizzano i cassetti. Se lo storage array non supporta la funzione indicatore luminoso azione servizio consentita, questo comando restituisce un errore. Se lo storage array supporta il comando ma non è in grado di accendere o spegnere l'indicatore luminoso, questo comando restituisce un errore.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -42,6 +46,7 @@ serviceAllowedIndicator=(on | off | forceOnWarning)
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -73,6 +78,7 @@ Per informazioni sull'utilizzo di `forceOnWarning`, Vedere le note.
 |===
 
 
+[[notes]]
 == Note
 
 Prima di poter immettere questo comando, il vassoio dell'unità deve soddisfare le seguenti condizioni:
@@ -96,6 +102,7 @@ Per accendere o spegnere la spia dell'indicatore di azione di servizio consentit
 
 
 
+[[use-of-the-forceonwarning-parameter]]
 == Utilizzo del parametro forceOnWarning
 
 Se si sta preparando un componente per la rimozione e si desidera ignorare l'avviso che i volumi non dispongono della protezione contro la perdita di cassetto, immettere questo parametro:
@@ -113,6 +120,7 @@ Questo parametro contrassegna tutti i dischi nel cassetto come inaccessibili e p
 ====
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.60

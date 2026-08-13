@@ -15,9 +15,10 @@ Il `activate storageArray feature` Attiva la funzione di mirroring asincrono.
 
 
 
+[[supported-arrays]]
 == Array supportati
 
-Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi array di storage, inclusi E4000, E2700, E5600, E2800, E5700, EF600 ed EF300, a condizione che tutti i pacchetti SMcli siano installati.
 
 [NOTE]
 ====
@@ -26,18 +27,21 @@ Questo comando è applicabile solo per il mirroring asincrono su Fibre Channel.
 ====
 
 
+[[roles]]
 == Ruoli
 
-Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
+Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600 o EF300, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Dopo aver attivato la funzione di mirroring asincrono, è necessario impostare un gruppo di mirror asincrono e una coppia di mirroring asincrono.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -46,12 +50,14 @@ activate storageArray feature=asyncRemoteMirror
 ----
 
 
+[[parameters]]
 == Parametri
 
 Nessuno.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.84

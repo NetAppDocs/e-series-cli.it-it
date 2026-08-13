@@ -15,29 +15,33 @@ Il `add volume asyncMirrorGroup` il comando aggiunge un volume primario a un gru
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi singolo array di storage, con alcune limitazioni. Se si esegue il comando sull'array E2700 o E5600, non esistono restrizioni.
 
 [NOTE]
 ====
-Questo comando non è supportato sulle piattaforme E4000, E2800, E5700, EF600, EF300, EF50 ed EF80.
+Questo comando non è supportato sulle piattaforme E4000, E2800, E5700, EF600 e EF300.
 
 ====
 
 
+[[roles]]
 == Ruoli
 
 N/A.
 
 
 
+[[context]]
 == Contesto
 
 Questo comando è valido solo sull'array di storage locale che contiene il gruppo di mirror asincrono a cui si desidera aggiungere il volume primario. Un gruppo di mirror asincrono dispone di un volume di repository che viene utilizzato per salvare i dati per tutte le immagini point-in-time che fanno parte del gruppo di mirror asincrono. Ciascun volume primario del gruppo di mirror asincrono dispone di un volume mirror corrispondente su un array di storage remoto.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -50,6 +54,7 @@ repositoryVolume=pass:quotes[(_diskPoolName_] pass:quotes[[capacity=_capacityVal
 ----
 
 
+[[parameter]]
 == Parametro
 
 |===
@@ -110,6 +115,7 @@ Il software di gestione dello storage crea il volume del repository e collega il
 |===
 
 
+[[notes]]
 == Note
 
 * La funzionalità di mirroring asincrono deve essere attivata e attivata sugli array di storage locali e remoti che verranno utilizzati per le attività di mirroring.
@@ -119,6 +125,7 @@ Il software di gestione dello storage crea il volume del repository e collega il
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.84

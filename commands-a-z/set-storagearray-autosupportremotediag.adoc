@@ -15,18 +15,21 @@ Il `set storageArray autoSupportRemoteDiag` Il comando attiva o disattiva la fun
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica ai singoli array di storage E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Non si applica agli array di storage E2700 o E5600.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Support Admin.
 
 
 
+[[context]]
 == Contesto
 
 Prima di attivare questa funzione, attivare la funzione AutoSupport, quindi la funzione AutoSupport OnDemand sull'array di storage.
@@ -40,6 +43,7 @@ Prima di attivare questa funzione, attivare la funzione AutoSupport, quindi la f
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -48,6 +52,7 @@ set storageArray autoSupportRemoteDiag (enable | disable)
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -63,6 +68,7 @@ Consente all'utente di attivare o disattivare la funzione di diagnostica remota 
 |===
 
 
+[[examples]]
 == Esempi
 
 [listing]
@@ -74,6 +80,7 @@ SMcli completed successfully.
 ----
 
 
+[[verification]]
 == Verifica
 
 Utilizzare `show storageArray autoSupport` per verificare se la funzione è stata attivata. Le tre righe iniziali dell'output visualizzato mostrano lo stato di abilitazione della funzione AutoSupport, quindi la funzione AutoSupport on Demand e la funzione di diagnostica remota AutoSupport:
@@ -86,6 +93,7 @@ The AutoSupport Remote Diagnostics feature is enabled on this storage array.
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.40

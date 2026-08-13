@@ -15,12 +15,14 @@ Il `set controller` Command consente di attivare o disattivare la spia Service A
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi singolo array di storage, inclusi gli array E2700 e E5600.
 
 
 
+[[context]]
 == Contesto
 
 Se lo storage array non supporta la funzione indicatore luminoso azione servizio consentita, questo comando restituisce un errore. Se lo storage array supporta il comando ma non è in grado di accendere o spegnere l'indicatore luminoso, questo comando restituisce un errore. (Per accendere o spegnere la spia Service Action Allowed (azione di servizio consentita) sul contenitore della ventola di alimentazione o sul contenitore della batteria di interconnessione, utilizzare `set tray serviceAllowedIndicator` comando.)
@@ -32,6 +34,7 @@ Questo comando è valido solo per E2700, E5600 o EF560 (e per altre generazioni 
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -41,6 +44,7 @@ serviceAllowedIndicator=(on | off)
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -63,6 +67,7 @@ L'impostazione per attivare o disattivare la spia dell'azione di servizio consen
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.14

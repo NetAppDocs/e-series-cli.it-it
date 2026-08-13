@@ -15,24 +15,28 @@ Il `set volume` command definisce le proprietà di un volume thin.
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 È possibile utilizzare i parametri per definire le proprietà di uno o più volumi thin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ volumes pass:quotes[[_volumeName1_ ... _volumeNameN_]] | volume <"wwID">)
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -147,6 +152,7 @@ Questo parametro modifica il modo in cui il volume thin viene riportato all'host
 |===
 
 
+[[notes]]
 == Note
 
 Quando si utilizza questo comando, è possibile specificare uno o più parametri opzionali.
@@ -197,6 +203,7 @@ Se si desidera modificare un volume thin in un volume standard, utilizzare l'ope
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.83

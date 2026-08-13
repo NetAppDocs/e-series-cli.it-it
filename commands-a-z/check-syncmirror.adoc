@@ -15,18 +15,21 @@ Il `check syncMirror` il comando restituisce lo stato di un volume mirror remoto
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800 e E5700, a condizione che siano installati tutti i pacchetti SMcli.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su uno storage array E4000, E2800 o E5700, è necessario avere il ruolo di amministratore dello storage.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -36,6 +39,7 @@ Nelle versioni precedenti di questo comando, l'identificatore di funzione era `r
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ check syncMirror localVolume pass:quotes[[_volumeName_]] optimalStatus timeout=p
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -65,6 +70,7 @@ L'intervallo di tempo entro il quale il software può restituire lo stato del vo
 |===
 
 
+[[notes]]
 == Note
 
 Questo comando attende fino a quando lo stato diventa ottimale o l'intervallo di timeout scade. Utilizzare questo comando quando si esegue l'utilità Asynchronous Synchronous Mirroring.

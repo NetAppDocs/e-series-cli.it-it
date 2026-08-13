@@ -15,24 +15,28 @@ Il `set volumeGroup forcedState` Il comando sposta un gruppo di volumi in uno st
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Utilizzare questo comando se `start volumeGroup import` Il comando non sposta il gruppo di volumi in uno stato importato o se l'operazione di importazione non funziona a causa di errori hardware. In uno stato forzato, il gruppo di volumi può essere importato ed è quindi possibile identificare gli errori hardware.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ set volumeGroup pass:quotes[[_volumeGroupName_]] forcedState
 ----
 
 
+[[parameter]]
 == Parametro
 
 [cols="2*"]
@@ -56,6 +61,7 @@ Il nome del gruppo di volumi che si desidera inserire in uno stato forzato. Racc
 |===
 
 
+[[notes]]
 == Note
 
 È possibile spostare le unità che compongono un gruppo di volumi da uno storage array a un altro storage array. La CLI fornisce tre comandi che consentono di spostare i dischi. I comandi sono `start volumeGroup export`, `start volumeGroup import`, e. `set volumeGroup forcedState`.
@@ -64,6 +70,7 @@ Nello stato forzato, è possibile eseguire un'operazione di importazione sul gru
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.10

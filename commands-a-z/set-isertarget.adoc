@@ -15,12 +15,14 @@ Il `set iserTarget` Il comando definisce le proprietà di una destinazione iSER.
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E2700, E5600, E2800, E5700, EF600, EF300, EF50 ed EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin.
@@ -32,6 +34,7 @@ Questo comando è obsoleto e viene sostituito da xref:set-target.adoc[Impostare 
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -43,6 +46,7 @@ targetAlias=pass:quotes["_userLabel_"]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -79,6 +83,7 @@ Il nuovo nome che si desidera utilizzare per la destinazione. Racchiudere il nom
 |===
 
 
+[[notes]]
 == Note
 
 Challenge Handshake Authentication Protocol (CHAP) è un protocollo che autentica il peer di una connessione. Il CHAP si basa sui peer che condividono un _segreto_. Un segreto è una chiave di sicurezza simile a una password.
@@ -304,6 +309,7 @@ z
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.20

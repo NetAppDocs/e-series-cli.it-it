@@ -15,6 +15,7 @@ In base al valore o al nome immesso, per i comandi CLI vengono applicate determi
 
 
 
+[[cli-format-rules]]
 == Regole di formato CLI
 
 Le virgolette doppie (" ") utilizzate come parte di un nome o di un'etichetta richiedono una particolare considerazione quando si eseguono i comandi CLI e i comandi script su un sistema operativo Windows, Linux o Solaris.

@@ -15,6 +15,7 @@ Il `check storageArray connectivity` il comando verifica che l'array di storage 
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi singolo array di storage, con alcune limitazioni. Se si esegue il comando sull'array E2700 o E5600, non esistono restrizioni.
@@ -26,12 +27,14 @@ Questo comando non è supportato sulle piattaforme E4000, E2800, E5700, EF600, E
 ====
 
 
+[[roles]]
 == Ruoli
 
 N/A.
 
 
 
+[[context]]
 == Contesto
 
 Prima di creare un gruppo di mirror asincrono, è necessario verificare se l'array di storage locale e l'array di storage remoto possono comunicare tra loro. Quando si esegue questo comando, il sistema richiede l'array di storage remoto su tutte le porte host idonee per determinare quali porte sono collegate all'array di storage remoto. Il risultato del test è un elenco di tutte le porte sull'array di storage locale, insieme a un elenco degli indirizzi delle porte dell'array di storage remoto accessibili attraverso tale porta.
@@ -43,6 +46,7 @@ La connettività viene testata utilizzando tutti i canali possibili e, se si tra
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -53,6 +57,7 @@ remoteStorageArrayWwid=<pass:quotes[_wwID_]>)
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -74,6 +79,7 @@ WWID (World Wide Identifier) dell'array di storage per il quale si sta verifican
 |===
 
 
+[[notes]]
 == Note
 
 Prima di poter stabilire un mirror tra due array di storage, è necessario collegarli tramite una connessione Fibre Channel o iSCSI.
@@ -84,6 +90,7 @@ Se lo storage array locale supporta iSCSI, viene selezionata la connettività su
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.84

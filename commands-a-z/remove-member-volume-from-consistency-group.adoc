@@ -15,24 +15,28 @@ Il `set consistencyGroup` il comando rimuove un volume membro da un gruppo di co
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 In alternativa, è possibile eliminare i membri del volume del repository dal gruppo di coerenza.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -43,6 +47,7 @@ removeCGMemberVolume=pass:quotes["_memberVolumeName_"]
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -71,6 +76,7 @@ Determina se rimuovere tutti i membri del repository dal gruppo di coerenza.
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.83

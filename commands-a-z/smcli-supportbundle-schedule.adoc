@@ -26,6 +26,7 @@ Questo comando è un comando SMcli, non un comando script. Eseguire questo coman
 
 
 
+[[syntax-for-creating-a-dailyweekly-schedule]]
 == Sintassi per la creazione di una pianificazione giornaliera/settimanale
 
 [source, cli, subs="+macros"]
@@ -40,6 +41,7 @@ pass:quotes[data=_pathName_]
 ----
 
 
+[[syntax-for-creating-a-monthlyyearly-schedule]]
 == Sintassi per la creazione di una pianificazione mensile/annuale
 
 [source, cli, subs="+macros"]
@@ -58,6 +60,7 @@ pass:quotes[data=_pathName_]
 ----
 
 
+[[syntax-for-removing-a-schedule]]
 == Sintassi per la rimozione di un programma
 
 [NOTE]
@@ -72,6 +75,7 @@ pass:quotes[(all|_storageArrayName_)]
 ----
 
 
+[[parameters]]
 == Parametri
 
 La seguente tabella elenca i parametri per una pianificazione giornaliera/settimanale.
@@ -332,6 +336,7 @@ Il nome di un array di storage specifico per il quale si desidera impostare una 
 |===
 
 
+[[notes]]
 == Note
 
 Quando si utilizza `all` parametro per impostare una pianificazione comune per tutti gli array di storage, le pianificazioni per i singoli array di storage vengono eliminate. Se viene impostata una pianificazione per tutti gli array di storage, gli array di storage appena rilevati seguiranno la stessa pianificazione. Se viene impostata una pianificazione per tutti gli array di storage e viene impostata una pianificazione per un singolo array di storage, gli array di storage appena rilevati non avranno una pianificazione definita.
@@ -383,6 +388,7 @@ weekNumber=First dayOfWeek=Friday
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.83

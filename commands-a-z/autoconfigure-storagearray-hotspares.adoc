@@ -15,18 +15,21 @@ Il `autoConfigure storageArray hotSpares` il comando definisce e configura autom
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -35,18 +38,21 @@ autoConfigure storageArray hotSpares
 ----
 
 
+[[parameters]]
 == Parametri
 
 Nessuno.
 
 
 
+[[notes]]
 == Note
 
 Quando si esegue `autoconfigure storageArray hotSpares` il firmware del controller determina il numero di hot spare da creare in base al numero totale e al tipo di dischi nell'array di storage. Per i dischi SAS, il firmware del controller crea un hot spare per lo storage array e un hot spare aggiuntivo per ogni 60 dischi nello storage array.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

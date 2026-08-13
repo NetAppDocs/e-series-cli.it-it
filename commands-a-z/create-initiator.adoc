@@ -15,18 +15,21 @@ Il `create initiator` il comando crea l'oggetto initiator.
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -41,6 +44,7 @@ Questo comando è applicabile solo a iSCSI, iSER, NVMe su RoCE, NVMe su InfiniBa
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -50,6 +54,7 @@ interfaceType=(iscsi | iser | nvmeof) [chapSecret="securityKey"]
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -92,6 +97,7 @@ Consente di inserire la chiave di sicurezza che si desidera utilizzare per auten
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.41

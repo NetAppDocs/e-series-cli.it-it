@@ -15,18 +15,21 @@ Il `save driveChannel faultDiagnostics file` il comando salva i dati diagnostici
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -38,6 +41,7 @@ Con la versione del firmware 8.10, il `save driveChannel faultDiagnostics` coman
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ save driveChannel faultDiagnostics file=pass:quotes["_filename_"]
 ----
 
 
+[[parameter]]
 == Parametro
 
 [cols="2*"]
@@ -65,12 +70,14 @@ Questo comando non aggiunge automaticamente un'estensione al file salvato. Speci
 |===
 
 
+[[notes]]
 == Note
 
 L'estensione del file non viene aggiunta automaticamente al file salvato. Specificare l'estensione del file di formato applicabile per il file. Se si specifica un'estensione del file di `.txt`, l'output sarà in formato di file di testo. Se si specifica un'estensione del file di `.xml` , L'output sarà in un formato di file XML.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.15 introduce questa nuova funzionalità per i tray di controller legacy.

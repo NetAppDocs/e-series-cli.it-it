@@ -15,18 +15,21 @@ Il `clear asyncMirrorFault` il comando elimina un errore "sticky" di mirroring a
 
 
 
+[[supported-arrays]]
 == Array supportati
 
-Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi array di storage, inclusi E4000, E2700, E5600, E2800, E5700, EF600 ed EF300, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
-Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
+Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600 o EF300, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Un gruppo di mirror asincrono e i relativi volumi membri possono riscontrare errori "sticky" di mirroring asincrono, che si verificano in un singolo punto in tempo ma non influiscono sulla funzionalità dei mirror. Questi tipi di guasti devono essere rivisti, ma potrebbero non richiedere modifiche alla configurazione.
@@ -35,6 +38,7 @@ Un gruppo di mirror asincrono e i relativi volumi membri potrebbero avere o poss
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -48,6 +52,7 @@ volumes pass:quotes[[_"volumeName1" ... "volumeNameN"_]])
 ----
 
 
+[[parameter]]
 == Parametro
 
 |===
@@ -100,6 +105,7 @@ I nomi di diversi volumi membri (in un gruppo di mirror asincrono) da cui si des
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.84

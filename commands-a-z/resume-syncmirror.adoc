@@ -15,18 +15,21 @@ Il `resume syncMirror` il comando riprende un'operazione di mirroring sincrono s
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800 e E5700, a condizione che siano installati tutti i pacchetti SMcli.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su uno storage array E4000, E2800 o E5700, è necessario avere il ruolo di amministratore dello storage.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -36,6 +39,7 @@ Nelle versioni precedenti di questo comando, l'identificatore di funzione era `r
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -46,6 +50,7 @@ primaries pass:quotes[[_volumeName1 ... volumeNameN_]])
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -85,12 +90,14 @@ L'impostazione per identificare i volumi di questo comando che si trovano in un 
 |===
 
 
+[[notes]]
 == Note
 
 Se si imposta `writeConsistency` parametro a. `TRUE`, i volumi devono trovarsi in uno o più gruppi di coerenza di scrittura. Questo comando ripristina tutti i gruppi di coerenza di scrittura che contengono i volumi. Ad esempio, se i volumi A, B e C si trovano in un gruppo di coerenza di scrittura e dispongono di controparti remote A`', B`' e C`', il `resume syncMirror volume ["A"] writeConsistency=TRUE` Il comando riprende A-A`', B-B`' e C-C`'.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

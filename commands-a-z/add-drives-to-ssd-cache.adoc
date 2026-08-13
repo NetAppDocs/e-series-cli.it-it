@@ -15,6 +15,7 @@ Il `set ssdCache` Command aumenta la capacità di una cache SSD esistente aggiun
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
@@ -26,6 +27,7 @@ Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, E
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -35,6 +37,7 @@ pass:quotes[addDrives=(_trayID1_,[_drawerID1_,]]pass:quotes[_slotID1 ... trayIDn
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -60,12 +63,14 @@ Racchiudere il valore dell'ID vassoio, il valore dell'ID cassetto e il valore de
 |===
 
 
+[[notes]]
 == Note
 
 La cache SSD può contenere qualsiasi numero di SSD. La dimensione massima della cache SSD è di 5 TB, ma potrebbe essere inferiore a seconda delle dimensioni della cache principale del controller.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.84

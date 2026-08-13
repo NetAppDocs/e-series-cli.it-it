@@ -15,18 +15,21 @@ Il `activate storageArray feature` Il comando attiva la funzione di mirroring si
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800 e E5700, a condizione che siano installati tutti i pacchetti SMcli.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su uno storage array E4000, E2800 o E5700, è necessario avere il ruolo di amministratore dello storage.
 
 
 
+[[context]]
 == Contesto
 
 Quando si utilizza questo comando, è possibile definire il volume di repository mirror in uno dei tre modi seguenti:
@@ -45,6 +48,7 @@ Nelle versioni precedenti di questo comando, l'identificatore di funzione era `r
 ====
 
 
+[[syntax-user-defined-drives]]
 == Sintassi (dischi definiti dall'utente)
 
 [source, cli, subs="+macros"]
@@ -71,6 +75,7 @@ repositoryDrives=pass:quotes[_(trayID1,_]pass:quotes[[_drawerID1_,]]pass:quotes[
 ----
 
 
+[[syntax-user-defined-volume-group]]
 == Sintassi (gruppo di volumi definito dall'utente)
 
 [source, cli, subs="+macros"]
@@ -81,6 +86,7 @@ repositoryVolumeGroup=pass:quotes[_volumeGroupName_]
 ----
 
 
+[[syntax-user-defined-number-of-drives]]
 == Sintassi (numero di dischi definito dall'utente)
 
 [source, cli, subs="+macros"]
@@ -105,6 +111,7 @@ repositoryDriveCount=pass:quotes[_numberOfDrives_]
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -195,6 +202,7 @@ L'impostazione per applicare la protezione dalle perdite dei cassetti quando si 
 |===
 
 
+[[notes]]
 == Note
 
 Il `repositoryDrives` il parametro supporta sia i vassoi per dischi ad alta capacità che quelli a bassa capacità. Un vassoio per dischi ad alta capacità dispone di cassetti che trattengono le unità. I cassetti scorrono fuori dal vassoio dell'unità per consentire l'accesso alle unità. Un vassoio per unità a bassa capacità non dispone di cassetti. Per un vassoio dell'unità ad alta capacità, è necessario specificare l'identificativo (ID) del vassoio dell'unità, l'ID del cassetto e l'ID dello slot in cui si trova l'unità. Per un vassoio dell'unità a bassa capacità, è necessario specificare solo l'ID del vassoio dell'unità e l'ID dello slot in cui si trova un'unità. Per un vassoio dell'unità a bassa capacità, un metodo alternativo per identificare una posizione per un'unità consiste nel specificare l'ID del vassoio dell'unità, impostare l'ID del cassetto su `0`E specificare l'ID dello slot in cui si trova un'unità.
@@ -211,6 +219,7 @@ Il `drawerLossProtect` il parametro determina se i dati di un volume sono access
 
 
 
+[[data-assurance-management]]
 == Gestione della data assurance
 
 La funzione Data Assurance (da) aumenta l'integrità dei dati nell'intero sistema storage. DA consente all'array di storage di verificare la presenza di errori che potrebbero verificarsi quando i dati vengono spostati tra gli host e i dischi. Quando questa funzione è attivata, l'array di storage aggiunge i codici di controllo degli errori (noti anche come CRC (Cyclic Redundancy Checks) a ciascun blocco di dati del volume. Dopo lo spostamento di un blocco di dati, l'array di storage utilizza questi codici CRC per determinare se si sono verificati errori durante la trasmissione. I dati potenzialmente corrotti non vengono scritti su disco né restituiti all'host.
@@ -226,6 +235,7 @@ Se il `dataAssurance` il parametro è impostato su `enabled`, per i candidati ai
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.10 aggiunge funzionalità RAID livello 6.

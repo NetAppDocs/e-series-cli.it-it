@@ -25,6 +25,7 @@ Se si utilizza SANtricity 11.52 o una versione precedente, non è possibile eseg
 ====
 
 
+[[santricity-12-00]]
 == SANtricity 12.00
 
 La tabella seguente elenca le modifiche ai comandi CLI e Script per la release 12.00.
@@ -63,6 +64,7 @@ Comando rimosso.
 |===
 
 
+[[santricity-11-90]]
 == SANtricity 11,90
 
 Nella tabella seguente sono elencate le modifiche ai comandi CLI e script per la versione 11,90.
@@ -108,6 +110,7 @@ Parametro aggiunto `privateKeyFile`.
 |===
 
 
+[[santricity-11-81]]
 == SANtricity 11,81
 
 Nella tabella seguente sono elencate le modifiche ai comandi CLI e script per la versione 11,81.
@@ -125,6 +128,7 @@ Aggiunto `identifyDevices` parametro.
 |===
 
 
+[[santricity-11-80]]
 == SANtricity 11.80
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.80.
@@ -191,12 +195,14 @@ Comando obsoleto.
 |===
 
 
+[[santricity-11-70-5]]
 == SANtricity 11.70.5
 
 Non sono state apportate modifiche a CLI e script Command per la versione 11.70.5.
 
 
 
+[[santricity-11-70-4]]
 == SANtricity 11.70.4
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.4.
@@ -214,6 +220,7 @@ Aggiunto `-t` e. `-T` descrizioni dei parametri del token di accesso per l'auten
 |===
 
 
+[[santricity-11-70-3]]
 == SANtricity 11.70.3
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.3.
@@ -266,6 +273,7 @@ Aggiornato `driveCount` descrizione del parametro.
 |===
 
 
+[[santricity-11-70-2]]
 == SANtricity 11.70.2
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.2.
@@ -325,6 +333,7 @@ Aggiunto `userName` e. `engineid` parametri.
 |===
 
 
+[[santricity-11-70-1]]
 == SANtricity 11.70.1
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.1.
@@ -391,6 +400,7 @@ Aggiunto `blockSize` parametro.
 |===
 
 
+[[santricity-11-70]]
 == SANtricity 11.70
 
 Nella tabella seguente sono elencate le modifiche apportate ai comandi CLI e script per la release 11.70.

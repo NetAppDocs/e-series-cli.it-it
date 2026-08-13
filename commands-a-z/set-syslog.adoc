@@ -15,18 +15,21 @@ Il `set syslog` il comando configura le informazioni di avviso syslog. È possib
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica ai singoli array di storage E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Non si applica agli array di storage E2700 o E5600.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 * L'indirizzo del server syslog deve essere disponibile. Questo indirizzo può essere un nome di dominio completo, un indirizzo IPv4 o un indirizzo IPv6.
@@ -35,6 +38,7 @@ Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, E
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ set syslog [defaultFacility=pass:quotes[_facilityNumber_]]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -94,6 +99,7 @@ Consente di aggiungere uno o più indirizzi server syslog con i numeri di porta 
 |===
 
 
+[[examples]]
 == Esempi
 
 [listing]
@@ -108,6 +114,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.40

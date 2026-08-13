@@ -15,18 +15,21 @@ Il `diagnose syncMirror` il comando verifica la connessione tra i volumi primari
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800 e E5700, a condizione che siano installati tutti i pacchetti SMcli.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su uno storage array E4000, E2800 o E5700, è necessario avere il ruolo di amministratore dello storage.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -36,6 +39,7 @@ Nelle versioni precedenti di questo comando, l'identificatore di funzione era `r
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -45,6 +49,7 @@ testID=connectivity
 ----
 
 
+[[parameter]]
 == Parametro
 
 [cols="2*"]
@@ -74,6 +79,7 @@ I nomi di diversi volumi che si desidera utilizzare come volumi primari. Immette
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

@@ -15,18 +15,21 @@ Il `start volume initialize` il comando avvia la formattazione di un volume in u
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -36,6 +39,7 @@ La formattazione di un volume avvia un'operazione a esecuzione prolungata che no
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ pass:quotes[start volume [_volumeName_]] initialize
 ----
 
 
+[[parameter]]
 == Parametro
 
 [cols="2*"]
@@ -59,6 +64,7 @@ Il nome di un volume che si desidera formattare. Racchiudere il nome del volume 
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

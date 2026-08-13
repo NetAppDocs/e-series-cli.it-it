@@ -15,24 +15,28 @@ Il `download controller arrayManagementServerCertificate` il comando installa il
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica ai singoli array di storage E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Non si applica agli array di storage E2700 o E5600.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Security Admin.
 
 
 
+[[context]]
 == Contesto
 
 Eseguire questa azione per ciascun controller utilizzando il certificato firmato applicabile al controller. Il certificato firmato deve includere i nomi IP/DNS del controller.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -41,6 +45,7 @@ download controller [(a|b)] pass:quotes[arrayManagementServerCertificate file="_
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -63,6 +68,7 @@ Consente all'utente di specificare il percorso del file e il nome del file che c
 |===
 
 
+[[examples]]
 == Esempi
 
 [listing]
@@ -78,6 +84,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.40

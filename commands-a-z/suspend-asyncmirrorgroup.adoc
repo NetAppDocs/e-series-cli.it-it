@@ -15,24 +15,28 @@ Il `suspend asyncMirrorGroup` il comando sospende la sincronizzazione dei dati s
 
 
 
+[[supported-arrays]]
 == Array supportati
 
-Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
+Questo comando si applica a qualsiasi array di storage, inclusi E4000, E2700, E5600, E2800, E5700, EF600 ed EF300, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
-Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
+Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600 o EF300, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Questo `suspend` command consente di ridurre l'impatto delle performance sull'applicazione host che potrebbe verificarsi durante la copia dei dati modificati sull'array di storage locale nell'array di storage remoto.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -42,6 +46,7 @@ pass:quotes[suspend asyncMirrorGroup [_asyncMirrorGroupName_]]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -57,12 +62,14 @@ Il nome del gruppo di mirror asincrono per il quale si desidera sospendere la si
 |===
 
 
+[[notes]]
 == Note
 
 Quando un gruppo di mirror asincrono si trova in uno stato sospeso, non viene eseguito alcun tentativo di copiare i dati dai volumi primari ai volumi secondari delle coppie mirrorate. Tutte le scritture sul lato primario del gruppo di mirror asincrono vengono registrate in modo persistente nei volumi di repository mirror associati. Una volta ripristinato il gruppo di mirror asincrono, solo le regioni modificate dei volumi primari vengono scritte nei volumi secondari.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.84

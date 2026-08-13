@@ -15,18 +15,21 @@ Il `show controller` il comando restituisce informazioni su un controller.
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Per ciascun controller di un array di storage, questo comando restituisce le seguenti informazioni:
@@ -49,6 +52,7 @@ Per ciascun controller di un array di storage, questo comando restituisce le seg
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -58,6 +62,7 @@ show (allControllers | controller [(a|b)])
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -87,6 +92,7 @@ L'impostazione per restituire un elenco conciso di informazioni su entrambi i co
 |===
 
 
+[[notes]]
 == Note
 
 L'elenco riportato di seguito è un esempio delle informazioni restituite da `show controller` comando. Questo esempio mostra solo come vengono presentate le informazioni e non deve essere considerato come una Best practice per una configurazione di array di storage.
@@ -186,6 +192,7 @@ Il `show storageArray` command restituisce anche informazioni dettagliate sul co
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 5.43 aggiunge `summary` parametro.

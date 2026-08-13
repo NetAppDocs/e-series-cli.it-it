@@ -15,24 +15,28 @@ Il `set session errorAction` command definisce la modalità di esecuzione della 
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin, Support Admin, Security Admin o Storage Monitor.
 
 
 
+[[context]]
 == Contesto
 
 Ai fini di questo comando, una sessione è la durata dell'esecuzione dei comandi. Questo comando non imposta in modo permanente i parametri per lo storage array.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -52,6 +56,7 @@ performanceMonitorIterations=iterationValue
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -103,6 +108,7 @@ Quando il tipo di client è impostato su `https`, questo parametro è obsoleto. 
 |===
 
 
+[[notes]]
 == Note
 
 Quando si utilizza questo comando, è possibile specificare uno o più parametri opzionali.
@@ -113,6 +119,7 @@ L'intervallo di polling e il numero di iterazioni specificati rimangono validi f
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 5.20

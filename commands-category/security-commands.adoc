@@ -15,6 +15,7 @@ Per il sistema storage e-Series è disponibile il seguente elenco di comandi di 
 
 
 
+[[audit-log-management-commands]]
 == Comandi di gestione del log di audit
 
 link:../commands-a-z/delete-auditlog.html["Eliminare i record del registro di controllo"]
@@ -29,6 +30,7 @@ link:../commands-a-z/show-auditlog-summary.html["Mostra il riepilogo del registr
 
 
 
+[[authentication-commands]]
 == Comandi di autenticazione
 
 link:../commands-a-z/getting-started-with-authentication.html["Introduzione all'autenticazione"]
@@ -65,6 +67,7 @@ link:../commands-a-z/start-storagearray-directoryservices-test.html["Test del se
 
 
 
+[[certificate-management-commands-for-e2800-and-e5700-controllers]]
 == Comandi di gestione dei certificati per i controller E2800 e E5700
 
 link:../commands-a-z/save-controller-arraymanagementcsr.html["Generare la richiesta di firma del certificato (CSR) del server Web"]
@@ -101,6 +104,7 @@ link:../commands-a-z/start-storagearray-ocspresponderurl-test.html["Avviare il t
 
 
 
+[[certificate-management-commands-for-ef600]]
 == Comandi di gestione dei certificati per EF600
 
 link:../commands-a-z/add-array-label.html["Aggiungere l'etichetta dell'array"]
@@ -111,6 +115,7 @@ link:../commands-a-z/show-array-label.html["Mostra etichetta array"]
 
 
 
+[[database-commands]]
 == Comandi del database
 
 link:../commands-a-z/clear-storagearray-configuration.html["Configurazione chiara degli array di storage"]
@@ -131,6 +136,7 @@ link:../commands-a-z/stop-storagearray-configdbdiagnostic.html["Arrestare la dia
 
 
 
+[[embedded-external-key-management-commands]]
 == Comandi di gestione delle chiavi esterne integrati
 
 link:../commands-a-z/set-storagearray-externalkeymanagement.html["Introduzione alla gestione esterna delle chiavi"]
@@ -161,6 +167,7 @@ link:../commands-a-z/validate-storagearray-securitykey.html["Convalidare la chia
 
 
 
+[[external-key-management-commands-related-to-certificates]]
 == Comandi esterni di gestione delle chiavi relativi ai certificati
 
 link:../commands-a-z/save-storagearray-keymanagementclientcsr.html["Recuperare la richiesta CSR di gestione delle chiavi installate"]

@@ -15,18 +15,21 @@ Il `set storageArray pqValidateOnReconstruct` Il comando imposta lo stato di con
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica ai singoli array di storage E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Non si applica agli array di storage E2700 o E5600.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, 2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Questa funzione si applica ai pool di dischi e ai gruppi di volumi RAID 6, che hanno parità doppia. In questo caso, il gruppo di volumi o il pool di dischi continuano a essere ridondanti in caso di guasto di un disco, pertanto è possibile controllare la coerenza dei dati e della parità durante la ricostruzione. Se durante la ricostruzione viene rilevata un'incoerenza e Data Assurance è abilitato per il volume, potrebbe essere possibile identificare l'origine dell'incoerenza in modo che i dati possano essere ricostruiti utilizzando i dischi rimanenti. Se questa funzione è attivata e Data Assurance non è abilitata per il volume, o se l'incoerenza non può essere isolata su un singolo disco, il blocco da ricostruire viene contrassegnato come illeggibile.
@@ -35,6 +38,7 @@ La convalida può aumentare i tempi di ricostruzione per i dischi SSD, pertanto 
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -43,6 +47,7 @@ set storageArray pqValidateOnReconstruct (enable | disable) driveMediaType=(hdd 
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -77,6 +82,7 @@ Il tipo di supporto del disco su cui impostare la funzione P/Q validate on recon
 |===
 
 
+[[example-with-drive-media-type-specified-as-hard-disk-drives]]
 == Esempio con il tipo di disco specificato come disco rigido
 
 [listing]
@@ -88,6 +94,7 @@ SMcli completed successfully.
 ----
 
 
+[[example-with-drive-media-type-specified-as-solid-state-drives]]
 == Esempio con il tipo di supporto del disco specificato come unità a stato solido
 
 [listing]
@@ -99,6 +106,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.42

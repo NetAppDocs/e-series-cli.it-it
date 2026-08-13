@@ -15,18 +15,21 @@ Il `remove lunMapping` Il comando rimuove il mapping LUN (Logical Unit Number) o
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -36,6 +39,7 @@ remove (volume pass:quotes[[_"volumeName"_]] | accessVolume) lunMapping
 ----
 
 
+[[syntax-for-removing-lun-or-nsid-mapping-from-more-than-one-volume-lun-or-nsid-mapping]]
 == Sintassi per la rimozione della mappatura LUN o NSID da più LUN o NSID di un volume
 
 [source, cli, subs="+macros"]
@@ -45,6 +49,7 @@ lunMapping
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -109,6 +114,7 @@ Questo parametro funziona solo quando si rimuove il mapping LUN o NSID da un vol
 |===
 
 
+[[notes]]
 == Note
 
 Il volume di accesso è il volume in un ambiente SAN utilizzato per la comunicazione tra il software di gestione dello storage e il controller dell'array di storage. Il volume di accesso utilizza un indirizzo LUN o NSID e consuma 20 MB di spazio di storage non disponibile per lo storage dei dati dell'applicazione. Un volume di accesso è richiesto solo per gli array di storage gestiti in-band.
@@ -122,6 +128,7 @@ Il volume di accesso è il volume in un ambiente SAN utilizzato per la comunicaz
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

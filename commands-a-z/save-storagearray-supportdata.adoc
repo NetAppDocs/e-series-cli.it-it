@@ -15,18 +15,21 @@ Il `save storageArray supportData` il comando salva le informazioni relative al 
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Support Admin.
 
 
 
+[[context]]
 == Contesto
 
 La tabella seguente elenca il tipo di dati di supporto che è possibile raccogliere.
@@ -475,6 +478,7 @@ File di dati di intestazione X.
 |===
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -490,6 +494,7 @@ csbTimeStamp=pass:quotes[_hh:mm_]]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -514,12 +519,14 @@ Questo parametro forza la raccolta dei dati di supporto in caso di errori nella 
 |===
 
 
+[[notes]]
 == Note
 
 A partire dal livello di firmware 7.86, l'estensione del nome file deve essere `.7z`. Se si utilizza una versione del firmware precedente alla 7.86, l'estensione file deve essere `.zip`.
 
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.80 aggiunge `force` parametro.

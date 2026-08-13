@@ -15,18 +15,21 @@ Il `export storageArray securityKey` il comando salva una chiave di sicurezza de
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Se la gestione delle chiavi esterne è abilitata, allora questo comando si applica solo agli array E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Se la gestione delle chiavi interne è abilitata, allora il comando si applica a qualsiasi array di storage, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Security Admin.
 
 
 
+[[context]]
 == Contesto
 
 Quando il file delle chiavi viene esportato da un array di storage, tale chiave può essere importata in un altro array di storage. In questo modo è possibile spostare dischi con funzionalità di sicurezza tra array di storage.
@@ -38,6 +41,7 @@ Questo comando si applica alla gestione delle chiavi sia interna che esterna.
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -48,6 +52,7 @@ pass:quotes[file="_fileName_"]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -79,6 +84,7 @@ Il nome del file deve avere un'estensione di `.slk`.
 |===
 
 
+[[notes]]
 == Note
 
 L'array di storage su cui verranno trasferiti i dischi deve avere dischi con una capacità uguale o superiore a quella dei dischi che si stanno importando.
@@ -102,6 +108,7 @@ Se la password non soddisfa questi criteri, viene visualizzato un messaggio di e
 ====
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.40

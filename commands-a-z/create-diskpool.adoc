@@ -15,18 +15,21 @@ Il `create diskPool` il comando crea un nuovo pool di dischi in base ai parametr
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800, E5700, EF600 e EF300, purché siano installati tutti i pacchetti SMcli.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 È possibile creare il pool di dischi immettendo un elenco di dischi o un tipo di disco che si desidera utilizzare per il pool di dischi.
@@ -38,6 +41,7 @@ Se si immette un elenco di dischi, assicurarsi che tutti i dischi abbiano la ste
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -62,6 +66,7 @@ driveType=(fibre | SATA | SAS | NVMe4K))
 ----
 
 
+[[parameters]]
 == Parametri
 
 |===
@@ -222,6 +227,7 @@ Se questo parametro è impostato su `TRUE`, verranno utilizzate solo unità comp
 |===
 
 
+[[notes]]
 == Note
 
 Ciascun nome del pool di dischi deve essere univoco. È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per l'etichetta utente. Le etichette dell'utente possono contenere un massimo di 30 caratteri.
@@ -232,6 +238,7 @@ Se non si specifica un valore per un parametro opzionale, viene assegnato un val
 
 
 
+[[drives]]
 == Dischi
 
 Quando si utilizza `driveType` parametro, tutti i dischi non assegnati di quel tipo vengono utilizzati per creare il pool di dischi. Se si desidera limitare il numero di dischi trovati da `driveType` nel pool di dischi, è possibile specificare il numero di dischi che utilizzano `driveCount` parametro. È possibile utilizzare `driveCount` solo quando si utilizza `driveType` parametro.
@@ -242,6 +249,7 @@ Se si immettono le specifiche per un vassoio dell'unità ad alta capacità, ma n
 
 
 
+[[disk-pool-alert-thresholds]]
 == Soglie di avviso del pool di dischi
 
 Ogni pool di dischi dispone di due livelli di avvisi progressivamente gravi per informare gli utenti quando la capacità di storage del pool di dischi si sta avvicinando al pieno. La soglia per un avviso è la percentuale della capacità utilizzata rispetto alla capacità totale utilizzabile nel pool di dischi. Gli avvisi sono i seguenti:
@@ -254,6 +262,7 @@ Per essere efficace, il valore di un avviso di avviso deve essere sempre inferio
 
 
 
+[[disk-pool-background-operations]]
 == Operazioni in background del pool di dischi
 
 I pool di dischi supportano queste operazioni in background:
@@ -275,6 +284,7 @@ I pool di dischi non accodano i comandi in background. È possibile avviare dive
 
 
 
+[[security-type]]
 == Tipo di sicurezza
 
 Utilizzare `securityType` parametro per specificare le impostazioni di sicurezza per lo storage array.
@@ -291,12 +301,14 @@ Prima di poter impostare `securityType` parametro a. `enabled`, è necessario cr
 
 
 
+[[secure-drives]]
 == Dischi sicuri
 
 Le unità compatibili con la protezione possono essere dischi con crittografia completa del disco (FDE) o dischi FIPS (Federal Information Processing Standard). Utilizzare `secureDrives` parametro per specificare il tipo di dischi protetti da utilizzare. I valori che è possibile utilizzare sono `fips` e. `fde`.
 
 
 
+[[example-command]]
 == Esempio di comando
 
 [listing]
@@ -305,6 +317,7 @@ create diskPool driveType=SAS userLabel="FIPS_Pool" driveCount=11 securityType=c
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.83

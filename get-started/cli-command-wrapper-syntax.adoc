@@ -15,6 +15,7 @@ In questa sezione sono elencate le forme di sintassi generali dei wrapper di com
 
 
 
+[[conventions-for-cli-command-wrapper-syntax]]
 == Convenzioni per la sintassi del wrapper dei comandi CLI
 
 [cols="2*"]
@@ -70,6 +71,7 @@ Per eseguire tutti i comandi CLI, è necessario disporre dei privilegi di ammini
 ====
 
 
+[[example-in-https-client-mode]]
 == Esempio in modalità client https
 
 I seguenti esempi illustrano `https` parametri della riga di comando in modalità client descritti in xref:command-line-parameters.adoc[Parametri della riga di comando].
@@ -86,6 +88,7 @@ Se non si specifica un `clientType`, ma includono `-u` e il `username` variabile
 ====
 
 
+[[examples-in-symbol-client-mode]]
 == Esempi in modalità client Symbol
 
 I seguenti esempi illustrano `symbol` parametri della riga di comando in modalità client descritti in xref:command-line-parameters.adoc[Parametri della riga di comando].

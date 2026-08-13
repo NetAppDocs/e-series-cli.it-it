@@ -15,18 +15,21 @@ Il `show syncMirror synchronizationProgress` Il comando restituisce l'avanzament
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi singolo storage array, inclusi gli array E4000, E2700, E5600, E2800 e E5700, a condizione che siano installati tutti i pacchetti SMcli.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su uno storage array E4000, E2800 o E5700, è necessario disporre del ruolo di amministratore dello storage o di Storage Monitor.
 
 
 
+[[context]]
 == Contesto
 
 Questo comando mostra l'avanzamento come percentuale di sincronizzazione dei dati completata.
@@ -38,6 +41,7 @@ Nelle versioni precedenti di questo comando, l'identificatore di funzione era `r
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -47,6 +51,7 @@ localVolumes pass:quotes[[_volumeName1_... _volumeNameN_]]) synchronizationProgr
 ----
 
 
+[[parameter]]
 == Parametro
 
 [cols="2*"]
@@ -80,6 +85,7 @@ Se i nomi dei volumi hanno caratteri speciali o sono costituiti solo da numeri, 
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 5.40

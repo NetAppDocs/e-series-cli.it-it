@@ -15,18 +15,21 @@ Il `show allHostPorts` il comando restituisce informazioni sulle porte host conf
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Per tutte le porte host collegate a un array di storage, questo comando restituisce le seguenti informazioni:
@@ -38,6 +41,7 @@ Per tutte le porte host collegate a un array di storage, questo comando restitui
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli]
@@ -46,12 +50,14 @@ show allHostPorts
 ----
 
 
+[[parameters]]
 == Parametri
 
 Nessuno.
 
 
 
+[[notes]]
 == Note
 
 Questo comando restituisce informazioni sulla porta host HBA simili a questo esempio.
@@ -65,6 +71,7 @@ HOST PORT IDENTIFIER     HOST PORT NAME  HOST TYPE
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 5.40

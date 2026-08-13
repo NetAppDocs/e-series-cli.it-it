@@ -15,18 +15,21 @@ Il `stop snapImage rollback` il comando interrompe un'operazione di rollback del
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 [NOTE]
@@ -36,6 +39,7 @@ L'annullamento di un'operazione di rollback dell'immagine snapshot lascia il vol
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -44,6 +48,7 @@ pass:quotes[stop snapImage [_snapCGID:imageID_] rollback]
 ----
 
 
+[[parameter]]
 == Parametro
 
 [cols="2*"]
@@ -72,6 +77,7 @@ Racchiudere il nome dell'immagine istantanea tra virgolette doppie (" ") tra par
 |===
 
 
+[[notes]]
 == Note
 
 Il nome di un'immagine istantanea ha due parti separate da due punti (:):
@@ -94,6 +100,7 @@ stop snapImage ["snapGroup1:newest"] rollback;
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.83

@@ -15,18 +15,21 @@ Il `show volume summary` il comando restituisce informazioni su un volume.
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Storage Monitor.
 
 
 
+[[context]]
 == Contesto
 
 Per i volumi in un array di storage, questo comando restituisce le seguenti informazioni:
@@ -62,6 +65,7 @@ Per i volumi in un array di storage, questo comando restituisce le seguenti info
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -71,6 +75,7 @@ volumes pass:quotes[[_volumeName1_ ... _volumeNameN_]]) summary
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]

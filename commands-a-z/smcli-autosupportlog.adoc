@@ -15,12 +15,14 @@ Il `SMcli -autoSupportLog` Il comando consente di visualizzare un file di log di
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a tutti gli storage array E2700 ed E5600 nel dominio di gestione contemporaneamente. Non si applica agli storage array E4000, E2800 o E5700.
 
 
 
+[[context]]
 == Contesto
 
 Questo comando consente di visualizzare due tipi di log:
@@ -36,6 +38,7 @@ Questo comando è un comando SMcli, non un comando script. Eseguire questo coman
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -45,6 +48,7 @@ pass:quotes[inputArchive=_n_] pass:quotes[outputLog=_filename_]
 ----
 
 
+[[parameters]]
 == Parametri
 
 La tabella seguente elenca i parametri dei comandi.
@@ -100,12 +104,14 @@ Questo parametro è obbligatorio.
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.25
 
 
 
+[[example]]
 == Esempio
 
 [listing]
@@ -114,6 +120,7 @@ SMcli -autosupportLog -n StorageArrayName inputArchive=0 outputLog=ASUPTransmiss
 ----
 
 
+[[verification]]
 == Verifica
 
 Visualizzare il log AutoSupport richiesto, che si trova nella directory del client in cui è stato installato il software di gestione dello storage.

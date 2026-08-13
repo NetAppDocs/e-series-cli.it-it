@@ -15,24 +15,28 @@ Il `show storageArray lunMappings` Il comando restituisce informazioni dal profi
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Storage Monitor.
 
 
 
+[[context]]
 == Contesto
 
 Vengono sempre visualizzate le mappature LUN o NSID del gruppo predefinito. Se si esegue questo comando senza parametri, questo comando restituisce tutte le mappature LUN o NSID.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -42,6 +46,7 @@ hostgroup pass:quotes[["_hostGroupName_"]])
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -64,6 +69,7 @@ Il nome di un gruppo host specifico per il quale si desidera visualizzare le map
 |===
 
 
+[[notes]]
 == Note
 
 Questo comando restituisce informazioni sulla topologia dell'host simili a questo esempio.
@@ -78,6 +84,7 @@ Access Volume 7   A,B         Default Group  Optimal
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 6.10

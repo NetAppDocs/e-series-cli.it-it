@@ -15,18 +15,21 @@ Il `show allSnmpCommunities` Il comando restituisce informazioni sulle community
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica ai singoli array di storage E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Non si applica agli array di storage E2700 o E5600.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, è necessario disporre del ruolo Storage Admin o Support Admin o Storage Monitor.
 
 
 
+[[context]]
 == Contesto
 
 Le informazioni restituite includono quanto segue:
@@ -38,6 +41,7 @@ Le informazioni restituite includono quanto segue:
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -49,6 +53,7 @@ snmpCommunities pass:quotes[[_snmpCommunityName1_ ... _snmpCommunityNameN_]])
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -90,6 +95,7 @@ Questo parametro restituisce un elenco del numero totale di comunità SNMP e del
 |===
 
 
+[[notes]]
 == Note
 
 SNMP supporta una o più _community_ a cui appartengono i manager e i dispositivi gestiti. Le richieste SNMP contengono una _stringa di comunità_ nei pacchetti di dati trasmessi in rete che agisce come una password non corretta. Gli agenti SNMP possono rifiutare RICHIESTE GET o SET con una stringa di comunità non riconosciuta. Una stringa di community è inclusa anche nelle notifiche TRAP inviate dall'agente al manager.
@@ -116,6 +122,7 @@ DETAILS
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.30

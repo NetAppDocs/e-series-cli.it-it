@@ -15,18 +15,21 @@ Il `save storageArray warningEvents` Il comando salva gli eventi dal registro ev
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica a qualsiasi array di storage individuale, inclusi E4000, E2700, E5600, E2800, E5700, EF600, EF300, EF50 e EF80, a condizione che tutti i pacchetti SMcli siano installati.
 
 
 
+[[roles]]
 == Ruoli
 
 Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, EF300, EF50 o EF80, devi avere il ruolo Storage Admin.
 
 
 
+[[context]]
 == Contesto
 
 Questo comando salva gli eventi dal Registro eventi principale in un file. È possibile salvare questi eventi:
@@ -44,6 +47,7 @@ Alcuni storage array potrebbero non essere in grado di supportare tutti e quattr
 ====
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -56,6 +60,7 @@ file=pass:quotes["_filename_"]
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -129,6 +134,7 @@ L'utilizzo di questo parametro consente di salvare gli eventi di debug filtrati 
 |===
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 7.77 aggiungere questi parametri:

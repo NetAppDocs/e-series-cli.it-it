@@ -15,12 +15,14 @@ Il `set emailAlert` il comando consente di configurare l'e-mail per l'invio di u
 
 
 
+[[supported-arrays]]
 == Array supportati
 
 Questo comando si applica agli array di storage E4000, E2800, E5700, EF600, EF300, EF50 e EF80. Tuttavia, puoi utilizzare il comando come comando SMcli, non come comando di script, per gli array E2700 o E5600. In questo caso, il comando si applica a tutti gli array nel dominio di gestione.
 
 
 
+[[syntax]]
 == Sintassi
 
 [source, cli, subs="+macros"]
@@ -38,6 +40,7 @@ set emailAlert
 ----
 
 
+[[parameters]]
 == Parametri
 
 [cols="2*"]
@@ -119,6 +122,7 @@ Consente di aggiungere uno o più indirizzi e-mail del destinatario all'elenco e
 |===
 
 
+[[examples]]
 == Esempi
 
 [listing, subs="+macros"]
@@ -140,6 +144,7 @@ SMcli completed successfully.
 ----
 
 
+[[minimum-firmware-level]]
 == Livello minimo del firmware
 
 8.40
