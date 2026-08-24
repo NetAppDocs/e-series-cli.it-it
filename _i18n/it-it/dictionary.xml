@@ -8095,4 +8095,8 @@
   <block id="fa3f8ed858d04e74dad152ab5070b1ec" category="paragraph">Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600 o EF300, devi avere il ruolo Storage Admin.</block>
   <block id="0a5727fb9e4cceadd91fbb0916297759" category="paragraph">Questo comando non è supportato sulle piattaforme E4000, E2800, E5700, EF600 e EF300.</block>
   <block id="d28f85e4921c2290b1849d9ca24381a1" category="paragraph">Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600 o EF300, devi avere il ruolo di Storage Admin o Support Admin.</block>
+  <block id="eae2e5eb79bc312f455a69dcdb128d40" category="paragraph">Questo comando si applica a un singolo array di storage EF50 o EF80, a condizione che tutti i pacchetti SMcli siano installati.</block>
+  <block id="c540831e3a9e23851bfed87fe9daa839" category="paragraph">Per eseguire questo comando su un array di storage EF50 o EF80, devi avere il ruolo di Support Admin.</block>
+  <block id="3aaeeffd59a60bb91c9bd0ba462a25c0" category="paragraph">Questo comando si applica agli array di storage E4000, EF50 o EF80, a condizione che tutti i pacchetti SMcli siano installati.</block>
+  <block id="2c7b4ae92e40349e885951530fef1b89" category="paragraph">Per eseguire questo comando su un array di storage E4000, EF50 o EF80, devi avere il ruolo di Support Admin.</block>
 </blocks>
