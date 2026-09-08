@@ -102,6 +102,9 @@ Questo parametro è obbligatorio.
 
 ====
 
+NOTE: Il limite di caratteri per i nomi dei volumi standard e thin è di 60 caratteri. Il nome del volume può contenere qualsiasi combinazione di caratteri alfanumerici, underscore (_), trattino (-) e cancelletto (#).
+
+
 
  a| 
 `capacity`
@@ -205,7 +208,7 @@ Se si imposta `raidLevel` Parametro al livello RAID 1:
 * La seconda metà del gruppo, in ordine elencato (e in ordine di stripe), sono i dischi mirror corrispondenti
 
 
-È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per i nomi. I nomi possono avere un massimo di 30 caratteri.
+Per i nomi puoi usare qualsiasi combinazione di caratteri alfanumerici, underscore (_), trattino (-) e cancelletto (#). I nomi dei volumi standard e thin possono avere un massimo di 60 caratteri; tutti gli altri nomi dei componenti possono avere un massimo di 30 caratteri.
 
 Il `owner` parameter (parametro): definisce il controller proprietario del volume. La proprietà preferita del controller di un volume è il controller che attualmente possiede il gruppo di volumi.
 

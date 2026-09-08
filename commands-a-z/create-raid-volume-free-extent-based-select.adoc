@@ -75,6 +75,9 @@ Questo parametro è obbligatorio.
 
 ====
 
+NOTE: Il limite di caratteri per i nomi dei volumi standard e thin è di 60 caratteri. Il nome del volume può contenere qualsiasi combinazione di caratteri alfanumerici, underscore (_), trattino (-) e cancelletto (#).
+
+
 
  a| 
 `freeCapacityArea`
@@ -168,7 +171,7 @@ Questo parametro imposta la dimensione del blocco del volume da creare. Un valor
 [[notes]]
 == Note
 
-È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, trattini e caratteri di sottolineatura per i nomi. I nomi possono avere un massimo di 30 caratteri.
+Puoi usare qualsiasi combinazione di caratteri alfanumerici, trattini e underscore per i nomi. I nomi dei volumi standard e thin possono avere un massimo di 60 caratteri; tutti gli altri nomi dei componenti possono avere un massimo di 30 caratteri.
 
 Il `owner` parameter (parametro): definisce il controller proprietario del volume. La proprietà preferita del controller di un volume è il controller che attualmente possiede il gruppo di volumi.
 

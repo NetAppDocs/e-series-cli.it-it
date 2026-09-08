@@ -76,4 +76,4 @@ I nomi di diversi volumi per i quali si cancellano informazioni di settore illeg
 [[notes]]
 == Note
 
-È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, trattini e caratteri di sottolineatura per i nomi. I nomi possono avere un massimo di 30 caratteri.
+Puoi usare qualsiasi combinazione di caratteri alfanumerici, trattini e underscore per i nomi. I nomi dei volumi standard e thin possono avere un massimo di 60 caratteri.

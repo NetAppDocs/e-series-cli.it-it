@@ -35,18 +35,18 @@ Per eseguire questo comando su un array di storage E4000, E2800, E5700, EF600, E
 Per ogni volume nell'array di storage, questo comando restituisce le seguenti informazioni:
 
 * Array di storage
-* Totale iOS/s.
+* I/O totali
 * Lettura %
 * Cache di lettura primaria - % hit
 * Cache di scrittura primaria hit %
 * Cache SSD hit %
-* MB/s correnti
-* MB/s massimi
-* IOS/s correnti
-* Numero massimo di iOS/s.
-* IOS/s minimi
-* IOS/s medi
-* MB/s minimi
+* MB/sec attuali
+* MB/sec massimi
+* IO correnti/sec
+* Massimo IO/sec
+* IO/sec minimi
+* IO/s medi
+* MB/sec minimi
 * MB/s medi
 * Latenza io corrente
 * Latenza io massima

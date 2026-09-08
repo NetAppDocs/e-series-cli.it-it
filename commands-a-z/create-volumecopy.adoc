@@ -142,6 +142,6 @@ Per ottenere le migliori prestazioni, utilizzare `sameAsSource` opzione.
 [[notes]]
 == Note
 
-È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, accada e sottolineatura per i nomi. I nomi possono avere un massimo di 30 caratteri.
+Puoi usare qualsiasi combinazione di caratteri alfanumerici, trattini e underscore per i nomi. I nomi dei volumi standard e thin possono avere un massimo di 60 caratteri.
 
 La priorità di copia definisce la quantità di risorse di sistema utilizzate per copiare i dati tra il volume di origine e il volume di destinazione di una coppia di copie del volume. Se si seleziona il livello di priorità più alto, la copia del volume utilizza la maggior parte delle risorse di sistema per eseguire la copia del volume, riducendo le prestazioni per i trasferimenti di dati dell'host.

@@ -120,7 +120,7 @@ Le dimensioni di un nuovo volume di repository in un gruppo di volumi o in un po
 [[notes]]
 == Note
 
-È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per i nomi. I nomi possono avere un massimo di 30 caratteri.
+Per i nomi puoi usare qualsiasi combinazione di caratteri alfanumerici, underscore (_), trattino (-) e cancelletto (#). I nomi dei volumi standard e thin possono avere un massimo di 60 caratteri; tutti gli altri nomi dei componenti possono avere un massimo di 30 caratteri.
 
 Un gruppo di coerenza è un insieme di volumi di base che sono i volumi di origine per gli snapshot. I volumi di base vengono raccolti in un gruppo di coerenza in modo da poter eseguire le stesse operazioni di snapshot su ciascuno dei volumi di base. Nel contesto di questo comando, il termine _member_ indica un volume di base per le operazioni di snapshot. È possibile manipolare le immagini Snapshot associate ai membri di un gruppo di coerenza attraverso operazioni di tipo batch, mantenendo la coerenza tra le immagini Snapshot.
 

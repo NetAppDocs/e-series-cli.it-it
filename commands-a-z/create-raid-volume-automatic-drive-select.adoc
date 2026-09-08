@@ -111,6 +111,9 @@ Questo parametro è obbligatorio.
 
 ====
 
+NOTE: Il limite di caratteri per i nomi dei volumi standard e thin è di 60 caratteri. Il nome del volume può contenere qualsiasi combinazione di caratteri alfanumerici, underscore (_), trattino (-) e cancelletto (#).
+
+
 
  a| 
 `driveMediaType`
@@ -235,7 +238,7 @@ Questo parametro imposta la dimensione del blocco del volume da creare. Un valor
 [[notes]]
 == Note
 
-È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, trattini e caratteri di sottolineatura per i nomi. I nomi possono avere un massimo di 30 caratteri.
+Puoi usare qualsiasi combinazione di caratteri alfanumerici, trattini e underscore per i nomi. I nomi dei volumi standard e thin possono avere un massimo di 60 caratteri; tutti gli altri nomi dei componenti possono avere un massimo di 30 caratteri.
 
 Il `driveCount` parametro consente di scegliere il numero di dischi da utilizzare nel gruppo di volumi. Non è necessario specificare le unità in base all'ID vassoio e all'ID slot. I controller scelgono le unità specifiche da utilizzare per il gruppo di volumi.
 

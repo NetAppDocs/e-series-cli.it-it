@@ -34,7 +34,7 @@ Per eseguire questo comando su un array di storage EF50 o EF80, devi avere il ru
 
 [source, cli, subs="+macros"]
 ----
-set storageArray hostIoProtocol={"FC" | "ISCSI" | "ISER" | "nvmeIb" | "nvmeFc" | "nvmeRoce" | "SAS" | "SRP"}
+set storageArray hostIoProtocol={"FC" | "ISCSI" | "ISER" | "nvmeIb" | "nvmeFc" | "nvmeRoce" | "nvmeTcp" | "SAS" | "SRP"}
 ----
 
 
@@ -49,7 +49,7 @@ set storageArray hostIoProtocol={"FC" | "ISCSI" | "ISER" | "nvmeIb" | "nvmeFc" |
  a| 
 `set storageArray hostIoProtocol`
  a| 
-Consente di specificare quale protocollo I/O host utilizzare per il tuo array di storage. Le opzioni valide sono: FC, ISCSI, ISER, nvmeIb, nvmeFc, nvmeRoce, SAS o SRP.
+Ti permette di specificare quale protocollo I/O host usare per il tuo array di storage. Le opzioni valide sono: FC, ISCSI, ISER, nvmeIb, nvmeFc, nvmeRoce, nvmeTcp, SAS o SRP.
 
 |===
 

@@ -119,6 +119,9 @@ userLabel="engdata"
 volumeWWN=60080E500017B4320000000049887D77
 ----
 
+NOTE: Il limite di caratteri per i nomi dei volumi standard e thin è di 60 caratteri. Il nome del volume può contenere qualsiasi combinazione di caratteri alfanumerici, underscore (_), trattino (-) e cancelletto (#).
+
+
 
  a| 
 `capacity`
@@ -200,7 +203,7 @@ Il `drive` il parametro supporta sia i vassoi per dischi ad alta capacità che q
 
 Se si tenta di ripristinare un volume utilizzando `drive` o il `drives` e i dischi sono in uno stato non assegnato, il controller crea automaticamente un nuovo gruppo di volumi. Utilizzare `newVolumeGroup` parametro per specificare un nome per il nuovo gruppo di volumi.
 
-È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per i nomi. I nomi possono avere un massimo di 30 caratteri.
+Per i nomi puoi usare qualsiasi combinazione di caratteri alfanumerici, underscore (_), trattino (-) e cancelletto (#). I nomi dei volumi standard e thin possono avere un massimo di 60 caratteri; tutti gli altri nomi dei componenti possono avere un massimo di 30 caratteri.
 
 Il `owner` parameter (parametro): definisce il controller proprietario del volume. La proprietà preferita del controller di un volume è il controller che attualmente possiede il gruppo di volumi.
 

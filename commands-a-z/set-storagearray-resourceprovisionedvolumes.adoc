@@ -67,6 +67,11 @@ L'impostazione per specificare se le funzionalità di provisioning delle risorse
 La modifica di questo valore si applica solo ai gruppi di volumi e ai pool creati in futuro. Non modifica il valore dei gruppi di volumi e dei pool esistenti.
 
 ====
+[NOTE]
+====
+Non puoi configurare il mirroring su un volume mentre DULBE è abilitato. Per usare il mirroring, imposta  `resourceProvisionedVolumes` su  `disable`.
+
+====
 |===
 
 

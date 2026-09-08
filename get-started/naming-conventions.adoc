@@ -13,7 +13,7 @@ summary: È necessario rispettare regole specifiche per i nomi utilizzati nei co
 [role="lead"]
 È necessario rispettare regole specifiche per i nomi utilizzati nei comandi CLI.
 
-* I nomi possono avere un massimo di 30 caratteri.
+* I nomi dei volumi standard e thin possono avere un massimo di 60 caratteri. Tutti gli altri nomi dei componenti possono avere un massimo di 30 caratteri.
 * È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, trattini e caratteri di sottolineatura per i nomi dei seguenti componenti:
 +
 ** Storage array

@@ -98,6 +98,9 @@ Il nome del pool di dischi in cui creare il nuovo volume. Racchiudere il nome de
 Il nome che si desidera assegnare al nuovo volume. Racchiudere il nome del volume tra virgolette doppie (" ").
 
 
+NOTE: Il limite di caratteri per i nomi dei volumi standard e thin è di 60 caratteri. Il nome del volume può contenere qualsiasi combinazione di caratteri alfanumerici, underscore (_), trattino (-) e cancelletto (#).
+
+
 
  a| 
 `capacity`
@@ -220,7 +223,7 @@ Questo parametro imposta la dimensione del blocco del volume da creare. Un valor
 [[notes]]
 == Note
 
-Ciascun nome di volume deve essere univoco. È possibile utilizzare qualsiasi combinazione di caratteri alfanumerici, caratteri di sottolineatura (_), trattini (-) e cancelletto ( n.) per l'etichetta utente. Le etichette dell'utente possono contenere un massimo di 30 caratteri.
+Il nome di ciascun volume deve essere univoco. Per l'etichetta utente puoi usare qualsiasi combinazione di caratteri alfanumerici, underscore (_), trattino (-) e cancelletto (#). I nomi dei volumi standard e thin possono avere un massimo di 60 caratteri.
 
 Per i volumi sottili, il `capacity` il parametro specifica la capacità virtuale del volume e il `repositoryCapacity` parametro specifica la capacità del volume creato come volume di repository. Utilizzare `existingRepositoryLabel` parametro per specificare un volume repository inutilizzato esistente invece di creare un nuovo volume.
 

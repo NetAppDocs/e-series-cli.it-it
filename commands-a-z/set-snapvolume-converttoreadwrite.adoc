@@ -1,8 +1,8 @@
 ---
 permalink: commands-a-z/set-snapvolume-converttoreadwrite.html 
 sidebar: sidebar 
-keywords: set, read-only, snapshot, volume, read/write, volume 
-summary: Il comando set SnapVolume convertToReadWrite modifica un volume di snapshot di sola lettura in un volume di snapshot di lettura/scrittura. 
+keywords: set, read-only, snapshot, volume, read, write, volume 
+summary: Il comando set snapVolume convertToReadWrite cambia un volume snapshot di sola lettura in un volume snapshot di lettura/scrittura. 
 ---
 = Imposta il volume snapshot di sola lettura su volume di lettura/scrittura - SANtricity CLI
 :allow-uri-read: 
